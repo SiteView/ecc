@@ -1,0 +1,118 @@
+1、该代码来自 libiconv , 更多的使用帮助请搜索关键词: iconv erlang , 或 http://www.gnu.org/software/libiconv/
+2、将lib目录下的iconv_erl.dll、libiconv2.dll 拷贝到 OTP_HOME\bin 下, 即 erlang根目录\bin 下或 启动 evm 的目录下，即运行 erl.exe 的目录下
+
+3、简单的使用方法：
+
+	iconv:start(). 
+
+	iconv:convert("gbk", "utf-8", "你好").
+	iconv:convert("utf-8", "gbk", iconv:convert("gbk", "utf-8", "你好")).
+	iconv:convert("utf-8", "gbk", [228,189,160,229,165,189]).
+
+===========================================================================
+
+关于WMI的测试工具：
+如果
+C:\WINDOWS\system32\wbem\wbemtest.exe
+本机：root\cimv2
+远程机：IP\root\cimv2
+
+
+===========================================================================
+
+winmgmt /clearadap
+winmgmt /resyncperf "winmgmt service pid"
+
+
+===========================================================================
+
+1、WMI ADAP无法加载winspool.div性能库，原因是库中的一个未知问题：0x0 2、WMI ADAP无法加载perfproc.dll性能库，原因是库中的一个未知问题：0x0 3、无法打开服务器服务。服务器性能数据将不会被返回。返回的错误码是数据 DWORD 0. 4、由于open函数中有时间冲突，WMI ADAP无法处理PerfDisk性能库。 5、WMI ADAP 未能连接到名称空间\\\\.\\root\\cimv2\\MS 404,错误如下：0x8004100e 原因 出现此行为可能是因为计数器中有问题，或者是因为 Windows 管理规范 (WMI) 性能库筛选器中返回了一个假的正值。如果 WMI 性能库筛选器中返回了一个假的正值，在某些情形下，即使计数器工作正常，此筛选器也可能会错误地判定某个库是无效的。
+替代方法
+请尝试使用以下命令再次筛选计算机的性能库：
+winmgmt /clearadap
+
+此命令可从服务的性能注册表项中清除所有与 WMI 相关的数值。
+winmgmt /resyncperf "winmgmt service pid"
+
+此命令可用于向 WMI 注册计算机的性能库。
+
+您可以在“Windows 任务管理器”中的进程选项卡上找到 WMI 服务 PID 信息。
+
+涉及的服务的性能注册表项包括以下注册表项：
+WbemAdapFileSize
+WbemAdapFileTime
+WbemAdapStatus
+
+备注：如想了解 WMI 的可用命令选项方面的更多信息，请在命令提示符下键入 winmgmt/?。
+
+导致此事件的另一个原因可能是，在启动期间，计数器由于其他活动而不能及时响应。您可以通过向适当的注册表位置添加 Collect Timeout REG_DWORD 10000 值来调整此超时值：
+HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\[counterfile]\\Performance
+
+其中 [counterfile] 是事件查看器的错误消息中列出的文件名 性能库。
+
+例如，如果事件查看器中的消息是
+WMI ADAP was unable to process the perfproc.dll performance library due to a time violation in the open function
+
+那么注册表项将是：
+HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\PerfProc\\Performance
+
+请注意此注册表路径不包括文件扩展名 (.dll)。 如果做出这些更改之后仍继续记录这些事件，则请在该服务的性能注册表项下，手动将HKEY_LOCAL_MACHINE\\System \\CurrentControlSet\\Services\\PerfProc\\Performance 下的WbemAdapStatus 的值更改为 REG_DWORD 0，（就是改成0，0在16进制和10进制下没有区别，REG_DWORD只是说明是此类型，不用填他，只写0，我就是菜鸟我就这样理解。）然后在下面的 HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Wbem\\CIMOM下面注册表项中将 ADAPPerflibTimeout 的值增加到 REG_DWORD 180：
+
+备注：对注册表的所有更改都必须以十进制数值的形式输入。
+
+另外，您也可以使用 Windows 2000 Resource Kit 中的 Exctrlst.exe 工具禁用特定服务的性能计数器。此工具通过添加类似于以下示例的注册表项来禁用特定的计数器。如果 Exctrlst.exe 不可用或不适用，您可以手动在特定计数器项下添加这些注册表项。
+HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Services\\Spooler\\Performance
+
+数值名称：Disable Performance Counters
+数值类型：REG_DWORD
+数值数据： 1
+
+备注：如要使用这些命令，请单击开始，运行，然后键入 cmd 以进入命令行状态。
+以上转载microsoft 
+
+
+
+***************************************************************************
+===========================================================================
+***************************************************************************
+
+
+WMI 远程连接问题解决方法
+由于需要用取得远程计算机的信息，采用了 WMI的方法来解决，但在应用时遇到了一些连接问题。程序时候是用C#来写的。
+目标机和客户机都是运行的XP系统
+连接部分的代码如下：
+            ConnectionOptions option = new ConnectionOptions();
+            option.Username = "administrator";
+            option.Password = "password";
+     ManagementScope Mscope = new ManagementScope("\\\\221.38.15.199\\root\\cimv2", option);
+但在连接时会出现拒绝访问的错误 HRUSRLT：0x0x80070005 (E_ACCESSEDDENIED)
+在网上搜索了很久都没有找到通用的解决方法，经过多方搜集，终于解决了此问题。现把查找的方法整理如下：
+
+1。如果是在网络上取得其远程计算机的信息，首先确保使用的用户名和密码正确，且用户有管理员权限。用户的密码不能为空。
+2。检查目标机上DCOM是否可用。 检查注册表中键值 HKLM\Software\Microsoft\OLE\EnableDCOM的键值设为Y
+3。检查WMI是否已经安装。 在运行窗口中输入 wbemtest
+4。确保WMI的权限设置正确。可能需要设置的有DCOM的访问权限。设置方法可以参考MSDN中设置方法，地址如下：
+   http://msdn2.microsoft.com/en-us/library/aa389290.aspx
+   http://msdn2.microsoft.com/en-us/library/aa389286.aspx
+   http://msdn2.microsoft.com/en-us/library/aa826699.aspx
+   http://msdn2.microsoft.com/en-us/library/aa822575.aspx（其中有包括对Windows防火墙的设置，端口开放等设置，根据系统的具体情况而定。）
+5。 如果访问的目标机运行的是Windows XP Pro 系统，需要确保远程登录方式不是来宾帐户的方式。
+    方法如下：
+      在本地安全设置中（可以在控制面板的管理工具中找到，或在运行框中输入命令 secpol.msc）。
+      打开本地策略-〉安全选项，把 网络访问：本地帐户的共享和安全模式 中设置为 经典-本地帐户以自己的身份验证
+6。 在XP SP2 中确保防火墙允许远程的登录。命令：netsh firewall set service RemoteAdmin
+7。 注意系统安装其他防火墙或杀毒软件的设置是否允许访问。
+8。 确保WMI或相关服务正在运行。XP中可能涉及到的服务有：
+    COM+ Event System
+    Remote Access Auto Connection Manager
+    Remote Access Connetion Manager
+    Remote Procedure Call(RPC)
+    Remote Procedure Call(RPC)Locator
+    Remote Registry
+    Server
+    Windows Management Instrumentation
+    Windows Management Instrumentation Driver Extensions
+    WMI Performance Adapter
+    Workstation 
+
+

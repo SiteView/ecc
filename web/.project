@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>com.siteview.kernel.quickweb</name>
+	<comment></comment>
+	<projects>
+		<project>com.siteview.kernel.core</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.erlide.core.erlbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.pde.PluginNature</nature>
+		<nature>org.erlide.core.erlnature</nature>
+	</natures>
+</projectDescription>

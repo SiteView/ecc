@@ -1,0 +1,24 @@
+[{id, "topnProc_cpuHighest"},
+ {class, topnProc_cpuHighest},
+ {frequency, 3000},     %% 以毫秒为单位
+ {description, "cpu used"},
+ {target, [{browsa_cpu_utilization, [{"utilization", 1}]}]},   %% 监测指标, 首先是监测指标的键, 然后是监测指标所对应的优先匹配顺序, 如果有多个指标, 那么就要分清指标的主次关系, 优先级为最前的指标先统计, 统计出来的数据如果第一个指标相同,再通过第二个指标进行比对.
+ {statOrder, 0},    %% 0 表示从高到低, 1 表示从低到高
+ {index, 1},        %% 从index开始, 如果index是小于等于0的数那么表示是从最后一个开始
+ {count, 10},
+ {order, "left"},   %% 统计顺序, 可以为"left" or "right", 如果为"left", 那么就是从index开始, 向后数count个; 如果为"right", 那么就是从index开始向前数count个
+ {sortType, "desc"},
+ {sortField, "name"}
+].
+[{id, "topnProc_memoryHighest"},
+ {class, topnProc_memoryHighest},
+ {frequency, 3000},
+ {description, "cpu used"},
+ {target, [{memory_monitor,[{pPercentFull, 1}]}]},
+ {statOrder, 0},
+ {index, 1},
+ {count, 10},
+ {order, "left"},
+ {sortType, "desc"},
+ {sortField, "name"}
+].

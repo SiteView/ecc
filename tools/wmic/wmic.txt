@@ -1,0 +1,115 @@
+ https://webcache.googleusercontent.com/search?q=cache:nw0U-JPxsEIJ:forum.sources.ru/index.php%3Fshowtopic%3D137686+ISWbemPropertySetPtr&cd=10&hl=zh-CN&ct=clnk
+ 参看这个
+      //---------------------------------------------------------------------------
+      void WMI_Info(TSWbemLocator *SWBEM,TStrings *InputData,WMI_ListObjectsName *ObjectPatch_Name, wchar_t *ConnectionPath=L"root\\CIMV2")
+      {
+         ISWbemServicesPtr     WBService;
+         ISWbemObjectSetPtr    WBObjectSet;
+         ISWbemObjectPtr       WBObject;
+         ISWbemPropertySetPtr  WBPropSet;
+         ISWbemPropertyPtr     WBProp;
+         IEnumVARIANT          *PropEnum,*Enum;
+         OleVariant            TempObj;
+         unsigned long         Value;
+       
+         wchar_t *NameObject;
+       
+         AnsiString STR,StrValue,StrName;
+         tagVARIANT TV;
+         wchar_t *WC_Name;
+         wchar_t *WC_Value;
+         bool wr_=true;
+       
+       
+         try{
+            WBService=SWBEM->ConnectServer(L".",ConnectionPath,L"",L"",L"",L"",0,NULL);
+         }catch(...)
+         {InputData->Clear(); return;}
+       
+         InputData->Add("[ReportHead]");
+         InputData->Add("");
+         InputData->Add("Date="+FormatDateTime("yyyy\.mm\.dd hh\:nn\`ss\`\`zzz",Now()));
+         for(int countObject=0;countObject<ObjectPatch_Name->CountObject();countObject++)
+         {
+            NameObject=ObjectPatch_Name->GetObjectA(countObject+1);
+       
+            InputData->Add("");
+            InputData->Add("["+AnsiString(NameObject)+"]");
+       
+            try{
+               WBObject=WBService->Get(NameObject,wbemFlagUseAmendedQualifiers,NULL);
+            }catch(...)
+            {InputData->Clear();return;}
+       
+            try{
+               WBObjectSet=WBObject->Instances_(0,NULL);
+            }catch(...)
+            {InputData->Clear();return;}
+       
+            try{
+               Enum=(IEnumVARIANT *)(WBObjectSet->_NewEnum);
+            }catch(...)
+            {InputData->Clear();return;}
+       
+            InputData->Add("");
+            InputData->Add("Count="+AnsiString(WBObjectSet->Count));
+       
+            for(int countObj=0;countObj<WBObjectSet->Count;countObj++)
+            {
+               InputData->Add("");
+               InputData->Add("["+AnsiString(NameObject)+" "+IntToStr(countObj)+"]");
+       
+               try{
+                  Enum->Next(1,TempObj,&Value);
+                  WBObject=(IUnknown*)TempObj;
+                  WBPropSet=WBObject->Properties_;
+                  PropEnum=(IEnumVARIANT *)WBPropSet->_NewEnum;
+               }catch(...)
+               {InputData->Clear();return;}
+       
+               while (PropEnum->Next(1,TempObj,&Value)==S_OK)
+               {
+                  try{
+                     WBProp=(IUnknown*)TempObj;
+                     WC_Name=WBProp->get_Name();
+                  }catch(...)
+                  {InputData->Clear();return;}
+       
+                  try
+                  {
+                     TV = WBProp->get_Value();
+                     WC_Value=TV.bstrVal;
+                     StrValue=WC_Value;
+                     wr_=true;
+                  }catch(...)
+                  {
+                     wr_=false;
+                  }
+                  if(wr_)
+                  if(ObjectPatch_Name->CountName(countObject+1)!=0)
+                  {
+                     wr_=false;
+                     for(int EnName=0;EnName<ObjectPatch_Name->CountName(countObject+1);EnName++)
+                        if(wcscmp(ObjectPatch_Name->GetName(countObject+1,EnName+1),WC_Name)==0)
+                           wr_=true;
+                  }else{
+                     wr_=true;
+                  }
+                  if(wr_)
+                  {
+                     STR=WC_Name;
+                     STR+="=";
+                     STR+=StrValue;
+                     InputData->Add(STR);
+                  }
+               }//end while PropEnum
+               PropEnum->Reset();
+               PropEnum->Release();
+            }//end for countObj
+            Enum->Reset();
+            Enum->Release();
+         }//end for countObject
+       
+         SWBEM->Disconnect();
+      };
+      //---------------------------------------------------------------------------

@@ -1,0 +1,96 @@
+<HTML><HEAD><TITLE>sdl_joystick</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_joystick.hrl">sdl_joystick.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="NumJoysticks">
+<strong> numJoysticks()  </strong><UL>Args: none<br>
+Returns: Number of joysticks<br>
+<a href="http://www.libsdl.org/docs/html/sdlnumjoysticks.html">C-API:</a> int SDL_NumJoysticks(void);<br>
+Desc:<br> Count the number of joysticks attached to the system<br>
+</UL>
+<p><A NAME="Name">
+<strong> name(Index)  </strong><UL>Args: JoystickIndex<br>
+Returns: Name (List)<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickname.html">C-API:</a> char *SDL_JoystickName(int device_index);<br>
+Desc:<br> Get the implementation dependent name of a joystick. This can be called before any joysticks are opened. If no name can be found, this function returns NULL.<br>
+</UL>
+<p><A NAME="open">
+<strong> open(Index)  </strong><UL>Args: JoystickIndex<br>
+Returns: Joystick or exits<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickopen.html">C-API:</a> SDL_Joystick *SDL_JoystickOpen(int device_index);<br>
+Desc:<br> Open a joystick for use - the index passed as an argument refers to the N'th joystick on the system.  This index is the value which will identify this joystick in future joystick events. This function returns a joystick identifier, or NULL if an error occurred.<br>
+</UL>
+<p><A NAME="opened">
+<strong> opened(Index)  </strong><UL>Args: JoystickIndex<br>
+Returns: true or false<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickopened.html">C-API:</a> int SDL_JoystickOpened(int device_index);<br>
+Desc:<br> Returns true if the joystick has been opened, or false if it has not.<br>
+</UL>
+<p><A NAME="index">
+<strong> index(Joystick)  </strong><UL>Args: Joystick<br>
+Returns: index<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickindex.html">C-API:</a> int SDL_JoystickIndex(SDL_Joystick *joystick);<br>
+Desc:<br> Get the device index of an opened joystick.<br>
+</UL>
+<p><A NAME="numAxes">
+<strong> numAxes(Joystick)  </strong><UL>Args: Joystick<br>
+Returns: no of axes<br>
+<a href="http://www.libsdl.org/docs/html/sdljoysticknumaxes.html">C-API:</a> int SDL_JoystickNumAxes(SDL_Joystick *joystick);<br>
+Desc:<br> Get the number of general axis controls on a joystick<br>
+</UL>
+<p><A NAME="numBalls">
+<strong> numBalls(Joystick)  </strong><UL>Args: Joystick<br>
+Returns: no of balls<br>
+<a href="http://www.libsdl.org/docs/html/sdljoysticknumballs.html">C-API:</a> int SDL_JoystickNumBalls(SDL_Joystick *joystick);<br>
+Desc:<br> Get the number of trackballs on a joystick Joystick trackballs have only relative motion events associated with them and their state cannot be polled.<br>
+</UL>
+<p><A NAME="numHats">
+<strong> numHats(Joystick)  </strong><UL>Args: Joystick<br>
+Returns: no of Hats<br>
+<a href="http://www.libsdl.org/docs/html/sdljoysticknumhats.html">C-API:</a> int SDL_JoystickNumHats(SDL_Joystick *joystick);<br>
+Desc:<br> Get the number of POV hats on a joystick<br>
+</UL>
+<p><A NAME="numButtons">
+<strong> numButtons(Joystick)  </strong><UL>Args: Joystick<br>
+Returns: no of Buttons<br>
+<a href="http://www.libsdl.org/docs/html/sdljoysticknumbuttons.html">C-API:</a> int SDL_JoystickNumButtons(SDL_Joystick *joystick);<br>
+Desc:<br> Get the number of buttons on a joystick<br>
+</UL>
+<p><A NAME="update">
+<strong> update()  </strong><UL>Args: none<br>
+Returns: none<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickupdate.html">C-API:</a> void SDL_JoystickUpdate(void);<br>
+Desc:<br> Update the current state of the open joysticks. This is called automatically by the event loop if any joystick events are enabled.<br>
+</UL>
+<p><A NAME="getAxis">
+<strong> getAxis(Joystick, Axis)  </strong><UL>Args: Joystick, Axis<br>
+Returns: State (Int range: -32768 to 32767)<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickgetaxis.html">C-API:</a> Sint16 SDL_JoystickGetAxis(SDL_Joystick *joystick, int axis);<br>
+Desc:<br> Get the current state of an axis control on a joystick The state is a value ranging from -32768 to 32767. The axis indices start at index 0.<br>
+</UL>
+<p><A NAME="getHat">
+<strong> getHat(Joystick, Hat)  </strong><UL>Args: Joystick, Hat<br>
+Returns: HatState<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickgethat.html">C-API:</a> Uint8 SDL_JoystickGetHat(SDL_Joystick *joystick, int hat);<br>
+Desc:<br> Get the current state of a POV hat on a joystick The return value is one of the following positions in sdl_joystick.hrl The hat indices start at index 0.<br>
+</UL>
+<p><A NAME="getButton">
+<strong> getButton(Joystick, Button)  </strong><UL>Args: Joystick, Button<br>
+Returns: State<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickgetbutton.html">C-API:</a> Uint8 SDL_JoystickGetButton(SDL_Joystick *joystick, int button);<br>
+Desc:<br> Get the current state of a button on a joystick The button indices start at index 0.<br>
+</UL>
+<p><A NAME="getBall">
+<strong> getBall(Joystick, Ball)  </strong><UL>Args: Joystick, Ball<br>
+Returns: {DX, DY} or badarg<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickgetball.html">C-API:</a> int SDL_JoystickGetBall(SDL_Joystick *joystick, int ball, int *dx, int *dy);<br>
+Desc:<br> Get the ball axis change since the last poll This returns 0, or -1 if you passed it invalid parameters. The ball indices start at index 0.<br>
+</UL>
+<p><A NAME="close">
+<strong> close(Joystick)  </strong><UL>Args: Joystick<br>
+Returns: none<br>
+<a href="http://www.libsdl.org/docs/html/sdljoystickclose.html">C-API:</a> void SDL_JoystickClose(SDL_Joystick *joystick);<br>
+Desc:<br> Close a joystick previously opened with SDL_JoystickOpen()<br>
+</UL>
+</html>

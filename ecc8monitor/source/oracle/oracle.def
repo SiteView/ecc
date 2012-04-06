@@ -1,0 +1,7 @@
+; Oracle.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Oracle"
+DESCRIPTION  'Oracle Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here

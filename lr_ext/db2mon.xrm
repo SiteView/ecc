@@ -1,0 +1,10 @@
+[ResmonExtensionInfo]                        
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=db2mon_adapter.dll
+Name=cm_db2_mon
+PresentationName=DB2
+Id=5731
+

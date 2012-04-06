@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmp_pdus</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmp_pdus</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmp_pdus
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Encode and Decode Functions for SNMP PDUs
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>RFC1157, RFC1905 and/or RFC2272 should be studied carefully
+before using this module, <span class="code">snmp_pdus</span>.
+
+</p>
+<p>The module <span class="code">snmp_pdus</span> contains functions for encoding 
+and decoding of
+SNMP protocol data units (PDUs). In short, this module converts a
+list of bytes to Erlang record representations and vice versa.
+The record definitions can be found in the file
+<span class="code">snmp/include/snmp_types.hrl</span>. If snmpv3 is used, the module
+that includes <span class="code">snmp_types.hrl</span> must define the constant
+<span class="code">SNMP_USE_V3</span> before the header file is included. Example:
+</p>
+<div class="example"><pre>
+-define(SNMP_USE_V3, true).
+-include_lib(&#34;snmp/include/snmp_types.hrl&#34;).    
+</pre></div>
+
+<p>Encoding and decoding must be done explicitly when writing your
+own Net if process.
+
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="dec_message-1"><span class="bold_code">dec_message([byte()]) -&#62; Message</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Message = #message</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Decodes a list of bytes into an SNMP Message. Note, if there
+is a v3 message, the <span class="code">msgSecurityParameters</span> are not
+decoded. They must be explicitly decoded by a call to a
+security model specific decoding function,
+e.g. <span class="code">dec_usm_security_parameters/1</span>. Also note, if
+the <span class="code">scopedPDU</span> is encrypted, the OCTET STRING encoded
+<span class="code">encryptedPDU</span> will be present in the <span class="code">data</span> field.
+</p>
+</div>
+
+<p><a name="dec_message_only-1"><span class="bold_code">dec_message_only([byte()]) -&#62; Message</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Message = #message</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Decodes a list of bytes into an SNMP Message, but does not
+decode the data part of the Message. That means, data is still
+a list of bytes, normally an encoded <span class="code">PDU</span> (v1 and V2) or an
+encoded and possibly encrypted <span class="code">scopedPDU</span> (v3).
+</p>
+</div>
+
+<p><a name="dec_pdu-1"><span class="bold_code">dec_pdu([byte()]) -&#62; Pdu</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pdu = #pdu</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Decodes a list of bytes into an SNMP Pdu.
+</p>
+</div>
+
+<p><a name="dec_scoped_pdu-1"><span class="bold_code">dec_scoped_pdu([byte()]) -&#62; ScopedPdu</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ScopedPdu = #scoped_pdu</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Decodes a list of bytes into an SNMP ScopedPdu.
+</p>
+</div>
+
+<p><a name="dec_scoped_pdu_data-1"><span class="bold_code">dec_scoped_pdu_data([byte()]) -&#62; ScopedPduData</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ScopedPduData = #scoped_pdu | EncryptedPDU</span><br/>
+<span class="bold_code">EncryptedPDU = [byte()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Decodes a list of bytes into either a scoped pdu record, or
+- if the scoped pdu was encrypted - to a list of bytes.
+</p>
+</div>
+
+<p><a name="dec_usm_security_parameters-1"><span class="bold_code">dec_usm_security_parameters([byte()]) -&#62; UsmSecParams</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UsmSecParams = #usmSecurityParameters</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Decodes a list of bytes into an SNMP UsmSecurityParameters
+</p>
+</div>
+
+<p><a name="enc_encrypted_scoped_pdu-1"><span class="bold_code">enc_encrypted_scoped_pdu(EncryptedScopedPdu) -&#62; [byte()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">EncryptedScopedPdu = [byte()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Encodes an encrypted SNMP ScopedPdu into an OCTET STRING
+that can be used as the <span class="code">data</span> field in a
+<span class="code">message</span> record, that later can be encoded with a call
+to <span class="code">enc_message_only/1</span>. 
+
+</p>
+<p>This function should be used whenever the <span class="code">ScopedPDU</span>
+is encrypted.
+</p>
+</div>
+
+<p><a name="enc_message-1"><span class="bold_code">enc_message(Message) -&#62; [byte()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Message = #message</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Encodes a message record to a list of bytes.
+</p>
+</div>
+
+<p><a name="enc_message_only-1"><span class="bold_code">enc_message_only(Message) -&#62; [byte()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Message = #message</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p><span class="code">Message</span> is a record where the <span class="code">data</span> field is
+assumed to be encoded (a list of bytes). If there is a v1 or v2
+message, the <span class="code">data</span> field is an encoded <span class="code">PDU</span>, and if
+there is a v3 message, <span class="code">data</span> is an encoded and possibly
+encrypted <span class="code">scopedPDU</span>.
+</p>
+</div>
+
+<p><a name="enc_pdu-1"><span class="bold_code">enc_pdu(Pd) -&#62; [byte()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pdu = #pdu</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Encodes an SNMP Pdu into a list of bytes.
+</p>
+</div>
+
+<p><a name="enc_scoped_pdu-1"><span class="bold_code">enc_scoped_pdu(ScopedPdu) -&#62; [byte()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ScopedPdu = #scoped_pdu</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Encodes an SNMP ScopedPdu into a list of bytes, which can be
+encrypted, and after encryption, encoded with
+a call to <span class="code">enc_encrypted_scoped_pdu/1</span>; or it can be
+used as the <span class="code">data</span> field in a <span class="code">message</span> record, which
+then can be encoded with <span class="code">enc_message_only/1</span>.
+</p>
+</div>
+
+<p><a name="enc_usm_security_parameters-1"><span class="bold_code">enc_usm_security_parameters(UsmSecParams) -&#62; [byte()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UsmSecParams = #usmSecurityParameters</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Encodes SNMP UsmSecurityParameters into a list of bytes.
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

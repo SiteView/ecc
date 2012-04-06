@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Agent Implementation Example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="8"><!-- Empty --></a>
+<h2>8 Agent Implementation Example</h2>
+
+<p>This <strong>Implementation Example</strong> section describes how an
+MIB can be implemented with the SNMP Development Toolkit. 
+</p>
+<p>The example shown can be found in the toolkit distribution. 
+</p>
+<p>The agent is configured with the configuration tool, using
+default suggestions for everything but the manager node. 
+</p><a name="8.1"><!-- Empty --></a>
+<h3>8.1 MIB</h3>
+
+<p>The MIB used in this example is called EX1-MIB. It contains two
+objects, a variable with a name and a table with friends.
+
+</p>
+<div class="example"><pre>
+EX1-MIB DEFINITIONS ::= BEGIN
+ 
+          IMPORTS
+                  RowStatus      FROM STANDARD-MIB
+                  DisplayString  FROM RFC1213-MIB
+                  OBJECT-TYPE    FROM RFC-1212
+                  ;
+ 
+          example1       OBJECT IDENTIFIER ::= { experimental 7 }
+ 
+          myName OBJECT-TYPE
+              SYNTAX  DisplayString (SIZE (0..255))
+              ACCESS  read-write
+              STATUS  mandatory
+              DESCRIPTION
+                      &#34;My own name&#34;
+              ::= { example1 1 }
+ 
+          friendsTable OBJECT-TYPE
+              SYNTAX  SEQUENCE OF FriendsEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      &#34;A list of friends.&#34;
+              ::= { example1 4 }
+ 
+          friendsEntry OBJECT-TYPE
+              SYNTAX  FriendsEntry
+              ACCESS  not-accessible
+              STATUS  mandatory
+              DESCRIPTION
+                      &#34;&#34;
+              INDEX   { fIndex }
+              ::= { friendsTable 1 }
+ 
+          FriendsEntry ::=
+              SEQUENCE {
+            fIndex
+                      INTEGER,
+                   fName
+                      DisplayString,
+                   fAddress
+                      DisplayString,
+                   fStatus
+                      RowStatus              }
+ 
+          fIndex OBJECT-TYPE
+              SYNTAX  INTEGER
+              ACCESS  not-accessible
+              STATUS  mandatory
+               DESCRIPTION
+                      &#34;number of friend&#34;
+              ::= { friendsEntry 1 }
+ 
+          fName OBJECT-TYPE
+              SYNTAX  DisplayString (SIZE (0..255))
+              ACCESS  read-write
+              STATUS  mandatory
+              DESCRIPTION
+                      &#34;Name of friend&#34;
+              ::= { friendsEntry 2 }
+          fAddress OBJECT-TYPE
+              SYNTAX  DisplayString (SIZE (0..255))
+              ACCESS  read-write
+              STATUS  mandatory
+              DESCRIPTION
+                      &#34;Address of friend&#34;
+              ::= { friendsEntry 3 }
+           fStatus OBJECT-TYPE
+              SYNTAX      RowStatus
+              ACCESS      read-write
+              STATUS      mandatory
+              DESCRIPTION
+                      &#34;The status of this conceptual row.&#34;
+              ::= { friendsEntry 4 }
+          fTrap TRAP-TYPE
+              ENTERPRISE  example1
+              VARIABLES   { myName, fIndex }
+              DESCRIPTION
+                          &#34;This trap is sent when something happens to
+         the friend specified by fIndex.&#34;
+              ::= 1
+END
+    
+</pre></div>
+<a name="8.2"><!-- Empty --></a>
+<h3>8.2 Default Implementation</h3>
+
+<p>Without writing any instrumentation functions, we can compile
+the MIB and use the default implementation of it. Recall that MIBs
+imported by &#34;EX1-MIB.mib&#34; must be present and compiled in the
+current directory (&#34;./STANDARD-MIB.bin&#34;,&#34;./RFC1213-MIB.bin&#34;) when
+compiling.
+
+</p>
+<div class="example"><pre>
+unix&#62; <strong>erl -config ./sys</strong>
+1&#62; <strong>application:start(snmp).</strong>
+ok
+2&#62; <strong>snmpc:compile(&#34;EX1-MIB&#34;).</strong>
+No accessfunction for 'friendsTable', using default.
+No accessfunction for 'myName', using default.
+{ok, &#34;EX1-MIB.bin&#34;}
+3&#62; <strong>snmpa:load_mibs(snmp_master_agent, [&#34;EX1-MIB&#34;]).</strong>
+ok
+    
+</pre></div>
+
+<p>This MIB is now loaded into the agent, and a manager can ask
+questions. As an example of this, we start another Erlang system
+and the simple Erlang manager in the toolkit:
+
+</p>
+<div class="example"><pre>
+1&#62; <strong>snmp_test_mgr:start_link([{agent,&#34;dront.ericsson.se&#34;},{community,&#34;all-rights&#34;},</strong>
+ %% making it understand symbolic names: {mibs,[&#34;EX1-MIB&#34;,&#34;STANDARD-MIB&#34;]}]).
+{ok, &#60;0.89.0&#62;}
+%% a get-next request with one OID.
+2&#62; <strong>snmp_test_mgr:gn([[1,3,6,1,3,7]]).</strong>
+ok 
+* Got PDU:
+[myName,0] = [] 
+%% A set-request (now using symbolic names for convenience)
+3&#62; <strong>snmp_test_mgr:s([{[myName,0], &#34;Martin&#34;}]).</strong>
+ok                           
+* Got PDU:
+[myName,0] = &#34;Martin&#34;    
+%% Try the same get-next request again
+4&#62; <strong>snmp_test_mgr:gn([[1,3,6,1,3,7]]).</strong>
+ok                           
+* Got PDU:
+[myName,0] = &#34;Martin&#34;    
+%% ... and we got the new value.
+%% you can event do row operations. How to add a row:
+5&#62; <strong>snmp_test_mgr:s([{[fName,0], &#34;Martin&#34;}, {[fAddress,0],&#34;home&#34;}, {[fStatus,0],4}]).</strong>
+ %% createAndGo
+ok
+* Got PDU:
+[fName,0] = &#34;Martin&#34;    
+[fAddress,0] = &#34;home&#34;    
+[fStatus,0] = 4    
+6&#62; <strong>snmp_test_mgr:gn([[myName,0]]).</strong>
+ok
+* Got PDU:
+[fName,0] = &#34;Martin&#34;    
+7&#62; <strong>snmp_test_mgr:gn().</strong>
+ok
+* Got PDU:
+[fAddress,0] = &#34;home&#34;    
+8&#62; <strong>snmp_test_mgr:gn().</strong>
+ok
+* Got PDU:
+[fStatus,0] = 1    
+9&#62; 
+    
+</pre></div>
+<a name="8.3"><!-- Empty --></a>
+<h3>8.3 Manual Implementation</h3>
+
+<p>The following example shows a &#34;manual&#34; implementation of the
+EX1-MIB in Erlang. In this example, the values of the objects are
+stored in an Erlang server. The server has a 2-tuple as loop
+data, where the first element is the value of variable
+<span class="code">myName</span>, and the second is a sorted list of rows in the
+table <span class="code">friendsTable</span>. Each row is a 4-tuple.
+
+</p>
+<div class="note">
+<div class="label">Note</div>
+<div class="content">
+<p>There are more efficient ways to create tables manually, i.e.
+to use the module <span class="code">snmp_index</span>.
+</p>
+</div>
+</div>
+<a name="8.3.1"><!-- Empty --></a>
+<h4>8.3.1 Code</h4>
+
+<div class="example"><pre>
+-module(ex1).
+-author('dummy@flop.org').
+%% External exports
+-export([start/0, my_name/1, my_name/2, friends_table/3]).
+%% Internal exports
+-export([init/0]).
+-define(status_col, 4).
+-define(active, 1).
+-define(notInService, 2).
+-define(notReady, 3).
+-define(createAndGo, 4).   % Action; written, not read
+-define(createAndWait, 5). % Action; written, not read
+-define(destroy, 6).       % Action; written, not read
+start() -&#62;
+    spawn(ex1, init, []).
+%%----------------------------------------------------------------
+%% Instrumentation function for variable myName.
+%% Returns: (get) {value, Name}
+%%          (set) noError
+%%----------------------------------------------------------------
+my_name(get) -&#62;
+    ex1_server ! {self(), get_my_name},
+    Name = wait_answer(),
+    {value, Name}.
+my_name(set, NewName) -&#62;
+    ex1_server ! {self(), {set_my_name, NewName}},
+    noError.
+%%----------------------------------------------------------------
+%% Instrumentation function for table friendsTable.
+%%----------------------------------------------------------------
+friends_table(get, RowIndex, Cols) -&#62;
+    case get_row(RowIndex) of
+   {ok, Row} -&#62;
+        get_cols(Cols, Row);
+   _  -&#62;
+        {noValue, noSuchInstance}
+    end;
+friends_table(get_next, RowIndex, Cols) -&#62;
+    case get_next_row(RowIndex) of
+   {ok, Row} -&#62;
+        get_next_cols(Cols, Row);
+   _  -&#62;
+       case get_next_row([]) of
+     {ok, Row} -&#62;
+         % Get next cols from first row.
+         NewCols = add_one_to_cols(Cols),
+         get_next_cols(NewCols, Row);
+     _  -&#62;
+        end_of_table(Cols)
+        end
+    end;
+%%----------------------------------------------------------------
+%% If RowStatus is set, then:
+%%    *) If set to destroy, check that row does exist
+%%    *) If set to createAndGo, check that row does not exist AND
+%%         that all columns are given values.
+%%    *) Otherwise, error (for simplicity).
+%% Otherwise, row is modified; check that row exists.
+%%----------------------------------------------------------------
+friends_table(is_set_ok, RowIndex, Cols) -&#62;
+    RowExists = 
+   case get_row(RowIndex) of
+        {ok, _Row} -&#62; true;
+       _ -&#62; false
+   end, 
+    case is_row_status_col_changed(Cols) of
+   {true, ?destroy} when RowExists == true -&#62;
+        {noError, 0};
+   {true, ?createAndGo} when RowExists == false,
+                                 length(Cols) == 3 -&#62;
+        {noError, 0};
+   {true, _} -&#62;
+       {inconsistentValue, ?status_col};
+   false when RowExists == true -&#62;
+        {noError, 0};
+   _ -&#62;
+        [{Col, _NewVal} | _Cols] = Cols,
+       {inconsistentName, Col}
+      end;
+friends_table(set, RowIndex, Cols) -&#62;
+    case is_row_status_col_changed(Cols) of
+   {true, ?destroy} -&#62;
+        ex1_server ! {self(), {delete_row, RowIndex}};
+   {true, ?createAndGo} -&#62;
+       NewRow = make_row(RowIndex, Cols),
+        ex1_server ! {self(), {add_row, NewRow}};
+   false -&#62;
+       {ok, Row} = get_row(RowIndex),
+        NewRow = merge_rows(Row, Cols),
+    ex1_server ! {self(), {delete_row, RowIndex}},
+       ex1_server ! {self(), {add_row, NewRow}}
+   end,
+    {noError, 0}.
+    
+%%----------------------------------------------------------------
+%% Make a list of {value, Val} of the Row and Cols list.
+%%----------------------------------------------------------------
+get_cols([Col | Cols], Row) -&#62;
+    [{value, element(Col, Row)} | get_cols(Cols, Row)];
+get_cols([], _Row) -&#62;
+    [].
+%%----------------------------------------------------------------
+%% As get_cols, but the Cols list may contain invalid column
+%% numbers. If it does, we must find the next valid column,
+%% or return endOfTable.
+%%----------------------------------------------------------------
+get_next_cols([Col | Cols], Row) when Col &#60; 2 -&#62;
+    [{[2, element(1, Row)], element(2, Row)} | 
+     get_next_cols(Cols, Row)];
+get_next_cols([Col | Cols], Row) when Col &#62; 4 -&#62;
+    [endOfTable | 
+     get_next_cols(Cols, Row)];
+get_next_cols([Col | Cols], Row) -&#62;
+    [{[Col, element(1, Row)], element(Col, Row)} | 
+     get_next_cols(Cols, Row)];
+get_next_cols([], _Row) -&#62;
+    [].
+%%----------------------------------------------------------------
+%% Make a list of endOfTable with as many elems as Cols list.
+%%----------------------------------------------------------------
+end_of_table([Col | Cols]) -&#62;
+    [endOfTable | end_of_table(Cols)];
+end_of_table([]) -&#62;
+    [].
+add_one_to_cols([Col | Cols]) -&#62;
+    [Col + 1 | add_one_to_cols(Cols)];
+add_one_to_cols([]) -&#62;
+    [].
+is_row_status_col_changed(Cols) -&#62;
+    case lists:keysearch(?status_col, 1, Cols) of
+   {value, {?status_col, StatusVal}} -&#62;
+        {true, StatusVal};
+   _ -&#62; false
+    end.
+get_row(RowIndex) -&#62;
+    ex1_server ! {self(), {get_row, RowIndex}},
+    wait_answer().
+get_next_row(RowIndex) -&#62;
+    ex1_server ! {self(), {get_next_row, RowIndex}},
+    wait_answer().
+wait_answer() -&#62;
+    receive
+   {ex1_server, Answer} -&#62;
+     Answer
+    end.
+%%%---------------------------------------------------------------
+%%% Server code follows
+%%%---------------------------------------------------------------
+init() -&#62;
+    register(ex1_server, self()),
+    loop(&#34;&#34;, []).
+    
+loop(MyName, Table) -&#62;
+    receive
+   {From, get_my_name} -&#62;
+        From ! {ex1_server, MyName},
+       loop(MyName, Table);
+   {From, {set_my_name, NewName}} -&#62;
+        loop(NewName, Table);
+   {From, {get_row, RowIndex}} -&#62;
+       Res = table_get_row(Table, RowIndex),
+       From ! {ex1_server, Res},
+       loop(MyName, Table);
+   {From, {get_next_row, RowIndex}} -&#62;
+       Res = table_get_next_row(Table, RowIndex),
+        From ! {ex1_server, Res},
+       loop(MyName, Table);
+   {From, {delete_row, RowIndex}} -&#62;
+    NewTable = table_delete_row(Table, RowIndex),
+       loop(MyName, NewTable);
+   {From, {add_row, NewRow}} -&#62;
+       NewTable = table_add_row(Table, NewRow),
+       loop(MyName, NewTable)
+    end.
+%%%---------------------------------------------------------------
+%%% Functions for table operations. The table is represented as
+%%% a list of rows.
+%%%---------------------------------------------------------------
+table_get_row([{Index, Name, Address, Status} | _], [Index]) -&#62;
+    {ok, {Index, Name, Address, Status}};
+table_get_row([H | T], RowIndex) -&#62;
+    table_get_row(T, RowIndex);
+table_get_row([], _RowIndex) -&#62;
+    no_such_row.
+table_get_next_row([Row | T], []) -&#62;
+    {ok, Row};
+table_get_next_row([Row | T], [Index | _]) 
+when element(1, Row) &#62; Index -&#62;
+    {ok, Row};
+table_get_next_row([Row | T], RowIndex) -&#62;
+    table_get_next_row(T, RowIndex);
+table_get_next_row([], RowIndex) -&#62;
+    endOfTable.
+table_delete_row([{Index, _, _, _} | T], [Index]) -&#62;
+    T;
+table_delete_row([H | T], RowIndex) -&#62;
+    [H | table_delete_row(T, RowIndex)];
+table_delete_row([], _RowIndex) -&#62;
+    [].
+table_add_row([Row | T], NewRow) 
+  when element(1, Row) &#62; element(1, NewRow) -&#62;
+    [NewRow, Row | T];
+table_add_row([H | T], NewRow) -&#62;
+    [H | table_add_row(T, NewRow)];
+table_add_row([], NewRow) -&#62;
+    [NewRow].
+make_row([Index], [{2, Name}, {3, Address} | _]) -&#62;
+    {Index, Name, Address, ?active}.
+merge_rows(Row, [{Col, NewVal} | T]) -&#62;
+    merge_rows(setelement(Col, Row, NewVal), T);
+merge_rows(Row, []) -&#62;
+    Row.
+      
+</pre></div>
+<a name="8.3.2"><!-- Empty --></a>
+<h4>8.3.2 Association File</h4>
+
+<p>The association file <span class="code">EX1-MIB.funcs</span> for the real
+implementation looks as follows:
+
+</p>
+<div class="example"><pre>
+{myName, {ex1, my_name, []}}.
+{friendsTable, {ex1, friends_table, []}}.
+      
+</pre></div>
+<a name="8.3.3"><!-- Empty --></a>
+<h4>8.3.3 Transcript</h4>
+
+<p>To use the real implementation, we must recompile the MIB and
+load it into the agent.
+
+</p>
+<div class="example"><pre>
+1&#62; <strong>application:start(snmp).</strong>
+ok
+2&#62; <strong>snmpc:compile(&#34;EX1-MIB&#34;).</strong>
+{ok,&#34;EX1-MIB.bin&#34;}
+3&#62; <strong>snmpa:load_mibs(snmp_master_agent, [&#34;EX1-MIB&#34;]).</strong>
+ok
+4&#62; <strong>ex1:start().</strong>
+&#60;0.115.0&#62;
+%% Now all requests operates on this &#34;real&#34; implementation.
+%% The output from the manager requests will *look* exactly the
+%% same as for the default implementation.
+      
+</pre></div>
+<a name="8.3.4"><!-- Empty --></a>
+<h4>8.3.4 Trap Sending</h4>
+
+<p>How to send a trap by sending the
+<span class="code">fTrap</span> from the master agent is shown in this section. 
+The master agent has the MIB <span class="code">EX1-MIB</span> loaded, where the 
+trap is defined. This trap specifies that two variables should 
+be sent along with the trap, <span class="code">myName</span> and <span class="code">fIndex</span>. 
+<span class="code">fIndex</span> is a table column, so we must provide its value 
+and the index for the row in the call to <span class="code">snmpa:send_trap/4</span>. 
+In the example below, we assume that the row in question is 
+indexed by 2 (the row with <span class="code">fIndex</span> 2).
+
+</p>
+<p>we use a simple Erlang SNMP manager, which can receive traps.
+
+</p>
+<div class="example"><pre>
+[MANAGER]
+1&#62; <strong>snmp_test_mgr:start_link([{agent,&#34;dront.ericsson.se&#34;},{community,&#34;public&#34;}</strong>
+ %% does not have write-access
+1&#62;<strong>{mibs,[&#34;EX1-MIB&#34;,&#34;STANDARD-MIB&#34;]}]).</strong>
+{ok, &#60;0.100.0&#62;}
+2&#62; <strong>snmp_test_mgr:s([{[myName,0], &#34;Klas&#34;}]).</strong>
+ok                           
+* Got PDU:
+Received a trap:
+      Generic: 4       %% authenticationFailure
+   Enterprise: [iso,2,3]
+     Specific: 0
+   Agent addr: [123,12,12,21]
+    TimeStamp: 42993
+2&#62; 
+[AGENT]
+3&#62; <strong>snmpa:send_trap(snmp_master_agent, fTrap,&#34;standard trap&#34;, [{fIndex,[2],2}]).</strong>
+[MANAGER]
+2&#62;
+* Got PDU:
+Received a trap:             
+      Generic: 6
+   Enterprise: [example1]
+     Specific: 1
+   Agent addr: [123,12,12,21]
+    TimeStamp: 69649
+[myName,0] = &#34;Martin&#34;    
+[fIndex,2] = 2    
+2&#62;
+      
+</pre></div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

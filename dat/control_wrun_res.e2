@@ -1,0 +1,47 @@
+[Messages]
+Version=1.000
+-55999=%1 %2 %3 %4
+-55998=WinRunner's M_ROOT variable is undefined in %1
+-55997=WinRunner installation not found on this machine. WinRunner's wrun.ini file does not exist '%1'.
+-55996=WinRunner installation not found on this machine. Driver unable to find WinRunner executable '%1'.
+-55995=Unable to find WinRunner interface library %1
+-55994=Unable to load WinRunner interface library %1
+-55993=Failed to create unique name for the temporary file in %1
+-55992=Failed to LaunchOnProcess exe = %1 cmdline = %2 rc = %_3_ld
+-55991=Launcher didn't succeed to load WinRunner during %1 seconds
+-55990=Responsive wait awaken with rc = %1
+-55989=Abnormal termination of WinRunner.
+-55988=Timeout error: WinRunner unable to load test during %1 seconds
+-55987=Failed to open parameter file for writing %1
+-55986=Failed to encode XDR structure %1
+-55985=Could not open RPC communication client to WinRunner
+-55984=Error establishing RPC connection rpc_startup returned FALSE
+-55983=Could not create RPC communication server. rpc_get_last_error_strings = %1
+-55982=WinRunner message: %1
+-55981=No write permissions for directory %1
+-55980=Timeout error: Failed to close WinRunner after trying to close it for '%1' seconds
+-55979=Shutting down existing WinRunner. Will relaunch with user add-ins
+-55978=Unable to read test header file %1 for its ADDONS field
+-55977=Null parameter during winrunner script running
+-55976=Run command called while script is running
+-55975=Can't pass parameter %1 to WinRunner. Parameter is too long
+-55974=Tr_init script failed. Can't continue running
+-55973=Failed to construct %1; reason: %2.
+-55972=Failed to call WIN32 API %1. Internal error = %2.
+-55971=File wrun.ini not found in specified location %1.
+-55970=Failed to copy gui files. See log for more information.
+-55969=Failed to attach to WinRunner; reason: %1.
+-55968=WinRunner doesn't support transaction reports. Versions mismatch. Aborting.
+-55899=Failed to open directory %1. rc = %2.
+-55898=Failed to read directory %1.
+-55897=Failed to copy/move file %1 to %2. rc = %3.
+-55799=LRWR_DBG: %1
+-55798=LRWR_DBG: %1 %2
+-55797=LRWR_DBG: %1 %2 %3
+-55796=LRWR_DBG: Launcher callback called with status %1
+-55795=LRWR_DBG: Winrunner Command: %1 called
+-55794=LRWR_DBG: Winrunner Command: %1 called with parameter %2 = %3
+-55793=LRWR_DBG: Winrunner Callback: %1 called
+-55792=LRWR_DBG: Winrunner Callback: %1 called with parameter %2 = %3
+Msg_handler_lowest_msg=-55999
+Msg_handler_highest_msg=-55792

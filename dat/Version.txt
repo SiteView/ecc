@@ -1,0 +1,3 @@
+Product: SiteScope 7.9.5.0
+Version: 7.9.5.0
+Build:   297

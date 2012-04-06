@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="Memory" type="perf" description="foo">
+<counterInfo name="Available MBytes" />
+<counterInfo name="Pool Nonpaged Bytes" />
+<counterInfo name="Pool Paged Bytes" />
+<counterInfo name="% Committed Bytes In Use" />
+<counterInfo name="Page Faults/sec" />
+</object>
+
+<object name="System" type="perf" >
+<counterInfo name="Context Switches/sec" />
+<counterInfo name="Processor Queue Length" />
+<counterInfo name="System Up Time" />
+<counterInfo name="File Data Operations/sec" />
+<counterInfo name="Processes" />
+<counterInfo name="Threads" />
+</object>
+
+<object name="Processor" type="perf" instances="_Total" >
+<counterInfo name="% DPC Time" />
+<counterInfo name="% Processor Time" />
+</object>
+
+<object name="Process" type="perf" instances="java" >
+<counterInfo name="Handle Count" />
+<counterInfo name="Pool Nonpaged Bytes" />
+<counterInfo name="Pool Paged Bytes" />
+<counterInfo name="Thread Count" />
+</object>
+
+<object name="Process" type="perf" instances="perfex" >
+<counterInfo name="% Processor Time" />
+<counterInfo name="Handle Count" />
+<counterInfo name="Pool Nonpaged Bytes" />
+<counterInfo name="Pool Paged Bytes" />
+<counterInfo name="Thread Count" />
+</object>
+
+<object name="Network Interface" type="perf" instances="*" >
+<counterInfo name="Bytes Received/sec" />
+<counterInfo name="Bytes Sent/sec" />
+<counterInfo name="Bytes Total/sec" />
+<counterInfo name="Current Bandwidth" />
+</object>
+
+<object name="LogicalDisk" type="perf" instances="*" >
+<counterInfo name="% Free Space" />
+<counterInfo name="Free Megabytes" />
+<counterInfo name="Avg. Disk Bytes/Transfer" />
+</object>
+
+<object name="PhysicalDisk" type="perf" instances="*" >
+<counterInfo name="Current Disk Queue Length" />
+<counterInfo name="Disk Transfers/sec" />
+</object>
+
+<object name="Server" type="perf" instances="*" >
+<counterInfo name="Bytes Total/sec" />
+<counterInfo name="Errors Access Permissions" />
+<counterInfo name="Errors Logon" />
+<counterInfo name="Errors System" />
+<counterInfo name="Files Open" />
+<counterInfo name="Server Sessions" />
+</object>
+
+</browse_data>

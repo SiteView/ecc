@@ -1,0 +1,9 @@
+[ResmonExtensionInfo]                        
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=SybaseMon.dll
+Name=Sybase
+PresentationName=Sybase
+Id=5821

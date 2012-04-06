@@ -1,0 +1,30 @@
+
+
+cpu monitor
+{User,Password,'cpu'}
+返回每个核对应的使用率
+
+memory monitor
+{User，Password,‘memory'}
+返回内存总量和Free量
+
+disk monitor
+{User,Password,'disk'}
+返回逻辑分区以及每个逻辑分区的总量和Free量
+
+
+service monitor
+{User，Password，‘service'}
+返回windows服务列表
+{User，Password，ServiceName}
+服务存在返回ok，否则error
+
+{User，Password，‘processes'}
+返回windows进程列表
+{User，Password，ProcessName}
+进程存在返回进程内存使用量，否则返回error
+
+network interface
+{User,Password,'interface'}
+返回各个网络名以及对应的输入输出量
+

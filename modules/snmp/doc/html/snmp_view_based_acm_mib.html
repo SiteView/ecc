@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmp_view_based_acm_mib</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmp_view_based_acm_mib</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmp_view_based_acm_mib
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Instrumentation Functions for SNMP-VIEW-BASED-ACM-MIB
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmp_view_based_acm_mib</span> implements the instrumentation functions for the
+SNMP-VIEW-BASED-ACM-MIB, and functions for configuring the database.
+
+</p>
+<p>The configuration files are described in the SNMP User's Manual.
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="configure-1"><span class="bold_code">configure(ConfDir) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ConfDir = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is called from the supervisor at system
+start-up.
+
+</p>
+<p>Inserts all data in the configuration files into the
+database and destroys all old rows with StorageType
+<span class="code">volatile</span>. The rows created from the configuration file
+will have StorageType <span class="code">nonVolatile</span>.
+
+</p>
+<p>All <span class="code">snmp</span> counters are set to zero.
+
+</p>
+<p>If an error is found in the configuration file, it is
+reported using the function <span class="code">config_err/2</span> of the error
+report module, and the function fails with the reason 
+<span class="code">configuration_error</span>.
+
+</p>
+<p><span class="code">ConfDir</span> is a string which points to the directory
+where the configuration files are found.
+
+</p>
+<p>The configuration file read is: <span class="code">vacm.conf</span>.
+
+</p>
+</div>
+
+<p><a name="reconfigure-1"><span class="bold_code">reconfigure(ConfDir) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ConfDir = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Inserts all data in the configuration files into the
+database and destroys all old data, including the rows with
+StorageType <span class="code">nonVolatile</span>. The rows created from the
+configuration file will have StorageType <span class="code">nonVolatile</span>.
+
+</p>
+<p>Thus, the data in the SNMP-VIEW-BASED-ACM-MIB, after this
+function has been called, is the data from the configuration
+files.
+
+</p>
+<p>All <span class="code">snmp</span> counters are set to zero.
+
+</p>
+<p>If an error is found in the configuration file, it is
+reported using the function <span class="code">config_err/2</span> of the error
+report module, and the function fails with the reason 
+<span class="code">configuration_error</span>.
+
+</p>
+<p><span class="code">ConfDir</span> is a string which points to the directory
+where the configuration files are found.
+
+</p>
+<p>The configuration file read is: <span class="code">vacm.conf</span>.
+<a name="add_sec2group"><!-- Empty --></a>
+
+</p>
+</div>
+
+<p><a name="add_sec2group-3"><span class="bold_code">add_sec2group(SecModel, SecName, GroupName) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">SecModel = v1 | v2c | usm</span><br/>
+<span class="bold_code">SecName = string()</span><br/>
+<span class="bold_code">GroupName = string()</span><br/>
+<span class="bold_code">Ret = {ok, Key} | {error, Reason}</span><br/>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Adds a security to group definition to the agent config. 
+Equivalent to one vacmSecurityToGroup-line in the <span class="code">vacm.conf</span> file.
+</p><a name="delete_sec2group"><!-- Empty --></a>
+</div>
+
+<p><a name="delete_sec2group-1"><span class="bold_code">delete_sec2group(Key) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Ret = ok | {error, Reason}</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Delete a security to group definition from the agent config.
+</p><a name="add_access"><!-- Empty --></a>
+</div>
+
+<p><a name="add_access-8"><span class="bold_code">add_access(GroupName, Prefix, SecModel, SecLevel, Match, RV, WV, NV) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">GroupName = string()</span><br/>
+<span class="bold_code">Prefix = string()</span><br/>
+<span class="bold_code">SecModel = v1 | v2c | usm</span><br/>
+<span class="bold_code">SecLevel = string()</span><br/>
+<span class="bold_code">Match = prefix | exact</span><br/>
+<span class="bold_code">RV = string()</span><br/>
+<span class="bold_code">WV = string()</span><br/>
+<span class="bold_code">NV = string()</span><br/>
+<span class="bold_code">Ret = {ok, Key} | {error, Reason}</span><br/>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Adds a access definition to the agent config. 
+Equivalent to one vacmAccess-line in the <span class="code">vacm.conf</span> file.
+</p><a name="delete_access"><!-- Empty --></a>
+</div>
+
+<p><a name="delete_access-1"><span class="bold_code">delete_access(Key) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Ret = ok | {error, Reason}</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Delete a access definition from the agent config.
+</p><a name="add_view_tree_fam"><!-- Empty --></a>
+</div>
+
+<p><a name="add_view_tree_fam-4"><span class="bold_code">add_view_tree_fam(ViewIndex, SubTree, Status, Mask) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ViewIndex = integer()</span><br/>
+<span class="bold_code">SubTree = oid()</span><br/>
+<span class="bold_code">Status = included | excluded</span><br/>
+<span class="bold_code">Mask = null | [integer()], where all values are either 0 or 1</span><br/>
+<span class="bold_code">Ret = {ok, Key} | {error, Reason}</span><br/>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Adds a view tree family definition to the agent config. 
+Equivalent to one vacmViewTreeFamily-line in the <span class="code">vacm.conf</span> file.
+</p><a name="delete_view_tree_fam"><!-- Empty --></a>
+</div>
+
+<p><a name="delete_view_tree_fam-1"><span class="bold_code">delete_view_tree_fam(Key) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Ret = ok | {error, Reason}</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Delete a view tree family definition from the agent config.
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

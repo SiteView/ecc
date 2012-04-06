@@ -1,0 +1,28 @@
+"//Counters for server-status?auto".
+{counters,'1','Total Accesses',true}.
+{counters,'2','Total kBytes',false}.
+"//(Note: CPULoad available on UNIX platforms ONLY)".
+{counters,'3','CPULoad',false}.
+{counters,'4','Uptime',false}.
+{counters,'5','ReqPerSec',true}.
+{counters,'6','BytesPerSec',true}.
+{counters,'7','BytesPerReq',false}.
+{counters,'8','BusyWorkers',true}.
+{counters,'9','IdleWorkers',true}.
+"//Counters for server-status?refresh=30".
+{counters,'10','Server Version',false}.
+{counters,'11','Server Built',false}.
+{counters,'12','Current Time',false}.
+{counters,'13','Restart Time',false}.
+{counters,'14','Parent Server Generation',false}.
+{counters,'15','Server uptime',false}.
+{counters,'16','Total accesses',false}.
+{counters,'17','Total Traffic',false}.
+"//(Note: CPU Usage and CPU load available on UNIX platforms ONLY)".
+{counters,'18','CPU Usage',false}.
+{counters,'19','CPU load',false}.
+{counters,'20','requests/sec',false}.
+{counters,'21','B/second',false}.
+{counters,'22','B/request',false}.
+{counters,'23','requests currently being processed',false}.
+{counters,'24','idle workers',false}.

@@ -1,0 +1,9 @@
+[ResmonExtensionInfo]                        
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=PatrolMon.dll
+Name=Patrol
+PresentationName=Patrol
+Id=5821

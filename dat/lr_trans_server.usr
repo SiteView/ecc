@@ -1,0 +1,9 @@
+[General]
+Type=lr_trans_server
+ThreadPriorityInit=1
+ThreadPriorityRun=1
+ThreadPriorityExit=1
+lnch_lock_server4parent=
+
+[CustomAction]
+ActionLogicExt=Server

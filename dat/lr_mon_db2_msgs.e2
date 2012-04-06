@@ -1,0 +1,21 @@
+[Messages]
+Version=1.000
+-47175=Internal error.\r\nDetails: %1 (entry point: %2).
+-47174=Failed to initialize monitor.\r\nDetails: %1 (entry point: %2).
+-47173=The browse command failed.\r\n\r\nHint: %1.\r\nDetails: %2 .
+-47172=General error. Exception was raised.\r\nDetails: %1 (entry point %2).
+-47171=The add new measurement command failed.\r\nDetails: %1 (measurement name: %2).
+-47170=The release measurement command failed.\r\nDetails: %1 (measurement name: %2).
+-47169=The get new value command failed.\r\nDetails: %1 (measurement name: %2).
+-47168=The get/set property value command failed.Entry point: %1 (measurement name: %2).
+-47167=The entity is not active.\r\nDetails: %1 (entry point: %2).
+-47166=The attach new instance command failed.DBInstance name: %1, user: %2, password: %3. \r\n\r\nHint: %4 .\r\nDetails: %5
+-47165=Not enough memory to proceed.\r\nDetails: %1 (entry point: %2).
+-47164=The open file command failed.File name: %1 (entry point: %2).
+-47163=The snapshot command failed. \r\n\r\nHint: %1.\r\nDetails: %2
+-47162=The set result command failed.\r\nDetails: %1 (entry point: %2).
+-47161=The measurement is not reported.Measurement name: %1 .\r\n\r\nHint: %2.
+-47160=Unknown measurement type.Measurement name: %1 .\r\nType: %_2_ld.
+-47159=Cannot load DB2 client dll .\r\n\r\nHint: %1
+Msg_handler_lowest_msg=-47175
+Msg_handler_highest_msg=-47159

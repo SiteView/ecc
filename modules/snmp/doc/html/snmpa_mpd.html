@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa_mpd</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa_mpd</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa_mpd
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Message Processing and Dispatch module for the SNMP agent
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmpa_mpd</span> implements the version independent
+Message Processing and Dispatch functionality in SNMP for the agent. 
+It is supposed to be used from a Network Interface process 
+(<a href="snmp_agent_netif.html">Definition of Agent Net if</a>).
+
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="init-1"><span class="bold_code">init(Vsns) -&#62; mpd_state()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Vsns = [Vsn]</span><br/>
+<span class="bold_code">Vsn = v1 | v2 | v3</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function can be called from the net_if process at start-up.
+The options list defines which versions to use.
+
+</p>
+<p>It also initializes some SNMP counters.
+
+</p>
+</div>
+
+<p><a name="process_packet-4"><span class="bold_code">process_packet(Packet, TDomain, TAddress, State) -&#62; {ok, Vsn, Pdu, PduMS, ACMData} | {discarded, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Packet = binary()</span><br/>
+<span class="bold_code">TDomain = snmpUDPDomain</span><br/>
+<span class="bold_code">TAddress = {Ip, Udp}</span><br/>
+<span class="bold_code">Ip = {integer(), integer(), integer(), integer()}</span><br/>
+<span class="bold_code">Udp = integer()</span><br/>
+<span class="bold_code">State = mpd_state()</span><br/>
+<span class="bold_code">Vsn = 'version-1' | 'version-2' | 'version-3'</span><br/>
+<span class="bold_code">Pdu = #pdu</span><br/>
+<span class="bold_code">PduMs = integer()</span><br/>
+<span class="bold_code">ACMData = acm_data()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Processes an incoming packet. Performs authentication and 
+decryption as necessary. The return values should be passed the
+agent.
+</p>
+</div>
+
+<p><a name="generate_response_msg-4"><span class="bold_code">generate_response_msg(Vsn, RePdu, Type, ACMData) -&#62; {ok, Packet} | {discarded, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Vsn = 'version-1' | 'version-2' | 'version-3'</span><br/>
+<span class="bold_code">RePdu = #pdu</span><br/>
+<span class="bold_code">Type = atom()</span><br/>
+<span class="bold_code">ACMData = acm_data()</span><br/>
+<span class="bold_code">Packet = binary()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Generates a possibly encrypted response packet to be sent to the
+network. <span class="code">Type</span> is the <span class="code">#pdu.type</span> of the original
+request.
+</p>
+</div>
+
+<p><a name="generate_msg-4"><span class="bold_code">generate_msg(Vsn, Pdu, MsgData, To) -&#62; {ok, PacketsAndAddresses} | {discarded, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Vsn = 'version-1' | 'version-2' | 'version-3'</span><br/>
+<span class="bold_code">Pdu = #pdu</span><br/>
+<span class="bold_code">MsgData = msg_data()</span><br/>
+<span class="bold_code">To = [dest_addrs()]</span><br/>
+<span class="bold_code">PacketsAndAddresses = [{TDomain, TAddress, Packet}]</span><br/>
+<span class="bold_code">TDomain = snmpUDPDomain</span><br/>
+<span class="bold_code">TAddress = {Ip, Udp}</span><br/>
+<span class="bold_code">Ip = {integer(), integer(), integer(), integer()}</span><br/>
+<span class="bold_code">Udp = integer()</span><br/>
+<span class="bold_code">Packet = binary()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Generates a possibly encrypted request packet to be sent to the
+network.
+
+</p>
+<p><span class="code">MsgData</span> is the message specific data used in
+the SNMP message. This value is received in a <span class="code">send_pdu</span>
+or <span class="code">send_pdu_req</span> message from the agent. In SNMPv1 and
+SNMPv2c, this message data is the community string. In
+SNMPv3, it is the context information.
+<span class="code">To</span> is a list of the destination addresses and
+their corresponding security parameters. This value is
+also received from the requests mentioned above.
+
+</p>
+</div>
+
+<p><a name="discarded_pdu-1"><span class="bold_code">discarded_pdu(Variable) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Variable = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Increments the variable associated with a discarded pdu.
+This function can be used when the net_if process receives a
+<span class="code">discarded_pdu</span> message from the agent.
+
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

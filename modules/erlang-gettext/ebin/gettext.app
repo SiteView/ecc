@@ -1,0 +1,11 @@
+{application,gettext,
+ [{description,"gettext handling"},
+  {vsn,"1.3"},
+  {modules,[gettext_app,gettext_sup,gettext_server]},
+  {registered,[gettext]},
+  {env, [{'GETTEXT_DIR',"./modules/erlang-gettext"}]},
+  {mod, {gettext_app, []}},
+  {applications,[kernel,stdlib]},
+  {dependencies,
+   [{kernel, "2.9.6"},
+    {stdlib, "1.12.7"}]}]}.

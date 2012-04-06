@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Audit Trail Log</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="14"><!-- Empty --></a>
+<h2>14 Audit Trail Log</h2>
+
+<p>The chapter <strong>Audit Trail Log</strong> describes the audit trail logging.
+
+</p>
+<p>Both the agent and the manager can be configured to log 
+incoming and outgoing messages. It uses the Erlang standard log
+mechanism <span class="code">disk_log</span> for logging. The size and location of
+the log files are configurable. A wrap log is used, which means
+that when the log has grown to a maximum size, it starts from the
+beginning of the log, overwriting existing log records.
+
+</p>
+<p>The log can be either a <span class="code">read</span>, <span class="code">write</span> or a 
+<span class="code">read_write</span>. 
+
+</p><a name="14.1"><!-- Empty --></a>
+<h3>14.1 Agent Logging</h3>
+
+<p>For the agent, a <span class="code">write</span>, means that all <span class="code">set</span>
+requests and their responses are stored. No <span class="code">get</span> requests
+or traps are stored in a <span class="code">write</span>. A <span class="code">read_write</span>, 
+all requests, responses and traps are stored.
+
+</p>
+<p>The log uses a raw data format (basically the BER encoded
+message), in order to minimize the CPU load needed for the log
+mechanism. This means that the log is not human readable, but
+needs to be formatted off-line before it can be read. Use the
+function 
+<a href="snmpa.html#log_to_txt">snmpa:log_to_txt</a>
+for this purpose.
+
+</p><a name="14.2"><!-- Empty --></a>
+<h3>14.2 Manager Logging</h3>
+
+<p>For the manager, a <span class="code">write</span>, means that all 
+requests (<span class="code">set</span> and <span class="code">get</span>) and their responses are stored. 
+No traps are stored in a <span class="code">write</span>. A <span class="code">read_write</span>, 
+all requests, responses and traps are stored.
+
+</p>
+<p>The log uses a raw data format (basically the BER encoded
+message), in order to minimize the CPU load needed for the log
+mechanism. This means that the log is not human readable, but
+needs to be formatted off-line before it can be read. Use the
+function 
+<a href="snmpm.html#log_to_txt">snmpm:log_to_txt</a>
+for this purpose.
+
+</p><center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

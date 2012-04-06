@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpm_user</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpm_user</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpm_user
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Behaviour module for the SNMP manager user.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>This module defines the behaviour of the manager user. 
+A <span class="code">snmpm_user</span> compliant module 
+must export the following functions: 
+</p>
+<ul>
+
+<li>
+
+handle_error/3<br />
+
+
+</li>
+
+
+<li>
+
+handle_agent/4<br />
+
+
+</li>
+
+
+<li>
+
+handle_pdu/5<br />
+
+
+</li>
+
+
+<li>
+
+handle_trap/4<br />
+
+
+</li>
+
+
+<li>
+
+handle_inform/4<br />
+
+
+</li>
+
+
+<li>
+
+handle_report/4<br />
+
+
+</li>
+
+
+</ul>
+
+<p>The semantics of them and their exact signatures are explained
+below. 
+</p><a name="handle_error"><!-- Empty --></a>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="handle_error-3"><span class="bold_code">handle_error(ReqId, Reason, UserData) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ReqId = integer()</span><br/>
+<span class="bold_code">Reason = {unexpected_pdu, SnmpInfo} | {invalid_sec_info, SecInfo, SnmpInfo} | {empty_message, Addr, Port} | term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">UserData = term()</span><br/>
+<span class="bold_code">Reply = ignore</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is called when the manager needs to
+communicate an &#34;asynchronous&#34; error, to the user:
+e.g. failure to send an asynchronous message (i.e. encoding
+error), a received message was discarded due to security
+error, the manager failed to generate a response message to
+a received inform-request, or when receiving an unexpected
+PDU from an agent (could be an expired async request). 
+</p>
+<p>If <span class="code">ReqId</span> is less then 0, it means that this
+information was not available to the manager (that info was
+never retrieved before the message was discarded). 
+
+</p>
+<p>For <span class="code">SnmpInfo</span> see handle_agent below.
+</p><a name="handle_agent"><!-- Empty --></a>
+</div>
+
+<p><a name="handle_agent-4"><span class="bold_code">handle_agent(Addr, Port, SnmpInfo, UserData) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">SnmpInfo = {ErrorStatus, ErrorIndex, Varbinds}</span><br/>
+<span class="bold_code">ErrorStatus = atom()</span><br/>
+<span class="bold_code">ErrorIndex = integer()</span><br/>
+<span class="bold_code">Varbinds = [varbind()]</span><br/>
+<span class="bold_code">varbind() = #varbind</span><br/>
+<span class="bold_code">UserData = term()</span><br/>
+<span class="bold_code">Reply = ignore | {register, UserId, agent_info()}</span><br/>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">agent_info() = [{agent_info_item(), agent_info_value()}]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is called when a message is received from an 
+unknown agent.
+</p>
+<p>Note that this will always be the default user that is called.
+</p>
+<p>For more info about the <span class="code">agent_info()</span>, see 
+<a href="snmpm.html#register_agent">register_agent</a>.
+</p>
+<p>The only user which would return 
+<span class="code">{register, UserId, agent_info()}</span> is the 
+<strong>default user</strong>.
+</p><a name="handle_pdu"><!-- Empty --></a>
+</div>
+
+<p><a name="handle_pdu-5"><span class="bold_code">handle_pdu(Addr, Port, ReqId, SnmpResponse, UserData) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">ReqId = term()</span><br/>
+<span class="bold_code">SnmpResponse = {ErrorStatus, ErrorIndex, Varbinds}</span><br/>
+<span class="bold_code">ErrorStatus = atom()</span><br/>
+<span class="bold_code">ErrorIndex = integer()</span><br/>
+<span class="bold_code">Varbinds = [varbind()]</span><br/>
+<span class="bold_code">varbind() = #varbind</span><br/>
+<span class="bold_code">UserData = term()</span><br/>
+<span class="bold_code">Reply = ignore</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Handle the reply to an asynchroneous request, such as 
+<a href="snmpm.html#ag">ag</a>, 
+<a href="snmpm.html#agn">agn</a> or 
+<a href="snmpm.html#as">as</a>.
+</p>
+<p>It could also be a late reply to a synchronous request.
+</p>
+<p><span class="code">ReqId</span> is returned by the asynchroneous request function.
+</p><a name="handle_trap"><!-- Empty --></a>
+</div>
+
+<p><a name="handle_trap-4"><span class="bold_code">handle_trap(Addr, Port, SnmpTrapInfo, UserData) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">SnmpTrapInfo = {Enteprise, Generic, Spec, Timestamp, Varbinds} | {ErrorStatus, ErrorIndex, Varbinds}</span><br/>
+<span class="bold_code">Enterprise = oid()</span><br/>
+<span class="bold_code">Generic = integer()</span><br/>
+<span class="bold_code">Spec = integer()</span><br/>
+<span class="bold_code">Timestamp = integer()</span><br/>
+<span class="bold_code">ErrorStatus = atom()</span><br/>
+<span class="bold_code">ErrorIndex = integer()</span><br/>
+<span class="bold_code">Varbinds = [varbind()]</span><br/>
+<span class="bold_code">varbind() = #varbind</span><br/>
+<span class="bold_code">UserData = term()</span><br/>
+<span class="bold_code">Reply = ignore | unregister | {register, UserId, agent_info()}</span><br/>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">agent_info() = [{agent_info_item(), agent_info_value()}]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Handle a trap/notification message from an agent.
+</p>
+<p>For more info about the <span class="code">agent_info()</span>, see 
+<a href="snmpm.html#register_agent">register_agent</a>
+</p>
+<p>The only user which would return 
+<span class="code">{register, UserId, agent_info()}</span> is the 
+<strong>default user</strong>.
+</p><a name="handle_inform"><!-- Empty --></a>
+</div>
+
+<p><a name="handle_inform-4"><span class="bold_code">handle_inform(Addr, Port, SnmpInfo, UserData) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">SnmpInfo = {ErrorStatus, ErrorIndex, Varbinds}</span><br/>
+<span class="bold_code">ErrorStatus = atom()</span><br/>
+<span class="bold_code">ErrorIndex = integer()</span><br/>
+<span class="bold_code">Varbinds = [varbind()]</span><br/>
+<span class="bold_code">varbind() = #varbind</span><br/>
+<span class="bold_code">UserData = term()</span><br/>
+<span class="bold_code">Reply = ignore | unregister | {register, UserId, agent_info()}</span><br/>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">agent_info() = [{agent_info_item(), agent_info_value()}]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Handle a inform message.
+</p>
+<p>For more info about the <span class="code">agent_info()</span>, see 
+<a href="snmpm.html#register_agent">register_agent</a>
+</p>
+<p>The only user which would return 
+<span class="code">{register, UserId, agent_info()}</span> is the 
+<strong>default user</strong>.
+</p>
+<p>If the 
+<a href="snmp_app.html">inform request behaviour</a>
+configuration option is set to <span class="code">user</span> or 
+<span class="code">{user, integer()}</span>, the response (acknowledgment) to this 
+inform-request will be sent when this function returnes.
+</p><a name="handle_report"><!-- Empty --></a>
+</div>
+
+<p><a name="handle_report-4"><span class="bold_code">handle_report(Addr, Port, SnmpInfo, UserData) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">SnmpInfo = {ErrorStatus, ErrorIndex, Varbinds}</span><br/>
+<span class="bold_code">ErrorStatus = atom()</span><br/>
+<span class="bold_code">ErrorIndex = integer()</span><br/>
+<span class="bold_code">Varbinds = [varbind()]</span><br/>
+<span class="bold_code">varbind() = #varbind</span><br/>
+<span class="bold_code">UserData = term()</span><br/>
+<span class="bold_code">Reply = ignore | unregister | {register, UserId, agent_info()}</span><br/>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">agent_info() = [{agent_info_item(), agent_info_value()}]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Handle a report message.
+</p>
+<p>For more info about the <span class="code">agent_info()</span>, see 
+<a href="snmpm.html#register_agent">register_agent</a>
+</p>
+<p>The only user which would return 
+<span class="code">{register, UserId, agent_info()}</span> is the 
+<strong>default user</strong>.
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

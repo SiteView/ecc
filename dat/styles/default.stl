@@ -1,0 +1,40 @@
+; -----------------------------------------------------------------------
+; Mercury Script Styles
+; -----------------------------------------------------------------------
+
+; -----------------------------------------------------------------------
+; [STYLENAME:LANG]
+; @Protocol=<ProtoName>                    -> Optional (Specify function list proto)
+; @FunctionList=<func1>, <func2>, ..., <funcN>
+; @WordWrap=[ON/OFF]                       -> Word wrap argument list and values
+; @WrapInArguments=[ON/OFF]                -> Use lrc_ auto-param wrappers?
+; @WrapOutArguments=[ON/OFF]               -> Use lrc_save auto-param wrappers?
+; ; Style Format for function/method and it's arguments
+; Function=<PREPEND>&<APPEND>              -> Apply style on Function
+; Argument=<PREPEND>&<APPEND>              -> Apply style on current argument
+; NextArguments=<PREPEND>&<APPEND>         -> Apply style on current and
+;                                             subsequent arguments
+; SoftDelimiter=<TYPE>(<VALUE1>|<VALUE2>|...)=<PREPEND>&<PRINT>&<APPEND>
+;                                          -> Optional delimiter
+; HardDelimiter=<TYPE>(<VALUE1>|<VALUE2>|...)=<PREPEND>&<PRINT>&<APPEND>
+;                                          -> Hard delimiter
+; @EndOfFunction=[BLANKLINE|NOBLANKLINE]   -> Insert blank line (default) or NOT
+;
+;
+;
+; <PREPEND> & [<PRINT> &] <APPEND> - Prepend or Append STYLE (default= None)
+;    * NEWLINE
+;    * INDENT
+; <PRINT> - Represent value as literal specified by <PRINT>
+;           
+; Multiple options may be delimited by comma.
+;
+;
+; <TYPE> - Data Types
+;    * SZ   - String
+;    * BSTR - BSTR
+;    * LONG - Long
+;
+; <VALUE#> - Value of Delimiter to match
+;
+

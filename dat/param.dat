@@ -1,0 +1,225 @@
+[ParameterTypes]
+Spreadsheet=SpreadsheetSection
+Table=TableSection
+TTable=TTableSection
+Time=DateSection
+Random=RandomSection
+Variable=VariableSection
+Userid=VuIdSection
+Host=HostSection
+Group=GroupSection
+;usr=UsrSection
+Unique=UniqueNumSection
+CurrentIteration=IterationNumSection
+UserDefinedFunction=UserDefinedFunctionSection
+;Custom=CustomSection
+
+[SpreadsheetSection]
+WINNT_PARAM_LIB=paramss.dll
+NewParam=NewParamSS
+DeleteParam=DeleteParamSS
+GetAttribKeyList=GetSSAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+PTInit=ParamPTInit
+PTTerminate=ParamPTTerminate
+TypeName=Spreadsheet
+TypeNamej=Spreadsheet (j)
+ParamSupportedPlatforms=Nt
+
+[TableSection]
+WINNT_PARAM_LIB=paramtbl.dll
+LINUX_PARAM_LIB=libparamtable.so
+SOLARIS_PARAM_LIB=libparamtable.so
+HPUX_PARAM_LIB=libparamtable.sl
+AIX_PARAM_LIB=libparamtable.so
+NewParam=NewParamTable
+DeleteParam=DeleteParamTable
+GetAttribKeyList=GetTableAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=FileTab
+TypeName=File
+TypeNamej=File (j)
+
+[TTableSection]
+WINNT_PARAM_LIB=paramtbl.dll
+LINUX_PARAM_LIB=libparamtable.so
+SOLARIS_PARAM_LIB=libparamtable.so
+HPUX_PARAM_LIB=libparamtable.sl
+AIX_PARAM_LIB=libparamtable.so
+NewParam=NewParamTable
+DeleteParam=DeleteParamTable
+GetAttribKeyList=GetTTableAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=TableTab
+TypeName=Table
+TypeNamej=Table (j)
+
+[DateSection]
+WINNT_PARAM_LIB=paramdte.dll
+LINUX_PARAM_LIB=libparamdate.so
+SOLARIS_PARAM_LIB=libparamdate.so
+HPUX_PARAM_LIB=libparamdate.sl
+AIX_PARAM_LIB=libparamdate.so
+NewParam=NewParamDate
+DeleteParam=DeleteParamDate
+GetAttribKeyList=GetDateAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=TimeTab
+TypeName=Date/Time
+TypeNamej=Date/Time (j)
+
+[RandomSection]
+WINNT_PARAM_LIB=paramrnd.dll
+LINUX_PARAM_LIB=libparamrandom.so
+SOLARIS_PARAM_LIB=libparamrandom.so
+HPUX_PARAM_LIB=libparamrandom.sl
+AIX_PARAM_LIB=libparamrandom.so
+NewParam=NewParamRand
+DeleteParam=DeleteParamRand
+GetAttribKeyList=GetRandAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=RandomTab
+TypeName=Random Number
+TypeNamej=Random Number (j)
+
+
+[VariableSection]
+WINNT_PARAM_LIB=paramvar.dll
+LINUX_PARAM_LIB=libparamvar.so
+SOLARIS_PARAM_LIB=libparamvar.so
+HPUX_PARAM_LIB=libparamvar.sl
+AIX_PARAM_LIB=libparamvar.so
+NewParam=NewParamVar
+DeleteParam=DeleteParamVar
+GetAttribKeyList=GetVarAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=
+TypeName=
+TypeNamej=
+
+
+[VuIdSection]
+WINNT_PARAM_LIB=paramlr.dll
+LINUX_PARAM_LIB=libparamlr.so
+SOLARIS_PARAM_LIB=libparamlr.so
+HPUX_PARAM_LIB=libparamlr.sl
+AIX_PARAM_LIB=libparamlr.so
+NewParam=NewParamLRConst
+DeleteParam=DeleteParamLRConst
+GetAttribKeyList=GetLRConstAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=VuserIDTab
+TypeName=Vuser ID
+TypeNamej=Vuser ID (j)
+
+[HostSection]
+WINNT_PARAM_LIB=paramlr.dll
+LINUX_PARAM_LIB=libparamlr.so
+SOLARIS_PARAM_LIB=libparamlr.so
+HPUX_PARAM_LIB=libparamlr.sl
+AIX_PARAM_LIB=libparamlr.so
+NewParam=NewParamLRConst
+DeleteParam=DeleteParamLRConst
+GetAttribKeyList=GetLRConstAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=HostTab
+TypeName=Load Generator Name
+TypeNamej=Host Name (j)
+
+[GroupSection]
+WINNT_PARAM_LIB=paramlr.dll
+LINUX_PARAM_LIB=libparamlr.so
+SOLARIS_PARAM_LIB=libparamlr.so
+HPUX_PARAM_LIB=libparamlr.sl
+AIX_PARAM_LIB=libparamlr.so
+NewParam=NewParamLRConst
+DeleteParam=DeleteParamLRConst
+GetAttribKeyList=GetLRConstAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=GroupNameTab
+TypeName=Group Name
+TypeNamej=Group Name (j)
+
+[UsrSection]
+WINNT_PARAM_LIB=paramlr.dll
+LINUX_PARAM_LIB=libparamlr.so
+SOLARIS_PARAM_LIB=libparamlr.so
+HPUX_PARAM_LIB=libparamlr.sl
+AIX_PARAM_LIB=libparamlr.so
+NewParam=NewParamLRConst
+DeleteParam=DeleteParamLRConst
+GetAttribKeyList=GetLRConstAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=GroupNameTab
+TypeName=USR file path
+TypeNamej=USR file path (j)
+
+[UniqueNumSection]
+WINNT_PARAM_LIB=paramunq.dll
+LINUX_PARAM_LIB=libparamunq.so
+SOLARIS_PARAM_LIB=libparamunq.so
+HPUX_PARAM_LIB=libparamunq.sl
+AIX_PARAM_LIB=libparamunq.so
+NewParam=NewParamUniqueNum
+DeleteParam=DeleteParamUniqueNum
+GetAttribKeyList=GetUniqueNumAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=UniqueTab
+TypeName=Unique Number
+TypeNamej=Unique Number (j)
+
+[IterationNumSection]
+WINNT_PARAM_LIB=paramlr.dll
+LINUX_PARAM_LIB=libparamlr.so
+SOLARIS_PARAM_LIB=libparamlr.so
+HPUX_PARAM_LIB=libparamlr.sl
+AIX_PARAM_LIB=libparamlr.so
+NewParam=NewParamLRConst
+DeleteParam=DeleteParamLRConst
+GetAttribKeyList=GetLRConstAttribKeyList
+PPInit=ParamPPInit
+PPTerminate=ParamPPTerminate
+DisplayUI=IterationTab
+TypeName=Iteration Number
+TypeNamej=Iteration Number (j)
+
+[UserDefinedFunctionSection]
+WINNT_PARAM_LIB=paramfnc.dll
+LINUX_PARAM_LIB=libparamfnc.so
+SOLARIS_PARAM_LIB=libparamfnc.so
+HPUX_PARAM_LIB=libparamfnc.sl
+AIX_PARAM_LIB=libparamfnc.so
+NewParam=NewUserDefinedFunction
+DeleteParam=DeleteUserDefinedFunction
+GetAttribKeyList=GetUserDefinedFunctionAttribKeyList
+PPInit=UserDefinedFunctionPPInit
+PPTerminate=UserDefinedFunctionPPTerminate
+DisplayUI=UserDefinedFunctionTab
+TypeName=User Defined Function
+TypeNamej=User Defined Function (j)
+
+[CustomSection]
+WINNT_PARAM_LIB=paramcst.dll
+LINUX_PARAM_LIB=libparamcst.so
+SOLARIS_PARAM_LIB=libparamcst.so
+HPUX_PARAM_LIB=libparamcst.sl
+AIX_PARAM_LIB=libparamcst.so
+NewParam=NewCustomization
+DeleteParam=DeleteCustomization
+GetAttribKeyList=GetCustomizationAttribKeyList
+PPInit=CustomizationPPInit
+PPTerminate=CustomizationPPTerminate
+DisplayUI=CustomTab
+TypeName=Custom
+TypeNamej=Custom (j)

@@ -1,0 +1,13 @@
+[ResmonExtensionInfo]                        
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=vmon.dll
+Name=Oracle
+PresentationName=Oracle
+Id=5674
+
+[UI_Section]
+
+

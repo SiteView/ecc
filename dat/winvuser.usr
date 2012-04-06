@@ -1,0 +1,9 @@
+[General]
+Type=WinrunnerTransactionClient
+DefaultCfg=winvuser.cfg
+communication_to_ts=wrun_sm_tr_server_name
+trans_server_online=1
+trans_log=1
+
+[CustomAction]
+ActionLogicExt=Shell

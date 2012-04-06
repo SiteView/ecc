@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="NTDS" type="perf" >
+<counterInfo name="KDC AS Requests" />
+<counterInfo name="KDC TGS Requests" />
+<counterInfo name="NTLM Authentications" />
+<counterInfo name="Kerberos Authentications" />
+</object>
+
+</browse_data>

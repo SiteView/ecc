@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <requires>
+      <import plugin="org.erlide.core" version="0.13.3"/>
+   </requires>
+   <extension
+         point="org.erlide.core.codepath">
+      	<beam_dir context="any" path="/core/ebin"> </beam_dir>
+      	<beam_dir context="any" path="/iconv"> </beam_dir>
+      	<beam_dir context="any" path="/contentstore/ebin"> </beam_dir>      
+		<beam_dir context="any" path="/modules/erlsoap/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/erlsom-1.2.1/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/iconv"> </beam_dir>
+		<beam_dir context="any" path="/web/mochiweb"> </beam_dir>
+		<beam_dir context="any" path="/web/ebin"> </beam_dir>
+		<beam_dir context="any" path="/plugin/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/df_snmp/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/nmap_scan/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/df_snmp/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/snmp/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/esdl-1.0.1/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/erlcmdb/ebin"> </beam_dir>
+		<beam_dir context="any" path="/modules/ssh/ebin"> </beam_dir>
+		<beam_dir context="any" path="/core/utils/GsmOperateUtils"> </beam_dir>
+		<beam_dir context="any" path="/modules/nnm/ebin"> </beam_dir>
+		<beam_dir context="any" path="/sec/ebin"> </beam_dir>
+		<init function="start" module="ecc"> </init>
+   </extension>
+</plugin>

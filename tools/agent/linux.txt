@@ -1,0 +1,14 @@
+Linux环境统计
+系统	IP地址	登录信息	备注
+Redhat 4 192.168.0.43	用户名：root  密码：rootroot	0.52上的虚拟机
+RedHat5	192.168.0.44	用户名：root 密码：rootroot	0.51上的虚拟机
+CentOS	192.168.0.160	用户名：root 密码：testwork	0.150上的虚拟机
+Solaris10	192.168.0.162	用户名：root 密码：root	0.57上的虚拟机
+SCO Openserver5	192.168.0.22	用户名：root 密码：rootroot	0.54上的虚拟机
+FreeBSD	192.168.0.41	用户名：root 密码：rootroot	0.52上的虚拟机
+Ubuntu8.04	192.168.0.47	用户名：root 密码：rootroot	0.51上的虚拟机
+Ubuntu9.04	192.168.0.17	用户名：root 密码：rootroot	0.52上的虚拟机
+Ubuntu10	192.168.0.48	用户名：root 密码：rootroot	0.51上的虚拟机
+SUSE Linux11.0	192.168.0.46	用户名：root 密码：rootroot	0.51上的虚拟机
+SUSE Linux10.0	192.168.0.23	用户名：root 密码：rootroot	0.52上的虚拟机
+

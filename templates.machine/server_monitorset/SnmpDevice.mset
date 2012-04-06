@@ -1,0 +1,80 @@
+{monitor_set,
+"Windows Server Monitor Set",
+"Add Snmp monitor for a Windows Server",
+[
+	{"%server%","Server to monitor","servername"}
+],
+[
+
+    [
+		{class,browsa_cpu_utilization},
+		{frequency,600},
+		{name,[]},
+        {disabled,false},
+        {verfiy_error,false},
+        {error_frequency,0},
+        {depends_on,"none"},
+        {depends_condition,"good"},
+        {schedule,"all"},
+        {activate_baseline,false},
+		{machine,"%server%"},
+        {sv_extrafunc, true},
+		{browse,"@@dynamic_Counters"},
+        {desc, "monitor cpu's utilization"},
+        {error_classifier,[{"utilization",'>=',98}]},
+        {warning_classifier,[{"utilization",'>=',70}]},
+        {good_classifier,[{"utilization",'>=',0}]},
+        {'_proxy', "%proxy%"},
+        {'selected', true}
+	],
+	[
+		{class,memory_monitor},
+		{frequency,600},
+		{name,"memory:%server%"},
+		{machine,"%server%"},
+        {desc, "monitor memory' use"},
+        {error_classifier,[{pPercentFull,'>=',95},'or']},
+        {warning_classifier,[{pPercentFull,'>=',90},'or']},
+        {good_classifier,[{pPercentFull,'>=',0},'or']},
+        {'_proxy', "%proxy%"},
+        {'selected', true}
+	],
+		[
+		{class,diskspace_monitor},
+		{frequency,600},
+		{name,[]},
+        {disabled,false},
+        {verfiy_error,false},
+        {error_frequency,0},
+        {depends_on,"none"},
+        {depends_condition,"good"},
+        {schedule,"all"},
+        {activate_baseline,false},
+		{machine,"%server%"},
+		{disk,"@@dynamic_Value"},
+        {sv_extrafunc, true},
+        {desc, "monitor each of disk's capability"},
+        {error_classifier,[{percentFull,'>',98}]},
+        {warning_classifier,[{percentFull,'>=',90}]},
+        {good_classifier,[{percentFull,'>=',0}]},
+        {'_proxy', "%proxy%"},
+        {'selected', true}
+	],
+	
+     [
+		{class,interface_monitor},
+		{name,[]},
+		{server,"%server%"},
+		{snmpversion,"%snmp_version%"},
+		{community,"%snmp_community%"},
+        {sv_extrafunc, true},
+		{browse,"@@dynamic_Counters"},
+        {desc, "Interface Monitor"},
+        {error_classifier,[{countersInError,'>',0},'or']},
+        {warning_classifier,[{countersInError,'>',0},'or']},
+        {good_classifier,[{countersInError,'==',0},'or']},
+        {'_proxy', "%proxy%"},
+        {'selected', false}
+	]
+]
+}.

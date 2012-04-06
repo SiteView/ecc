@@ -1,0 +1,6 @@
+-define(DEFAULT_SERVER_TAGS,["·þÎñÆ÷:","Server:", "Servidor:", "Serveur:", "Serveur\377:"]).
+-define(DEFAULT_NAME_TAGS,["Ãû³Æ:","Name:", "Nombre:", "Navn:", "Nome:", "Nom :", "Nom\377:"]).
+-define(ERR_PARAM_API_UNABLE_TO_RETRIEVE_DISKS,10106).
+-define(KURLContentMatchError,-999).
+-define(GET_PRIVATE,"$private-").
+-define(GET_PROPERTY,"$value-").

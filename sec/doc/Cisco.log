@@ -1,0 +1,78 @@
+Apr 21 15:06:53 192.168.0.251 291752: Mar 21 10:47:43.059 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:07:06 192.168.0.251 291753: Mar 21 10:47:54.823 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:10:41 192.168.0.251 291754: Mar 21 10:51:07.131 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:11:16 192.168.0.251 291755: Mar 21 10:51:38.559 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:12:15 192.168.0.251 291756: Mar 21 10:52:31.867 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:12:26 192.168.0.251 291757: Mar 21 10:52:41.723 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:12:52 192.168.0.251 291758: Mar 21 10:53:04.743 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:13:12 192.168.0.251 291759: Mar 21 10:53:22.475 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:13:23 192.168.0.251 291760: Mar 21 10:53:32.911 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:13:25 192.168.0.251 291761: Mar 21 10:53:34.443 UTC: %SYS-5-CONFIG_I: Configured from console by vty1 (192.168.0.82)
+Apr 21 15:13:47 192.168.0.251 291762: 15:38:56: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.144 Vlan3
+Apr 21 15:13:47 192.168.0.251 291763: 15:38:56: IP ARP: rcvd req src 192.168.0.174 3a3c.2021.26ef, dst 192.168.0.47 Vlan3
+Apr 21 15:13:47 192.168.0.251 291764: 15:38:56: IP ARP: rcvd req src 192.168.0.254 00e0.fc36.7165, dst 192.168.0.47 Vlan3
+Apr 21 15:13:47 192.168.0.251 291765: 15:38:56: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.145 Vlan3
+Apr 21 15:13:47 192.168.0.251 291766: 15:38:56: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.146 Vlan3
+Apr 21 15:13:47 192.168.0.251 291767: 15:38:56: IP ARP: rcvd req src 192.168.0.15 001d.0999.1e94, dst 192.168.0.43 Vlan3
+Apr 21 15:13:47 192.168.0.251 291768: 15:38:57: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.147 Vlan3
+Apr 21 15:13:47 192.168.0.251 291769: 15:38:57: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.148 Vlan3
+Apr 21 15:13:48 192.168.0.251 291770: 15:38:57: IP ARP: rcvd req src 192.168.0.254 00e0.fc36.7165, dst 192.168.0.47 Vlan3
+Apr 21 15:13:48 192.168.0.251 291771: 15:38:57: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.149 Vlan3
+Apr 21 15:13:48 192.168.0.251 291772: 15:38:57: IP ARP: rcvd req src 192.168.0.175 001c.cbac.4322, dst 192.168.0.39 Vlan3
+Apr 21 15:13:48 192.168.0.251 291773: 15:38:57: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.150 Vlan3
+Apr 21 15:13:48 192.168.0.251 291774: 15:38:57: IP ARP: rcvd req src 192.168.0.97 0013.20d8.6968, dst 192.168.0.22 Vlan3
+Apr 21 15:13:48 192.168.0.251 291775: 15:38:57: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.151 Vlan3
+Apr 21 15:13:48 192.168.0.251 291776: 15:38:58: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.152 Vlan3
+Apr 21 15:13:48 192.168.0.251 291777: 15:38:58: IP ARP: rcvd req src 192.168.0.185 001d.099a.465a, dst 192.168.0.83 Vlan3
+Apr 21 15:13:50 192.168.0.251 291778: 15:38:58: IP ARP: rcvd req src 192.168.0.15 001d.0999.1e94, dst 192.168.0.50 Vlan3
+Apr 21 15:13:50 192.168.0.251 291779: 15:38:58: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.153 Vlan3
+Apr 21 15:13:50 192.168.0.251 291780: 15:38:58: IP ARP: rcvd req src 192.168.0.185 001d.099a.465a, dst 192.168.0.83 Vlan3
+Apr 21 15:13:50 192.168.0.251 291781: 15:38:58: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.154 Vlan3
+Apr 21 15:13:50 192.168.0.251 291782: 15:38:58: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.155 Vlan3
+Apr 21 15:13:50 192.168.0.251 291783: 15:38:59: IP ARP: rcvd req src 192.168.0.254 00e0.fc36.7165, dst 192.168.0.47 Vlan3
+Apr 21 15:13:50 192.168.0.251 291784: 15:38:59: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.156 Vlan3
+Apr 21 15:13:51 192.168.0.251 291785: 15:38:59: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.157 Vlan3
+Apr 21 15:13:51 192.168.0.251 291786: 15:38:59: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.158 Vlan3
+Apr 21 15:13:51 192.168.0.251 291787: 15:38:59: IP ARP: rcvd req src 192.168.0.254 00e0.fc36.7165, dst 192.168.0.47 Vlan3
+Apr 21 15:13:51 192.168.0.251 291788: 15:38:59: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.159 Vlan3
+Apr 21 15:13:51 192.168.0.251 291789: 15:39:00: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.160 Vlan3
+Apr 21 15:13:51 192.168.0.251 291790: 15:39:00: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.161 Vlan3
+Apr 21 15:13:52 192.168.0.251 291791: 15:39:00: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.162 Vlan3
+Apr 21 15:13:52 192.168.0.251 291792: 15:39:00: IP ARP: rcvd req src 192.168.0.185 001d.099a.465a, dst 192.168.0.83 Vlan3
+Apr 21 15:13:52 192.168.0.251 291793: 15:39:00: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.163 Vlan3
+Apr 21 15:13:52 192.168.0.251 291794: 15:39:00: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.164 Vlan3
+Apr 21 15:13:52 192.168.0.251 291795: 15:39:01: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.165 Vlan3
+Apr 21 15:13:52 192.168.0.251 291796: 15:39:01: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.166 Vlan3
+Apr 21 15:13:53 192.168.0.251 291797: 15:39:01: IP ARP: rcvd req src 192.168.0.174 3a3c.2021.26ef, dst 192.168.0.47 Vlan3
+Apr 21 15:13:53 192.168.0.251 291798: 15:39:01: IP ARP: rcvd req src 192.168.0.254 00e0.fc36.7165, dst 192.168.0.47 Vlan3
+Apr 21 15:13:53 192.168.0.251 291799: 15:39:01: IP ARP: rcvd req src 192.168.0.238 001e.c954.289c, dst 192.168.0.167 Vlan3
+Apr 21 15:14:27 192.168.0.251 291800: Mar 21 10:54:29.771 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:14:31 192.168.0.251 291801: Mar 21 10:54:34.135 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:14:44 192.168.0.251 291802: Mar 21 10:54:45.775 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:15:03 192.168.0.251 291803: Mar 21 10:55:02.623 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+Apr 21 15:15:05 192.168.0.251 291804: Mar 21 10:55:04.719 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+Apr 21 15:15:31 192.168.0.251 291805: Mar 21 10:55:27.555 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:15:31 192.168.0.251 291806: Mar 21 10:55:28.555 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+Apr 21 15:15:49 192.168.0.251 291807: Mar 21 10:55:44.515 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+Apr 21 15:15:59 192.168.0.251 291808: Mar 21 10:55:48.347 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+Apr 21 15:16:39 192.168.0.251 291809: Mar 21 10:56:29.247 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:16:39 192.168.0.251 291810: Mar 21 10:56:30.247 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+Apr 21 15:17:24 192.168.0.251 291811: Mar 21 10:57:10.139 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+Apr 21 15:17:28 192.168.0.251 291812: Mar 21 10:57:13.923 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+Apr 21 15:17:38 192.168.0.251 291813: Mar 21 10:57:22.951 UTC: %SYS-5-CONFIG_I: Configured from console by vty1 (192.168.0.82)
+Apr 21 15:19:04 192.168.0.251 291814: Mar 21 10:58:40.695 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:19:04 192.168.0.251 291815: Mar 21 10:58:41.695 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+Apr 21 15:19:26 192.168.0.251 291816: Mar 21 10:59:00.787 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+Apr 21 15:19:31 192.168.0.251 291817: Mar 21 10:59:04.815 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+Apr 21 15:21:05 192.168.0.251 291818: Mar 21 11:00:30.183 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:21:05 192.168.0.251 291819: Mar 21 11:00:31.183 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+Apr 21 15:23:05 192.168.0.251 291820: Mar 21 11:02:19.507 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to down
+Apr 21 15:23:08 192.168.0.251 291821: Mar 21 11:02:21.603 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+Apr 21 15:23:10 192.168.0.251 291822: Mar 21 11:02:23.699 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+Apr 21 15:25:36 192.168.0.251 291823: Mar 21 11:04:37.639 UTC: %SYS-5-CONFIG_I: Configured from console by vty1 (192.168.0.82)
+Apr 21 15:27:25 192.168.0.251 291824: Mar 21 11:06:20.275 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:27:25 192.168.0.251 291825: Mar 21 11:06:21.547 UTC: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+Apr 21 15:27:39 192.168.0.251 291826: Mar 21 11:06:34.931 UTC: %LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+Apr 21 15:27:43 192.168.0.251 291827: Mar 21 11:06:38.391 UTC: %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
+Apr 21 15:27:47 192.168.0.251 291828: Mar 21 11:06:42.615 UTC: %SYS-5-CONFIG_I: Configured from console by vty1 (192.168.0.82)
+Apr 21 15:43:56 192.168.0.251 291829: Mar 21 11:21:31.967 UTC: %SYS-5-CONFIG_I: Configured from console by vty2 (192.168.0.82)

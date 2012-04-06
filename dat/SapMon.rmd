@@ -1,0 +1,15 @@
+[SAPMonitor]
+GroupName=ERP Server Resource Graphs
+GraphTitle=SAP
+GraphXAxisName=Elapsed Time (Hour:Min:Sec)
+GraphYAxisName=
+Granularities=1
+XAxisLabelsStyle=RelativeTime
+MissingDataBehavior=Connect
+AggregateFunction=Average
+ScenarioDependent=0
+ColumnCaption_2=Measurement
+MaxDispMeasurments=20
+HelpContext=1098
+Description=Displays a summary of SAP Server Resources.
+GraphType=SAPMonitor

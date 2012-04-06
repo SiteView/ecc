@@ -1,0 +1,52 @@
+<HTML><HEAD><TITLE>sdl_audio</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_audio.hrl">sdl_audio.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="audioDrivername()">
+<strong> audioDrivername()  </strong><UL>Args: none<br>
+Returns: DriverName(String) or []<br>
+<a href="http://www.libsdl.org/docs/html/sdlaudiodrivername.html">C-API:</a> char *SDL_AudioDriverName(char *namebuf, int maxlen);<br>
+</UL>
+<p><A NAME="openAudio">
+<strong> openAudio(Desired, ForceFormat)  </strong><UL>Args: DesiredFormat (audiospec-record), ForceFormat (true | false)<br>
+Returns: ObtainedFormat or exit(audio_failure)<br>
+<a href="http://www.libsdl.org/docs/html/sdlopenaudio.html">C-API:</a> int SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpec *obtained);<br>
+</UL>
+<p><A NAME="closeAudio">
+<strong> closeAudio()  </strong><UL>Args: none<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlcloseaudio.html">C-API:</a> void SDL_CloseAudio(void);<br>
+</UL>
+<p><A NAME="getAudioStatus">
+<strong> getAudioStatus()  </strong><UL>Args: none<br>
+Returns: Status<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetaudiostat.html">C-API:</a> SDL_audiostatus SDL_GetAudioStatus(void);<br>
+</UL>
+<p><A NAME="pauseAudio">
+<strong> pauseAudio(true)  </strong><UL>Args: [true | false]<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlpauseaudio.html">C-API:</a> void SDL_PauseAudio(int pause_on);<br>
+</UL>
+<p><A NAME="loadWAV">
+<strong> loadWAV(File)  </strong><UL>Args: FileName<br>
+Returns: {AudioSpec, AudioBufferPtr} or exits<br>
+<a href="http://www.libsdl.org/docs/html/sdlloadwav.html">C-API:</a> SDL_AudioSpec *SDL_LoadWAV(char *file, SDL_AudioSpec *spec, Uint8 **audio_buf,  Uint32 *audio_len)<br>
+</UL>
+<p><A NAME="freeWAV">
+<strong> freeWAV(#audiop{ptr=Ptr})  </strong><UL>Args: AudioWavRef<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlfreewav.html">C-API:</a> void SDL_FreeWAV(Uint8 *audio_buf);<br>
+</UL>
+<p><A NAME="play_audio">
+<strong> play_audio(#audiop{ptr=Ptr,size=Size}, Repeat)   </strong><UL>Args: AudioWavRef, SampleLen, Repeat (integer or infinity)<br>
+Returns: ok<br>
+Desc:<br> Used to start audio playing<br>
+</UL>
+<p><A NAME="convertAudio">
+<strong>  convertAudio(FromAS, ToAS, #audiop{ptr=Ptr,size=Size})  </strong><UL>Args: FromAudioSpec, ToAudioSpec, SampleBuffer<br>
+Returns: NewBuffer or exists if conversion failed<br>
+<a href="http://www.libsdl.org/docs/html/sdlconvertaudio.html">C-API:</a> int SDL_ConvertAudio(SDL_AudioCVT *cvt);<br>
+Desc:<br> This differs from the orginal SDL function in both syntax and semantics, convertAudio handles the buildCVT and other things SDL requires. convertAudio converts Buffer (in 'FromAudioSpec' format) and returns a new audio buffer (in 'ToAudioSpec' format) Don't forget to call freeWav with old Buffer<br>
+</UL>
+</html>

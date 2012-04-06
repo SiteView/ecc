@@ -1,0 +1,1 @@
+-module(ecc_monitor_node).-export([get_nodes/0]).-include("ecc_monitor_node.hrl").get_nodes()->	case get_nodes_data() of		{ok,Data}->			{ok,Data};		Else->			Else	end.		get_nodes_data()->	case get('_monitor_node_data_') of		undefined->			Data = file:consult("conf/monitor_nodes.conf"),			put('_monitor_node_data_',Data),			Data;		V->			V	end.

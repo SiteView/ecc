@@ -1,0 +1,27 @@
+<!-- @(#) $Id: roundcube_rules.xml,v 1.1 2009/07/31 18:06:10 dcid Exp $
+  -  Official Roundcube rules for OSSEC.
+  -
+  -  Author: Michael Starks
+  -
+  -  This program is a free software; you can redistribute it
+  -  and/or modify it under the terms of the GNU General Public
+  -  License (version 3) as published by the FSF - Free Software
+  -  Foundation.
+  -
+  -  License details: http://www.ossec.net/en/licensing.html
+  -->
+
+<group name="syslog,amavis"> 
+  <rule id="20100" level="0">
+    <decoded_as>amavis</decoded_as>
+    <description>amavis messages</description>
+  </rule>
+   
+  <rule id="20101" level="0">
+    <decoded_as>amavis-passed-clean</decoded_as>
+    <description>amavis passed clean</description>
+  </rule>
+</group>
+  
+
+<!-- EOF -->

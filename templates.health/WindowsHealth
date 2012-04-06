@@ -1,0 +1,46 @@
+{logevent_health_monitor,
+	[
+	{name,"Log Event Checker"},
+	{frequency,600},
+	{dependsCondition,"good"},
+	{disabled,false},
+	{verfiy_error,false},
+	{error_frequency,0},
+	{depends_on,"none"},
+	{depends_condition,"good"},
+	{schedule,"all"},
+	{counters,[{".*skipped #1.*",".*skipped #1.*"},
+            {".*skipped #2.*",".*skipped #2.*"},
+            {".*skipped #3.*",".*skipped #3.*"},
+            {".*skipped #4.*",".*skipped #4.*"},
+            {".*skipped #5.*",".*skipped #5.*"},
+            {".*SiteView shutting down.*",
+             ".*SiteView shutting down.*"}]},
+	{error_classifier,[{status,'!=',"ok"}]},
+	{warning_classifier,[{status,'!=',"ok"}]},
+	{good_classifier,[{status,'==',"ok"}]}
+	]
+	}.
+	
+{health_unixserver_monitor,
+	[
+	 {name,"Health server"},
+	 {frequency,600},
+	 {disabled,false},
+	 {verfiy_error,false},
+	 {error_frequency,0},
+	 {depends_on,"none"},
+	 {depends_condition,"good"},
+	 {schedule,"all"},
+	 {counters,[{"memory","memory"},
+				{"process_count","process_count"},
+				{"run_queue","run_queue"},
+				{"io_input","io_input"},
+				{"io_output","io_output"},
+				{"SiteView Server path:","SiteView Server path:"},
+				{"erl.exe memory use","erl.exe memory use"}]},
+	 {error_classifier,[{status,'!=',"ok"}]},
+	 {warning_classifier,[{status,'!=',"ok"}]},
+	 {good_classifier,[{status,'==',"ok"}]}
+	 ]
+ }.

@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa_local_db</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa_local_db</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa_local_db
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+The SNMP built-in database
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmpa_local_db</span> contains functions for
+implementing tables (and variables) using the SNMP built-in 
+database. The database exists in two instances, one volatile 
+and one persistent. The volatile database is implemented with 
+ets. The persistent database is implemented with dets. 
+
+</p>
+<p>There is a scaling problem with this database.
+
+</p>
+<ul>
+
+<li>
+Insertions and deletions are inefficient for large tables.
+
+</li>
+
+
+</ul>
+
+<p>This problem is best solved by using Mnesia instead.
+
+</p>
+<p>The following functions describe the interface to 
+<span class="code">snmpa_local_db</span>. Each function has a Mnesia equivalent. 
+The argument <span class="code">NameDb</span> is a tuple <span class="code">{Name, Db}</span> where 
+<span class="code">Name</span> is the symbolic name of the managed object (as defined 
+in the MIB), and <span class="code">Db</span> is either <span class="code">volatile</span> or 
+<span class="code">persistent</span>. <span class="code">mnesia</span> is not possible since all these 
+functions are <span class="code">snmpa_local_db</span> specific.
+
+</p>
+</div>
+
+<h3>Common Data Types</h3>
+<div class="REFBODY">
+
+<p>In the functions defined below, the following types are
+used:
+
+</p>
+<ul>
+
+<li>
+
+<span class="code">NameDb = {Name, Db}</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Name = atom(), Db = volatile | persistent</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">RowIndex = [int()]</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Cols = [Col] | [{Col, Value}], Col = int(), Value = term()</span><br />
+
+
+</li>
+
+
+</ul>
+
+<p>where <span class="code">RowIndex</span> denotes the last part of the OID, that
+specifies the index of the row in the table. <span class="code">Cols</span> is a
+list of column numbers in case of a get operation, and a list of
+column numbers and values in case of a set operation.
+
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="dump-0"><span class="bold_code">dump() -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function can be used to manually dump the database 
+to file.
+</p>
+</div>
+
+<p><a name="match-2"><span class="bold_code">match(NameDb, Pattern)</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Performs an ets/dets matching on the table. 
+See Stdlib documentation, module ets, for a description of 
+<span class="code">Pattern</span> and the return values.
+</p>
+</div>
+
+<p><a name="print-0"><span class="bold_code">print()</span></a><br/>
+<a name="print-1"><span class="bold_code">print(TableName)</span></a><br/>
+<a name="print-2"><span class="bold_code">print(TableName, Db)</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">TableName = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Prints the contents of the database on
+screen. This is useful for debugging since the 
+<span class="code">STANDARD-MIB</span> and <span class="code">OTP-SNMPEA-MIB</span>
+(and maybe your own MIBs) are stored in <span class="code">snmpa_local_db</span>.
+
+</p>
+<p><span class="code">TableName</span> is an atom for a table in the database. 
+When no name is supplied, the whole database is shown.
+</p>
+</div>
+
+<p><a name="table_create-1"><span class="bold_code">table_create(NameDb) -&#62; bool()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Creates a table. If the table already exist, the old copy
+is destroyed.
+
+</p>
+<p>Returns <span class="code">false</span> if the <span class="code">NameDb</span> argument is
+incorrectly specified, <span class="code">true</span> otherwise.
+</p>
+</div>
+
+<p><a name="table_create_row-3"><span class="bold_code">table_create_row(NameDb, RowIndex, Row) -&#62; bool()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Row = {Val1, Val2, ..., ValN}</span><br/>
+<span class="bold_code">Val1 = Val2 = ... = ValN = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Creates a row in a table. <span class="code">Row</span> is a tuple with
+values for all columns, including the index columns.
+</p>
+</div>
+
+<p><a name="table_delete-1"><span class="bold_code">table_delete(NameDb) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Deletes a table.
+</p>
+</div>
+
+<p><a name="table_delete_row-2"><span class="bold_code">table_delete_row(NameDb, RowIndex) -&#62; bool()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Deletes the row in the table.
+</p>
+</div>
+
+<p><a name="table_exists-1"><span class="bold_code">table_exists(NameDb) -&#62; bool()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Checks if a table exists.
+</p>
+</div>
+
+<p><a name="table_get_row-2"><span class="bold_code">table_get_row(NameDb, RowIndex) -&#62; Row | undefined</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Row = {Val1, Val2, ..., ValN}</span><br/>
+<span class="bold_code">Val1 = Val2 = ... = ValN = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p><span class="code">Row</span> is a tuple with values for all columns,
+including the index columns.
+</p>
+</div>
+
+<h3>See Also</h3>
+<div class="REFBODY">
+
+<p>ets(3), dets(3), snmp_generic(3)
+
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

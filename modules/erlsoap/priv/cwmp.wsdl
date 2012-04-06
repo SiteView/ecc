@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <wsdl:definitions name="cwmp" 
+ targetNamespace="urn:dslforum-org:cwmp-1-1" 
+ xmlns:tns="urn:dslforum-org:cwmp-1-1"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:cwmp="urn:dslforum-org:cwmp-1-1"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+ 
+<wsdl:types>
+
+  <xs:schema
+  targetNamespace="urn:dslforum-org:cwmp-1-1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:tns="urn:dslforum-org:cwmp-1-1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:cwmp="urn:dslforum-org:cwmp-1-1"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified" 
+  attributeFormDefault="unqualified">
+
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="http://schemas.xmlsoap.org/soap/envelope/"/>
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <xs:complexType name="DeviceIdStruct">
+    <xs:sequence>
+      <xs:element name="Manufacturer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="OUI">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="6"/>
+            <xs:pattern value="[0-9A-F]{6}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProductClass">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SerialNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EventStruct">
+    <xs:sequence>
+      <xs:element name="EventCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+            <xs:pattern value="0 BOOTSTRAP"/>
+            <xs:pattern value="1 BOOT"/>
+            <xs:pattern value="2 PERIODIC"/>
+            <xs:pattern value="3 SCHEDULED"/>
+            <xs:pattern value="4 VALUE CHANGE"/>
+            <xs:pattern value="5 KICKED"/>
+            <xs:pattern value="6 CONNECTION REQUEST"/>
+            <xs:pattern value="7 TRANSFER COMPLETE"/>
+            <xs:pattern value="8 DIAGNOSTICS COMPLETE"/>
+            <xs:pattern value="9 REQUEST DOWNLOAD"/>
+            <xs:pattern value="10 AUTONOMOUS TRANSFER COMPLETE"/>
+            <xs:pattern value="\d+( \S+)+"/>
+            <xs:pattern value="M Reboot"/>
+            <xs:pattern value="M ScheduleInform"/>
+            <xs:pattern value="M Download"/>
+            <xs:pattern value="M Upload"/>
+            <xs:pattern value="M \S+"/>
+            <xs:pattern value="M X_\S+"/> <!-- no spaces in method names -->
+            <xs:pattern value="X [0-9A-F]{6} .*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CommandKey" type="tns:CommandKeyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+ <xs:simpleType name="CommandKeyType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="EventList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="EventStruct" type="tns:EventStruct" minOccurs="0" maxOccurs="64"/>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterValueStruct">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Value" type="xs:anySimpleType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterValueList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="ParameterValueStruct" type="tns:ParameterValueStruct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterInfoStruct">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Writable" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterInfoList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="ParameterInfoStruct" type="tns:ParameterInfoStruct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterNames">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="string" minOccurs="1" maxOccurs="unbounded">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="256"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ParameterKeyType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AccessList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="string" minOccurs="0" maxOccurs="unbounded">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:maxLength value="64"/>
+                <xs:enumeration value="Subscriber"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SetParameterAttributesStruct">
+    <xs:sequence>
+      <xs:element name="Name" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NotificationChange" type="xs:boolean"/>
+      <xs:element name="Notification">
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:enumeration value="0">
+              <xs:annotation>
+                <xs:documentation>Notification off. The CPE need not inform the ACS of a change to the specified parameter(s)</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="1">
+              <xs:annotation>
+                <xs:documentation>Passive notification. Whenever the specified parameter value changes, the CPE MUST include the new value in the ParameterList in the Inform message that is sent the next time a session is established to the ACS</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2">
+              <xs:annotation>
+                <xs:documentation>Active notification. Whenever the specified parameter value changes, the CPE MUST initiate a session to the ACS, and include the new value in the ParameterList in the associated Inform message</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AccessListChange" type="xs:boolean"/>
+      <xs:element name="AccessList" type="tns:AccessList"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SetParameterAttributesList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="SetParameterAttributesStruct" type="tns:SetParameterAttributesStruct" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterAttributeStruct">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Notification">
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AccessList" type="tns:AccessList"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterAttributeList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="ParameterAttributeStruct" type="tns:ParameterAttributeStruct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  
+  <xs:element name="SetParameterValues">
+    <xs:annotation>
+      <xs:documentation>SetParameterValues message - Annex A.3.2.1</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="Ip" type="xs:string"/>
+        <xs:element name="ParameterList" type="tns:ParameterValueList"/>
+        <xs:element name="ParameterKey" type="tns:ParameterKeyType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="SetParameterValuesResponse">
+    <xs:annotation>
+      <xs:documentation>SetParameterValuesResponse message - Annex A.3.2.1</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Status">
+          <xs:simpleType>
+            <xs:restriction base="xs:int">
+              <xs:enumeration value="0">
+                <xs:annotation>
+                  <xs:documentation>All Parameter changes have been validated and applied</xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+              <xs:enumeration value="1">
+                <xs:annotation>
+                  <xs:documentation>All Parameter changes have been validated and committed, but some or all are not yet applied (for example, if a reboot is required before the new values are applied)</xs:documentation>
+                </xs:annotation>
+              </xs:enumeration>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetParameterValues">
+    <xs:annotation>
+      <xs:documentation>GetParameterValues message - Annex A.3.2.2</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="Ip" type="xs:string"/>
+        <xs:element name="ParameterNames" type="tns:ParameterNames"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetParameterValuesResponse">
+    <xs:annotation>
+      <xs:documentation>GetParameterValuesResponse message - Annex A.3.2.2</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ParameterList" type="tns:ParameterValueList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="SetParameterAttributes">
+    <xs:annotation>
+      <xs:documentation>SetParameterAttributes message - Annex A.3.2.4</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="Ip" type="xs:string"/>
+        <xs:element name="ParameterList" type="tns:SetParameterAttributesList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="SetParameterAttributesResponse">
+    <xs:annotation>
+      <xs:documentation>SetParameterAttributesResponse message - Annex A.3.2.4</xs:documentation>
+    </xs:annotation>
+    <xs:complexType/>
+  </xs:element>
+
+  <xs:element name="GetParameterAttributes">
+    <xs:annotation>
+      <xs:documentation>GetParameterAttributes message - Annex A.3.2.5</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="Ip" type="xs:string"/>
+        <xs:element name="ParameterNames" type="tns:ParameterNames"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetParameterAttributesResponse">
+    <xs:annotation>
+      <xs:documentation>GetParameterAttributesResponse message - Annex A.3.2.5</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ParameterList" type="tns:ParameterAttributeList"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+</wsdl:types>
+
+<message name="SetParameterValues">
+ <part name="parameters" element="cwmp:SetParameterValues"/>
+</message>
+
+<message name="SetParameterValuesResponse">
+ <part name="parameters" element="cwmp:SetParameterValuesResponse"/>
+</message>
+
+<message name="GetParameterValues">
+ <part name="parameters" element="cwmp:GetParameterValues"/>
+</message>
+
+<message name="GetParameterValuesResponse">
+ <part name="parameters" element="cwmp:GetParameterValuesResponse"/>
+</message>
+
+
+<message name="SetParameterAttributes">
+ <part name="parameters" element="cwmp:SetParameterAttributes"/>
+</message>
+
+<message name="SetParameterAttributesResponse">
+ <part name="parameters" element="cwmp:SetParameterAttributesResponse"/>
+</message>
+
+<message name="GetParameterAttributes">
+ <part name="parameters" element="cwmp:GetParameterAttributes"/>
+</message>
+
+<message name="GetParameterAttributesResponse">
+ <part name="parameters" element="cwmp:GetParameterAttributesResponse"/>
+</message>
+
+
+<portType name="cwmpPortType">
+
+ <operation name="SetParameterValues">
+  <documentation>Service definition of function cwmp__SetParameterValues</documentation>
+  <input message="tns:SetParameterValues"/>
+  <output message="tns:SetParameterValuesResponse"/>
+ </operation>
+
+ <operation name="GetParameterValues">
+  <documentation>Service definition of function cwmp__GetParameterValues</documentation>
+  <input message="tns:GetParameterValues"/>
+  <output message="tns:GetParameterValuesResponse"/>
+ </operation>
+
+ <operation name="SetParameterAttributes">
+  <documentation>Service definition of function cwmp__SetParameterAttributes</documentation>
+  <input message="tns:SetParameterAttributes"/>
+  <output message="tns:SetParameterAttributesResponse"/>
+ </operation>
+
+ <operation name="GetParameterAttributes">
+  <documentation>Service definition of function cwmp__GetParameterAttributes</documentation>
+  <input message="tns:GetParameterAttributes"/>
+  <output message="tns:GetParameterAttributesResponse"/>
+ </operation>
+</portType>
+
+<binding name="cwmp" type="tns:cwmpPortType">
+ <SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+
+ <operation name="SetParameterValues">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+
+ <operation name="GetParameterValues">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+
+ <operation name="SetParameterAttributes">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+
+ <operation name="GetParameterAttributes">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+
+</binding>
+
+<service name="cwmp">
+ <documentation>CWMP service definition for CPE and ACS</documentation>
+ <port name="cwmp" binding="tns:cwmp">
+  <SOAP:address location="http://localhost:8080/cwmp"/>
+ </port>
+</service>
+
+
+</wsdl:definitions>

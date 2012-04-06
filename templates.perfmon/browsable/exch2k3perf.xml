@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="Database" type="perf" instances="Information Store" >
+<counterInfo name="Database Cache % Hit" />
+<counterInfo name="Database Cache Size" />
+<counterInfo name="Log Record Stalls/sec" />
+<counterInfo name="Log Writes/sec" />
+<counterInfo name="Table Opens/sec" />
+</object>
+
+<object name="Epoxy" type="perf" instances="*" >
+<counterInfo name="Client Out Queue Length" />
+<counterInfo name="Store Out Queue Length" />
+</object>
+
+<object name="MSExchange Web Mail" type="perf" instances="_Total" >
+<counterInfo name="Authentications (in cache)" />
+<counterInfo name="Authentications per sec" />
+<counterInfo name="Message opens (total)" />
+<counterInfo name="Message opens per sec" />
+<counterInfo name="Message sends (total)" />
+<counterInfo name="Message sends per sec" />
+</object>
+
+<object name="MSExchangeDSAccess Caches" type="perf" instances="*">
+<counterInfo name="LDAP Searches/Sec" />
+<counterInfo name="Cache Hits/Sec" />
+<counterInfo name="Cache Misses/Sec" />
+</object>
+
+<object name="MSExchangeDSAccess Processes" type="perf" instances="*">
+<counterInfo name="LDAP Search Time" />
+</object>
+
+<object name="MSExchangeIMAP4" type="perf" instances="_Total">
+<counterInfo name="Connections Current" />
+<counterInfo name="FETCH Rate" />
+<counterInfo name="LOGIN Rate" />
+<counterInfo name="UID Rate" />
+</object>
+
+<object name="MSExchangeIM" type="perf">
+<counterInfo name="Current Inbound Requests" />
+<counterInfo name="Current Outbound Requests" />
+<counterInfo name="Current Users Online" />
+<counterInfo name="Redirected Requests/sec" />
+</object>
+
+<object name="MSExchangeIS Mailbox" type="perf" instances="_Total">
+<counterInfo name="Active Client Logons" />
+<counterInfo name="Client Logons" />
+<counterInfo name="Folder opens/sec" />
+<counterInfo name="Local delivery rate" />
+<counterInfo name="Message Opens/sec" />
+<counterInfo name="Message Recipients Delivered/min" />
+<counterInfo name="Messages Delivered" />
+<counterInfo name="Messages Sent/min" />
+<counterInfo name="Messages Submitted" />
+<counterInfo name="Receive Queue Size" />
+<counterInfo name="Send Queue Size" />
+</object>
+
+<object name="MSExchangeIS Public" type="perf" instances="_Total">
+<counterInfo name="Active Client Logons" />
+<counterInfo name="Client Logons" />
+<counterInfo name="Message Recipients Delivered/min" />
+<counterInfo name="Message Submitted/min" />
+<counterInfo name="Messages Submitted/min" />
+<counterInfo name="Messages Delivered/min" />
+<counterInfo name="Messages Sent/min" />
+<counterInfo name="Receive Queue Size" />
+<counterInfo name="Replication Backfill Requests Received" />
+<counterInfo name="Replication Backfill Requests Sent" />
+<counterInfo name="Replication Receive Queue Size" />
+<counterInfo name="Send Queue Size" />
+</object>
+
+<object name="MSExchangeIS Transport Driver" type="perf" >
+<counterInfo name="Current message from MSExchangeMTA" />
+<counterInfo name="Current messages to MSExchangeMTA" />
+<counterInfo name="TempTable Current" />
+</object>
+
+<object name="MSExchangeIS" type="perf" >
+<counterInfo name="RPC Averaged Latency" />
+<counterInfo name="RPC Num. of Slow Packets" />
+<counterInfo name="RPC Operations/sec" />
+<counterInfo name="RPC Packets/sec" />
+<counterInfo name="RPC Requests" />
+<counterInfo name="VM Largest Block Size" />
+<counterInfo name="VM Total 16MB Free Blocks" />
+<counterInfo name="VM Total Free Blocks" />
+<counterInfo name="VM Total Large Free Block Bytes" />
+</object>
+
+<object name="MSExchangeMTA Connections" type="perf" instances="*" >
+<counterInfo name="Inbound Messages Total" />
+<counterInfo name="Outbound Messages Total" />
+<counterInfo name="Queue Length" />
+</object>
+
+<object name="MSExchangeMTA" type="perf" >
+<counterInfo name="LAN Receive Bytes/sec" />
+<counterInfo name="LAN Transmit Bytes/sec" />
+<counterInfo name="Message Bytes/Sec" />
+<counterInfo name="Messages/Sec" />
+<counterInfo name="Work Queue Bytes" />
+<counterInfo name="Work Queue Length" />
+</object>
+
+<object name="MSExchangePOP3" type="perf" instances="_Total" >
+<counterInfo name="Connections Current" />
+<counterInfo name="RETR Rate" />
+<counterInfo name="USER Rate" />
+</object>
+
+<object name="Process" type="perf" instances="EMSMTA, inetinfo, lsass,
+MAD, mssearch, OnePointService, STORE" >
+<counterInfo name="Elapsed Time" />
+<counterInfo name="% Processor Time" />
+<counterInfo name="Private Bytes" />
+<counterInfo name="Virtual Bytes" />
+<counterInfo name="Working Set" />
+</object>
+
+<object name="SMTP NTFS Store Driver" type="perf" instances="_Total" >
+<counterInfo name="Messages in the queue directory" />
+</object>
+
+<object name="SMTP Server" type="perf" instances="_Total" >
+<counterInfo name="Categorizer Queue Length" />
+<counterInfo name="Local Queue Length" />
+<counterInfo name="Local Retry Queue Length" />
+<counterInfo name="Message Bytes Received/sec" />
+<counterInfo name="Message Bytes Sent/sec" />
+<counterInfo name="Messages Delivered/sec" />
+<counterInfo name="Messages Pending Routing" />
+<counterInfo name="Messages Received/sec" />
+<counterInfo name="Messages Sent/sec" />
+<counterInfo name="Remote Queue Length" />
+<counterInfo name="Remote Retry Queue Length" />
+<counterInfo name="Total messages submitted" />
+</object>
+
+</browse_data>

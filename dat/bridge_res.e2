@@ -1,0 +1,14 @@
+[Messages]
+Version=1.000
+-21999=Bridge: Temporary directory was not found.
+-21998=Bridge: Failed to encode bridge message data.
+-21997=Bridge: CriticalSection - %1.
+-21996=Bridge: Cannot create results directory "%1".
+-21995=Bridge: Cannot create network path (local path: "%1", netpath: "%2").
+-21994=Bridge: Failed to decode start scenario data.
+-21993=Bridge: Failed to create bridge UI window.
+-21992=Bridge: Unable to listen to service "%1".
+-21991=Bridge: Connection is not allowed from host %1.
+-21990=Bridge: 'controllerhost' is not found in command line.
+Msg_handler_lowest_msg=-21999
+Msg_handler_highest_msg=-21990

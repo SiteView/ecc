@@ -1,0 +1,16 @@
+<entry xmlns="http://www.w3.org/2005/Atom"
+    xmlns:xn="http://www.ning.com/atom/1.0"
+    xmlns:my="http://siteview.ning.com">
+<xn:type>shiwu</xn:type>
+    <title type="text">Pizza</title>
+    <summary type="text">A disc of baked dough covered with savoury toppings.</summary>
+    <xn:private>false</xn:private>
+    <my:rating type="number">5</my:rating>
+    <my:ingredients type="string">
+        <xn:value>Dough</xn:value>
+        <xn:value>Tomato Sauce</xn:value>
+        <xn:value>Mozzarella Cheese</xn:value>
+        <xn:value>Sun-dried Tomatoes</xn:value>
+        <xn:value>Goats Cheese</xn:value>
+    </my:ingredients>
+</entry>

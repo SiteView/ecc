@@ -1,0 +1,10 @@
+[General]
+
+
+[web_server_info]
+acceptor_nd_port=
+acceptor_dummy_port=
+acceptor_name=
+min_port=
+max_port=
+isapi_log=

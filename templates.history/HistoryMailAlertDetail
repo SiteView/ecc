@@ -1,0 +1,18 @@
+A history report from SiteView for <reportPeriod> has been created for you.
+
+Report Summary:
+
+<summary>
+<basicAlertSummary>
+
+Alert Detail:
+
+<detailAlertSummary>
+
+You can access this report at:
+    http://<_webserverAddress>:<_httpPort><reportURL>
+
+You can access previous reports at:
+    http://<_webserverAddress>:<_httpPort><reportIndexURL>
+
+

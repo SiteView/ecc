@@ -1,0 +1,6 @@
+#Tue Sep 13 05:16:36 CST 2011
+backend_version=R14B
+eclipse.preferences.version=1
+include_dirs=include;../../core/include
+output_dir=ebin
+source_dirs=src

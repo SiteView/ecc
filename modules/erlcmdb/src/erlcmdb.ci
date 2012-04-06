@@ -1,0 +1,2 @@
+{erlcmdb_ci,"Server","ci",[{ci_attribute,ip,"string"},{ci_attribute,vendor,"string"},{ci_attribute,os,"string"},{ci_attribute,ports,"list"}]}.
+{erlcmdb_ci,"port","Server",[{ci_attribute,portid,"string"},{ci_attribute,protocol,"string"},{ci_attribute,service,"string"},{ci_attribute,parent,"atom"}]}.

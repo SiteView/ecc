@@ -1,0 +1,153 @@
+<queries>
+    <sql_template name="STANDARD_DB_QUERY" >
+        <sql> SELECT * FROM TABLE(SS_SNAPSHOT_NAME_PLACEHOLDER('DATABSE_NAME_PLACEHOLDER',PARTITION_PLACEHOLDER)) AS SS_SNAPSHOT_NAME_PLACEHOLDER </sql>
+    </sql_template>
+    <sql_template name="STANDARD_DBMANAGER_QUERY">
+        <sql> SELECT * FROM TABLE(SS_SNAPSHOT_NAME_PLACEHOLDER(PARTITION_PLACEHOLDER)) AS SS_SNAPSHOT_NAME_PLACEHOLDER</sql>
+    </sql_template>
+
+    <sql_template name="APPLICATION_JOIN">
+        <sql>select * from table(SS_SNAPSHOT_NAME_PLACEHOLDER('DATABSE_NAME_PLACEHOLDER',PARTITION_PLACEHOLDER)) as PG, table(SNAPSHOT_APPL_INFO('DATABSE_NAME_PLACEHOLDER',PARTITION_PLACEHOLDER)) as AI where AI.agent_id = PG.agent_id</sql>
+    </sql_template>
+    <query name="SNAPSHOT_BP">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Buffer Pool</node_name>
+        <snapshot_name>SNAPSHOT_BP</snapshot_name>
+        <description>Physical and logical reads, asynchronous and synchronous writes, counters.</description>
+    </query>
+
+    <query name="SNAPSHOT_APPL">
+        <sql_template>APPLICATION_JOIN</sql_template>
+        <node_name>Application</node_name>
+        <snapshot_name>SNAPSHOT_APPL</snapshot_name>
+        <table_index>APPL_NAME</table_index>
+        <description>General application level information for each application that is connected to the database on the partition. This includes cumulative counters, status information, and most recent SQL statement executed (if statement switch is set).</description>
+    </query>
+    <query name="SNAPSHOT_CONTAINER">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Table Space Container</node_name>
+        <snapshot_name>SNAPSHOT_CONTAINER</snapshot_name>
+        <description>Tablespace container information.</description>
+    </query>
+    <query name="SNAPSHOT_DATABASE">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Database</node_name>
+        <snapshot_name>SNAPSHOT_DATABASE</snapshot_name>
+        <description>Database information, counters, sorts, lock escalations, memory heaps	</description>
+    </query>
+
+    <query name="SNAPSHOT_DBM">
+        <sql_template>STANDARD_DBMANAGER_QUERY</sql_template>
+        <node_name>Database Manager</node_name>
+        <snapshot_name>SNAPSHOT_DBM</snapshot_name>
+        <description>Database Manager information, sort overflows, dbheap, locklist heap, other memory heaps.</description>
+    </query>
+    <query name="SNAPSHOT_DYN_SQL">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Dynamic SQL</node_name>
+        <snapshot_name>SNAPSHOT_DYN_SQL</snapshot_name>
+        <description>Dynamic SQL from SQL statement cache. Note: This replaces the SQLCACHE_SNAPSHOT function available in previous releases. This function will be available for compatibility reasons until some future time.</description>
+    </query>
+
+    <query name="SNAPSHOT_FCM">
+        <sql_template>STANDARD_DBMANAGER_QUERY</sql_template>
+        <node_name>FCM</node_name>
+        <snapshot_name>SNAPSHOT_FCM</snapshot_name>
+        <description>Database manager level information regarding FCM resources.</description>
+    </query>
+
+    <query name="SNAPSHOT_FCMNODE">
+        <sql_template>STANDARD_DBMANAGER_QUERY</sql_template>
+        <node_name>FCM Partition</node_name>
+        <snapshot_name>SNAPSHOT_FCMNODE</snapshot_name>
+        <description>Database manager information regarding FCM for a particular partition</description>
+    </query>
+
+
+    <query name="SNAPSHOT_LOCK">
+        <sql_template>APPLICATION_JOIN</sql_template>
+        <node_name>Lock</node_name>
+        <snapshot_name>SNAPSHOT_LOCK</snapshot_name>
+        <table_index>APPL_NAME</table_index>
+        <description>Lock information at the database level, and application level for each application connected to the database. Requires the lock switch.</description>
+    </query>
+
+    <query name="SNAPSHOT_LOCKWAIT">
+        <sql_template>APPLICATION_JOIN</sql_template>
+        <node_name>Application Lock Wait</node_name>
+        <snapshot_name>SNAPSHOT_LOCKWAIT</snapshot_name>
+        <table_index>APPL_NAME</table_index>
+        <description>Lock wait information for applications.</description>
+    </query>
+
+    <query name="SNAPSHOT_STATEMENT">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Statement</node_name>
+        <snapshot_name>SNAPSHOT_STATEMENT</snapshot_name>
+        <description>Application and statement information including most recent SQL statement executed.</description>
+    </query>
+
+    <query name="SNAPSHOT_SUBSECT">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Subsect</node_name>
+        <snapshot_name>SNAPSHOT_SUBSECT</snapshot_name>
+        <description>Application information regarding the subsections of access plans for the applications connected to the database.</description>
+    </query>
+    <query name="SNAPSHOT_TABLE">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Table</node_name>
+        <snapshot_name>SNAPSHOT_TABLE</snapshot_name>
+        <description>Table activity information at the database and application level for each application connected to the database. Table activity information at the table level for each table that was accessed by an application connected to the database.</description>
+    </query>
+
+    <query name="SNAPSHOT_TBS">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Table Space</node_name>
+        <snapshot_name>SNAPSHOT_TBS</snapshot_name>
+        <description>Information about table space activity the database level, the application level for each application connected to the database, and the table space level for each table space that has been accessed by an application connected to the database.</description>
+    </query>
+
+    <query name="SNAPSHOT_SWITCHES">
+        <sql_template>STANDARD_DBMANAGER_QUERY</sql_template>
+        <node_name>Switches</node_name>
+        <snapshot_name>SNAPSHOT_SWITCHES</snapshot_name>
+        <description>Database manager monitor switch settings.</description>
+    </query>
+    <query name="SNAPSHOT_QUIESCERS">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Quiescers</node_name>
+        <snapshot_name>SNAPSHOT_QUIESCERS</snapshot_name>
+        <description>Information about quiescers at the table space level.</description>
+    </query>
+
+    <query name="SNAPSHOT_RANGES">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Ranges</node_name>
+        <snapshot_name>SNAPSHOT_RANGES</snapshot_name>
+        <description>Information about ranges for a table space map.</description>
+    </query>
+
+    <query name="SNAPSHOT_TBS_CFG">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Table Space Config</node_name>
+        <snapshot_name>SNAPSHOT_TBS_CFG</snapshot_name>
+        <description>Information about table space configuration.</description>
+    </query>
+
+    <query name="SNAPSHOT_TBREORG">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Table Reorg</node_name>
+        <snapshot_name>SNAPSHOT_TBREORG</snapshot_name>
+        <description>Table reorganization information at the table level for each table 1 in the database undergoing reorganization.
+        </description>
+    </query>
+
+    <query name="SNAPSHOT_AGENT">
+        <sql_template>STANDARD_DB_QUERY</sql_template>
+        <node_name>Agent</node_name>
+        <snapshot_name>SNAPSHOT_AGENT</snapshot_name>
+        <description>Application level information regarding the agents associated with applications connected to the database on the partition.= This needs some more knowledge Built around it.
+        </description>
+    </query>
+    
+</queries>

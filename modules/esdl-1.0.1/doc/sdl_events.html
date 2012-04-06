@@ -1,0 +1,44 @@
+<HTML><HEAD><TITLE>sdl_events</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_events.hrl">sdl_events.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="pumpEvents">
+<strong> pumpEvents()  </strong><UL>Args: none<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlpumpevents.html">C-API:</a> void SDL_PumpEvents(void);<br>
+</UL>
+<p><A NAME="peepEvents/0">
+<strong> peepEvents()  </strong><UL>Args: None<br>
+Returns: {NumOfEvents, [Events]}<br>
+<a href="http://www.libsdl.org/docs/html/sdlpeepevents.html">C-API:</a> int SDL_PeepEvents(SDL_Event *events, int numevents, SDL_eventaction action, Uint32 mask)<br>
+Desc:<br> Get up to to 16 events of all types.<br>
+</UL>
+<p><A NAME="peepEvents/2">
+<strong> peepEvents(NumEvents, Mask)  </strong><UL>Args: NumEvents (might be 0) Mask (32 bits event mask)<br>
+Returns: {NumOfEvents, [Events]}<br>
+<a href="http://www.libsdl.org/docs/html/sdlpeepevents.html">C-API:</a> int SDL_PeepEvents(SDL_Event *events, int numevents, SDL_eventaction action, Uint32 mask)<br>
+Desc:<br> Exits if error (NumEvents < 256)<br>
+</UL>
+<p><A NAME="peepEvents/2">
+<strong> peepEvents(NumEvents, ?SDL_GETEVENT, Mask)  </strong><UL>Args: NumEvents (might be 0) ?SDL_GETEVENT Mask (32 bits event mask)<br>
+Returns: {NumOfEvents, [Events]}<br>
+<a href="http://www.libsdl.org/docs/html/sdlpeepevents.html">C-API:</a> int SDL_PeepEvents(SDL_Event *events, int numevents, SDL_eventaction action, Uint32 mask)<br>
+Desc:<br> Exits if error (NumEvents < 256)<br>
+</UL>
+<p><A NAME="pollEvent">
+<strong> pollEvent()  </strong><UL>Args: none<br>
+Returns: no_event | Event (one of the event records)<br>
+<a href="http://www.libsdl.org/docs/html/sdlpollevent.html">C-API:</a> int SDL_PollEvent(SDL_Event *event);<br>
+</UL>
+<p><A NAME="waitEvent">
+<strong> waitEvent()  </strong><UL>Args: none<br>
+Returns: Event (one of the event records)<br>
+<a href="http://www.libsdl.org/docs/html/sdlwaitevent.html">C-API:</a> int SDL_WaitEvent(SDL_Event *event);<br>
+</UL>
+<p><A NAME="eventState">
+<strong> eventState(Type, State)  </strong><UL>Args: EventType (see sdl_events.hrl), State (SDL_QUERY | SDL_IGNORE |SDL_ENABLE)<br>
+Returns: State (?SDL_ENABLE | ?SDL_IGNORE)<br>
+<a href="http://www.libsdl.org/docs/html/sdleventstate.html">C-API:</a> Uint8 SDL_EventState(Uint8 type, int state);<br>
+</UL>
+</html>

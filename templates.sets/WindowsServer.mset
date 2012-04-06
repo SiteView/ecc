@@ -1,0 +1,62 @@
+{monitor_set,
+"Windows Server Monitor Set",
+"Adds Ping, CPU, Disk, and Memory monitors for a Windows Server",
+[
+	{"%server%","Server to monitor","servername"}
+],
+[
+	[	{class,ping_monitor},
+		{size,32},
+		{hostname,"%server%"},
+		{timeout,3000},
+		{name,"Ping: %server%"},
+		{frequency,600},
+		{depends_on,"none"},
+		{depends_condition,"good"},
+		{schedule,"all"},
+		{disabled,false},
+		{verfiy_error,false},
+		{error_frequency,0}
+	],
+	[
+		{class,diskspace_monitor},
+		{frequency,6000},
+		{name,"Disk Space: %server% (C)"},
+		{machine,"\\\\%server%"},
+		{disk,"C"}
+	],
+	[
+		{class,browsa_cpu_utilization},
+		{frequency,6000},
+		{name,"CPU Utilization on %server%"},
+		{machine,"\\\\%server%"},
+		{browse,[{"utilization","utilization"}]}
+	],
+	[
+		{class,memory_monitor},
+		{frequency,6000},
+		{name,"Memory on %server%"},
+		{machine,"\\\\%server%"}
+	],
+	[
+		{class,browsableNTCounter_monitor},
+		{name,"Browsable Windows Counter:%server%"},
+		{xmlfile,"ad-securty.xml"},
+		{machine,"\\\\%server%"},
+		{pFile,"templates.perfmon/browsable/winntsys.xml"},
+		{frequency,900},
+		{depends_condition,"good"},
+		{browse,[{"physicaldiskx_totalxavg.xdiskxsec/read",
+				  "PhysicalDisk/_Total/Avg. Disk sec/Read"},
+				 {"physicaldiskx_totalxavg.xdiskxsec/write",
+				  "PhysicalDisk/_Total/Avg. Disk sec/Write"},
+				 {"physicaldiskx_totalxcurrentxdiskxqueuexlength",
+				  "PhysicalDisk/_Total/Current Disk Queue Length"},
+				 {"systemxsinglexfilexreadxoperations/sec",
+				  "System/SINGLE/File Read Operations/sec"},
+				 {"systemxsinglexprocessorxqueuexlength",
+				  "System/SINGLE/Processor Queue Length"}]
+		}
+	]
+]
+}.

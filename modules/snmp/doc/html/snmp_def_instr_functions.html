@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Definition of Instrumentation Functions</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="11"><!-- Empty --></a>
+<h2>11 Definition of Instrumentation Functions</h2>
+
+<p>The section <strong>Definition of Instrumentation Functions</strong> describes
+the user defined functions, which the agent calls at different times.
+
+</p><a name="11.1"><!-- Empty --></a>
+<h3>11.1 Variable Instrumentation</h3>
+
+<p>For scalar variables, a function <span class="code">f(Operation, ...)</span> must
+be defined.
+
+</p>
+<p>The <span class="code">Operation</span> can be <span class="code">new</span>, <span class="code">delete</span>,
+<span class="code">get</span>, <span class="code">is_set_ok</span>, <span class="code">set</span>, or <span class="code">undo</span>.
+
+</p>
+<p>In case of an error, all instrumentation functions may return
+either an SNMPv1 or an SNMPv2 error code. If it returns an SNMPv2
+code, it is converted into an SNMPv1 code before it is sent to a
+SNMPv1 manager. It is recommended to use the SNMPv2 error codes
+for all instrumentation functions, as these provide more
+details. See <a href="snmp_app_a.html">Appendix A</a> for a
+description of error code conversions.
+
+</p><a name="11.1.1"><!-- Empty --></a>
+<h4>11.1.1 f(new [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(new [, ExtraArgs])</span> is called for each
+variable in the MIB when the
+MIB is loaded into the agent. This makes it possible to perform
+necessary initialization.
+
+</p>
+<p>This function is optional. The return value is discarded.
+</p><a name="11.1.2"><!-- Empty --></a>
+<h4>11.1.2 f(delete [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(delete [, ExtraArgs])</span> is called
+for each object in an MIB when the
+MIB is unloaded from the agent. This makes it possible to
+perform necessary clean-up.
+
+</p>
+<p>This function is optional. The return value is discarded.
+</p><a name="11.1.3"><!-- Empty --></a>
+<h4>11.1.3 f(get [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(get [, ExtraArgs])</span> is called when a
+get-request or a get-next
+request refers to the variable.
+
+</p>
+<p>This function is mandatory.
+
+</p><a name="11.1.3.1"><!-- Empty --></a>
+<h5>11.1.3.1 Valid Return Values</h5>
+
+<ul>
+
+<li>
+<span class="code">{value, Value}</span>. The <span class="code">Value</span> must be of
+correct type, length and within ranges, otherwise
+<span class="code">genErr</span> is returned in the response PDU. If the
+object is an enumerated integer, the symbolic enum value
+may be used as an atom. If the object is of type BITS, the
+return value shall be an integer or a list of bits that
+are set.
+
+</li>
+
+
+<li>
+<span class="code">{noValue, noSuchName}</span>(SNMPv1)
+
+</li>
+
+
+<li>
+<span class="code">{noValue, noSuchObject | noSuchInstance} </span>(SNMPv2)
+
+</li>
+
+
+<li>
+<span class="code">genErr</span>. Used if an error occurred. Note,
+this should be an internal processing error, e.g. a caused
+by a programing fault somewhere. If the variable does not
+exist, use <span class="code">{noValue, noSuchName}</span> or
+<span class="code">{noValue, noSuchInstance}</span>.
+
+</li>
+
+
+</ul>
+<a name="11.1.4"><!-- Empty --></a>
+<h4>11.1.4 f(is_set_ok, NewValue [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(is_set_ok, NewValue [, ExtraArgs])</span> is
+called in phase one of the set-request
+processing so that the new value can be checked for
+inconsistencies.
+
+</p>
+<p><span class="code">NewValue</span> is guaranteed to be of the correct type,
+length and within ranges, as specified in the MIB. If the
+object is an enumerated integer or of type BITS, the integer
+value is used.
+
+</p>
+<p>This function is optional.
+
+</p>
+<p>If this function is called, it will be called again, either
+with <span class="code">undo</span> or with <span class="code">set</span> as first argument.
+
+</p><a name="11.1.4.1"><!-- Empty --></a>
+<h5>11.1.4.1 Valid return values</h5>
+
+<ul>
+
+<li>
+<span class="code">noError</span>
+</li>
+
+
+<li>
+<span class="code">badValue | noSuchName | genErr</span>(SNMPv1)
+
+</li>
+
+
+<li>
+<span class="code">noAccess | noCreation | inconsistentValue | resourceUnavailable | inconsistentName | genErr</span>(SNMPv2)
+</li>
+
+
+</ul>
+<a name="11.1.5"><!-- Empty --></a>
+<h4>11.1.5 f(undo, NewValue [, ExtraArgs])</h4>
+
+<p>If an error occurred, this function is called after the
+<span class="code">is_set_ok</span> function is called. If <span class="code">set</span> is called for
+this object, <span class="code">undo</span> is not called.
+
+</p>
+<p><span class="code">NewValue</span> is guaranteed to be of the correct type,
+length and within ranges, as specified in the MIB. If the
+object is an enumerated integer or of type BITS, the integer
+value is used.
+
+</p>
+<p>This function is optional.
+
+</p><a name="11.1.5.1"><!-- Empty --></a>
+<h5>11.1.5.1 Valid return values</h5>
+
+<ul>
+
+<li>
+<span class="code">noError</span>
+</li>
+
+
+<li>
+<span class="code">genErr</span>(SNMPv1)
+
+</li>
+
+
+<li>
+<span class="code">undoFailed | genErr</span>(SNMPv2)
+</li>
+
+
+</ul>
+<a name="11.1.6"><!-- Empty --></a>
+<h4>11.1.6 f(set, NewValue [, ExtraArgs])</h4>
+
+<p>This function is called to perform the set in phase two of
+the set-request processing. It is only called if the
+corresponding <span class="code">is_set_ok</span> function is present and returns
+<span class="code">noError</span>.
+
+</p>
+<p><span class="code">NewValue</span> is guaranteed to be of the correct type,
+length and within ranges, as specified in the MIB. If the
+object is an enumerated integer or of type BITS, the integer
+value is used.
+
+</p>
+<p>This function is mandatory.
+
+</p><a name="11.1.6.1"><!-- Empty --></a>
+<h5>11.1.6.1 Valid return values</h5>
+
+<ul>
+
+<li>
+<span class="code">noError</span>
+</li>
+
+
+<li>
+<span class="code">genErr</span>(SNMPv1)
+
+</li>
+
+
+<li>
+<span class="code">commitFailed | undoFailed | genErr</span>(SNMPv2)
+</li>
+
+
+</ul>
+<a name="11.2"><!-- Empty --></a>
+<h3>11.2 Table Instrumentation</h3>
+
+<p>For tables, a <span class="code">f(Operation, ...)</span> function should be
+defined (the function shown is exemplified with <span class="code">f</span>).
+
+</p>
+<p>The <span class="code">Operation</span> can be <span class="code">new</span>, <span class="code">delete</span>,
+<span class="code">get</span>, <span class="code">next</span>, <span class="code">is_set_ok</span>, <span class="code">undo</span> or
+<span class="code">set</span>.
+
+</p>
+<p>In case of an error, all instrumentation functions may return
+either an SNMPv1 or an SNMPv2 error code. If it returns an SNMPv2
+code, it is converted into an SNMPv1 code before it is sent to a
+SNMPv1 manager. It is recommended to use the SNMPv2 error codes
+for all instrumentation functions, as these provide more
+details. See <a href="snmp_app_a.html">Appendix A</a> for a
+description of error code conversions.
+</p><a name="11.2.1"><!-- Empty --></a>
+<h4>11.2.1 f(new [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(new [, ExtraArgs])</span> is called for each object in an MIB when the
+MIB is loaded into the agent. This makes it possible to perform
+the necessary initialization.
+
+</p>
+<p>This function is optional. The return value is discarded.
+</p><a name="11.2.2"><!-- Empty --></a>
+<h4>11.2.2 f(delete [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(delete [, ExtraArgs])</span> is called for each object in an MIB when the
+MIB is unloaded from the agent. This makes it possible to
+perform any necessary clean-up.
+
+</p>
+<p>This function is optional. The return value is discarded.
+</p><a name="11.2.3"><!-- Empty --></a>
+<h4>11.2.3 f(get, RowIndex, Cols [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(get, RowIndex, Cols [, ExtraArgs])</span> is
+called when a get-request refers to a table.
+
+</p>
+<p>This function is mandatory.
+
+</p><a name="11.2.3.1"><!-- Empty --></a>
+<h5>11.2.3.1 Arguments</h5>
+
+<ul>
+
+<li>
+<span class="code">RowIndex</span> is a list of integers which define the
+key values for the row. The <span class="code">RowIndex</span> is the list
+representation (list of integers) which follow the
+<span class="code">Cols</span> integer in the OBJECT IDENTIFIER.
+
+</li>
+
+
+<li>
+<span class="code">Cols</span> is a list of integers which represent the
+column numbers. The <span class="code">Cols</span> are sorted by increasing
+value and are guaranteed to be valid column numbers.
+</li>
+
+
+</ul>
+<a name="11.2.3.2"><!-- Empty --></a>
+<h5>11.2.3.2 Valid Return Values</h5>
+
+<ul>
+
+<li>
+
+A list with as many elements as the <span class="code">Cols</span> list,
+where each element is the value of the corresponding
+column. Each element can be:<br />
+
+
+<ul>
+
+<li>
+<span class="code">{value, Value}</span>. The <span class="code">Value</span> must be of
+correct type, length and within ranges, otherwise
+<span class="code">genErr</span> is returned in the response PDU. If the
+object is an enumerated integer, the symbolic enum
+value may be used (as an atom). If the object is of
+type BITS, the return value shall be an integer or a
+list of bits that are set.
+
+</li>
+
+
+<li>
+<span class="code">{noValue, noSuchName}</span>(SNMPv1)
+
+</li>
+
+
+<li>
+<span class="code">{noValue, noSuchObject | noSuchInstance}</span>(SNMPv2)
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>
+<span class="code">{noValue, Error}</span>. If the row does not exist,
+because all columns have <span class="code">{noValue, Error}</span>), the
+single tuple <span class="code">{noValue, Error}</span> can be returned.
+This is a shorthand for a list with all elements
+<span class="code">{noValue, Error}</span>.
+
+</li>
+
+
+<li>
+<span class="code">genErr</span>. Used if an error occurred. Note that
+this should be an internal processing error, e.g. a caused
+by a programing fault somewhere. If some column does not
+exist, use <span class="code">{noValue, noSuchName}</span> or
+<span class="code">{noValue, noSuchInstance}</span>.
+
+</li>
+
+
+</ul>
+<a name="11.2.4"><!-- Empty --></a>
+<h4>11.2.4 f(get_next, RowIndex, Cols [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(get_next, RowIndex, Cols [, ExtraArgs])</span> is 
+called when a get-next- or a
+get-bulk-request refers to the table.
+
+</p>
+<p>The <span class="code">RowIndex</span> argument may refer to an existing row or a
+non-existing row, or it may be unspecified. The <span class="code">Cols</span> list
+may refer to inaccessible columns or non-existing columns. For
+each column in the <span class="code">Cols</span> list, the corresponding next
+instance is determined, and the last part of its OBJECT
+IDENTIFIER and its value is returned.
+
+</p>
+<p>This function is mandatory.
+
+</p><a name="11.2.4.1"><!-- Empty --></a>
+<h5>11.2.4.1 Arguments</h5>
+
+<ul>
+
+<li>
+<span class="code">RowIndex</span> is a list of integers (possibly empty)
+that defines the key values for a row. The <span class="code">RowIndex</span>
+is the list representation (list of integers), which follow
+the <span class="code">Cols</span> integer in the OBJECT IDENTIFIER.
+
+</li>
+
+
+<li>
+<span class="code">Cols</span> is a list of integers, greater than or
+equal to zero, which represents the column numbers.
+</li>
+
+
+</ul>
+<a name="11.2.4.2"><!-- Empty --></a>
+<h5>11.2.4.2 Valid Return Values</h5>
+
+<ul>
+
+<li>
+
+A list with as many elements as the <span class="code">Cols</span> list
+Each element can be:<br />
+
+
+<ul>
+
+<li>
+<span class="code">{NextOid, NextValue}</span>, where <span class="code">NextOid</span>
+is the lexicographic next OBJECT IDENTIFIER for the
+corresponding column. This should be specified as the
+OBJECT IDENTIFER part following the table entry. This
+means that the first integer is the column number and
+the rest is a specification of the keys.
+<span class="code">NextValue</span> is the value of this element.
+
+</li>
+
+
+<li>
+<span class="code">endOfTable</span> if there are no accessible
+elements after this one.
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>
+<span class="code">{genErr, Column}</span> where <span class="code">Column</span> denotes
+the column that caused the error. <span class="code">Column</span> must be
+one of the columns in the <span class="code">Cols</span> list. Note that
+this should be an internal processing error, e.g. a caused
+by a programing fault somewhere. If some column does not
+exist, you must return the next accessible element (or
+<span class="code">endOfTable</span>). 
+
+</li>
+
+
+</ul>
+<a name="11.2.5"><!-- Empty --></a>
+<h4>11.2.5 f(is_set_ok, RowIndex, Cols [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(is_set_ok, RowIndex, Cols [, ExtraArgs])</span>
+is called in phase one of the set-request
+processing so that new values can be checked for
+inconsistencies.
+
+</p>
+<p>If the function is called, it will be called again with
+<span class="code">undo</span>, or with <span class="code">set</span> as first argument.
+
+</p>
+<p>This function is optional.
+
+</p><a name="11.2.5.1"><!-- Empty --></a>
+<h5>11.2.5.1 Arguments</h5>
+
+<ul>
+
+<li>
+<span class="code">RowIndex</span> is a list of integers which define the
+key values for the row. The <span class="code">RowIndex</span> is the list
+representation (list of integers) which follow the
+<span class="code">Cols</span> integer in the OBJECT IDENTIFIER.
+
+</li>
+
+
+<li>
+<span class="code">Cols</span> is a list of <span class="code">{Column, NewValue}</span>,
+where <span class="code">Column</span> is an integer, and <span class="code">NewValue</span> is
+guaranteed to be of the correct type, length and within
+ranges, as specified in the MIB. If the object is an
+enumerated integer or of type BITS, the integer value is
+used. The list is sorted by <span class="code">Column</span> (increasing) and
+each <span class="code">Column</span> is guaranteed to be a valid column
+number.
+</li>
+
+
+</ul>
+<a name="11.2.5.2"><!-- Empty --></a>
+<h5>11.2.5.2 Valid Return Values</h5>
+
+<ul>
+
+<li>
+<span class="code">{noError, 0}</span>
+</li>
+
+
+<li>
+<span class="code">{Error, Column}</span>, where <span class="code">Error</span> is the same
+as for <span class="code">is_set_ok</span> for variables, and <span class="code">Column</span>
+denotes the faulty column. <span class="code">Column</span> must be one of the
+columns in the <span class="code">Cols</span> list.
+</li>
+
+
+</ul>
+<a name="11.2.6"><!-- Empty --></a>
+<h4>11.2.6 f(undo, RowIndex, Cols [, ExtraArgs])</h4>
+
+<p>If an error occurs, The function
+<span class="code">f(undo, RowIndex, Cols [, ExtraArgs])</span> is called after the
+<span class="code">is_set_ok</span> function. If <span class="code">set</span> is called for this
+object, <span class="code">undo</span> is not called.
+
+</p>
+<p>This function is optional.
+
+</p><a name="11.2.6.1"><!-- Empty --></a>
+<h5>11.2.6.1 Arguments</h5>
+
+<ul>
+
+<li>
+<span class="code">RowIndex</span> is a list of integers which define the
+key values for the row. The <span class="code">RowIndex</span> is the list
+representation (list of integers) which follow the
+<span class="code">Cols</span> integer in the OBJECT IDENTIFIER.
+
+</li>
+
+
+<li>
+<span class="code">Cols</span> is a list of <span class="code">{Column, NewValue}</span>,
+where <span class="code">Column</span> is an integer, and <span class="code">NewValue</span> is
+guaranteed to be of the correct type, length and within
+ranges, as specified in the MIB. If the object is an
+enumerated integer or of type BITS, the integer value is
+used. The list is sorted by <span class="code">Column</span> (increasing) and
+each <span class="code">Column</span> is guaranteed to be a valid column
+number.
+
+</li>
+
+
+</ul>
+<a name="11.2.6.2"><!-- Empty --></a>
+<h5>11.2.6.2 Valid Return Values</h5>
+
+<ul>
+
+<li>
+<span class="code">{noError, 0}</span>
+</li>
+
+
+<li>
+<span class="code">{Error, Column}</span> where <span class="code">Error</span> is the same
+as for <span class="code">undo</span> for variables, and <span class="code">Column</span> denotes
+the faulty column. <span class="code">Column</span> must be one of the columns
+in the <span class="code">Cols</span> list.
+
+</li>
+
+
+</ul>
+<a name="11.2.7"><!-- Empty --></a>
+<h4>11.2.7 f(set, RowIndex, Cols [, ExtraArgs])</h4>
+
+<p>The function <span class="code">f(set, RowIndex, Cols [, ExtraArgs])</span> is
+called to perform the set in phase two of
+the set-request processing. It is only called if the
+corresponding <span class="code">is_set_ok</span> function did not exist, or
+returned <span class="code">{noError, 0}</span>.
+
+</p>
+<p>This function is mandatory.
+
+</p><a name="11.2.7.1"><!-- Empty --></a>
+<h5>11.2.7.1 Arguments</h5>
+
+<ul>
+
+<li>
+<span class="code">RowIndex</span> is a list of integers that define the
+key values for the row. The <span class="code">RowIndex</span> is the list
+representation (list of integers) which follow the
+<span class="code">Cols</span> integer in the OBJECT IDENTIFIER.
+
+</li>
+
+
+<li>
+<span class="code">Cols</span> is a list of <span class="code">{Column, NewValue}</span>,
+where <span class="code">Column</span> is an integer, and <span class="code">NewValue</span> is
+guaranteed to be of the correct type, length and within
+ranges, as specified in the MIB. If the object is an
+enumerated integer or of type BITS, the integer value is
+used. The list is sorted by <span class="code">Column</span> (increasing) and
+each <span class="code">Column</span> is guaranteed to be a valid column
+number.
+
+</li>
+
+
+</ul>
+<a name="11.2.7.2"><!-- Empty --></a>
+<h5>11.2.7.2 Valid Return Values</h5>
+
+<ul>
+
+<li>
+<span class="code">{noError, 0}</span>
+</li>
+
+
+<li>
+<span class="code">{Error, Column}</span> where <span class="code">Error</span> is the same
+as <span class="code">set</span> for variables, and <span class="code">Column</span> denotes
+the faulty column. <span class="code">Column</span> must be one of the columns
+in the <span class="code">Cols</span> list.
+</li>
+
+
+</ul>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

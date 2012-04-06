@@ -1,0 +1,17 @@
+{counters,'1','Up/Down Time(up/down)',true}.
+{counters,'2','Completed Requests(number/sec)',true}.
+{counters,'3','Completed Requests(max/sec)',true}.
+{counters,'4','Completed Requests(avg/sec)',true}.
+{counters,'5','Completed Requests(total)',true}.
+{counters,'6','Latency(avg this interval)',true}.
+{counters,'7','Latency(avg since start)',true}.
+{counters,'8','Load(now)',true}.
+{counters,'9','Load(max)',true}.
+{counters,'10','Active Sessions(now)',true}.
+{counters,'11','Active Sessions(max)',false}.
+{counters,'12','Apology Pages Served(Network Error - number this second)',false}.
+{counters,'13','Apology Pages Served(Network Error - total)',false}.
+{counters,'14','Apology Pages Served(Site Busy - number this second)',false}.
+{counters,'15','Apology Pages Served(Site Busy - total)',false}.
+{counters,'16','Application Web Server Backlog(now)',false}.
+{counters,'17','Application Web Server Backlog(max)',false}.

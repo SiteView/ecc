@@ -1,0 +1,744 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmp</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmp</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmp
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Interface functions to the SNMP toolkit
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmp</span> contains interface functions to the 
+SNMP toolkit.
+</p>
+</div>
+
+<h3>Common Data Types</h3>
+<div class="REFBODY">
+
+<p>The following data-types are used in the functions below: 
+</p>
+<ul>
+
+<li>
+
+<span class="code">datetime() = {date(), time()}</span><br />
+
+See <a href="javascript:erlhref('../../../../', 'stdlib', 'calendar.html');">calendar</a>
+for more info.<br />
+
+
+</li>
+
+
+</ul>
+<a name="config"><!-- Empty --></a>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="config-0"><span class="bold_code">config() -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>A simple interactive configuration tool. Simple
+configuration files can be generated, but more complex
+configurations still have to be edited manually.
+
+</p>
+<p>The tool is a textual based tool that asks some questions
+and generates <span class="code">sys.config</span> and <span class="code">*.conf</span> files.
+
+</p>
+<p><strong>Note</strong> that if the application shall support version 3, 
+then the crypto app must be started before running this function 
+(password generation).
+</p>
+<p><strong>Note</strong> also that some of the configuration files for the 
+agent and manager share the same names. This means that 
+they have to be stored in <strong>different</strong> directories!
+</p><a name="start"><!-- Empty --></a>
+</div>
+
+<p><a name="start-0"><span class="bold_code">start() -&#62; ok | {error, Reason}</span></a><br/>
+<a name="start-1"><span class="bold_code">start(Type) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Type = start_type()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Starts the SNMP application.
+</p>
+<p>See <a href="javascript:erlhref('../../../../', 'kernel', 'application.html');">application</a> for more info.
+</p><a name="start_agent"><!-- Empty --></a>
+</div>
+
+<p><a name="start_agent-0"><span class="bold_code">start_agent() -&#62; ok | {error, Reason}</span></a><br/>
+<a name="start_agent-1"><span class="bold_code">start_agent(Type) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Type = start_type()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The SNMP application consists of several entities, of which the
+agent is one. This function starts the agent entity of the 
+application. 
+
+</p>
+<p>Note that the only way to actually start the agent in this way is
+to add the agent related config after starting the application (e.g
+it cannot be part of the normal application config; sys.config).
+This is done by calling: 
+<span class="code">application:set_env(snmp, agent, Conf)</span>.
+
+</p>
+<p>The default value for <span class="code">Type</span> is <span class="code">normal</span>.
+</p><a name="start_manager"><!-- Empty --></a>
+</div>
+
+<p><a name="start_manager-0"><span class="bold_code">start_manager() -&#62; ok | {error, Reason}</span></a><br/>
+<a name="start_manager-1"><span class="bold_code">start_manager(Type) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Type = start_type()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The SNMP application consists of several entities, of which the
+manager is one. This function starts the manager entity of the 
+application. 
+
+</p>
+<p>Note that the only way to actually start the manager in this way is
+to add the manager related config after starting the application (e.g
+it cannot be part of the normal application config; sys.config).
+This is done by calling: 
+<span class="code">application:set_env(snmp, manager, Conf)</span>.
+
+</p>
+<p>The default value for <span class="code">Type</span> is <span class="code">normal</span>.
+</p><a name="dat"><!-- Empty --></a>
+</div>
+
+<p><a name="date_and_time-0"><span class="bold_code">date_and_time() -&#62; DateAndTime</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">DateAndTime = [int()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Returns current date and time as the data type DateAndTime,
+as specified in RFC1903. This is an OCTET STRING.
+</p><a name="dat2ut_dst"><!-- Empty --></a>
+</div>
+
+<p><a name="date_and_time_to_universal_time_dst-1"><span class="bold_code">date_and_time_to_universal_time_dst(DateAndTime) -&#62; [utc()]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">DateAndTime = [int()]</span><br/>
+<span class="bold_code">utc() = {{Y,Mo,D},{H,M,S}}</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts a DateAndTime list to a list of possible universal 
+time(s). The universal time value on the same format as defined in
+calendar(3). 
+</p><a name="dat2s"><!-- Empty --></a>
+</div>
+
+<p><a name="date_and_time_to_string-1"><span class="bold_code">date_and_time_to_string(DateAndTime) -&#62; string()</span></a><br/>
+<a name="date_and_time_to_string-2"><span class="bold_code">date_and_time_to_string(DateAndTime, Validate) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">DateAndTime = [int()]</span><br/>
+<span class="bold_code">Validate = fun(Kind, Data) -&#62; boolean()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts a DateAndTime list to a printable string, according
+to the DISPLAY-HINT definition in RFC2579.
+</p>
+<p>The validation fun, <span class="code">Validate</span>, allows for a more &#34;flexible&#34; 
+validation of the <span class="code">DateAndTime</span> argument. Whenever the data 
+is found to not follow RFC2579, the fun is called to allow a more
+&#34;lax&#34; validation. 
+See the <a href="#vdat">validate_date_and_time/2</a>
+function for more info on the <span class="code">Validate</span> fun. 
+</p><a name="dat2s2"><!-- Empty --></a>
+</div>
+
+<p><a name="date_and_time_to_string2-1"><span class="bold_code">date_and_time_to_string2(DateAndTime) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">DateAndTime = [int()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts a DateAndTime list to a printable string, according
+         to the DISPLAY-HINT definition in RFC2579, with the extension 
+that it also allows the values &#34;hours from UTC&#34; = 14 together with 
+&#34;minutes from UTC&#34; = 0. 
+</p><a name="lt2dat_dst"><!-- Empty --></a>
+</div>
+
+<p><a name="local_time_to_date_and_time_dst-1"><span class="bold_code">local_time_to_date_and_time_dst(Local) -&#62; [DateAndTime]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Local = {{Y,Mo,D},{H,M,S}}</span><br/>
+<span class="bold_code">DateAndTime = [int()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts a local time value to a list of possible DateAndTime 
+list(s). The local time value on the same format as defined in 
+calendar(3).
+</p><a name="ut2dat"><!-- Empty --></a>
+</div>
+
+<p><a name="universal_time_to_date_and_time-1"><span class="bold_code">universal_time_to_date_and_time(UTC) -&#62; DateAndTime</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UTC = {{Y,Mo,D},{H,M,S}}</span><br/>
+<span class="bold_code">DateAndTime = [int()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts a universal time value to a DateAndTime list. The
+universal time value on the same format as defined in calendar(3).
+</p><a name="vdat"><!-- Empty --></a>
+</div>
+
+<p><a name="validate_date_and_time-1"><span class="bold_code">validate_date_and_time(DateAndTime) -&#62; bool()</span></a><br/>
+<a name="validate_date_and_time-2"><span class="bold_code">validate_date_and_time(DateAndTime, Validate) -&#62; bool()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">DateAndTime = term()</span><br/>
+<span class="bold_code">Validate = fun(Kind, Data) -&#62; boolean()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Checks if <span class="code">DateAndTime</span> is a correct DateAndTime
+value, as specified in RFC2579. This function can be used in
+instrumentation functions to validate a DateAndTime value.
+</p>
+<p>The validation fun, <span class="code">Validate</span>, allows for a more &#34;flexible&#34; 
+validation of the <span class="code">DateAndTime</span> argument. Whenever the data 
+is found to not follow RFC2579, the fun is called to allow a more
+&#34;lax&#34; validation. 
+The input to the validation fun looks like this: 
+</p>
+<div class="example"><pre>
+          Kind             Data
+          --------------   ----------------------
+          year             {Year1, Year2}
+          month            Month
+          day              Day
+          hour             Hour
+          minute           Minute
+          seconds          Seconds
+          deci_seconds     DeciSeconds
+          diff             [Sign, Hour, Minute]
+          valid_date       {Year, Month, Day}
+        
+</pre></div>
+<a name="passwd2localized_key"><!-- Empty --></a>
+</div>
+
+<p><a name="passwd2localized_key-3"><span class="bold_code">passwd2localized_key(Alg, Passwd, EngineID) -&#62; Key</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Alg = algorithm()</span><br/>
+<span class="bold_code">algorithm() = md5 | sha</span><br/>
+<span class="bold_code">Passwd = string()</span><br/>
+<span class="bold_code">EngineID = string()</span><br/>
+<span class="bold_code">Key = list()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Generates a key that can be used as an authentication
+or privacy key using MD5 och SHA. The key is
+localized for EngineID.
+</p><a name="read_mib"><!-- Empty --></a>
+</div>
+
+<p><a name="read_mib-1"><span class="bold_code">read_mib(FileName) -&#62; {ok, mib()} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">FileName = string()</span><br/>
+<span class="bold_code">mib() = #mib{}</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read a compiled mib.
+</p><a name="log_to_txt"><!-- Empty --></a>
+</div>
+
+<p><a name="log_to_txt-5"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-6"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-7"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start, Stop) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">LogDir = string()</span><br/>
+<span class="bold_code">Mibs = [MibName]</span><br/>
+<span class="bold_code">OutFile = string()</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+<span class="bold_code">LogName = string()</span><br/>
+<span class="bold_code">LogFile = string()</span><br/>
+<span class="bold_code">Start = Stop = null | datetime() | {local_time,datetime()} | {universal_time,datetime()} </span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts an Audit Trail Log to a readable text file, where
+each item has a trailing TAB character, and any TAB
+character in the body of an item has been replaced by ESC
+TAB.
+
+</p>
+<p>The function can be used on a running system, or by copying
+the entire log directory and calling this function. SNMP
+must be running in order to provide MIB information.
+
+</p>
+<p><span class="code">LogDir</span> is the name of the directory where the audit
+trail log is stored. 
+<span class="code">Mibs</span> is a list of Mibs to be used. The function uses 
+the information in the Mibs to convert for example object 
+identifiers to their symbolic name. 
+<span class="code">OutFile</span> is the name of the generated text-file.
+<span class="code">LogName</span> is the name of the log, 
+<span class="code">LogFile</span> is the name of the log file. 
+<span class="code">Start</span> is the start (first) date and time from which 
+log events will be converted and 
+<span class="code">Stop</span> is the stop (last) date and time to which log 
+events will be converted.
+
+</p>
+<p>The format of an audit trail log text item is as follows:
+
+</p>
+<p><span class="code">Tag Addr - Community [TimeStamp] Vsn</span><br />
+
+<span class="code">PDU</span>
+</p>
+<p>where <span class="code">Tag</span> is <span class="code">request</span>, <span class="code">response</span>, 
+<span class="code">report</span>, <span class="code">trap</span> or <span class="code">inform</span>; Addr is 
+<span class="code">IP:Port</span> (or comma space separated list of such);
+<span class="code">Community</span> is the community parameter (SNMP version
+v1 and v2), or <span class="code">SecLevel:&#34;AuthEngineID&#34;:&#34;UserName&#34;</span>
+(SNMP v3); <span class="code">TimeStamp</span> is a date and time stamp,
+and <span class="code">Vsn</span> is the SNMP version. <span class="code">PDU</span> is a textual
+version of the protocol data unit. There is a new line
+between <span class="code">Vsn</span> and <span class="code">PDU</span>.
+</p><a name="change_log_size"><!-- Empty --></a>
+</div>
+
+<p><a name="change_log_size-2"><span class="bold_code">change_log_size(LogName, NewSize) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">LogName = string()</span><br/>
+<span class="bold_code">NewSize = {MaxBytes, MaxFiles}</span><br/>
+<span class="bold_code">MaxBytes = integer()</span><br/>
+<span class="bold_code">MaxFiles = integer()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Changes the log size of the Audit Trail Log. The
+application must be configured to use the audit trail log
+function. Please refer to disk_log(3) in Kernel Reference 
+Manual for a description of how to change the log size.
+
+</p>
+<p>The change is permanent, as long as the log is not deleted. 
+That means, the log size is remembered across reboots.
+</p><a name="print_version_info"><!-- Empty --></a>
+</div>
+
+<p><a name="print_version_info-0"><span class="bold_code">print_version_info() -&#62; void()</span></a><br/>
+<a name="print_version_info-1"><span class="bold_code">print_version_info(Prefix) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Prefix = string() | integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Utility function(s) to produce a formatted printout of the versions
+info generated by the <span class="code">versions1</span> function
+</p>
+<p>This is the same as doing, e.g.: 
+</p>
+<div class="example"><pre>
+           {ok, V} = snmp:versions1(), 
+           snmp:print_versions(V).
+        
+</pre></div>
+<a name="versions1"><!-- Empty --></a><a name="versions2"><!-- Empty --></a>
+</div>
+
+<p><a name="versions1-0"><span class="bold_code">versions1() -&#62; {ok, Info} | {error, Reason}</span></a><br/>
+<a name="versions2-0"><span class="bold_code">versions2() -&#62; {ok, Info} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Info = [info()]</span><br/>
+<span class="bold_code">info() = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Utility functions used to retrieve some system and
+application info.
+</p>
+<p>The difference between the two functions is in how they get
+the modules to check. <span class="code">versions1</span> uses the app-file and
+<span class="code">versions2</span> uses the function <span class="code">application:get_key</span>.
+</p><a name="print_versions"><!-- Empty --></a>
+</div>
+
+<p><a name="print_versions-1"><span class="bold_code">print_versions(VersionInfo) -&#62; void()</span></a><br/>
+<a name="print_versions-2"><span class="bold_code">print_versions(Prefix, VersionInfo) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">VersionInfo = [version_info()]</span><br/>
+<span class="bold_code">version_info() = term()</span><br/>
+<span class="bold_code">Prefix = string() | integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Utility function to produce a formatted printout of the versions
+info generated by the <span class="code">versions1</span> and <span class="code">versions2</span>
+functions
+</p>
+<p>Example: 
+</p>
+<div class="example"><pre>
+           {ok, V} = snmp:versions1(), 
+           snmp:print_versions(V).
+        
+</pre></div>
+<a name="enable_trace"><!-- Empty --></a>
+</div>
+
+<p><a name="enable_trace-0"><span class="bold_code">enable_trace() -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Starts a dbg tracer that prints trace events to stdout (using
+plain io:format after a minor formatting). 
+</p><a name="disable_trace"><!-- Empty --></a>
+</div>
+
+<p><a name="disable_trace-0"><span class="bold_code">disable_trace() -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>Stop the tracer. 
+</p><a name="set_trace1"><!-- Empty --></a>
+</div>
+
+<p><a name="set_trace-1"><span class="bold_code">set_trace(Targets) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Targets = target() | targets()</span><br/>
+<span class="bold_code">target() = module()</span><br/>
+<span class="bold_code">module() = atom()</span><br/>
+<span class="bold_code">targets() = [target() | {target(), target_options()}]</span><br/>
+<span class="bold_code">target_options() = [target_option()]</span><br/>
+<span class="bold_code">target_option() = {return_trace, boolean()} | {scope, scope()}</span><br/>
+<span class="bold_code">scope() = all_functions | exported_functions | function_name() | {function_name(), function_arity()}</span><br/>
+<span class="bold_code">function_name() = atom()</span><br/>
+<span class="bold_code">function_arity() = integer() &#62;= 0</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is used to set up default trace on function(s) 
+for the given module or modules. The scope of the trace will be 
+all <strong>exported</strong> functions (both the call info and the return 
+         value). Timestamp info will also be included. 
+</p><a name="reset_trace"><!-- Empty --></a>
+</div>
+
+<p><a name="reset_trace-1"><span class="bold_code">reset_trace(Targets) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Targets = module() | modules()</span><br/>
+<span class="bold_code">modules() = [module()]</span><br/>
+<span class="bold_code">module() = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is used to reset (disable) trace for the 
+         given module(s). 
+</p><a name="set_trace2"><!-- Empty --></a>
+</div>
+
+<p><a name="set_trace-2"><span class="bold_code">set_trace(Targets, Opts) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Targets = target() | targets()</span><br/>
+<span class="bold_code">target() = module()</span><br/>
+<span class="bold_code">module() = atom()</span><br/>
+<span class="bold_code">targets() = [target() | {target(), target_options()}]</span><br/>
+<span class="bold_code">target_options() = [target_option()]</span><br/>
+<span class="bold_code">target_option() = {return_trace, boolean()} | {scope, scope()}</span><br/>
+<span class="bold_code">scope() = all_functions | exported_functions | function_name() | {function_name(), function_arity()}</span><br/>
+<span class="bold_code">function_name() = atom()</span><br/>
+<span class="bold_code">function_arity() = integer() &#62;= 0</span><br/>
+<span class="bold_code">Opts = disable | trace_options()</span><br/>
+<span class="bold_code">trace_options() = [trace_option()]</span><br/>
+<span class="bold_code">trace_option() = {timestamp, boolean()} | target_option()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is used to set up trace on function(s) for the given
+         module or modules. 
+</p>
+<p>The example below sets up trace on the exported functions (default) 
+         of module <span class="code">snmp_generic</span> and all functions of module 
+         <span class="code">snmp_generic_mnesia</span>. With return values (which is default)
+and timestamps in both cases (which is also default): 
+</p>
+<div class="example"><pre>
+          snmp:enable_trace(),
+          snmp:set_trace([snmp_generic, 
+                          {snmp_generic_mnesia, [{scope, all_functions}]}]),
+          .
+          .
+          .
+          snmp:set_trace(snmp_generic, disable),
+          .
+          .
+          .
+          snmp:disable_trace(),
+        
+</pre></div>
+
+</div>
+
+<h3>See Also</h3>
+<div class="REFBODY">
+
+<p>calendar(3)
+
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

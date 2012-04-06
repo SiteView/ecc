@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<deviceTypes>
+        <device>
+                <identifier>cisco</identifier>
+                <displayName>Cisco Routers and Switches</displayName>
+                <deviceMetrics>
+                        <metric>
+                                <OID>1.3.6.1.4.1.9.9.109.1.1.1.1.7</OID>
+                                <metricName>CPU Usage</metricName>
+                                <units>percent used</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.4.1.9.9.48.1.1.1.5</OID>
+                                <metricName>Memory</metricName>
+                                <metricNameOID>1.3.6.1.4.1.9.9.48.1.1.1.2</metricNameOID>
+                                <units>bytes free </units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                </deviceMetrics>
+        </device>
+        <device>
+                <identifier>windows</identifier>
+                <displayName>Windows SNMP Agent</displayName>
+                <deviceMetrics>
+                        <metric>
+                                <OID>1.3.6.1.2.1.25.3.3.1.2</OID>
+                                <metricName>CPU Load </metricName>
+                                <units>percentage time busy over last minute</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.2.1.25.1.6</OID>
+                                <metricName>Processes</metricName>
+                                <units># Processes</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.2.1.25.1.5</OID>
+                                <metricName>Users</metricName>
+                                <units># Users</units>
+                                <realTime>false</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                </deviceMetrics>
+        </device>
+
+        <device>
+                <identifier>extreme</identifier>
+                <displayName>Extreme Networks Devices</displayName>
+                <deviceMetrics>
+                        <metric>
+                                <OID>1.3.6.1.4.1.1916.1.1.1.28</OID>
+                                <metricName>CPU Usage</metricName>
+                                <units>cycles used/second</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                </deviceMetrics>
+        </device>
+
+        <device>
+                <identifier>juniper_M</identifier>
+                <displayName>Juniper M-Series</displayName>
+                <deviceMetrics>
+                        <metric>
+                                <OID>1.3.6.1.4.1.2636.3.1.13.1.8</OID>
+                                <metricName>CPU Usage</metricName>
+                                <units>percent used</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.4.1.2636.3.1.13.1.11</OID>
+                                <metricName>Memory</metricName>
+                                <units>percent used</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                </deviceMetrics>
+        </device>
+        <device>
+                <identifier>netsnmp</identifier>
+                <displayName>Net SNMP Agent</displayName>
+                <deviceMetrics>
+                        <metric>
+                                <OID>1.3.6.1.4.1.2021.11.10</OID>
+                                <metricName>CPU Usage</metricName>
+                                <units>percent used</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.4.1.2021.4.6</OID>
+                                <metricName>Memory</metricName>
+                                <units>bytes available</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                </deviceMetrics>
+        </device>
+	 <device>
+                <identifier>caining</identifier>
+                <displayName>Cai Ning</displayName>
+                <deviceMetrics>
+                        <metric>
+                                <OID>1.3.6.1.2.1.25.3.3.1.2</OID>
+                                <metricName>CaiNing CPU Load </metricName>
+                                <units>CaiNing percentage time busy over last minute</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.2.1.25.1.6</OID>
+                                <metricName>CaiNing Processes</metricName>
+                                <units>CaiNing # Processes</units>
+                                <realTime>true</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                        <metric>
+                                <OID>1.3.6.1.2.1.25.1.5</OID>
+                                <metricName>CaiNing Users</metricName>
+                                <units>CaiNing # Users</units>
+                                <realTime>false</realTime>
+                                <sameGraph>true</sameGraph>
+                                <multipleInstances>all</multipleInstances>
+                        </metric>
+                </deviceMetrics>
+        </device>
+</deviceTypes>

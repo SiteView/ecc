@@ -1,0 +1,839 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Definition of Agent Configuration Files</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="6"><!-- Empty --></a>
+<h2>6 Definition of Agent Configuration Files</h2>
+
+<p>All configuration data must be included in configuration files
+that are located in the configuration directory. The name of this
+directory is given in the <span class="code">config_dir</span> configuration
+parameter. These files are read at start-up, and are used to
+initialize the SNMPv2-MIB or STANDARD-MIB, SNMP-FRAMEWORK-MIB,
+SNMP-MPD-MIB, SNMP-VIEW-BASED-ACM-MIB, SNMP-COMMUNITY-MIB,
+SNMP-USER-BASED-SM-MIB, SNMP-TARGET-MIB and SNMP-NOTIFICATION-MIB
+(refer to the <a href="snmp_agent_funct_descr.html#management">Management of the Agent</a> for a description of the MIBs). 
+</p>
+<p>The files are: 
+</p>
+<ul>
+
+<li>
+
+<span class="code">agent.conf</span>: see 
+<a href="#agent_information">Agent Information</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">standard.conf</span>: see 
+<a href="#system_information">System Information</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">context.conf</span>: see 
+<a href="#context">Contexts</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">community.conf</span>: see 
+<a href="#community">Communities</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">target_addr.conf</span>: see 
+<a href="#target_addr">Target Address Definitions</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">target_params.conf</span>: see 
+<a href="#target_params">Target Parameters Definitions</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">vacm.conf</span>: see 
+<a href="#vacm">MIB Views for VACM</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">usm.conf</span>: see 
+<a href="#usm">Security data for USM</a><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">notify.conf</span>: see 
+<a href="#notify">Notify Definitions</a><br />
+
+
+</li>
+
+
+</ul>
+
+<p>The directory where the configuration files are found is given as
+a parameter to the agent. 
+</p>
+<p>The entry format in all files are Erlang terms, separated by a
+'<strong>.</strong>' and a <strong>newline</strong>. In the following sections, the
+formats of these terms are described. Comments may be specified as
+ordinary Erlang comments. 
+</p>
+<p>Syntax errors in these files are discovered and reported with the
+function <span class="code">config_err/2</span> of the error report module at start-up. 
+</p><a name="agent_information"><!-- Empty --></a><a name="6.1"><!-- Empty --></a>
+<h3>6.1 Agent Information</h3>
+
+<p>The agent information should be stored in a file called
+<span class="code">agent.conf</span>.
+
+</p>
+<p>Each entry is a tuple of size two:
+
+</p>
+<p><span class="code">{AgentVariable, Value}.</span>
+</p>
+<ul>
+
+<li>
+<span class="code">AgentVariable</span> is one of the variables is
+SNMP-FRAMEWORK-MIB or one of the internal variables
+<span class="code">intAgentUDPPort</span>, which defines which UDP port the agent
+listens to, or <span class="code">intAgentIpAddress</span>, which defines the IP
+address of the agent.
+
+</li>
+
+
+<li>
+<span class="code">Value</span> is the value for the variable.
+
+</li>
+
+
+</ul>
+
+<p>The following example shows a <span class="code">agent.conf</span> file: 
+
+</p>
+<div class="example"><pre>
+{intAgentUDPPort, 4000}.
+{intAgentIpAddress,[141,213,11,24]}.
+{snmpEngineID, &#34;mbj's engine&#34;}.
+{snmpEngineMaxPacketSize, 484}.
+    
+</pre></div>
+
+<p>The value of <span class="code">snmpEngineID</span> is a string, which for a 
+deployed agent should have a very specific structure. See
+RFC 2271/2571 for details.
+
+</p><a name="context"><!-- Empty --></a><a name="6.2"><!-- Empty --></a>
+<h3>6.2 Contexts</h3>
+
+<p>The context information should be stored in a file called
+<span class="code">context.conf</span>. The default context <span class="code">&#34;&#34;</span>
+need not be present.
+
+</p>
+<p>Each row defines a context in the agent. This information is
+used in the table <span class="code">vacmContextTable</span> in the
+SNMP-VIEW-BASED-ACM-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">ContextName.</span>
+</p>
+<ul>
+
+<li>
+<span class="code">ContextName</span> is a string.
+
+</li>
+
+
+</ul>
+<a name="system_information"><!-- Empty --></a><a name="6.3"><!-- Empty --></a>
+<h3>6.3 System Information</h3>
+
+<p>The system information should be stored in a file called
+<span class="code">standard.conf</span>.
+
+</p>
+<p>Each entry is a tuple of size two:
+
+</p>
+<p><span class="code">{SystemVariable, Value}.</span>
+</p>
+<ul>
+
+<li>
+<span class="code">SystemVariable</span> is one of the variables in the
+system group, or <span class="code">snmpEnableAuthenTraps</span>.
+
+</li>
+
+
+<li>
+<span class="code">Value</span> is the value for the variable.
+
+</li>
+
+
+</ul>
+
+<p>The following example shows a valid <span class="code">standard.conf</span> file: 
+
+</p>
+<div class="example"><pre>
+{sysDescr, &#34;Erlang SNMP agent&#34;}.
+{sysObjectID, [1,2,3]}.
+{sysContact, &#34;(mbj,eklas)@erlang.ericsson.se&#34;}.
+{sysName, &#34;test&#34;}.
+{sysServices, 72}.
+{snmpEnableAuthenTraps, enabled}.
+    
+</pre></div>
+
+<p>A value must be provided for all variables, which lack default
+values in the MIB.
+
+</p><a name="community"><!-- Empty --></a><a name="6.4"><!-- Empty --></a>
+<h3>6.4 Communities</h3>
+
+<p>The community information should be stored in a file called
+<span class="code">community.conf</span>. It must be present if the agent is
+configured for SNMPv1 or SNMPv2c.
+
+</p>
+<p>The corresponding table is <span class="code">snmpCommunityTable</span> in the
+SNMP-COMMUNITY-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">{CommunityIndex, CommunityName, SecurityName, ContextName, TransportTag}.</span>
+</p>
+<ul>
+
+<li>
+<span class="code">CommunityIndex</span> is a non-empty string.
+
+</li>
+
+
+<li>
+<span class="code">CommunityName</span> is a string.
+
+</li>
+
+
+<li>
+<span class="code">SecurityName</span> is a string.
+
+</li>
+
+
+<li>
+<span class="code">ContextName</span> is a string.
+
+</li>
+
+
+<li>
+<span class="code">TransportTag</span> is a string.
+
+</li>
+
+
+</ul>
+<a name="vacm"><!-- Empty --></a><a name="6.5"><!-- Empty --></a>
+<h3>6.5 MIB Views for VACM</h3>
+
+<p>The information about MIB Views for VACM should be stored in a 
+file called
+<span class="code">vacm.conf</span>.
+
+</p>
+<p>The corresponding tables are <span class="code">vacmSecurityToGroupTable</span>,
+<span class="code">vacmAccessTable</span> and <span class="code">vacmViewTreeFamilyTable</span> in the
+SNMP-VIEW-BASED-ACM-MIB.
+
+</p>
+<p>Each entry is one of the terms, one entry corresponds to one
+row in one of the tables.
+
+</p>
+<p><span class="code">{vacmSecurityToGroup, SecModel, SecName, GroupName}.</span>
+</p>
+<p><span class="code">{vacmAccess, GroupName, Prefix, SecModel, SecLevel, Match, ReadView, WriteView, NotifyView}.</span>
+</p>
+<p><span class="code">{vacmViewTreeFamily, ViewIndex, ViewSubtree, ViewStatus, ViewMask}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">SecModel</span> is <span class="code">any</span>, <span class="code">v1</span>, <span class="code">v2c</span>, or
+<span class="code">usm</span>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">GroupName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Prefix</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecLevel</span> is <span class="code">noAuthNoPriv</span>, <span class="code">authNoPriv</span>,
+or <span class="code">authPriv</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Match</span> is <span class="code">prefix</span> or <span class="code">exact</span>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">ReadView</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">WriteView</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">NotifyView</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">ViewIndex</span> is an integer.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">ViewSubtree</span> is a list of integer.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">ViewStatus</span> is either <span class="code">included</span> or <span class="code">excluded</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">ViewMask</span> is either <span class="code">null</span> or a list of ones and
+zeros. Ones nominate that an exact match is used for this
+sub-identifier. Zeros are wild-cards which match any
+sub-identifier. If the mask is shorter than the sub-tree, the
+tail is regarded as all ones. <span class="code">null</span> is shorthand for a
+mask with all ones.<br />
+
+
+</li>
+
+
+</ul>
+<a name="usm"><!-- Empty --></a><a name="6.6"><!-- Empty --></a>
+<h3>6.6 Security data for USM</h3>
+
+<p>The information about Security data for USM should be stored in a 
+file called
+<span class="code">usm.conf</span>, which must be present if the agent is configured
+for SNMPv3.
+
+</p>
+<p>The corresponding table is <span class="code">usmUserTable</span> in the
+SNMP-USER-BASED-SM-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">{EngineID, UserName, SecName, Clone, AuthP, AuthKeyC, OwnAuthKeyC, PrivP, PrivKeyC, OwnPrivKeyC, Public, AuthKey, PrivKey}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">EngineID</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">UserName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Clone</span> is <span class="code">zeroDotZero</span> or a list of integers.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">AuthP</span> is a <span class="code">usmNoAuthProtocol</span>,
+<span class="code">usmHMACMD5AuthProtocol</span>, or <span class="code">usmHMACSHAAuthProtocol</span>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">AuthKeyC</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">OwnAuthKeyC</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">PrivP</span> is a <span class="code">usmNoPrivProtocol</span>, 
+<span class="code">usmDESPrivProtocol</span> or <span class="code">usmAesCfb128Protocol</span>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">PrivKeyC</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">OwnPrivKeyC</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Public</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">AuthKey</span> is a list (of integer). This is the User's secret
+localized authentication key. It is not visible in the MIB. The length
+of this key needs to be 16 if <span class="code">usmHMACMD5AuthProtocol</span> is used, and 
+20 if <span class="code">usmHMACSHAAuthProtocol</span> is used.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">PrivKey</span> is a list (of integer). This is the User's secret
+localized encryption key. It is not visible in the MIB. The length
+of this key needs to be 16 if <span class="code">usmDESPrivProtocol</span> or 
+<span class="code">usmAesCfb128Protocol</span> is used.
+<br />
+
+
+</li>
+
+
+</ul>
+<a name="notify"><!-- Empty --></a><a name="6.7"><!-- Empty --></a>
+<h3>6.7 Notify Definitions</h3>
+
+<p>The information about Notify Definitions should be stored in a
+file called
+<span class="code">notify.conf</span>.
+
+</p>
+<p>The corresponding table is <span class="code">snmpNotifyTable</span> in the
+SNMP-NOTIFICATION-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">{NotifyName, Tag, Type}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">NotifyName</span> is a unique non-empty string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Tag</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Type</span> is <span class="code">trap</span> or <span class="code">inform</span>.
+<br />
+
+
+</li>
+
+
+</ul>
+<a name="target_addr"><!-- Empty --></a><a name="6.8"><!-- Empty --></a>
+<h3>6.8 Target Address Definitions</h3>
+
+<p>The information about Target Address Definitions should be 
+stored in a file called
+<span class="code">target_addr.conf</span>.
+
+</p>
+<p>The corresponding tables are <span class="code">snmpTargetAddrTable</span> in the
+SNMP-TARGET-MIB and <span class="code">snmpTargetAddrExtTable</span> in the SNMP-COMMUNITY-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">{TargetName, Ip, Udp, Timeout, RetryCount, TagList, ParamsName, EngineId}.</span> or <br />
+
+<span class="code">{TargetName, Ip, Udp, Timeout, RetryCount, TagList, ParamsName, EngineId, TMask, MaxMessageSize}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">TargetName</span> is a unique non-empty string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Ip</span> is a list of four integers. 
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Udp</span> is an integer.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Timeout</span> is an integer.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">RetryCount</span> is an integer.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">TagList</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">ParamsName</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">EngineId</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">TMask</span> is a string of size 0, or size 6 (default: []).
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">MaxMessageSize</span> is an integer (default: 2048).
+<br />
+
+
+</li>
+
+
+</ul>
+<a name="target_params"><!-- Empty --></a><a name="6.9"><!-- Empty --></a>
+<h3>6.9 Target Parameters Definitions</h3>
+
+<p>The information about Target Parameters Definitions should be
+stored in a file called
+<span class="code">target_params.conf</span>.
+
+</p>
+<p>The corresponding table is <span class="code">snmpTargetParamsTable</span> in the
+SNMP-TARGET-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">{ParamsName, MPModel, SecurityModel, SecurityName, SecurityLevel}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">ParamsName</span> is a unique non-empty string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">MPModel</span> is <span class="code">v1</span>, <span class="code">v2c</span> or <span class="code">v3</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecurityModel</span> is <span class="code">v1</span>, <span class="code">v2c</span>, or <span class="code">usm</span>.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecurityName</span> is a string.
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecurityLevel</span> is <span class="code">noAuthNoPriv</span>, <span class="code">authNoPriv</span>
+or <span class="code">authPriv</span>.
+<br />
+
+
+</li>
+
+
+</ul>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

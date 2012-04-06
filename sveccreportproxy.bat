@@ -1,0 +1,1 @@
+erl  -pa additionmod\erlsoap\ebin -pa additionmod\erlsom-1.2.1\ebin -pa iconv -pa  core\ebin -pa plugin\ebin -pa modules\snmp\ebin -pa modules\esdl-1.0.1\ebin -pa modules\erlcmdb\ebin -pa modules\nnm\ebin -pa modules\proxy_web\ebin -pa ssh\ebin -pa rabbitmq-client\ebin -pa  -boot start_sasl -sname reportproxy -setcookie 3ren -eval "application:start(svecc_monproxy)." 

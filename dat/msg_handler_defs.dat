@@ -1,0 +1,38 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; msg_handler_defs.dat
+;; --------------
+;; This file includes definitions related to LR message handler.
+;;
+;; The section [suffix] contains:
+;; 1. format : The format of the suffix. If the format contains the string "xxxx",
+;;             then this string will eventually be replaced by the message type
+;;             and ID. 
+;; 2. delimiter : seperates message from suffix.
+;; 3. error_suffix : message type for error message.
+;; 4. warning_suffix : message type for warning message.
+;; 5. notify_suffix : message type for notify message.
+;; 6. enable : 1 -> suffixes are enabled.
+;;             0 -> suffixes are not enabled.  
+;;
+;; The section [prefix] contains:
+;; 1. error_prefix : prefix for messages of type error
+;; 2. warning_prefix : prefix for messages of type warning
+;; 3. notify_prefix : prefix for messages of type notify
+;; 4. fatal_error_prefix : prefix for messages of type fatal error
+;; 5. continue_after_error_prefix : prefix for messages of type continue after error
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[suffix]
+format="[MsgId: xxxx]"
+delimiter="	"
+error_suffix="MERR"
+warning_suffix="MWAR"
+notify_suffix="MMSG"
+enable=1
+
+[prefix]
+error_prefix=Error
+fatal_error_prefix=Fatal Error
+continue_after_error_prefix=Continue After Error
+warning_prefix=Warning
+notify_prefix=Notify

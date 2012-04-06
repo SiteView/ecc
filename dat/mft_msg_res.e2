@@ -1,0 +1,34 @@
+[Messages]
+Version=1.000
+-51999=%1 %2 %3 %4
+-51998=Mercury File Transfer: Failure in xdr encoding : %1.
+-51997=Mercury File Transfer: Failure in xdr decoding : %1.
+-51996=Mercury File Transfer: Failed to create client for service %1.
+-51995=Mercury File Transfer: Failed to create server for service %1.
+-51994=Mercury File Transfer: Unknown value %_1_ld for type %2.
+-51993=Mercury File Transfer: Failed to post message from %1 returned %_2_ld
+-51992=Mercury File Transfer: Request for %1, but the file or directory does not exist.
+-51991=Mercury File Transfer: Unable to allocate memory.
+-51990=Mercury File Transfer: Failed to create worker thread.
+-51989=Mercury File Transfer: Timeout while creating worker thread. No response from thread for %_1_ld miliseconds.
+-51988=Mercury File Transfer: The attribute netdir_path has not been passed to the mft_server.
+-51987=Mercury File Transfer: Failed to retrieve sender moniker in %1.
+-51986=Mercury File Transfer: CLrBrSvc instance not found for moniker %1.
+-51985=Mercury File Transfer: Failed to open file %1.
+-51984=Mercury File Transfer: Failed to open directory %1.
+-51983=Mercury File Transfer: Failed to open directory %1 for compression.
+-51982=Mercury File Transfer: Error in reading file %1.
+-51981=Mercury File Transfer: Failed to read file %1 at offset %_2_ld.
+-51980=Mercury File Transfer: Error in reading directory %1 compression stream. rc = %_2_ld.
+-51979=Mercury File Transfer: Error in writing file %1.
+-51978=Mercury File Transfer: Error in writing directory %1 compression stream. rc = %_2_ld.
+-51977=Mercury File Transfer: Error in making directory %1. rc = %_2_ld.
+-51976=Mercury File Transfer error: Cannot create file %1. Reason : %2.
+-51975=Mercury File Transfer error: Cannot create file %1. Reason : Check the file path for illegal characters or length.
+-51974=Mercury File Transfer error: There is no more disk space on %1 at %2.
+-51973=Mercury File Transfer error: There is no more disk space on the Controller machine at %1
+-51972=Mercury File Transfer: Deletion of drive is not permitted %1.
+-51971=Mercury File Transfer: Bad drive name %1.
+-51970=Mercury File Transfer: You are running under secure mode and netdir %1 is not safe.
+Msg_handler_lowest_msg=-51999
+Msg_handler_highest_msg=-51970

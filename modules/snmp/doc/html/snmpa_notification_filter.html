@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa_notification_filter</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa_notification_filter</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa_notification_filter
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Behaviour module for the SNMP agent notification filters.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>This module defines the behaviour of the agent notification
+filters. A <span class="code">snmpa_notification_filter</span> compliant module 
+must export the following functions: 
+</p>
+<ul>
+
+<li>
+
+handle_notification/2<br />
+
+
+</li>
+
+
+</ul>
+
+<p>The semantics of them and their exact signatures are explained
+below. 
+</p>
+<p>The purpose of notification filters is to allow for modification
+and/or suppression of a notification.
+</p>
+<p>A misbehaving filter will be removed.
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="handle_notification-2"><span class="bold_code">handle_notification(Notif, Data) -&#62; Reply</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Reply = send | {send, NewNotif} | dont_send</span><br/>
+<span class="bold_code">Notif = NewNotif = notification() | trap()</span><br/>
+<span class="bold_code">Data = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Handle a notification to be sent. The filter can either
+accept the notification as is, return <span class="code">send</span>, modify
+the notification, return <span class="code">{send, NewNotif}</span> or
+suppress the notification, return <span class="code">dont_send</span>.
+</p>
+<p><span class="code">Data</span> is supplied at filter registration time,
+see <a href="snmpa.html#register_notification_filter">register_notification_filter</a>.
+
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

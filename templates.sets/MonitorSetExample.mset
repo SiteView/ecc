@@ -1,0 +1,31 @@
+{monitor_set,
+"Example Monitor Set",
+"Adds CPU, Disk, and Memory monitors for a server and a URL monitor",
+[
+	{"%server%","Server to monitor(UNCname)","\\\\servername"},
+	{"%url%","URL to monitor","http://www.url.com/"}
+],
+[
+	[
+		{class,cpu_utilization_monitor},
+		{frequency,6000},
+		{name,"CPU Utilization on %server%"},
+		{machine,"%server%"}
+	],
+	[
+		{class,memory_monitor},
+		{frequency,6000},
+		{name,"Memory on %server%"},
+		{machine,"%server%"}
+	],
+	[
+		{class,url_monitor},
+		{frequency,6000},
+		{url,"%url%"},
+		{name,"URL on %url%"},
+		{whenToAuthenticate,"Use Global Preference"},
+		{encodePostData,"contentTypeUrlencoded"},
+		{checkContent,"no content checking"}
+	]
+]
+}.

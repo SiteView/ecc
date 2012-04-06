@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa_error_logger</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa_error_logger</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa_error_logger
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Functions for Reporting SNMP Errors through the error_logger
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmpa_error_logger</span> implements the 
+<span class="code">snmpa_error_report</span> behaviour 
+(see <a href="snmpa_error_report.html">snmpa_error_report</a>) 
+containing two callback functions which are called in order to 
+report SNMP errors.
+
+</p>
+<p>This module provides a simple mechanism for reporting SNMP
+errors. Errors are sent to the <span class="code">error_logger</span> after a 
+size check. Messages are truncated after 1024 chars. 
+It is provided as an example.
+
+</p>
+<p>This module is the default error report module, but can be 
+explicitly configured, see
+<a href="snmpa_error.html#desc">snmpa_error</a> and
+<a href="snmp_config.html#configuration_params">configuration parameters</a>.
+
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="config_err-2"><span class="bold_code">config_err(Format, Args) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Format = string()</span><br/>
+<span class="bold_code">Args = list()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The function is called if an error occurs during the
+configuration phase, for example if a syntax error is found in
+a configuration file.
+
+</p>
+<p><span class="code">Format</span> and <span class="code">Args</span> are as in
+<span class="code">io:format(Format, Args)</span>.
+</p>
+</div>
+
+<p><a name="user_err-2"><span class="bold_code">user_err(Format, Args) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Format = string()</span><br/>
+<span class="bold_code">Args = list()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The function is called if a user related error occurs at
+run-time, for example if a user defined instrumentation
+function returns erroneous.
+
+</p>
+<p><span class="code">Format</span> and <span class="code">Args</span> are as in
+<span class="code">io:format(Format, Args)</span>.
+</p>
+</div>
+
+<h3>See Also</h3>
+<div class="REFBODY">
+
+<p>error_logger(3)
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

@@ -1,0 +1,1 @@
+{itsm_sys_app_application, "incident_ecc_alert", "Alert", "", "", "true", "", "", "", "", ""}.

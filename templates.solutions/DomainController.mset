@@ -1,0 +1,174 @@
+{monitor_set,
+"Active Directory",
+"Monitors Active Directory replication, domain controller availability and domain controller performance",
+[
+	{"_platform","windows"},
+	{"_propertyReplace","browseName=Metric_,classifier=thresholds"},
+	{"_propertyDisplayFilter",[class,error_classifier,depends_condition,warning_classifier,password,monitorDescription]},
+	{"$Server Name#0$","Domain Controller Name (This server must be defined as an Windows Remote.)","dc.your-company.com",[{type,server}]},
+	{"$Host Name#1$","Hostname for Domain Controller","hostname",[]},
+	{"$Replicating Domain Controllers#2$","Comma Seperated list of Domain controllers that Replicate parts of this Domain Controller's directory.","",[]},
+	{"$LDAP Security Principal#3$","LDAP Security Principal of a Domain Admin Account.","cn=DomainAdmin,cn=users,dc=your-company,dc=com",[]},
+	{"$Password#4$","Password for Domain Admin User.","",[{type,password}]},
+	{"$Logical Drive#5$","Logical drive name that contains the Active Directory database.","C",[]},
+	{"$Global Catalog#6$","Select if domain controller is a global catalog server.",true,[{type,bool}]}
+],
+[
+	[
+		{class,browsableNTCounter_monitor},
+		{name,"$Host Name#1$:DC - Security Subsystem"},
+		{xmlfile,"ad-securty.xml"},
+		{server,"\\\\$Server Name#0$"},
+		{frequency,900},
+		{depends_condition,"good"},
+		{browse,[
+			{"28 NTDSxSINGLExKDCxTGSxRequests","NTDS/KDC TGS Requests"},
+			{"32 NTDSxSINGLExNTLMxAuthentications","NTDS/NTLM Authentications"},
+			{"27 NTDSxSINGLExKDCxASxRequests","NTDS/KDC AS Requests"}
+			]
+		}
+	],
+	[
+		{class,service_monitor},
+		{frequency,900},
+		{service,"Kerberos Key Distribution Center"},
+		{depends_condition,"good"},
+		{machine,"\\\\$Server Name#0$"},
+		{name,"$Host Name#1$:DC - Service Monitor - Kerberos Key Distribution Center"}
+	],
+	[
+		{class,service_monitor},
+		{frequency,900},
+		{depends_condition,"good"},
+		{service,"Net Logon"},
+		{machine,"\\\\$Server Name#0$"},
+		{name,"$Host Name#1$:DC - Service Monitor - NetLogon"}
+		
+	],
+	[
+		{class,service_monitor},
+		{frequency,900},
+		{depends_condition,"good"},
+		{service,"Windows Time"},
+		{machine,"\\\\$Server Name#0$"},
+		{name,"$Host Name#1$:DC - Service Monitor - Windows Time"}
+	],
+	[
+		{class,browsableNTCounter_monitor},
+		{xmlfile,"ad-core-ds.xml"},
+		{frequency,900},
+		{depends_condition,"good"},
+		{error_classifier,[{countersInError,'>',0},{"27 ProcessxLSASSxPrivatexBytes",'>',2000000000}]},
+		{browse,[
+				{"40 NTDSxSINGLExDSxSearchxsub-operations/sec","NTDS/DS Search sub-operations/sec"},
+				{"29 NTDSxSINGLExLDAPxSearches/sec","NTDS/LDAP Searches/sec"},
+				{"32 NTDSxSINGLExLDAPxClientxSessions","NTDS/LDAP Client Sessions"},
+				{"30 ProcessxLSASSx%xProcessorxTime","Process/LSASS/% Processor Time"},
+				{"26 ProcessxLSASSxHandlexCount","Process/LSASS/Handle Count"},
+				{"27 ProcessxLSASSxPrivatexBytes","Process/LSASS/Private Bytes"}
+				]
+		}
+		
+	],
+	[
+		{class,ldap_monitor},
+		{urlprovider,"ldap://$Server Name#0$:$Global Catalog#6$"},
+		{frequency,600},
+		{depends_condition,"good"},
+		{error_classifier,[{roundTripTime,'>',15000},{status,'!=',200}]},
+		{warning_classifier,[{roundTripTime,'>',5000}]},
+		{matchstring,"/(cn=$Host Name#1$)/i"},
+		{name,"$Host Name#1$:DS - Domain Controller is Advertised"}
+	],
+	[
+		{class,ldap_monitor},
+		{urlprovider,"ldap://$Server Name#0$:3268"},
+		{frequency,900},
+		{depends_condition,"good"},
+		{error_classifier,[{roundTripTime,'>',15000},{status,'!=',200}]},
+		{warning_classifier,[{roundTripTime,'>',5000}]},
+		{matchstring,"/CN=Schema/i"},
+		{name,"$Host Name#1$:DS - Search of Global Catalouge"},
+		{deployControlVar,"$Global Catalog#6$"},
+		{password,"$Password#4$"},
+		{ldapfilter,"(cn=*)"},
+		{ldapquery,"$LDAP Security Principal#3$"}
+	],
+	[
+		{class,browsableNTCounter_monitor},
+		{xmlfile,"ad-replication.xml"},
+		{frequency,900},
+		{server,"\\\\$Server Name#0$"},
+		{depends_condition,"good"},
+		{name,"$Host Name#1$:FRS - Replication Health"},
+		{browse,[
+			{"87 NTDSxSINGLExDRAxOutboundxBytesxCompressedx(BetweenxSites,xAfterxCompression)xSincexBoot","NTDS/DRA Outbound Bytes Compressed (Between Sites, After Compression) Since Boot"},
+			{"40 NTDSxSINGLExDRAxOutboundxBytesxTotal/sec","NTDS/DRA Outbound Bytes Total/sec"},
+			{"86 NTDSxSINGLExDRAxInboundxBytesxCompressedx(BetweenxSites,xAfterxCompression)xSincexBoot","NTDS/DRA Inbound Bytes Compressed (Between Sites, After Compression) Since Boot"},
+			{"70 NTDSxSINGLExDRAxOutboundxBytesxNotxCompressedx(WithinxSite)xSincexBoot","NTDS/DRA Outbound Bytes Not Compressed (Within Site) Since Boot"}
+			]
+		}
+	],
+	[
+		{class,service_monitor},
+		{frequency,600},
+		{depends_condition,"good"},
+		{service,"File Replication Service"},
+		{machine,"\\\\$Server Name#0$"},
+		{name,"$Host Name#1$:FRS - Service Monitor - File Replication Service"}
+	],
+	[
+		{class,service_monitor},
+		{frequency,900},
+		{depends_condition,"good"},
+		{service,"Intersite Messaging"},
+		{machine,"\\\\$Server Name#0$"},
+		{name,"$Host Name#1$:FRS - Service Monitor - Intersite Messaging"},
+		{monitorDescription,"<br>Intersite messaging service needed for AD replication"}
+	],
+	[
+		{class,script_monitor},
+		{cacheLife,0},
+		{parameters,"$Server Name#0$"},
+		{maxMeasurement,0},
+		{frequency,900},
+		{monitorDescription,"<br> Sysvol must be shared for group policy to be replicated and applied to domain controllers and other objects"},
+		{name,"$Host Name#1$:FRS - Sysvol available"},
+		{remotescript,"none"},
+		{script,"ad-sysvol.bat"}
+	],
+	[
+		{class,browsableNTCounter_monitor},
+		{xmlfile,"win2000sys.xml"},
+		{frequency,300},
+		{server,"\\\\$Server Name#0$"},
+		{depends_condition,"good"},
+		{name,"$Host Name#1$:OS - Core OS Metrics"},
+		{error_classifier,[{countersInError,'>',0},
+							{"29 MemoryxSINGLExPagexFaults/sec",'>',700},
+							{"45 PhysicalDiskx_TotalxCurrentxDiskxQueuexLength",'>',2},
+							{"27 Processorx_Totalx%xDPCxTime",'>',10},
+							{"30 MemoryxSINGLExAvailablexMBytes",'<=',4},
+							{"33 Processorx_Totalx%xProcessorxTime",'>=',85},
+							{"34 SystemxSINGLExContextxSwitches/sec",'>=',70000},
+							{"36 SystemxSINGLExProcessorxQueuexLength",'>=',9},
+							{"29 LogicalDiskxC:xFreexMegabytes",'<=',50},
+							{"27 LogicalDiskxC:x%xFreexSpace",'<=',10}
+							]},
+		{browse,[
+			{"27 Processorx_Totalx%xDPCxTime","Processor/_Total/% DPC Time"},
+			{"36 SystemxSINGLExProcessorxQueuexLength","System/Processor Queue Length"},
+			{"29 MemoryxSINGLExPagexFaults/sec","Memory/Page Faults/sec"},
+			{"34 SystemxSINGLExContextxSwitches/sec","System/Context Switches/sec"},
+			{"27 LogicalDiskxC:x%xFreexSpace","LogicalDisk/$Logical Drive#5$:/% Free Space"},
+			{"30 MemoryxSINGLExAvailablexMBytes","Memory/Available MBytes"},
+			{"29 LogicalDiskxC:xFreexMegabytes","LogicalDisk/$Logical Drive#5$:/Free Megabytes"},
+			{"33 Processorx_Totalx%xProcessorxTime","Processor/_Total/% Processor Time"},
+			{"28 SystemxSINGLExSystemxUpxTime","System/System Up Time"},
+			{"45 PhysicalDiskx_TotalxCurrentxDiskxQueuexLength","PhysicalDisk/_Total/Current Disk Queue Length"}
+			]
+		}
+	]
+]
+}.
+

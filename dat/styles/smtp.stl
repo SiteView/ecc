@@ -1,0 +1,79 @@
+; -----------------------------------------------------------------------
+; Mercury Script Styles
+; SMTP Code Generation Style
+; -----------------------------------------------------------------------
+
+[SMTP:C]
+@Protocol=SMTP
+@FunctionList=smtp_logon, smtp_logout, smtp_send_mail, smtp_abort
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=&NEWLINE
+SoftDelimiter=SZ("MAILOPTIONS")=NEWLINE & MAILOPTIONS & NEWLINE
+NextArguments=INDENT & NEWLINE
+SoftDelimiter=SZ("MAILDATA")=NEWLINE & MAILDATA & NEWLINE
+NextArguments=INDENT & NEWLINE
+HardDelimiter=SZ("LAST",NULL)= NEWLINE & LAST &
+
+;Example Output
+; smtp_send_mail("SendMail",
+;                "To=user0002t@techno.merc-int.com",
+;                "Subject=Public Annoucement!",
+;                MAILOPTIONS,
+;                    "X-Priority: 3",
+;                    "X-Mailer: Microsoft Outlook Express 5.50",
+;                MAILDATA,
+;                    "MessageText=...",
+;                    "AttachFile=helloworld.exe",
+;                LAST);
+;
+; smtp_logon("SmtpLogon",
+;            "URL=smtp://user0001t@techno.merc-int.com",
+;            "CommonName=Smtp Test User 0001",
+;            LAST);
+;
+
+[SMTP_EX:C]
+@Protocol=SMTP
+@FunctionList=smtp_logon_ex,smtp_logout_ex,smtp_send_mail_ex,smtp_abort_ex
+@WordWrap=ON
+Function=&
+Argument=&
+NextArguments=&NEWLINE
+SoftDelimiter=SZ("MAILOPTIONS")=NEWLINE & MAILOPTIONS & NEWLINE
+NextArguments=INDENT & NEWLINE
+SoftDelimiter=SZ("MAILDATA")=NEWLINE & MAILDATA & NEWLINE
+NextArguments=INDENT & NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+;Example Output
+; smtp_logon_ex( &smtp1, "SmtpLogon",
+;            "URL=smtp://user0001t@techno.merc-int.com",
+;            "CommonName=Smtp Test User 0001",
+;            LAST);
+
+
+[SMTP_EX:VBA]
+@Protocol=SMTP
+@MethodList=ISmtpApi->logon,ISmtpApi->logout,ISmtpApi->send_mail,ISmtpApi->abort
+@WordWrap=ON
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+;Example Output
+; smtp1.logon "SmtpLogon", _
+;             "URL=smtp://user0001t@techno.merc-int.com", _
+;             logonOptions
+;
+; smtp1.send_mail "SendMail", _
+;                 "To=user0002t@techno.merc-int.com", _
+;                 , _
+;                 "Subject=Public Annoucement!", _
+;                 , _
+;                 mailOptions, _
+;                 mailData
+;
+

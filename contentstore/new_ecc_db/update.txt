@@ -1,0 +1,65 @@
+activity表更新字段：
+application->atom转为binary
+type->atom转为binary
+my={Key，Type，Value}字段，Key->atom转为binary，Type->atom转为binary
+
+alias表更新字段：
+application->atom转为binary
+id->atom转为binary
+label->列表中的字段都由atom转为binary
+profile->列表中的字段都由atom转为binary
+
+application表更新字段：
+id->atom转为binary
+author->atom转为binary
+viewSourceUrl->删除
+link->{href, <<"icon">>}->简化结构，使link=href
+
+contact表更新字段：
+masterID->atom转为binary
+friendID->atom转为binary
+screenName->atom转为binary
+profileUrl->删除，可以根据screenName来拼接
+
+content表更新字段：
+application->atom转为binary
+id->atom转为binary
+link->删除，可以根据id来拼接
+my={Key，Type，Value}字段，Key->atom转为binary，Type->atom转为binary
+
+invitation表更新字段：
+application->atom转为binary
+profile->atom转为binary
+author = {Name, Profile#profile.xn_email, Profile#profile.id}->Profile#profile.id->atom转为binary
+
+map表更新字段：
+application->atom转为binary
+domain->atom转为binary
+flag->list转为binary
+
+
+message表更新字段：
+application->atom转为binary
+xn_to={name, screenName, photoUrl}->
+此字段可能由于程序错误，导致name和screenName为binary或者atom
+需要判断处理，全部转为binary
+
+profile表更新字段：
+id->atom转为binary
+author->删除，与id相同
+link={photoUrl, <<"icon">>}->简化结构，使link=photoUrl
+xn_masterkey=[{appName, null}]->简化结构,使xn_masterkey=[appName]
+xn_maxApps->新增字段，此字段默认值为100，用于判断当前用户最大创建应用的个数
+
+shape表更新字段：
+application->atom转为binary
+name->atom转为binary
+
+tag表更新字段：
+application->atom转为binary
+id->atom转为binary
+
+接口调用不同：
+rpc:call(DbName,content,create,[[{application,AppName},{version,2}],Newdata]).
+==>>
+rpc:call(DbName,content,create,[[{application,AppName},{version,ecc}],Newdata]).

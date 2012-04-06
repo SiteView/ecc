@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmp_framework_mib</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmp_framework_mib</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmp_framework_mib
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Instrumentation Functions for SNMP-FRAMEWORK-MIB
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmp_framework_mib</span> implements instrumentation
+functions for the
+SNMP-FRAMEWORK-MIB, and functions for initializing and configuring the
+database.
+
+</p>
+<p>The configuration files are described in the SNMP User's Manual.
+</p>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="configure-1"><span class="bold_code">configure(ConfDir) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">ConfDir = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function is called from the supervisor at system
+start-up.
+
+</p>
+<p>Inserts all data in the configuration files into the
+database and destroys all old data.
+
+</p>
+<p>Thus, the data in the SNMP-FRAMEWORK-MIB, after this
+function has been called, is from the configuration
+files.
+
+</p>
+<p>All <span class="code">snmp</span> counters are set to zero.
+
+</p>
+<p>If an error is found in the configuration file, it is
+reported using the function <span class="code">config_err/2</span> of the error 
+report module, and the function fails with reason 
+<span class="code">configuration_error</span>.
+
+</p>
+<p><span class="code">ConfDir</span> is a string which points to the directory
+where the configuration files are found.
+
+</p>
+<p>The configuration file read is: <span class="code">context.conf</span>.
+
+</p>
+</div>
+
+<p><a name="init-0"><span class="bold_code">init() -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY">
+
+<p>This function is called from the supervisor at system
+start-up.
+
+</p>
+<p>Creates the necessary objects in the database if they do not
+exist. It does not destroy any old values.
+<a name="add_context"><!-- Empty --></a>
+
+</p>
+</div>
+
+<p><a name="add_context-1"><span class="bold_code">add_context(Ctx) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Ctx = string()</span><br/>
+<span class="bold_code">Ret = {ok, Key} | {error, Reason}</span><br/>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Adds a context to the agent config. 
+Equivalent to one line in the <span class="code">context.conf</span> file.
+</p><a name="delete_context"><!-- Empty --></a>
+</div>
+
+<p><a name="delete_context-1"><span class="bold_code">delete_context(Key) -&#62; Ret</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Key = term()</span><br/>
+<span class="bold_code">Ret = ok | {error, Reason}</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Delete a context from the agent config.
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

@@ -1,0 +1,1 @@
+-ifndef(_SVECC_OEM).-define(_SVECC_OEM,1).-define(OEM(X),ecc_oem:oem(X)).-define(OEM_FOOTER_LOGO,ecc_oem:oem_footer_logo()).-define(OEM_FOOTER_1,ecc_oem:oem_footer_1()).-define(OEM_INFO(K,D),ecc_oem:oem_info(K,D)).-endif.

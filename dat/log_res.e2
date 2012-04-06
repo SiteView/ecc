@@ -1,0 +1,10 @@
+[Messages]
+Version=1.000
+-44999=Log extension: Cannot open Vuser log file %1
+-44998=Log extension: Failed to write to the log file the message :"%1".
+-44997=Log extension: CriticalSection - %1.
+-44996=Log extension: Cannot create results directory "%1".
+-44995=Log extension: Cannot set Vuser log file (-vuser_log option was not passed in command line).
+-44994=Log extension: Failed to encode the message :"%1".
+Msg_handler_lowest_msg=-44999
+Msg_handler_highest_msg=-44994

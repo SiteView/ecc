@@ -1,0 +1,14 @@
+<config>
+  <application>192.168.0.175:8100</application>
+  <email>zzj1213@yahoo.com</email>
+  <password>siteview</password>
+  <api>
+    <item>/xn/atom/1.0/</item>
+  </api>
+  <history>
+    <item api="/xn/atom/1.0/">content</item>
+    <item api="">/xn/rest/2.0/contact-importer(type='yahoo')</item>
+    <item api="">/xn/rest/2.0/api_monitor_template/get_template</item>
+    <item api="/xn/rest/2.0/">api_monitor/info</item>
+  </history>
+</config>

@@ -1,0 +1,96 @@
+[Protocol]
+; Basic characterisitics.
+Name=REAL
+CommonName=Real
+Description=A protocol used to transfer streaming data from a media server.
+Category=Streaming
+Icon=bitmaps\real.bmp
+PreRecordingCheck=fbRealStart:real_vugen.dll
+PostRecordingNotify=fvRealStop:real_vugen.dll
+; Filtering & Dependency Options
+Filters=RealFilter,real_cleans_extra_http
+Hidden=0
+Single=1
+Multi=1
+
+[CustomTlbs]
+TLBs=realEvent.tlb
+
+[CustomFunctions]
+#DefaultFunctionSource=pnen3260.dll
+#DefaultFunctionDestination=autreal32.dll
+CreateEngine=CreateEngineHook
+CloseEngine=CloseEngineHook
+
+[CustomFilters]
+Filters=RealFilter,real_cleans_extra_http
+
+[RealFilter]
+name=REAL
+dll=real_filter.dll
+init_func=REAL_Init
+cleanup_func=REAL_CleanUp
+protocols=REAL
+after=InOutMatcher
+
+[real_cleans_extra_http]
+name=real_cleans_extra_http
+dll=real_filter.dll
+protocols=HTTP
+before=_END
+
+[Replay]
+HEADERS=lreal.h,pnresult.h
+
+[Template]
+vuser_init.c=vuser_init.c
+Action.c=Action.c
+vuser_end.c=vuser_end.c
+globals.h=globals.h
+@@TestName@@.usr=real.usr
+
+
+[Vugen]
+DLL=insp_gen.dll
+CFG_TAB_DLL=modemspeedtab.dll
+RecordingLogFile=data\RecordingLog.txt
+Insp32DLL=api_inspector.dll
+ExtraSectionsExt=.h,.inf,.vbs,.js,.vba,.bas,.cls,.dat,.bin
+InspectorCustomStartRecDlg=1
+TemplateDir=Real
+32BitRecord=1
+EnableRecordingLog=1
+SectionCombo=1
+RunTimeBrowserUI=1
+DisableRegenerateToVuserLessThan762=1
+WINNT=mdrv.exe
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+;;
+EnableThreads=1
+IP_Spoofing=1
+GridType=-1
+CFG_TAB_XML=speed_simulation.xml
+
+[API]
+extra_section=lr_general,c_general
+lreal_current_time=lr_cmd_color;unsigned long lreal_current_time(int PlayerID)
+lreal_open_player=lr_cmd_color;int lreal_open_player(int PlayerID)
+lreal_open_url=lr_cmd_color;int lreal_open_url(int PlayerID,char * szURL)
+lreal_play=lr_cmd_color;int lreal_play(int PlayerID,long PlayTime_MSec)
+lreal_seek=lr_cmd_color;int lreal_seek(int PlayerID, unsigned long mulTimeToSeek)
+lreal_pause=lr_cmd_color;int lreal_pause(int PlayerID,unsigned long mulPauseTime)
+lreal_stop=lr_cmd_color;int lreal_stop(int PlayerID)
+lreal_close_player=lr_cmd_color;int lreal_close_player(int PlayerID)
+lreal_clip_size=lr_cmd_color;unsigned long lreal_clip_size(int PlayerID)
+lreal_get_property=lr_cmd_color;int lreal_get_property(int PlayerID,unsigned int Property)
+
+[WPLUS]
+ExcludeInterceptionForDlls=pnen3260.dll

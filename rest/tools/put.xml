@@ -1,0 +1,27 @@
+<config>
+  <application>localhost</application>
+  <email>zzj1213@yahoo.com</email>
+  <password>siteview</password>
+  <api>
+    <item>/xn/atom/1.0/</item>
+    <item>/xn/rest/1.0/</item>
+    <item>/xn/rest/2.0/</item>
+  </api>
+  <history>
+    <item api="/xn/atom/1.0/">content(id=2108193:shiwu:975)</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:shiwu:977)</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:shiwu:982)</item>
+    <item api="/xn/rest/2.0/">profile(id='1j0hpe79jbdh4')</item>
+    <item api="/xn/rest/1.0/">profile(id='1j0hpe79jbdh4')</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:Photo:885)</item>
+    <item api="/xn/atom/1.0/">content(id = 2108193:Photo:2796438769790352)</item>
+    <item api="/xn/rest/2.0/">content(id = 2108193:Photo:2796438769790352)</item>
+    <item api="/xn/rest/1.0/">content(id = 2108193:Photo:2796438769790352)</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:Photo:2796429799193683)</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:Photo:2796495955177392)</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:Photo:2796422911687285)</item>
+    <item api="/xn/atom/1.0/">content(id=2108193:Photo:2796421063552056)</item>
+    <item api="/xn/rest/1.0/">application:addadds?xn_method=put</item>
+    <item api="/xn/rest/1.0/">application:addadds</item>
+  </history>
+</config>

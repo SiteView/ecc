@@ -1,0 +1,525 @@
+{erlcmdb_ci,"Server","ci",[{ci_attribute,ip,"string"},{ci_attribute,vendor,"string"},{ci_attribute,os,"string"},{ci_attribute,ports,"list"}]}.
+
+{erlcmdb_ci,"nnm_node","ci",[
+				{ci_attribute,id,"atom"},					% 节点ID
+				{ci_attribute,object_subtype,"string"},			% 对象类型
+				{ci_attribute,ip_address,"string"},				%  iP地址
+				{ci_attribute,dynamic_ip,"string"},				% 动态地址
+				{ci_attribute,unmanaged,"bool"},				% 是不是不管理
+				{ci_attribute,unmanaged_from,"time"},			% 不管理的开始时间
+				{ci_attribute,unmanaged_util,"time"},			% 不管理的结束时间
+				{ci_attribute,caption,"string"},				% 标题
+				{ci_attribute,dns,"string"},					% dns
+				{ci_attribute,community,"string"},				% community
+				{ci_attribute,rw_community,"string"},			% 写community
+				{ci_attribute,sys_name,"string"},				% 系统名字
+				{ci_attribute,vendor,"string"},					% 厂商
+				{ci_attribute,last_boot,"string"},				% 最后启动时间
+				{ci_attribute,systemup_time,"string"},			% 系统启动的时间(10毫秒为单位)
+				{ci_attribute,sys_objectid,"string"},			% sysobjectid
+				{ci_attribute,description,"string"},			% 描述
+				{ci_attribute,location,"string"},				% 位置
+				{ci_attribute,contact,"string"},				% 联系人
+				{ci_attribute,rediscovery_interval,"integer"},	% 再发现间隔(秒)
+				{ci_attribute,poll_interval,"integer"},			% 取值间隔(秒)
+				{ci_attribute,vendor_icon,"string"},			% 厂商icon
+				{ci_attribute,ios_image,"string"},				% ios
+				{ci_attribute,ios_version,"string"},			% ios版本
+				{ci_attribute,group_status,"string"},			% 组状态
+				{ci_attribute,status_description,"string"},		% 状态描述
+				{ci_attribute,status,"integer"},				% 状态 (1-up，2-down，0-up but one or more interface down）
+				{ci_attribute,status_led,"string"},				% 状态led
+				{ci_attribute,response_time,"integer"},			% 回应时间（毫秒）
+				{ci_attribute,percent_loss,"float"},			% 当前丢包率
+				{ci_attribute,avg_response_time,"integer"},		% 平均回应时间（毫秒）
+				{ci_attribute,min_response_time,"integer"},		% 最小回应时间（毫秒）
+				{ci_attribute,max_response_time,"integer"},		% 最大回应时间（毫秒）
+				{ci_attribute,next_poll,"time"},				% 下一次取值的时间（1970年1月1日起的毫秒）
+				{ci_attribute,engine_id,"string"},				% engine id
+				{ci_attribute,machine_type,"string"},			% 机器类型
+				{ci_attribute,serverity,"string"},				
+				{ci_attribute,next_rediscovery,"time"},			% 下一次发现时间（1970年1月1日起的毫秒）
+				{ci_attribute,stat_collection,"time"},			% 统计时间
+				{ci_attribute,allow_64bit_counters,"bool"},		% 是否允许64位counters
+				{ci_attribute,snmpv2_only,"bool"},				% 是否仅仅支持snmp v2
+				{ci_attribute,agent_port,"integer"},			% snmp agent 端口
+				{ci_attribute,snmp_version,"string"},			% snmp 版本
+				{ci_attribute,snmpv3_username,"string"},		% snmp 用户名
+				{ci_attribute,snmpv3_context_id,"string"},		% snmp context
+				{ci_attribute,snmpv3_context,"string"},			% snmp context
+				{ci_attribute,snmpv3_priv_method,"string"},		% 
+				{ci_attribute,snmpv3_priv_key,"string"},
+				{ci_attribute,snmpv3_priv_key_ispwd,"bool"},
+				{ci_attribute,snmpv3_auth_method,"string"},
+				{ci_attribute,snmpv3_auth_key,"string"},
+				{ci_attribute,snmpv3_auth_key_ispwd,"bool"},
+				{ci_attribute,rwsnmpv3_username,"string"},
+				{ci_attribute,rwsnmpv3_context_id,"string"},			% snmp context
+				{ci_attribute,rwsnmpv3_context,"string"},
+				{ci_attribute,rwsnmpv3_priv_method,"string"},
+				{ci_attribute,rwsnmpv3_priv_key,"string"},
+				{ci_attribute,rwsnmpv3_priv_key_ispwd,"bool"},
+				{ci_attribute,rwsnmpv3_auth_method,"string"},
+				{ci_attribute,rwsnmpv3_auth_key,"string"},
+				{ci_attribute,rwsnmpv3_auth_key_ispwd,"bool"},
+				{ci_attribute,cpu_load,"integer"},				% cpu load
+				{ci_attribute,total_memory,"integer"},			% 总内存（Byte）
+				{ci_attribute,memory_used,"iinteger"},				% 使用的内存(Byte）
+				{ci_attribute,percent_memory_used,"float"},
+				{ci_attribute,buffer_nomemory_thishour,"float"},
+				{ci_attribute,buffer_nomemory_today,"float"},
+				{ci_attribute,buffer_smmiss_thishour,"float"},
+				{ci_attribute,buffer_smmiss_today,"float"},
+				{ci_attribute,buffer_mdmiss_thishour,"float"},
+				{ci_attribute,buffer_mdmiss_today,"float"},
+				{ci_attribute,buffer_bgmiss_thishour,"float"},
+				{ci_attribute,buffer_bgmiss_today,"float"},
+				{ci_attribute,buffer_lgmiss_thishour,"float"},
+				{ci_attribute,buffer_lgmiss_today,"float"},
+				{ci_attribute,buffer_hgmiss_thishour,"float"},
+				{ci_attribute,buffer_hgmiss_today,"float"},
+				{ci_attribute,external,"float"},
+				{ci_attribute,cmts,"float"},
+				{ci_attribute,block_util,"time"},
+				{ci_attribute,custom_poller_last_statistics_poll,"time"},
+				{ci_attribute,custom_poller_last_statistics_poll_success,"time"},
+				{ci_attribute,city,"string"},
+				{ci_attribute,department,"string"},
+				{ci_attribute,comments,"string"}
+				]}.
+
+{erlcmdb_ci,"nnm_interface","nnm_node",[
+				{ci_attribute,id,"atom"},							% 接口id
+				{ci_attribute,node_id,"atom"},						% 节点id
+				{ci_attribute,interface_name,"string"},				% 接口名字
+				{ci_attribute,interface_alias,"string"},			% 接口alias
+				{ci_attribute,interface_index,"integer"},			% 接口索引
+				{ci_attribute,interface_type,"integer"},			% 接口类型
+				{ci_attribute,interface_icon,"string"},				% 接口图标
+				{ci_attribute,interface_type_name,"string"},		% 接口类型名字
+				{ci_attribute,interface_type_description,"string"},	% 接口类型描述
+				{ci_attribute,interface_speed,"float"},				% 接口的速率
+				{ci_attribute,interface_mtu,"integer"},				% 接口mtu
+				{ci_attribute,interface_last_change,"time"},		% 接口最后改变时间(10毫秒为单位)
+				{ci_attribute,physical_address,"string"},			% 物理地址
+				{ci_attribute,unmanaged,"bool"},					% 是否不管理
+				{ci_attribute,unmanaged_from,"time"},				% 不管理开始时间
+				{ci_attribute,unmanaged_util,"time"},				% 不管理结束时间
+				{ci_attribute,inbandwidth,"float"},					% 传入带宽
+				{ci_attribute,outbandwidth,"float"},				% 传出带宽
+				{ci_attribute,caption,"string"},					% 标题
+				{ci_attribute,poll_interval,"integer"},				% 取数据时间间隔
+				{ci_attribute,next_poll,"time"},						% 下一次的取值时间
+				{ci_attribute,rediscovery_interval,"integer"},		% 再发现时间间隔
+%				{ci_attribute,fullname,"string"},					% 全名称
+%				{ci_attribute,status,"integer"},						% 状态
+				{ci_attribute,status_led,"string"},					% 状态led
+				{ci_attribute,admin_status,"integer"},				% admin status (1-up,2-down)
+				{ci_attribute,admin_status_led,"string"},			% admin status led
+				{ci_attribute,oper_status,"integer"},				% oper status (1-up,2-down)
+				{ci_attribute,oper_status_led,"string"},			% oper status led
+				{ci_attribute,out_bps,"float"},						% 传出 bps
+				{ci_attribute,in_bps,"float"},						% 传入 bps
+				{ci_attribute,out_percent_util,"float"},			% 传出 Percent Utilization 
+				{ci_attribute,in_percent_util,"float"},				% 传入 Percent Utilization 
+				{ci_attribute,out_pps,"float"},						% 传出 pps
+				{ci_attribute,in_pps,"float"},						% 传入pps
+				{ci_attribute,in_pkt_size,"integer"},				% 传入包大小
+				{ci_attribute,out_pkt_size,"integer"},				% 传出包大小
+				{ci_attribute,out_ucast_pps,"float"},				%
+				{ci_attribute,out_mcast_pps,"float"},
+				{ci_attribute,in_ucast_pps,"float"},
+				{ci_attribute,in_mcast_pps,"float"},
+				{ci_attribute,in_discards_thishour,"float"},
+				{ci_attribute,in_discards_today,"float"},
+				{ci_attribute,in_errors_thishour,"float"},
+				{ci_attribute,in_errors_today,"float"},
+				{ci_attribute,out_discards_thishour,"float"},
+				{ci_attribute,out_discards_today,"float"},
+				{ci_attribute,out_errors_thishour,"float"},
+				{ci_attribute,out_errors_today,"float"},
+				{ci_attribute,max_in_bps_today,"float"},
+				{ci_attribute,max_in_bps_time,"time"},
+				{ci_attribute,max_out_bps_today,"float"},
+				{ci_attribute,max_out_bps_time,"time"},
+				{ci_attribute,next_rediscovery,"time"},
+				{ci_attribute,counter64,"string"},						% 
+				{ci_attribute,stat_collection,"integer"},
+				{ci_attribute,signal_noise,"float"},
+				{ci_attribute,min_signal_noise,"float"},
+				{ci_attribute,max_signal_noise,"float"},
+				{ci_attribute,avg_signal_noise,"float"},
+				{ci_attribute,total_codewords,"float"},
+				{ci_attribute,percent_codewords_unerrored,"float"},
+				{ci_attribute,percent_codewords_uncorrected,"float"},
+				{ci_attribute,percent_codewords_uncorrectable,"float"},
+				{ci_attribute,last_sync,"time"},						% 最后更新
+				{ci_attribute,severity,"float"},						% 
+				{ci_attribute,codewords_unerrored,"float"},
+				{ci_attribute,codewords_uncorrected,"float"},
+				{ci_attribute,codewords_uncorrectable,"float"},
+				{ci_attribute,custom_bandwidth,"float"},				% 自定义的带宽
+				{ci_attribute,unpluggable,"float"},						% 可即插即用
+				{ci_attribute,custom_poller_last_statistics_poll,"time"},
+				{ci_attribute,carrier_name,"string"},
+				{ci_attribute,comments,"string"}						% 注释
+				]}.				
+							
+{erlcmdb_ci,"page_layout","ci",[{ci_attribute,id,"atom"},
+							{ci_attribute,page_name,"string"},
+							{ci_attribute,page_title,"string"},
+							{ci_attribute,page_head,"string"},
+							{ci_attribute,type,"string"},    % 类型
+							{ci_attribute,column1,"list"},
+							{ci_attribute,column1_width,"integer"},
+							{ci_attribute,column2,"list"},
+							{ci_attribute,column2_width,"integer"},
+							{ci_attribute,column3,"list"},
+							{ci_attribute,column3_width,"integer"}
+							]}.
+							
+%%view edit
+{erlcmdb_ci,"page_view_edit","ci",[
+							{ci_attribute,id,"atom"},
+							{ci_attribute,view_name,"string"},
+							{ci_attribute,view_mod,"string"},
+							{ci_attribute,config_param,"list"}
+							]}.
+
+%%profile table
+{erlcmdb_ci,"nnm_discovery_profile","ci",[
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,name,"string"},
+	{ci_attribute,description,"string"},
+	{ci_attribute,runTimeInSecond,"string"},
+	{ci_attribute,lastRun,"string"},
+	{ci_attribute,status,"string"},
+	{ci_attribute,sipPort,"string"},
+	{ci_attribute,hopCount,"string"},
+	{ci_attribute,searchTimeout,"string"},
+	{ci_attribute,snmpTimeout,"string"},
+	{ci_attribute,snmpRetries,"string"},
+	{ci_attribute,repeatInterval,"string"},
+	{ci_attribute,active,"string"},
+	{ci_attribute,progress,"string"},
+	{ci_attribute,duplicateNodes,"string"},
+	{ci_attribute,importUpInterface,"string"},
+	{ci_attribute,importDownInterface,"string"},
+	{ci_attribute,importShutdownInterface,"string"},
+	{ci_attribute,selectionMethod,"string"},
+	{ci_attribute,jobTimeout,"string"},
+	{ci_attribute,threads,"string"},
+	{ci_attribute,routeswitchCount,"string"},
+	{ci_attribute,switchCount,"string"},
+	{ci_attribute,routeCount,"string"},
+	{ci_attribute,firewallCount,"string"},
+	{ci_attribute,serverCount,"string"},
+	{ci_attribute,hostCount,"string"},
+	{ci_attribute,otherCount,"string"}
+]}.
+
+
+%%device table
+{erlcmdb_ci,"nnm_discovery_node","ci",[
+	{ci_attribute,node_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,devIP,"string"},
+	{ci_attribute,baseMac,"string"},
+	{ci_attribute,snmpFlag,"string"},
+	{ci_attribute,snmpVersion,"string"},
+	{ci_attribute,snmpPort,"string"},
+	{ci_attribute,community_get,"string"},
+	{ci_attribute,community_set,"time"},
+	{ci_attribute,authType,"string"},
+	{ci_attribute,user,"string"},
+	{ci_attribute,password,"string"},
+	{ci_attribute,privPassword,"string"},
+	{ci_attribute,contextId,"string"},
+	{ci_attribute,contextName,"string"},
+	{ci_attribute,devType,"string"},
+	{ci_attribute,devFactory,"string"},
+	{ci_attribute,devModel,"string"},
+	{ci_attribute,devTypeName,"string"},
+	{ci_attribute,sysDescr,"string"},
+	{ci_attribute,sysOid,"string"},
+	{ci_attribute,sysSvcs,"string"},
+	{ci_attribute,sysName,"string"},
+	{ci_attribute,operatingSystem,"string"},
+	{ci_attribute,ports,"list"},
+	{ci_attribute,lastLoginUser,"string"},
+	{ci_attribute,lastLoginTime,"string"},
+	{ci_attribute,ipAddrd,"list"},
+	{ci_attribute,macs,"list"}
+]}.
+
+%%interface table
+{erlcmdb_ci,"nnm_discovery_interface","nnm_discovery_node",[
+	{ci_attribute,interface_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,ifAmount,"string"},
+	{ci_attribute,inrec,"list"}
+]}.
+
+%%direct table
+{erlcmdb_ci,"nnm_discovery_direct","nnm_discovery_node",[
+	{ci_attribute,direct_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,directItem,"list"}
+]}.
+
+
+%%edge table
+{erlcmdb_ci,"nnm_discovery_edge","ci",[
+	{ci_attribute,edge_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,ip_left,"string"},
+	{ci_attribute,pt_left,"string"},
+	{ci_attribute,inf_left,"string"},
+	{ci_attribute,dsc_left,"string"},
+	{ci_attribute,ip_right,"string"},
+	{ci_attribute,pt_right,"string"},
+	{ci_attribute,inf_right,"string"},
+	{ci_attribute,dsc_right,"string"}
+]}.
+
+%%route table
+{erlcmdb_ci,"nnm_discovery_route","nnm_discovry_node",[
+	{ci_attribute,route_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,infInxNextIP,"list"}
+]}.
+
+%%ospf table
+{erlcmdb_ci,"nnm_discovery_ospf","nnm_discovery_node",[
+	{ci_attribute,ospf_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,infInxDest,"list"}
+]}.
+
+%%bgp talbe
+{erlcmdb_ci,"nnm_discovery_bgp","nnm_discovery_node",[
+	{ci_attribute,bgp_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,bgpItem,"list"}
+]}.
+
+%%vrrp table
+{erlcmdb_ci,"nnm_discovery_vrrp","nnm_discovery_node",[
+	{ci_attribute,vrrp_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,vrID,"string"},
+	{ci_attribute,masterIP,"string"},
+	{ci_attribute,primatyIP,"string"},
+	{ci_attribute,virtualMac,"string"},
+	{ci_attribute,assoip,"string"}
+]}.
+
+%%arp table
+{erlcmdb_ci,"nnm_discovery_arp","nnm_discovery_node",[
+	{ci_attribute,arp_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,infmacip,"list"}
+]}.
+
+%%aft table
+{erlcmdb_ci,"nnm_discovery_aft","nnm_discovery_node",[
+	{ci_attribute,aft_id,"atom"},
+	{ci_attribute,profile_id,"atom"},
+	{ci_attribute,sourceIP,"string"},
+	{ci_attribute,infmacip,"list"}
+]}.
+
+%%device_login table
+{erlcmdb_ci,"nnm_discovery_device_login","ci",[
+	{ci_attribute,login_id,"atom"},
+	{ci_attribute,ip,"string"},
+	{ci_attribute,snmpversion,"string"},
+	{ci_attribute,community,"string"},
+	{ci_attribute,port,"string"},
+	{ci_attribute,authtype,"stirng"},
+	{ci_attribute,user,"string"},
+	{ci_attribute,password,"string"},
+	{ci_attribute,privpassword,"stirng"},
+	{ci_attribute,contextid,"string"},
+	{ci_attribute,contextname,"string"},
+	{ci_attribute,logintype,"string"},
+	{ci_attribute,timeout,"string"}
+]}.
+
+%%scan param table
+{erlcmdb_ci,"nnm_discovery_scan_param","ci",[
+	{ci_attribute,scanparam_id,"atom"},
+	{ci_attribute,includeip,"string"},
+	{ci_attribute,excludeip,"string"},
+	{ci_attribute,scanseed,"string"},
+	{ci_attribute,threads,"string"},
+	{ci_attribute,depth,"string"},
+	{ci_attribute,scantype,"string"}
+]}.
+
+
+% mdms physical server
+{erlcmdb_ci,"mdms_physical_server","ci",[
+	{ci_attribute,id,"string"},
+	{ci_attribute,sn,"string"},
+	{ci_attribute,ip,"string"},
+	{ci_attribute,user,"string"},
+	{ci_attribute,password,"string"},
+	{ci_attribute,os,"string"},
+	{ci_attribute,os_version,"string"},
+	{ci_attribute,cpu,"string"},
+	{ci_attribute,memory,"string"},
+	{ci_attribute,disk,"string"},
+	{ci_attribute,cpu_used,"string"},
+	{ci_attribute,monery_used,"string"},
+	{ci_attribute,disk_used,"string"},
+	{ci_attribute,manager,"string"},
+	{ci_attribute,notes,"string"}
+]}.
+
+
+{erlcmdb_ci,"mdms_vmware","mdms_physical_server",[
+	{ci_attribute,id,"string"},
+	{ci_attribute,storage_location,"string"},
+	{ci_attribute,user,"string"},
+	{ci_attribute,password,"string"},
+	{ci_attribute,os,"string"},
+	{ci_attribute,os_version,"string"},
+	{ci_attribute,cpu,"string"},
+	{ci_attribute,memory,"string"},
+	{ci_attribute,disk,"string"},
+	{ci_attribute,running,"bool"},
+	{ci_attribute,physical_server,"string"},
+	{ci_attribute,file_name,"string"},
+	{ci_attribute,notes,"string"}
+]}.
+
+{erlcmdb_ci,"mdms_application","mdms_vmware",[
+	{ci_attribute,id,"string"},
+	{ci_attribute,name,"string"},
+	{ci_attribute,version,"string"},
+	{ci_attribute,description,"string"},
+	{ci_attribute,user,"string"},
+	{ci_attribute,password,"string"},
+	{ci_attribute,configure_document,"string"},
+	{ci_attribute,install_procedure,"string"},
+	{ci_attribute,downloaded,"bool"},
+	{ci_attribute,installed,"bool"},
+	{ci_attribute,file_name,"string"},
+	{ci_attribute,vmware,"string"},
+	{ci_attribute,notes,"string"}
+]}.
+
+{erlcmdb_ci,"mdms_monitor","mdms_application",[
+	{ci_attribute,id,"string"},
+	{ci_attribute,name,"string"},
+	{ci_attribute,application,"string"},
+	{ci_attribute,description,"string"},
+	{ci_attribute,responsible,"string"},
+	{ci_attribute,notes,"string"}
+]}.
+
+{erlcmdb_ci,"mdms_config","asset",[
+	{ci_attribute,id,"string"},
+	{ci_attribute,table,"string"},
+	{ci_attribute,property,"string"},
+	{ci_attribute,label,"string"},
+	{ci_attribute,value,"string"},
+	{ci_attribute,notes,"string"}
+]}.
+
+{erlcmdb_ci,"nnm_discovery_scan_config","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,name,"string"},
+	{ci_attribute,defaultSnmpParam,"list"},
+	{ci_attribute,defineSnmpParam,"list"},
+	{ci_attribute,scanParam,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_discovery_scan_version","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,info,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_discovery_topo_chart","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,version,"list"},
+	{ci_attribute,edge,"list"},
+	{ci_attribute,topoSet,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_discovery_topo_child_chart","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,edge,"list"},
+	{ci_attribute,topochildname,"list"},
+	{ci_attribute,devicelist,"list"},
+	{ci_attribute,firstipseg,"list"},
+	{ci_attribute,lastipseg,"list"},
+	{ci_attribute,states,"list"},
+	{ci_attribute,devtype,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_discovery_line_level","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,lid,"list"},
+	{ci_attribute,edge,"list"},
+	{ci_attribute,levelset,"list"}
+]}.
+
+			 
+
+{erlcmdb_ci,"nnm_monitor_interval","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,info,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_discovery_pcList","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,ip,"string"},
+	{ci_attribute,mac,"string"},
+	{ci_attribute,name,"string"},
+	{ci_attribute,type,"string"},
+	{ci_attribute,discoverTime,"string"},
+	{ci_attribute,activeTime,"string"},
+	{ci_attribute,info,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_baseIpMac","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,info,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_changeIpMac","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,oldIp,"string"},
+	{ci_attribute,oldMac,"string"},
+	{ci_attribute,newIp,"string"},
+	{ci_attribute,newMac,"string"},
+	{ci_attribute,discoverTime,"string"},
+	{ci_attribute,activeTime,"string"},
+	{ci_attribute,count,"integer"},
+	{ci_attribute,info,"list"}
+]}.
+
+{erlcmdb_ci,"nnm_virtual_device","ci",[
+	{ci_attribute,id,"atom"},
+	{ci_attribute,ip,"string"},
+	{ci_attribute,name,"string"},
+	{ci_attribute,devType,"string"},
+	{ci_attribute,devTypeName,"string"},
+	{ci_attribute,model,"string"},
+	{ci_attribute,factory,"string"},
+	{ci_attribute,description,"string"},
+	{ci_attribute,x,"string"},
+	{ci_attribute,y,"string"},
+	{ci_attribute,dynamic,"list"}
+]}.
+
+
+

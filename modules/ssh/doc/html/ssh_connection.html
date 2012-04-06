@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:fn="http://www.w3.org/2005/02/xpath-functions">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../doc/otp_doc.css" type="text/css">
+<title>Erlang -- ssh_connection</title>
+</head>
+<body bgcolor="white" text="#000000" link="#0000ff" vlink="#ff00ff" alink="#ff0000"><div id="container">
+<script id="js" type="text/javascript" language="JavaScript" src="../../../../doc/js/flipmenu/flipmenu.js"></script><script id="js2" type="text/javascript" src="../../../../doc/js/erlresolvelinks.js"></script><div id="leftnav"><div class="innertube">
+<img alt="Erlang logo" src="../../../../doc/erlang-logo.png"><br><small><a href="index.html">Reference Manual</a><br><a href="release_notes.html">Release Notes</a><br><a href="../pdf/ssh-1.1.7.pdf">PDF</a><br><a href="../../../../doc/index.html">Top</a></small><p><strong>SSH</strong><br><strong>Reference Manual</strong><br><small>Version 1.1.7</small></p>
+<br><a href="javascript:openAllFlips()">Expand All</a><br><a href="javascript:closeAllFlips()">Contract All</a><p><small><strong>Table of Contents</strong></small></p>
+<ul class="flipMenu">
+<li title="ssh " expanded="false">ssh<ul>
+<li><a href="ssh.html">
+                  Top of manual page
+                </a></li>
+<li title="close-1"><a href="ssh.html#close-1">close/1</a></li>
+<li title="connect-3"><a href="ssh.html#connect-3">connect/3</a></li>
+<li title="connect-4"><a href="ssh.html#connect-4">connect/4</a></li>
+<li title="connection_info-2"><a href="ssh.html#connection_info-2">connection_info/2</a></li>
+<li title="daemon-1"><a href="ssh.html#daemon-1">daemon/1</a></li>
+<li title="daemon-2"><a href="ssh.html#daemon-2">daemon/2</a></li>
+<li title="daemon-3"><a href="ssh.html#daemon-3">daemon/3</a></li>
+<li title="shell-1"><a href="ssh.html#shell-1">shell/1</a></li>
+<li title="shell-2"><a href="ssh.html#shell-2">shell/2</a></li>
+<li title="shell-3"><a href="ssh.html#shell-3">shell/3</a></li>
+<li title="start-0"><a href="ssh.html#start-0">start/0</a></li>
+<li title="start-1"><a href="ssh.html#start-1">start/1</a></li>
+<li title="stop-0"><a href="ssh.html#stop-0">stop/0</a></li>
+<li title="stop_daemon-1"><a href="ssh.html#stop_daemon-1">stop_daemon/1</a></li>
+<li title="stop_daemon-2"><a href="ssh.html#stop_daemon-2">stop_daemon/2</a></li>
+<li title="stop_listener-1"><a href="ssh.html#stop_listener-1">stop_listener/1</a></li>
+<li title="stop_listener-2"><a href="ssh.html#stop_listener-2">stop_listener/2</a></li>
+</ul>
+</li>
+<li title="ssh_channel " expanded="false">ssh_channel<ul>
+<li><a href="ssh_channel.html">
+                  Top of manual page
+                </a></li>
+<li title="call-2"><a href="ssh_channel.html#call-2">call/2</a></li>
+<li title="call-3"><a href="ssh_channel.html#call-3">call/3</a></li>
+<li title="cast-2"><a href="ssh_channel.html#cast-2">cast/2</a></li>
+<li title="enter_loop-1"><a href="ssh_channel.html#enter_loop-1">enter_loop/1</a></li>
+<li title="init-1"><a href="ssh_channel.html#init-1">init/1</a></li>
+<li title="reply-2"><a href="ssh_channel.html#reply-2">reply/2</a></li>
+<li title="start-4"><a href="ssh_channel.html#start-4">start/4</a></li>
+<li title="start_link-4"><a href="ssh_channel.html#start_link-4">start_link/4</a></li>
+<li title="CallbackModule:code_change-3"><a href="ssh_channel.html#CallbackModule:code_change-3">CallbackModule:code_change/3</a></li>
+<li title="CallbackModule:init-1"><a href="ssh_channel.html#CallbackModule:init-1">CallbackModule:init/1</a></li>
+<li title="CallbackModule:handle_call-3"><a href="ssh_channel.html#CallbackModule:handle_call-3">CallbackModule:handle_call/3</a></li>
+<li title="CallbackModule:handle_cast-2"><a href="ssh_channel.html#CallbackModule:handle_cast-2">CallbackModule:handle_cast/2</a></li>
+<li title="CallbackModule:handle_msg-2"><a href="ssh_channel.html#CallbackModule:handle_msg-2">CallbackModule:handle_msg/2</a></li>
+<li title="CallbackModule:handle_ssh_msg-2"><a href="ssh_channel.html#CallbackModule:handle_ssh_msg-2">CallbackModule:handle_ssh_msg/2</a></li>
+<li title="CallbackModule:terminate-2"><a href="ssh_channel.html#CallbackModule:terminate-2">CallbackModule:terminate/2</a></li>
+</ul>
+</li>
+<li title="ssh_connection " expanded="true">ssh_connection<ul>
+<li><a href="ssh_connection.html">
+                  Top of manual page
+                </a></li>
+<li title="adjust_window-3"><a href="ssh_connection.html#adjust_window-3">adjust_window/3</a></li>
+<li title="close-2"><a href="ssh_connection.html#close-2">close/2</a></li>
+<li title="exec-4"><a href="ssh_connection.html#exec-4">exec/4</a></li>
+<li title="exit_status-3"><a href="ssh_connection.html#exit_status-3">exit_status/3</a></li>
+<li title="reply_request-4"><a href="ssh_connection.html#reply_request-4">reply_request/4</a></li>
+<li title="send-3"><a href="ssh_connection.html#send-3">send/3</a></li>
+<li title="send-4"><a href="ssh_connection.html#send-4">send/4</a></li>
+<li title="send-4"><a href="ssh_connection.html#send-4">send/4</a></li>
+<li title="send-5"><a href="ssh_connection.html#send-5">send/5</a></li>
+<li title="send_eof-2"><a href="ssh_connection.html#send_eof-2">send_eof/2</a></li>
+<li title="session_channel-2"><a href="ssh_connection.html#session_channel-2">session_channel/2</a></li>
+<li title="session_channel-4"><a href="ssh_connection.html#session_channel-4">session_channel/4</a></li>
+<li title="setenv-5"><a href="ssh_connection.html#setenv-5">setenv/5</a></li>
+<li title="shell-2"><a href="ssh_connection.html#shell-2">shell/2</a></li>
+<li title="subsystem-4"><a href="ssh_connection.html#subsystem-4">subsystem/4</a></li>
+</ul>
+</li>
+<li title="ssh_sftp " expanded="false">ssh_sftp<ul>
+<li><a href="ssh_sftp.html">
+                  Top of manual page
+                </a></li>
+<li title="start_channel-1"><a href="ssh_sftp.html#start_channel-1">start_channel/1</a></li>
+<li title="start_channel-2"><a href="ssh_sftp.html#start_channel-2">start_channel/2</a></li>
+<li title="start_channel-2"><a href="ssh_sftp.html#start_channel-2">start_channel/2</a></li>
+<li title="start_channel-3"><a href="ssh_sftp.html#start_channel-3">start_channel/3</a></li>
+<li title="stop_channel-1"><a href="ssh_sftp.html#stop_channel-1">stop_channel/1</a></li>
+<li title="read_file-2"><a href="ssh_sftp.html#read_file-2">read_file/2</a></li>
+<li title="read_file-3"><a href="ssh_sftp.html#read_file-3">read_file/3</a></li>
+<li title="write_file-3"><a href="ssh_sftp.html#write_file-3">write_file/3</a></li>
+<li title="write_file-4"><a href="ssh_sftp.html#write_file-4">write_file/4</a></li>
+<li title="list_dir-2"><a href="ssh_sftp.html#list_dir-2">list_dir/2</a></li>
+<li title="list_dir-3"><a href="ssh_sftp.html#list_dir-3">list_dir/3</a></li>
+<li title="open-3"><a href="ssh_sftp.html#open-3">open/3</a></li>
+<li title="open-4"><a href="ssh_sftp.html#open-4">open/4</a></li>
+<li title="opendir-2"><a href="ssh_sftp.html#opendir-2">opendir/2</a></li>
+<li title="opendir-3"><a href="ssh_sftp.html#opendir-3">opendir/3</a></li>
+<li title="close-2"><a href="ssh_sftp.html#close-2">close/2</a></li>
+<li title="close-3"><a href="ssh_sftp.html#close-3">close/3</a></li>
+<li title="read-3"><a href="ssh_sftp.html#read-3">read/3</a></li>
+<li title="read-4"><a href="ssh_sftp.html#read-4">read/4</a></li>
+<li title="pread-4"><a href="ssh_sftp.html#pread-4">pread/4</a></li>
+<li title="pread-5"><a href="ssh_sftp.html#pread-5">pread/5</a></li>
+<li title="aread-3"><a href="ssh_sftp.html#aread-3">aread/3</a></li>
+<li title="apread-4"><a href="ssh_sftp.html#apread-4">apread/4</a></li>
+<li title="write-3"><a href="ssh_sftp.html#write-3">write/3</a></li>
+<li title="write-4"><a href="ssh_sftp.html#write-4">write/4</a></li>
+<li title="pwrite-4"><a href="ssh_sftp.html#pwrite-4">pwrite/4</a></li>
+<li title="pwrite-5"><a href="ssh_sftp.html#pwrite-5">pwrite/5</a></li>
+<li title="awrite-3"><a href="ssh_sftp.html#awrite-3">awrite/3</a></li>
+<li title="apwrite-4"><a href="ssh_sftp.html#apwrite-4">apwrite/4</a></li>
+<li title="position-3"><a href="ssh_sftp.html#position-3">position/3</a></li>
+<li title="position-4"><a href="ssh_sftp.html#position-4">position/4</a></li>
+<li title="read_file_info-2"><a href="ssh_sftp.html#read_file_info-2">read_file_info/2</a></li>
+<li title="read_file_info-3"><a href="ssh_sftp.html#read_file_info-3">read_file_info/3</a></li>
+<li title="read_link_info-2"><a href="ssh_sftp.html#read_link_info-2">read_link_info/2</a></li>
+<li title="read_link_info-3"><a href="ssh_sftp.html#read_link_info-3">read_link_info/3</a></li>
+<li title="write_file_info-3"><a href="ssh_sftp.html#write_file_info-3">write_file_info/3</a></li>
+<li title="write_file_info-4"><a href="ssh_sftp.html#write_file_info-4">write_file_info/4</a></li>
+<li title="read_link-2"><a href="ssh_sftp.html#read_link-2">read_link/2</a></li>
+<li title="read_link-3"><a href="ssh_sftp.html#read_link-3">read_link/3</a></li>
+<li title="make_symlink-3"><a href="ssh_sftp.html#make_symlink-3">make_symlink/3</a></li>
+<li title="make_symlink-4"><a href="ssh_sftp.html#make_symlink-4">make_symlink/4</a></li>
+<li title="rename-3"><a href="ssh_sftp.html#rename-3">rename/3</a></li>
+<li title="rename-4"><a href="ssh_sftp.html#rename-4">rename/4</a></li>
+<li title="delete-2"><a href="ssh_sftp.html#delete-2">delete/2</a></li>
+<li title="delete-3"><a href="ssh_sftp.html#delete-3">delete/3</a></li>
+<li title="make_dir-2"><a href="ssh_sftp.html#make_dir-2">make_dir/2</a></li>
+<li title="make_dir-3"><a href="ssh_sftp.html#make_dir-3">make_dir/3</a></li>
+<li title="del_dir-2"><a href="ssh_sftp.html#del_dir-2">del_dir/2</a></li>
+<li title="del_dir-3"><a href="ssh_sftp.html#del_dir-3">del_dir/3</a></li>
+</ul>
+</li>
+<li title="ssh_sftpd " expanded="false">ssh_sftpd<ul>
+<li><a href="ssh_sftpd.html">
+                  Top of manual page
+                </a></li>
+<li title="subsystem_spec-1"><a href="ssh_sftpd.html#subsystem_spec-1">subsystem_spec/1</a></li>
+</ul>
+</li>
+</ul>
+</div></div>
+<div id="content">
+<div class="innertube">
+<!-- refpage --><center><h1>ssh_connection</h1></center>
+  
+  <h3>MODULE</h3>
+<div class="REFBODY">ssh_connection</div>
+  <h3>MODULE SUMMARY</h3>
+<div class="REFBODY">This module provides an API to the ssh connection protocol.
+  </div>
+  <h3>DESCRIPTION</h3>
+<div class="REFBODY"><p>
+    <p>This module provides an API to the ssh connection protocol.
+    Not all features of the connection protocol are officially supported yet.
+    Only the ones supported are documented here.</p>
+  </p></div>
+
+   <h3><a name="id2261490">COMMON DATA TYPES </a></h3>
+<div class="REFBODY">
+    
+    <p>Type definitions that are used more than once in this module and/or
+    abstractions to indicate the intended use of the data type:</p>
+    
+    <p><span class="code">boolean() = true | false </span></p>
+    <p><span class="code">string() = list of ASCII characters</span></p>
+    <p><span class="code">timeout() =  infinity | integer() - in milliseconds.</span></p>
+    <p><span class="code">ssh_connection_ref() - opaque to the user returned by
+    ssh:connect/3 or sent to a ssh channel processes</span></p>
+    <p><span class="code">ssh_channel_id() = integer() </span></p>
+    <p><span class="code">ssh_data_type_code() = 1 ("stderr") | 0 ("normal") are
+    currently valid values see RFC 4254 section 5.2.</span></p>
+    <p><span class="code">ssh_request_status() = success | failure</span></p>
+   </div>
+
+   <h3><a name="id2261543">MESSAGES SENT TO CHANNEL PROCESSES</a></h3>
+<div class="REFBODY">
+     
+     
+     <p>As a result of the ssh connection protocol messages on the form
+     <span class="code">{ssh_cm, ssh_connection_ref(), term()}</span>
+     will be sent to a channel process. The term will contain
+     information regarding the ssh connection protocol event,
+     for details see the ssh channel behavior callback <span class="bold_code"><a href="ssh_channel.html">handle_ssh_msg/2 </a></span> </p>
+   </div>
+   
+ <h3>EXPORTS</h3>
+   
+   <p><a name="adjust_window-3"><span class="bold_code">adjust_window(ConnectionRef, ChannelId, NumOfBytes) -&gt; ok</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+       <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id() </span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> NumOfBytes = integer()</span><br>
+</div>
+     </div>
+<div class="REFBODY"><p>
+	<p>Adjusts the ssh flowcontrol window. </p>
+	
+	<div class="note">
+<div class="label">Note</div>
+<div class="content"><p><p>This will be taken care of by the ssh_channel
+	behavior when the callback <span class="bold_code"><a href="ssh_channel.html">
+	handle_ssh_msg/2 </a></span> has returned after processing a
+	{ssh_cm, ssh_connection_ref(), {data, ssh_channel_id(),
+	ssh_data_type_code(), binary()}}
+	message, and should normally not be called explicitly.</p></p></div>
+</div>
+      </p></div>
+   
+   <p><a name="close-2"><span class="bold_code">close(ConnectionRef, ChannelId) -&gt; ok</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+       <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+     </div>
+<div class="REFBODY"><p>
+       <p>Sends a close message on the channel <span class="code">ChannelId</span>
+       </p>
+
+       <div class="note">
+<div class="label">Note</div>
+<div class="content"><p><p>This function will be called by the ssh channel
+       behavior when the channel is terminated see <span class="bold_code"><a href="ssh_channel.html"> ssh_channel(3) </a></span> and should
+       normally not be called explicitly.</p></p></div>
+</div>
+     </p></div>
+   
+   <p><a name="exec-4"><span class="bold_code">exec(ConnectionRef, ChannelId, Command, TimeOut) -&gt; ssh_request_status()  </span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+       <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> Command = string()</span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code">Timeout = timeout() </span><br>
+</div>
+     </div>
+<div class="REFBODY"><p>
+       <p>Will request that the server start the execution of the
+       given command, the result will be received as:</p>
+
+       <dl>
+	 <dt><strong><span class="code"> N X {ssh_cm,
+	 ssh_connection_ref(), {data, ssh_channel_id(), ssh_data_type_code(),
+	 binary() = Data}} </span></strong></dt>
+	 <dd>The result of executing the command may be only one line
+	 or thousands of lines depending on the command.</dd>
+
+	 <dt><strong><span class="code"> 1 X {ssh_cm, ssh_connection_ref(), {eof, ssh_channel_id()}}</span></strong></dt>
+	 <dd>Indicates that no more data will be sent.</dd>
+
+	 <dt><strong><span class="code">0 or 1 X {ssh_cm,
+	 ssh_connection_ref(), {exit_signal,
+	 ssh_channel_id(), string() = ExitSignal, string() = ErrorMsg, string() = LanguageString}}</span></strong></dt>
+	 <dd>Not all systems send signals. For details on valid string
+	 values see RFC 4254 section 6.10 </dd>
+	 
+	  <dt><strong><span class="code">0 or 1 X {ssh_cm, ssh_connection_ref(), {exit_status,
+	  ssh_channel_id(), integer() = ExitStatus}}</span></strong></dt>
+	  <dd>It is recommended by the <span class="code">ssh connection protocol</span> that this
+	  message shall be sent, but that may not always be the case.</dd>
+
+	  <dt><strong><span class="code"> 1 X {ssh_cm, ssh_connection_ref(),
+	  {closed, ssh_channel_id()}}</span></strong></dt>
+	  <dd>Indicates that the ssh channel started for the
+	  execution of the command has now been shutdown.</dd>
+       </dl>
+       
+       <p> These message should be handled by the
+       client. The <span class="bold_code"><a href="ssh_channel.html">ssh channel
+       behavior</a></span> can be used when writing a client.
+       </p>
+     </p></div>
+
+
+   <p><a name="exit_status-3"><span class="bold_code">exit_status(ConnectionRef, ChannelId, Status) -&gt; ok</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+       <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+       <div class="REFTYPES">
+<span class="bold_code"> Status = integer()</span><br>
+</div>
+     </div>
+<div class="REFBODY"><p>
+       <p>Sends the exit status of a command to the client.</p>
+     </p></div>
+   
+     <p><a name="reply_request-4"><span class="bold_code">reply_request(ConnectionRef, WantReply, Status, CannelId) -&gt; ok</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	<div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> WantReply =  boolean()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Status = ssh_request_status() </span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+      </div>
+<div class="REFBODY"><p>
+	<p>Sends status replies to requests where the requester has
+	stated that they want a status report e.i .<span class="code"> WantReply = true</span>,
+	if <span class="code"> WantReply</span> is false calling this function will be a
+	"noop". Should be called after handling an ssh connection
+	protocol message containing a <span class="code">WantReply</span> boolean
+	value. See the ssh_channel behavior callback <span class="bold_code"><a href="ssh_channel.html"> handle_ssh_msg/2 </a></span>
+	</p>
+      </p></div>
+    
+     <p><a name="send-3"><span class="bold_code">send(ConnectionRef, ChannelId, Data) -&gt;</span></a><br><a name="send-4"><span class="bold_code">send(ConnectionRef, ChannelId, Data, Timeout) -&gt;</span></a><br><a name="send-4"><span class="bold_code">send(ConnectionRef, ChannelId, Type, Data) -&gt;</span></a><br><a name="send-5"><span class="bold_code">send(ConnectionRef, ChannelId, Type, Data, TimeOut) -&gt;
+       ok | {error, timeout}</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	<div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Data = binary()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Type = ssh_data_type_code()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Timeout = timeout()</span><br>
+</div>
+       </div>
+<div class="REFBODY"><p>
+	 <p>Sends channel data. 
+	 </p>
+       </p></div>
+     
+     <p><a name="send_eof-2"><span class="bold_code">send_eof(ConnectionRef, ChannelId) -&gt; ok </span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	<div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+       </div>
+<div class="REFBODY"><p>
+	 <p>Sends eof on the channel <span class="code">ChannelId</span>.
+	 </p>
+       </p></div>
+
+     <p><a name="session_channel-2"><span class="bold_code">session_channel(ConnectionRef, Timeout) -&gt; </span></a><br><a name="session_channel-4"><span class="bold_code">session_channel(ConnectionRef, InitialWindowSize,
+       MaxPacketSize, Timeout) -&gt; {ok, ssh_channel_id()} | {error, Reason}</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	 <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref()</span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> InitialWindowSize = integer() </span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> MaxPacketSize = integer() </span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> Timeout = timeout()</span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> Reason = term() </span><br>
+</div>
+       </div>
+<div class="REFBODY"><p>
+	 <p>Opens a channel for a ssh session. A session is a
+	 remote execution of a program. The program may be a shell, an
+	 application, a system command, or some built-in subsystem.
+	</p>
+       </p></div>
+
+    <p><a name="setenv-5"><span class="bold_code">setenv(ConnectionRef, ChannelId, Var, Value, TimeOut) -&gt; ssh_request_status()</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	<div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Var = string()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Value = string()</span><br>
+</div>
+	<div class="REFTYPES">
+<span class="bold_code"> Timeout = timeout()</span><br>
+</div>
+      </div>
+<div class="REFBODY"><p>
+	<p> Environment variables may be passed to the shell/command to be
+	started later.
+	</p>
+      </p></div>
+    
+    <p><a name="shell-2"><span class="bold_code">shell(ConnectionRef, ChannelId) -&gt; ssh_request_status()
+      </span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	 <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+       </div>
+<div class="REFBODY"><p>
+	 <p> Will request that the user's default shell (typically
+	 defined in /etc/passwd in UNIX systems) be started at the
+	 other end. 
+	 </p>
+       </p></div>
+
+    <p><a name="subsystem-4"><span class="bold_code">subsystem(ConnectionRef, ChannelId, Subsystem, Timeout) -&gt; ssh_request_status()</span></a><br></p>
+<div class="REFBODY">
+<p>Types:</p>
+	 <div class="REFTYPES">
+<span class="bold_code"> ConnectionRef = ssh_connection_ref() </span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> ChannelId = ssh_channel_id()</span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> Subsystem = string()</span><br>
+</div>
+	 <div class="REFTYPES">
+<span class="bold_code"> Timeout = timeout()</span><br>
+</div>
+       </div>
+<div class="REFBODY"><p>
+	 <p> Sends a request to execute a predefined subsystem.
+	 </p>
+       </p></div>
+    
+  
+  
+</div>
+<div class="footer">
+<hr>
+<p>Copyright © 2005-2009 Ericsson AB. All Rights Reserved.</p>
+</div>
+</div>
+</div></body>
+</html>

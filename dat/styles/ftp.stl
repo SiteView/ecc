@@ -1,0 +1,61 @@
+; -----------------------------------------------------------------------
+; Mercury Script Styles
+; FTP Code Generation Style
+; -----------------------------------------------------------------------
+
+[FTP:C]
+@Protocol=FTP
+@FunctionList=ftp_logon,ftp_mkdir,ftp_logout,ftp_rmdir
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[FTP-OPS:C]
+@Protocol=FTP
+@FunctionList=ftp_get,ftp_put,ftp_delete,ftp_dir,ftp_rendir
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=& NEWLINE
+NextArguments=& 
+SoftDelimiter=SZ("ENDITEM")= & ENDITEM & NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[FTP_EX:C]
+@Protocol=FTP
+@FunctionList=ftp_logon_ex,ftp_mkdir_ex,ftp_logout_ex,ftp_rmdir_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[FTP-OPS_EX:C]
+@Protocol=FTP
+@FunctionList=ftp_get_ex,ftp_put_ex,ftp_delete_ex,ftp_dir_ex,ftp_rendir_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=& 
+Argument=& NEWLINE
+NextArguments=& 
+SoftDelimiter=SZ("ENDITEM")= & ENDITEM & NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+
+[FTP_EX:VBA]
+@Protocol=FTP
+@MethodList=IFtpApi->logon,IFtpApi->get,IFtpApi->put,IFtpApi->del,IFtpApi->mkdir,IFtpApi->logout,IFtpApi->dir,IFtpApi->rendir,IFtpApi->rmdir
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &

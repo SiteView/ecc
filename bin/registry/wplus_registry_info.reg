@@ -1,0 +1,187 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols]
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus]
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Connections]
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup]
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:110]
+@="POP3"
+"Active"="true"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:119]
+@="NNTP"
+"Active"="false"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:1755]
+"Active"="false"
+@="MMS"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:21]
+@="FTP"
+"Active"="true"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:23]
+@="TELN"
+"Active"="false"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:25]
+@="SMTP"
+"Active"="true"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:389]
+"Active"="false"
+@="LDAP"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:443]
+@="HTTP"
+"Active"="true"
+"SSL_Active"="true"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="3"
+"Svr_SSL_Ciphers"="RC4-MD5"
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:636]
+"Active"="false"
+@="LDAP"
+"SSL_Active"="true"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="3"
+"Svr_SSL_Ciphers"="RC4-MD5"
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Servers-Backup\*:80]
+@="HTTP"
+"Active"="true"
+"SSL_Active"="false"
+"Clnt_SSL_Version"="23"
+"Clnt_SSL_Ciphers"=""
+"Clnt_SSL_Certificate"=""
+"Clnt_SSL_Key"=""
+"Svr_SSL_Version"="23"
+"Svr_SSL_Ciphers"=""
+"Svr_SSL_Certificate"=""
+"Svr_SSL_Key"=""
+"Clnt_SSL_Password"=""
+"Svr_SSL_Password"=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\FTP]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\HTTP]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\MMS]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\NNTP]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\POP3]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\RTSP]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\SMTP]
+@=""
+
+[HKEY_CURRENT_USER\Software\Mercury Interactive\LoadRunner\Protocols\WPlus\Services\TELN]
+@=""
+

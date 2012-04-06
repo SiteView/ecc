@@ -1,0 +1,2399 @@
+-----------------
+01/26/11 22:36:45 tcp 192.168.9.218.53301 -> 192.168.0.69.22 (ssh)
+siteview
+dragonflow
+
+Last login: Tue Jan 25 23:32:15 2011 from 192.168.9.119
+
+exec /bin/sh -s +v
+case "`PATH=/usr/bin:/bin uname -sr 2>/dev/null`" in SunOS\ 5.1[1-9] ) [ -x /usr/bin/bash ]  &&  exec /usr/bin/bash -s +v ;; esac
+stty -echo; PS1=;PS2=;PS3=;PS4=;echo SUA `echo Rocks`
+(c)Copyright 1983-2003 Hewlett-Packard Development Company, L.P.
+(c)Copyright 1979, 1980, 1983, 1985-1993 The Regents of the Univ. of California
+(c)Copyright 1980, 1984, 1986 Novell, Inc.
+(c)Copyright 1986-2000 Sun Microsystems, Inc.
+(c)Copyright 1985, 1986, 1988 Massachusetts Institute of Technology
+(c)Copyright 1989-1993  The Open Software Foundation, Inc.
+(c)Copyright 1990 Motorola, Inc.
+(c)Copyright 1990, 1991, 1992 Cornell University
+(c)Copyright 1989-1991 The University of Maryland
+(c)Copyright 1988 Carnegie Mellon University
+(c)Copyright 1991-2003 Mentat Inc.
+(c)Copyright 1996 Morning Star Technologies, Inc.
+(c)Copyright 1996 Progressive Systems, Inc.
+  
+
+                  RESTRICTED RIGHTS LEGEND
+Use, duplication, or disclosure by the U.S. Government is subject to
+restrictions as set forth in sub-paragraph (c)(1)(ii) of the Rights in
+Technical Data and Computer Software clause in DFARS 252.227-7013.
+
+
+                  Hewlett-Packard Company
+                  3000 Hanover Street
+                  Palo Alto, CA 94304 U.S.A.
+
+Rights for non-DOD U.S. Government Departments and Agencies are as set
+forth in FAR 52.227-19(c)(1,2).
+[3g[24;9HH[24;17HH[24;25HH[24;33HH[24;41HH[24;49HH[24;57HH[24;65HH[24;73HH[3g        H        H        H        H        H        H        H        H        H$ exec /bin/sh -s +v
+$ case "`PATH=/usr/bin:/bin uname -sr 2>/dev/null`" in SunOS\ 5.1[1-9] ) [ -x$ /dev/null`" in SunOS\ 5.1[1-9] ) [ -x                                      </usr/bin/bash ]  &&  exec /usr/bin/ba$ /usr/bin/bash ]  &&  exec /usr/bin/bas                                     h -s +v ;; esac
+$ stty -echo; PS1=;PS2=;PS3=;PS4=;echo SUA `echo Rocks`
+SUA Rocks
+[I-0]:LOG:phase=discovery
+[I-0]:LOG:SUA_Discovery_version=1.6.1
+[I-0]:LOG:hostname=HP_zx6000
+[I-0]:LOG:uname_a='HP-UX HP_zx600 B.11.23 U ia64 0270069248 unlimited-user license'
+[I-0]:LOG:OS=HP-UX
+[I-0]:LOG:OSversion=B.11.23
+[I-0]:LOG:model=ia64 hp server rx2600
+[I-0]:LOG:shell2try=sh
+[I-0]:LOG:foundshell=/usr/bin/sh
+[I-0]:LOG:foundshell-details='-r-xr-xr-x   2 bin        bin         586136 Aug 27  2004 /usr/bin/sh'
+[I-0]:LOG:random_nums='11055 31540 15493'
+[I-0]:LOG:foundshell-runs=1
+[I-0]:LOG:foundshell-works=1
+[I-0]:LOG:tmp-dir=/tmp
+[I-0]:LOG:256kb-free-in-tmp-dir=1
+[I-0]:LOG:SUA_PERL_BIN-setting=[value=not-set valid=0 use-sh=0]
+[I-0]:LOG:foundperl=[bin=/opt/perl/bin/perl ver=5008 raw-ver=5.008]
+[I-0]:LOG:foundperl-details='-r-xr-xr-x   1 bin        bin        4820840 May 13  2004 /opt/perl/bin/perl'
+[I-0]:LOG:rejected-perl-bins=
+[M-1]:DSC:method=perl
+[M-1]:DSC:bin-to-run=/opt/perl/bin/perl
+[M-1]:DSC:error-msg=
+[I-0]:LOG:SUAversion=1.11
+[I-0]:LOG:method=perl
+[I-0]:LOG:hostname=HP_zx6000
+[I-0]:LOG:uname_a=HP-UX HP_zx600 B.11.23 U ia64 0270069248 unlimited-user license
+[I-0]:LOG:OS=HP-UX
+[I-0]:LOG:OSversion=B.11.23
+[M-2]:LOG:READY at 20110126-143645
+3:LOG:E-cmd-status=0
+1:BGN:uname -sr
+1:DATA:HP-UX B.11.23
+1:END:lcnt=1
+1:END:stat=0
+2:BGN:echo "selclass qualifier memory;info;wait;infolog" | /usr/sbin/cstm | grep -i 'total configured memory'
+2:END:lcnt=0
+2:END:stat=1
+3:BGN:netstat -i
+3:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+4:BGN:sar -d  15
+5:BGN:bdf -l
+5:DATA:Filesystem          kbytes    used   avail %used Mounted on
+5:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+5:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+5:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+5:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+5:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+5:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+5:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+5:END:lcnt=8
+5:END:stat=0
+6:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+6:DATA:4 0 0
+6:END:lcnt=1
+6:END:stat=0
+7:BGN:echo "selclass qualifier memory;info;wait;infolog" | /usr/sbin/cstm | grep -i 'total configured memory'
+7:END:lcnt=0
+7:END:stat=1
+8:BGN:/usr/sbin/ioscan -fkC processor
+8:DATA:Class       I  H/W Path  Driver    S/W State H/W Type  Description
+8:DATA:===================================================================
+8:DATA:processor   0  120       processor CLAIMED   PROCESSOR Processor
+8:DATA:processor   1  121       processor CLAIMED   PROCESSOR Processor
+8:END:lcnt=4
+8:END:stat=0
+9:BGN:/etc/swapinfo -t | grep total
+9:DATA:total   6280336  882384 5397952   14%       -       0    -
+9:END:lcnt=1
+9:END:stat=0
+10:BGN:sar -M 15
+11:BGN:date
+11:DATA:Wed Jan 26 14:36:48 EAT 2011
+11:END:lcnt=1
+11:END:stat=0
+12:BGN:sar -b 15
+13:BGN:bdf | awk 'BEGIN{FSName=""} NF==1 {FSName=$0; next} {print(FSName $0);FSName=""}'
+13:DATA:Filesystem          kbytes    used   avail %used Mounted on
+13:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+13:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+13:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+13:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+13:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+13:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+13:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+13:END:lcnt=8
+13:END:stat=0
+14:BGN:getconf PAGE_SIZE
+14:DATA:4096
+14:END:lcnt=1
+14:END:stat=0
+15:BGN:vmstat -S 15
+15:DATA:         procs           memory                   page                              faults       cpu
+15:DATA:    r     b     w      avm    free   si   so    pi   po    fr   de    sr     in     sy    cs  us sy id
+15:DATA:    1     0     0    32953  267667    0    0     0    0     0    0     0    359    841    36   0  0 100
+16:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+16:DATA:8151025 1
+16:END:lcnt=1
+16:END:stat=0
+17:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+17:DATA:8151156 1
+17:END:lcnt=1
+17:END:stat=0
+18:BGN:netstat -in |awk '{print $0,i++}'
+18:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+18:DATA:lan0      1500 192.168.0.0     192.168.0.69    109627  0     94090   0     0    1
+18:DATA:lo0       4136 127.0.0.0       127.0.0.1       7796    0     7796    0     0    2
+18:END:lcnt=3
+18:END:stat=0
+19:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+19:DATA:8151697 1
+19:END:lcnt=1
+19:END:stat=0
+20:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+20:DATA:8151828 1
+20:END:lcnt=1
+20:END:stat=0
+21:BGN:netstat -in |awk '{print $0,i++}'
+21:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+21:DATA:lan0      1500 192.168.0.0     192.168.0.69    109635  0     94094   0     0    1
+21:DATA:lo0       4136 127.0.0.0       127.0.0.1       7796    0     7796    0     0    2
+21:END:lcnt=3
+21:END:stat=0
+22:BGN:vmstat 60
+22:DATA:         procs           memory                   page                              faults       cpu
+22:DATA:    r     b     w      avm    free   re   at    pi   po    fr   de    sr     in     sy    cs  us sy id
+22:DATA:    1     0     0    32953  267351    6    2     0    0     0    0     0    359    841    36   0  0 100
+23:BGN:ps -e | wc -l
+23:DATA:139
+23:END:lcnt=1
+23:END:stat=0
+24:BGN:UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+24:DATA:  F S USER       PID  PPID        GID  C PRI NI   SZ     VSZ TT           TIME  ELAPSED COMMAND
+24:DATA:1003 S root         0     0          0  0 127 20    0       0 ?           00:04 19:08:01 swapper
+24:DATA:541 R root         1     0          0  0 152 20  386    1544 ?           00:00 19:08:23 init
+24:DATA:1003 R root         8     0          0  0 152 20    0       0 ?           00:00 19:08:23 ioconfigd
+24:DATA:1003 S root         9     0          0  0 152 20    0       0 ?           00:00 19:08:23 nfsktcpd
+24:DATA:1003 R root        10     0          0  0 152 20    0       0 ?           00:00 19:08:22 autofskd
+24:DATA:1003 S root        11     0          0  0 147 20    0       0 ?           00:00 19:08:22 lvmkd
+24:DATA:1003 S root        12     0          0  0 147 20    0       0 ?           00:00 19:08:22 lvmkd
+24:DATA:1003 S root        13     0          0  0 147 20    0       0 ?           00:00 19:08:22 lvmkd
+24:DATA:1003 S root        14     0          0  0 147 20    0       0 ?           00:00 19:08:22 lvmkd
+24:DATA:1003 S root        15     0          0  0 147 20    0       0 ?           00:00 19:08:22 lvmkd
+24:DATA:1003 S root        16     0          0  0 147 20    0       0 ?           00:00 19:08:22 lvmkd
+24:DATA:1003 S root        17     0          0  0 148 20    0       0 ?           00:00 19:08:22 lvmschedd
+24:DATA:1003 R root        18     0          0  0 191 20    0       0 ?           00:00 19:08:01 ksyncer_daemon
+24:DATA:1003 S root        19     0          0  0 148 20    0       0 ?           00:00 19:08:01 lvmdevd
+24:DATA:1003 S root        20     0          0  0 148 20    0       0 ?           00:00 19:08:01 lvmattachd
+24:DATA:1003 S root        21     0          0  0 128 20    0       0 ?           00:00 19:08:01 pagetable_init_daemon
+24:DATA:1003 S root        22     0          0  0 100 20    0       0 ?           00:00 19:08:01 supsched
+24:DATA:1003 S root        23     0          0  0 100 20    0       0 ?           00:00 19:08:01 strmem
+24:DATA:1003 S root        24     0          0  0 100 20    0       0 ?           00:00 19:08:01 strweld
+24:DATA:1003 S root        25     0          0  0 100 20    0       0 ?           00:00 19:08:01 strfreebd
+24:DATA:1003 S root         2     0          0  0 128 20    0       0 ?           00:00 19:08:01 vhand
+24:DATA:1003 S root         3     0          0  0 128 20    0       0 ?           00:02 19:08:01 statdaemon
+24:DATA:1003 S root         4     0          0  0 128 20    0       0 ?           00:00 19:08:01 unhashdaemon
+24:DATA:1003 S root        26     0          0  0 -32 20    0       0 ?           00:00 19:08:01 progressdaemon
+24:DATA:1003 R root        27     0          0  0 152 20    0       0 ?           00:00 19:08:01 kmemdaemon
+24:DATA:1003 S root        28     0          0  0 -32 20    0       0 ?           00:00 19:08:01 ttisr
+24:DATA:1003 S root        29     0          0  0 -32 20    0       0 ?           00:01 19:08:01 ipmid
+24:DATA:1003 S root        36     0          0  0 128 20    0       0 ?           00:00 19:08:00 eventdaemon
+24:DATA:1003 R root        37     0          0  0 152 20    0       0 ?           00:06 19:07:59 schedcpu
+24:DATA:1003 R root        38     0          0  0 191 20    0       0 ?           00:01 19:07:59 pagezerod
+24:DATA:1003 R root        39     0          0  0 191 20    0       0 ?           00:00 19:07:59 cmcd
+24:DATA:1003 S root        40     0          0  0 100 20    0       0 ?           00:00 19:07:59 smpsched
+24:DATA:1003 S root        41     0          0  0 100 20    0       0 ?           00:00 19:07:59 smpsched
+24:DATA:1003 S root        42     0          0  0 100 20    0       0 ?           00:00 19:07:59 sblksched
+24:DATA:1003 S root        43     0          0  0 100 20    0       0 ?           00:00 19:07:59 sblksched
+24:DATA:1003 R root        44     0          0  0 152 20    0       0 ?           00:00 19:07:59 kend
+24:DATA:401 S siteview 22497 22429         20  0 154 20   48     264 pts/1       00:00    00:01 sar -b 15
+24:DATA:401 S root       903     1          0  0 155 20   28     116 ?           00:00 04:40:57 /usr/sbin/ptydaemon
+24:DATA:1003 R root        51     0          0  0 152 20    0       0 ?           00:22 19:07:58 vxfsd
+24:DATA:401 S siteview 22479 22429         20  0 154 20   48     264 pts/1       00:00    00:02 sar -d 15
+24:DATA:1003 S root        75     0          0  0 153 20    0       0 ?           00:00 19:07:55 rng
+24:DATA:401 S root      1722     1          0  0 154 20   44     184 ?           00:00 04:37:32 /usr/sbin/cron
+24:DATA:401 S root       673     1          0  0 168 20   27     148 ?           00:00 04:41:10 /usr/sbin/syncer
+24:DATA:401 S root       899     1          0  0 154 20   66     268 ?           00:00 04:40:58 /usr/sbin/syslogd -D
+24:DATA:1401 R root       677     1          0  0 152 20  317    1696 ?           00:02 04:41:09 /usr/sbin/utmpd
+24:DATA:1401 S root       874     1          0  0 168 20  296    1584 ?           00:00 04:40:58 ipmon -sD
+24:DATA:  1 S root      1177     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:401 S root       927     1          0  0 127 20   15      84 ?           00:00 04:40:57 /usr/lbin/nktl_daemon 0 0 0 0 0 1 -2
+24:DATA:401 S root      1137     1          0  0 154 20  251    1180 ?           00:01 04:40:43 /usr/sbin/rpcbind
+24:DATA:401 S root       931     1          0  0 127 20   22      92 ?           00:00 04:40:54 /usr/lbin/ntl_reader 0 1 1 1 1000 2 /var/adm/nettl /var/adm/conslog.opts
+24:DATA:401 S root       932   931          0  0 127 20   65     280 ?           00:00 04:40:54 /usr/sbin/netfmt -C -F -f /var/adm/nettl.LOG000 -c /var/adm/conslog.opts
+24:DATA:401 S root      2007     1          0  0 138  0  121     584 ?           00:00 04:37:20 /sbin/krsd -i
+24:DATA:2401 S root      1156     1          0  0 154 20  189    1064 ?           00:01 04:40:43 /usr/lib/netsvc/yp/ypbind
+24:DATA:401 S root      1163     1          0  0 154 20  191    1024 ?           00:00 04:40:39 /usr/sbin/keyserv
+24:DATA:  1 S root      1176     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1175     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1178     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1179     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1180     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1181     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1182     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1183     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1184     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1185     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1186     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1187     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1188     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1189     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:  1 S root      1190     1          0  0 154 20    0       0 ?           00:00 04:40:39 /usr/sbin/biod 16
+24:DATA:401 S root      1204     1          0  0 154 20  263    1356 ?           00:00 04:40:38 /usr/sbin/rpc.lockd
+24:DATA:401 S root      1198     1          0  0 154 20  202    1392 ?           00:00 04:40:38 /usr/sbin/rpc.statd
+24:DATA:401 R root      1210     1          0  0 152 20  243    1212 ?           00:00 04:40:38 /usr/sbin/automountd
+24:DATA:401 S root      1227     1          0  0 154 20  117     680 ?           00:00 04:40:38 /usr/sbin/inetd
+24:DATA:2401 S root      1529     1          6  0 154 20  542    3112 ?           00:02 04:39:36 sendmail: accepting connections
+24:DATA:401 S root      1543     1          0  0 154 20  424    1904 ?           00:00 04:39:21 /usr/sbin/snmpdm
+24:DATA:1401 S root      1664  1663          0  0 154 20  135     724 ?           00:00 04:37:35 /opt/wbem/sbin/cimservera
+24:DATA:401 S root      1610     1          0  0 154 20  122     728 ?           00:00 04:37:59 /usr/sbin/trapdestagt
+24:DATA:401 S root      1562     1          0  0 154 20  124     720 ?           00:00 04:39:00 /usr/sbin/hp_unixagt
+24:DATA:401 S root      1575     1          0  0 154 20  138     888 ?           00:00 04:38:45 /usr/sbin/ipv6agt
+24:DATA:401 S root      1587     1          0  0 154 20  158    1004 ?           00:00 04:38:30 /usr/sbin/mib2agt
+24:DATA:401 S root      1636     1          0  0 154 20  167     912 ?           00:00 04:37:59 /usr/sbin/fddi4subagt
+24:DATA:1401 R root      1663     1          0  0 152 20 1481    6676 ?           00:06 04:37:37 /opt/wbem/sbin/cimserver
+24:DATA:401 R root      1653     1          0  0 152 20  402    2636 ?           00:00 04:37:59 /opt/dce/sbin/rpcd
+24:DATA:401 S root      2175     1          3  0 154 20  198    1072 ?           00:00 04:14:27 ./ypserv stop
+24:DATA:401 S root      1927     1          0  0 154 20  192    1072 ?           00:00 04:37:22 /usr/sbin/rpc.mountd
+24:DATA:401 S root      1702     1          0  0 154 20   88     564 ?           00:00 04:37:33 /usr/sbin/pwgrd
+24:DATA:401 S root      2006     1          3  0 156 20  240    1280 console     00:00 04:37:20 -sh
+24:DATA:401 S root      1748     1          0  0 154 20   20      84 ?           00:00 04:37:31 /usr/sbin/envd
+24:DATA:401 R root      1909     1          0  0 152 20  657    4256 ?           00:04 04:37:22 vxsvc -r /opt/VRTSob/config/Registry -e
+24:DATA:401 S root      1758     1          0  0 154 20    3      16 ?           00:00 04:37:29 /usr/sbin/hubd
+24:DATA:401 S root      1937     1          0  0 154 20   69     484 ?           00:00 04:37:22 /usr/sbin/nfsd 16
+24:DATA:2401 R root      1768     1          3  0 152 20  461    2684 ?           00:00 04:37:29 /usr/sbin/swagentd -r
+24:DATA:1401 S root      2013     1          0  0 168 20   30     148 ?           00:00 04:37:20 /opt/wbem/sbin/cimserverd
+24:DATA:401 S root      2008     1          0  0 154 20   78     492 ?           00:00 04:37:20 /sbin/sfd
+24:DATA:401 S root      1993     1          0  0 158 20  240    1248 ?           00:00 04:37:20 /sbin/sh /usr/dt/bin/dtrc
+24:DATA:401 S root      1940  1939          0  0 154 20   81     628 ?           00:00 04:37:22 /usr/sbin/nfsd 16
+24:DATA:401 S root      2012     1          0  0 168 20   81     600 ?           00:00 04:37:20 /etc/opt/resmon/lbin/p_client
+24:DATA:401 S root      1819     1          0  0 154 20  151     860 ?           00:00 04:37:26 /etc/opt/resmon/lbin/emsagent
+24:DATA:401 S root      2024  1993          0  0 154 20   59     996 ?           00:00 04:37:18 /usr/dt/bin/dtlogin
+24:DATA:401 S root      1939     1          0  0 154 20   81     628 ?           00:00 04:37:22 /usr/sbin/nfsd 16
+24:DATA:401 S root      2238  2236          3  0 158 20  239    1260 ?           00:00 03:24:22 sh -c /opt/ssh/libexec/sftp-server
+24:DATA:401 S root      2047  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2050  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2049  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2048  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2051  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2052  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2053  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2054  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2055  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2056  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2057  1939          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2058  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2059  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:401 S root      2060  1940          0  0 154 20   81     628 ?           00:00 04:37:07 /usr/sbin/nfsd 16
+24:DATA:2401 S siteview 22425 22421         20  0 154 20  752    4176 ?           00:00    00:23 sshd: siteview@pts/1
+24:DATA:2401 R root      2236     1          0  0 152 20  740    4176 ?           00:00 03:24:24 sshd: root@notty
+24:DATA:401 S root      2173     1          3  0 154 20  194    1056 ?           00:00 04:14:37 ./ypserv ?
+24:DATA:401 S root     22037 22036          3  0 154 20   96     584 ?           00:00    08:19 /opt/ssh/libexec/sftp-server
+24:DATA:401 S root      2239  2238          3  0 154 20  122     716 ?           00:00 03:24:22 /opt/ssh/libexec/sftp-server
+24:DATA:2401 R root     16297     1          0  0 152 20  744    4176 ?           00:00 01:09:21 sshd: root@pts/0
+24:DATA:401 R siteview 22527 22526         20  1 178 20   60     264 pts/1       00:00    00:00 ps -eo flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args
+24:DATA:401 S root     22036 22034          3  0 158 20  239    1260 ?           00:00    08:19 sh -c /opt/ssh/libexec/sftp-server
+24:DATA:401 S siteview 22526 22429         20  1 158 20  167     924 pts/1       00:00    00:00 sh -c UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+24:DATA:401 S root     22058     1          0  0 154 20  656    3792 ?           00:00    06:04 /opt/ssh/sbin/sshd
+24:DATA:401 S siteview 22522 22429         20  0 168 20   27     112 pts/1       00:00    00:00 vmstat 60
+24:DATA:401 S siteview 22480 22479         20  0 168 20   21      88 pts/1       00:00    00:02 /usr/lbin/sa/sadc 15 2
+24:DATA:2401 S root     22478  1156          0  0 154 20  209    1304 ?           00:00    00:02 /usr/lib/netsvc/yp/ypbind
+24:DATA:401 S root     16300 16297          3  0 154 20  259    1372 pts/0       00:00 01:09:20 -sh
+24:DATA:401 S siteview 22495 22494         20  0 168 20   21      88 pts/1       00:00    00:01 /usr/lbin/sa/sadc 15 2
+24:DATA:401 S siteview 22498 22497         20  0 168 20   21      88 pts/1       00:00    00:01 /usr/lbin/sa/sadc 15 2
+24:DATA:401 R siteview 22429 22425         20  2 178 20 1128    5844 pts/1       00:00    00:08 /opt/perl/bin/perl -
+24:DATA:2401 R root     22034     1          0  0 152 20  724    4048 ?           00:00    08:20 sshd: root@notty
+24:DATA:2401 S root     22421 22058          0  0 154 20  752    4176 ?           00:00    00:39 sshd: siteview [priv]
+24:DATA:401 S siteview 22503 22429         20  0 168 20   27     112 pts/1       00:00    00:01 vmstat -S 15
+24:DATA:401 S siteview 22494 22429         20  0 154 20   48     264 pts/1       00:00    00:01 sar -M 15
+24:DATA:2401 S siteview 22477 22429          3  0 168 20   93     604 pts/1       00:00    00:02 netstat -i
+24:END:lcnt=138
+24:END:stat=0
+25:BGN:/usr/sbin/ioscan -fkC processor
+25:DATA:Class       I  H/W Path  Driver    S/W State H/W Type  Description
+25:DATA:===================================================================
+25:DATA:processor   0  120       processor CLAIMED   PROCESSOR Processor
+25:DATA:processor   1  121       processor CLAIMED   PROCESSOR Processor
+25:END:lcnt=4
+25:END:stat=0
+26:BGN:sar -u 15
+27:BGN:/etc/swapinfo -t | grep total
+27:DATA:total   6280336  886376 5393960   14%       -       0    -
+27:END:lcnt=1
+27:END:stat=0
+28:BGN:uptime
+28:DATA:  2:36pm  up 19:08,  3 users,  load average: 0.02, 0.01, 0.01
+28:END:lcnt=1
+28:END:stat=0
+29:BGN:who -u
+29:DATA:root       console      Jan 26 10:00  3:12   2006  system console
+29:DATA:root       pts/0        Jan 26 13:27  0:05  16300  192.168.9.218
+29:DATA:siteview   pts/1        Jan 26 14:36   .    22429  192.168.9.119
+29:END:lcnt=3
+29:END:stat=0
+30:BGN:who |  wc -l
+30:DATA:3
+30:END:lcnt=1
+30:END:stat=0
+31:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+31:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+31:END:lcnt=1
+31:END:stat=0
+4:DATA:
+4:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+4:DATA:
+4:DATA:14:36:47   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+4:DATA:14:37:02   c2t1d0    4.86    8.71      10     147   33.89   23.09
+4:END:lcnt=5
+4:END:stat=0
+32:BGN:date
+32:DATA:Wed Jan 26 14:37:02 EAT 2011
+32:END:lcnt=1
+32:END:stat=0
+33:BGN:bdf -l
+33:DATA:Filesystem          kbytes    used   avail %used Mounted on
+33:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+33:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+33:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+33:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+33:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+33:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+33:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+33:END:lcnt=8
+33:END:stat=0
+34:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+34:DATA:4 0 0
+34:END:lcnt=1
+34:END:stat=0
+35:BGN:ps -e | wc -l
+35:DATA:140
+35:END:lcnt=1
+35:END:stat=0
+36:BGN:/etc/swapinfo -t | grep total
+36:DATA:total   6280336  886600 5393736   14%       -       0    -
+36:END:lcnt=1
+36:END:stat=0
+37:BGN:uptime
+10:DATA:
+10:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+10:DATA:
+10:DATA:14:36:48     cpu    %usr    %sys    %wio   %idle
+10:DATA:14:37:03       0       0       1       3      96
+10:DATA:               1       0       1       1      98
+10:DATA:          system       0       1       2      97
+10:END:lcnt=7
+10:END:stat=0
+37:DATA:  2:37pm  up 19:08,  3 users,  load average: 0.02, 0.01, 0.01
+37:END:lcnt=1
+37:END:stat=0
+38:BGN:who |  wc -l
+38:DATA:3
+38:END:lcnt=1
+38:END:stat=0
+39:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+12:DATA:
+12:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+12:DATA:
+12:DATA:14:36:48 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+12:DATA:14:37:03       0     183     100       6      13      54       0       0
+12:END:lcnt=5
+12:END:stat=0
+39:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+39:END:lcnt=1
+39:END:stat=0
+15:DATA:    1     0     0    38272  267048    0    0     0    0     0    0     0    543   7584   162   0  1 99
+26:DATA:
+26:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+26:DATA:
+26:DATA:14:36:50    %usr    %sys    %wio   %idle
+26:DATA:14:37:05       0       0       1      99
+26:END:lcnt=5
+26:END:stat=0
+3:DATA:lan0      1500 192.168.0.0     192.168.0.69    109566  0     94055   0     0   
+40:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+40:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+40:END:lcnt=1
+40:END:stat=0
+41:BGN:who |  wc -l
+41:DATA:3
+41:END:lcnt=1
+41:END:stat=0
+42:BGN:uptime
+42:DATA:  2:37pm  up 19:09,  3 users,  load average: 0.02, 0.01, 0.01
+42:END:lcnt=1
+42:END:stat=0
+43:BGN:/etc/swapinfo -t | grep total
+43:DATA:total   6280336  883604 5396732   14%       -       0    -
+43:END:lcnt=1
+43:END:stat=0
+44:BGN:sar -u 15
+45:BGN:ps -e | wc -l
+45:DATA:136
+45:END:lcnt=1
+45:END:stat=0
+46:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+46:DATA:4 0 0
+46:END:lcnt=1
+46:END:stat=0
+47:BGN:sar -d  15
+48:BGN:bdf -l
+48:DATA:Filesystem          kbytes    used   avail %used Mounted on
+48:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+48:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+48:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+48:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+48:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+48:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+48:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+48:END:lcnt=8
+48:END:stat=0
+49:BGN:date
+49:DATA:Wed Jan 26 14:37:18 EAT 2011
+49:END:lcnt=1
+49:END:stat=0
+15:DATA:    1     0     0    40723  267564    0    0     0    0     0    0     0    505   5540   149   0  0 100
+50:BGN:date
+50:DATA:Wed Jan 26 14:37:33 EAT 2011
+50:END:lcnt=1
+50:END:stat=0
+51:BGN:bdf -l
+51:DATA:Filesystem          kbytes    used   avail %used Mounted on
+51:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+51:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+51:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+51:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+51:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+51:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+51:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+51:END:lcnt=8
+51:END:stat=0
+52:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+52:DATA:4 0 0
+52:END:lcnt=1
+52:END:stat=0
+44:DATA:
+44:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+44:DATA:
+44:DATA:14:37:18    %usr    %sys    %wio   %idle
+44:DATA:14:37:33       0       0       1      99
+44:END:lcnt=5
+44:END:stat=0
+53:BGN:ps -e | wc -l
+53:DATA:136
+53:END:lcnt=1
+53:END:stat=0
+54:BGN:/etc/swapinfo -t | grep total
+54:DATA:total   6280336  884652 5395684   14%       -       0    -
+54:END:lcnt=1
+54:END:stat=0
+55:BGN:uptime
+55:DATA:  2:37pm  up 19:09,  3 users,  load average: 0.02, 0.01, 0.01
+55:END:lcnt=1
+55:END:stat=0
+47:DATA:
+47:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+47:DATA:
+47:DATA:14:37:18   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+47:DATA:14:37:33   c2t1d0    1.80    6.50       4      55   23.25   23.53
+47:END:lcnt=5
+47:END:stat=0
+56:BGN:who |  wc -l
+56:DATA:3
+56:END:lcnt=1
+56:END:stat=0
+57:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+57:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+57:END:lcnt=1
+57:END:stat=0
+15:DATA:    1     0     0    39749  267217    0    0     0    0     0    0     0    491   4424    77   0  0 100
+3:DATA:lo0       4136 loopback        localhost       7789    0     7789    0     0   
+3:END:lcnt=3
+3:END:stat=0
+58:BGN:netstat -i
+58:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+59:BGN:sar -M 15
+60:BGN:uptime
+60:DATA:  2:37pm  up 19:09,  3 users,  load average: 0.02, 0.01, 0.01
+60:END:lcnt=1
+60:END:stat=0
+61:BGN:/etc/swapinfo -t | grep total
+61:DATA:total   6280336  884340 5395996   14%       -       0    -
+61:END:lcnt=1
+61:END:stat=0
+62:BGN:sar -u 15
+63:BGN:ps -e | wc -l
+63:DATA:138
+63:END:lcnt=1
+63:END:stat=0
+64:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+64:DATA:4 0 0
+64:END:lcnt=1
+64:END:stat=0
+65:BGN:sar -d  15
+66:BGN:bdf -l
+66:DATA:Filesystem          kbytes    used   avail %used Mounted on
+66:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+66:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+66:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+66:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+66:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+66:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+66:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+66:END:lcnt=8
+66:END:stat=0
+15:DATA:    1     0     0    32923  267400    0    0     0    0     0    0     0    495   4258    98   0  0 100
+67:BGN:date
+67:DATA:Wed Jan 26 14:37:49 EAT 2011
+67:END:lcnt=1
+67:END:stat=0
+68:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+68:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+68:END:lcnt=1
+68:END:stat=0
+69:BGN:who |  wc -l
+69:DATA:3
+69:END:lcnt=1
+69:END:stat=0
+70:BGN:sar -b 15
+71:BGN:bdf | awk 'BEGIN{FSName=""} NF==1 {FSName=$0; next} {print(FSName $0);FSName=""}'
+71:DATA:Filesystem          kbytes    used   avail %used Mounted on
+71:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+71:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+71:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+71:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+71:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+71:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+71:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+71:END:lcnt=8
+71:END:stat=0
+72:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+72:DATA:8180853 1
+72:END:lcnt=1
+72:END:stat=0
+73:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+73:DATA:8180984 1
+73:END:lcnt=1
+73:END:stat=0
+22:DATA:    1     0     0    32923  266929  111   55     0    0     0    0     0    538   8408   163   0  0 99
+74:BGN:netstat -in |awk '{print $0,i++}'
+74:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+74:DATA:lan0      1500 192.168.0.0     192.168.0.69    110150  0     94355   0     0    1
+74:DATA:lo0       4136 127.0.0.0       127.0.0.1       7841    0     7841    0     0    2
+74:END:lcnt=3
+74:END:stat=0
+75:BGN:UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+75:DATA:  F S USER       PID  PPID        GID  C PRI NI   SZ     VSZ TT           TIME  ELAPSED COMMAND
+75:DATA:1003 S root         0     0          0  0 127 20    0       0 ?           00:04 19:09:01 swapper
+75:DATA:541 R root         1     0          0  0 152 20  386    1544 ?           00:00 19:09:23 init
+75:DATA:1003 R root         8     0          0  0 152 20    0       0 ?           00:00 19:09:23 ioconfigd
+75:DATA:1003 S root         9     0          0  0 152 20    0       0 ?           00:00 19:09:23 nfsktcpd
+75:DATA:1003 R root        10     0          0  0 152 20    0       0 ?           00:00 19:09:22 autofskd
+75:DATA:1003 S root        11     0          0  0 147 20    0       0 ?           00:00 19:09:22 lvmkd
+75:DATA:1003 S root        12     0          0  0 147 20    0       0 ?           00:00 19:09:22 lvmkd
+75:DATA:1003 S root        13     0          0  0 147 20    0       0 ?           00:00 19:09:22 lvmkd
+75:DATA:1003 S root        14     0          0  0 147 20    0       0 ?           00:00 19:09:22 lvmkd
+75:DATA:1003 S root        15     0          0  0 147 20    0       0 ?           00:00 19:09:22 lvmkd
+75:DATA:1003 S root        16     0          0  0 147 20    0       0 ?           00:00 19:09:22 lvmkd
+75:DATA:1003 S root        17     0          0  0 148 20    0       0 ?           00:00 19:09:22 lvmschedd
+75:DATA:1003 R root        18     0          0  0 191 20    0       0 ?           00:00 19:09:01 ksyncer_daemon
+75:DATA:1003 S root        19     0          0  0 148 20    0       0 ?           00:00 19:09:01 lvmdevd
+75:DATA:1003 S root        20     0          0  0 148 20    0       0 ?           00:00 19:09:01 lvmattachd
+75:DATA:1003 S root        21     0          0  0 128 20    0       0 ?           00:00 19:09:01 pagetable_init_daemon
+75:DATA:1003 S root        22     0          0  0 100 20    0       0 ?           00:00 19:09:01 supsched
+75:DATA:1003 S root        23     0          0  0 100 20    0       0 ?           00:00 19:09:01 strmem
+75:DATA:1003 S root        24     0          0  0 100 20    0       0 ?           00:00 19:09:01 strweld
+75:DATA:1003 S root        25     0          0  0 100 20    0       0 ?           00:00 19:09:01 strfreebd
+75:DATA:1003 S root         2     0          0  0 128 20    0       0 ?           00:00 19:09:01 vhand
+75:DATA:1003 S root         3     0          0  0 128 20    0       0 ?           00:02 19:09:01 statdaemon
+75:DATA:1003 S root         4     0          0  0 128 20    0       0 ?           00:00 19:09:01 unhashdaemon
+75:DATA:1003 S root        26     0          0  0 -32 20    0       0 ?           00:00 19:09:01 progressdaemon
+75:DATA:1003 R root        27     0          0  0 152 20    0       0 ?           00:00 19:09:01 kmemdaemon
+75:DATA:1003 S root        28     0          0  0 -32 20    0       0 ?           00:00 19:09:01 ttisr
+75:DATA:1003 S root        29     0          0  0 -32 20    0       0 ?           00:01 19:09:01 ipmid
+75:DATA:1003 S root        36     0          0  0 128 20    0       0 ?           00:00 19:09:00 eventdaemon
+75:DATA:1003 R root        37     0          0  0 152 20    0       0 ?           00:06 19:08:59 schedcpu
+75:DATA:1003 R root        38     0          0  0 191 20    0       0 ?           00:01 19:08:59 pagezerod
+75:DATA:1003 R root        39     0          0  0 191 20    0       0 ?           00:00 19:08:59 cmcd
+75:DATA:1003 S root        40     0          0  0 100 20    0       0 ?           00:00 19:08:59 smpsched
+75:DATA:1003 S root        41     0          0  0 100 20    0       0 ?           00:00 19:08:59 smpsched
+75:DATA:1003 S root        42     0          0  0 100 20    0       0 ?           00:00 19:08:59 sblksched
+75:DATA:1003 S root        43     0          0  0 100 20    0       0 ?           00:00 19:08:59 sblksched
+75:DATA:1003 R root        44     0          0  0 152 20    0       0 ?           00:00 19:08:59 kend
+75:DATA:401 S siteview 22623 22429         20  0 154 20   48     264 pts/1       00:00    00:01 sar -d 15
+75:DATA:401 S root       903     1          0  0 155 20   28     116 ?           00:00 04:41:57 /usr/sbin/ptydaemon
+75:DATA:1003 R root        51     0          0  0 152 20    0       0 ?           00:23 19:08:58 vxfsd
+75:DATA:401 S siteview 22633 22429         20  0 154 20   48     264 pts/1       00:00    00:00 sar -b 15
+75:DATA:1003 S root        75     0          0  0 153 20    0       0 ?           00:00 19:08:55 rng
+75:DATA:401 S root      1722     1          0  0 154 20   44     184 ?           00:00 04:38:32 /usr/sbin/cron
+75:DATA:401 S root       673     1          0  0 168 20   27     148 ?           00:00 04:42:10 /usr/sbin/syncer
+75:DATA:401 S root       899     1          0  0 154 20   66     268 ?           00:00 04:41:58 /usr/sbin/syslogd -D
+75:DATA:1401 R root       677     1          0  0 152 20  317    1696 ?           00:02 04:42:09 /usr/sbin/utmpd
+75:DATA:1401 S root       874     1          0  0 168 20  296    1584 ?           00:00 04:41:58 ipmon -sD
+75:DATA:  1 S root      1177     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:401 S root       927     1          0  0 127 20   15      84 ?           00:00 04:41:57 /usr/lbin/nktl_daemon 0 0 0 0 0 1 -2
+75:DATA:401 S root      1137     1          0  0 154 20  251    1180 ?           00:01 04:41:43 /usr/sbin/rpcbind
+75:DATA:401 S root       931     1          0  0 127 20   22      92 ?           00:00 04:41:54 /usr/lbin/ntl_reader 0 1 1 1 1000 2 /var/adm/nettl /var/adm/conslog.opts
+75:DATA:401 S root       932   931          0  0 127 20   65     280 ?           00:00 04:41:54 /usr/sbin/netfmt -C -F -f /var/adm/nettl.LOG000 -c /var/adm/conslog.opts
+75:DATA:401 S root      2007     1          0  0 138  0  121     584 ?           00:00 04:38:20 /sbin/krsd -i
+75:DATA:2401 S root      1156     1          0  0 154 20  189    1064 ?           00:01 04:41:43 /usr/lib/netsvc/yp/ypbind
+75:DATA:401 S root      1163     1          0  0 154 20  191    1024 ?           00:00 04:41:39 /usr/sbin/keyserv
+75:DATA:  1 S root      1176     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1175     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1178     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1179     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1180     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1181     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1182     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1183     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1184     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1185     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1186     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1187     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1188     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1189     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:  1 S root      1190     1          0  0 154 20    0       0 ?           00:00 04:41:39 /usr/sbin/biod 16
+75:DATA:401 S root      1204     1          0  0 154 20  263    1356 ?           00:00 04:41:38 /usr/sbin/rpc.lockd
+75:DATA:401 S root      1198     1          0  0 154 20  202    1392 ?           00:00 04:41:38 /usr/sbin/rpc.statd
+75:DATA:401 R root      1210     1          0  0 152 20  243    1212 ?           00:00 04:41:38 /usr/sbin/automountd
+75:DATA:401 S root      1227     1          0  0 154 20  117     680 ?           00:00 04:41:38 /usr/sbin/inetd
+75:DATA:2401 S root      1529     1          6  0 154 20  542    3112 ?           00:02 04:40:36 sendmail: accepting connections
+75:DATA:401 S root      1543     1          0  0 154 20  424    1904 ?           00:00 04:40:21 /usr/sbin/snmpdm
+75:DATA:1401 S root      1664  1663          0  0 154 20  135     724 ?           00:00 04:38:35 /opt/wbem/sbin/cimservera
+75:DATA:401 S root      1610     1          0  0 154 20  122     728 ?           00:00 04:38:59 /usr/sbin/trapdestagt
+75:DATA:401 S root      1562     1          0  0 154 20  124     720 ?           00:00 04:40:00 /usr/sbin/hp_unixagt
+75:DATA:401 S root      1575     1          0  0 154 20  138     888 ?           00:00 04:39:45 /usr/sbin/ipv6agt
+75:DATA:401 S root      1587     1          0  0 154 20  158    1004 ?           00:00 04:39:30 /usr/sbin/mib2agt
+75:DATA:401 S root      1636     1          0  0 154 20  167     912 ?           00:00 04:38:59 /usr/sbin/fddi4subagt
+75:DATA:1401 R root      1663     1          0  0 152 20 1481    6676 ?           00:06 04:38:37 /opt/wbem/sbin/cimserver
+75:DATA:401 R root      1653     1          0  0 152 20  402    2636 ?           00:00 04:38:59 /opt/dce/sbin/rpcd
+75:DATA:401 S root      2175     1          3  0 154 20  198    1072 ?           00:00 04:15:27 ./ypserv stop
+75:DATA:401 S root      1927     1          0  0 154 20  192    1072 ?           00:00 04:38:22 /usr/sbin/rpc.mountd
+75:DATA:401 S root      1702     1          0  0 154 20   88     564 ?           00:00 04:38:33 /usr/sbin/pwgrd
+75:DATA:401 S root      2006     1          3  0 156 20  240    1280 console     00:00 04:38:20 -sh
+75:DATA:401 S root      1748     1          0  0 154 20   20      84 ?           00:00 04:38:31 /usr/sbin/envd
+75:DATA:401 R root      1909     1          0  0 152 20  657    4256 ?           00:04 04:38:22 vxsvc -r /opt/VRTSob/config/Registry -e
+75:DATA:401 S root      1758     1          0  0 154 20    3      16 ?           00:00 04:38:29 /usr/sbin/hubd
+75:DATA:401 S root      1937     1          0  0 154 20   69     484 ?           00:00 04:38:22 /usr/sbin/nfsd 16
+75:DATA:2401 R root      1768     1          3  0 152 20  461    2684 ?           00:00 04:38:29 /usr/sbin/swagentd -r
+75:DATA:1401 S root      2013     1          0  0 168 20   30     148 ?           00:00 04:38:20 /opt/wbem/sbin/cimserverd
+75:DATA:401 S root      2008     1          0  0 154 20   78     492 ?           00:00 04:38:20 /sbin/sfd
+75:DATA:401 S root      1993     1          0  0 158 20  240    1248 ?           00:00 04:38:20 /sbin/sh /usr/dt/bin/dtrc
+75:DATA:401 S root      1940  1939          0  0 154 20   81     628 ?           00:00 04:38:22 /usr/sbin/nfsd 16
+75:DATA:401 S root      2012     1          0  0 168 20   81     600 ?           00:00 04:38:20 /etc/opt/resmon/lbin/p_client
+75:DATA:401 S root      1819     1          0  0 154 20  151     860 ?           00:00 04:38:26 /etc/opt/resmon/lbin/emsagent
+75:DATA:401 S root      2024  1993          0  0 154 20   59     996 ?           00:00 04:38:18 /usr/dt/bin/dtlogin
+75:DATA:401 S root      1939     1          0  0 154 20   81     628 ?           00:00 04:38:22 /usr/sbin/nfsd 16
+75:DATA:401 S root      2238  2236          3  0 158 20  239    1260 ?           00:00 03:25:22 sh -c /opt/ssh/libexec/sftp-server
+75:DATA:401 S root      2047  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2050  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2049  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2048  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2051  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2052  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2053  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2054  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2055  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2056  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2057  1939          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2058  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2059  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:401 S root      2060  1940          0  0 154 20   81     628 ?           00:00 04:38:07 /usr/sbin/nfsd 16
+75:DATA:2401 S siteview 22425 22421         20  0 154 20  752    4176 ?           00:00    01:23 sshd: siteview@pts/1
+75:DATA:2401 R root      2236     1          0  0 152 20  740    4176 ?           00:00 03:25:24 sshd: root@notty
+75:DATA:401 S root      2173     1          3  0 154 20  194    1056 ?           00:00 04:15:37 ./ypserv ?
+75:DATA:401 S root     22037 22036          3  0 154 20   96     584 ?           00:00    09:19 /opt/ssh/libexec/sftp-server
+75:DATA:401 S root      2239  2238          3  0 154 20  122     716 ?           00:00 03:25:22 /opt/ssh/libexec/sftp-server
+75:DATA:2401 R root     16297     1          0  0 152 20  744    4176 ?           00:00 01:10:21 sshd: root@pts/0
+75:DATA:401 S siteview 22647 22429         20  0 158 20  167     924 pts/1       00:00    00:00 sh -c UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+75:DATA:401 S siteview 22615 22429         20  0 154 20   48     264 pts/1       00:00    00:01 sar -u 15
+75:DATA:401 S root     22036 22034          3  0 158 20  239    1260 ?           00:00    09:19 sh -c /opt/ssh/libexec/sftp-server
+75:DATA:2401 S root     22606  1156          0  0 154 20  209    1304 ?           00:00    00:11 /usr/lib/netsvc/yp/ypbind
+75:DATA:401 S root     22058     1          0  0 154 20  656    3792 ?           00:00    07:04 /opt/ssh/sbin/sshd
+75:DATA:401 S siteview 22609 22429         20  0 154 20   48     264 pts/1       00:00    00:01 sar -M 15
+75:DATA:401 S siteview 22522 22429         20  0 168 20   27     112 pts/1       00:00    01:00 vmstat 60
+75:DATA:401 S siteview 22634 22633         20  0 168 20   21      88 pts/1       00:00    00:00 /usr/lbin/sa/sadc 15 2
+75:DATA:2401 S root     22608  1156          0  0 154 20  209    1304 ?           00:00    00:01 /usr/lib/netsvc/yp/ypbind
+75:DATA:401 S root     16300 16297          3  0 154 20  259    1372 pts/0       00:00 01:10:20 -sh
+75:DATA:401 S siteview 22624 22623         20  0 168 20   21      88 pts/1       00:00    00:01 /usr/lbin/sa/sadc 15 2
+75:DATA:401 S siteview 22610 22609         20  0 168 20   21      88 pts/1       00:00    00:01 /usr/lbin/sa/sadc 15 2
+75:DATA:401 R siteview 22429 22425         20  0 178 20 1140    5972 pts/1       00:00    01:08 /opt/perl/bin/perl -
+75:DATA:2401 R root     22034     1          0  0 152 20  724    4048 ?           00:00    09:20 sshd: root@notty
+75:DATA:2401 S root     22421 22058          0  0 154 20  752    4176 ?           00:00    01:39 sshd: siteview [priv]
+75:DATA:401 S siteview 22503 22429         20  0 168 20   27     112 pts/1       00:00    01:01 vmstat -S 15
+75:DATA:401 R siteview 22648 22647         20  1 178 20   64     280 pts/1       00:00    00:00 ps -eo flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args
+75:DATA:401 S siteview 22616 22615         20  0 168 20   21      88 pts/1       00:00    00:01 /usr/lbin/sa/sadc 15 2
+75:DATA:2401 S siteview 22607 22429          3  0 168 20   93     604 pts/1       00:00    00:01 netstat -i
+75:END:lcnt=141
+75:END:stat=0
+76:BGN:who -u
+76:DATA:root       console      Jan 26 10:00  3:13   2006  system console
+76:DATA:root       pts/0        Jan 26 13:27  0:06  16300  192.168.9.218
+76:DATA:siteview   pts/1        Jan 26 14:36   .    22429  192.168.9.119
+76:END:lcnt=3
+76:END:stat=0
+59:DATA:
+59:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+59:DATA:
+59:DATA:14:37:48     cpu    %usr    %sys    %wio   %idle
+59:DATA:14:38:03       0       0       0       1      99
+59:DATA:               1       0       0       1      99
+59:DATA:          system       0       0       1      99
+59:END:lcnt=7
+59:END:stat=0
+77:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+77:DATA:4 0 0
+77:END:lcnt=1
+77:END:stat=0
+78:BGN:ps -e | wc -l
+78:DATA:140
+78:END:lcnt=1
+78:END:stat=0
+79:BGN:/etc/swapinfo -t | grep total
+79:DATA:total   6280336  886336 5394000   14%       -       0    -
+79:END:lcnt=1
+79:END:stat=0
+62:DATA:
+62:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+62:DATA:
+62:DATA:14:37:48    %usr    %sys    %wio   %idle
+62:DATA:14:38:03       0       0       1      99
+62:END:lcnt=5
+62:END:stat=0
+80:BGN:uptime
+80:DATA:  2:38pm  up 19:09,  3 users,  load average: 0.02, 0.02, 0.01
+80:END:lcnt=1
+80:END:stat=0
+81:BGN:who |  wc -l
+81:DATA:3
+81:END:lcnt=1
+81:END:stat=0
+82:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+82:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+82:END:lcnt=1
+82:END:stat=0
+65:DATA:
+65:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+65:DATA:
+65:DATA:14:37:48   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+65:DATA:14:38:03   c2t1d0    1.93    6.45       4      54   21.43   22.57
+65:END:lcnt=5
+65:END:stat=0
+83:BGN:date
+83:DATA:Wed Jan 26 14:38:03 EAT 2011
+83:END:lcnt=1
+83:END:stat=0
+84:BGN:bdf -l
+84:DATA:Filesystem          kbytes    used   avail %used Mounted on
+84:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+84:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+84:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+84:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+84:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+84:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+84:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+84:END:lcnt=8
+84:END:stat=0
+15:DATA:    1     0     0    40266  267077    0    0     0    0     0    0     0    503   4980   115   0  0 99
+70:DATA:
+70:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+70:DATA:
+70:DATA:14:37:49 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+70:DATA:14:38:04       0     128     100       3       6      53       0       0
+70:END:lcnt=5
+70:END:stat=0
+58:DATA:lan0      1500 192.168.0.0     192.168.0.69    110094  0     94327   0     0   
+15:DATA:    1     0     0    32923  267572    0    0     0    0     0    0     0    469   1842    55   0  0 100
+85:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+85:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+85:END:lcnt=1
+85:END:stat=0
+86:BGN:who |  wc -l
+86:DATA:3
+86:END:lcnt=1
+86:END:stat=0
+87:BGN:uptime
+87:DATA:  2:38pm  up 19:10,  3 users,  load average: 0.03, 0.02, 0.01
+87:END:lcnt=1
+87:END:stat=0
+88:BGN:/etc/swapinfo -t | grep total
+88:DATA:total   6280336  883340 5396996   14%       -       0    -
+88:END:lcnt=1
+88:END:stat=0
+89:BGN:sar -u 15
+90:BGN:ps -e | wc -l
+90:DATA:136
+90:END:lcnt=1
+90:END:stat=0
+91:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+91:DATA:4 0 0
+91:END:lcnt=1
+91:END:stat=0
+92:BGN:sar -d  15
+93:BGN:bdf -l
+93:DATA:Filesystem          kbytes    used   avail %used Mounted on
+93:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+93:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+93:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+93:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+93:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+93:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+93:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+93:END:lcnt=8
+93:END:stat=0
+94:BGN:date
+94:DATA:Wed Jan 26 14:38:20 EAT 2011
+94:END:lcnt=1
+94:END:stat=0
+15:DATA:    1     0     0    41847  267224    0    0     0    0     0    0     0    469   1889    57   0  0 99
+89:DATA:
+89:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+89:DATA:
+89:DATA:14:38:19    %usr    %sys    %wio   %idle
+89:DATA:14:38:34       0       0       1      99
+89:END:lcnt=5
+89:END:stat=0
+95:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+95:DATA:4 0 0
+95:END:lcnt=1
+95:END:stat=0
+96:BGN:ps -e | wc -l
+96:DATA:136
+96:END:lcnt=1
+96:END:stat=0
+97:BGN:/etc/swapinfo -t | grep total
+97:DATA:total   6280336  884608 5395728   14%       -       0    -
+97:END:lcnt=1
+97:END:stat=0
+92:DATA:
+92:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+92:DATA:
+92:DATA:14:38:19   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+92:DATA:14:38:34   c2t1d0    1.33    5.19       3      47   14.54   20.71
+92:END:lcnt=5
+92:END:stat=0
+98:BGN:uptime
+98:DATA:  2:38pm  up 19:10,  3 users,  load average: 0.02, 0.02, 0.01
+98:END:lcnt=1
+98:END:stat=0
+99:BGN:who |  wc -l
+99:DATA:3
+99:END:lcnt=1
+99:END:stat=0
+100:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+100:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+100:END:lcnt=1
+100:END:stat=0
+101:BGN:date
+101:DATA:Wed Jan 26 14:38:35 EAT 2011
+101:END:lcnt=1
+101:END:stat=0
+102:BGN:bdf -l
+102:DATA:Filesystem          kbytes    used   avail %used Mounted on
+102:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+102:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+102:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+102:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+102:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+102:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+102:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+102:END:lcnt=8
+102:END:stat=0
+58:DATA:lo0       4136 loopback        localhost       7834    0     7834    0     0   
+58:END:lcnt=3
+58:END:stat=0
+103:BGN:who -u
+103:DATA:root       console      Jan 26 10:00  3:14   2006  system console
+103:DATA:root       pts/0        Jan 26 13:27  0:07  16300  192.168.9.218
+103:DATA:siteview   pts/1        Jan 26 14:36   .    22429  192.168.9.119
+103:END:lcnt=3
+103:END:stat=0
+104:BGN:UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+104:DATA:  F S USER       PID  PPID        GID  C PRI NI   SZ     VSZ TT           TIME  ELAPSED COMMAND
+104:DATA:1003 S root         0     0          0  0 127 20    0       0 ?           00:04 19:10:00 swapper
+104:DATA:541 R root         1     0          0  0 152 20  386    1544 ?           00:00 19:10:22 init
+104:DATA:1003 R root         8     0          0  0 152 20    0       0 ?           00:00 19:10:22 ioconfigd
+104:DATA:1003 S root         9     0          0  0 152 20    0       0 ?           00:00 19:10:22 nfsktcpd
+104:DATA:1003 R root        10     0          0  0 152 20    0       0 ?           00:00 19:10:21 autofskd
+104:DATA:1003 S root        11     0          0  0 147 20    0       0 ?           00:00 19:10:21 lvmkd
+104:DATA:1003 S root        12     0          0  0 147 20    0       0 ?           00:00 19:10:21 lvmkd
+104:DATA:1003 S root        13     0          0  0 147 20    0       0 ?           00:00 19:10:21 lvmkd
+104:DATA:1003 S root        14     0          0  0 147 20    0       0 ?           00:00 19:10:21 lvmkd
+104:DATA:1003 S root        15     0          0  0 147 20    0       0 ?           00:00 19:10:21 lvmkd
+104:DATA:1003 S root        16     0          0  0 147 20    0       0 ?           00:00 19:10:21 lvmkd
+104:DATA:1003 S root        17     0          0  0 148 20    0       0 ?           00:00 19:10:21 lvmschedd
+104:DATA:1003 R root        18     0          0  0 191 20    0       0 ?           00:00 19:10:00 ksyncer_daemon
+104:DATA:1003 S root        19     0          0  0 148 20    0       0 ?           00:00 19:10:00 lvmdevd
+104:DATA:1003 S root        20     0          0  0 148 20    0       0 ?           00:00 19:10:00 lvmattachd
+104:DATA:1003 S root        21     0          0  0 128 20    0       0 ?           00:00 19:10:00 pagetable_init_daemon
+104:DATA:1003 S root        22     0          0  0 100 20    0       0 ?           00:00 19:10:00 supsched
+104:DATA:1003 S root        23     0          0  0 100 20    0       0 ?           00:00 19:10:00 strmem
+104:DATA:1003 S root        24     0          0  0 100 20    0       0 ?           00:00 19:10:00 strweld
+104:DATA:1003 S root        25     0          0  0 100 20    0       0 ?           00:00 19:10:00 strfreebd
+104:DATA:1003 S root         2     0          0  0 128 20    0       0 ?           00:00 19:10:00 vhand
+104:DATA:1003 S root         3     0          0  0 128 20    0       0 ?           00:02 19:10:00 statdaemon
+104:DATA:1003 S root         4     0          0  0 128 20    0       0 ?           00:00 19:10:00 unhashdaemon
+104:DATA:1003 S root        26     0          0  0 -32 20    0       0 ?           00:00 19:10:00 progressdaemon
+104:DATA:1003 R root        27     0          0  0 152 20    0       0 ?           00:00 19:10:00 kmemdaemon
+104:DATA:1003 S root        28     0          0  0 -32 20    0       0 ?           00:00 19:10:00 ttisr
+104:DATA:1003 S root        29     0          0  0 -32 20    0       0 ?           00:01 19:10:00 ipmid
+104:DATA:1003 S root        36     0          0  0 128 20    0       0 ?           00:00 19:09:59 eventdaemon
+104:DATA:1003 R root        37     0          0  0 152 20    0       0 ?           00:06 19:09:58 schedcpu
+104:DATA:1003 R root        38     0          0  0 191 20    0       0 ?           00:01 19:09:58 pagezerod
+104:DATA:1003 R root        39     0          0  0 191 20    0       0 ?           00:00 19:09:58 cmcd
+104:DATA:1003 S root        40     0          0  0 100 20    0       0 ?           00:00 19:09:58 smpsched
+104:DATA:1003 S root        41     0          0  0 100 20    0       0 ?           00:00 19:09:58 smpsched
+104:DATA:1003 S root        42     0          0  0 100 20    0       0 ?           00:00 19:09:58 sblksched
+104:DATA:1003 S root        43     0          0  0 100 20    0       0 ?           00:00 19:09:58 sblksched
+104:DATA:1003 R root        44     0          0  0 152 20    0       0 ?           00:00 19:09:58 kend
+104:DATA:401 S root       903     1          0  0 155 20   28     116 ?           00:00 04:42:56 /usr/sbin/ptydaemon
+104:DATA:1003 R root        51     0          0  0 152 20    0       0 ?           00:23 19:09:57 vxfsd
+104:DATA:1003 S root        75     0          0  0 153 20    0       0 ?           00:00 19:09:54 rng
+104:DATA:401 S root      1722     1          0  0 154 20   44     184 ?           00:00 04:39:31 /usr/sbin/cron
+104:DATA:401 S root       673     1          0  0 168 20   27     148 ?           00:00 04:43:09 /usr/sbin/syncer
+104:DATA:401 S root       899     1          0  0 154 20   66     268 ?           00:00 04:42:57 /usr/sbin/syslogd -D
+104:DATA:1401 R root       677     1          0  0 152 20  317    1696 ?           00:02 04:43:08 /usr/sbin/utmpd
+104:DATA:1401 S root       874     1          0  0 168 20  296    1584 ?           00:00 04:42:57 ipmon -sD
+104:DATA:  1 S root      1177     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:401 S root       927     1          0  0 127 20   15      84 ?           00:00 04:42:56 /usr/lbin/nktl_daemon 0 0 0 0 0 1 -2
+104:DATA:401 S root      1137     1          0  0 154 20  251    1180 ?           00:01 04:42:42 /usr/sbin/rpcbind
+104:DATA:401 S root       931     1          0  0 127 20   22      92 ?           00:00 04:42:53 /usr/lbin/ntl_reader 0 1 1 1 1000 2 /var/adm/nettl /var/adm/conslog.opts
+104:DATA:401 S root       932   931          0  0 127 20   65     280 ?           00:00 04:42:53 /usr/sbin/netfmt -C -F -f /var/adm/nettl.LOG000 -c /var/adm/conslog.opts
+104:DATA:401 S root      2007     1          0  0 138  0  121     584 ?           00:00 04:39:19 /sbin/krsd -i
+104:DATA:2401 S root      1156     1          0  0 154 20  189    1064 ?           00:01 04:42:42 /usr/lib/netsvc/yp/ypbind
+104:DATA:401 S root      1163     1          0  0 154 20  191    1024 ?           00:00 04:42:38 /usr/sbin/keyserv
+104:DATA:  1 S root      1176     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1175     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1178     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1179     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1180     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1181     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1182     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1183     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1184     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1185     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1186     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1187     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1188     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1189     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:  1 S root      1190     1          0  0 154 20    0       0 ?           00:00 04:42:38 /usr/sbin/biod 16
+104:DATA:401 S root      1204     1          0  0 154 20  263    1356 ?           00:00 04:42:37 /usr/sbin/rpc.lockd
+104:DATA:401 S root      1198     1          0  0 154 20  202    1392 ?           00:00 04:42:37 /usr/sbin/rpc.statd
+104:DATA:401 R root      1210     1          0  0 152 20  243    1212 ?           00:00 04:42:37 /usr/sbin/automountd
+104:DATA:401 S root      1227     1          0  0 154 20  117     680 ?           00:00 04:42:37 /usr/sbin/inetd
+104:DATA:2401 S root      1529     1          6  0 154 20  542    3112 ?           00:02 04:41:35 sendmail: accepting connections
+104:DATA:401 S root      1543     1          0  0 154 20  424    1904 ?           00:00 04:41:20 /usr/sbin/snmpdm
+104:DATA:1401 S root      1664  1663          0  0 154 20  135     724 ?           00:00 04:39:34 /opt/wbem/sbin/cimservera
+104:DATA:401 S root      1610     1          0  0 154 20  122     728 ?           00:00 04:39:58 /usr/sbin/trapdestagt
+104:DATA:401 S root      1562     1          0  0 154 20  124     720 ?           00:00 04:40:59 /usr/sbin/hp_unixagt
+104:DATA:401 S root      1575     1          0  0 154 20  138     888 ?           00:00 04:40:44 /usr/sbin/ipv6agt
+104:DATA:401 S root      1587     1          0  0 154 20  158    1004 ?           00:00 04:40:29 /usr/sbin/mib2agt
+104:DATA:401 S root      1636     1          0  0 154 20  167     912 ?           00:00 04:39:58 /usr/sbin/fddi4subagt
+104:DATA:1401 R root      1663     1          0  0 152 20 1481    6676 ?           00:06 04:39:36 /opt/wbem/sbin/cimserver
+104:DATA:401 R root      1653     1          0  0 152 20  402    2636 ?           00:00 04:39:58 /opt/dce/sbin/rpcd
+104:DATA:401 S root      2175     1          3  0 154 20  198    1072 ?           00:00 04:16:26 ./ypserv stop
+104:DATA:401 S root      1927     1          0  0 154 20  192    1072 ?           00:00 04:39:21 /usr/sbin/rpc.mountd
+104:DATA:401 S root      1702     1          0  1 154 20   88     564 ?           00:00 04:39:32 /usr/sbin/pwgrd
+104:DATA:401 S root      2006     1          3  0 156 20  240    1280 console     00:00 04:39:19 -sh
+104:DATA:401 S root      1748     1          0  0 154 20   20      84 ?           00:00 04:39:30 /usr/sbin/envd
+104:DATA:401 R root      1909     1          0  0 152 20  657    4256 ?           00:05 04:39:21 vxsvc -r /opt/VRTSob/config/Registry -e
+104:DATA:401 S root      1758     1          0  0 154 20    3      16 ?           00:00 04:39:28 /usr/sbin/hubd
+104:DATA:401 S root      1937     1          0  0 154 20   69     484 ?           00:00 04:39:21 /usr/sbin/nfsd 16
+104:DATA:2401 R root      1768     1          3  0 152 20  461    2684 ?           00:00 04:39:28 /usr/sbin/swagentd -r
+104:DATA:1401 S root      2013     1          0  0 168 20   30     148 ?           00:00 04:39:19 /opt/wbem/sbin/cimserverd
+104:DATA:401 S root      2008     1          0  0 154 20   78     492 ?           00:00 04:39:19 /sbin/sfd
+104:DATA:401 S root      1993     1          0  0 158 20  240    1248 ?           00:00 04:39:19 /sbin/sh /usr/dt/bin/dtrc
+104:DATA:401 S root      1940  1939          0  0 154 20   81     628 ?           00:00 04:39:21 /usr/sbin/nfsd 16
+104:DATA:401 S root      2012     1          0  0 168 20   81     600 ?           00:00 04:39:19 /etc/opt/resmon/lbin/p_client
+104:DATA:401 S root      1819     1          0  0 154 20  151     860 ?           00:00 04:39:25 /etc/opt/resmon/lbin/emsagent
+104:DATA:401 S root      2024  1993          0  0 154 20   59     996 ?           00:00 04:39:17 /usr/dt/bin/dtlogin
+104:DATA:401 S root      1939     1          0  0 154 20   81     628 ?           00:00 04:39:21 /usr/sbin/nfsd 16
+104:DATA:401 S root      2238  2236          3  0 158 20  239    1260 ?           00:00 03:26:21 sh -c /opt/ssh/libexec/sftp-server
+104:DATA:401 S root      2047  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2050  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2049  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2048  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2051  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2052  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2053  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2054  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2055  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2056  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2057  1939          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2058  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2059  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:401 S root      2060  1940          0  0 154 20   81     628 ?           00:00 04:39:06 /usr/sbin/nfsd 16
+104:DATA:2401 S siteview 22425 22421         20  0 154 20  752    4176 ?           00:00    02:22 sshd: siteview@pts/1
+104:DATA:2401 R root      2236     1          0  0 152 20  740    4176 ?           00:00 03:26:23 sshd: root@notty
+104:DATA:401 S root      2173     1          3  0 154 20  194    1056 ?           00:00 04:16:36 ./ypserv ?
+104:DATA:401 S root     22037 22036          3  0 154 20   96     584 ?           00:00    10:18 /opt/ssh/libexec/sftp-server
+104:DATA:401 S root      2239  2238          3  0 154 20  122     716 ?           00:00 03:26:21 /opt/ssh/libexec/sftp-server
+104:DATA:2401 R root     16297     1          0  0 152 20  744    4176 ?           00:00 01:11:20 sshd: root@pts/0
+104:DATA:401 S root     22036 22034          3  0 158 20  239    1260 ?           00:00    10:18 sh -c /opt/ssh/libexec/sftp-server
+104:DATA:2401 S root     22714  1156          0  0 154 20  209    1304 ?           00:00    00:10 /usr/lib/netsvc/yp/ypbind
+104:DATA:401 S root     22058     1          0  0 154 20  656    3792 ?           00:00    08:03 /opt/ssh/sbin/sshd
+104:DATA:401 S siteview 22522 22429         20  0 168 20   27     112 pts/1       00:00    01:59 vmstat 60
+104:DATA:401 R siteview 22717 22716         20  0 178 20   60     264 pts/1       00:00    00:00 ps -eo flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args
+104:DATA:401 S root     16300 16297          3  0 154 20  259    1372 pts/0       00:00 01:11:19 -sh
+104:DATA:401 R siteview 22429 22425         20  1 178 20 1140    5972 pts/1       00:00    02:07 /opt/perl/bin/perl -
+104:DATA:2401 R root     22034     1          0  0 152 20  724    4048 ?           00:00    10:19 sshd: root@notty
+104:DATA:2401 S root     22421 22058          0  0 154 20  752    4176 ?           00:00    02:38 sshd: siteview [priv]
+104:DATA:401 S siteview 22503 22429         20  0 168 20   27     112 pts/1       00:00    02:00 vmstat -S 15
+104:DATA:401 S siteview 22716 22429         20  0 158 20  167     924 pts/1       00:00    00:00 sh -c UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+104:END:lcnt=131
+104:END:stat=0
+105:BGN:netstat -in |awk '{print $0,i++}'
+105:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+105:DATA:lan0      1500 192.168.0.0     192.168.0.69    110574  0     94608   0     0    1
+105:DATA:lo0       4136 127.0.0.0       127.0.0.1       7871    0     7871    0     0    2
+105:END:lcnt=3
+105:END:stat=0
+106:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+106:DATA:8223244 1
+106:END:lcnt=1
+106:END:stat=0
+107:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+107:DATA:8223417 1
+107:END:lcnt=1
+107:END:stat=0
+108:BGN:bdf | awk 'BEGIN{FSName=""} NF==1 {FSName=$0; next} {print(FSName $0);FSName=""}'
+108:DATA:Filesystem          kbytes    used   avail %used Mounted on
+108:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+108:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+108:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+108:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+108:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+108:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+108:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+108:END:lcnt=8
+108:END:stat=0
+15:DATA:    1     0     0    42294  267659    0    0     0    0     0    0     0    517   4211   119   0  0 99
+109:BGN:sar -b 15
+110:BGN:sar -M 15
+22:DATA:    1     0     0    42294  267839   69   41     0    0     0    0     0    533   6101   140   0  0 99
+111:BGN:date
+111:DATA:Wed Jan 26 14:38:49 EAT 2011
+111:END:lcnt=1
+111:END:stat=0
+112:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+112:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+112:END:lcnt=1
+112:END:stat=0
+113:BGN:who |  wc -l
+113:DATA:3
+113:END:lcnt=1
+113:END:stat=0
+114:BGN:uptime
+114:DATA:  2:38pm  up 19:10,  3 users,  load average: 0.03, 0.02, 0.01
+114:END:lcnt=1
+114:END:stat=0
+115:BGN:/etc/swapinfo -t | grep total
+115:DATA:total   6280336  882404 5397932   14%       -       0    -
+115:END:lcnt=1
+115:END:stat=0
+116:BGN:sar -u 15
+117:BGN:ps -e | wc -l
+117:DATA:137
+117:END:lcnt=1
+117:END:stat=0
+118:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+118:DATA:4 0 0
+118:END:lcnt=1
+118:END:stat=0
+119:BGN:netstat -i
+119:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+120:BGN:sar -d  15
+121:BGN:bdf -l
+121:DATA:Filesystem          kbytes    used   avail %used Mounted on
+121:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+121:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+121:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+121:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+121:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+121:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+121:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+121:END:lcnt=8
+121:END:stat=0
+15:DATA:    1     0     0    36818  267019    0    0     0    0     0    0     0    493   2175    61   0  1 99
+109:DATA:
+109:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+109:DATA:
+109:DATA:14:38:49 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+109:DATA:14:39:04       0      87     100       5       7      32       0       0
+109:END:lcnt=5
+109:END:stat=0
+110:DATA:
+110:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+110:DATA:
+110:DATA:14:38:49     cpu    %usr    %sys    %wio   %idle
+110:DATA:14:39:04       0       0       1       2      98
+110:DATA:               1       0       0       1      99
+110:DATA:          system       0       0       1      98
+110:END:lcnt=7
+110:END:stat=0
+122:BGN:bdf -l
+122:DATA:Filesystem          kbytes    used   avail %used Mounted on
+122:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+122:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+122:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+122:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+122:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+122:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+122:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+122:END:lcnt=8
+122:END:stat=0
+116:DATA:
+116:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+116:DATA:
+116:DATA:14:38:50    %usr    %sys    %wio   %idle
+116:DATA:14:39:05       0       0       1      99
+116:END:lcnt=5
+116:END:stat=0
+123:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+123:DATA:4 0 0
+123:END:lcnt=1
+123:END:stat=0
+124:BGN:ps -e | wc -l
+124:DATA:135
+124:END:lcnt=1
+124:END:stat=0
+125:BGN:/etc/swapinfo -t | grep total
+125:DATA:total   6280336  882836 5397500   14%       -       0    -
+125:END:lcnt=1
+125:END:stat=0
+126:BGN:uptime
+126:DATA:  2:39pm  up 19:10,  3 users,  load average: 0.02, 0.02, 0.01
+126:END:lcnt=1
+126:END:stat=0
+120:DATA:
+120:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+120:DATA:
+120:DATA:14:38:50   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+120:DATA:14:39:05   c2t1d0    1.60    6.18       3      51   17.14   21.58
+120:END:lcnt=5
+120:END:stat=0
+127:BGN:who |  wc -l
+127:DATA:3
+127:END:lcnt=1
+127:END:stat=0
+128:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+128:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+128:END:lcnt=1
+128:END:stat=0
+129:BGN:date
+129:DATA:Wed Jan 26 14:39:05 EAT 2011
+129:END:lcnt=1
+129:END:stat=0
+15:DATA:    1     0     0    33323  267663    0    0     0    0     0    0     0    496   1899    57   0  0 100
+119:DATA:lan0      1500 192.168.0.0     192.168.0.69    110609  0     94626   0     0   
+130:BGN:date
+130:DATA:Wed Jan 26 14:39:20 EAT 2011
+130:END:lcnt=1
+130:END:stat=0
+131:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+131:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+131:END:lcnt=1
+131:END:stat=0
+132:BGN:who |  wc -l
+132:DATA:3
+132:END:lcnt=1
+132:END:stat=0
+133:BGN:uptime
+133:DATA:  2:39pm  up 19:11,  3 users,  load average: 0.02, 0.02, 0.01
+133:END:lcnt=1
+133:END:stat=0
+134:BGN:/etc/swapinfo -t | grep total
+134:DATA:total   6280336  883620 5396716   14%       -       0    -
+134:END:lcnt=1
+134:END:stat=0
+135:BGN:sar -u 15
+136:BGN:ps -e | wc -l
+136:DATA:136
+136:END:lcnt=1
+136:END:stat=0
+137:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+137:DATA:4 0 0
+137:END:lcnt=1
+137:END:stat=0
+138:BGN:sar -d  15
+139:BGN:bdf -l
+139:DATA:Filesystem          kbytes    used   avail %used Mounted on
+139:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+139:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+139:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+139:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+139:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+139:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+139:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+139:END:lcnt=8
+139:END:stat=0
+15:DATA:    1     0     0    40280  267320    0    0     0    0     0    0     0    497   1966    57   0  0 99
+140:BGN:bdf -l
+140:DATA:Filesystem          kbytes    used   avail %used Mounted on
+140:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+140:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+140:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+140:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+140:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+140:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+140:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+140:END:lcnt=8
+140:END:stat=0
+141:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+141:DATA:4 0 0
+141:END:lcnt=1
+141:END:stat=0
+135:DATA:
+135:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+135:DATA:
+135:DATA:14:39:21    %usr    %sys    %wio   %idle
+135:DATA:14:39:36       0       0       0      99
+135:END:lcnt=5
+135:END:stat=0
+142:BGN:ps -e | wc -l
+142:DATA:136
+142:END:lcnt=1
+142:END:stat=0
+143:BGN:/etc/swapinfo -t | grep total
+143:DATA:total   6280336  884608 5395728   14%       -       0    -
+143:END:lcnt=1
+143:END:stat=0
+144:BGN:uptime
+144:DATA:  2:39pm  up 19:11,  3 users,  load average: 0.02, 0.02, 0.01
+144:END:lcnt=1
+144:END:stat=0
+138:DATA:
+138:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+138:DATA:
+138:DATA:14:39:21   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+138:DATA:14:39:36   c2t1d0    2.73    5.18       5      79   23.11   26.52
+138:END:lcnt=5
+138:END:stat=0
+145:BGN:who |  wc -l
+145:DATA:3
+145:END:lcnt=1
+145:END:stat=0
+146:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+146:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+146:END:lcnt=1
+146:END:stat=0
+147:BGN:date
+147:DATA:Wed Jan 26 14:39:36 EAT 2011
+147:END:lcnt=1
+147:END:stat=0
+15:DATA:    1     0     0    41297  267642    0    0     0    0     0    0     0    499   1987    58   0  1 99
+148:BGN:sar -M 15
+149:BGN:sar -b 15
+150:BGN:bdf | awk 'BEGIN{FSName=""} NF==1 {FSName=$0; next} {print(FSName $0);FSName=""}'
+150:DATA:Filesystem          kbytes    used   avail %used Mounted on
+150:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+150:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+150:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+150:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+150:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+150:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+150:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+150:END:lcnt=8
+150:END:stat=0
+151:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+151:DATA:8234525 1
+151:END:lcnt=1
+151:END:stat=0
+152:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+152:DATA:8234656 1
+152:END:lcnt=1
+152:END:stat=0
+153:BGN:netstat -in |awk '{print $0,i++}'
+22:DATA:    1     0     0    41297  267459   50   27     0    0     0    0     0    505   4073    77   0  0 99
+153:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+153:DATA:lan0      1500 192.168.0.0     192.168.0.69    111060  0     94821   0     0    1
+153:DATA:lo0       4136 127.0.0.0       127.0.0.1       7916    0     7916    0     0    2
+153:END:lcnt=3
+153:END:stat=0
+154:BGN:UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+154:DATA:  F S USER       PID  PPID        GID  C PRI NI   SZ     VSZ TT           TIME  ELAPSED COMMAND
+154:DATA:1003 S root         0     0          0  0 127 20    0       0 ?           00:04 19:11:01 swapper
+154:DATA:541 R root         1     0          0  0 152 20  386    1544 ?           00:00 19:11:23 init
+154:DATA:1003 R root         8     0          0  0 152 20    0       0 ?           00:00 19:11:23 ioconfigd
+154:DATA:1003 S root         9     0          0  0 152 20    0       0 ?           00:00 19:11:23 nfsktcpd
+154:DATA:1003 R root        10     0          0  0 152 20    0       0 ?           00:00 19:11:22 autofskd
+154:DATA:1003 S root        11     0          0  0 147 20    0       0 ?           00:00 19:11:22 lvmkd
+154:DATA:1003 S root        12     0          0  0 147 20    0       0 ?           00:00 19:11:22 lvmkd
+154:DATA:1003 S root        13     0          0  0 147 20    0       0 ?           00:00 19:11:22 lvmkd
+154:DATA:1003 S root        14     0          0  0 147 20    0       0 ?           00:00 19:11:22 lvmkd
+154:DATA:1003 S root        15     0          0  0 147 20    0       0 ?           00:00 19:11:22 lvmkd
+154:DATA:1003 S root        16     0          0  0 147 20    0       0 ?           00:00 19:11:22 lvmkd
+154:DATA:1003 S root        17     0          0  0 148 20    0       0 ?           00:00 19:11:22 lvmschedd
+154:DATA:1003 R root        18     0          0  0 191 20    0       0 ?           00:00 19:11:01 ksyncer_daemon
+154:DATA:1003 S root        19     0          0  0 148 20    0       0 ?           00:00 19:11:01 lvmdevd
+154:DATA:1003 S root        20     0          0  0 148 20    0       0 ?           00:00 19:11:01 lvmattachd
+154:DATA:1003 S root        21     0          0  0 128 20    0       0 ?           00:00 19:11:01 pagetable_init_daemon
+154:DATA:1003 S root        22     0          0  0 100 20    0       0 ?           00:00 19:11:01 supsched
+154:DATA:1003 S root        23     0          0  0 100 20    0       0 ?           00:00 19:11:01 strmem
+154:DATA:1003 S root        24     0          0  0 100 20    0       0 ?           00:00 19:11:01 strweld
+154:DATA:1003 S root        25     0          0  0 100 20    0       0 ?           00:00 19:11:01 strfreebd
+154:DATA:1003 S root         2     0          0  0 128 20    0       0 ?           00:00 19:11:01 vhand
+154:DATA:1003 S root         3     0          0  0 128 20    0       0 ?           00:02 19:11:01 statdaemon
+154:DATA:1003 S root         4     0          0  0 128 20    0       0 ?           00:00 19:11:01 unhashdaemon
+154:DATA:1003 S root        26     0          0  0 -32 20    0       0 ?           00:00 19:11:01 progressdaemon
+154:DATA:1003 R root        27     0          0  0 152 20    0       0 ?           00:00 19:11:01 kmemdaemon
+154:DATA:1003 S root        28     0          0  0 -32 20    0       0 ?           00:00 19:11:01 ttisr
+154:DATA:1003 S root        29     0          0  0 -32 20    0       0 ?           00:01 19:11:01 ipmid
+154:DATA:1003 S root        36     0          0  0 128 20    0       0 ?           00:00 19:11:00 eventdaemon
+154:DATA:1003 R root        37     0          0  0 152 20    0       0 ?           00:06 19:10:59 schedcpu
+154:DATA:1003 R root        38     0          0  0 191 20    0       0 ?           00:01 19:10:59 pagezerod
+154:DATA:1003 R root        39     0          0  0 191 20    0       0 ?           00:00 19:10:59 cmcd
+154:DATA:1003 S root        40     0          0  0 100 20    0       0 ?           00:00 19:10:59 smpsched
+154:DATA:1003 S root        41     0          0  0 100 20    0       0 ?           00:00 19:10:59 smpsched
+154:DATA:1003 S root        42     0          0  0 100 20    0       0 ?           00:00 19:10:59 sblksched
+154:DATA:1003 S root        43     0          0  0 100 20    0       0 ?           00:00 19:10:59 sblksched
+154:DATA:1003 R root        44     0          0  0 152 20    0       0 ?           00:00 19:10:59 kend
+154:DATA:401 S siteview 22830 22829         20  1 168 20   21      88 pts/1       00:00    00:00 /usr/lbin/sa/sadc 15 2
+154:DATA:401 S root       903     1          0  0 155 20   28     116 ?           00:00 04:43:57 /usr/sbin/ptydaemon
+154:DATA:1003 R root        51     0          0  0 152 20    0       0 ?           00:23 19:10:58 vxfsd
+154:DATA:401 S siteview 22829 22429         20  0 154 20   48     264 pts/1       00:00    00:00 sar -b 15
+154:DATA:1003 S root        75     0          0  0 153 20    0       0 ?           00:00 19:10:55 rng
+154:DATA:401 S root      1722     1          0  0 154 20   44     184 ?           00:00 04:40:32 /usr/sbin/cron
+154:DATA:401 S root       673     1          0  0 168 20   27     148 ?           00:00 04:44:10 /usr/sbin/syncer
+154:DATA:401 S root       899     1          0  0 154 20   66     268 ?           00:00 04:43:58 /usr/sbin/syslogd -D
+154:DATA:1401 R root       677     1          0  0 152 20  317    1696 ?           00:02 04:44:09 /usr/sbin/utmpd
+154:DATA:1401 S root       874     1          0  0 168 20  296    1584 ?           00:00 04:43:58 ipmon -sD
+154:DATA:  1 S root      1177     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:401 S root       927     1          0  0 127 20   15      84 ?           00:00 04:43:57 /usr/lbin/nktl_daemon 0 0 0 0 0 1 -2
+154:DATA:401 S root      1137     1          0  0 154 20  251    1180 ?           00:01 04:43:43 /usr/sbin/rpcbind
+154:DATA:401 S root       931     1          0  0 127 20   22      92 ?           00:00 04:43:54 /usr/lbin/ntl_reader 0 1 1 1 1000 2 /var/adm/nettl /var/adm/conslog.opts
+154:DATA:401 S root       932   931          0  0 127 20   65     280 ?           00:00 04:43:54 /usr/sbin/netfmt -C -F -f /var/adm/nettl.LOG000 -c /var/adm/conslog.opts
+154:DATA:401 S root      2007     1          0  0 138  0  121     584 ?           00:00 04:40:20 /sbin/krsd -i
+154:DATA:2401 S root      1156     1          0  0 154 20  189    1064 ?           00:01 04:43:43 /usr/lib/netsvc/yp/ypbind
+154:DATA:401 S root      1163     1          0  0 154 20  191    1024 ?           00:00 04:43:39 /usr/sbin/keyserv
+154:DATA:  1 S root      1176     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1175     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1178     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1179     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1180     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1181     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1182     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1183     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1184     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1185     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1186     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1187     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1188     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1189     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:  1 S root      1190     1          0  0 154 20    0       0 ?           00:00 04:43:39 /usr/sbin/biod 16
+154:DATA:401 S root      1204     1          0  0 154 20  263    1356 ?           00:00 04:43:38 /usr/sbin/rpc.lockd
+154:DATA:401 S root      1198     1          0  0 154 20  202    1392 ?           00:00 04:43:38 /usr/sbin/rpc.statd
+154:DATA:401 R root      1210     1          0  0 152 20  243    1212 ?           00:00 04:43:38 /usr/sbin/automountd
+154:DATA:401 S root      1227     1          0  0 154 20  117     680 ?           00:00 04:43:38 /usr/sbin/inetd
+154:DATA:2401 S root      1529     1          6  0 154 20  542    3112 ?           00:02 04:42:36 sendmail: accepting connections
+154:DATA:401 S root      1543     1          0  0 154 20  424    1904 ?           00:00 04:42:21 /usr/sbin/snmpdm
+154:DATA:1401 S root      1664  1663          0  0 154 20  135     724 ?           00:00 04:40:35 /opt/wbem/sbin/cimservera
+154:DATA:401 S root      1610     1          0  0 154 20  122     728 ?           00:00 04:40:59 /usr/sbin/trapdestagt
+154:DATA:401 S root      1562     1          0  0 154 20  124     720 ?           00:00 04:42:00 /usr/sbin/hp_unixagt
+154:DATA:401 S root      1575     1          0  0 154 20  138     888 ?           00:00 04:41:45 /usr/sbin/ipv6agt
+154:DATA:401 S root      1587     1          0  0 154 20  158    1004 ?           00:00 04:41:30 /usr/sbin/mib2agt
+154:DATA:401 S root      1636     1          0  0 154 20  167     912 ?           00:00 04:40:59 /usr/sbin/fddi4subagt
+154:DATA:1401 R root      1663     1          0  0 152 20 1481    6676 ?           00:06 04:40:37 /opt/wbem/sbin/cimserver
+154:DATA:401 R root      1653     1          0  0 152 20  402    2636 ?           00:00 04:40:59 /opt/dce/sbin/rpcd
+154:DATA:401 S root      2175     1          3  0 154 20  198    1072 ?           00:00 04:17:27 ./ypserv stop
+154:DATA:401 S root      1927     1          0  0 154 20  192    1072 ?           00:00 04:40:22 /usr/sbin/rpc.mountd
+154:DATA:401 S root      1702     1          0  0 154 20   88     564 ?           00:00 04:40:33 /usr/sbin/pwgrd
+154:DATA:401 S root      2006     1          3  0 156 20  240    1280 console     00:00 04:40:20 -sh
+154:DATA:401 S root      1748     1          0  0 154 20   20      84 ?           00:00 04:40:31 /usr/sbin/envd
+154:DATA:401 R root      1909     1          0  0 152 20  657    4256 ?           00:05 04:40:22 vxsvc -r /opt/VRTSob/config/Registry -e
+154:DATA:401 S root      1758     1          0  0 154 20    3      16 ?           00:00 04:40:29 /usr/sbin/hubd
+154:DATA:401 S root      1937     1          0  0 154 20   69     484 ?           00:00 04:40:22 /usr/sbin/nfsd 16
+154:DATA:2401 R root      1768     1          3  0 152 20  461    2684 ?           00:00 04:40:29 /usr/sbin/swagentd -r
+154:DATA:1401 S root      2013     1          0  0 168 20   30     148 ?           00:00 04:40:20 /opt/wbem/sbin/cimserverd
+154:DATA:401 S root      2008     1          0  0 154 20   78     492 ?           00:00 04:40:20 /sbin/sfd
+154:DATA:401 S root      1993     1          0  0 158 20  240    1248 ?           00:00 04:40:20 /sbin/sh /usr/dt/bin/dtrc
+154:DATA:401 S root      1940  1939          0  0 154 20   81     628 ?           00:00 04:40:22 /usr/sbin/nfsd 16
+154:DATA:401 S root      2012     1          0  0 168 20   81     600 ?           00:00 04:40:20 /etc/opt/resmon/lbin/p_client
+154:DATA:401 S root      1819     1          0  0 154 20  151     860 ?           00:00 04:40:26 /etc/opt/resmon/lbin/emsagent
+154:DATA:401 S root      2024  1993          0  0 154 20   59     996 ?           00:00 04:40:18 /usr/dt/bin/dtlogin
+154:DATA:401 S root      1939     1          0  0 154 20   81     628 ?           00:00 04:40:22 /usr/sbin/nfsd 16
+154:DATA:401 S root      2238  2236          3  0 158 20  239    1260 ?           00:00 03:27:22 sh -c /opt/ssh/libexec/sftp-server
+154:DATA:401 S root      2047  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2050  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2049  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2048  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2051  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2052  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2053  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2054  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2055  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2056  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2057  1939          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2058  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2059  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:401 S root      2060  1940          0  0 154 20   81     628 ?           00:00 04:40:07 /usr/sbin/nfsd 16
+154:DATA:2401 R siteview 22425 22421         20  1 154 20  752    4176 ?           00:00    03:23 sshd: siteview@pts/1
+154:DATA:2401 R root      2236     1          0  0 152 20  740    4176 ?           00:00 03:27:24 sshd: root@notty
+154:DATA:401 S root      2173     1          3  0 154 20  194    1056 ?           00:00 04:17:37 ./ypserv ?
+154:DATA:401 S root     22037 22036          3  0 154 20   96     584 ?           00:00    11:19 /opt/ssh/libexec/sftp-server
+154:DATA:401 S root      2239  2238          3  0 154 20  122     716 ?           00:00 03:27:22 /opt/ssh/libexec/sftp-server
+154:DATA:2401 R root     16297     1          0  0 152 20  744    4176 ?           00:00 01:12:21 sshd: root@pts/0
+154:DATA:401 S root     22036 22034          3  0 158 20  239    1260 ?           00:00    11:19 sh -c /opt/ssh/libexec/sftp-server
+154:DATA:401 S siteview 22827 22429         20  0 154 20   48     264 pts/1       00:00    00:00 sar -M 15
+154:DATA:401 S root     22058     1          0  0 154 20  656    3792 ?           00:00    09:04 /opt/ssh/sbin/sshd
+154:DATA:401 S siteview 22843 22429         20  0 158 20  167     924 pts/1       00:00    00:00 sh -c UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+154:DATA:401 S siteview 22522 22429         20  0 168 20   27     112 pts/1       00:00    03:00 vmstat 60
+154:DATA:401 S siteview 22828 22827         20  0 168 20   21      88 pts/1       00:00    00:00 /usr/lbin/sa/sadc 15 2
+154:DATA:401 S root     16300 16297          3  0 154 20  259    1372 pts/0       00:00 01:12:20 -sh
+154:DATA:2401 S siteview 22753 22429          3  0 168 20   97     604 pts/1       00:00    00:59 netstat -i
+154:DATA:2401 S root     22826  1156          0  0 154 20  209    1304 ?           00:00    00:09 /usr/lib/netsvc/yp/ypbind
+154:DATA:401 R siteview 22429 22425         20  1 178 20 1140    5972 pts/1       00:00    03:08 /opt/perl/bin/perl -
+154:DATA:2401 R root     22034     1          0  0 152 20  724    4048 ?           00:00    11:20 sshd: root@notty
+154:DATA:2401 S root     22421 22058          0  0 154 20  752    4176 ?           00:00    03:39 sshd: siteview [priv]
+154:DATA:401 S siteview 22503 22429         20  0 168 20   27     112 pts/1       00:00    03:01 vmstat -S 15
+154:DATA:401 R siteview 22844 22843         20  1 178 20   64     280 pts/1       00:00    00:00 ps -eo flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args
+154:END:lcnt=136
+154:END:stat=0
+155:BGN:who -u
+155:DATA:root       console      Jan 26 10:00  3:15   2006  system console
+155:DATA:root       pts/0        Jan 26 13:27  0:08  16300  192.168.9.218
+155:DATA:siteview   pts/1        Jan 26 14:36   .    22429  192.168.9.119
+155:END:lcnt=3
+155:END:stat=0
+119:DATA:lo0       4136 loopback        localhost       7871    0     7871    0     0   
+119:END:lcnt=3
+119:END:stat=0
+156:BGN:sar -d  15
+157:BGN:bdf -l
+157:DATA:Filesystem          kbytes    used   avail %used Mounted on
+157:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+157:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+157:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+157:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+157:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+157:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+157:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+157:END:lcnt=8
+157:END:stat=0
+158:BGN:date
+158:DATA:Wed Jan 26 14:39:52 EAT 2011
+158:END:lcnt=1
+158:END:stat=0
+159:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+159:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+159:END:lcnt=1
+159:END:stat=0
+160:BGN:who |  wc -l
+160:DATA:3
+160:END:lcnt=1
+160:END:stat=0
+161:BGN:uptime
+161:DATA:  2:39pm  up 19:11,  3 users,  load average: 0.02, 0.02, 0.01
+161:END:lcnt=1
+161:END:stat=0
+162:BGN:/etc/swapinfo -t | grep total
+162:DATA:total   6280336  883988 5396348   14%       -       0    -
+162:END:lcnt=1
+162:END:stat=0
+163:BGN:sar -u 15
+164:BGN:ps -e | wc -l
+164:DATA:140
+164:END:lcnt=1
+164:END:stat=0
+165:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+165:DATA:4 0 0
+165:END:lcnt=1
+165:END:stat=0
+166:BGN:netstat -i
+166:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+15:DATA:    1     0     0    37394  266891    0    0     0    0     0    0     0    452   2461    65   0  1 99
+148:DATA:
+148:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+148:DATA:
+148:DATA:14:39:49     cpu    %usr    %sys    %wio   %idle
+148:DATA:14:40:04       0       0       1       1      98
+148:DATA:               1       0       1       1      99
+148:DATA:          system       0       1       1      98
+148:END:lcnt=7
+148:END:stat=0
+149:DATA:
+149:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+149:DATA:
+149:DATA:14:39:49 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+149:DATA:14:40:04       0     132     100       4       7      43       0       0
+149:END:lcnt=5
+149:END:stat=0
+156:DATA:
+156:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+156:DATA:
+156:DATA:14:39:51   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+156:DATA:14:40:06   c2t1d0    1.73    1.59       3      46    4.60   18.16
+156:END:lcnt=5
+156:END:stat=0
+167:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+167:DATA:4 0 0
+167:END:lcnt=1
+167:END:stat=0
+168:BGN:ps -e | wc -l
+168:DATA:135
+168:END:lcnt=1
+168:END:stat=0
+169:BGN:/etc/swapinfo -t | grep total
+169:DATA:total   6280336  882872 5397464   14%       -       0    -
+169:END:lcnt=1
+169:END:stat=0
+170:BGN:uptime
+170:DATA:  2:40pm  up 19:11,  3 users,  load average: 0.02, 0.02, 0.01
+170:END:lcnt=1
+170:END:stat=0
+171:BGN:who |  wc -l
+171:DATA:3
+171:END:lcnt=1
+171:END:stat=0
+172:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+172:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+172:END:lcnt=1
+172:END:stat=0
+173:BGN:date
+173:DATA:Wed Jan 26 14:40:07 EAT 2011
+173:END:lcnt=1
+173:END:stat=0
+163:DATA:
+163:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+163:DATA:
+163:DATA:14:39:52    %usr    %sys    %wio   %idle
+163:DATA:14:40:07       0       0       0      99
+163:END:lcnt=5
+163:END:stat=0
+174:BGN:bdf -l
+174:DATA:Filesystem          kbytes    used   avail %used Mounted on
+174:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+174:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+174:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+174:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+174:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+174:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+174:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+174:END:lcnt=8
+174:END:stat=0
+15:DATA:    1     0     0    32923  267534    0    0     0    0     0    0     0    452   2020    59   0  0 100
+175:BGN:sar -d  15
+176:BGN:bdf -l
+176:DATA:Filesystem          kbytes    used   avail %used Mounted on
+176:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+176:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+176:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+176:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+176:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+176:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+176:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+176:END:lcnt=8
+176:END:stat=0
+177:BGN:date
+177:DATA:Wed Jan 26 14:40:22 EAT 2011
+177:END:lcnt=1
+177:END:stat=0
+178:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+178:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+178:END:lcnt=1
+178:END:stat=0
+179:BGN:who |  wc -l
+179:DATA:3
+179:END:lcnt=1
+179:END:stat=0
+180:BGN:uptime
+180:DATA:  2:40pm  up 19:12,  3 users,  load average: 0.02, 0.02, 0.01
+180:END:lcnt=1
+180:END:stat=0
+181:BGN:/etc/swapinfo -t | grep total
+181:DATA:total   6280336  882892 5397444   14%       -       0    -
+181:END:lcnt=1
+181:END:stat=0
+182:BGN:sar -u 15
+166:DATA:lan0      1500 192.168.0.0     192.168.0.69    111105  0     94885   0     0   
+183:BGN:ps -e | wc -l
+183:DATA:138
+183:END:lcnt=1
+183:END:stat=0
+184:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+184:DATA:4 0 0
+184:END:lcnt=1
+184:END:stat=0
+15:DATA:    1     0     0    41782  267200    0    0     0    0     0    0     0    452   2103    58   0  0 99
+175:DATA:
+175:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+175:DATA:
+175:DATA:14:40:22   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+175:DATA:14:40:37   c2t1d0    1.93    0.50       3      44    0.16   15.66
+175:END:lcnt=5
+175:END:stat=0
+185:BGN:/etc/swapinfo -t | grep total
+185:DATA:total   6280336  882628 5397708   14%       -       0    -
+185:END:lcnt=1
+185:END:stat=0
+186:BGN:uptime
+186:DATA:  2:40pm  up 19:12,  3 users,  load average: 0.02, 0.02, 0.01
+186:END:lcnt=1
+186:END:stat=0
+187:BGN:who |  wc -l
+187:DATA:3
+187:END:lcnt=1
+187:END:stat=0
+188:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+188:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+188:END:lcnt=1
+188:END:stat=0
+189:BGN:date
+189:DATA:Wed Jan 26 14:40:37 EAT 2011
+189:END:lcnt=1
+189:END:stat=0
+190:BGN:bdf -l
+190:DATA:Filesystem          kbytes    used   avail %used Mounted on
+190:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+190:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+190:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+190:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+190:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+190:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+190:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+190:END:lcnt=8
+190:END:stat=0
+191:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+191:DATA:4 0 0
+191:END:lcnt=1
+191:END:stat=0
+182:DATA:
+182:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+182:DATA:
+182:DATA:14:40:22    %usr    %sys    %wio   %idle
+182:DATA:14:40:37       0       0       0     100
+182:END:lcnt=5
+182:END:stat=0
+192:BGN:ps -e | wc -l
+192:DATA:133
+192:END:lcnt=1
+192:END:stat=0
+15:DATA:    1     0     0    38735  267539    0    0     0    0     0    0     0    450   2030    60   0  0 100
+193:BGN:who -u
+193:DATA:root       console      Jan 26 10:00  3:16   2006  system console
+193:DATA:root       pts/0        Jan 26 13:27  0:09  16300  192.168.9.218
+193:DATA:siteview   pts/1        Jan 26 14:36   .    22429  192.168.9.119
+193:END:lcnt=3
+193:END:stat=0
+194:BGN:UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+194:DATA:  F S USER       PID  PPID        GID  C PRI NI   SZ     VSZ TT           TIME  ELAPSED COMMAND
+194:DATA:1003 S root         0     0          0  0 127 20    0       0 ?           00:04 19:12:01 swapper
+194:DATA:541 R root         1     0          0  0 152 20  386    1544 ?           00:00 19:12:23 init
+194:DATA:1003 R root         8     0          0  0 152 20    0       0 ?           00:00 19:12:23 ioconfigd
+194:DATA:1003 S root         9     0          0  0 152 20    0       0 ?           00:00 19:12:23 nfsktcpd
+194:DATA:1003 R root        10     0          0  0 152 20    0       0 ?           00:00 19:12:22 autofskd
+194:DATA:1003 S root        11     0          0  0 147 20    0       0 ?           00:00 19:12:22 lvmkd
+194:DATA:1003 S root        12     0          0  0 147 20    0       0 ?           00:00 19:12:22 lvmkd
+194:DATA:1003 S root        13     0          0  0 147 20    0       0 ?           00:00 19:12:22 lvmkd
+194:DATA:1003 S root        14     0          0  0 147 20    0       0 ?           00:00 19:12:22 lvmkd
+194:DATA:1003 S root        15     0          0  0 147 20    0       0 ?           00:00 19:12:22 lvmkd
+194:DATA:1003 S root        16     0          0  0 147 20    0       0 ?           00:00 19:12:22 lvmkd
+194:DATA:1003 S root        17     0          0  0 148 20    0       0 ?           00:00 19:12:22 lvmschedd
+194:DATA:1003 R root        18     0          0  0 191 20    0       0 ?           00:00 19:12:01 ksyncer_daemon
+194:DATA:1003 S root        19     0          0  0 148 20    0       0 ?           00:00 19:12:01 lvmdevd
+194:DATA:1003 S root        20     0          0  0 148 20    0       0 ?           00:00 19:12:01 lvmattachd
+194:DATA:1003 S root        21     0          0  0 128 20    0       0 ?           00:00 19:12:01 pagetable_init_daemon
+194:DATA:1003 S root        22     0          0  0 100 20    0       0 ?           00:00 19:12:01 supsched
+194:DATA:1003 S root        23     0          0  0 100 20    0       0 ?           00:00 19:12:01 strmem
+194:DATA:1003 S root        24     0          0  0 100 20    0       0 ?           00:00 19:12:01 strweld
+194:DATA:1003 S root        25     0          0  0 100 20    0       0 ?           00:00 19:12:01 strfreebd
+194:DATA:1003 S root         2     0          0  0 128 20    0       0 ?           00:00 19:12:01 vhand
+194:DATA:1003 S root         3     0          0  0 128 20    0       0 ?           00:02 19:12:01 statdaemon
+194:DATA:1003 S root         4     0          0  0 128 20    0       0 ?           00:00 19:12:01 unhashdaemon
+194:DATA:1003 S root        26     0          0  0 -32 20    0       0 ?           00:00 19:12:01 progressdaemon
+194:DATA:1003 R root        27     0          0  0 152 20    0       0 ?           00:00 19:12:01 kmemdaemon
+194:DATA:1003 S root        28     0          0  0 -32 20    0       0 ?           00:00 19:12:01 ttisr
+194:DATA:1003 S root        29     0          0  0 -32 20    0       0 ?           00:01 19:12:01 ipmid
+194:DATA:1003 S root        36     0          0  0 128 20    0       0 ?           00:00 19:12:00 eventdaemon
+194:DATA:1003 R root        37     0          0  0 152 20    0       0 ?           00:06 19:11:59 schedcpu
+194:DATA:1003 R root        38     0          0  0 191 20    0       0 ?           00:01 19:11:59 pagezerod
+194:DATA:1003 R root        39     0          0  0 191 20    0       0 ?           00:00 19:11:59 cmcd
+194:DATA:1003 S root        40     0          0  0 100 20    0       0 ?           00:00 19:11:59 smpsched
+194:DATA:1003 S root        41     0          0  0 100 20    0       0 ?           00:00 19:11:59 smpsched
+194:DATA:1003 S root        42     0          0  0 100 20    0       0 ?           00:00 19:11:59 sblksched
+194:DATA:1003 S root        43     0          0  0 100 20    0       0 ?           00:00 19:11:59 sblksched
+194:DATA:1003 R root        44     0          0  0 152 20    0       0 ?           00:00 19:11:59 kend
+194:DATA:401 S root       903     1          0  0 155 20   28     116 ?           00:00 04:44:57 /usr/sbin/ptydaemon
+194:DATA:1003 R root        51     0          0  0 152 20    0       0 ?           00:24 19:11:58 vxfsd
+194:DATA:1003 S root        75     0          0  0 153 20    0       0 ?           00:00 19:11:55 rng
+194:DATA:401 S root      1722     1          0  0 154 20   44     184 ?           00:00 04:41:32 /usr/sbin/cron
+194:DATA:401 S root       673     1          0  0 168 20   27     148 ?           00:00 04:45:10 /usr/sbin/syncer
+194:DATA:401 S root       899     1          0  0 154 20   66     268 ?           00:00 04:44:58 /usr/sbin/syslogd -D
+194:DATA:1401 R root       677     1          0  0 152 20  317    1696 ?           00:02 04:45:09 /usr/sbin/utmpd
+194:DATA:1401 S root       874     1          0  0 168 20  296    1584 ?           00:00 04:44:58 ipmon -sD
+194:DATA:  1 S root      1177     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:401 S root       927     1          0  0 127 20   15      84 ?           00:00 04:44:57 /usr/lbin/nktl_daemon 0 0 0 0 0 1 -2
+194:DATA:401 S root      1137     1          0  0 154 20  251    1180 ?           00:01 04:44:43 /usr/sbin/rpcbind
+194:DATA:401 S root       931     1          0  0 127 20   22      92 ?           00:00 04:44:54 /usr/lbin/ntl_reader 0 1 1 1 1000 2 /var/adm/nettl /var/adm/conslog.opts
+194:DATA:401 S root       932   931          0  0 127 20   65     280 ?           00:00 04:44:54 /usr/sbin/netfmt -C -F -f /var/adm/nettl.LOG000 -c /var/adm/conslog.opts
+194:DATA:401 S root      2007     1          0  0 138  0  121     584 ?           00:00 04:41:20 /sbin/krsd -i
+194:DATA:2401 S root      1156     1          0  0 154 20  189    1064 ?           00:01 04:44:43 /usr/lib/netsvc/yp/ypbind
+194:DATA:401 S root      1163     1          0  0 154 20  191    1024 ?           00:00 04:44:39 /usr/sbin/keyserv
+194:DATA:  1 S root      1176     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1175     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1178     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1179     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1180     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1181     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1182     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1183     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1184     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1185     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1186     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1187     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1188     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1189     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:  1 S root      1190     1          0  0 154 20    0       0 ?           00:00 04:44:39 /usr/sbin/biod 16
+194:DATA:401 S root      1204     1          0  0 154 20  263    1356 ?           00:00 04:44:38 /usr/sbin/rpc.lockd
+194:DATA:401 S root      1198     1          0  0 154 20  202    1392 ?           00:00 04:44:38 /usr/sbin/rpc.statd
+194:DATA:401 R root      1210     1          0  0 152 20  243    1212 ?           00:00 04:44:38 /usr/sbin/automountd
+194:DATA:401 S root      1227     1          0  0 154 20  117     680 ?           00:00 04:44:38 /usr/sbin/inetd
+194:DATA:2401 S root      1529     1          6  0 154 20  542    3112 ?           00:02 04:43:36 sendmail: accepting connections
+194:DATA:401 S root      1543     1          0  0 154 20  424    1904 ?           00:00 04:43:21 /usr/sbin/snmpdm
+194:DATA:1401 S root      1664  1663          0  0 154 20  135     724 ?           00:00 04:41:35 /opt/wbem/sbin/cimservera
+194:DATA:401 S root      1610     1          0  0 154 20  122     728 ?           00:00 04:41:59 /usr/sbin/trapdestagt
+194:DATA:401 S root      1562     1          0  0 154 20  124     720 ?           00:00 04:43:00 /usr/sbin/hp_unixagt
+194:DATA:401 S root      1575     1          0  0 154 20  138     888 ?           00:00 04:42:45 /usr/sbin/ipv6agt
+194:DATA:401 S root      1587     1          0  0 154 20  158    1004 ?           00:00 04:42:30 /usr/sbin/mib2agt
+194:DATA:401 S root      1636     1          0  0 154 20  167     912 ?           00:00 04:41:59 /usr/sbin/fddi4subagt
+194:DATA:1401 R root      1663     1          0  0 152 20 1481    6676 ?           00:06 04:41:37 /opt/wbem/sbin/cimserver
+194:DATA:401 R root      1653     1          0  0 152 20  402    2636 ?           00:00 04:41:59 /opt/dce/sbin/rpcd
+194:DATA:401 S root      2175     1          3  0 154 20  198    1072 ?           00:00 04:18:27 ./ypserv stop
+194:DATA:401 S root      1927     1          0  0 154 20  192    1072 ?           00:00 04:41:22 /usr/sbin/rpc.mountd
+194:DATA:401 S root      1702     1          0  0 154 20   88     564 ?           00:00 04:41:33 /usr/sbin/pwgrd
+194:DATA:401 S root      2006     1          3  0 156 20  240    1280 console     00:00 04:41:20 -sh
+194:DATA:401 S root      1748     1          0  0 154 20   20      84 ?           00:00 04:41:31 /usr/sbin/envd
+194:DATA:401 R root      1909     1          0  0 152 20  657    4256 ?           00:05 04:41:22 vxsvc -r /opt/VRTSob/config/Registry -e
+194:DATA:401 S root      1758     1          0  0 154 20    3      16 ?           00:00 04:41:29 /usr/sbin/hubd
+194:DATA:401 S root      1937     1          0  0 154 20   69     484 ?           00:00 04:41:22 /usr/sbin/nfsd 16
+194:DATA:2401 R root      1768     1          3  0 152 20  461    2684 ?           00:00 04:41:29 /usr/sbin/swagentd -r
+194:DATA:1401 S root      2013     1          0  0 168 20   30     148 ?           00:00 04:41:20 /opt/wbem/sbin/cimserverd
+194:DATA:401 S root      2008     1          0  0 154 20   78     492 ?           00:00 04:41:20 /sbin/sfd
+194:DATA:401 S root      1993     1          0  0 158 20  240    1248 ?           00:00 04:41:20 /sbin/sh /usr/dt/bin/dtrc
+194:DATA:401 S root      1940  1939          0  0 154 20   81     628 ?           00:00 04:41:22 /usr/sbin/nfsd 16
+194:DATA:401 S root      2012     1          0  0 168 20   81     600 ?           00:00 04:41:20 /etc/opt/resmon/lbin/p_client
+194:DATA:401 S root      1819     1          0  0 154 20  151     860 ?           00:00 04:41:26 /etc/opt/resmon/lbin/emsagent
+194:DATA:401 S root      2024  1993          0  0 154 20   59     996 ?           00:00 04:41:18 /usr/dt/bin/dtlogin
+194:DATA:401 S root      1939     1          0  0 154 20   81     628 ?           00:00 04:41:22 /usr/sbin/nfsd 16
+194:DATA:401 S root      2238  2236          3  0 158 20  239    1260 ?           00:00 03:28:22 sh -c /opt/ssh/libexec/sftp-server
+194:DATA:401 S root      2047  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2050  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2049  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2048  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2051  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2052  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2053  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2054  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2055  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2056  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2057  1939          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2058  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2059  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:401 S root      2060  1940          0  0 154 20   81     628 ?           00:00 04:41:07 /usr/sbin/nfsd 16
+194:DATA:2401 S siteview 22425 22421         20  0 154 20  752    4176 ?           00:00    04:23 sshd: siteview@pts/1
+194:DATA:2401 R root      2236     1          0  0 152 20  740    4176 ?           00:00 03:28:24 sshd: root@notty
+194:DATA:401 S root      2173     1          3  0 154 20  194    1056 ?           00:00 04:18:37 ./ypserv ?
+194:DATA:401 S root     22037 22036          3  0 154 20   96     584 ?           00:00    12:19 /opt/ssh/libexec/sftp-server
+194:DATA:401 S root      2239  2238          3  0 154 20  122     716 ?           00:00 03:28:22 /opt/ssh/libexec/sftp-server
+194:DATA:2401 R root     16297     1          0  0 152 20  744    4176 ?           00:00 01:13:21 sshd: root@pts/0
+194:DATA:2401 S root     22934  1156          0  0 154 20  209    1304 ?           00:00    00:07 /usr/lib/netsvc/yp/ypbind
+194:DATA:401 S root     22036 22034          3  0 158 20  239    1260 ?           00:00    12:19 sh -c /opt/ssh/libexec/sftp-server
+194:DATA:401 S root     22058     1          0  0 154 20  656    3792 ?           00:00    10:04 /opt/ssh/sbin/sshd
+194:DATA:401 R siteview 22937 22936         20  1 178 20   60     264 pts/1       00:00    00:00 ps -eo flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args
+194:DATA:401 S siteview 22522 22429         20  0 168 20   27     112 pts/1       00:00    04:00 vmstat 60
+194:DATA:401 S root     16300 16297          3  0 154 20  259    1372 pts/0       00:00 01:13:20 -sh
+194:DATA:2401 S root     22933  1156          0  0 154 20  209    1304 ?           00:00    00:12 /usr/lib/netsvc/yp/ypbind
+194:DATA:2401 S siteview 22868 22429          3  0 168 20   97     604 pts/1       00:00    00:57 netstat -i
+194:DATA:401 R siteview 22429 22425         20  2 178 20 1140    5972 pts/1       00:00    04:08 /opt/perl/bin/perl -
+194:DATA:2401 R root     22034     1          0  0 152 20  724    4048 ?           00:00    12:20 sshd: root@notty
+194:DATA:2401 S root     22421 22058          0  0 154 20  752    4176 ?           00:00    04:39 sshd: siteview [priv]
+194:DATA:401 S siteview 22503 22429         20  0 168 20   27     112 pts/1       00:00    04:01 vmstat -S 15
+194:DATA:401 S siteview 22936 22429         20  0 158 20  167     924 pts/1       00:00    00:00 sh -c UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+194:END:lcnt=133
+194:END:stat=0
+195:BGN:netstat -in |awk '{print $0,i++}'
+195:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+195:DATA:lan0      1500 192.168.0.0     192.168.0.69    111557  0     95113   0     0    1
+195:DATA:lo0       4136 127.0.0.0       127.0.0.1       7953    0     7953    0     0    2
+195:END:lcnt=3
+195:END:stat=0
+196:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+196:DATA:8278928 1
+196:END:lcnt=1
+196:END:stat=0
+197:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+197:DATA:8279101 1
+197:END:lcnt=1
+197:END:stat=0
+22:DATA:    1     0     0    38735  267539   48   30     0    0     0    0     0    520   5946   152   0  0 99
+198:BGN:bdf | awk 'BEGIN{FSName=""} NF==1 {FSName=$0; next} {print(FSName $0);FSName=""}'
+198:DATA:Filesystem          kbytes    used   avail %used Mounted on
+198:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+198:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+198:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+198:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+198:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+198:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+198:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+198:END:lcnt=8
+198:END:stat=0
+199:BGN:sar -b 15
+200:BGN:sar -M 15
+201:BGN:ps -e | wc -l
+201:DATA:137
+201:END:lcnt=1
+201:END:stat=0
+202:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+202:DATA:4 0 0
+202:END:lcnt=1
+202:END:stat=0
+203:BGN:sar -d  15
+204:BGN:bdf -l
+204:DATA:Filesystem          kbytes    used   avail %used Mounted on
+204:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+204:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+204:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+204:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+204:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+204:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+204:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+204:END:lcnt=8
+204:END:stat=0
+205:BGN:date
+205:DATA:Wed Jan 26 14:40:52 EAT 2011
+205:END:lcnt=1
+205:END:stat=0
+206:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+206:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+206:END:lcnt=1
+206:END:stat=0
+207:BGN:who |  wc -l
+207:DATA:3
+207:END:lcnt=1
+207:END:stat=0
+208:BGN:uptime
+166:DATA:lo0       4136 loopback        localhost       7916    0     7916    0     0   
+166:END:lcnt=3
+166:END:stat=0
+208:DATA:  2:40pm  up 19:12,  3 users,  load average: 0.02, 0.02, 0.01
+208:END:lcnt=1
+208:END:stat=0
+209:BGN:/etc/swapinfo -t | grep total
+209:DATA:total   6280336  883724 5396612   14%       -       0    -
+209:END:lcnt=1
+209:END:stat=0
+210:BGN:sar -u 15
+15:DATA:    1     0     0    36041  267292    0    0     0    0     0    0     0    446   2356    59   1  1 99
+199:DATA:
+199:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+199:DATA:
+199:DATA:14:40:49 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+199:DATA:14:41:04       0      69     100       4       6      29       0       0
+199:END:lcnt=5
+199:END:stat=0
+200:DATA:
+200:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+200:DATA:
+200:DATA:14:40:49     cpu    %usr    %sys    %wio   %idle
+200:DATA:14:41:04       0       0       0       1      98
+200:DATA:               1       0       0       0      99
+200:DATA:          system       0       0       1      98
+200:END:lcnt=7
+200:END:stat=0
+203:DATA:
+203:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+203:DATA:
+203:DATA:14:40:52   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+203:DATA:14:41:07   c2t1d0    2.07    5.00       4      58   18.52   20.07
+203:END:lcnt=5
+203:END:stat=0
+211:BGN:/etc/swapinfo -t | grep total
+211:DATA:total   6280336  879428 5400908   14%       -       0    -
+211:END:lcnt=1
+211:END:stat=0
+212:BGN:uptime
+212:DATA:  2:41pm  up 19:12,  3 users,  load average: 0.02, 0.02, 0.01
+212:END:lcnt=1
+212:END:stat=0
+213:BGN:who |  wc -l
+213:DATA:3
+213:END:lcnt=1
+213:END:stat=0
+214:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+214:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+214:END:lcnt=1
+214:END:stat=0
+215:BGN:date
+215:DATA:Wed Jan 26 14:41:07 EAT 2011
+215:END:lcnt=1
+215:END:stat=0
+216:BGN:bdf -l
+216:DATA:Filesystem          kbytes    used   avail %used Mounted on
+216:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+216:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+216:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+216:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+216:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+216:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+216:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+216:END:lcnt=8
+216:END:stat=0
+217:BGN:netstat -i
+217:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+210:DATA:
+210:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+210:DATA:
+210:DATA:14:40:53    %usr    %sys    %wio   %idle
+210:DATA:14:41:08       0       0       1      99
+210:END:lcnt=5
+210:END:stat=0
+218:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+218:DATA:4 0 0
+218:END:lcnt=1
+218:END:stat=0
+219:BGN:ps -e | wc -l
+219:DATA:133
+219:END:lcnt=1
+219:END:stat=0
+15:DATA:    1     0     0    42227  267563    0    0     0    0     0    0     0    442   2101    61   0  0 99
+220:BGN:ps -e | wc -l
+220:DATA:133
+220:END:lcnt=1
+220:END:stat=0
+221:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+221:DATA:4 0 0
+221:END:lcnt=1
+221:END:stat=0
+222:BGN:sar -d  15
+223:BGN:bdf -l
+223:DATA:Filesystem          kbytes    used   avail %used Mounted on
+223:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+223:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+223:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+223:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+223:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+223:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+223:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+223:END:lcnt=8
+223:END:stat=0
+224:BGN:date
+224:DATA:Wed Jan 26 14:41:23 EAT 2011
+224:END:lcnt=1
+224:END:stat=0
+225:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+225:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+225:END:lcnt=1
+225:END:stat=0
+226:BGN:who |  wc -l
+226:DATA:3
+226:END:lcnt=1
+226:END:stat=0
+227:BGN:uptime
+227:DATA:  2:41pm  up 19:13,  3 users,  load average: 0.02, 0.02, 0.01
+227:END:lcnt=1
+227:END:stat=0
+228:BGN:/etc/swapinfo -t | grep total
+228:DATA:total   6280336  884380 5395956   14%       -       0    -
+228:END:lcnt=1
+228:END:stat=0
+229:BGN:sar -u 15
+15:DATA:    1     0     0    40615  267204    0    0     0    0     0    0     0    453   2222    63   0  0 99
+217:DATA:lan0      1500 192.168.0.0     192.168.0.69    111624  0     95153   0     0   
+230:BGN:/etc/swapinfo -t | grep total
+230:DATA:total   6280336  885376 5394960   14%       -       0    -
+230:END:lcnt=1
+230:END:stat=0
+231:BGN:uptime
+231:DATA:  2:41pm  up 19:13,  3 users,  load average: 0.02, 0.02, 0.01
+231:END:lcnt=1
+231:END:stat=0
+222:DATA:
+222:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+222:DATA:
+222:DATA:14:41:23   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+222:DATA:14:41:38   c2t1d0    2.13    5.74       4      59   24.26   22.70
+222:END:lcnt=5
+222:END:stat=0
+232:BGN:who |  wc -l
+232:DATA:3
+232:END:lcnt=1
+232:END:stat=0
+233:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+233:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+233:END:lcnt=1
+233:END:stat=0
+234:BGN:date
+234:DATA:Wed Jan 26 14:41:38 EAT 2011
+234:END:lcnt=1
+234:END:stat=0
+235:BGN:bdf -l
+235:DATA:Filesystem          kbytes    used   avail %used Mounted on
+235:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+235:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+235:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+235:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+235:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+235:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+235:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+235:END:lcnt=8
+235:END:stat=0
+236:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+236:DATA:4 0 0
+236:END:lcnt=1
+236:END:stat=0
+237:BGN:ps -e | wc -l
+237:DATA:136
+237:END:lcnt=1
+237:END:stat=0
+229:DATA:
+229:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+229:DATA:
+229:DATA:14:41:24    %usr    %sys    %wio   %idle
+229:DATA:14:41:39       0       0       1      99
+229:END:lcnt=5
+229:END:stat=0
+238:BGN:getconf PAGE_SIZE
+238:DATA:4096
+238:END:lcnt=1
+238:END:stat=0
+239:BGN:/usr/sbin/ioscan -fkC processor
+239:DATA:Class       I  H/W Path  Driver    S/W State H/W Type  Description
+239:DATA:===================================================================
+239:DATA:processor   0  120       processor CLAIMED   PROCESSOR Processor
+239:DATA:processor   1  121       processor CLAIMED   PROCESSOR Processor
+239:END:lcnt=4
+239:END:stat=0
+240:BGN:echo "selclass qualifier memory;info;wait;infolog" | /usr/sbin/cstm | grep -i 'total configured memory'
+240:END:lcnt=0
+240:END:stat=1
+15:DATA:         procs           memory                   page                              faults       cpu
+15:DATA:    r     b     w      avm    free   si   so    pi   po    fr   de    sr     in     sy    cs  us sy id
+15:DATA:    1     0     0    33323  267667    0    0     0    0     0    0     0    531   3707    81   0  0 99
+241:BGN:bdf | awk 'BEGIN{FSName=""} NF==1 {FSName=$0; next} {print(FSName $0);FSName=""}'
+241:DATA:Filesystem          kbytes    used   avail %used Mounted on
+241:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+241:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+241:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+241:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+241:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+241:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+241:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+241:END:lcnt=8
+241:END:stat=0
+242:BGN:netstat -p tcp | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+242:DATA:8291001 1
+242:END:lcnt=1
+242:END:stat=0
+243:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+243:DATA:8291132 1
+243:END:lcnt=1
+243:END:stat=0
+244:BGN:netstat -in |awk '{print $0,i++}'
+244:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll 0
+244:DATA:lan0      1500 192.168.0.0     192.168.0.69    111980  0     95312   0     0    1
+244:DATA:lo0       4136 127.0.0.0       127.0.0.1       7990    0     7990    0     0    2
+244:END:lcnt=3
+244:END:stat=0
+245:BGN:UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+245:DATA:  F S USER       PID  PPID        GID  C PRI NI   SZ     VSZ TT           TIME  ELAPSED COMMAND
+245:DATA:1003 S root         0     0          0  0 127 20    0       0 ?           00:04 19:13:01 swapper
+245:DATA:541 R root         1     0          0  0 152 20  386    1544 ?           00:00 19:13:23 init
+245:DATA:1003 R root         8     0          0  0 152 20    0       0 ?           00:00 19:13:23 ioconfigd
+245:DATA:1003 S root         9     0          0  0 152 20    0       0 ?           00:00 19:13:23 nfsktcpd
+245:DATA:1003 R root        10     0          0  0 152 20    0       0 ?           00:00 19:13:22 autofskd
+245:DATA:1003 S root        11     0          0  0 147 20    0       0 ?           00:00 19:13:22 lvmkd
+245:DATA:1003 S root        12     0          0  0 147 20    0       0 ?           00:00 19:13:22 lvmkd
+245:DATA:1003 S root        13     0          0  0 147 20    0       0 ?           00:00 19:13:22 lvmkd
+245:DATA:1003 S root        14     0          0  0 147 20    0       0 ?           00:00 19:13:22 lvmkd
+245:DATA:1003 S root        15     0          0  0 147 20    0       0 ?           00:00 19:13:22 lvmkd
+245:DATA:1003 S root        16     0          0  0 147 20    0       0 ?           00:00 19:13:22 lvmkd
+245:DATA:1003 S root        17     0          0  0 148 20    0       0 ?           00:00 19:13:22 lvmschedd
+245:DATA:1003 R root        18     0          0  0 191 20    0       0 ?           00:00 19:13:01 ksyncer_daemon
+245:DATA:1003 S root        19     0          0  0 148 20    0       0 ?           00:00 19:13:01 lvmdevd
+245:DATA:1003 S root        20     0          0  0 148 20    0       0 ?           00:00 19:13:01 lvmattachd
+245:DATA:1003 S root        21     0          0  0 128 20    0       0 ?           00:00 19:13:01 pagetable_init_daemon
+245:DATA:1003 S root        22     0          0  0 100 20    0       0 ?           00:00 19:13:01 supsched
+245:DATA:1003 S root        23     0          0  0 100 20    0       0 ?           00:00 19:13:01 strmem
+245:DATA:1003 S root        24     0          0  0 100 20    0       0 ?           00:00 19:13:01 strweld
+245:DATA:1003 S root        25     0          0  0 100 20    0       0 ?           00:00 19:13:01 strfreebd
+245:DATA:1003 S root         2     0          0  0 128 20    0       0 ?           00:00 19:13:01 vhand
+245:DATA:1003 S root         3     0          0  0 128 20    0       0 ?           00:02 19:13:01 statdaemon
+245:DATA:1003 S root         4     0          0  0 128 20    0       0 ?           00:00 19:13:01 unhashdaemon
+245:DATA:1003 S root        26     0          0  0 -32 20    0       0 ?           00:00 19:13:01 progressdaemon
+245:DATA:1003 R root        27     0          0  0 152 20    0       0 ?           00:00 19:13:01 kmemdaemon
+245:DATA:1003 S root        28     0          0  0 -32 20    0       0 ?           00:00 19:13:01 ttisr
+245:DATA:1003 S root        29     0          0  0 -32 20    0       0 ?           00:01 19:13:01 ipmid
+245:DATA:1003 S root        36     0          0  0 128 20    0       0 ?           00:00 19:13:00 eventdaemon
+245:DATA:1003 R root        37     0          0  0 152 20    0       0 ?           00:06 19:12:59 schedcpu
+245:DATA:1003 R root        38     0          0  0 191 20    0       0 ?           00:01 19:12:59 pagezerod
+245:DATA:1003 R root        39     0          0  0 191 20    0       0 ?           00:00 19:12:59 cmcd
+245:DATA:1003 S root        40     0          0  0 100 20    0       0 ?           00:00 19:12:59 smpsched
+245:DATA:1003 S root        41     0          0  0 100 20    0       0 ?           00:00 19:12:59 smpsched
+245:DATA:1003 S root        42     0          0  0 100 20    0       0 ?           00:00 19:12:59 sblksched
+245:DATA:1003 S root        43     0          0  0 100 20    0       0 ?           00:00 19:12:59 sblksched
+245:DATA:1003 R root        44     0          0  0 152 20    0       0 ?           00:00 19:12:59 kend
+245:DATA:401 S root       903     1          0  0 155 20   28     116 ?           00:00 04:45:57 /usr/sbin/ptydaemon
+245:DATA:1003 R root        51     0          0  0 152 20    0       0 ?           00:24 19:12:58 vxfsd
+245:DATA:2401 S root     23040  1156          0  0 154 20  209    1304 ?           00:00    00:06 /usr/lib/netsvc/yp/ypbind
+245:DATA:1003 S root        75     0          0  0 153 20    0       0 ?           00:00 19:12:55 rng
+245:DATA:401 S root      1722     1          0  0 154 20   44     184 ?           00:00 04:42:32 /usr/sbin/cron
+245:DATA:401 S root       673     1          0  0 168 20   27     148 ?           00:00 04:46:10 /usr/sbin/syncer
+245:DATA:401 S root       899     1          0  0 154 20   66     268 ?           00:00 04:45:58 /usr/sbin/syslogd -D
+245:DATA:1401 R root       677     1          0  0 152 20  317    1696 ?           00:02 04:46:09 /usr/sbin/utmpd
+245:DATA:1401 S root       874     1          0  0 168 20  296    1584 ?           00:00 04:45:58 ipmon -sD
+245:DATA:  1 S root      1177     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:401 S root       927     1          0  0 127 20   15      84 ?           00:00 04:45:57 /usr/lbin/nktl_daemon 0 0 0 0 0 1 -2
+245:DATA:401 S root      1137     1          0  0 154 20  251    1180 ?           00:01 04:45:43 /usr/sbin/rpcbind
+245:DATA:401 S root       931     1          0  0 127 20   22      92 ?           00:00 04:45:54 /usr/lbin/ntl_reader 0 1 1 1 1000 2 /var/adm/nettl /var/adm/conslog.opts
+245:DATA:401 S root       932   931          0  0 127 20   65     280 ?           00:00 04:45:54 /usr/sbin/netfmt -C -F -f /var/adm/nettl.LOG000 -c /var/adm/conslog.opts
+245:DATA:401 S root      2007     1          0  0 138  0  121     584 ?           00:00 04:42:20 /sbin/krsd -i
+245:DATA:2401 S root      1156     1          0  0 154 20  189    1064 ?           00:01 04:45:43 /usr/lib/netsvc/yp/ypbind
+245:DATA:401 S root      1163     1          0  0 154 20  191    1024 ?           00:00 04:45:39 /usr/sbin/keyserv
+245:DATA:  1 S root      1176     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1175     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1178     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1179     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1180     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1181     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1182     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1183     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1184     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1185     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1186     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1187     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1188     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1189     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:  1 S root      1190     1          0  0 154 20    0       0 ?           00:00 04:45:39 /usr/sbin/biod 16
+245:DATA:401 S root      1204     1          0  0 154 20  263    1356 ?           00:00 04:45:38 /usr/sbin/rpc.lockd
+245:DATA:401 S root      1198     1          0  0 154 20  202    1392 ?           00:00 04:45:38 /usr/sbin/rpc.statd
+245:DATA:401 R root      1210     1          0  0 152 20  243    1212 ?           00:00 04:45:38 /usr/sbin/automountd
+245:DATA:401 S root      1227     1          0  0 154 20  117     680 ?           00:00 04:45:38 /usr/sbin/inetd
+245:DATA:2401 S root      1529     1          6  0 154 20  542    3112 ?           00:02 04:44:36 sendmail: accepting connections
+245:DATA:401 S root      1543     1          0  0 154 20  424    1904 ?           00:00 04:44:21 /usr/sbin/snmpdm
+245:DATA:1401 S root      1664  1663          0  0 154 20  135     724 ?           00:00 04:42:35 /opt/wbem/sbin/cimservera
+245:DATA:401 S root      1610     1          0  0 154 20  122     728 ?           00:00 04:42:59 /usr/sbin/trapdestagt
+245:DATA:401 S root      1562     1          0  0 154 20  124     720 ?           00:00 04:44:00 /usr/sbin/hp_unixagt
+245:DATA:401 S root      1575     1          0  0 154 20  138     888 ?           00:00 04:43:45 /usr/sbin/ipv6agt
+245:DATA:401 S root      1587     1          0  0 154 20  158    1004 ?           00:00 04:43:30 /usr/sbin/mib2agt
+245:DATA:401 S root      1636     1          0  0 154 20  167     912 ?           00:00 04:42:59 /usr/sbin/fddi4subagt
+245:DATA:1401 R root      1663     1          0  0 152 20 1481    6676 ?           00:06 04:42:37 /opt/wbem/sbin/cimserver
+245:DATA:401 R root      1653     1          0  0 152 20  402    2636 ?           00:00 04:42:59 /opt/dce/sbin/rpcd
+245:DATA:401 S root      2175     1          3  0 154 20  198    1072 ?           00:00 04:19:27 ./ypserv stop
+245:DATA:401 S root      1927     1          0  0 154 20  192    1072 ?           00:00 04:42:22 /usr/sbin/rpc.mountd
+245:DATA:401 S root      1702     1          0  0 154 20   88     564 ?           00:00 04:42:33 /usr/sbin/pwgrd
+245:DATA:401 S root      2006     1          3  0 156 20  240    1280 console     00:00 04:42:20 -sh
+245:DATA:401 S root      1748     1          0  0 154 20   20      84 ?           00:00 04:42:31 /usr/sbin/envd
+245:DATA:401 R root      1909     1          0  0 152 20  657    4256 ?           00:05 04:42:22 vxsvc -r /opt/VRTSob/config/Registry -e
+245:DATA:401 S root      1758     1          0  0 154 20    3      16 ?           00:00 04:42:29 /usr/sbin/hubd
+245:DATA:401 S root      1937     1          0  0 154 20   69     484 ?           00:00 04:42:22 /usr/sbin/nfsd 16
+245:DATA:2401 R root      1768     1          3  0 152 20  461    2684 ?           00:00 04:42:29 /usr/sbin/swagentd -r
+245:DATA:1401 S root      2013     1          0  0 168 20   30     148 ?           00:00 04:42:20 /opt/wbem/sbin/cimserverd
+245:DATA:401 S root      2008     1          0  0 154 20   78     492 ?           00:00 04:42:20 /sbin/sfd
+245:DATA:401 S root      1993     1          0  0 158 20  240    1248 ?           00:00 04:42:20 /sbin/sh /usr/dt/bin/dtrc
+245:DATA:401 S root      1940  1939          0  0 154 20   81     628 ?           00:00 04:42:22 /usr/sbin/nfsd 16
+245:DATA:401 S root      2012     1          0  0 168 20   81     600 ?           00:00 04:42:20 /etc/opt/resmon/lbin/p_client
+245:DATA:401 S root      1819     1          0  0 154 20  151     860 ?           00:00 04:42:26 /etc/opt/resmon/lbin/emsagent
+245:DATA:401 S root      2024  1993          0  0 154 20   59     996 ?           00:00 04:42:18 /usr/dt/bin/dtlogin
+245:DATA:401 S root      1939     1          0  0 154 20   81     628 ?           00:00 04:42:22 /usr/sbin/nfsd 16
+245:DATA:401 S root      2238  2236          3  0 158 20  239    1260 ?           00:00 03:29:22 sh -c /opt/ssh/libexec/sftp-server
+245:DATA:401 S root      2047  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2050  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2049  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2048  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2051  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2052  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2053  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2054  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2055  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2056  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2057  1939          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2058  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2059  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:401 S root      2060  1940          0  0 154 20   81     628 ?           00:00 04:42:07 /usr/sbin/nfsd 16
+245:DATA:2401 S siteview 22425 22421         20  0 154 20  752    4176 ?           00:00    05:23 sshd: siteview@pts/1
+245:DATA:2401 R root      2236     1          0  0 152 20  740    4176 ?           00:00 03:29:24 sshd: root@notty
+245:DATA:401 S root      2173     1          3  0 154 20  194    1056 ?           00:00 04:19:37 ./ypserv ?
+245:DATA:401 S root     22037 22036          3  0 154 20   96     584 ?           00:00    13:19 /opt/ssh/libexec/sftp-server
+245:DATA:401 S root      2239  2238          3  0 154 20  122     716 ?           00:00 03:29:22 /opt/ssh/libexec/sftp-server
+245:DATA:2401 R root     16297     1          0  0 152 20  744    4176 ?           00:00 01:14:21 sshd: root@pts/0
+245:DATA:401 S siteview 23061 22429         20  0 158 20  167     924 pts/1       00:00    00:00 sh -c UNIX95= ps -eo "flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args"
+245:DATA:401 S root     22036 22034          3  0 158 20  239    1260 ?           00:00    13:19 sh -c /opt/ssh/libexec/sftp-server
+245:DATA:2401 S root     23042  1156          0  0 154 20  209    1304 ?           00:00    00:01 /usr/lib/netsvc/yp/ypbind
+245:DATA:401 S root     22058     1          0  0 154 20  656    3792 ?           00:00    11:04 /opt/ssh/sbin/sshd
+245:DATA:401 R siteview 23062 23061         20  0 178 20   60     264 pts/1       00:00    00:00 ps -eo flags,state,user,pid,ppid,gid,cpu,intpri,nice,sz,vsz,tty,time,etime,args
+245:DATA:401 S siteview 22522 22429         20  0 168 20   27     112 pts/1       00:00    05:00 vmstat 60
+245:DATA:401 S root     16300 16297          3  0 154 20  259    1372 pts/0       00:00 01:14:20 -sh
+245:DATA:2401 S siteview 22988 22429          3  0 168 20   97     604 pts/1       00:00    00:41 netstat -i
+245:DATA:401 R siteview 22429 22425         20  2 178 20 1140    5972 pts/1       00:00    05:08 /opt/perl/bin/perl -
+245:DATA:2401 R root     22034     1          0  0 152 20  724    4048 ?           00:00    13:20 sshd: root@notty
+245:DATA:2401 S root     22421 22058          0  0 154 20  752    4176 ?           00:00    05:39 sshd: siteview [priv]
+245:DATA:401 S siteview 22503 22429         20  0 168 20   27     112 pts/1       00:00    05:01 vmstat -S 15
+245:END:lcnt=133
+245:END:stat=0
+22:DATA:    1     0     0    33323  267556  136   51     0    0     0    0     0    579   7332   132   0  1 99
+246:BGN:who -u
+246:DATA:root       console      Jan 26 10:00  3:17   2006  system console
+246:DATA:root       pts/0        Jan 26 13:27  0:10  16300  192.168.9.218
+246:DATA:siteview   pts/1        Jan 26 14:36   .    22429  192.168.9.119
+246:END:lcnt=3
+246:END:stat=0
+247:BGN:sar -M 15
+248:BGN:sar -b 15
+249:BGN:ps -e | wc -l
+249:DATA:138
+249:END:lcnt=1
+249:END:stat=0
+250:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+250:DATA:4 0 0
+250:END:lcnt=1
+250:END:stat=0
+251:BGN:sar -d  15
+252:BGN:bdf -l
+252:DATA:Filesystem          kbytes    used   avail %used Mounted on
+252:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+252:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+252:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+252:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+252:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+252:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+252:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+252:END:lcnt=8
+252:END:stat=0
+253:BGN:date
+253:DATA:Wed Jan 26 14:41:53 EAT 2011
+253:END:lcnt=1
+253:END:stat=0
+254:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+254:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+254:END:lcnt=1
+254:END:stat=0
+255:BGN:who |  wc -l
+255:DATA:3
+255:END:lcnt=1
+255:END:stat=0
+256:BGN:uptime
+256:DATA:  2:41pm  up 19:13,  3 users,  load average: 0.03, 0.02, 0.01
+256:END:lcnt=1
+256:END:stat=0
+257:BGN:/etc/swapinfo -t | grep total
+257:DATA:total   6280336  886372 5393964   14%       -       0    -
+257:END:lcnt=1
+257:END:stat=0
+258:BGN:sar -u 15
+15:DATA:    1     0     0    40890  267016    0    0     0    0     0    0     0    487   2665    71   0  1 99
+247:DATA:
+247:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+247:DATA:
+247:DATA:14:41:49     cpu    %usr    %sys    %wio   %idle
+247:DATA:14:42:04       0       0       0       1      99
+247:DATA:               1       0       0       0      99
+247:DATA:          system       0       0       1      99
+247:END:lcnt=7
+247:END:stat=0
+248:DATA:
+248:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+248:DATA:
+248:DATA:14:41:49 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+248:DATA:14:42:04       0      65     100       2       5      55       0       0
+248:END:lcnt=5
+248:END:stat=0
+217:DATA:lo0       4136 loopback        localhost       7953    0     7953    0     0   
+217:END:lcnt=3
+217:END:stat=0
+251:DATA:
+251:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+251:DATA:
+251:DATA:14:41:53   device   %busy   avque   r+w/s  blks/s  avwait  avserv
+251:DATA:14:42:08   c2t1d0    2.20    2.55       4      54    9.55   20.88
+251:END:lcnt=5
+251:END:stat=0
+259:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+259:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+259:END:lcnt=1
+259:END:stat=0
+260:BGN:date
+260:DATA:Wed Jan 26 14:42:08 EAT 2011
+260:END:lcnt=1
+260:END:stat=0
+261:BGN:bdf -l
+261:DATA:Filesystem          kbytes    used   avail %used Mounted on
+261:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+261:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+261:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+261:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+261:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+261:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+261:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+261:END:lcnt=8
+261:END:stat=0
+262:BGN:netstat -i
+262:DATA:Name      Mtu  Network         Address         Ipkts   Ierrs Opkts   Oerrs Coll
+263:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+263:DATA:4 0 0
+263:END:lcnt=1
+263:END:stat=0
+264:BGN:ps -e | wc -l
+264:DATA:136
+264:END:lcnt=1
+264:END:stat=0
+265:BGN:/etc/swapinfo -t | grep total
+265:DATA:total   6280336  884360 5395976   14%       -       0    -
+265:END:lcnt=1
+265:END:stat=0
+258:DATA:
+258:DATA:HP-UX HP_zx600 B.11.23 U ia64    01/26/11
+258:DATA:
+258:DATA:14:41:54    %usr    %sys    %wio   %idle
+258:DATA:14:42:09       0       0       1      99
+258:END:lcnt=5
+258:END:stat=0
+266:BGN:uptime
+266:DATA:  2:42pm  up 19:13,  3 users,  load average: 0.03, 0.02, 0.01
+266:END:lcnt=1
+266:END:stat=0
+267:BGN:who |  wc -l
+267:DATA:3
+267:END:lcnt=1
+267:END:stat=0
+15:DATA:    1     0     0    40597  267674    0    0     0    0     0    0     0    481   2320    69   0  0 100
+268:BGN:who |  wc -l
+268:DATA:3
+268:END:lcnt=1
+268:END:stat=0
+269:BGN:uptime
+269:DATA:  2:42pm  up 19:14,  3 users,  load average: 0.03, 0.02, 0.01
+269:END:lcnt=1
+269:END:stat=0
+270:BGN:/etc/swapinfo -t | grep total
+270:DATA:total   6280336  883376 5396960   14%       -       0    -
+270:END:lcnt=1
+270:END:stat=0
+271:BGN:sar -u 15
+272:BGN:ps -e | wc -l
+272:DATA:136
+272:END:lcnt=1
+272:END:stat=0
+273:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+273:DATA:4 0 0
+273:END:lcnt=1
+273:END:stat=0
+274:BGN:sar -d  15
+275:BGN:bdf -l
+275:DATA:Filesystem          kbytes    used   avail %used Mounted on
+275:DATA:/dev/vg00/lvol3     409600  196888  211072   48% /
+275:DATA:/dev/vg00/lvol1     311296   61208  248184   20% /stand
+275:DATA:/dev/vg00/lvol8    4710400 1088088 3595640   23% /var
+275:DATA:/dev/vg00/lvol7    4399104 2512856 1871536   57% /usr
+275:DATA:/dev/vg00/lvol4     204800    8464  194808    4% /tmp
+275:DATA:/dev/vg00/lvol6    3538944 2055376 1472032   58% /opt
+275:DATA:/dev/vg00/lvol5      24576    8496   15960   35% /home
+275:END:lcnt=8
+275:END:stat=0
+276:BGN:date
+276:DATA:Wed Jan 26 14:42:25 EAT 2011
+276:END:lcnt=1
+276:END:stat=0
+277:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+277:DATA:  F S      UID   PID  PPID  C PRI NI             ADDR   SZ            WCHAN    STIME TTY       TIME COMD
+277:END:lcnt=1
+277:END:stat=0

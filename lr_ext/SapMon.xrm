@@ -1,0 +1,14 @@
+[ResmonExtensionInfo]
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=sapmon.dll
+Name=SAPMonitor
+PresentationName=SAP
+Id=9253
+
+
+[UI_Section]
+Ui1=Client
+Ui2=Language

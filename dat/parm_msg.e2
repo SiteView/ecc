@@ -1,0 +1,76 @@
+[Messages]
+Version=6.0
+-13999=Cannot initialize parameter engine.
+-13998=Failed to create a new parameter of type '%1'.
+-13997=Parameter '%1': Failed to format a new value. The format string is '%2'.
+-13996=Failed to find dll name for parameter type '%1'. Type '%2' will not be supported.
+-13995=Failed to load dll '%1'. Error is: %3. Type '%2' will not be supported. 
+-13994=Failed to register functions for parameter type '%1'.
+-13993=No type entry for parameter section '%1'. Parameter not added.
+-13992=Parameter Substitution: parameter "%1" =  "%2"
+-13991=Parameter "%1" is a restricted data type. Cannot substitute.
+-13990=malloc failed
+-13989=Allocated string too short
+-13988=The table '%1' doesn't exist.
+-13987=The string '%1' with parameter delimiters is not a parameter.
+-13986=Creating of parameter '%1' failed ,aborting....
+-13985=Cannot open prm file: %1.
+-13984=Parameter type %1 not supported in this platform.
+-13983=Parameter type %1 is not loaded in priority %2.
+-13982=Creating context of parameter '%1' failed.
+-13981=No number lines of data entry for parameter '%1'. Context of this parameter was not set.
+-13980=Cannot find current row of parameter '%1'. Context of parameter '%2' was not set.
+-13979=The parameter with scope '%1' is not found.
+-13978=The parameter %1 has no value.
+-13977=Parameter '%1': Failed to format a new value. The format string is '%2'. The length of the formatted buffer is limited to %_3_ld bytes.
+-13976=The string '%1' with parameter delimiters is not a parameter and replaced by empty string.
+-13900=Parameter '%1': Cannot calculate the actual path for table '%2'.
+-13899=Parameter '%1': Cannot open table '%2'.
+-13898=Parameter '%1': Invalid range '%2' for table '%3'. Ignoring.
+-13897=Parameter '%1': Invalid column name '%2' for table '%3'.
+-13896=Parameter '%1': No more unique values for this parameter in table '%2' [unique range is %3-%4].The parameter continues with last value of the range according to "When Out Of Values" policy.
+-13895=Parameter '%1': Unable to resolve the next parameter value. When you select next row using the "same line as" option, at least one parameter must use the Unique, Random, or Sequential option.
+-13894=Parameter '%1': Cannot find the line number from which to take the next value. This parameter is defined to use the same line as parameter '%2'.
+-13893=Parameter '%1': Invalid select next row method [internal method number %2].
+-13892=Parameter '%1': No delimiter was found for table '%2'.
+-13891=Parameter '%1': No start line was found for table '%2'.
+-13890=Parameter '%1': No table was defined for this parameter.
+-13889=The table '%1' does not exist.
+-13888=Parameter '%1': Cannot replace the parameter with a value from table '%2' [column=%3, row=%4].
+-13887=The translation of the path to table '%1' failed.
+-13886=Parameter '%1': The netdir value passed when looking for table '%2' was NULL.
+-13885=Calculating path for table '%1'.
+-13884=Table '%1' is entered as absolute path.
+-13883=Location of table '%1' is '%2'.
+-13882=Table '%1' is located in netdir '%2'.
+-13881=Table full path in netdir is '%1'.
+-13880=Table '%1' cannot be opened. Error code is '%2'.
+-13879=Global data directory is '%1'.
+-13878=Local directory is '%1'.
+-13877=Getting new value for parameter '%1': table = '%2' column = '%3' row = '%4'.
+-13876=Next row for parameter %1 = %2 [table  = %3].
+-13875=Unique range for parameter %1 is '%2 - %3' [table = %4].
+-13874=%1
+-13873=%1
+-13872=Table path for %1 is empty.
+-13871=Parameter '%1': No more unique values for this parameter in table '%2' [unique range is %3-%4]. The parameter continue to beginning of range in a cyclic manner according to "When Out Of Values" policy.
+-13870=Parameter '%1': No more unique values for this parameter in table '%2' [unique range is %3-%4]. The Vuser is aborted according to "When Out Of Values" policy.
+-13869=Parameter '%1': No number of rows in instance was found for table '%2'.
+-13868=Parameter '%1': No column index list was found for table '%2'.
+-13867=Parameter '%1': No row delimiter was found for table '%2'.
+-13800=Parameter '%1': Parameter is not initialized.
+-13799=Parameter '%1': Parameter value is not valid.
+-13798=Saving Parameter "%1 = %2"
+-13750=Parameter '%1': The %2 attribute from the driver is NULL.
+-13700=Parameter '%1': Illegal value -  Block size is 0.
+-13699=Parameter '%1': All values in unique block already used. Block size is %2. The parameter continues with last value of the range according to "When Out Of Values" policy.
+-13698=Parameter '%1': All values in unique block already used. Block size is %2. The parameter continue to beginning of range in a cyclic manner according to "When Out Of Values" policy.
+-13697=Parameter '%1': All values in unique block already used. Block size is %2. The Vuser is aborted according to "When Out Of Values" policy.
+-13650=Parameter '%1': Failed to compute value of function '%2' in library '%3'
+-13649=Parameter '%1': Failed to compute value of function '%2' in the script.
+-13600=Incorrect format specified for working or non-working days.
+-13599=No working days in week.
+-13598=Specified working days are: %_1_ld %_2_ld %_3_ld %_4_ld %_5_ld %_6_ld %_7_ld.
+-13597=Invalid offset in parameter '%1'. The offset must be a whole number of days.
+Msg_handler_lowest_msg=-13999
+Msg_handler_highest_msg=-13597

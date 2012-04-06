@@ -1,0 +1,100 @@
+[Protocol]
+Name=SMTP
+CommonName=Simple Mail Protocol (SMTP)
+Category=Mailing Services
+Description=Simple Mail Transfer Protocol - a system for distributing mail to a particular machine.
+Icon=bitmaps\smtp.bmp
+Filters=SmtpProtoFilter
+Dependency=WPLUS
+Hidden=0
+Single=1
+Multi=1
+
+[WPLUS]
+Analyzers=GetSmtpProtocolAnalyzer:api_sock_proxy.dll
+Affinities=SMTP
+
+[CustomTlbs]
+TLBs=MicSmtp.tlb
+CorrelateTypedef=SMTP
+
+[Replay]
+HEADERS=mic_smtp.h
+
+[CustomFilters]
+Filters=SmtpProtoFilter
+
+[SmtpProtoFilter]
+name=Smtp
+dll=api_sock_filter.dll
+init_func=Smtp_Init
+cleanup_func=Smtp_CleanUp
+protocols=WPLUS,SMTP
+before=_END_SECTION_4
+
+[Template]
+globals.h=globals.h
+@@TestName@@.usr=Multi.usr
+
+[Vugen]
+DLL=insp_gen.dll
+CFG_TAB_DLL=comrts_tab.dll,modemspeedtab.dll
+CFG_TAB_XML=speed_simulation.xml
+REC_OPTN_TAB_DLL=api_sock_cfg.dll
+InspectorCustomStartRecDlg=1 
+Insp32DLL=api_inspector.dll
+RecordingLogFile=data\RecordingLog.txt
+ExtraSectionsExt=.h,.inf,.vbs,.js,.vba,.bas,.cls,.dat,.bin
+TemplateDir=SMTP
+DisableRegenerateToVuserLessThan762=1
+32BitRecord=1
+EnableRecordingLog=1
+SectionCombo=1
+WINNT=mdrv.exe
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+;;
+EnableThreads=1
+EnableAutoTranPerFunc=1
+
+SELECTION_TRANS_DLL = wsconv32.dll
+SELECTION_TRANS_FUNC = lrs_proccess_selection
+SELECTION_TRANS_FREE_FUNC = lrs_free_selection_buffer
+
+RunTimeExtraDir=data\smtp.db
+
+IP_Spoofing=1
+LangSupported=C,VBA,VBS,JS
+
+[API.vba]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.js]
+extra_section=jscript_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vbs]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.c]
+extra_section=lr_general,c_general
+smtp_logon=lr_cmd_color;int smtp_logon(char *transaction, char *url[, argument]... )
+smtp_logon_ex=lr_cmd_color;int smtp_logon_ex(SMTP *ppsmtp,char *transaction, char *url[, argument]... )
+smtp_send_mail=lr_cmd_color;int smtp_send_mail(char *transaction, char *recepientTo[, argument]... )
+smtp_send_mail_ex=lr_cmd_color;int smtp_send_mail_ex(SMTP *ppsmtp, char *transaction, char *recepientTo[, argument]... )
+smtp_abort_mail=lr_cmd_color;int smtp_abort_mail()
+smtp_abort_mail_ex=lr_cmd_color;int smtp_abort_mail_ex(SMTP *ppsmtp)
+smtp_logout=lr_cmd_color;int smtp_logout()
+smtp_logout_ex=lr_cmd_color;int smtp_logout_ex(SMTP *ppsmtp)
+smtp_translate=lr_cmd_color;int smtp_translate(char *filename, char *content_header, ENCODING_TYPE encoding, char *output_filename)
+smtp_translate_ex=lr_cmd_color;int smtp_translate_ex(SMTP *ppsmtp, char *filename, char *content_header, ENCODING_TYPE encoding, char *output_filename)
+smtp_free=lr_cmd_color;void smtp_free()
+smtp_free_ex=lr_cmd_color;void smtp_free_ex(SMTP *ppsmtp)
+
+LAST=c_cmd_color

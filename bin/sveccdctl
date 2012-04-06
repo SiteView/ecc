@@ -1,0 +1,231 @@
+#!/bin/bash
+
+# define default configuration
+POLL=true
+SMP=auto
+ERL_MAX_PORTS=32000
+ERL_PROCESSES=500000
+ERL_MAX_ETS_TABLES=1400
+
+# define default environment variables 
+NODE=svecc
+HOST=localhost
+VERSION=2.1.3
+ERLANG_NODE=$NODE@$HOST
+PATH=.:$PATH
+
+# zsh compatibility
+#setopt shwordsplit 2>/dev/null
+
+# system platform setup
+case `uname -m` in
+    i[3456]86 ) CPU="x86" ;;
+    i86pc) CPU="x86" ;;
+    x86) CPU="x86" ;;
+    x86_64) CPU="amd64" ;;
+    ppc) CPU="powerpc" ;;
+    arm*b) CPU="armeb" ;;
+    arm*) CPU="arm" ;;
+    * ) CPU=`uname -p | tr A-Z a-z` ;;
+esac
+echo "Your computer CPU is "$CPU
+OS=`uname -s | tr A-Z a-z`
+echo "Your computer OS is "$OS
+echo $OS | grep "^win" >/dev/null 2>&1
+if [ $? -eq 0 ] ; then
+    ERL=erl.exe
+    DBG=werl.exe
+    ROOTDIR=D:/Ecc/server/trunk/Server
+    ARCHDIR=windows
+    $ERL -noshell -s erlang halt || {
+        echo ""
+        echo "There is a problem starting Erlang."
+        echo "If the error you see is 14001, you need to install:"
+        echo "  Microsoft Visual C++ 2005 SP1 Redistributable Package"
+        echo "You can download that installer from www.microsoft.com"
+        echo "You can also check the ejabberd Administrator Guide"
+        echo ""
+        sleep 20
+        exit 126
+    }
+else
+    ERL=erlexec   
+    DBG=werl.exe
+fi
+
+
+echo "ROOTDIR:"$ROOTDIR
+# read custom configuration
+CONFIG="$ROOTDIR/conf/ejabberdctl.cfg"
+
+echo "CONFIG:"$CONFIG
+
+[ -f "$CONFIG" ] && . "$CONFIG"
+if [ $# -ne 0 ] ; then
+    case $1 in
+        --node) shift ; ERLANG_NODE=$1 ; shift ;;
+    esac
+fi
+
+NAME=-name
+[ "$ERLANG_NODE" = "${ERLANG_NODE%.*}" ] && NAME=-sname
+
+if [ "$FIREWALL_WINDOW" = "" ] ; then
+    KERNEL_OPTS=""
+else
+    KERNEL_OPTS="-kernel inet_dist_listen_min ${FIREWALL_WINDOW%-*} inet_dist_listen_max ${FIREWALL_WINDOW#*-}"
+fi
+
+if [ "$ARCHDIR" = "windows" ] ; then
+    ERLANG_OPTS="-smp $SMP +P $ERL_PROCESSES $KERNEL_OPTS"
+else
+    ERLANG_OPTS="+K $POLL -smp $SMP +P $ERL_PROCESSES $KERNEL_OPTS"
+    ulimit -n $ERL_MAX_PORTS 2>/dev/null
+fi
+
+# define environment variables
+BINDIR="$ROOTDIR"
+EMU=beam
+PROGNAME="$BINDIR/erl"
+PATH="$BINDIR":$PATH
+DATETIME=`date "+%Y%m%d-%H%M%S"`
+
+
+# export global variables
+export ARCHDIR
+export EMU
+export ROOTDIR
+export BINDIR
+export PROGNAME
+
+# start server
+start()
+{
+     echo ""
+     exec $ERL $NAME $ERLANG_NODE $ERLANG_OPTS \
+     -noinput -detached \
+     -env ERL_MAX_ETS_TABLES 20000 \
+     -env GETTEXT_DIR ./additionmod/erlang-gettext/priv \
+     -pa ./additionmod/erlang-gettext/ebin \
+       -pa ./core/utils/GsmOperateUtils \
+       -pa ./additionmod/erlang-gettext/include \
+       -pa ./additionmod/erlsoap/ebin \
+       -pa ./additionmod/erlsom-1.2.1/ebin \
+       -pa ./iconv \
+       -pa ./core/ebin \
+       -pa ./plugin/ebin \
+       -pa ./modules/df_snmp/ebin \
+       -pa ./modules/nmap_scan/ebin \
+       -pa ./modules/df_snmp/ebin \
+       -pa ./modules/snmp/ebin \
+       -pa ./modules/erlcmdb/ebin \
+       -pa ./ssh/ebin \
+       -pa ./nitrogen/ebin \
+       -pa ./modules/nnm/ebin  ./nitrogen/include  \
+       -pa ./rest/ebin \
+       -pa ./rest/deps \
+       -pa ./store/ebin \
+       -pa ./sec/ebin \
+       -pa ./bin \
+       -setcookie 3ren \
+       -boot start_sasl \
+       -s app_init     
+}
+
+# start interactive server
+live()
+{
+    echo "--------------------------------------------------------------------"
+    echo ""
+    echo "IMPORTANT: quikview is going to start in LIVE (interactive) mode."
+    echo "All log messages will be shown in the command shell."
+    echo "You can interact with the quikview node if you know how to use it."
+    echo "Please be extremely cautious with your actions,"
+    echo "and exit immediately if you are not completely sure."
+    echo ""
+    echo "To exit this LIVE mode and stop quikview, press:"
+    echo "  q()."
+    echo ""
+    echo "--------------------------------------------------------------------"   
+    echo ""
+    $ERL $NAME $ERLANG_NODE $ERLANG_OPTS \
+       -env ERL_MAX_ETS_TABLES 20000 \
+       -env GETTEXT_DIR ./additionmod/erlang-gettext/priv \
+       -pa ./additionmod/erlang-gettext/ebin \
+       -pa ./core/utils/GsmOperateUtils \
+       -pa ./additionmod/erlang-gettext/include \
+       -pa ./additionmod/erlsoap/ebin \
+       -pa ./additionmod/erlsom-1.2.1/ebin \
+       -pa ./iconv \
+       -pa ./core/ebin \
+       -pa ./plugin/ebin \
+       -pa ./modules/df_snmp/ebin \
+       -pa ./modules/nmap_scan/ebin \
+       -pa ./modules/df_snmp/ebin \
+       -pa ./modules/snmp/ebin \
+       -pa ./modules/erlcmdb/ebin \
+       -pa ./ssh/ebin \
+       -pa ./nitrogen/ebin \
+       -pa ./modules/nnm/ebin  ./nitrogen/include  \
+       -pa ./rest/ebin \
+       -pa ./rest/deps \
+       -pa ./store/ebin \
+       -pa ./sec/ebin \
+       -pa ./bin \
+       -setcookie 3ren \
+       -boot start_sasl \
+       -s app_init              
+}
+
+# attach to server
+debug()
+{
+    echo "--------------------------------------------------------------------"
+    echo ""
+    echo "IMPORTANT: we will attempt to attach an INTERACTIVE shell"
+    echo "to an already running quikview node."
+    echo "If an ERROR is printed, it means the connection was not succesfull."
+    echo "You can interact with the quikview node if you know how to use it."
+    echo "Please be extremely cautious with your actions,"
+    echo "and exit immediately if you are not completely sure."
+    echo ""
+    echo "To detach this shell from quikview, press:"
+    echo "  control+c, control+c"
+    echo ""
+    echo "--------------------------------------------------------------------"   
+    echo ""
+    $DBG $NAME ejabberd-dbg@${ERLANG_NODE#*@} \
+      -hidden \
+      -remsh $ERLANG_NODE
+}
+
+# stop epmd if there is no other running node
+stop_epmd()
+{
+    epmd -names | grep -q name || epmd -kill
+}
+
+# display ctl usage
+usage()
+{
+	echo ""
+	echo "Commands to start an quikview node:"
+	echo "  start  Start an quikview node in server mode"
+	echo "  debug  Attach an interactive Erlang shell to a running quikview node"
+	echo "  live   Start an quikview node in live (interactive) mode"
+	echo "  stop   stop an quikview node "
+	echo ""
+        exit
+}
+
+[ $# -lt 1 ] && usage
+
+cd "$BINDIR"
+
+case $1 in
+    start) start;;
+    debug) debug;;
+    live) live;;   
+    stop) stop_epmd;; 
+    *) usage;;
+esac

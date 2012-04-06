@@ -1,0 +1,176 @@
+=== Suite started at 2009-11-20 13:53:12
+=== Starting test, 21 test cases
+=cases        21
+=user         Administrator
+=host         huang
+=hosts        huang 
+=emulator_vsn 5.6.5
+=emulator     beam
+=otp_release  R12B
+=started      2009-11-20 13:53:12
+=case    databasecountermonitor_SUITE:init_per_suite
+=logfile databasecountermonitor_suite.init_per_suite.html
+=started 2009-11-20 13:53:12
+=ended   2009-11-20 13:53:12
+=result    ok
+=elapsed   1.0e-6
+=case    databasecountermonitor_SUITE:correct_counter
+=logfile databasecountermonitor_suite.correct_counter.html
+=started 2009-11-20 13:53:12
+=ended   2009-11-20 13:53:24
+=result    ok:[{"0","0"},
+ {"0|||cy2","0/cy2"},
+ {"0|||cy3","0/cy3"},
+ {"110","110"},
+ {"110|||cy2","110/cy2"},
+ {"110|||cy3","110/cy3"},
+ {"111","111"},
+ {"111|||cy2","111/cy2"},
+ {"111|||cy3","111/cy3"},
+ {"115","115"},
+ {"115|||cy2","115/cy2"},
+ {"115|||cy3","115/cy3"}]
+=elapsed   12.312
+=case    databasecountermonitor_SUITE:correct_value_no_cummulat_no_diveder
+=logfile databasecountermonitor_suite.correct_value_no_cummulat_no_diveder.html
+=started 2009-11-20 13:53:24
+=ended   2009-11-20 13:53:36
+=result    ok:0/cy2 = 11
+=elapsed   11.438
+=case    databasecountermonitor_SUITE:correct_value_no_diveder
+=logfile databasecountermonitor_suite.correct_value_no_diveder.html
+=started 2009-11-20 13:53:36
+=ended   2009-11-20 13:53:45
+=result    ok:0/cy2 = 0.0
+=elapsed   9.359
+=case    databasecountermonitor_SUITE:correct_value_no_cummulat
+=logfile databasecountermonitor_suite.correct_value_no_cummulat.html
+=started 2009-11-20 13:53:45
+=ended   2009-11-20 13:53:57
+=result    ok:0/cy2 = 5.5
+=elapsed   11.375
+=case    databasecountermonitor_SUITE:correct_value_no_divide_query
+=logfile databasecountermonitor_suite.correct_value_no_divide_query.html
+=started 2009-11-20 13:53:57
+=ended   2009-11-20 13:54:07
+=result    ok:0/cy2 = 1.11
+=elapsed   9.797
+=case    databasecountermonitor_SUITE:correct_value_no_cummulat_have_divide_query
+=logfile databasecountermonitor_suite.correct_value_no_cummulat_have_divide_query.html
+=started 2009-11-20 13:54:07
+=ended   2009-11-20 13:54:21
+=result    ok:0/cy2 = 0.0
+=elapsed   14.469
+=case    databasecountermonitor_SUITE:correct_value_have_divide_query
+=logfile databasecountermonitor_suite.correct_value_have_divide_query.html
+=started 2009-11-20 13:54:21
+=ended   2009-11-20 13:54:40
+=result    ok:0/cy2 = 0.0
+=elapsed   19.031
+=case    databasecountermonitor_SUITE:correct_value_no_divide_have_divide_query
+=logfile databasecountermonitor_suite.correct_value_no_divide_have_divide_query.html
+=started 2009-11-20 13:54:40
+=ended   2009-11-20 13:54:56
+=result    ok:0/cy2 = 0.0
+=elapsed   15.5
+=case    databasecountermonitor_SUITE:correct_value_no_divide_have_divide_query
+=logfile databasecountermonitor_suite.correct_value_no_divide_have_divide_query.696496.280.html
+=started 2009-11-20 13:54:56
+=ended   2009-11-20 13:55:05
+=result    ok:0/cy2 = 0.0
+=elapsed   9.265
+=case    databasecountermonitor_SUITE:error_counter_driver
+=logfile databasecountermonitor_suite.error_counter_driver.html
+=started 2009-11-20 13:55:05
+=ended   2009-11-20 13:55:05
+=result    ok:{error,"Cannot load JDBC driver class 'com.mysql.jdbc.Drive'null"}
+=elapsed   0.047
+=case    databasecountermonitor_SUITE:error_counter_url
+=logfile databasecountermonitor_suite.error_counter_url.html
+=started 2009-11-20 13:55:05
+=ended   2009-11-20 13:56:05
+=result    ok:{error,"time is out. "}
+=elapsed   60.015
+=case    databasecountermonitor_SUITE:error_counter_pquery
+=logfile databasecountermonitor_suite.error_counter_pquery.html
+=started 2009-11-20 13:56:05
+=ended   2009-11-20 13:56:15
+=result    ok:{error,"Table 'mysql.c' doesn't existno results from queryno results from query"}
+=elapsed   9.594
+=case    databasecountermonitor_SUITE:error_counter_user
+=logfile databasecountermonitor_suite.error_counter_user.html
+=started 2009-11-20 13:56:15
+=ended   2009-11-20 13:56:26
+=result    ok:{error,"Cannot create PoolableConnectionFactory (Access denied for user 'roo'@'192.168.0.82' (using password: YES))null"}
+=elapsed   11.219
+=case    databasecountermonitor_SUITE:error_counter_password
+=logfile databasecountermonitor_suite.error_counter_password.html
+=started 2009-11-20 13:56:26
+=ended   2009-11-20 13:56:38
+=result    ok:{error,"Cannot create PoolableConnectionFactory (Access denied for user 'root'@'192.168.0.82' (using password: YES))null"}
+=elapsed   11.235
+=case    databasecountermonitor_SUITE:error_counter_dquery
+=logfile databasecountermonitor_suite.error_counter_dquery.html
+=started 2009-11-20 13:56:38
+=ended   2009-11-20 13:56:47
+=result    ok:[{"0","0"},
+ {"0|||cy2","0/cy2"},
+ {"0|||cy3","0/cy3"},
+ {"110","110"},
+ {"110|||cy2","110/cy2"},
+ {"110|||cy3","110/cy3"},
+ {"111","111"},
+ {"111|||cy2","111/cy2"},
+ {"111|||cy3","111/cy3"},
+ {"115","115"},
+ {"115|||cy2","115/cy2"},
+ {"115|||cy3","115/cy3"}]
+=elapsed   9.328
+=case    databasecountermonitor_SUITE:error_value_driver
+=logfile databasecountermonitor_suite.error_value_driver.html
+=started 2009-11-20 13:56:47
+=ended   2009-11-20 13:56:49
+=result    ok:Cannot load JDBC driver class 'com.mysql.jdbc.Drive'nullCannot load JDBC driver class 'com.mysql.jdbc.Drive'null<br>Unable to retrieve counter: 0|||cy2; 
+=elapsed   2.062
+=case    databasecountermonitor_SUITE:error_value_url
+=logfile databasecountermonitor_suite.error_value_url.html
+=started 2009-11-20 13:56:49
+=ended   2009-11-20 13:57:01
+=result    ok:Cannot create PoolableConnectionFactory (Unknown database 'mysq')nullCannot create PoolableConnectionFactory (Unknown database 'mysq')null<br>Unable to retrieve counter: 0|||cy2; 
+=elapsed   11.297
+=case    databasecountermonitor_SUITE:error_value_pquery
+=logfile databasecountermonitor_suite.error_value_pquery.html
+=started 2009-11-20 13:57:01
+=ended   2009-11-20 13:57:12
+=result    ok:Table 'mysql.c' doesn't existno results from queryno results from queryTable 'mysql.c' doesn't existno results from queryno results from query<br>Unable to retrieve counter: 0|||cy2; 
+=elapsed   11.578
+=case    databasecountermonitor_SUITE:error_value_user
+=logfile databasecountermonitor_suite.error_value_user.html
+=started 2009-11-20 13:57:12
+=ended   2009-11-20 13:57:23
+=result    ok:Cannot create PoolableConnectionFactory (Access denied for user 'roo'@'192.168.0.82' (using password: YES))nullCannot create PoolableConnectionFactory (Access denied for user 'roo'@'192.168.0.82' (using password: YES))null<br>Unable to retrieve counter: 0|||cy2; 
+=elapsed   11.25
+=case    databasecountermonitor_SUITE:error_value_password
+=logfile databasecountermonitor_suite.error_value_password.html
+=started 2009-11-20 13:57:23
+=ended   2009-11-20 13:57:40
+=result    ok:Cannot create PoolableConnectionFactory (Access denied for user 'root'@'192.168.0.82' (using password: YES))nullCannot create PoolableConnectionFactory (Access denied for user 'root'@'192.168.0.82' (using password: YES))null<br>Unable to retrieve counter: 0|||cy2; 
+=elapsed   16.907
+=case    databasecountermonitor_SUITE:error_value_dquery
+=logfile databasecountermonitor_suite.error_value_dquery.html
+=started 2009-11-20 13:57:40
+=ended   2009-11-20 13:57:43
+=result    ok:Cannot load JDBC driver class 'com.mysql.jdbc.Drive'nullCannot load JDBC driver class 'com.mysql.jdbc.Drive'nullFor input string: "null"
+=elapsed   2.078
+=case    databasecountermonitor_SUITE:end_per_suite
+=logfile databasecountermonitor_suite.end_per_suite.html
+=started 2009-11-20 13:57:43
+=ended   2009-11-20 13:57:43
+=result    ok
+=elapsed   1.0e-6
+=== TEST COMPLETE, 21 ok, 0 failed of 21 test cases
+
+=finished   2009-11-20 13:57:43
+=failed     0
+=successful 21
+=skipped    0

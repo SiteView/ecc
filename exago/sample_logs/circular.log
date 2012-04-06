@@ -1,0 +1,4 @@
+2012-2-16 10:41:47:0,instance_1,Start,parse
+2012-2-16 10:41:47:0,instance_1,Parse CSV File,construct_state_machine
+2012-2-16 10:41:47:0,instance_1,Construct State Machine,define_row_format
+2012-2-16 10:41:47:0,instance_1,Define Row Format,create_event_source

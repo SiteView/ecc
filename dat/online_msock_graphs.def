@@ -1,0 +1,43 @@
+;--------------------------------
+; Mercury Interactive Sockets
+;--------------------------------
+
+;--- MIC Sockets DataPoints (FTP/SMTP/IMAP/POP3/DNS/Ping) ---
+
+[MicSocket_Client]
+GroupName=Infrastructure Resource Graphs
+GraphTitle=Network Client
+GraphXAxisName=Elapsed Time (Hour:Min:Sec)
+GraphYAxisName='          '
+XAxisLabelsStyle=RelativeTime
+MissingDataBehavior=Zero
+AggregateFunction=SumPerSec
+OfflineData=1
+OfflineGranularity=1
+DetailData=1
+ScenarioDependent=1
+MeasurementCount=9
+Measurement_0=Pings per sec,0,0
+Measurement_1=Connections per sec (Cx),1,0
+Measurement_2=Data transfer bytes per sec (Tx),2,0
+Measurement_3=Data receive bytes per sec (Rx),3,0
+Measurement_4=Accept connections per sec (Ax),4,0
+Measurement_5=SSL Connections per sec (Cx),5,0
+Measurement_6=SSL Data transfer bytes per sec (Tx),6,0
+Measurement_7=SSL Data receive bytes per sec (Rx),7,0
+Measurement_8=SSL Accept connections per sec (Ax),8,0
+datapoint_1=msock_ping
+datapoint_2=msock_conn
+datapoint_3=msock_send
+datapoint_4=msock_recv
+datapoint_5=msock_acpt
+datapoint_6=msock_ssl_conn
+datapoint_7=msock_ssl_send
+datapoint_8=msock_ssl_recv
+datapoint_9=msock_ssl_acpt
+MeasurementNames=msock_ping=Pings per sec,msock_conn=Connections per sec (Cx),msock_send=Data transfer bytes per sec (Tx),msock_recv=Data receive bytes per sec (Rx),msock_acpt=Accept connections per sec (Ax),msock_ssl_conn=SSL Connections per sec (Cx),msock_ssl_send=SSL Data transfer bytes per sec (Tx),msock_ssl_recv=SSL Data receive bytes per sec (Rx),msock_ssl_acpt=SSL Accept connections per sec (Ax)
+MaxDispMeasurments=20
+Description=Displays the rate of ICMP ping requests.
+HelpContext=
+Description=Displays the y-axis against the x-axis for network client data points.
+

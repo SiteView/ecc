@@ -1,0 +1,1794 @@
+find ./ -name "*.*"  |xargs grep -l "toto" 
+
+
+
+
+
+
+
+-----------------
+12/20/10 11:04:43 tcp 192.168.88.1.31800 -> 192.168.0.68.22 (ssh)
+siteview
+dragonflow
+
+Last login: Sun Dec 19 20:33:17 CST 2010 on /dev/pts/3 from 192.168.9.104
+*******************************************************************************
+*                                                                             *
+*                                                                             *
+*  Welcome to AIX Version 5.3!                                                *
+*                                                                             *
+*                                                                             *
+*  Please see the README file in /usr/lpp/bos for information pertinent to    *
+*  this release of the AIX Operating System.                                  *
+*                                                                             *
+*                                                                             *
+*******************************************************************************
+Could not chdir to home directory /home/siteview: A file or directory in the path name does not exist.
+exec /bin/sh -s +v
+case "`PATH=/usr/bin:/bin uname -sr 2>/dev/null`" in SunOS\ 5.1[1-9] ) [ -x /usr/bin/bash ]  &&  exec /usr/bin/bash -s +v ;; esac
+stty -echo; PS1=;PS2=;PS3=;PS4=;echo SUA `echo Rocks`
+$ $ $ SUA Rocks
+[I-0]:LOG:phase=discovery
+[I-0]:LOG:SUA_Discovery_version=1.6.1
+[I-0]:LOG:hostname=44p170
+[I-0]:LOG:uname_a='AIX 44p170 3 5 000C7B4C4C00'
+[I-0]:LOG:OS=AIX
+[I-0]:LOG:OSversion=5.3
+[I-0]:LOG:oslevel=5.3.0.0
+[I-0]:LOG:kernel-bitmode=64
+[I-0]:LOG:lslpp-bos-rte='#Fileset:Level:PTF Id:State:Type:Description:EFIX Locked /usr/lib/objrepos:bos.rte:5.3.0.60::COMMITTED:I:Base Operating System Runtime: /etc/objrepos:bos.rte:5.3.0.60::COMMITTED:I:Base Operating System Runtime:'
+[I-0]:LOG:lslpp-bos-64bit='#Fileset:Level:PTF Id:State:Type:Description:EFIX Locked /usr/lib/objrepos:bos.64bit:5.3.0.61::COMMITTED:I:Base Operating System 64 bit Runtime : /etc/objrepos:bos.64bit:5.3.0.61::COMMITTED:I:Base Operating System 64 bit Runtime :'
+[I-0]:LOG:shell2try=ksh
+[I-0]:LOG:foundshell=/usr/bin/ksh
+[I-0]:LOG:foundshell-details='-r-xr-xr-x   5 bin      bin          237804 Apr 18 2007  /usr/bin/ksh'
+[I-0]:LOG:random_nums='8119 16646 21304'
+[I-0]:LOG:foundshell-runs=1
+[I-0]:LOG:foundshell-works=1
+[I-0]:LOG:tmp-dir=/tmp
+[I-0]:LOG:256kb-free-in-tmp-dir=1
+[I-0]:LOG:SUA_PERL_BIN-setting=[value=not-set valid=0 use-sh=0]
+[I-0]:LOG:foundperl=[bin=/usr/bin/perl ver=5008 raw-ver=5.008002]
+[I-0]:LOG:foundperl-details='-rwxr-xr-x   2 root     system       140356 Apr 10 2006  /usr/bin/perl'
+[I-0]:LOG:rejected-perl-bins=
+[M-1]:DSC:method=perl
+[M-1]:DSC:bin-to-run=/usr/bin/perl
+[M-1]:DSC:error-msg=
+[I-0]:LOG:SUAversion=1.11
+[I-0]:LOG:method=perl
+[I-0]:LOG:hostname=44p170
+[I-0]:LOG:uname_a=AIX 44p170 3 5 000C7B4C4C00
+[I-0]:LOG:OS=AIX
+[I-0]:LOG:OSversion=5.3
+[M-2]:LOG:READY at 20101219-205644
+3:LOG:E-cmd-status=0
+622:BGN:uname -svr
+622:DATA:AIX 3 5
+622:END:lcnt=1
+622:END:stat=0
+623:BGN:lsattr -E -l sys0 -a realmem | awk '{print $2}'
+623:DATA:1048576
+623:END:lcnt=1
+623:END:stat=0
+624:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+624:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+624:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4225699 0 485940 0 0
+624:DATA:en0 1500 192.168.0 192.168.0.68 4225699 0 485940 0 0
+624:DATA:lo0 16896 link#1  335 0 338 0 0
+624:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+624:DATA:lo0 16896 ::1  335 0 338 0 0
+624:END:lcnt=6
+624:END:stat=0
+625:BGN:iostat -Dl 15 | while read;do [[ $REPLY = *[0-9].[0-9]* ]]||continue;set -- $REPLY;[[ -z $D1 ]]&&D1=$1;[[ $1 = $D1 ]]&&echo DISK BREAD BWRTN RPS WPS;echo $1 $5 $6 $7 ${13}|sed -e 's/\.\([0-9]\)K/\100/g' -e 's/\.\([0-9]\)M/\100000/g';done
+626:BGN:sar -d 15
+626:DATA:
+626:DATA:AIX 44p170 3 5 000C7B4C4C00    12/19/10
+626:DATA:
+626:DATA:System configuration: lcpu=1 drives=3  mode=Capped 
+626:DATA:
+626:DATA:20:56:46     device    %busy    avque    r+w/s    Kbs/s   avwait   avserv
+627:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+627:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+627:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4225708 0 485947 0 0
+627:DATA:en0 1500 192.168.0 192.168.0.68 4225708 0 485947 0 0
+627:DATA:lo0 16896 link#1  335 0 338 0 0
+627:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+627:DATA:lo0 16896 ::1  335 0 338 0 0
+627:END:lcnt=6
+627:END:stat=0
+628:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+628:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+628:DATA:/dev/hd4            65536     23264     42272      36% /
+628:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+628:DATA:/dev/hd9var         65536     47692     17844      73% /var
+628:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+628:DATA:/dev/hd1            65536       392     65144       1% /home
+628:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+628:DATA:/dev/testlv       1048576       520   1048056       1% /test
+628:END:lcnt=8
+628:END:stat=0
+629:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+629:DATA:12 0 0
+629:END:lcnt=1
+629:END:stat=0
+630:BGN:lsattr -E -l sys0 -a realmem | awk '{print $2}'
+630:DATA:1048576
+630:END:lcnt=1
+630:END:stat=0
+631:BGN:lsdev -Cc processor -S Available
+631:DATA:proc0 Available 00-00 Processor
+631:END:lcnt=1
+631:END:stat=0
+632:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+632:DATA:Total Paging Space   Percent Used
+632:DATA:      512               1
+632:END:lcnt=2
+632:END:stat=0
+633:BGN:sar -P ALL 15 | awk 'BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") > 0) print $2,$3,$4,$5,$6; else print $1,$2,$3,$4,$5}'
+634:BGN:date
+634:DATA:Sun Dec 19 20:56:47 CST 2010
+634:END:lcnt=1
+634:END:stat=0
+635:BGN:sar -b 15
+635:DATA:
+635:DATA:AIX 44p170 3 5 000C7B4C4C00    12/19/10
+635:DATA:
+635:DATA:System configuration: lcpu=1  mode=Capped 
+635:DATA:
+635:DATA:20:56:47 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+636:BGN:df -kP | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+636:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+636:DATA:/dev/hd4            65536     23264     42272      36% /
+636:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+636:DATA:/dev/hd9var         65536     47692     17844      73% /var
+636:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+636:DATA:/dev/hd1            65536       392     65144       1% /home
+636:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+636:DATA:/dev/testlv       1048576       520   1048056       1% /test
+636:END:lcnt=8
+636:END:stat=0
+637:BGN:vmstat -I 15
+638:BGN:netstat -s -p tcp  | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+638:DATA:44111961 1
+638:END:lcnt=1
+638:END:stat=0
+639:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+639:DATA:44117751 1
+639:END:lcnt=1
+639:END:stat=0
+640:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF), i++;}'
+640:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll 0
+640:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4225748 0 485978 0 0 1
+640:DATA:en0 1500 192.168.0 192.168.0.68 4225748 0 485978 0 0 2
+640:DATA:lo0 16896 link#1  335 0 338 0 0 3
+640:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0 4
+640:DATA:lo0 16896 ::1  335 0 338 0 0 5
+640:END:lcnt=6
+640:END:stat=0
+641:BGN:netstat -s -p tcp  | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+641:DATA:44113245 1
+641:END:lcnt=1
+641:END:stat=0
+642:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+642:DATA:44119035 1
+642:END:lcnt=1
+642:END:stat=0
+643:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF), i++;}'
+643:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll 0
+643:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4225757 0 485985 0 0 1
+643:DATA:en0 1500 192.168.0 192.168.0.68 4225757 0 485985 0 0 2
+643:DATA:lo0 16896 link#1  335 0 338 0 0 3
+643:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0 4
+643:DATA:lo0 16896 ::1  335 0 338 0 0 5
+643:END:lcnt=6
+643:END:stat=0
+644:BGN:vmstat 60
+645:BGN:ps -e | wc -l
+645:DATA:      80
+645:END:lcnt=1
+645:END:stat=0
+646:BGN:ps -eo "vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args" |awk '{ if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%.197s...\n", $0); else print $0 }}'
+646:DATA:  VSZ    PID   PPID PRI  %CPU     TT     ELAPSED        TIME     USER   GID NI S COMMAND
+646:DATA:  588      1      0  60   0.0      -  4-17:58:41    00:00:09     root     0 20 A /etc/init
+646:DATA:  520  57518      1  60   0.0      -  4-17:58:03    00:01:36     root     0 20 A /usr/sbin/syncd 60
+646:DATA: 1508  65726 131214  39   0.0      -  4-17:57:31    00:00:03     root     0 20 A /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+646:DATA:  428  77930 364702  60   0.0      -    01:36:24    00:00:00     root     0 20 A /usr/sbin/sftp-server
+646:DATA:  968  81992 295104  60   0.0      -  4-17:42:55    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dthelpgen_delay
+646:DATA:  308  90176      1  60   0.0      -  4-17:58:15    00:00:00     root     0 20 A /usr/dt/bin/dtlogin -daemon
+646:DATA: 2860  94292  90176  60   0.0      -  4-17:58:15    00:00:30     root     0 20 A /usr/lpp/X11/bin/X -D /usr/lib/X11//rgb -T -force :0 -auth /var/dt/A:0-rHyeaa
+646:DATA:  756 102572 192752  60   0.0      -       24:03    00:00:00 siteview     1 20 A sshd: siteview@notty
+646:DATA:  540 106564      1  60   0.0      -  4-17:58:03    00:00:00     root     0 20 A /usr/lib/errdemon
+646:DATA: 1296 110698 131214  60   0.0      -  4-17:57:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ServiceRMd
+646:DATA:  736 131214      1  60   0.0      -  4-17:57:55    00:00:00     root     0 20 A /usr/sbin/srcmstr
+646:DATA:   68 135236      1  60   0.0      -  4-17:58:02    00:00:00     root     0 20 A /usr/ccs/bin/shlap64
+646:DATA:  208 155798 131214  60   0.0      -  4-17:57:41    00:00:00     root     9 20 A /usr/sbin/qdaemon
+646:DATA:  432 159896 131214  60   0.0      -  4-17:57:51    00:00:00     root     0 20 A /usr/sbin/inetd
+646:DATA:  892 163980 131214  60   0.0      -  4-17:57:51    00:00:00     root     0 20 A /usr/sbin/portmap
+646:DATA:  700 176218 131214  60   0.0      -  4-17:57:51    00:00:07     root     0 20 A /usr/sbin/hostmibd
+646:DATA:  924 180316 131214  60   0.0      -  4-17:57:51    00:00:00     root     0 20 A /usr/sbin/snmpd
+646:DATA:  692 184414 131214  60   0.0      -  4-17:57:51    00:00:00     root     0 20 A /usr/sbin/snmpmibd
+646:DATA:  752 188512 131214  60   0.0      -  4-17:57:51    00:00:25     root     0 20 A /usr/sbin/aixmibd
+646:DATA:  500 192752      1  60   0.0      -       24:04    00:00:00     root     0 20 A sshd: siteview [priv]
+646:DATA:   92 196722      1  60   0.0      -  4-17:57:38    00:00:00     root     0 20 A /usr/sbin/uprintfd
+646:DATA:  324 200802 131214  60   0.0      -  4-17:57:51    00:00:00     root     0 20 A /usr/sbin/syslogd
+646:DATA:  984 204900 131214  60   0.0      -  4-17:57:51    00:00:23     root     0 20 A sendmail: accepting connections
+646:DATA:  980 213112      1  60   0.0      -  4-17:45:41    00:00:00     root     0 20 A /usr/dt/bin/ttsession -s
+646:DATA:  428 217262      1  60   0.0   lft0  4-17:57:34    00:00:00     root     0 20 A /usr/sbin/getty /dev/console
+646:DATA:  532 221386 295104  60   0.0      -       00:51    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _2369_1 /usr/dt/bin/dtscreen -mode blank
+646:DATA:  628 225406 131214  60   0.0      -  4-17:57:47    00:00:00     root     0 20 A /usr/sbin/muxatmd
+646:DATA:  292 229530 131214  60   0.0      -  4-17:57:45    00:00:00     root     0 20 A /usr/sbin/rpc.lockd -d 0
+646:DATA:  356 233656      1  60   0.0      -  4-17:57:44    00:00:02     root     8 20 A /usr/sbin/cron
+646:DATA:  148 237696 131214  60   0.0      -  4-17:57:47    00:00:00     root     0 20 A /usr/sbin/biod 6
+646:DATA: 1308 241798 131214  60   0.0      -  4-17:57:45    00:00:00   daemon     3 20 A /usr/sbin/rpc.statd -d 0 -t 50
+646:DATA:  268 245906 131214  60   0.0      -  4-17:57:38    00:00:00     root     0 20 A /usr/sbin/writesrv
+646:DATA: 1816 250004 131214  60   0.0      -  4-17:57:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ERrmd
+646:DATA: 1544 254102 131214  60   0.0      -  4-17:57:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.AuditRMd
+646:DATA: 1680 258192 131214  39   0.0      -  4-17:57:29    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.CSMAgentRMd
+646:DATA: 1388 266398 295104  60   0.0      -  4-17:42:55    00:02:09     root     0 20 A /usr/dt/bin/dtfile
+646:DATA:  592 270512 159896  60   0.0      -  4-17:57:20    00:00:00     root     0 20 A rpc.ttdbserver 100083 1
+646:DATA:  868 274570      1  60   0.0      -  4-17:57:34    00:03:05     root     0 20 A /usr/bin/xmwlm -L
+646:DATA:  380 278664      1  60   0.0      -  4-17:57:34    00:00:00     root     0 20 A /usr/lpp/diagnostics/bin/diagd
+646:DATA:  968 282828 295104  60   0.0      -  4-17:42:55    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dtappmgr_delay
+646:DATA: 1812 286914 295104  60   0.0      -  4-17:45:40    00:00:16     root     0 20 A dtwm
+646:DATA:  524 290830 319616  60   0.0  pts/0  4-00:56:21    00:00:00     root     0 20 A /usr/bin/ksh
+646:DATA: 1972 295104 299172  60   0.0      -  4-17:45:41    00:00:20     root     0 20 A /usr/dt/bin/dtsession
+646:DATA:  672 299172  90176  60   0.0      -  4-17:45:48    00:00:00     root     0 20 A dtlogin <:0>        -daemon
+646:DATA: 1088 303270 266398  60   0.0      -  4-17:41:06    00:00:27     root     0 20 A /usr/dt/bin/dtfile
+646:DATA: 1136 307386 315550  65   9.8      -  4-17:41:10    11:10:17     root     0 20 A /usr/dt/bin/dtaction Dtappmgr
+646:DATA:  176 311482 352306  60   0.0  pts/3       00:02    00:00:00 siteview     1 20 A sar -d 15
+646:DATA:  548 315550 282828  60   0.0      -  4-17:41:10    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /bin/sh -c sleep 5; /usr/dt/bin/dtaction Dtappmgr
+646:DATA: 1244 319616 331832  60   0.0      -  4-00:56:21    00:00:02     root     0 20 A /usr/dt/bin/dtterm
+646:DATA:  548 331832 286914  60   0.0      -  4-00:56:21    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /usr/dt/bin/dtterm
+646:DATA:  608 335920 454738  60   0.0      -       00:09    00:00:00     root     0 20 A sshd: siteview [priv]
+646:DATA:  148 340042 348294  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x acdkmqruvwy 15 2
+646:DATA:  176 348294 352306  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A sar -b 15
+646:DATA:  880 352306 442584  65   0.0  pts/3       00:09    00:00:00 siteview     1 20 A qsft-sua
+646:DATA:  148 356382 311482  60   0.0  pts/3       00:02    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x abckmqruvwy 15 2
+646:DATA:  956 364702      1  60   0.0      -    01:36:26    00:00:00     root     0 20 A sshd: root@notty
+646:DATA:  356 368790 446498  60   0.0      -       45:56    00:00:00     root     0 20 A /usr/sbin/sftp-server
+646:DATA:  148 372874 417802  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x abcdkmqrvwy 15 2
+646:DATA:37004 376940 409840  60   0.0  pts/1    01:44:40    00:00:01     root     0 20 A /bin/sh -s +v
+646:DATA:  516 381120 487432  60   0.0      -       07:31    00:00:00     root     0 20 A -ksh
+646:DATA:  308 385074 352306  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A awk BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") ...
+646:DATA:  300 389344 352306  60   0.0  pts/3       00:00    00:00:00 siteview     1 20 A awk { if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%....
+646:DATA:  960 393306      1  60   0.0      -       07:28    00:00:00     root     0 20 A sshd: root@pts/2
+646:DATA:  532 397518 393306  60   0.0  pts/2       07:26    00:00:00     root     0 20 A -ksh
+646:DATA:  244 401440 491644  60   0.0  pts/3       00:02    00:00:00     root     1 20 A iostat -Dl 15
+646:DATA:  468 405714 221386  80   0.0      -       00:51    00:00:00     root     0 30 A /usr/dt/bin/dtscreen
+646:DATA:  636 409840 159896  60   0.0      -    01:44:40    00:00:00     root     0 20 A telnetd -a
+646:DATA:  356 413902 430282  60   0.0      -       46:49    00:00:00     root     0 20 A /usr/sbin/sftp-server
+646:DATA:  180 417802 385074  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A sar -P ALL 15
+646:DATA:  212 426044 352306  60   0.0  pts/3       00:00    00:00:00     root     1 20 A vmstat 60
+646:DATA:  920 430282      1  60   0.0      -       46:50    00:00:00     root     0 20 A sshd: root@notty
+646:DATA:  224 438504 352306  60   0.0  pts/3       00:01    00:00:00     root     1 20 A vmstat -I 15
+646:DATA:  692 442584 335920  61   0.0      -       00:09    00:00:00 siteview     1 20 A sshd: siteview@pts/3
+646:DATA:  920 446498      1  60   0.0      -       45:56    00:00:00     root     0 20 A sshd: root@notty
+646:DATA:  576 454738 131214  60   0.0      -       02:10    00:00:00     root     0 20 A /usr/sbin/sshd
+646:DATA:  832 458838 389344  61   0.0  pts/3       00:00    00:00:00 siteview     0 20 A ps -eo vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args
+646:DATA:  356 462904 102572  60   0.0      -       24:03    00:00:00 siteview     1 20 A /usr/sbin/sftp-server
+646:DATA:  920 487432      1  60   0.0      -       07:32    00:00:00     root     0 20 A sshd: root@notty
+646:DATA:  480 491644 352306  60   0.0  pts/3       00:02    00:00:00 siteview     1 20 A sh -c iostat -Dl 15 | while read;do [[ $REPLY = *[0-9].[0-9]* ]]||continue;set -- $REPLY;[[ -z $D1 ]]&&D1=$1;[[ $1 =...
+647:BGN:lsdev -Cc processor -S Available
+647:DATA:proc0 Available 00-00 Processor
+646:END:lcnt=80
+646:END:stat=0
+647:END:lcnt=1
+647:END:stat=0
+648:BGN:vmstat 15
+649:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+649:DATA:Total Paging Space   Percent Used
+649:DATA:      512               1
+649:END:lcnt=2
+649:END:stat=0
+650:BGN:uptime
+650:DATA:  08:56PM   up 4 days,  17:58,  5 users,  load average: 1.00, 1.02, 1.04
+650:END:lcnt=1
+650:END:stat=0
+651:BGN:who -u
+651:DATA:root        lft0        Dec 15 03:11     old     299172                  
+651:DATA:root        pts/0       Dec 15 20:00     old     290830  (:0.0)          
+651:DATA:root        pts/1       Dec 19 19:12     1:44    376940  (192.168.9.218) 
+651:DATA:root        pts/2       Dec 19 20:49     0:04    397518  (192.168.9.218) 
+651:DATA:siteview    pts/3       Dec 19 20:56      .      442584  (192.168.9.104) 
+651:END:lcnt=5
+651:END:stat=0
+652:BGN:who |  wc -l
+652:DATA:       5
+652:END:lcnt=1
+652:END:stat=0
+653:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+653:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+653:END:lcnt=1
+653:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+654:BGN:date
+654:DATA:Sun Dec 19 20:57:01 CST 2010
+626:DATA:
+626:DATA:20:57:01     hdisk0      0      0.0        0        0      0.0      0.0
+626:DATA:             hdisk1      0      0.0        0        0      0.0      0.0
+626:DATA:                cd0      0      0.0        0        0      0.0      0.0
+626:DATA:
+654:END:lcnt=1
+654:END:stat=0
+626:END:lcnt=11
+626:END:stat=0
+655:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+655:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+655:DATA:/dev/hd4            65536     23264     42272      36% /
+655:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+655:DATA:/dev/hd9var         65536     47692     17844      73% /var
+655:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+655:DATA:/dev/hd1            65536       392     65144       1% /home
+655:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+655:DATA:/dev/testlv       1048576       520   1048056       1% /test
+655:END:lcnt=8
+655:END:stat=0
+656:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+656:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+656:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4225909 0 486050 0 0
+656:DATA:en0 1500 192.168.0 192.168.0.68 4225909 0 486050 0 0
+656:DATA:lo0 16896 link#1  335 0 338 0 0
+656:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+656:DATA:lo0 16896 ::1  335 0 338 0 0
+656:END:lcnt=6
+656:END:stat=0
+657:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+657:DATA:12 0 0
+657:END:lcnt=1
+657:END:stat=0
+658:BGN:ps -e | wc -l
+658:DATA:      79
+658:END:lcnt=1
+658:END:stat=0
+659:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+659:DATA:Total Paging Space   Percent Used
+659:DATA:      512               1
+659:END:lcnt=2
+659:END:stat=0
+660:BGN:uptime
+660:DATA:  08:57PM   up 4 days,  17:58,  5 users,  load average: 1.00, 1.02, 1.04
+660:END:lcnt=1
+660:END:stat=0
+661:BGN:who |  wc -l
+661:DATA:       5
+661:END:lcnt=1
+661:END:stat=0
+662:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+662:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+662:END:lcnt=1
+662:END:stat=0
+633:DATA:CPU %USR %SYS %WIO %IDLE
+633:DATA:0 10 8 0 82
+633:END:lcnt=2
+633:END:stat=0
+635:DATA:20:57:02       0       0       0       0       0       0       0       0
+635:END:lcnt=7
+635:END:stat=0
+637:DATA:
+637:DATA:System Configuration: lcpu=1 mem=1024MB
+637:DATA:
+637:DATA:  kthr     memory              page              faults        cpu    
+637:DATA:-------- ----------- ------------------------ ------------ -----------
+637:DATA: r  b  p   avm   fre  fi  fo  pi  po  fr   sr  in   sy  cs us sy id wa
+637:DATA: 1  0  0 87022 157869   0   0   0   0   0    0  13 18467 308  7  9 84  0
+648:DATA:
+648:DATA:System Configuration: lcpu=1 mem=1024MB
+648:DATA:
+648:DATA:kthr    memory              page              faults        cpu    
+648:DATA:----- ----------- ------------------------ ------------ -----------
+648:DATA: r  b   avm   fre  re  pi  po  fr   sr  cy  in   sy  cs us sy id wa
+648:DATA: 1  0 87022 157869   0   0   0   0    0   0  11 18698 275  7  7 86  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+663:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+663:DATA:12 0 0
+663:END:lcnt=1
+663:END:stat=0
+664:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+664:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+664:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226070 0 486084 0 0
+664:DATA:en0 1500 192.168.0 192.168.0.68 4226070 0 486084 0 0
+664:DATA:lo0 16896 link#1  335 0 338 0 0
+664:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+664:DATA:lo0 16896 ::1  335 0 338 0 0
+664:END:lcnt=6
+664:END:stat=0
+665:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+665:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+665:DATA:/dev/hd4            65536     23264     42272      36% /
+665:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+665:DATA:/dev/hd9var         65536     47692     17844      73% /var
+665:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+665:DATA:/dev/hd1            65536       392     65144       1% /home
+665:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+665:DATA:/dev/testlv       1048576       520   1048056       1% /test
+665:END:lcnt=8
+665:END:stat=0
+666:BGN:date
+666:DATA:Sun Dec 19 20:57:16 CST 2010
+666:END:lcnt=1
+666:END:stat=0
+667:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+667:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+667:END:lcnt=1
+667:END:stat=0
+668:BGN:who |  wc -l
+668:DATA:       5
+668:END:lcnt=1
+668:END:stat=0
+669:BGN:uptime
+669:DATA:  08:57PM   up 4 days,  17:59,  5 users,  load average: 1.00, 1.02, 1.04
+669:END:lcnt=1
+669:END:stat=0
+670:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+670:DATA:Total Paging Space   Percent Used
+670:DATA:      512               1
+670:END:lcnt=2
+670:END:stat=0
+671:BGN:ps -e | wc -l
+671:DATA:      76
+671:END:lcnt=1
+671:END:stat=0
+637:DATA: 1  0  0 87228 157663   0   0   0   0   0    0  10 18374 260  9  9 82  0
+648:DATA: 1  0 87227 157664   0   0   0   0    0   0  10 18390 258  9  8 83  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+672:BGN:ps -e | wc -l
+672:DATA:      76
+672:END:lcnt=1
+672:END:stat=0
+673:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+673:DATA:Total Paging Space   Percent Used
+673:DATA:      512               1
+673:END:lcnt=2
+673:END:stat=0
+674:BGN:uptime
+674:DATA:  08:57PM   up 4 days,  17:59,  5 users,  load average: 1.00, 1.02, 1.04
+674:END:lcnt=1
+674:END:stat=0
+675:BGN:who |  wc -l
+675:DATA:       5
+675:END:lcnt=1
+675:END:stat=0
+676:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+676:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+676:END:lcnt=1
+676:END:stat=0
+677:BGN:date
+677:DATA:Sun Dec 19 20:57:31 CST 2010
+677:END:lcnt=1
+677:END:stat=0
+678:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+678:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+678:DATA:/dev/hd4            65536     23264     42272      36% /
+678:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+678:DATA:/dev/hd9var         65536     47692     17844      73% /var
+678:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+678:DATA:/dev/hd1            65536       392     65144       1% /home
+678:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+678:DATA:/dev/testlv       1048576       520   1048056       1% /test
+678:END:lcnt=8
+678:END:stat=0
+679:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+679:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+679:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226254 0 486131 0 0
+679:DATA:en0 1500 192.168.0 192.168.0.68 4226254 0 486131 0 0
+679:DATA:lo0 16896 link#1  335 0 338 0 0
+679:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+679:DATA:lo0 16896 ::1  335 0 338 0 0
+679:END:lcnt=6
+679:END:stat=0
+680:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+680:DATA:12 0 0
+680:END:lcnt=1
+680:END:stat=0
+637:DATA: 1  0  0 87226 157665   0   0   0   0   0    0  11 18444 258  6  9 84  0
+648:DATA: 1  0 87226 157665   0   0   0   0    0   0  11 18441 258  6  9 84  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 16900 0.0 3.7
+625:DATA:hdisk1 0.0 273.2 0.0 0.1
+625:DATA:cd0 0.0 0.0 0.0 0.0
+681:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+681:DATA:12 0 0
+681:END:lcnt=1
+681:END:stat=0
+682:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+682:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+682:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226407 0 486146 0 0
+682:DATA:en0 1500 192.168.0 192.168.0.68 4226407 0 486146 0 0
+682:DATA:lo0 16896 link#1  335 0 338 0 0
+682:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+682:DATA:lo0 16896 ::1  335 0 338 0 0
+682:END:lcnt=6
+682:END:stat=0
+683:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+683:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+683:DATA:/dev/hd4            65536     23264     42272      36% /
+683:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+683:DATA:/dev/hd9var         65536     47692     17844      73% /var
+683:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+683:DATA:/dev/hd1            65536       392     65144       1% /home
+683:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+683:DATA:/dev/testlv       1048576       520   1048056       1% /test
+683:END:lcnt=8
+683:END:stat=0
+684:BGN:date
+684:DATA:Sun Dec 19 20:57:46 CST 2010
+684:END:lcnt=1
+684:END:stat=0
+685:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+685:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+685:END:lcnt=1
+685:END:stat=0
+686:BGN:who |  wc -l
+686:DATA:       5
+686:END:lcnt=1
+686:END:stat=0
+687:BGN:uptime
+687:DATA:  08:57PM   up 4 days,  17:59,  5 users,  load average: 1.00, 1.02, 1.04
+687:END:lcnt=1
+687:END:stat=0
+688:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+688:DATA:Total Paging Space   Percent Used
+688:DATA:      512               1
+688:END:lcnt=2
+688:END:stat=0
+689:BGN:ps -e | wc -l
+689:DATA:      74
+689:END:lcnt=1
+689:END:stat=0
+690:BGN:sar -P ALL 15 | awk 'BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") > 0) print $2,$3,$4,$5,$6; else print $1,$2,$3,$4,$5}'
+691:BGN:sar -b 15
+691:DATA:
+691:DATA:AIX 44p170 3 5 000C7B4C4C00    12/19/10
+691:DATA:
+691:DATA:System configuration: lcpu=1  mode=Capped 
+691:DATA:
+691:DATA:20:57:47 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+692:BGN:df -kP | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+692:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+692:DATA:/dev/hd4            65536     23264     42272      36% /
+692:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+692:DATA:/dev/hd9var         65536     47692     17844      73% /var
+692:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+692:DATA:/dev/hd1            65536       392     65144       1% /home
+692:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+692:DATA:/dev/testlv       1048576       520   1048056       1% /test
+692:END:lcnt=8
+692:END:stat=0
+693:BGN:netstat -s -p tcp  | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+693:DATA:44143197 1
+693:END:lcnt=1
+693:END:stat=0
+637:DATA: 1  0  0 87251 157640   0   0   0   0   0    0  16 18345 266  6  6 88  0
+694:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+694:DATA:44149087 1
+694:END:lcnt=1
+694:END:stat=0
+695:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF), i++;}'
+695:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll 0
+695:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226449 0 486180 0 0 1
+695:DATA:en0 1500 192.168.0 192.168.0.68 4226449 0 486180 0 0 2
+695:DATA:lo0 16896 link#1  335 0 338 0 0 3
+695:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0 4
+695:DATA:lo0 16896 ::1  335 0 338 0 0 5
+695:END:lcnt=6
+695:END:stat=0
+696:BGN:ps -eo "vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args" |awk '{ if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%.197s...\n", $0); else print $0 }}'
+696:DATA:  VSZ    PID   PPID PRI  %CPU     TT     ELAPSED        TIME     USER   GID NI S COMMAND
+696:DATA:  588      1      0  60   0.0      -  4-17:59:41    00:00:09     root     0 20 A /etc/init
+696:DATA:  520  57518      1  60   0.0      -  4-17:59:03    00:01:36     root     0 20 A /usr/sbin/syncd 60
+696:DATA: 1508  65726 131214  39   0.0      -  4-17:58:31    00:00:03     root     0 20 A /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+696:DATA:  428  77930 364702  60   0.0      -    01:37:24    00:00:00     root     0 20 A /usr/sbin/sftp-server
+696:DATA:  968  81992 295104  60   0.0      -  4-17:43:55    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dthelpgen_delay
+696:DATA:  308  90176      1  60   0.0      -  4-17:59:15    00:00:00     root     0 20 A /usr/dt/bin/dtlogin -daemon
+696:DATA: 2860  94292  90176  60   0.0      -  4-17:59:15    00:00:30     root     0 20 A /usr/lpp/X11/bin/X -D /usr/lib/X11//rgb -T -force :0 -auth /var/dt/A:0-rHyeaa
+696:DATA:  756 102572 192752  60   0.0      -       25:03    00:00:00 siteview     1 20 A sshd: siteview@notty
+696:DATA:  540 106564      1  60   0.0      -  4-17:59:03    00:00:00     root     0 20 A /usr/lib/errdemon
+696:DATA: 1296 110698 131214  60   0.0      -  4-17:58:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ServiceRMd
+696:DATA:  736 131214      1  60   0.0      -  4-17:58:55    00:00:00     root     0 20 A /usr/sbin/srcmstr
+696:DATA:   68 135236      1  60   0.0      -  4-17:59:02    00:00:00     root     0 20 A /usr/ccs/bin/shlap64
+696:DATA:  208 155798 131214  60   0.0      -  4-17:58:41    00:00:00     root     9 20 A /usr/sbin/qdaemon
+696:DATA:  432 159896 131214  60   0.0      -  4-17:58:51    00:00:00     root     0 20 A /usr/sbin/inetd
+696:DATA:  892 163980 131214  60   0.0      -  4-17:58:51    00:00:00     root     0 20 A /usr/sbin/portmap
+696:DATA:  700 176218 131214  60   0.0      -  4-17:58:51    00:00:07     root     0 20 A /usr/sbin/hostmibd
+696:DATA:  924 180316 131214  60   0.0      -  4-17:58:51    00:00:00     root     0 20 A /usr/sbin/snmpd
+696:DATA:  692 184414 131214  60   0.0      -  4-17:58:51    00:00:00     root     0 20 A /usr/sbin/snmpmibd
+696:DATA:  752 188512 131214  60   0.0      -  4-17:58:51    00:00:25     root     0 20 A /usr/sbin/aixmibd
+696:DATA:  500 192752      1  60   0.0      -       25:04    00:00:00     root     0 20 A sshd: siteview [priv]
+696:DATA:   92 196722      1  60   0.0      -  4-17:58:38    00:00:00     root     0 20 A /usr/sbin/uprintfd
+696:DATA:  324 200802 131214  60   0.0      -  4-17:58:51    00:00:00     root     0 20 A /usr/sbin/syslogd
+696:DATA:  984 204900 131214  60   0.0      -  4-17:58:51    00:00:23     root     0 20 A sendmail: accepting connections
+696:DATA:  980 213112      1  60   0.0      -  4-17:46:41    00:00:00     root     0 20 A /usr/dt/bin/ttsession -s
+696:DATA:  428 217262      1  60   0.0   lft0  4-17:58:34    00:00:00     root     0 20 A /usr/sbin/getty /dev/console
+696:DATA:  548 221386 295104  60   0.0      -       01:51    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _2369_1 /usr/dt/bin/dtscreen -mode blank
+696:DATA:  628 225406 131214  60   0.0      -  4-17:58:47    00:00:00     root     0 20 A /usr/sbin/muxatmd
+696:DATA:  292 229530 131214  60   0.0      -  4-17:58:45    00:00:00     root     0 20 A /usr/sbin/rpc.lockd -d 0
+696:DATA:  356 233656      1  60   0.0      -  4-17:58:44    00:00:02     root     8 20 A /usr/sbin/cron
+696:DATA:  148 237696 131214  60   0.0      -  4-17:58:47    00:00:00     root     0 20 A /usr/sbin/biod 6
+696:DATA: 1308 241798 131214  60   0.0      -  4-17:58:45    00:00:00   daemon     3 20 A /usr/sbin/rpc.statd -d 0 -t 50
+696:DATA:  268 245906 131214  60   0.0      -  4-17:58:38    00:00:00     root     0 20 A /usr/sbin/writesrv
+696:DATA: 1816 250004 131214  60   0.0      -  4-17:58:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ERrmd
+696:DATA: 1544 254102 131214  60   0.0      -  4-17:58:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.AuditRMd
+696:DATA: 1680 258192 131214  39   0.0      -  4-17:58:29    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.CSMAgentRMd
+696:DATA: 1388 266398 295104  60   0.0      -  4-17:43:55    00:02:09     root     0 20 A /usr/dt/bin/dtfile
+696:DATA:  592 270512 159896  60   0.0      -  4-17:58:20    00:00:00     root     0 20 A rpc.ttdbserver 100083 1
+696:DATA:  868 274570      1  60   0.0      -  4-17:58:34    00:03:05     root     0 20 A /usr/bin/xmwlm -L
+696:DATA:  380 278664      1  60   0.0      -  4-17:58:34    00:00:00     root     0 20 A /usr/lpp/diagnostics/bin/diagd
+696:DATA:  968 282828 295104  60   0.0      -  4-17:43:55    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dtappmgr_delay
+696:DATA: 1812 286914 295104  60   0.0      -  4-17:46:40    00:00:16     root     0 20 A dtwm
+696:DATA:  524 290830 319616  60   0.0  pts/0  4-00:57:21    00:00:00     root     0 20 A /usr/bin/ksh
+696:DATA: 1972 295104 299172  60   0.0      -  4-17:46:41    00:00:20     root     0 20 A /usr/dt/bin/dtsession
+696:DATA:  672 299172  90176  60   0.0      -  4-17:46:48    00:00:00     root     0 20 A dtlogin <:0>        -daemon
+696:DATA: 1088 303270 266398  60   0.0      -  4-17:42:06    00:00:27     root     0 20 A /usr/dt/bin/dtfile
+696:DATA: 1136 307386 315550  64   9.8      -  4-17:42:10    11:10:23     root     0 20 A /usr/dt/bin/dtaction Dtappmgr
+696:DATA:  300 311508 352306  61   0.0  pts/3       00:00    00:00:00 siteview     1 20 A awk { if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%....
+696:DATA:  548 315550 282828  60   0.0      -  4-17:42:10    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /bin/sh -c sleep 5; /usr/dt/bin/dtaction Dtappmgr
+696:DATA: 1244 319616 331832  60   0.0      -  4-00:57:21    00:00:02     root     0 20 A /usr/dt/bin/dtterm
+696:DATA:  548 331832 286914  60   0.0      -  4-00:57:21    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /usr/dt/bin/dtterm
+696:DATA:  608 335920 454738  60   0.0      -       01:09    00:00:00     root     0 20 A sshd: siteview [priv]
+696:DATA:  308 340070 352306  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A awk BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") ...
+696:DATA:  180 348318 340070  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A sar -P ALL 15
+696:DATA:  884 352306 442584  64   1.4  pts/3       01:09    00:00:01 siteview     1 20 A qsft-sua
+696:DATA:  956 364702      1  60   0.0      -    01:37:26    00:00:00     root     0 20 A sshd: root@notty
+696:DATA:  356 368790 446498  60   0.0      -       46:56    00:00:00     root     0 20 A /usr/sbin/sftp-server
+696:DATA:  148 372876 385122  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x acdkmqruvwy 15 2
+696:DATA:37004 376940 409840  60   0.0  pts/1    01:45:40    00:00:01     root     0 20 A /bin/sh -s +v
+696:DATA:  516 381120 487432  60   0.0      -       08:31    00:00:00     root     0 20 A -ksh
+696:DATA:  176 385122 352306  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A sar -b 15
+696:DATA:  760 389130 311508  61   0.0  pts/3       00:00    00:00:00 siteview     0 20 A ps -eo vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args
+696:DATA:  960 393306      1  60   0.0      -       08:28    00:00:00     root     0 20 A sshd: root@pts/2
+696:DATA:  532 397518 393306  60   0.0  pts/2       08:26    00:00:00     root     0 20 A -ksh
+696:DATA:  252 401440 491644  60   0.0  pts/3       01:02    00:00:00     root     1 20 A iostat -Dl 15
+696:DATA:  468 405714 221386  80   0.0      -       01:51    00:00:00     root     0 30 A /usr/dt/bin/dtscreen
+696:DATA:  636 409840 159896  60   0.0      -    01:45:40    00:00:00     root     0 20 A telnetd -a
+696:DATA:  356 413902 430282  60   0.0      -       47:49    00:00:00     root     0 20 A /usr/sbin/sftp-server
+696:DATA:  148 417848 348318  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x abcdkmqrvwy 15 2
+696:DATA:  212 426044 352306  60   0.0  pts/3       01:00    00:00:00     root     1 20 A vmstat 60
+696:DATA:  920 430282      1  60   0.0      -       47:50    00:00:00     root     0 20 A sshd: root@notty
+696:DATA:  224 438504 352306  60   0.0  pts/3       01:01    00:00:00     root     1 20 A vmstat -I 15
+696:DATA:  692 442584 335920  60   0.0      -       01:09    00:00:00 siteview     1 20 A sshd: siteview@pts/3
+696:DATA:  920 446498      1  60   0.0      -       46:56    00:00:00     root     0 20 A sshd: root@notty
+696:DATA:  576 454738 131214  60   0.0      -       03:10    00:00:00     root     0 20 A /usr/sbin/sshd
+696:DATA:  212 458842 352306  60   0.0  pts/3       01:00    00:00:00     root     1 20 A vmstat 15
+696:DATA:  356 462904 102572  60   0.0      -       25:03    00:00:00 siteview     1 20 A /usr/sbin/sftp-server
+696:DATA:  920 487432      1  60   0.0      -       08:32    00:00:00     root     0 20 A sshd: root@notty
+696:DATA:  488 491644 352306  60   0.0  pts/3       01:02    00:00:00 siteview     1 20 A sh -c iostat -Dl 15 | while read;do [[ $REPLY = *[0-9].[0-9]* ]]||continue;set -- $REPLY;[[ -z $D1 ]]&&D1=$1;[[ $1 =...
+696:END:lcnt=79
+696:END:stat=0
+697:BGN:who -u
+697:DATA:root        lft0        Dec 15 03:11     old     299172                  
+697:DATA:root        pts/0       Dec 15 20:00     old     290830  (:0.0)          
+697:DATA:root        pts/1       Dec 19 19:12     1:45    376940  (192.168.9.218) 
+697:DATA:root        pts/2       Dec 19 20:49     0:05    397518  (192.168.9.218) 
+697:DATA:siteview    pts/3       Dec 19 20:56      .      442584  (192.168.9.104) 
+697:END:lcnt=5
+697:END:stat=0
+644:DATA:
+644:DATA:System Configuration: lcpu=1 mem=1024MB
+644:DATA:
+644:DATA:kthr    memory              page              faults        cpu    
+644:DATA:----- ----------- ------------------------ ------------ -----------
+644:DATA: r  b   avm   fre  re  pi  po  fr   sr  cy  in   sy  cs us sy id wa
+644:DATA: 1  0 87245 157646   0   0   0   0    0   0  12 18440 277  7  8 85  0
+648:DATA: 1  0 87246 157645   0   0   0   0    0   0  17 18264 297  6  6 87  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+698:BGN:ps -e | wc -l
+698:DATA:      79
+698:END:lcnt=1
+698:END:stat=0
+699:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+699:DATA:Total Paging Space   Percent Used
+699:DATA:      512               1
+699:END:lcnt=2
+699:END:stat=0
+700:BGN:uptime
+700:DATA:  08:58PM   up 4 days,  17:59,  5 users,  load average: 1.00, 1.02, 1.04
+700:END:lcnt=1
+700:END:stat=0
+701:BGN:who |  wc -l
+701:DATA:       5
+701:END:lcnt=1
+701:END:stat=0
+702:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+702:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+702:END:lcnt=1
+702:END:stat=0
+703:BGN:date
+703:DATA:Sun Dec 19 20:58:01 CST 2010
+703:END:lcnt=1
+703:END:stat=0
+704:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+704:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+704:DATA:/dev/hd4            65536     23264     42272      36% /
+704:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+704:DATA:/dev/hd9var         65536     47692     17844      73% /var
+704:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+704:DATA:/dev/hd1            65536       392     65144       1% /home
+704:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+704:DATA:/dev/testlv       1048576       520   1048056       1% /test
+704:END:lcnt=8
+704:END:stat=0
+705:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+705:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+705:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226631 0 486242 0 0
+705:DATA:en0 1500 192.168.0 192.168.0.68 4226631 0 486242 0 0
+705:DATA:lo0 16896 link#1  335 0 338 0 0
+705:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+705:DATA:lo0 16896 ::1  335 0 338 0 0
+705:END:lcnt=6
+705:END:stat=0
+706:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+706:DATA:12 0 0
+706:END:lcnt=1
+706:END:stat=0
+690:DATA:CPU %USR %SYS %WIO %IDLE
+690:DATA:0 9 6 0 85
+690:END:lcnt=2
+690:END:stat=0
+691:DATA:20:58:02       0       0       0       0       0       0       0       0
+691:END:lcnt=7
+691:END:stat=0
+637:DATA: 1  0  0 87013 157878   0   0   0   0   0    0  13 18280 291  7  9 84  0
+648:DATA: 1  0 87013 157878   0   0   0   0    0   0  11 18364 261  7  9 85  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 1400 0.0 0.3
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+707:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+707:DATA:12 0 0
+707:END:lcnt=1
+707:END:stat=0
+708:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+708:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+708:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226781 0 486260 0 0
+708:DATA:en0 1500 192.168.0 192.168.0.68 4226781 0 486260 0 0
+708:DATA:lo0 16896 link#1  335 0 338 0 0
+708:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+708:DATA:lo0 16896 ::1  335 0 338 0 0
+708:END:lcnt=6
+708:END:stat=0
+709:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+709:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+709:DATA:/dev/hd4            65536     23268     42268      36% /
+709:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+709:DATA:/dev/hd9var         65536     47692     17844      73% /var
+709:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+709:DATA:/dev/hd1            65536       392     65144       1% /home
+709:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+709:DATA:/dev/testlv       1048576       520   1048056       1% /test
+709:END:lcnt=8
+709:END:stat=0
+710:BGN:date
+710:DATA:Sun Dec 19 20:58:16 CST 2010
+710:END:lcnt=1
+710:END:stat=0
+711:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+711:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+711:END:lcnt=1
+711:END:stat=0
+712:BGN:who |  wc -l
+712:DATA:       5
+712:END:lcnt=1
+712:END:stat=0
+713:BGN:uptime
+713:DATA:  08:58PM   up 4 days, 18 hrs,  5 users,  load average: 1.00, 1.02, 1.04
+713:END:lcnt=1
+713:END:stat=0
+714:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+714:DATA:Total Paging Space   Percent Used
+714:DATA:      512               1
+714:END:lcnt=2
+714:END:stat=0
+715:BGN:ps -e | wc -l
+715:DATA:      74
+715:END:lcnt=1
+715:END:stat=0
+637:DATA: 1  0  0 87018 157872   0   0   0   0   0    0  11 18404 257  8  8 84  0
+648:DATA: 1  0 87018 157872   0   0   0   0    0   0  11 18367 256  8  8 84  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+716:BGN:ps -e | wc -l
+716:DATA:      74
+716:END:lcnt=1
+716:END:stat=0
+717:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+717:DATA:Total Paging Space   Percent Used
+717:DATA:      512               1
+717:END:lcnt=2
+717:END:stat=0
+718:BGN:uptime
+718:DATA:  08:58PM   up 4 days, 18 hrs,  5 users,  load average: 1.00, 1.02, 1.03
+718:END:lcnt=1
+718:END:stat=0
+719:BGN:who |  wc -l
+719:DATA:       5
+719:END:lcnt=1
+719:END:stat=0
+720:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+720:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+720:END:lcnt=1
+720:END:stat=0
+721:BGN:date
+721:DATA:Sun Dec 19 20:58:32 CST 2010
+721:END:lcnt=1
+721:END:stat=0
+722:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+722:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+722:DATA:/dev/hd4            65536     23268     42268      36% /
+722:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+722:DATA:/dev/hd9var         65536     47692     17844      73% /var
+722:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+722:DATA:/dev/hd1            65536       392     65144       1% /home
+722:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+722:DATA:/dev/testlv       1048576       520   1048056       1% /test
+722:END:lcnt=8
+722:END:stat=0
+723:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+723:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+723:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4226980 0 486312 0 0
+723:DATA:en0 1500 192.168.0 192.168.0.68 4226980 0 486312 0 0
+723:DATA:lo0 16896 link#1  335 0 338 0 0
+723:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+723:DATA:lo0 16896 ::1  335 0 338 0 0
+723:END:lcnt=6
+723:END:stat=0
+724:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+724:DATA:12 0 0
+724:END:lcnt=1
+724:END:stat=0
+637:DATA: 1  0  0 87011 157879   0   0   0   0   0    0  11 18480 259  6  6 89  0
+648:DATA: 1  0 87011 157879   0   0   0   0    0   0  11 18478 258  6  6 89  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 1600 0.0 0.4
+625:DATA:hdisk1 0.0 273.2 0.0 0.1
+625:DATA:cd0 0.0 0.0 0.0 0.0
+725:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+725:DATA:12 0 0
+725:END:lcnt=1
+725:END:stat=0
+726:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+726:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+726:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227137 0 486329 0 0
+726:DATA:en0 1500 192.168.0 192.168.0.68 4227137 0 486329 0 0
+726:DATA:lo0 16896 link#1  335 0 338 0 0
+726:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+726:DATA:lo0 16896 ::1  335 0 338 0 0
+726:END:lcnt=6
+726:END:stat=0
+727:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+727:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+727:DATA:/dev/hd4            65536     23268     42268      36% /
+727:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+727:DATA:/dev/hd9var         65536     47692     17844      73% /var
+727:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+727:DATA:/dev/hd1            65536       392     65144       1% /home
+727:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+727:DATA:/dev/testlv       1048576       520   1048056       1% /test
+727:END:lcnt=8
+727:END:stat=0
+728:BGN:date
+728:DATA:Sun Dec 19 20:58:46 CST 2010
+728:END:lcnt=1
+728:END:stat=0
+729:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+729:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+729:END:lcnt=1
+729:END:stat=0
+730:BGN:who |  wc -l
+730:DATA:       5
+730:END:lcnt=1
+730:END:stat=0
+731:BGN:uptime
+731:DATA:  08:58PM   up 4 days, 18 hrs,  5 users,  load average: 1.00, 1.02, 1.03
+731:END:lcnt=1
+731:END:stat=0
+732:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+732:DATA:Total Paging Space   Percent Used
+732:DATA:      512               1
+732:END:lcnt=2
+732:END:stat=0
+733:BGN:ps -e | wc -l
+733:DATA:      74
+733:END:lcnt=1
+733:END:stat=0
+734:BGN:who -u
+734:DATA:root        lft0        Dec 15 03:11     old     299172                  
+734:DATA:root        pts/0       Dec 15 20:00     old     290830  (:0.0)          
+734:DATA:root        pts/1       Dec 19 19:12     1:46    376940  (192.168.9.218) 
+734:DATA:root        pts/2       Dec 19 20:49     0:06    397518  (192.168.9.218) 
+734:DATA:siteview    pts/3       Dec 19 20:56      .      442584  (192.168.9.104) 
+734:END:lcnt=5
+734:END:stat=0
+735:BGN:ps -eo "vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args" |awk '{ if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%.197s...\n", $0); else print $0 }}'
+735:DATA:  VSZ    PID   PPID PRI  %CPU     TT     ELAPSED        TIME     USER   GID NI S COMMAND
+735:DATA:  588      1      0  60   0.0      -  4-18:00:40    00:00:09     root     0 20 A /etc/init
+735:DATA:  520  57518      1  60   0.0      -  4-18:00:02    00:01:37     root     0 20 A /usr/sbin/syncd 60
+735:DATA: 1508  65726 131214  39   0.0      -  4-17:59:30    00:00:03     root     0 20 A /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+735:DATA:  428  77930 364702  60   0.0      -    01:38:23    00:00:00     root     0 20 A /usr/sbin/sftp-server
+735:DATA:  968  81992 295104  60   0.0      -  4-17:44:54    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dthelpgen_delay
+735:DATA:  308  90176      1  60   0.0      -  4-18:00:14    00:00:00     root     0 20 A /usr/dt/bin/dtlogin -daemon
+735:DATA: 2860  94292  90176  60   0.0      -  4-18:00:14    00:00:30     root     0 20 A /usr/lpp/X11/bin/X -D /usr/lib/X11//rgb -T -force :0 -auth /var/dt/A:0-rHyeaa
+735:DATA:  756 102572 192752  60   0.0      -       26:02    00:00:00 siteview     1 20 A sshd: siteview@notty
+735:DATA:  540 106564      1  60   0.0      -  4-18:00:02    00:00:00     root     0 20 A /usr/lib/errdemon
+735:DATA: 1296 110698 131214  60   0.0      -  4-17:59:26    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ServiceRMd
+735:DATA:  736 131214      1  60   0.0      -  4-17:59:54    00:00:00     root     0 20 A /usr/sbin/srcmstr
+735:DATA:   68 135236      1  60   0.0      -  4-18:00:01    00:00:00     root     0 20 A /usr/ccs/bin/shlap64
+735:DATA:  208 155798 131214  60   0.0      -  4-17:59:40    00:00:00     root     9 20 A /usr/sbin/qdaemon
+735:DATA:  432 159896 131214  60   0.0      -  4-17:59:50    00:00:00     root     0 20 A /usr/sbin/inetd
+735:DATA:  892 163980 131214  60   0.0      -  4-17:59:50    00:00:00     root     0 20 A /usr/sbin/portmap
+735:DATA:  700 176218 131214  60   0.0      -  4-17:59:50    00:00:07     root     0 20 A /usr/sbin/hostmibd
+735:DATA:  924 180316 131214  60   0.0      -  4-17:59:50    00:00:00     root     0 20 A /usr/sbin/snmpd
+735:DATA:  692 184414 131214  60   0.0      -  4-17:59:50    00:00:00     root     0 20 A /usr/sbin/snmpmibd
+735:DATA:  752 188512 131214  60   0.0      -  4-17:59:50    00:00:25     root     0 20 A /usr/sbin/aixmibd
+735:DATA:  500 192752      1  60   0.0      -       26:03    00:00:00     root     0 20 A sshd: siteview [priv]
+735:DATA:   92 196722      1  60   0.0      -  4-17:59:37    00:00:00     root     0 20 A /usr/sbin/uprintfd
+735:DATA:  324 200802 131214  60   0.0      -  4-17:59:50    00:00:00     root     0 20 A /usr/sbin/syslogd
+735:DATA:  984 204900 131214  60   0.0      -  4-17:59:50    00:00:23     root     0 20 A sendmail: accepting connections
+735:DATA:  980 213112      1  60   0.0      -  4-17:47:40    00:00:00     root     0 20 A /usr/dt/bin/ttsession -s
+735:DATA:  428 217262      1  60   0.0   lft0  4-17:59:33    00:00:00     root     0 20 A /usr/sbin/getty /dev/console
+735:DATA:  548 221386 295104  60   0.0      -       02:50    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _2369_1 /usr/dt/bin/dtscreen -mode blank
+735:DATA:  628 225406 131214  60   0.0      -  4-17:59:46    00:00:00     root     0 20 A /usr/sbin/muxatmd
+735:DATA:  292 229530 131214  60   0.0      -  4-17:59:44    00:00:00     root     0 20 A /usr/sbin/rpc.lockd -d 0
+735:DATA:  356 233656      1  60   0.0      -  4-17:59:43    00:00:02     root     8 20 A /usr/sbin/cron
+735:DATA:  148 237696 131214  60   0.0      -  4-17:59:46    00:00:00     root     0 20 A /usr/sbin/biod 6
+735:DATA: 1308 241798 131214  60   0.0      -  4-17:59:44    00:00:00   daemon     3 20 A /usr/sbin/rpc.statd -d 0 -t 50
+735:DATA:  268 245906 131214  60   0.0      -  4-17:59:37    00:00:00     root     0 20 A /usr/sbin/writesrv
+735:DATA: 1816 250004 131214  60   0.0      -  4-17:59:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ERrmd
+735:DATA: 1544 254102 131214  60   0.0      -  4-17:59:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.AuditRMd
+735:DATA: 1680 258192 131214  39   0.0      -  4-17:59:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.CSMAgentRMd
+735:DATA: 1388 266398 295104  60   0.0      -  4-17:44:54    00:02:09     root     0 20 A /usr/dt/bin/dtfile
+735:DATA:  592 270512 159896  60   0.0      -  4-17:59:19    00:00:00     root     0 20 A rpc.ttdbserver 100083 1
+735:DATA:  868 274570      1  60   0.0      -  4-17:59:33    00:03:05     root     0 20 A /usr/bin/xmwlm -L
+735:DATA:  380 278664      1  60   0.0      -  4-17:59:33    00:00:00     root     0 20 A /usr/lpp/diagnostics/bin/diagd
+735:DATA:  968 282828 295104  60   0.0      -  4-17:44:54    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dtappmgr_delay
+735:DATA: 1812 286914 295104  60   0.0      -  4-17:47:39    00:00:16     root     0 20 A dtwm
+735:DATA:  524 290830 319616  60   0.0  pts/0  4-00:58:20    00:00:00     root     0 20 A /usr/bin/ksh
+735:DATA: 1972 295104 299172  60   0.0      -  4-17:47:40    00:00:20     root     0 20 A /usr/dt/bin/dtsession
+735:DATA:  672 299172  90176  60   0.0      -  4-17:47:47    00:00:00     root     0 20 A dtlogin <:0>        -daemon
+735:DATA: 1088 303270 266398  60   0.0      -  4-17:43:05    00:00:27     root     0 20 A /usr/dt/bin/dtfile
+735:DATA: 1136 307386 315550  67   9.8      -  4-17:43:09    11:10:28     root     0 20 A /usr/dt/bin/dtaction Dtappmgr
+735:DATA:  548 315550 282828  60   0.0      -  4-17:43:09    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /bin/sh -c sleep 5; /usr/dt/bin/dtaction Dtappmgr
+735:DATA: 1244 319616 331832  60   0.0      -  4-00:58:20    00:00:02     root     0 20 A /usr/dt/bin/dtterm
+735:DATA:  548 331832 286914  60   0.0      -  4-00:58:20    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /usr/dt/bin/dtterm
+735:DATA:  608 335920 454738  60   0.0      -       02:08    00:00:00     root     0 20 A sshd: siteview [priv]
+735:DATA:  884 352306 442584  64   0.8  pts/3       02:08    00:00:01 siteview     1 20 A qsft-sua
+735:DATA:  956 364702      1  60   0.0      -    01:38:25    00:00:00     root     0 20 A sshd: root@notty
+735:DATA:  356 368790 446498  60   0.0      -       47:55    00:00:00     root     0 20 A /usr/sbin/sftp-server
+735:DATA:  300 372950 352306  60   0.0  pts/3       00:00    00:00:00 siteview     1 20 A awk { if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%....
+735:DATA:37004 376940 409840  60   0.0  pts/1    01:46:39    00:00:01     root     0 20 A /bin/sh -s +v
+735:DATA:  516 381120 487432  60   0.0      -       09:30    00:00:00     root     0 20 A -ksh
+735:DATA:  740 385188 372950  61   0.0  pts/3       00:00    00:00:00 siteview     0 20 A ps -eo vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args
+735:DATA:  960 393306      1  60   0.0      -       09:27    00:00:00     root     0 20 A sshd: root@pts/2
+735:DATA:  532 397518 393306  60   0.0  pts/2       09:25    00:00:00     root     0 20 A -ksh
+735:DATA:  252 401440 491644  60   0.0  pts/3       02:01    00:00:00     root     1 20 A iostat -Dl 15
+735:DATA:  468 405714 221386  60   0.0      -       02:50    00:00:00     root     0 30 A /usr/dt/bin/dtscreen
+735:DATA:  636 409840 159896  60   0.0      -    01:46:39    00:00:00     root     0 20 A telnetd -a
+735:DATA:  356 413902 430282  60   0.0      -       48:48    00:00:00     root     0 20 A /usr/sbin/sftp-server
+735:DATA:  212 426044 352306  60   0.0  pts/3       01:59    00:00:00     root     1 20 A vmstat 60
+735:DATA:  920 430282      1  60   0.0      -       48:49    00:00:00     root     0 20 A sshd: root@notty
+735:DATA:  224 438504 352306  60   0.0  pts/3       02:00    00:00:00     root     1 20 A vmstat -I 15
+735:DATA:  692 442584 335920  60   0.0      -       02:08    00:00:00 siteview     1 20 A sshd: siteview@pts/3
+735:DATA:  920 446498      1  60   0.0      -       47:55    00:00:00     root     0 20 A sshd: root@notty
+735:DATA:  576 454738 131214  60   0.0      -       04:09    00:00:00     root     0 20 A /usr/sbin/sshd
+735:DATA:  212 458842 352306  60   0.0  pts/3       01:59    00:00:00     root     1 20 A vmstat 15
+735:DATA:  356 462904 102572  60   0.0      -       26:02    00:00:00 siteview     1 20 A /usr/sbin/sftp-server
+735:DATA:  920 487432      1  60   0.0      -       09:31    00:00:00     root     0 20 A sshd: root@notty
+735:DATA:  488 491644 352306  61   0.0  pts/3       02:01    00:00:00 siteview     1 20 A sh -c iostat -Dl 15 | while read;do [[ $REPLY = *[0-9].[0-9]* ]]||continue;set -- $REPLY;[[ -z $D1 ]]&&D1=$1;[[ $1 =...
+735:END:lcnt=74
+735:END:stat=0
+736:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF), i++;}'
+736:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll 0
+736:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227183 0 486380 0 0 1
+736:DATA:en0 1500 192.168.0 192.168.0.68 4227183 0 486380 0 0 2
+736:DATA:lo0 16896 link#1  335 0 338 0 0 3
+736:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0 4
+736:DATA:lo0 16896 ::1  335 0 338 0 0 5
+637:DATA: 1  0  0 87031 157859   0   0   0   0   0    0  13 18682 283  9 10 82  0
+736:END:lcnt=6
+736:END:stat=0
+737:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+737:DATA:44186631 1
+737:END:lcnt=1
+737:END:stat=0
+738:BGN:netstat -s -p tcp  | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+738:DATA:44181353 1
+738:END:lcnt=1
+738:END:stat=0
+739:BGN:df -kP | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+739:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+739:DATA:/dev/hd4            65536     23268     42268      36% /
+739:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+739:DATA:/dev/hd9var         65536     47692     17844      73% /var
+739:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+739:DATA:/dev/hd1            65536       392     65144       1% /home
+739:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+739:DATA:/dev/testlv       1048576       520   1048056       1% /test
+739:END:lcnt=8
+739:END:stat=0
+740:BGN:sar -b 15
+740:DATA:
+740:DATA:AIX 44p170 3 5 000C7B4C4C00    12/19/10
+740:DATA:
+740:DATA:System configuration: lcpu=1  mode=Capped 
+740:DATA:
+740:DATA:20:58:48 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+741:BGN:sar -P ALL 15 | awk 'BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") > 0) print $2,$3,$4,$5,$6; else print $1,$2,$3,$4,$5}'
+644:DATA: 1  0 87254 157636   0   0   0   0    0   0  12 18436 268  7  8 84  0
+648:DATA: 1  0 87254 157636   0   0   0   0    0   0  14 18540 295  9 11 80  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+742:BGN:ps -e | wc -l
+742:DATA:      79
+742:END:lcnt=1
+742:END:stat=0
+743:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+743:DATA:Total Paging Space   Percent Used
+743:DATA:      512               1
+743:END:lcnt=2
+743:END:stat=0
+744:BGN:uptime
+744:DATA:  08:59PM   up 4 days, 18 hrs,  5 users,  load average: 1.00, 1.02, 1.03
+744:END:lcnt=1
+744:END:stat=0
+637:DATA: 1  0  0 87244 157646   0   0   0   0   0    0  11 22769 270  5  6 89  0
+745:BGN:who |  wc -l
+745:DATA:       5
+745:END:lcnt=1
+745:END:stat=0
+746:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+746:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+746:END:lcnt=1
+746:END:stat=0
+747:BGN:date
+747:DATA:Sun Dec 19 20:59:03 CST 2010
+747:END:lcnt=1
+747:END:stat=0
+748:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+748:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+748:DATA:/dev/hd4            65536     23268     42268      36% /
+748:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+748:DATA:/dev/hd9var         65536     47692     17844      73% /var
+748:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+748:DATA:/dev/hd1            65536       392     65144       1% /home
+748:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+748:DATA:/dev/testlv       1048576       520   1048056       1% /test
+748:END:lcnt=8
+748:END:stat=0
+740:DATA:20:59:03       0       0       0       0       0       0       0       0
+740:END:lcnt=7
+740:END:stat=0
+749:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+741:DATA:CPU %USR %SYS %WIO %IDLE
+741:DATA:0 8 6 0 86
+749:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+749:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227370 0 486426 0 0
+749:DATA:en0 1500 192.168.0 192.168.0.68 4227370 0 486426 0 0
+749:DATA:lo0 16896 link#1  335 0 338 0 0
+749:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+749:DATA:lo0 16896 ::1  335 0 338 0 0
+741:END:lcnt=2
+741:END:stat=0
+749:END:lcnt=6
+749:END:stat=0
+750:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+750:DATA:12 0 0
+750:END:lcnt=1
+750:END:stat=0
+648:DATA: 1  0 87003 157887   0   0   0   0    0   0  11 22743 272  5  6 89  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+637:DATA: 1  0  0 87006 157884   0   0   0   0   0    0  11 18575 257  4  5 91  0
+751:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+751:DATA:12 0 0
+751:END:lcnt=1
+751:END:stat=0
+752:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+752:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+752:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227533 0 486443 0 0
+752:DATA:en0 1500 192.168.0 192.168.0.68 4227533 0 486443 0 0
+752:DATA:lo0 16896 link#1  335 0 338 0 0
+752:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+752:DATA:lo0 16896 ::1  335 0 338 0 0
+752:END:lcnt=6
+752:END:stat=0
+753:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+753:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+753:DATA:/dev/hd4            65536     23268     42268      36% /
+753:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+753:DATA:/dev/hd9var         65536     47692     17844      73% /var
+753:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+753:DATA:/dev/hd1            65536       392     65144       1% /home
+753:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+753:DATA:/dev/testlv       1048576       520   1048056       1% /test
+753:END:lcnt=8
+753:END:stat=0
+754:BGN:date
+754:DATA:Sun Dec 19 20:59:18 CST 2010
+754:END:lcnt=1
+754:END:stat=0
+755:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+755:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+755:END:lcnt=1
+755:END:stat=0
+756:BGN:who |  wc -l
+756:DATA:       5
+756:END:lcnt=1
+756:END:stat=0
+757:BGN:uptime
+757:DATA:  08:59PM   up 4 days,  18:01,  5 users,  load average: 1.00, 1.01, 1.03
+757:END:lcnt=1
+757:END:stat=0
+758:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+758:DATA:Total Paging Space   Percent Used
+758:DATA:      512               1
+758:END:lcnt=2
+758:END:stat=0
+759:BGN:ps -e | wc -l
+759:DATA:      74
+759:END:lcnt=1
+759:END:stat=0
+648:DATA: 1  0 87007 157883   0   0   0   0    0   0  11 18531 256  5  6 89  0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+637:DATA: 1  0  0 87006 157884   0   0   0   0   0    0  11 18394 257  5  6 89  0
+760:BGN:ps -e | wc -l
+760:DATA:      74
+760:END:lcnt=1
+760:END:stat=0
+648:DATA: 1  0 87006 157884   0   0   0   0    0   0  10 18631 244  4  4 92  0
+761:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+761:DATA:Total Paging Space   Percent Used
+761:DATA:      512               1
+761:END:lcnt=2
+761:END:stat=0
+762:BGN:uptime
+762:DATA:  08:59PM   up 4 days,  18:01,  5 users,  load average: 0.93, 1.00, 1.03
+762:END:lcnt=1
+762:END:stat=0
+763:BGN:who |  wc -l
+763:DATA:       5
+763:END:lcnt=1
+763:END:stat=0
+764:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+764:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+764:END:lcnt=1
+764:END:stat=0
+765:BGN:date
+765:DATA:Sun Dec 19 20:59:34 CST 2010
+765:END:lcnt=1
+765:END:stat=0
+766:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+766:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+766:DATA:/dev/hd4            65536     23268     42268      36% /
+766:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+766:DATA:/dev/hd9var         65536     47692     17844      73% /var
+766:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+766:DATA:/dev/hd1            65536       392     65144       1% /home
+766:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+766:DATA:/dev/testlv       1048576       520   1048056       1% /test
+766:END:lcnt=8
+766:END:stat=0
+767:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+767:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+767:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227741 0 486495 0 0
+767:DATA:en0 1500 192.168.0 192.168.0.68 4227741 0 486495 0 0
+767:DATA:lo0 16896 link#1  335 0 338 0 0
+767:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+767:DATA:lo0 16896 ::1  335 0 338 0 0
+767:END:lcnt=6
+767:END:stat=0
+768:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+768:DATA:12 0 0
+768:END:lcnt=1
+768:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 9800 0.0 1.5
+625:DATA:hdisk1 0.0 273.1 0.0 0.1
+625:DATA:cd0 0.0 0.0 0.0 0.0
+769:BGN:sar -P ALL 15 | awk 'BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") > 0) print $2,$3,$4,$5,$6; else print $1,$2,$3,$4,$5}'
+770:BGN:sar -b 15
+770:DATA:
+770:DATA:AIX 44p170 3 5 000C7B4C4C00    12/19/10
+770:DATA:
+770:DATA:System configuration: lcpu=1  mode=Capped 
+770:DATA:
+770:DATA:20:59:47 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+771:BGN:df -kP | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+771:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+771:DATA:/dev/hd4            65536     23268     42268      36% /
+771:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+771:DATA:/dev/hd9var         65536     47692     17844      73% /var
+771:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+771:DATA:/dev/hd1            65536       392     65144       1% /home
+771:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+771:DATA:/dev/testlv       1048576       520   1048056       1% /test
+771:END:lcnt=8
+771:END:stat=0
+772:BGN:netstat -s -p tcp  | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+772:DATA:44195549 1
+772:END:lcnt=1
+772:END:stat=0
+637:DATA: 1  0  0 87244 157646   0   0   0   0   0    0  15 18284 264  6  6 89  0
+773:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+773:DATA:44201439 1
+773:END:lcnt=1
+773:END:stat=0
+774:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF), i++;}'
+774:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll 0
+774:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227908 0 486518 0 0 1
+774:DATA:en0 1500 192.168.0 192.168.0.68 4227908 0 486518 0 0 2
+774:DATA:lo0 16896 link#1  335 0 338 0 0 3
+774:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0 4
+774:DATA:lo0 16896 ::1  335 0 338 0 0 5
+774:END:lcnt=6
+774:END:stat=0
+775:BGN:ps -eo "vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args" |awk '{ if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%.197s...\n", $0); else print $0 }}'
+775:DATA:  VSZ    PID   PPID PRI  %CPU     TT     ELAPSED        TIME     USER   GID NI S COMMAND
+775:DATA:  588      1      0  60   0.0      -  4-18:01:41    00:00:09     root     0 20 A /etc/init
+775:DATA:  520  57518      1  60   0.0      -  4-18:01:03    00:01:37     root     0 20 A /usr/sbin/syncd 60
+775:DATA: 1508  65726 131214  39   0.0      -  4-18:00:31    00:00:03     root     0 20 A /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+775:DATA:  428  77930 364702  60   0.0      -    01:39:24    00:00:00     root     0 20 A /usr/sbin/sftp-server
+775:DATA:  968  81992 295104  60   0.0      -  4-17:45:55    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dthelpgen_delay
+775:DATA:  308  90176      1  60   0.0      -  4-18:01:15    00:00:00     root     0 20 A /usr/dt/bin/dtlogin -daemon
+775:DATA: 2860  94292  90176  60   0.0      -  4-18:01:15    00:00:30     root     0 20 A /usr/lpp/X11/bin/X -D /usr/lib/X11//rgb -T -force :0 -auth /var/dt/A:0-rHyeaa
+775:DATA:  756 102572 192752  60   0.0      -       27:03    00:00:00 siteview     1 20 A sshd: siteview@notty
+775:DATA:  540 106564      1  60   0.0      -  4-18:01:03    00:00:00     root     0 20 A /usr/lib/errdemon
+775:DATA: 1296 110698 131214  60   0.0      -  4-18:00:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ServiceRMd
+775:DATA:  736 131214      1  60   0.0      -  4-18:00:55    00:00:00     root     0 20 A /usr/sbin/srcmstr
+775:DATA:   68 135236      1  60   0.0      -  4-18:01:02    00:00:00     root     0 20 A /usr/ccs/bin/shlap64
+775:DATA:  208 155798 131214  60   0.0      -  4-18:00:41    00:00:00     root     9 20 A /usr/sbin/qdaemon
+775:DATA:  432 159896 131214  60   0.0      -  4-18:00:51    00:00:00     root     0 20 A /usr/sbin/inetd
+775:DATA:  892 163980 131214  60   0.0      -  4-18:00:51    00:00:00     root     0 20 A /usr/sbin/portmap
+775:DATA:  700 176218 131214  60   0.0      -  4-18:00:51    00:00:07     root     0 20 A /usr/sbin/hostmibd
+775:DATA:  924 180316 131214  60   0.0      -  4-18:00:51    00:00:00     root     0 20 A /usr/sbin/snmpd
+775:DATA:  692 184414 131214  60   0.0      -  4-18:00:51    00:00:00     root     0 20 A /usr/sbin/snmpmibd
+775:DATA:  752 188512 131214  60   0.0      -  4-18:00:51    00:00:25     root     0 20 A /usr/sbin/aixmibd
+775:DATA:  500 192752      1  60   0.0      -       27:04    00:00:00     root     0 20 A sshd: siteview [priv]
+775:DATA:   92 196722      1  60   0.0      -  4-18:00:38    00:00:00     root     0 20 A /usr/sbin/uprintfd
+775:DATA:  324 200802 131214  60   0.0      -  4-18:00:51    00:00:00     root     0 20 A /usr/sbin/syslogd
+775:DATA:  984 204900 131214  60   0.0      -  4-18:00:51    00:00:23     root     0 20 A sendmail: accepting connections
+775:DATA:  980 213112      1  60   0.0      -  4-17:48:41    00:00:00     root     0 20 A /usr/dt/bin/ttsession -s
+775:DATA:  428 217262      1  60   0.0   lft0  4-18:00:34    00:00:00     root     0 20 A /usr/sbin/getty /dev/console
+775:DATA:  300 221416 352306  60   0.0  pts/3       00:00    00:00:00 siteview     1 20 A awk { if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%....
+775:DATA:  628 225406 131214  60   0.0      -  4-18:00:47    00:00:00     root     0 20 A /usr/sbin/muxatmd
+775:DATA:  292 229530 131214  60   0.0      -  4-18:00:45    00:00:00     root     0 20 A /usr/sbin/rpc.lockd -d 0
+775:DATA:  356 233656      1  60   0.0      -  4-18:00:44    00:00:02     root     8 20 A /usr/sbin/cron
+775:DATA:  148 237696 131214  60   0.0      -  4-18:00:47    00:00:00     root     0 20 A /usr/sbin/biod 6
+775:DATA: 1308 241798 131214  60   0.0      -  4-18:00:45    00:00:00   daemon     3 20 A /usr/sbin/rpc.statd -d 0 -t 50
+775:DATA:  268 245906 131214  60   0.0      -  4-18:00:38    00:00:00     root     0 20 A /usr/sbin/writesrv
+775:DATA: 1816 250004 131214  60   0.0      -  4-18:00:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ERrmd
+775:DATA: 1544 254102 131214  60   0.0      -  4-18:00:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.AuditRMd
+775:DATA: 1680 258192 131214  39   0.0      -  4-18:00:29    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.CSMAgentRMd
+775:DATA: 1388 266398 295104  60   0.0      -  4-17:45:55    00:02:09     root     0 20 A /usr/dt/bin/dtfile
+775:DATA:  592 270512 159896  60   0.0      -  4-18:00:20    00:00:00     root     0 20 A rpc.ttdbserver 100083 1
+775:DATA:  868 274570      1  60   0.0      -  4-18:00:34    00:03:05     root     0 20 A /usr/bin/xmwlm -L
+775:DATA:  380 278664      1  60   0.0      -  4-18:00:34    00:00:00     root     0 20 A /usr/lpp/diagnostics/bin/diagd
+775:DATA:  968 282828 295104  60   0.0      -  4-17:45:55    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dtappmgr_delay
+775:DATA: 1812 286914 295104  60   0.0      -  4-17:48:40    00:00:16     root     0 20 A dtwm
+775:DATA:  524 290830 319616  60   0.0  pts/0  4-00:59:21    00:00:00     root     0 20 A /usr/bin/ksh
+775:DATA: 1972 295104 299172  60   0.0      -  4-17:48:41    00:00:20     root     0 20 A /usr/dt/bin/dtsession
+775:DATA:  672 299172  90176  60   0.0      -  4-17:48:48    00:00:00     root     0 20 A dtlogin <:0>        -daemon
+775:DATA: 1088 303270 266398  60   0.0      -  4-17:44:06    00:00:27     root     0 20 A /usr/dt/bin/dtfile
+775:DATA: 1136 307386 315550  68   9.8      -  4-17:44:10    11:10:34     root     0 20 A /usr/dt/bin/dtaction Dtappmgr
+775:DATA:  532 311538 295104  60   0.0      -       00:51    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _2370_1 /usr/dt/bin/dtscreen -mode blank
+775:DATA:  548 315550 282828  60   0.0      -  4-17:44:10    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /bin/sh -c sleep 5; /usr/dt/bin/dtaction Dtappmgr
+775:DATA: 1244 319616 331832  60   0.0      -  4-00:59:21    00:00:02     root     0 20 A /usr/dt/bin/dtterm
+775:DATA:  548 331832 286914  60   0.0      -  4-00:59:21    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /usr/dt/bin/dtterm
+775:DATA:  608 335920 454738  60   0.0      -       03:09    00:00:00     root     0 20 A sshd: siteview [priv]
+775:DATA:  308 340128 352306  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A awk BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") ...
+775:DATA:  148 348322 372760  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x abcdkmqrvwy 15 2
+775:DATA:  884 352306 442584  62   0.5  pts/3       03:09    00:00:01 siteview     1 20 A qsft-sua
+775:DATA:  956 364702      1  60   0.0      -    01:39:26    00:00:00     root     0 20 A sshd: root@notty
+775:DATA:  356 368790 446498  60   0.0      -       48:56    00:00:00     root     0 20 A /usr/sbin/sftp-server
+775:DATA:  180 372760 340128  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A sar -P ALL 15
+775:DATA:37004 376940 409840  60   0.0  pts/1    01:47:40    00:00:01     root     0 20 A /bin/sh -s +v
+775:DATA:  516 381120 487432  60   0.0      -       10:31    00:00:00     root     0 20 A -ksh
+775:DATA:  176 385202 352306  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A sar -b 15
+775:DATA:  468 389152 311538  60   0.0      -       00:51    00:00:00     root     0 30 A /usr/dt/bin/dtscreen
+775:DATA:  960 393306      1  60   0.0      -       10:28    00:00:00     root     0 20 A sshd: root@pts/2
+775:DATA:  532 397518 393306  60   0.0  pts/2       10:26    00:00:00     root     0 20 A -ksh
+775:DATA:  252 401440 491644  60   0.0  pts/3       03:02    00:00:00     root     1 20 A iostat -Dl 15
+775:DATA:  780 405740 221416  61   0.0  pts/3       00:00    00:00:00 siteview     0 20 A ps -eo vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args
+775:DATA:  636 409840 159896  60   0.0      -    01:47:40    00:00:00     root     0 20 A telnetd -a
+775:DATA:  356 413902 430282  60   0.0      -       49:49    00:00:00     root     0 20 A /usr/sbin/sftp-server
+775:DATA:  148 417852 385202  60   0.0  pts/3       00:01    00:00:00 siteview     1 20 A /usr/lib/sa/sadc -x acdkmqruvwy 15 2
+775:DATA:  212 426044 352306  60   0.0  pts/3       03:00    00:00:00     root     1 20 A vmstat 60
+775:DATA:  920 430282      1  60   0.0      -       49:50    00:00:00     root     0 20 A sshd: root@notty
+775:DATA:  224 438504 352306  60   0.0  pts/3       03:01    00:00:00     root     1 20 A vmstat -I 15
+775:DATA:  692 442584 335920  60   0.0      -       03:09    00:00:00 siteview     1 20 A sshd: siteview@pts/3
+775:DATA:  920 446498      1  60   0.0      -       48:56    00:00:00     root     0 20 A sshd: root@notty
+775:DATA:  576 454738 131214  60   0.0      -       05:10    00:00:00     root     0 20 A /usr/sbin/sshd
+776:BGN:who -u
+776:DATA:root        lft0        Dec 15 03:11     old     299172                  
+776:DATA:root        pts/0       Dec 15 20:00     old     290830  (:0.0)          
+776:DATA:root        pts/1       Dec 19 19:12     1:47    376940  (192.168.9.218) 
+776:DATA:root        pts/2       Dec 19 20:49     0:07    397518  (192.168.9.218) 
+776:DATA:siteview    pts/3       Dec 19 20:56      .      442584  (192.168.9.104) 
+775:DATA:  212 458842 352306  60   0.0  pts/3       03:00    00:00:00     root     1 20 A vmstat 15
+775:DATA:  356 462904 102572  60   0.0      -       27:03    00:00:00 siteview     1 20 A /usr/sbin/sftp-server
+775:DATA:  920 487432      1  60   0.0      -       10:32    00:00:00     root     0 20 A sshd: root@notty
+775:DATA:  488 491644 352306  60   0.0  pts/3       03:02    00:00:00 siteview     1 20 A sh -c iostat -Dl 15 | while read;do [[ $REPLY = *[0-9].[0-9]* ]]||continue;set -- $REPLY;[[ -z $D1 ]]&&D1=$1;[[ $1 =...
+776:END:lcnt=5
+776:END:stat=0
+775:END:lcnt=79
+775:END:stat=0
+644:DATA: 1  0 87244 157646   0   0   0   0    0   0  12 19535 265  5  6 89  0
+648:DATA: 1  0 87244 157646   0   0   0   0    0   0  16 18234 289  6  7 87  0
+777:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+777:DATA:12 0 0
+777:END:lcnt=1
+777:END:stat=0
+778:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+778:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+778:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4227945 0 486559 0 0
+778:DATA:en0 1500 192.168.0 192.168.0.68 4227945 0 486559 0 0
+778:DATA:lo0 16896 link#1  335 0 338 0 0
+778:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+778:DATA:lo0 16896 ::1  335 0 338 0 0
+778:END:lcnt=6
+778:END:stat=0
+779:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+779:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+779:DATA:/dev/hd4            65536     23268     42268      36% /
+779:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+779:DATA:/dev/hd9var         65536     47692     17844      73% /var
+779:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+779:DATA:/dev/hd1            65536       392     65144       1% /home
+779:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+779:DATA:/dev/testlv       1048576       520   1048056       1% /test
+779:END:lcnt=8
+779:END:stat=0
+780:BGN:date
+780:DATA:Sun Dec 19 20:59:49 CST 2010
+780:END:lcnt=1
+780:END:stat=0
+781:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+781:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+781:END:lcnt=1
+781:END:stat=0
+782:BGN:who |  wc -l
+782:DATA:       5
+782:END:lcnt=1
+782:END:stat=0
+783:BGN:uptime
+783:DATA:  08:59PM   up 4 days,  18:01,  5 users,  load average: 0.94, 1.00, 1.03
+783:END:lcnt=1
+783:END:stat=0
+784:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+784:DATA:Total Paging Space   Percent Used
+784:DATA:      512               1
+784:END:lcnt=2
+784:END:stat=0
+785:BGN:ps -e | wc -l
+785:DATA:      79
+785:END:lcnt=1
+785:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 819.2 0.0 0.2
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+769:DATA:CPU %USR %SYS %WIO %IDLE
+769:DATA:0 9 7 0 85
+769:END:lcnt=2
+769:END:stat=0
+770:DATA:21:00:02       0       0       0       0       0       0       0       0
+770:END:lcnt=7
+770:END:stat=0
+637:DATA: 1  0  0 87005 157885   0   0   0   0   0    0  14 18313 286  9 10 81  0
+648:DATA: 1  0 87004 157886   0   0   0   0    0   0  12 18348 260  9  9 82  0
+786:BGN:who |  wc -l
+786:DATA:       5
+786:END:lcnt=1
+786:END:stat=0
+787:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+787:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+787:END:lcnt=1
+787:END:stat=0
+788:BGN:date
+788:DATA:Sun Dec 19 21:00:04 CST 2010
+788:END:lcnt=1
+788:END:stat=0
+789:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+789:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+789:DATA:/dev/hd4            65536     23268     42268      36% /
+789:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+789:DATA:/dev/hd9var         65536     47692     17844      73% /var
+789:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+789:DATA:/dev/hd1            65536       392     65144       1% /home
+789:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+789:DATA:/dev/testlv       1048576       520   1048056       1% /test
+789:END:lcnt=8
+789:END:stat=0
+790:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+790:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+790:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4228146 0 486602 0 0
+790:DATA:en0 1500 192.168.0 192.168.0.68 4228146 0 486602 0 0
+790:DATA:lo0 16896 link#1  335 0 338 0 0
+790:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+790:DATA:lo0 16896 ::1  335 0 338 0 0
+790:END:lcnt=6
+790:END:stat=0
+791:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+791:DATA:12 0 0
+791:END:lcnt=1
+791:END:stat=0
+792:BGN:ps -e | wc -l
+792:DATA:      74
+792:END:lcnt=1
+792:END:stat=0
+793:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+793:DATA:Total Paging Space   Percent Used
+793:DATA:      512               1
+793:END:lcnt=2
+793:END:stat=0
+794:BGN:uptime
+794:DATA:  09:00PM   up 4 days,  18:01,  5 users,  load average: 0.96, 1.00, 1.03
+794:END:lcnt=1
+794:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+637:DATA: 1  0  0 87199 157691   0   0   0   0   0    0  12 18414 258  2  3 95  0
+648:DATA: 1  0 87199 157691   0   0   0   0    0   0  12 18424 257  2  3 95  0
+795:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+795:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+795:DATA:/dev/hd4            65536     23268     42268      36% /
+795:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+795:DATA:/dev/hd9var         65536     47692     17844      73% /var
+795:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+795:DATA:/dev/hd1            65536       392     65144       1% /home
+795:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+795:DATA:/dev/testlv       1048576       520   1048056       1% /test
+795:END:lcnt=8
+795:END:stat=0
+796:BGN:date
+796:DATA:Sun Dec 19 21:00:19 CST 2010
+796:END:lcnt=1
+796:END:stat=0
+797:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+797:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+797:END:lcnt=1
+797:END:stat=0
+798:BGN:who |  wc -l
+798:DATA:       5
+798:END:lcnt=1
+798:END:stat=0
+799:BGN:uptime
+799:DATA:  09:00PM   up 4 days,  18:02,  5 users,  load average: 0.97, 1.00, 1.03
+799:END:lcnt=1
+799:END:stat=0
+800:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+800:DATA:Total Paging Space   Percent Used
+800:DATA:      512               1
+800:END:lcnt=2
+800:END:stat=0
+801:BGN:ps -e | wc -l
+801:DATA:      76
+801:END:lcnt=1
+801:END:stat=0
+802:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+802:DATA:12 0 0
+802:END:lcnt=1
+802:END:stat=0
+803:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+803:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+803:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4228349 0 486641 0 0
+803:DATA:en0 1500 192.168.0 192.168.0.68 4228349 0 486641 0 0
+803:DATA:lo0 16896 link#1  335 0 338 0 0
+803:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+803:DATA:lo0 16896 ::1  335 0 338 0 0
+803:END:lcnt=6
+803:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+637:DATA: 1  0  0 87202 157688   0   0   0   0   0    0  12 18370 256  2  3 94  0
+648:DATA: 1  0 87202 157688   0   0   0   0    0   0  12 18371 256  2  3 94  0
+804:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+804:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+804:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4228520 0 486654 0 0
+804:DATA:en0 1500 192.168.0 192.168.0.68 4228520 0 486654 0 0
+804:DATA:lo0 16896 link#1  335 0 338 0 0
+804:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+804:DATA:lo0 16896 ::1  335 0 338 0 0
+804:END:lcnt=6
+804:END:stat=0
+805:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+805:DATA:12 0 0
+805:END:lcnt=1
+805:END:stat=0
+806:BGN:ps -e | wc -l
+806:DATA:      76
+806:END:lcnt=1
+806:END:stat=0
+807:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+807:DATA:Total Paging Space   Percent Used
+807:DATA:      512               1
+807:END:lcnt=2
+807:END:stat=0
+808:BGN:uptime
+808:DATA:  09:00PM   up 4 days,  18:02,  5 users,  load average: 0.90, 0.98, 1.02
+808:END:lcnt=1
+808:END:stat=0
+809:BGN:who |  wc -l
+809:DATA:       5
+809:END:lcnt=1
+809:END:stat=0
+810:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+810:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+810:END:lcnt=1
+810:END:stat=0
+811:BGN:date
+811:DATA:Sun Dec 19 21:00:35 CST 2010
+811:END:lcnt=1
+811:END:stat=0
+812:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+812:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+812:DATA:/dev/hd4            65536     23268     42268      36% /
+812:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+812:DATA:/dev/hd9var         65536     47692     17844      73% /var
+812:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+812:DATA:/dev/hd1            65536       392     65144       1% /home
+812:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+812:DATA:/dev/testlv       1048576       520   1048056       1% /test
+812:END:lcnt=8
+812:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 6000 0.0 1.4
+625:DATA:hdisk1 0.0 546.5 0.0 0.1
+625:DATA:cd0 0.0 0.0 0.0 0.0
+813:BGN:who -u
+813:DATA:root        lft0        Dec 15 03:11     old     299172                  
+813:DATA:root        pts/0       Dec 15 20:00     old     290830  (:0.0)          
+813:DATA:root        pts/1       Dec 19 19:12     1:48    376940  (192.168.9.218) 
+813:DATA:root        pts/2       Dec 19 20:49     0:08    397518  (192.168.9.218) 
+813:DATA:siteview    pts/3       Dec 19 20:56      .      442584  (192.168.9.104) 
+813:END:lcnt=5
+813:END:stat=0
+814:BGN:ps -eo "vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args" |awk '{ if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%.197s...\n", $0); else print $0 }}'
+814:DATA:  VSZ    PID   PPID PRI  %CPU     TT     ELAPSED        TIME     USER   GID NI S COMMAND
+814:DATA:  588      1      0  60   0.0      -  4-18:02:40    00:00:09     root     0 20 A /etc/init
+814:DATA:  520  57518      1  60   0.0      -  4-18:02:02    00:01:37     root     0 20 A /usr/sbin/syncd 60
+814:DATA: 1508  65726 131214  39   0.0      -  4-18:01:30    00:00:03     root     0 20 A /usr/sbin/rsct/bin/rmcd -a IBM.LPCommands -r
+814:DATA:  428  77930 364702  60   0.0      -    01:40:23    00:00:00     root     0 20 A /usr/sbin/sftp-server
+814:DATA:  968  81992 295104  60   0.0      -  4-17:46:54    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dthelpgen_delay
+814:DATA:  308  90176      1  60   0.0      -  4-18:02:14    00:00:00     root     0 20 A /usr/dt/bin/dtlogin -daemon
+814:DATA: 2860  94292  90176  60   0.0      -  4-18:02:14    00:00:30     root     0 20 A /usr/lpp/X11/bin/X -D /usr/lib/X11//rgb -T -force :0 -auth /var/dt/A:0-rHyeaa
+814:DATA:  756 102572 192752  60   0.0      -       28:02    00:00:00 siteview     1 20 A sshd: siteview@notty
+814:DATA:  540 106564      1  60   0.0      -  4-18:02:02    00:00:00     root     0 20 A /usr/lib/errdemon
+814:DATA: 1296 110698 131214  60   0.0      -  4-18:01:26    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ServiceRMd
+814:DATA:  736 131214      1  60   0.0      -  4-18:01:54    00:00:00     root     0 20 A /usr/sbin/srcmstr
+814:DATA:   68 135236      1  60   0.0      -  4-18:02:01    00:00:00     root     0 20 A /usr/ccs/bin/shlap64
+814:DATA:  208 155798 131214  60   0.0      -  4-18:01:40    00:00:00     root     9 20 A /usr/sbin/qdaemon
+814:DATA:  432 159896 131214  60   0.0      -  4-18:01:50    00:00:00     root     0 20 A /usr/sbin/inetd
+814:DATA:  892 163980 131214  60   0.0      -  4-18:01:50    00:00:00     root     0 20 A /usr/sbin/portmap
+814:DATA:  700 176218 131214  60   0.0      -  4-18:01:50    00:00:07     root     0 20 A /usr/sbin/hostmibd
+814:DATA:  924 180316 131214  60   0.0      -  4-18:01:50    00:00:00     root     0 20 A /usr/sbin/snmpd
+814:DATA:  692 184414 131214  60   0.0      -  4-18:01:50    00:00:00     root     0 20 A /usr/sbin/snmpmibd
+814:DATA:  752 188512 131214  60   0.0      -  4-18:01:50    00:00:25     root     0 20 A /usr/sbin/aixmibd
+814:DATA:  500 192752      1  60   0.0      -       28:03    00:00:00     root     0 20 A sshd: siteview [priv]
+814:DATA:   92 196722      1  60   0.0      -  4-18:01:37    00:00:00     root     0 20 A /usr/sbin/uprintfd
+814:DATA:  324 200802 131214  60   0.0      -  4-18:01:50    00:00:00     root     0 20 A /usr/sbin/syslogd
+814:DATA:  984 204900 131214  60   0.0      -  4-18:01:50    00:00:23     root     0 20 A sendmail: accepting connections
+814:DATA:  980 213112      1  60   0.0      -  4-17:49:40    00:00:00     root     0 20 A /usr/dt/bin/ttsession -s
+814:DATA:  428 217262      1  60   0.0   lft0  4-18:01:33    00:00:00     root     0 20 A /usr/sbin/getty /dev/console
+814:DATA:  628 225406 131214  60   0.0      -  4-18:01:46    00:00:00     root     0 20 A /usr/sbin/muxatmd
+814:DATA:  292 229530 131214  60   0.0      -  4-18:01:44    00:00:00     root     0 20 A /usr/sbin/rpc.lockd -d 0
+814:DATA:  356 233656      1  60   0.0      -  4-18:01:43    00:00:02     root     8 20 A /usr/sbin/cron
+814:DATA:  148 237696 131214  60   0.0      -  4-18:01:46    00:00:00     root     0 20 A /usr/sbin/biod 6
+814:DATA: 1308 241798 131214  60   0.0      -  4-18:01:44    00:00:00   daemon     3 20 A /usr/sbin/rpc.statd -d 0 -t 50
+814:DATA:  268 245906 131214  60   0.0      -  4-18:01:37    00:00:00     root     0 20 A /usr/sbin/writesrv
+814:DATA: 1816 250004 131214  60   0.0      -  4-18:01:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.ERrmd
+814:DATA: 1544 254102 131214  60   0.0      -  4-18:01:27    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.AuditRMd
+814:DATA: 1680 258192 131214  39   0.0      -  4-18:01:28    00:00:00     root     0 20 A /usr/sbin/rsct/bin/IBM.CSMAgentRMd
+814:DATA: 1388 266398 295104  60   0.0      -  4-17:46:54    00:02:09     root     0 20 A /usr/dt/bin/dtfile
+814:DATA:  592 270512 159896  60   0.0      -  4-18:01:19    00:00:00     root     0 20 A rpc.ttdbserver 100083 1
+814:DATA:  868 274570      1  60   0.0      -  4-18:01:33    00:03:05     root     0 20 A /usr/bin/xmwlm -L
+814:DATA:  380 278664      1  60   0.0      -  4-18:01:33    00:00:00     root     0 20 A /usr/lpp/diagnostics/bin/diagd
+814:DATA:  968 282828 295104  60   0.0      -  4-17:46:54    00:00:00     root     0 20 A /usr/dt/bin/dtaction Dtappmgr_delay
+814:DATA: 1812 286914 295104  60   0.0      -  4-17:49:39    00:00:16     root     0 20 A dtwm
+814:DATA:  524 290830 319616  60   0.0  pts/0  4-01:00:20    00:00:00     root     0 20 A /usr/bin/ksh
+814:DATA: 1972 295104 299172  60   0.0      -  4-17:49:40    00:00:20     root     0 20 A /usr/dt/bin/dtsession
+814:DATA:  672 299172  90176  60   0.0      -  4-17:49:47    00:00:00     root     0 20 A dtlogin <:0>        -daemon
+814:DATA: 1088 303270 266398  60   0.0      -  4-17:45:05    00:00:27     root     0 20 A /usr/dt/bin/dtfile
+814:DATA: 1136 307386 315550  65   9.8      -  4-17:45:09    11:10:40     root     0 20 A /usr/dt/bin/dtaction Dtappmgr
+814:DATA:  548 311538 295104  60   0.0      -       01:50    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _2370_1 /usr/dt/bin/dtscreen -mode blank
+814:DATA:  548 315550 282828  60   0.0      -  4-17:45:09    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /bin/sh -c sleep 5; /usr/dt/bin/dtaction Dtappmgr
+814:DATA: 1244 319616 331832  60   0.0      -  4-01:00:20    00:00:02     root     0 20 A /usr/dt/bin/dtterm
+814:DATA:  548 331832 286914  60   0.0      -  4-01:00:20    00:00:00     root     0 20 A /usr/dt/bin/dtexec -open 0 -ttprocid _101_1 /usr/dt/bin/dtterm
+814:DATA:  608 335920 454738  60   0.0      -       04:08    00:00:00     root     0 20 A sshd: siteview [priv]
+814:DATA:  884 352306 442584  60   0.8  pts/3       04:08    00:00:02 siteview     1 20 A qsft-sua
+814:DATA:  956 364702      1  60   0.0      -    01:40:25    00:00:00     root     0 20 A sshd: root@notty
+814:DATA:  356 368790 446498  60   0.0      -       49:55    00:00:00     root     0 20 A /usr/sbin/sftp-server
+814:DATA:37004 376940 409840  60   0.0  pts/1    01:48:39    00:00:01     root     0 20 A /bin/sh -s +v
+814:DATA:  516 381120 487432  60   0.0      -       11:30    00:00:00     root     0 20 A -ksh
+814:DATA:  736 385230 417878  61   0.0  pts/3       00:00    00:00:00 siteview     0 20 A ps -eo vsize, pid, ppid, pri, pcpu, tty, etime, time, user, gid, nice, state, args
+814:DATA:  468 389152 311538  80   0.0      -       01:50    00:00:00     root     0 30 A /usr/dt/bin/dtscreen
+814:DATA:  960 393306      1  60   0.0      -       11:27    00:00:00     root     0 20 A sshd: root@pts/2
+814:DATA:  532 397518 393306  60   0.0  pts/2       11:25    00:00:00     root     0 20 A -ksh
+814:DATA:  252 401440 491644  60   0.0  pts/3       04:01    00:00:00     root     1 20 A iostat -Dl 15
+814:DATA:  636 409840 159896  60   0.0      -    01:48:39    00:00:00     root     0 20 A telnetd -a
+814:DATA:  356 413902 430282  60   0.0      -       50:48    00:00:00     root     0 20 A /usr/sbin/sftp-server
+814:DATA:  300 417878 352306  60   0.0  pts/3       00:00    00:00:00 siteview     1 20 A awk { if ( NF > 10 && match( $1, "^[0-9]+$" ) > 0 || NR ==1) { gsub( "[   ]*$", "" ); if(length($0)>200) printf( "%....
+814:DATA:  212 426044 352306  60   0.0  pts/3       03:59    00:00:00     root     1 20 A vmstat 60
+814:DATA:  920 430282      1  60   0.0      -       50:49    00:00:00     root     0 20 A sshd: root@notty
+814:DATA:  224 438504 352306  60   0.0  pts/3       04:00    00:00:00     root     1 20 A vmstat -I 15
+814:DATA:  692 442584 335920  60   0.0      -       04:08    00:00:00 siteview     1 20 A sshd: siteview@pts/3
+814:DATA:  920 446498      1  60   0.0      -       49:55    00:00:00     root     0 20 A sshd: root@notty
+814:DATA:  576 454738 131214  60   0.0      -       06:09    00:00:00     root     0 20 A /usr/sbin/sshd
+814:DATA:  212 458842 352306  60   0.0  pts/3       03:59    00:00:00     root     1 20 A vmstat 15
+814:DATA:  356 462904 102572  60   0.0      -       28:02    00:00:00 siteview     1 20 A /usr/sbin/sftp-server
+814:DATA:  920 487432      1  60   0.0      -       11:31    00:00:00     root     0 20 A sshd: root@notty
+814:DATA:  488 491644 352306  60   0.0  pts/3       04:01    00:00:00 siteview     1 20 A sh -c iostat -Dl 15 | while read;do [[ $REPLY = *[0-9].[0-9]* ]]||continue;set -- $REPLY;[[ -z $D1 ]]&&D1=$1;[[ $1 =...
+814:END:lcnt=74
+814:END:stat=0
+815:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF), i++;}'
+815:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll 0
+815:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4228677 0 486711 0 0 1
+815:DATA:en0 1500 192.168.0 192.168.0.68 4228677 0 486711 0 0 2
+815:DATA:lo0 16896 link#1  335 0 338 0 0 3
+815:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0 4
+815:DATA:lo0 16896 ::1  335 0 338 0 0 5
+815:END:lcnt=6
+815:END:stat=0
+816:BGN:netstat -s -p tcp | awk '/data packets/ { sub( ".", "", $4 ); print $4, 1; exit; }'
+816:DATA:44238431 1
+816:END:lcnt=1
+816:END:stat=0
+637:DATA: 1  0  0 87001 157889   0   0   0   0   0    0  14 18604 274  7  7 85  0
+817:BGN:netstat -s -p tcp  | awk '$2 == "acks" && $3 =="(for" {print $4,1}'
+817:DATA:44233253 1
+817:END:lcnt=1
+817:END:stat=0
+818:BGN:df -kP | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+818:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+818:DATA:/dev/hd4            65536     23268     42268      36% /
+818:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+818:DATA:/dev/hd9var         65536     47692     17844      73% /var
+818:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+818:DATA:/dev/hd1            65536       392     65144       1% /home
+818:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+818:DATA:/dev/testlv       1048576       520   1048056       1% /test
+818:END:lcnt=8
+818:END:stat=0
+819:BGN:sar -b 15
+819:DATA:
+819:DATA:AIX 44p170 3 5 000C7B4C4C00    12/19/10
+819:DATA:
+819:DATA:System configuration: lcpu=1  mode=Capped 
+819:DATA:
+819:DATA:21:00:48 bread/s lread/s %rcache bwrit/s lwrit/s %wcache pread/s pwrit/s
+820:BGN:sar -P ALL 15 | awk 'BEGIN {print "CPU", "%USR","%SYS","%WIO","%IDLE"} NF>4 && $1!="AIX" && $2!="cpu" && $1!="-" { if (match($1,":") > 0) print $2,$3,$4,$5,$6; else print $1,$2,$3,$4,$5}'
+644:DATA: 1  0 87240 157650   0   0   0   0    0   0  13 18414 264  5  6 89  0
+648:DATA: 1  0 87240 157650   0   0   0   0    0   0  14 18500 282  7  8 84  0
+821:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+821:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+821:DATA:/dev/hd4            65536     23268     42268      36% /
+821:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+821:DATA:/dev/hd9var         65536     47692     17844      73% /var
+821:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+821:DATA:/dev/hd1            65536       392     65144       1% /home
+821:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+821:DATA:/dev/testlv       1048576       520   1048056       1% /test
+821:END:lcnt=8
+821:END:stat=0
+822:BGN:date
+822:DATA:Sun Dec 19 21:00:50 CST 2010
+822:END:lcnt=1
+822:END:stat=0
+823:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+823:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+823:END:lcnt=1
+823:END:stat=0
+824:BGN:who |  wc -l
+824:DATA:       5
+824:END:lcnt=1
+824:END:stat=0
+825:BGN:uptime
+825:DATA:  09:00PM   up 4 days,  18:02,  5 users,  load average: 0.91, 0.98, 1.02
+825:END:lcnt=1
+825:END:stat=0
+826:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+826:DATA:Total Paging Space   Percent Used
+826:DATA:      512               1
+826:END:lcnt=2
+826:END:stat=0
+827:BGN:ps -e | wc -l
+827:DATA:      79
+827:END:lcnt=1
+827:END:stat=0
+828:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+828:DATA:12 0 0
+828:END:lcnt=1
+828:END:stat=0
+829:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+829:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+829:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4228739 0 486747 0 0
+829:DATA:en0 1500 192.168.0 192.168.0.68 4228739 0 486747 0 0
+829:DATA:lo0 16896 link#1  335 0 338 0 0
+829:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+829:DATA:lo0 16896 ::1  335 0 338 0 0
+829:END:lcnt=6
+829:END:stat=0
+625:DATA:DISK BREAD BWRTN RPS WPS
+625:DATA:hdisk0 0.0 0.0 0.0 0.0
+625:DATA:hdisk1 0.0 0.0 0.0 0.0
+625:DATA:cd0 0.0 0.0 0.0 0.0
+637:DATA: 1  0  0 87239 157651   0   0   0   0   0    0  13 18261 267  4  5 91  0
+819:DATA:21:01:03       0       0       0       0       0       0       0       0
+819:END:lcnt=7
+819:END:stat=0
+820:DATA:CPU %USR %SYS %WIO %IDLE
+820:DATA:0 8 6 0 87
+820:END:lcnt=2
+820:END:stat=0
+648:DATA: 1  0 86998 157892   0   0   0   0    0   0  12 18372 260  4  4 92  0
+830:BGN:netstat -in  |  awk '{printf "%s %s %s %s %s %s %s %s %s\n",$1,$2,$3,( substr($0,25,11) == "           " ) ? "" : $4,$(NF-4), $(NF-3), $(NF-2), $(NF-1), $(NF);}'
+830:DATA:Name Mtu Network Address Ipkts Ierrs Opkts Oerrs Coll
+830:DATA:en0 1500 link#2 0.9.6b.de.1e.48 4228922 0 486761 0 0
+830:DATA:en0 1500 192.168.0 192.168.0.68 4228922 0 486761 0 0
+830:DATA:lo0 16896 link#1  335 0 338 0 0
+830:DATA:lo0 16896 127 127.0.0.1 335 0 338 0 0
+830:DATA:lo0 16896 ::1  335 0 338 0 0
+830:END:lcnt=6
+830:END:stat=0
+831:BGN:netstat -f inet -n | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+831:DATA:12 0 0
+831:END:lcnt=1
+831:END:stat=0
+832:BGN:ps -e | wc -l
+832:DATA:      74
+832:END:lcnt=1
+832:END:stat=0
+833:BGN:lsps -s | sed -e "s/MB//g" -e "s/%//"
+833:DATA:Total Paging Space   Percent Used
+833:DATA:      512               1
+833:END:lcnt=2
+833:END:stat=0
+834:BGN:uptime
+834:DATA:  09:01PM   up 4 days,  18:02,  5 users,  load average: 0.94, 0.98, 1.02
+834:END:lcnt=1
+834:END:stat=0
+835:BGN:who |  wc -l
+835:DATA:       5
+835:END:lcnt=1
+835:END:stat=0
+836:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+836:DATA:       F S      UID    PID   PPID   C PRI NI ADDR    SZ    WCHAN    STIME    TTY  TIME CMD
+836:END:lcnt=1
+836:END:stat=0
+837:BGN:date
+837:DATA:Sun Dec 19 21:01:06 CST 2010
+837:END:lcnt=1
+837:END:stat=0
+838:BGN:df -Pk | awk '$2!="-" && $3!="-"&& $4!="-" {print $0}'
+838:DATA:Filesystem    1024-blocks      Used Available Capacity Mounted on
+838:DATA:/dev/hd4            65536     23268     42268      36% /
+838:DATA:/dev/hd2          1376256   1038952    337304      76% /usr
+838:DATA:/dev/hd9var         65536     47692     17844      73% /var
+838:DATA:/dev/hd3            65536     57764      7772      89% /tmp
+838:DATA:/dev/hd1            65536       392     65144       1% /home
+838:DATA:/dev/hd10opt        65536     50972     14564      78% /opt
+838:DATA:/dev/testlv       1048576       520   1048056       1% /test
+838:END:lcnt=8
+838:END:stat=0

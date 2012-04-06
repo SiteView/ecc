@@ -1,0 +1,85 @@
+; -----------------------------------------------------------------------
+; Mercury Script Styles
+; IMAP Code Generation Style
+; -----------------------------------------------------------------------
+
+[IMAP:C]
+@Protocol=IMAP
+@FunctionList=imap_logon,imap_logout,imap_select,imap_examine
+@FunctionList=imap_create,imap_delete,imap_subscribe,imap_unsubscribe
+@FunctionList=imap_close,imap_check,imap_expunge,imap_status,imap_noop
+@FunctionList=imap_custom_request,imap_append
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[IMAP_EX:C]
+@Protocol=IMAP
+@FunctionList=imap_logon_ex,imap_logout_ex,imap_select_ex,imap_examine_ex
+@FunctionList=imap_create_ex,imap_delete_ex,imap_subscribe_ex,imap_unsubscribe_ex
+@FunctionList=imap_close_ex,imap_check_ex,imap_expunge_ex,imap_status_ex,imap_noop_ex
+@FunctionList=imap_custom_request_ex,imap_append_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[IMAP_LIST:C]
+@Protocol=IMAP
+@FunctionList=imap_list_mailboxes,imap_list_subscriptions
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=& NEWLINE
+NextArguments=& 
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[IMAP_LIST_EX:C]
+@Protocol=IMAP
+@FunctionList=imap_list_mailboxes_ex,imap_list_subscriptions_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=& 
+Argument=& NEWLINE
+NextArguments=& 
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[IMAP_UID:C]
+@Protocol=IMAP
+@FunctionList=imap_copy,imap_search,imap_store,imap_fetch
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=& 
+Argument=& NEWLINE
+Argument=& NEWLINE
+NextArguments=& 
+SoftDelimiter=SZ("ENDITEM")= & ENDITEM & NEWLINE
+NextArguments=&
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[IMAP_UID_EX:C]
+@Protocol=IMAP
+@FunctionList=imap_copy_ex,imap_search_ex,imap_fetch_ex,imap_store_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=& 
+Argument=& NEWLINE
+Argument=& NEWLINE
+NextArguments=& 
+SoftDelimiter=SZ("ENDITEM")= & ENDITEM & NEWLINE
+NextArguments=&
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+

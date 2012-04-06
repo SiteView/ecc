@@ -1,0 +1,4 @@
+
+tss_dispatcher: Log started at 19/07/2010 11:05:05 .
+
+19/07/2010 11:05:05 ERROR   wrong number of characters in sitescope port: 

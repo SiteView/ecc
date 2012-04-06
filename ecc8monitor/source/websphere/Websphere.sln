@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Websphere", "Websphere.vcproj", "{5D114D2A-0B59-4F4C-89E9-E9F50B3F426A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5D114D2A-0B59-4F4C-89E9-E9F50B3F426A}.Debug.ActiveCfg = Debug|Win32
+		{5D114D2A-0B59-4F4C-89E9-E9F50B3F426A}.Debug.Build.0 = Debug|Win32
+		{5D114D2A-0B59-4F4C-89E9-E9F50B3F426A}.Release.ActiveCfg = Release|Win32
+		{5D114D2A-0B59-4F4C-89E9-E9F50B3F426A}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

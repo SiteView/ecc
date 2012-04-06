@@ -1,0 +1,3 @@
+{"http",url_monitor,[{ip,url,"http://~s"}]}.
+{"http-alt",url_monitor,[{ip,url,"http://~s"}]}.
+{"ftp",ftp_monitor,[{ip,ftpserver,"~s"}]}.

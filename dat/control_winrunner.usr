@@ -1,0 +1,8 @@
+[General]
+Type=control_winrunner
+ThreadPriorityInit=1
+ThreadPriorityRun=1
+ThreadPriorityExit=1
+
+[CustomAction]
+ActionLogicExt=Server

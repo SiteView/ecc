@@ -1,0 +1,22 @@
+{monitor_set,
+"PING Group monitor SET",
+"Creates a PING  Group monitor using ip",
+[
+	{"%ip%","host ip to ping value","127.0.0.1"}
+],
+[
+	[	{class,ping_monitor},
+		{size,32},
+		{hostname,"%ip%"},
+		{timeout,3000},
+		{name,"Ping: %ip%"},
+		{frequency,600},
+		{depends_on,"none"},
+		{depends_condition,"good"},
+		{schedule,"all"},
+		{disabled,false},
+		{verfiy_error,false},
+		{error_frequency,0}
+	]
+]
+}.

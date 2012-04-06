@@ -1,0 +1,34 @@
+[Messages]
+Version=1.0
+-98200=Failed to start Java virtual machine (return code = %_1_ld)
+-98199=Failed to load class loader class
+-98198=Failed to add a global reference to an object of class %1
+-98197=Failed to attach current thread to the Java virtual machine (return code = %_1_ld)
+-98196=No class name specified in parameter '%1'
+-98195=An invalid handle was passed to function %1
+-98194=No method signature was specified in parameter %1 to javaext_exec_func2
+-98193=Failed to fetch method ID for method %1 (signature : %2) of class %3
+-98192=Failed to create an object of class %1 (signature : %2)
+-98191=Failed to create Java string for string %1
+-98190=Failed to create an array of type %1
+-98189=Failed to call method %1 of class %2
+-98188=Client tried to call a method on a null object of class %1
+-98187=Client tried to call a constructor for an existing object of class %1
+-98186=Method %1 of class %2 was called with an illegal signature (%3)
+-98185=An unsupported return type was specified in signature %1 (only integer types up to 32 bit and void are allowed)
+-98184=Java virtual machine has thrown the following exception : %1
+-98183=Failed to create a context for class %1
+-98182=Failed to create object context for object of class %1
+-98181=Jar file %1 does not exist
+-98180=Failed to update dynalic library path with %1
+-98179=Failed to load Java virtual machine. Reason : %1
+-98178=Debugging params are incorrect (%1), remote debugging is disabled
+-98177=Failed to convert a Java string to C string
+-98176=Buffer supplied when calling method %1 is too small (supplied size : %_2_ld, required size : %_3_ld)
+-98175=Failed to extract an array of type %1
+-98174=Failed to set an array element of type %1. Index : %_2_ld, array size : %_3_ld
+-98173=Failed to set an array region of type %1. Indices : %_2_ld to%_3_ld
+-98172=Java virtual machine exited, exit status = %_1_ld
+-98171=Java virtual machine terminated abnormally
+Msg_handler_lowest_msg=-98200
+Msg_handler_highest_msg=-98171

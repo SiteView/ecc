@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="LogicalDisk" type="perf" instances="*" >
+<counterInfo name="% Free Space" />
+<counterInfo name="Free Megabytes" />
+</object>
+
+<object name="Memory" type="perf" >
+<counterInfo name="Available MBytes" />
+<counterInfo name="Page Reads/sec" />
+<counterInfo name="Page Writes/sec" />
+<counterInfo name="Page Faults/sec" />
+<counterInfo name="Pages/sec" />
+<counterInfo name="Pool Nonpaged Bytes" />
+<counterInfo name="Pool Paged Bytes" />
+</object>
+
+<object name="Network Interface" type="perf" instances="*" >
+<counterInfo name="Bytes Received/sec" />
+<counterInfo name="Bytes Sent/sec" />
+<counterInfo name="Bytes Total/sec" />
+</object>
+
+<object name="Paging File" type="perf" instances="_Total">
+<counterInfo name="% Usage" />
+</object>
+
+<object name="PhysicalDisk" type="perf" instances="*" >
+<counterInfo name="Avg. Disk Queue Length" />
+<counterInfo name="Avg. Disk sec/Read" />
+<counterInfo name="Avg. Disk sec/Write" />
+<counterInfo name="Current Disk Queue Length" />
+<counterInfo name="Disk Reads/sec" />
+<counterInfo name="Disk Writes/sec" />
+</object>
+
+<object name="Processor" type="perf" instances="_Total" >
+<counterInfo name="% Processor Time" />
+<counterInfo name="% DPC Time" />
+</object>
+
+<object name="System" type="perf">
+<counterInfo name="Context Switches/sec" />
+<counterInfo name="Processor Queue Length" />
+<counterInfo name="System Up Time" />
+</object>
+
+<object name="Web Service" type="perf" instances="_Total" >
+<counterInfo name="Current Connections" />
+</object>
+
+</browse_data>

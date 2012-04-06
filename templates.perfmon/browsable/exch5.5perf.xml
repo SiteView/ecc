@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="Database" type="perf" instances="Information Store, Directory" >
+<counterInfo name="Cache % Hit" />
+<counterInfo name="Cache Size" />
+<counterInfo name="Table Opens/sec" />
+<counterInfo name="File Operations Pending" />
+<counterInfo name="Log Record Stalls/sec" />
+<counterInfo name="Log Writes/sec" />
+<counterInfo name="Log Threads Waiting" />
+<counterInfo name="File Bytes Read/sec" />
+</object>
+
+<object name="MSExchangeIMC" type="perf" >
+<counterInfo name="Queued Inbound" />
+<counterInfo name="Queued Outbound" />
+<counterInfo name="Queued MTS-IN" />
+<counterInfo name="Queued MTS-OUT" />
+<counterInfo name="Messages Entering MTS-IN" />
+<counterInfo name="Messages Entering MTS-OUT" />
+<counterInfo name="Messages Leaving MTS-IN" />
+<counterInfo name="Messages Leaving MTS-OUT" />
+<counterInfo name="Connections Inbound" />
+<counterInfo name="Connections Outbound" />
+</object>
+
+<object name="MSExchangeIS" type="perf">
+<counterInfo name="Active Connection Count" />
+<counterInfo name="Active Anonymous User Count" />
+<counterInfo name="Active User Count" />
+<counterInfo name="RPC Requests" />
+<counterInfo name="RPC Packets/sec" />
+<counterInfo name="RPC Operations/sec" />
+</object>
+
+<object name="MSExchangeDS" type="perf">
+<counterInfo name="AB Browses/sec" />
+<counterInfo name="AB Reads/sec" />
+</object>
+
+<object name="MSExchangeIS Public" type="perf">
+<counterInfo name="Average Time for Local Delivery" />
+<counterInfo name="Client Logons" />
+<counterInfo name="Message Recipients Delivered/min" />
+<counterInfo name="Messages Sent/min" />
+<counterInfo name="Message Submitted/min" />
+<counterInfo name="Messages Submitted/min" />
+<counterInfo name="Receive Queue Size" />
+<counterInfo name="Replication Receive Queue Size" />
+<counterInfo name="Send Queue Size" />
+</object>
+
+<object name="MSExchangeIS Private" type="perf">
+<counterInfo name="Messages Submitted/min" />
+<counterInfo name="Message Recipients Delivered/min" />
+<counterInfo name="Send Queue Size" />
+<counterInfo name="Receive Queue Size" />
+<counterInfo name="Single Instance Ratio" />
+</object>
+
+<object name="MSExchangeMTA" type="perf" >
+<counterInfo name="Adjacent MTA Associations" />
+<counterInfo name="Messages/Sec" />
+<counterInfo name="Work Queue Length" />
+</object>
+
+<object name="MSExchangeMTA Connections" type="perf" instances="*" >
+<counterInfo name="Queue Length" />
+<counterInfo name="Oldest Message Queued" />
+<counterInfo name="Last Outbound Association" />
+<counterInfo name="Next Association Retry" />
+</object>
+
+<object name="MSExchangePCMTA" type="perf" >
+<counterInfo name="File Contentions/hr" />
+<counterInfo name="LAN/WAN Messages Moved/hr" />
+</object>
+
+<object name="Process" type="perf" instances="DSAMAIN, EMSMTA, STORE, MAD" >
+<counterInfo name="% Processor Time" />
+</object>
+
+</browse_data>

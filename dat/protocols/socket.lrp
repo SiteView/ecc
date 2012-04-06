@@ -1,0 +1,168 @@
+[Protocol]
+Name=SOCKET
+CommonName=Raw Windows Sockets (TCP/IP)
+Category=Client/Server
+Description=Record raw TCP-IP requests
+Icon=bitmaps\wsoc.bmp
+Filters=WSocketProtoFilter
+Dependency=WPLUS
+Hidden=1
+Single=0
+Multi=1
+
+[WPLUS]
+Analyzers=GetRawProtocolAnalyzer:api_sock_proxy.dll
+Affinities=SOCKET
+
+[CustomTlbs]
+TLBs=
+CorrelateTypedef=SID,SSLID,X509
+
+[Replay]
+HEADERS=mic_socket.h,ws_data.h
+
+[CustomFilters]
+Filters=WSocketProtoFilter
+
+[WSocketProtoFilter]
+name=WSocket
+dll=api_sock_filter.dll
+init_func=WSocket_Init
+cleanup_func=WSocket_CleanUp
+protocols=WPLUS,SOCKET
+after=WplusProtoFilterBegin
+
+[Template]
+
+[Vugen]
+DLL=insp_gen.dll
+EnableRecordingLog=1
+32BitRecord=1
+Insp32DLL=api_inspector.dll
+REC_OPTN_TAB_DLL=api_sock_cfg.dll
+ExtraSectionsExt=.h,.inf,.vbs,.js,.vba,.bas,.cls,.dat,.bin
+DisableRegenerateToVuserLessThan762=1
+SectionCombo=1
+WINNT=mdrv.exe
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+;;
+EnableThreads=1
+EnableAutoTranPerFunc=1
+
+SELECTION_TRANS_DLL = wsconv32.dll
+SELECTION_TRANS_FUNC = lrs_proccess_selection
+SELECTION_TRANS_FREE_FUNC = lrs_free_selection_buffer
+
+[API.vba]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.js]
+extra_section=jscript_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vbs]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.c]
+extra_section=lr_general,c_general
+file_access=lr_cmd_color;int file_access(char *filename, int mode)			
+file_close=lr_cmd_color;int file_close(int stream)
+file_flush=lr_cmd_color;int file_flush(int stream)
+file_open=lr_cmd_color;int file_open(char *filename, char *mode)
+file_read=lr_cmd_color;int file_read(void *buffer, int length, int stream)
+file_size=lr_cmd_color;int file_size(char *filename)
+file_write=lr_cmd_color;int file_write(void *buffer, int length, int stream)
+gnedlongms_cert_get_issuer_has=lr_cmd_color;unsigned long ms_cert_get_issuer_hash(int x509id)
+gnedlongms_cert_get_subject_ha=lr_cmd_color;unsigned long ms_cert_get_subject_hash(int x509id)
+gnedlongms_cert_not_after_secs=lr_cmd_color;unsigned long ms_cert_not_after_secs(int x509id)
+gnedlongms_cert_not_before_sec=lr_cmd_color;unsigned long ms_cert_not_before_secs(int x509id)
+gnedlongms_get_host_ip_by_inde=lr_cmd_color;unsigned long ms_get_host_ip_by_index(int index)
+icmp_ping=lr_cmd_color;int icmp_ping(char *transaction, char *address[, argument]... )
+ms_accept=lr_cmd_color;int ms_accept(int sockid, int timeoutInSecs)
+ms_cert_get_issuer=lr_cmd_color;int ms_cert_get_issuer(int x509id, char *x509_issuer)
+ms_cert_get_serial_number=lr_cmd_color;int ms_cert_get_serial_number(int x509id, char *serialnumber)
+ms_cert_get_subject=lr_cmd_color;int ms_cert_get_subject(int x509id, char *x509_subject)
+ms_cert_get_version=lr_cmd_color;int ms_cert_get_version(int x509id) 
+ms_cert_is_valid=lr_cmd_color;int ms_cert_is_valid(int x509id)
+ms_cert_not_after=lr_cmd_color;int ms_cert_not_after(int x509id, char *not_after)
+ms_cert_not_before=lr_cmd_color;int ms_cert_not_before(int x509id, char *not_before)
+ms_cert_version=lr_cmd_color;int ms_cert_version(int x509id)
+ms_check_socket_read=lr_cmd_color;int ms_check_socket_read(int sockid, int timeoutInSecs)
+ms_check_socket_write=lr_cmd_color;int ms_check_socket_write(int sockid, int timeoutInSecs)
+ms_check_socket=lr_cmd_color;int ms_check_socket(int sockid, int timeoutInSecs)
+ms_close=lr_cmd_color;int ms_close(int sockid)
+ms_connect_timeout=lr_cmd_color;int ms_connect_timeout(int timeoutInSecs)
+ms_connect=lr_cmd_color;int ms_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+ms_dns_nextresult=lr_cmd_color;char *ms_dns_nextresult(char *queryresult)
+ms_dns_query=lr_cmd_color;char *ms_dns_query(char *transaction, char *dnsServerUrl[, argument]... )					
+ms_listen=lr_cmd_color;int ms_listen(char *localAddr, int localPort, unsigned long *serverAddr, int *serverPort)
+ms_multi_process=lr_cmd_color;int ms_multi_process(char *serverName, int serverPort, char *msg, int mlength, int concurrency, int iterations, int logBandWidthUtil)
+ms_print=lr_cmd_color;int ms_print(int debugmode, char *data, int length)
+ms_receive_timeout=lr_cmd_color;int ms_receive_timeout(int timeoutInSecs)
+ms_recv_once=lr_cmd_color;int ms_recv_once(int sockid, char *outputbuffer, int outputlength)
+ms_recv_until=lr_cmd_color;int ms_recv_until(int sockid, char *outputbuffer, int outputlength, char *marker, int markerlen)
+ms_recv=lr_cmd_color;int ms_recv(int sockid, char *outputbuffer, int outputlength)
+ms_send=lr_cmd_color;int ms_send(int sockid, char *data, int datalength)
+ms_ssl_accept=lr_cmd_color;int ms_ssl_accept(int sockid, int ssl_server_context)
+ms_ssl_close=lr_cmd_color;int ms_ssl_close(int sslid)
+ms_ssl_connect_ex=lr_cmd_color;int ms_ssl_connect_ex(int socketId, char *sslClntCertificate, char *sslClntKey, char *sslClntPassword)
+ms_ssl_connect=lr_cmd_color;int ms_ssl_connect(int socketId)
+ms_ssl_free_server_context=lr_cmd_color;int ms_ssl_free_server_context(int ssl_server_context)
+ms_ssl_get_cipher_info=lr_cmd_color;int ms_ssl_get_cipher_info(int sslid, char ** cipher_name, char ** cipher_ver, int *cipher_bits, int *bits_used, char *cipher_desc)
+ms_ssl_get_peer_certicificate=lr_cmd_color;int ms_ssl_get_peer_certicificate(int sslid)
+ms_ssl_initialize=lr_cmd_color;int ms_ssl_initialize(int ssltype, char *cipherlist)
+ms_ssl_is_initialized=lr_cmd_color;int ms_ssl_is_initialized()
+ms_ssl_new_server_context=lr_cmd_color;int ms_ssl_new_server_context(int sslver, char *sslSrvrCertificate, char *sslSrvrKey, char *sslSrvrKeyPass, char *sslCipherList, char *CAdirectory)
+ms_ssl_recv_once=lr_cmd_color;int ms_ssl_recv_once(int sslid, char *outputbuffer, int outputlength)
+ms_ssl_recv_until=lr_cmd_color;int ms_ssl_recv_until(int sslid, char *outputbuffer, int outputlength, char *marker, int markerlen)
+ms_ssl_recv=lr_cmd_color;int ms_ssl_recv(int sslid, char *outputbuffer, int outputlength)
+ms_ssl_send=lr_cmd_color;int ms_ssl_send(int sslid, char *data, int datalength)
+ms_ssl_simple_close=lr_cmd_color;int ms_ssl_simple_close(int sslid)
+ms_ssl_simple_connect=lr_cmd_color;int ms_ssl_simple_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+ms_tcp_connect=lr_cmd_color;int ms_tcp_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+ms_udp_connect=lr_cmd_color;int ms_udp_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+msrpc_save_int_param=lr_cmd_color;int msrpc_save_int_param(int value, char *paramname)      
+msrpc_save_string_param=lr_cmd_color;int msrpc_save_string_param(char *buffer, char *paramname)     
+msrpc_save_vdata_param=lr_cmd_color;int msrpc_save_vdata_param(char *buffer, int length, char *paramname)  
+msx_close=lr_cmd_color;int msx_close(int sockid);
+msx_connect=lr_cmd_color;int msx_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+msx_listen=lr_cmd_color;int msx_listen(char *localAddr, int localPort, unsigned long *serverAddr, int *serverPort)
+msx_recv=lr_cmd_color;int msx_recv(int sockid, char *outputbuffer, int outputlength)
+msx_send=lr_cmd_color;int msx_send(int sockid, char *data, int datalength)
+msx_ssl_recv=lr_cmd_color;int msx_ssl_recv(int sslid, char *outputbuffer, int outputlength)
+msx_ssl_send=lr_cmd_color;int msx_ssl_send(int sslid, char *data, int datalength)
+msx_ssl_simple_connect=lr_cmd_color;int msx_ssl_simple_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+msx_tcp_connect=lr_cmd_color;int msx_tcp_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+msx_udp_connect=lr_cmd_color;int msx_udp_connect(char *serverName, int serverPort, char *localAddr, int localPort)
+rpc_save_string_param=lr_cmd_color;int rpc_save_string_param(char *buffer, char *paramname)     
+rpc_save_vdata_param=lr_cmd_color;int rpc_save_vdata_param(char *buffer, int length, char *paramname)   
+util_base64decode_ex=lr_cmd_color;int util_base64decode_ex(char *inMessage, int inMessagelen, char **outMessage, int *outMessagelen)
+util_base64decode=lr_cmd_color;char *util_base64decode(char *inMessage)
+util_base64encode_ex=lr_cmd_color;int util_base64encode_ex(char *inMessage, int inMessagelen, char ** outMessage, int *outMessagelen, int linebreak)
+util_base64encode=lr_cmd_color;char *util_base64encode(char *inMessage)
+util_binary_to_lowerhex=lr_cmd_color;void util_binary_to_lowerhex(char *inBinary, int inBinaryLen, char *outHexStr)
+util_binary_to_upperhex=lr_cmd_color;void util_binary_to_upperhex(char *inBinary, int inBinaryLen, char *outHexStr)
+util_free=lr_cmd_color;void util_free(char *pointer)
+util_hmac_md5=lr_cmd_color;void util_hmac_md5(char *inText, int inTextLen, char *inKey, int inKeyLen, char *outDigest)
+util_md2=lr_cmd_color;char *util_md2(char *inMessage, int inMessagelen, char *md2)
+util_md4=lr_cmd_color;char *util_md4(char *inMessage, int inMessagelen, char *md4)
+util_md5=lr_cmd_color;char *util_md5(char *inMessage, int inMessagelen, char *md5)
+util_quoted_encode_ex=lr_cmd_color;int util_quoted_encode_ex(char *inMessage, int inMessagelen, char **outMessage, int *outMessagelen, int linebreak)
+util_urldecode=lr_cmd_color;char *util_urldecode(char *in_str)
+util_urlencode=lr_cmd_color;char *util_urlencode(char *in_str)
+xdr_save_bool_param=lr_cmd_color;int xdr_save_bool_param(unsigned int value, char *paramname)    
+xdr_save_double_param=lr_cmd_color;int xdr_save_double_param(double value, char *paramname)     
+xdr_save_enum_param=lr_cmd_color;int xdr_save_enum_param(unsigned int value, char *paramname)    
+xdr_save_fdata_param=lr_cmd_color;int xdr_save_fdata_param(char *buffer, int length, char *paramname)   
+xdr_save_float_param=lr_cmd_color;int xdr_save_float_param(float value, char *paramname)      
+xdr_save_int_param=lr_cmd_color;int xdr_save_int_param(int value, char *paramname)       
+xdr_save_string_param=lr_cmd_color;int xdr_save_string_param(char *buffer, char *paramname)     
+xdr_save_uint_param=lr_cmd_color;int xdr_save_uint_param(unsigned int value, char *paramname)    
+xdr_save_vdata_param=lr_cmd_color;int xdr_save_vdata_param(char *buffer, int length, char *paramname)   

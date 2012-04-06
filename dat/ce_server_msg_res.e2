@@ -1,0 +1,24 @@
+[Messages]
+Version=1.000
+-70999=CE Server: Failed to construct %1; reason: %2.
+-70998=CE Server: Failed to create %1 for service %2.
+-70997=CE Server: Failure in xdr encoding : %1.
+-70996=CE Server: Failure in xdr decoding : %1.
+-70995=CE Server: Failed to post message %1 to %2.
+-70994=CE Server: Unknown value %_1_ld for type %2.
+-70993=CE Server: Failed to %1 rc = %_2_ld.
+-70992=CE Server: Group %_1_ld not found during %2
+-70991=CE Server: Report %_1_ld not found during %2
+-70990=CE Server: Vuser not found in %1.
+-70989=CE Server: Mdrv process failed.
+-70988=CE Server: Vuser process/thread failed.
+-70987=CE Server: Failed to handle command; reason = %1.
+-70986=CE Server: Failed to handle %1 control request; reason = %2.
+-70985=CE Server: Vuser thread failed to allocate mdrv for running. 
+-70984=CE Server: Vuser got to killed status without being in ready or exiting. 
+-70983=CE Server: Mdrv got to killed status without being in ready or exiting. 
+-70982=CE Server: Failed to format command line by vuid replacement. VuidFormat = %1. 
+-70699=CE Server Debug: %1
+-70698=CE Server Debug: Vuser %_1_ld: %2
+Msg_handler_lowest_msg=-70999
+Msg_handler_highest_msg=-70698

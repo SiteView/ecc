@@ -1,0 +1,1 @@
+erl -pa core\ebin -pa .\modules\assets\ebin -pa .\modules\nmap_scan\ebin  -boot start_sasl -sname eccAsset -setcookie 3ren -eval "application:start(asset)." 

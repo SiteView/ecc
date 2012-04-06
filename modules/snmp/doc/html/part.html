@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>SNMP User's Guide</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<p>
+<small>
+<a target="_top" href="part_frame.html">
+User's Guide
+</a> | <a target="_top" href="ref_man_frame.html">
+Reference Manual
+</a> | <a target="_top" href="part_notes_frame.html">
+Release Notes
+</a> | <a target="_top" href="../../../../doc/print.html">
+Off-Print
+</a> | <a target="_top" href="../../../../doc/index.html">Top</a></small>
+</p>
+<p>
+<strong>SNMP User's Guide</strong>
+</p>
+<p>
+<small>
+   Version 4.12<br />
+</small>
+</p>
+<p>
+<small>
+  <a target="document" href="part_cite.html">Bibliography</a> |
+  <a target="document" href="part_term.html">Glossary</a> |
+  <a target="document" href="part_first.html">Cover</a>
+</small>
+</p>
+</center>
+<p>
+<small>
+<strong>Table of Contents</strong>
+</small>
+</p>
+<hr/>
+<small>1 <a target="document" href="snmp_intro.html#1">SNMP Introduction</a></small><br/>
+<small>1.1 <a target="document" href="snmp_intro.html#1.1">Scope and Purpose</a></small><br/>
+<small>1.2 <a target="document" href="snmp_intro.html#1.2">Prerequisites</a></small><br/>
+<small>1.3 <a target="document" href="snmp_intro.html#1.3">Definitions</a></small><br/>
+<small>1.4 <a target="document" href="snmp_intro.html#1.4">About This Manual</a></small><br/>
+<small>1.5 <a target="document" href="snmp_intro.html#1.5">Where to Find More Information</a></small><br/>
+<hr/>
+<small>2 <a target="document" href="snmp_agent_funct_descr.html#2">Agent Functional Description</a></small><br/>
+<small>2.1 <a target="document" href="snmp_agent_funct_descr.html#2.1">Features</a></small><br/>
+<small>2.2 <a target="document" href="snmp_agent_funct_descr.html#2.2">SNMPv1, SNMPv2 and SNMPv3</a></small><br/>
+<small>2.3 <a target="document" href="snmp_agent_funct_descr.html#2.3">Operation</a></small><br/>
+<small>2.4 <a target="document" href="snmp_agent_funct_descr.html#2.4">Sub-agents and MIB Loading</a></small><br/>
+<small>2.5 <a target="document" href="snmp_agent_funct_descr.html#2.5">Contexts and Communities</a></small><br/>
+<small>2.6 <a target="document" href="snmp_agent_funct_descr.html#2.6">Management of the Agent</a></small><br/>
+<small>2.7 <a target="document" href="snmp_agent_funct_descr.html#2.7">Notifications</a></small><br/>
+<hr/>
+<small>3 <a target="document" href="snmp_manager_funct_descr.html#3">Manager Functional Description</a></small><br/>
+<small>3.1 <a target="document" href="snmp_manager_funct_descr.html#3.1">Features</a></small><br/>
+<small>3.2 <a target="document" href="snmp_manager_funct_descr.html#3.2">Operation</a></small><br/>
+<small>3.3 <a target="document" href="snmp_manager_funct_descr.html#3.3">MIB loading</a></small><br/>
+<hr/>
+<small>4 <a target="document" href="snmp_mib_compiler.html#4">The MIB Compiler</a></small><br/>
+<small>4.1 <a target="document" href="snmp_mib_compiler.html#4.1">Operation</a></small><br/>
+<small>4.2 <a target="document" href="snmp_mib_compiler.html#4.2">Importing MIBs</a></small><br/>
+<small>4.3 <a target="document" href="snmp_mib_compiler.html#4.3">MIB Consistency Checking</a></small><br/>
+<small>4.4 <a target="document" href="snmp_mib_compiler.html#4.4">.hrl File Generation</a></small><br/>
+<small>4.5 <a target="document" href="snmp_mib_compiler.html#4.5">Emacs Integration</a></small><br/>
+<small>4.6 <a target="document" href="snmp_mib_compiler.html#4.6">Compiling from a Shell or a Makefile</a></small><br/>
+<small>4.7 <a target="document" href="snmp_mib_compiler.html#4.7">Deviations from the Standard</a></small><br/>
+<hr/>
+<small>5 <a target="document" href="snmp_config.html#5">Running the application</a></small><br/>
+<small>5.1 <a target="document" href="snmp_config.html#5.1">Configuring the application</a></small><br/>
+<small>5.2 <a target="document" href="snmp_config.html#5.2">Modifying the Configuration Files</a></small><br/>
+<small>5.3 <a target="document" href="snmp_config.html#5.3">Starting the application</a></small><br/>
+<small>5.4 <a target="document" href="snmp_config.html#5.4">Debugging the application</a></small><br/>
+<hr/>
+<small>6 <a target="document" href="snmp_agent_config_files.html#6">Definition of Agent Configuration Files</a></small><br/>
+<small>6.1 <a target="document" href="snmp_agent_config_files.html#6.1">Agent Information</a></small><br/>
+<small>6.2 <a target="document" href="snmp_agent_config_files.html#6.2">Contexts</a></small><br/>
+<small>6.3 <a target="document" href="snmp_agent_config_files.html#6.3">System Information</a></small><br/>
+<small>6.4 <a target="document" href="snmp_agent_config_files.html#6.4">Communities</a></small><br/>
+<small>6.5 <a target="document" href="snmp_agent_config_files.html#6.5">MIB Views for VACM</a></small><br/>
+<small>6.6 <a target="document" href="snmp_agent_config_files.html#6.6">Security data for USM</a></small><br/>
+<small>6.7 <a target="document" href="snmp_agent_config_files.html#6.7">Notify Definitions</a></small><br/>
+<small>6.8 <a target="document" href="snmp_agent_config_files.html#6.8">Target Address Definitions</a></small><br/>
+<small>6.9 <a target="document" href="snmp_agent_config_files.html#6.9">Target Parameters Definitions</a></small><br/>
+<hr/>
+<small>7 <a target="document" href="snmp_manager_config_files.html#7">Definition of Manager Configuration Files</a></small><br/>
+<small>7.1 <a target="document" href="snmp_manager_config_files.html#7.1">Manager Information</a></small><br/>
+<small>7.2 <a target="document" href="snmp_manager_config_files.html#7.2">Users</a></small><br/>
+<small>7.3 <a target="document" href="snmp_manager_config_files.html#7.3">Agents</a></small><br/>
+<small>7.4 <a target="document" href="snmp_manager_config_files.html#7.4">Security data for USM</a></small><br/>
+<hr/>
+<small>8 <a target="document" href="snmp_impl_example_agent.html#8">Agent Implementation Example</a></small><br/>
+<small>8.1 <a target="document" href="snmp_impl_example_agent.html#8.1">MIB</a></small><br/>
+<small>8.2 <a target="document" href="snmp_impl_example_agent.html#8.2">Default Implementation</a></small><br/>
+<small>8.3 <a target="document" href="snmp_impl_example_agent.html#8.3">Manual Implementation</a></small><br/>
+<hr/>
+<small>9 <a target="document" href="snmp_impl_example_manager.html#9">Manager Implementation Example</a></small><br/>
+<small>9.1 <a target="document" href="snmp_impl_example_manager.html#9.1">The example manager</a></small><br/>
+<small>9.2 <a target="document" href="snmp_impl_example_manager.html#9.2">A simple standard test</a></small><br/>
+<hr/>
+<small>10 <a target="document" href="snmp_instr_functions.html#10">Instrumentation Functions</a></small><br/>
+<small>10.1 <a target="document" href="snmp_instr_functions.html#10.1">Instrumentation Functions</a></small><br/>
+<small>10.2 <a target="document" href="snmp_instr_functions.html#10.2">Using the ExtraArgument</a></small><br/>
+<small>10.3 <a target="document" href="snmp_instr_functions.html#10.3">Default Instrumentation</a></small><br/>
+<small>10.4 <a target="document" href="snmp_instr_functions.html#10.4">Atomic Set</a></small><br/>
+<hr/>
+<small>11 <a target="document" href="snmp_def_instr_functions.html#11">Definition of Instrumentation Functions</a></small><br/>
+<small>11.1 <a target="document" href="snmp_def_instr_functions.html#11.1">Variable Instrumentation</a></small><br/>
+<small>11.2 <a target="document" href="snmp_def_instr_functions.html#11.2">Table Instrumentation</a></small><br/>
+<hr/>
+<small>12 <a target="document" href="snmp_agent_netif.html#12">Definition of Agent Net if</a></small><br/>
+<small>12.1 <a target="document" href="snmp_agent_netif.html#12.1">Mandatory Functions</a></small><br/>
+<small>12.2 <a target="document" href="snmp_agent_netif.html#12.2">Messages</a></small><br/>
+<hr/>
+<small>13 <a target="document" href="snmp_manager_netif.html#13">Definition of Manager Net if</a></small><br/>
+<small>13.1 <a target="document" href="snmp_manager_netif.html#13.1">Mandatory Functions</a></small><br/>
+<small>13.2 <a target="document" href="snmp_manager_netif.html#13.2">Messages</a></small><br/>
+<hr/>
+<small>14 <a target="document" href="snmp_audit_trail_log.html#14">Audit Trail Log</a></small><br/>
+<small>14.1 <a target="document" href="snmp_audit_trail_log.html#14.1">Agent Logging</a></small><br/>
+<small>14.2 <a target="document" href="snmp_audit_trail_log.html#14.2">Manager Logging</a></small><br/>
+<hr/>
+<small>15 <a target="document" href="snmp_advanced_agent.html#15">Advanced Agent Topics</a></small><br/>
+<small>15.1 <a target="document" href="snmp_advanced_agent.html#15.1">When to use a Sub-agent</a></small><br/>
+<small>15.2 <a target="document" href="snmp_advanced_agent.html#15.2">Agent Semantics</a></small><br/>
+<small>15.3 <a target="document" href="snmp_advanced_agent.html#15.3">Sub-agents and Dependencies </a></small><br/>
+<small>15.4 <a target="document" href="snmp_advanced_agent.html#15.4">Distributed Tables</a></small><br/>
+<small>15.5 <a target="document" href="snmp_advanced_agent.html#15.5">Fault Tolerance</a></small><br/>
+<small>15.6 <a target="document" href="snmp_advanced_agent.html#15.6">Using Mnesia Tables as SNMP Tables</a></small><br/>
+<small>15.7 <a target="document" href="snmp_advanced_agent.html#15.7">Deviations from the Standard</a></small><br/>
+<hr/>
+<small>16 <a target="document" href="snmp_app_a.html#16">SNMP Appendix A</a></small><br/>
+<small>16.1 <a target="document" href="snmp_app_a.html#16.1">Appendix A</a></small><br/>
+<hr/>
+<small>17 <a target="document" href="snmp_app_b.html#17">SNMP Appendix B</a></small><br/>
+<small>17.1 <a target="document" href="snmp_app_b.html#17.1">Appendix B</a></small><br/>
+</body >
+</html>

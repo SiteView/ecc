@@ -1,0 +1,79 @@
+"// iPlanet 4.1 sitemon".
+{counters,'1','Bytes transferred',false}.
+{counters,'2','Total requests',false}.
+"// (Note: Number of Processes available for UNIX platform only)".
+{counters,'3','Number of Processes',false}.
+{counters,'4','Bad requests',false}.
+{counters,'5','2xx',false}.
+{counters,'6','3xx',false}.
+{counters,'7','4xx',false}.
+{counters,'8','5xx',false}.
+{counters,'9','xxx',false}.
+{counters,'10','200',false}.
+{counters,'11','302',false}.
+{counters,'12','304',false}.
+{counters,'13','401',false}.
+{counters,'14','403',false}.
+"// iPlanet 4.1 performance dump statistics".
+{counters,'15','Address',false}.
+{counters,'16','ActiveThreads',false}.
+{counters,'17','WaitingThreads',false}.
+{counters,'18','BusyThreads',false}.
+{counters,'19','Thread limits',false}.
+{counters,'20','Total Sessions',false}.
+{counters,'21','KeepAliveCount',false}.
+{counters,'22','KeepAliveHits',false}.
+{counters,'23','KeepAliveFlushes',false}.
+{counters,'24','KeepAliveTimeout',false}.
+{counters,'25','enabled',false}.
+{counters,'26','CacheEntries',false}.
+{counters,'27','Hit Ratio',false}.
+{counters,'28','pollInterval',false}.
+{counters,'29','Idle/Peak/Limit',false}.
+{counters,'30','Work queue length/Peak/Limit',false}.
+"// iPLanet 6.0 virtualServerStats".
+{counters,'31','Total Number Of Requests',false}.
+{counters,'32','Number Of Bytes Received',false}.
+{counters,'33','Number Of Bytes Sent',false}.
+{counters,'34','Number Of Virtual Servers',false}.
+{counters,'35','2xx',false}.
+{counters,'36','3xx',false}.
+{counters,'37','4xx',false}.
+{counters,'38','5xx',false}.
+{counters,'39','Other',false}.
+{counters,'40','200',false}.
+{counters,'41','302',false}.
+{counters,'42','304',false}.
+{counters,'43','401',false}.
+{counters,'44','403',false}.
+{counters,'45','404',false}.
+"// iPLanet 6.0 keepAliveStats".
+{counters,'46','Maximum Keep-Alive Connections',false}.
+{counters,'47','Keep-Alive Timeout',false}.
+{counters,'48','Number Of Processes',false}.
+{counters,'49','Keep-Alive Hits',false}.
+{counters,'50','Keep-Alive Flushes',false}.
+{counters,'51','Keep-Alive Refusals',false}.
+{counters,'52','Keep-Alive Timeouts',false}.
+"// iPLanet 6.0 dnsStats".
+{counters,'53','Maximum DNS Cache Entries',false}.
+{counters,'54','Number Of Processes',false}.
+{counters,'55','DNS Cache Hits',false}.
+{counters,'56','DNS Cache Misses',false}.
+"// iPLanet 6.0 cacheStats".
+{counters,'57','Maximum Cache Age (seconds)',false}.
+{counters,'58','Maximum Heap Cache Size',false}.
+{counters,'59','Maximum Memory Cache Map Size',false}.
+{counters,'60','Number Of Processes',false}.
+{counters,'61','Cache Hits',false}.
+{counters,'62','Cache Misses',false}.
+{counters,'63','Info Cache Hits',false}.
+{counters,'64','Info Cache Misses',false}.
+{counters,'65','Content Cache Hits',false}.
+{counters,'66','Content Cache Misses',false}.
+"// iPLanet 6.0 connectionStats".
+{counters,'67','Total Number Of Connections',false}.
+{counters,'68','Maximum Number Of Queued Connections',false}.
+{counters,'69','Peak Number Of Queued Connections',false}.
+{counters,'70','Current Number Of Queued Connections',false}.
+{counters,'71','Number Of Processes',false}.

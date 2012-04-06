@@ -1,0 +1,37 @@
+; -----------------------------------------------------------------------
+; Mercury Script Styles
+; POP3 Code Generation Style
+; -----------------------------------------------------------------------
+
+
+[POP3:C]
+@Protocol=POP3
+@FunctionList=pop3_logon,pop3_list,pop3_retrieve,pop3_delete,pop3_command,pop3_logoff
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+[POP3_EX:C]
+@Protocol=POP3
+@FunctionList=pop3_logon_ex,pop3_list_ex,pop3_retrieve_ex,pop3_delete_ex,pop3_command_ex,pop3_logoff_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+Argument=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+
+[POP3_EX:VBA]
+@Protocol=POP3
+@MethodList=IPop3Api->logon, IPop3Api->logoff, IPop3Api->list, IPop3Api->command, IPop3Api->retrieve, IPop3Api->delete_mail
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &

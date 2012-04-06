@@ -1,0 +1,15 @@
+Type:       <eventType>
+Event Time:	<eventTime>
+Source:     <eventSource>
+ID:         <eventID>
+Category:   <eventCategory>
+Machine:    <eventMachine>
+Message:    <eventMessage>
+
+Monitor:  <name>
+Group:    <group>
+Sample #: <sample>
+Time:     <time>
+
+<mainParameters>
+<mainStateProperties>

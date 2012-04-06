@@ -1,0 +1,4 @@
+% Compile all files.
+{ './src/*', [{ i, "./include" },{ outdir, "./ebin" },debug_info]}.
+{ './src/*/*', [{ i, "./include" },{ outdir, "./ebin" },debug_info]}.
+{ './parser/*', [{ i, "./include" },{ outdir, "./ebin" },debug_info]}.

@@ -1,0 +1,57 @@
+1、前台代码通过eclipse导出ecc.war编译包
+
+2、ecc.war置于tomcat7/webapps/目录下解压
+
+3、修改tomcat7\webapps\ecc\WEB-INF\classes\config.properties对应节点为可替换参数%NODE%
+
+4、如果不用打包nnm，修改tomcat7\webapps\ecc\WEB-INF\main\index.zul nnm的tab显示为false
+
+5、打包代码分布：
+前台代码置于D:\ECC 9.0 Setup\ecc\目录
+后台到SVN目录http://dev.siteview.com/svn/svIAD/trunk/Server下载，置于D:\ECC 9.0 Setup\Server\目录
+后台ofbiz框架置于D:\ECC 9.0 Setup\Server\ofbiz\目录
+\Server\ofbiz\hot-deploy\erlangnode\到SVN目录http://dev.siteview.com/svn/svIAD/zkoss/erlangnode下载
+
+6、所有打包需要编译后台代码和ofbiz框架代码，执行Server\compile.bat，执行Server\ofbiz\ant.bat
+
+7、32位包请用Server\setup\Ecc_Setup.nsi，32位服务启动程序MonitorContrl.exe
+
+8、64位包前后台代码在64位环境编译（64位JDK，64位ant，64位eclipse），用Server\setup\Ecc_Setup_64.nsi
+
+9、64位包需要64位tomcat拷贝版，置于Server\tomcat7_64；64位服务启动程序MonitorContrl.exe
+
+10、分布式部署包，用Server\setup\monitorproxy_setup.nsi
+
+11、荣科和易通的包需要使用相应的前后台代码就可以实现了，图片用相应的图片，易通要注意使用易通的协议文件
+
+
+
+
+打包脚本及安装目录下载路径：
+http://dev.siteview.com/svn/svIAD/EccOEM/Ecc9.1/Server/setup
+http://dev.siteview.com/svn/svIAD/EccOEM/Ecc9.1/Server/thirdparty
+
+打包时需要关注的配置文件：
+前台：
+webapps\ecc\WEB-INF\classes\config.properties
+webapps\ecc\main\index.zul（nnm可见）
+标准包后台：
+conf\server.conf
+conf\service.conf
+分布式包后台：
+conf\service.ini
+conf\server.conf
+conf\service.conf
+
+添加+nnm包的NSIS脚本
+Ecc_Setup_nnm.nsi
+Ecc_Setup_nnm_1.nsi
+Ecc_Setup_nnm_64.nsi
+Ecc_Setup_nnm_64_1.nsi
+其中所有带_1的NSIS脚本都是可配置操作系统默认用户名和密码的打包脚本
+
+
+
+
+
+

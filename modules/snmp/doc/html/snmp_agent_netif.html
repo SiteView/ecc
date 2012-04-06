@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Definition of Agent Net if</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="12"><!-- Empty --></a>
+<h2>12 Definition of Agent Net if</h2>
+
+<p>
+</p>
+<center>
+<img alt="snmp_agent_netif_1" src="snmp_agent_netif_1.gif"/><br/>
+<em>The Purpose of Agent Net if</em>
+
+</center>
+
+<p>The Network Interface (Net if) process delivers SNMP PDUs to a
+master agent, and receives SNMP PDUs from the master agent. The most
+common behaviour of a Net if process is that is receives bytes from
+a network, decodes them into an SNMP PDU, which it sends to a master
+agent. When the master agent has processed the PDU, it sends a
+response PDU to the Net if process, which encodes the PDU into bytes
+and transmits the bytes onto the network.
+
+</p>
+<p>However, that simple behaviour can be modified in numerous
+ways. For example, the Net if process can apply some kind of
+encrypting/decrypting scheme on the bytes or
+act as a proxy filter, which sends some packets to a proxy agent and
+some packets to the master agent.
+
+</p>
+<p>It is also possible to write your own Net if process. The default
+Net if process is implemented in the module <span class="code">snmpa_net_if</span> and
+it uses UDP as the transport protocol.
+
+</p>
+<p>This section describes how to write a Net if process.
+
+</p><a name="mandatory_functions"><!-- Empty --></a><a name="12.1"><!-- Empty --></a>
+<h3>12.1 Mandatory Functions</h3>
+
+<p>A Net if process must implement the SNMP agent 
+<a href="snmpa_network_interface.html">network interface behaviour</a>.
+
+</p><a name="12.2"><!-- Empty --></a>
+<h3>12.2 Messages</h3>
+
+<p>The section <strong>Messages</strong> describes mandatory messages, which
+Net if must send and be able to receive. 
+
+</p><a name="12.2.1"><!-- Empty --></a>
+<h4>12.2.1 Outgoing Messages</h4>
+
+<p>Net if must send the following message when it receives an
+SNMP PDU from the network that is aimed for the MasterAgent:
+
+</p>
+<div class="example"><pre>
+MasterAgent ! {snmp_pdu, Vsn, Pdu, PduMS, ACMData, From, Extra}
+      
+</pre></div>
+
+<ul>
+
+<li>
+<span class="code">Vsn</span> is either <span class="code">'version-1'</span>,
+<span class="code">'version-2'</span>, or <span class="code">'version-3'</span>.
+
+</li>
+
+
+<li>
+<span class="code">Pdu</span> is an SNMP PDU record, as defined in
+<span class="code">snmp_types.hrl</span>, with the SNMP request.
+
+</li>
+
+
+<li>
+<span class="code">PduMS</span> is the Maximum Size of the response Pdu
+allowed. Normally this is returned from
+<span class="code">snmpa_mpd:process_packet</span> (see Reference Manual).
+
+</li>
+
+
+<li>
+<span class="code">ACMData</span> is data used by the Access Control Module
+in use. Normally this is returned from
+<span class="code">snmpa_mpd:process_packet</span> (see Reference Manual).
+
+</li>
+
+
+<li>
+<span class="code">From</span> is the source address. If UDP over IP is
+used, this should be a 2-tuple <span class="code">{IP, UDPport}</span>, where
+<span class="code">IP</span> is a 4-tuple with the IP address, and <span class="code">UDPport</span>
+is an integer.
+
+</li>
+
+
+<li>
+<span class="code">Extra</span> is any term the Net if process wishes to
+send to the agent. This term can be retrieved by the
+instrumentation functions by calling
+<span class="code">snmp:current_net_if_data()</span>. This data is also sent back
+to the Net if process when the agent generates a response to
+the request.
+</li>
+
+
+</ul>
+
+<p>The following message is used to report that a response to a
+request has been received. The only request an agent can send
+is an Inform-Request.
+
+</p>
+<div class="example"><pre>
+Pid ! {snmp_response_received, Vsn, Pdu, From}
+      
+</pre></div>
+
+<ul>
+
+<li>
+<span class="code">Pid</span> is the Process that waits for the response
+for the request. The Pid was specified in the
+<span class="code">send_pdu_req</span> message <a href="#message">(see below)</a>.
+
+</li>
+
+
+<li>
+<span class="code">Vsn</span> is either <span class="code">'version-1'</span>, <span class="code">'version-2'</span>, or
+<span class="code">'version-3'</span>.
+
+</li>
+
+
+<li>
+<span class="code">Pdu</span> is the SNMP Pdu received
+
+</li>
+
+
+<li>
+<span class="code">From</span> is the source address. If UDP over IP is
+used, this should be a 2-tuple <span class="code">{IP, UDPport}</span>, where
+<span class="code">IP</span> is a 4-tuple with the IP address, and <span class="code">UDPport</span>
+is an integer.
+
+</li>
+
+
+</ul>
+<a name="12.2.2"><!-- Empty --></a>
+<h4>12.2.2 Incoming Messages</h4>
+
+<p>This section describes the incoming messages which a Net if
+process must be able to receive.
+
+</p>
+<ul>
+
+<li>
+
+<span class="code">{snmp_response, Vsn, Pdu, Type, ACMData, To, Extra}</span><br />
+
+This message is sent to the Net if process from a master
+agent as a response to a previously received request.
+<br />
+
+
+<ul>
+
+<li>
+<span class="code">Vsn</span> is either <span class="code">'version-1'</span>,
+<span class="code">'version-2'</span>, or <span class="code">'version-3'</span>.
+
+</li>
+
+
+<li>
+<span class="code">Pdu</span> is an SNMP PDU record (as defined in
+snmp_types.hrl) with the SNMP response.
+
+</li>
+
+
+<li>
+<span class="code">Type</span> is the <span class="code">#pdu.type</span> of the original
+request.
+
+</li>
+
+
+<li>
+<span class="code">ACMData</span> is data used by the Access Control
+Module in use. Normally this is just sent to
+<span class="code">snmpa_mpd:generate_response_message</span> (see Reference Manual).
+
+</li>
+
+
+<li>
+<span class="code">To</span> is the destination address. If UDP over IP
+is used, this should be a 2-tuple <span class="code">{IP, UDPport}</span>,
+where <span class="code">IP</span> is a 4-tuple with the IP address, and
+<span class="code">UDPport</span> is an integer.
+
+</li>
+
+
+<li>
+<span class="code">Extra</span> is the term that the Net if process
+sent to the agent when the request was sent to the agent.
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>
+
+<span class="code">{discarded_pdu, Vsn, ReqId, ACMData, Variable, Extra}</span><br />
+
+This message is sent from a master agent if it for some
+reason decided to discard the pdu.
+<br />
+
+
+<ul>
+
+<li>
+<span class="code">Vsn</span> is either <span class="code">'version-1'</span>,
+<span class="code">'version-2'</span>, or <span class="code">'version-3'</span>.
+
+</li>
+
+
+<li>
+<span class="code">ReqId</span> is the request id of the original
+request.
+
+</li>
+
+
+<li>
+<span class="code">ACMData</span> is data used by the Access Control
+Module in use. Normally this is just sent to
+<span class="code">snmpa_mpd:generate_response_message</span> (see Reference Manual).
+
+</li>
+
+
+<li>
+<span class="code">Variable</span> is the name of an snmp counter that
+represents the error, e.g. <span class="code">snmpInBadCommunityUses</span>.
+
+</li>
+
+
+<li>
+<span class="code">Extra</span> is the term that the Net if process
+sent to the agent when the request was sent to the agent.
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>
+
+<span class="code">{send_pdu, Vsn, Pdu, MsgData, To}</span><br />
+
+This message is sent from a master agent when a trap is
+to be sent.
+<br />
+
+
+<ul>
+
+<li>
+<span class="code">Vsn</span> is either <span class="code">'version-1'</span>,
+<span class="code">'version-2'</span>, or <span class="code">'version-3'</span>.
+
+</li>
+
+
+<li>
+<span class="code">Pdu</span> is an SNMP PDU record (as defined in
+snmp_types.hrl) with the SNMP response.
+
+</li>
+
+
+<li>
+<span class="code">MsgData</span> is the message specific data used in
+the SNMP message. This value is normally sent to
+<span class="code">snmpa_mpd:generate_message/4</span>. In SNMPv1 and
+SNMPv2c, this message data is the community string. In
+SNMPv3, it is the context information.
+
+</li>
+
+
+<li>
+<span class="code">To</span> is a list of the destination addresses and
+their corresponding security parameters. This value is
+normally sent to <span class="code">snmpa_mpd:generate_message/4</span>. 
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>
+
+<span class="code">{send_pdu_req, Vsn, Pdu, MsgData, To, Pid}</span><br />
+
+This <a name="message"><!-- Empty --></a>
+message is sent from a master 
+agent when a request is
+to be sent. The only request an agent can send is
+Inform-Request. The net if process needs to remember the
+request id and the Pid, and when a response is received for
+the request id, send it to Pid, using a
+<span class="code">snmp_response_received</span> message.
+<br />
+
+
+<ul>
+
+<li>
+<span class="code">Vsn</span> is either <span class="code">'version-1'</span>,
+<span class="code">'version-2'</span>, or <span class="code">'version-3'</span>.
+
+</li>
+
+
+<li>
+<span class="code">Pdu</span> is an SNMP PDU record (as defined in
+snmp_types.hrl) with the SNMP response.
+
+</li>
+
+
+<li>
+<span class="code">MsgData</span> is the message specific data used in
+the SNMP message. This value is normally sent to
+<span class="code">snmpa_mpd:generate_message/4</span>. In SNMPv1 and
+SNMPv2c, this message data is the community string. In
+SNMPv3, it is the context information.
+
+</li>
+
+
+<li>
+<span class="code">To</span> is a list of the destination addresses and
+their corresponding security parameters. This value is
+normally sent to <span class="code">snmpa_mpd:generate_message/4</span>. 
+
+</li>
+
+
+<li>
+<span class="code">Pid</span> is a process identifier.
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+</ul>
+<a name="12.2.3"><!-- Empty --></a>
+<h4>12.2.3 Notes</h4>
+
+<p>Since the Net if process is responsible for encoding and
+decoding of SNMP messages, it must also update the relevant
+counters in the SNMP group in MIB-II. It can use the functions
+in the module <span class="code">snmpa_mpd</span> for this purpose (refer to the 
+Reference Manual, section <span class="code">snmp</span>, 
+module <a href="snmp_pdus.html">snmpa_mpd</a>
+for more details.)
+
+</p>
+<p>There are also some useful functions for encoding and
+decoding of SNMP messages in the module 
+<a href="snmp_pdus.html">snmp_pdus</a>.
+
+</p><center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

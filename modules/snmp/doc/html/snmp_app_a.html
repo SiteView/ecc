@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>SNMP Appendix A</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="16"><!-- Empty --></a>
+<h2>16 SNMP Appendix A</h2>
+<a name="16.1"><!-- Empty --></a>
+<h3>16.1 Appendix A</h3>
+
+<p>This appendix describes the conversion of SNMPv2 to SNMPv1
+error messages. The instrumentation functions should return v2
+error messages.
+
+</p>
+<p>Mapping of SNMPv2 error message to SNMPv1:
+
+</p>
+<center>
+<table cellspacing="0" cellpadding="2" border="1">
+  <caption align="bottom"><em>Error Messages</em></caption>
+  <tr>
+    <td align="left" valign="middle">
+SNMPv2 message
+    </td>
+    <td align="left" valign="middle">
+SNMPv1 message
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+noError
+    </td>
+    <td align="left" valign="middle">
+noError
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+genErr
+    </td>
+    <td align="left" valign="middle">
+genErr
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+noAccess
+    </td>
+    <td align="left" valign="middle">
+noSuchName
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+wrongType
+    </td>
+    <td align="left" valign="middle">
+badValue
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+wrongLength
+    </td>
+    <td align="left" valign="middle">
+badValue
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+wrongEncoding
+    </td>
+    <td align="left" valign="middle">
+badValue
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+wrongValue
+    </td>
+    <td align="left" valign="middle">
+badValue
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+noCreation
+    </td>
+    <td align="left" valign="middle">
+noSuchName
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+inconsistentValue
+    </td>
+    <td align="left" valign="middle">
+badValue
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+resourceUnavailable
+    </td>
+    <td align="left" valign="middle">
+genErr
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+commitFailed
+    </td>
+    <td align="left" valign="middle">
+genErr
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+undoFailed
+    </td>
+    <td align="left" valign="middle">
+genErr
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+notWritable
+    </td>
+    <td align="left" valign="middle">
+noSuchName
+    </td>
+
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+inconsistentName
+    </td>
+    <td align="left" valign="middle">
+noSuchName
+    </td>
+
+  </tr>
+
+</table>
+</center>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

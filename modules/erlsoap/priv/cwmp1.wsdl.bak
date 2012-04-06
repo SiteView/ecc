@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <wsdl:definitions name="cwmp" 
+ targetNamespace="urn:dslforum-org:cwmp-1-1" 
+ xmlns:tns="urn:dslforum-org:cwmp-1-1"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:cwmp="urn:dslforum-org:cwmp-1-1"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+ 
+<wsdl:types>
+
+  <xs:schema
+  targetNamespace="urn:dslforum-org:cwmp-1-1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:tns="urn:dslforum-org:cwmp-1-1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:cwmp="urn:dslforum-org:cwmp-1-1"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified" 
+  attributeFormDefault="unqualified">
+
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="http://schemas.xmlsoap.org/soap/envelope/"/>
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+  <xs:complexType name="DeviceIdStruct">
+    <xs:sequence>
+      <xs:element name="Manufacturer">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="OUI">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="6"/>
+            <xs:pattern value="[0-9A-F]{6}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProductClass">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SerialNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+ <xs:complexType name="ParameterValueList">
+    <xs:complexContent>
+      <xs:restriction base="soapenc:Array">
+        <xs:sequence>
+          <xs:element name="ParameterValueStruct" type="tns:ParameterValueStruct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="soapenc:arrayType" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParameterValueStruct">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="256"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Value" type="xs:anySimpleType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="XFileEventResponse">
+    <xs:complexType/>
+  </xs:element>
+
+ <xs:element name="XFileEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="Event" type="xs:string"/>
+	<xs:element name="OUI" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+
+<xs:element name="Boot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="Ip" type="xs:string"/>
+	<xs:element name="MaxEnvelopes" type="xs:unsignedInt"/>
+        <xs:element name="CurrentTime" type="xs:dateTime"/>
+        <xs:element name="RetryCount" type="xs:unsignedInt"/>
+      </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+
+ <xs:element name="BootResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MaxEnvelopes" type="xs:unsignedInt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ValueChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DeviceId" type="tns:DeviceIdStruct"/>
+	<xs:element name="MaxEnvelopes" type="xs:unsignedInt"/>
+	<xs:element name="Ip" type="xs:string"/>
+        <xs:element name="CurrentTime" type="xs:dateTime"/>
+        <xs:element name="RetryCount" type="xs:unsignedInt"/>
+	<xs:element name="ParameterList" type="tns:ParameterValueList"/>
+      </xs:sequence>
+    </xs:complexType>
+ </xs:element>
+
+ <xs:element name="ValueChangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MaxEnvelopes" type="xs:unsignedInt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+</wsdl:types>
+
+<message name="XFileEvent">
+ <part name="parameters" element="cwmp:XFileEvent"/>
+</message>
+
+<message name="XFileEventResponse">
+ <part name="parameters" element="cwmp:XFileEventResponse"/>
+</message>
+
+<message name="Boot">
+ <part name="parameters" element="cwmp:Boot"/>
+</message>
+
+<message name="BootResponse">
+ <part name="parameters" element="cwmp:BootResponse"/>
+</message>
+
+<message name="ValueChange">
+ <part name="parameters" element="cwmp:ValueChange"/>
+</message>
+
+<message name="ValueChangeResponse">
+ <part name="parameters" element="cwmp:ValueChangeResponse"/>
+</message>
+
+<portType name="cwmpPortType">
+
+<operation name="XFileEvent">
+  <documentation>Service definition of function cwmp__Inform</documentation>
+  <input message="tns:XFileEvent"/>
+  <output message="tns:XFileEventResponse"/>
+ </operation>
+
+ <operation name="Boot">
+  <documentation>Service definition of function cwmp__Inform</documentation>
+  <input message="tns:Boot"/>
+  <output message="tns:BootResponse"/>
+ </operation>
+
+ <operation name="ValueChange">
+  <documentation>Service definition of function cwmp__Inform</documentation>
+  <input message="tns:ValueChange"/>
+  <output message="tns:ValueChangeResponse"/>
+ </operation>
+
+</portType>
+
+<binding name="cwmp" type="tns:cwmpPortType">
+ <SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+<operation name="XFileEvent">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+
+ <operation name="Boot">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+
+  <operation name="ValueChange">
+  <SOAP:operation soapAction=""/>
+  <input>
+     <SOAP:body parts="parameters" use="literal"/>
+  </input>
+  <output>
+     <SOAP:body parts="parameters" use="literal"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="cwmp">
+ <documentation>CWMP service definition for CPE and ACS</documentation>
+ <port name="cwmp" binding="tns:cwmp">
+  <SOAP:address location="http://localhost:8080/cwmp"/>
+ </port>
+</service>
+
+
+</wsdl:definitions>

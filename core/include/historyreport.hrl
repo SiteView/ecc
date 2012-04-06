@@ -1,0 +1,9 @@
+%% -ifndef(_REPORT_H_).
+%% -define(_REPORT_H_,1).
+-define(DETAILED, detailed).
+-define(STATUSFILTER, statusFilter).
+-define(SCHEDFILTER, schedFilter).
+-define(BESTCASECALC, bestCaseCalc).
+-define(PRECISION, precision).
+-define(VMAX, vmax).
+%% -endif.

@@ -1,0 +1,8 @@
+[General]
+Type=mw_gate
+ThreadPriorityInit=1
+ThreadPriorityRun=1
+ThreadPriorityExit=1
+
+[CustomAction]
+ActionLogicExt=Server

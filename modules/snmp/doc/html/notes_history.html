@@ -1,0 +1,2369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>SNMP Release Notes history</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="1"><!-- Empty --></a>
+<h2>1 SNMP Release Notes history</h2>
+<a name="1.1"><!-- Empty --></a>
+<h3>1.1 SNMP Development Toolkit 4.8.4</h3>
+
+<p>Version 4.8.4 supports code replacement in run-time from/to
+version 4.8.3, 4.8.2, 4.8.1 and 4.8.
+</p><a name="1.1.1"><!-- Empty --></a>
+<h4>1.1.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.1.2"><!-- Empty --></a>
+<h4>1.1.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[agent] An Audit Trail Log entry was sometimes done 
+using a list instead of the expected binary for the 
+snmp packet. This caused an error when converting the 
+log to a text-file. <br />
+
+Own Id: OTP-6408<br />
+
+Aux Id: Seq 10547<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.1.3"><!-- Empty --></a>
+<h4>1.1.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.2"><!-- Empty --></a>
+<h3>1.2 SNMP Development Toolkit 4.8.3</h3>
+
+<p>Version 4.8.3 supports code replacement in run-time from/to
+version 4.8.2, 4.8.1 and 4.8.
+</p><a name="1.2.1"><!-- Empty --></a>
+<h4>1.2.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.2.2"><!-- Empty --></a>
+<h4>1.2.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[agent] Verification of ViewTreeFamily 
+(SNMP-VIEW-BASED-ACM-MIB) incorrect.
+No values other then <span class="code">null</span> and <span class="code">[]</span> where accepted. <br />
+
+Own Id: OTP-6337<br />
+
+Aux Id: Seq 10509<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Start with type <span class="code">takeover</span> did not work. <br />
+
+Own Id: OTP-6340<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.2.3"><!-- Empty --></a>
+<h4>1.2.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.3"><!-- Empty --></a>
+<h3>1.3 SNMP Development Toolkit 4.8.2</h3>
+
+<p>Version 4.8.2 supports code replacement in run-time from/to
+version 4.8.1 and 4.8.
+</p><a name="1.3.1"><!-- Empty --></a>
+<h4>1.3.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Add time-stamp to the verbosity printouts. <br />
+
+Own Id: OTP-6214<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.3.2"><!-- Empty --></a>
+<h4>1.3.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+A badly formatted debug printout caused console printouts. <br />
+
+Own Id: OTP-6247<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.3.3"><!-- Empty --></a>
+<h4>1.3.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.4"><!-- Empty --></a>
+<h3>1.4 SNMP Development Toolkit 4.8.1</h3>
+
+<p>Version 4.8.1 supports code replacement in run-time from/to
+version 4.8, 4.7.4 and 4.7.3.
+</p><a name="1.4.1"><!-- Empty --></a>
+<h4>1.4.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.4.2"><!-- Empty --></a>
+<h4>1.4.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Removed an io:format in mini mib utility (used when
+converting logs). <br />
+
+Own Id: OTP-6177<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.4.3"><!-- Empty --></a>
+<h4>1.4.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.5"><!-- Empty --></a>
+<h3>1.5 SNMP Development Toolkit 4.8</h3>
+
+<p>Version 4.8 supports code replacement in run-time from/to
+version 4.7.4 and 4.7.3.
+</p><a name="1.5.1"><!-- Empty --></a>
+<h4>1.5.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Added a config option, <span class="code">sndbuf</span>, for the net_if-module(s). 
+See 
+<a href="snmp_app.html">application configuration</a> or
+<a href="snmp_config.html">running the application</a>
+for more info (look for manager_net_if_options and 
+agent_net_if_options). <br />
+
+Own Id: OTP-6137<br />
+
+
+</li>
+
+
+<li>
+
+Improve error handling of the log_to_txt function(s). 
+[snmpm|snmpa]:log_to_txt on a non-existing log-file 
+causes an obscure error reason.<br />
+
+Own Id: OTP-6149<br />
+
+
+</li>
+
+
+<li>
+
+Performance improvement when converting audit trail logs.<br />
+
+Own Id: OTP-6164<br />
+
+Aux Id: Seq 10362<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.5.2"><!-- Empty --></a>
+<h4>1.5.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[compiler] Allow empty definitions for SMI-II mibs,
+i.e. mibs are allowed to only contain the
+MODULE-IDENTITY construct. <br />
+
+Own Id: OTP-6150<br />
+
+Aux Id: Seq 10333<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.5.3"><!-- Empty --></a>
+<h4>1.5.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.6"><!-- Empty --></a>
+<h3>1.6 SNMP Development Toolkit 4.7.4</h3>
+
+<p>Version 4.7.4 supports code replacement in run-time from/to
+version 4.7.3, 4.7.2, 4.7.1 and 4.7.
+</p><a name="1.6.1"><!-- Empty --></a>
+<h4>1.6.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Add another example, 
+<a href="snmp_impl_example_manager.html">ex2</a>. 
+This example is basically a simple manager module. <br />
+
+Own Id: OTP-6042<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.6.2"><!-- Empty --></a>
+<h4>1.6.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[agent] v1 trap sending minor problems. When sending a
+v1 trap, the wrong record type (#pdu{}) was used to
+access the type field (which does not exist in the
+#tranpdu{} record). This value is used when logging.<br />
+
+Own Id: OTP-6077<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Type guard error.<br />
+
+Kostis Sagonas.<br />
+
+Own Id: OTP-6074 (dialyzer)<br />
+
+
+</li>
+
+
+<li>
+
+Misc Dialyzer warnings.<br />
+
+Own Id: OTP-6068<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Default value tags may conflict with actual
+host name. When storing default values for agents, the
+tag, default, was used for address (and port). This
+could conflict with an actual host name.<br />
+
+Own Id: OTP-6062<br />
+
+
+</li>
+
+
+<li>
+
+Misc doc corrections.<br />
+
+Own Id: OTP-6044<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.6.3"><!-- Empty --></a>
+<h4>1.6.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.7"><!-- Empty --></a>
+<h3>1.7 SNMP Development Toolkit 4.7.3</h3>
+
+<p>Version 4.7.3 supports code replacement in run-time from/to
+version 4.7.2, 4.7.1 and 4.7.
+</p><a name="1.7.1"><!-- Empty --></a>
+<h4>1.7.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.7.2"><!-- Empty --></a>
+<h4>1.7.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Misc compiler warning cleanup.<br />
+
+Own Id: OTP-6031<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.7.3"><!-- Empty --></a>
+<h4>1.7.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.8"><!-- Empty --></a>
+<h3>1.8 SNMP Development Toolkit 4.7.2</h3>
+
+<p>Version 4.7.2 supports code replacement in run-time from/to
+version 4.7.1 and 4.7.
+</p><a name="1.8.1"><!-- Empty --></a>
+<h4>1.8.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Improve handling of empty messages. Today 
+when receiving an empty (size = 0) udp message, this 
+will result in a decode failure (a catched function 
+clause), which in turn will be passed on to the user, 
+via a call to the 
+<a href="snmpm_user.html#handle_error">handle_error</a>
+callback function, in the <span class="code">Reason</span> argument. 
+This has now been changed so that instead, the 
+<span class="code">Reason</span> argument will get a <span class="code">empty message</span>
+value.<br />
+
+See 
+<a href="snmpm_user.html#handle_error">handle_error</a>
+for more details. <br />
+
+Own Id: OTP-6024<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.8.2"><!-- Empty --></a>
+<h4>1.8.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Some error cases are reported to the 'user'
+with the ReqId and Reason swapped in the call to the
+<a href="snmpm_user.html#handle_error">handle_error</a>
+callback function.<br />
+
+Own Id: OTP-5992<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.8.3"><!-- Empty --></a>
+<h4>1.8.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.9"><!-- Empty --></a>
+<h3>1.9 SNMP Development Toolkit 4.7.1</h3>
+
+<p>Version 4.7.1 supports code replacement in run-time from/to
+version 4.7, 4.6.1 and 4.6.
+</p><a name="1.9.1"><!-- Empty --></a>
+<h4>1.9.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Added new version info print functions, 
+<a href="snmp.html#print_version_info">print_version_info</a>.<br />
+
+Own Id: OTP-5968<br />
+
+
+</li>
+
+
+<li>
+
+Updated the documentation for the 
+<a href="snmpa.html#log_to_txt">agent</a> and 
+<a href="snmpm.html#log_to_txt">manager</a>
+log_to_txt functions.<br />
+
+Own Id: OTP-5969<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.9.2"><!-- Empty --></a>
+<h4>1.9.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] The supervision structure contained several
+errors which unnecessarily caused a complete restart of 
+the manager.<br />
+
+Own Id: OTP-5963<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.9.3"><!-- Empty --></a>
+<h4>1.9.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.10"><!-- Empty --></a>
+<h3>1.10 SNMP Development Toolkit 4.7</h3>
+
+<p>Version 4.7 supports code replacement in run-time from/to
+version 4.6.1 and 4.6.
+</p><a name="1.10.1"><!-- Empty --></a>
+<h4>1.10.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Add simple backup mechanism, 
+see <a href="snmpa.html#backup">agent backup</a>
+and <a href="snmpm.html#backup">manager backup</a>.<br />
+
+Own Id: OTP-5870<br />
+
+
+</li>
+
+
+<li>
+
+Improve handling of faulty data base files.<br />
+
+Added new agent and manager config option, 
+<span class="code">db_init_error</span>, see 
+<a href="snmp_config.html">config</a> for more 
+info.<br />
+
+Own Id: OTP-5934<br />
+
+Aux Id: Seq 10202<br />
+
+
+</li>
+
+
+<li>
+
+Added possibility to configure restart type for each of 
+the components (default is permanent for the agent and 
+transient for the manager).
+See <a href="snmp_config.html">config</a> for more 
+info.<br />
+
+Own Id: OTP-5935<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Improve error printouts.<br />
+
+Own Id: OTP-5937<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.10.2"><!-- Empty --></a>
+<h4>1.10.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<p>-
+</p><a name="1.10.3"><!-- Empty --></a>
+<h4>1.10.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.11"><!-- Empty --></a>
+<h3>1.11 SNMP Development Toolkit 4.6.1</h3>
+
+<p>Version 4.6.1 supports code replacement in run-time from/to
+version 4.6.
+</p><a name="1.11.1"><!-- Empty --></a>
+<h4>1.11.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.11.2"><!-- Empty --></a>
+<h4>1.11.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[agent] SNMP sha/aes decryption did not work. <br />
+
+         Magnus Fr&#246;berg<br />
+
+Own Id: OTP-5834<br />
+
+
+</li>
+
+
+<li>
+
+[agent] The SNMP agent internal data base (local db)
+uses dets, and does not properly handle error's from
+e.g. lookup.<br />
+
+Own Id: OTP-5838<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.11.3"><!-- Empty --></a>
+<h4>1.11.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.12"><!-- Empty --></a>
+<h3>1.12 SNMP Development Toolkit 4.6</h3>
+
+<p>Version 4.6 supports code replacement in run-time from/to
+version 4.5.
+</p><a name="1.12.1"><!-- Empty --></a>
+<h4>1.12.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Improved application start flexibility. It is now 
+possible to start snmp application components (agent
+or manager) after the application has been started.
+It is even possible to start an &#34;empty&#34; snmp 
+application and start the agent and/or manager 
+afterwords. See 
+<a href="snmp.html#start_agent">start_agent</a> and 
+<a href="snmp.html#start_manager">start_manager</a>.<br />
+
+Own Id: OTP-5797<br />
+
+Aux Id: Seq 10128<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Adding utility function to convert old 
+application config to current agent config.
+See the <a href="snmpa.html#convert_config">convert_config</a>
+for more info.<br />
+
+Own Id: OTP-5787<br />
+
+
+</li>
+
+
+<li>
+
+Improved handling of audit trail logs.
+See the <a href="snmp_app.html">atl_repair</a>
+config for more info.<br />
+
+Own Id: OTP-5771<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Introduced the 
+<a href="snmpm.html#notify_started">notify_started</a>
+function used by a <strong>client</strong> to get a notification 
+when the manager is started.<br />
+
+Own Id: OTP-5763<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.12.2"><!-- Empty --></a>
+<h4>1.12.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Misc documentation corrections.<br />
+
+Own Id: OTP-5829<br />
+
+Aux Id: Seq 10152<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.12.3"><!-- Empty --></a>
+<h4>1.12.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.13"><!-- Empty --></a>
+<h3>1.13 SNMP Development Toolkit 4.5</h3>
+
+<p>Version 4.5 supports code replacement in run-time from/to
+version 4.4.1 and 4.4.
+</p><a name="1.13.1"><!-- Empty --></a>
+<h4>1.13.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Introduced the 
+<a href="snmp_app.html">inform request behaviour</a>
+configuration option to allow the user to specify
+how/when the manager shall acknowledge inform-request's.<br />
+
+Own Id: OTP-5733<br />
+
+
+</li>
+
+
+<li>
+
+[manager] In order to improve application behaviour,
+all callback function (see the 
+<a href="snmpm_user.html">snmpm_user behaviour</a>) 
+calls
+are now done by spawned processes (and not as previously
+by the SNMP manager server process).<br />
+
+Own Id: OTP-5726<br />
+
+
+</li>
+
+
+<li>
+
+[manager] In order to present the various error 
+reason's returned by the manager, a 
+<a href="snmpm.html#format_reason">format_reason</a>
+function has been added.
+The error reasons this function handles are those
+returned by the (sync and async) get, get-next, 
+get-bulk and set-functions 
+(see the <a href="snmpm.html">snmpm</a> module) 
+as well as the 
+<span class="code">Reason</span> argument of the 
+<a href="snmpm_user.html#handle_error">handle_error</a>
+function of the 
+<a href="snmpm_user.html">user callback module</a>.<br />
+
+Own Id: OTP-5581<br />
+
+Aux Id: Seq 9870<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.13.2"><!-- Empty --></a>
+<h4>1.13.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] The (error) report according to RFC 2572, chapter
+7.2 point 6) was never sent.<br />
+
+Own Id: OTP-5742<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Check of notification name collision
+could fail due to incorrect record name (assumed to
+be <span class="code">#trap</span>, but could also be <span class="code">#notification</span>). 
+This only cases a problem when the application is 
+compiled with the strict_record_tests option.<br />
+
+Own Id: OTP-5740<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Table get-request failure in some cases.<br />
+
+Own Id: OTP-5732<br />
+
+Aux Id: Seq 10087<br />
+
+
+</li>
+
+
+<li>
+
+Explicitly sync all audit trail log's upon termination.<br />
+
+Own Id: OTP-5727<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.13.3"><!-- Empty --></a>
+<h4>1.13.3 Incompatibilities</h4>
+
+<ul>
+
+<li>
+
+[manager] The 
+<a href="snmpm_network_interface.html">snmpm_network_interface</a>
+behaviour has been updated (see 
+<a href="snmpm_network_interface.html#inform_response">inform_response</a> and 
+<a href="snmp_manager_netif.html">definition of the manager net if</a>).<br />
+
+Own Id: OTP-5733<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.14"><!-- Empty --></a>
+<h3>1.14 SNMP Development Toolkit 4.4.1</h3>
+
+<p>Version 4.4.1 supports code replacement in run-time from/to
+version 4.4.
+</p><a name="1.14.1"><!-- Empty --></a>
+<h4>1.14.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Add monitoring of the SNMP manager.
+The SNMP application consists of two different
+run-time parts, the agent and the manager. They are
+independent of each other. The agent is &#34;permanent&#34;
+and the manager &#34;transient&#34;. In order to handle
+manager crashes a simple 
+<a href="snmpm.html#monitor">monitor</a>
+(and <a href="snmpm.html#demonitor">demonitor</a>) 
+function has been added.<br />
+
+Own Id: OTP-5720<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.14.2"><!-- Empty --></a>
+<h4>1.14.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] If sending a set-request containing an
+'OCTET STRING' with an invalid integer (valid integer
+are 0-255), the encoding will fail and cause the
+net_if process to crash.<br />
+
+Own Id: OTP-5719<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.14.3"><!-- Empty --></a>
+<h4>1.14.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.15"><!-- Empty --></a>
+<h3>1.15 SNMP Development Toolkit 4.4</h3>
+
+<p>Version 4.4 supports code replacement in run-time from/to
+version 4.3.
+</p><a name="1.15.1"><!-- Empty --></a>
+<h4>1.15.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Updated and extended the 
+<a href="snmpa.html#info">agent</a>
+info retrieval function. Also added an info retrieval 
+function for the 
+<a href="snmpm.html#info">manager</a>.<br />
+
+Own Id: OTP-5666<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Added get-bulk functionality, see 
+<a href="snmpm.html#gb">(sync) get-bulk</a>
+and 
+<a href="snmpm.html#agb">(async) get-bulk</a>
+for more info.<br />
+
+Own Id: OTP-5669<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.15.2"><!-- Empty --></a>
+<h4>1.15.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Mini-MIB not properly initiated which could 
+cause a server crash if the name_to_oid or oid_to_name
+functions where called (if no mib's where loaded).<br />
+
+Own Id: OTP-5675<br />
+
+
+</li>
+
+
+<li>
+
+[manager] The out packet counter was not incremented for 
+sent v1/v2 messages.<br />
+
+Own Id: OTP-5676<br />
+
+
+</li>
+
+
+<li>
+
+[manager] The request GC process was started with the 
+wrong default value (idle) which could (unlikely but 
+still) cause problems after a code-change.<br />
+
+Own Id: OTP-5678<br />
+
+
+</li>
+
+
+<li>
+
+Bad handling of error cases (corrupt log file) when 
+converting log files (i.e. when calling the function 
+log_to_txt).<br />
+
+Own Id: OTP-5703<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.15.3"><!-- Empty --></a>
+<h4>1.15.3 Incompatibilities</h4>
+
+<ul>
+
+<li>
+
+[agent] The format of the info returned by the agent 
+info retrieval function has been changed. The info 
+can be converted to the old format by calling the 
+<a href="snmpa.html#old_info_format">old_info_format</a>).<br />
+
+function. <br />
+
+Own Id: OTP-5666<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.16"><!-- Empty --></a>
+<h3>1.16 SNMP Development Toolkit 4.3</h3>
+
+<p>Version 4.3 supports code replacement in run-time from/to
+version 4.2.
+</p><a name="1.16.1"><!-- Empty --></a>
+<h4>1.16.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Improved async error reporting.<br />
+
+Own Id: OTP-5637<br />
+
+Aux Id: Seq 9970<br />
+
+
+</li>
+
+
+<li>
+
+Added support for The Advanced Encryption Standard (AES) 
+Cipher Algorithm in the SNMP User-based Security Model 
+(RFC 3826). Both agent and manager. <br />
+
+         Martin Bj&#246;rklund<br />
+
+Own Id: OTP-5490<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.16.2"><!-- Empty --></a>
+<h4>1.16.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Reset of USM-cache when unregister agent.<br />
+
+Own Id: OTP-5636<br />
+
+Aux Id: Seq 9970<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.16.3"><!-- Empty --></a>
+<h4>1.16.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.17"><!-- Empty --></a>
+<h3>1.17 SNMP Development Toolkit 4.2</h3>
+
+<p>Version 4.2 supports code replacement in run-time from/to
+version 4.1.5.
+</p><a name="1.17.1"><!-- Empty --></a>
+<h4>1.17.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Added another get, get-next and set function
+with another argument, <span class="code">ExtraInfo</span> (see 
+<a href="snmpm.html#g">synchronous get</a>,
+<a href="snmpm.html#ag">asynchroneous get</a>,
+<a href="snmpm.html#s">synchronous set</a>,
+<a href="snmpm.html#as">asynchroneous set</a>,
+<a href="snmpm.html#gn">synchronous get-next</a> and
+<a href="snmpm.html#agn">asynchroneous get-next</a>).
+This argument is passed on to the net-if process. The net-if 
+process included in this application makes no use of this 
+info, but other implementations might.<br />
+
+Own Id: OTP-5574<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[manager] <span class="code">report</span> message with incorrect security info
+(e.g. securtyModel and/or securityLevel) was ignored (dropped, 
+except for incrementing the proper error counter) even if all 
+other info was correct. This has been changed so that in this
+situation, the user will be informed, either via the
+return value from a synchronous call (see 
+<a href="snmpm.html#g">synchronous get</a>,
+<a href="snmpm.html#s">synchronous set</a> and 
+<a href="snmpm.html#gn">synchronous get-next</a>) 
+or via a call to the handle_error callback function.<br />
+
+Own Id: OTP-5578<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Added a 
+<a href="snmpm.html#unregister_usm_user">unregister_usm_user</a> function.<br />
+
+Own Id: OTP-5580<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Added new functions to get lists of all tables, 
+<a href="snmpa.html#which_tables">which_tables</a>, 
+and variables, 
+<a href="snmpa.html#which_variables">which_variables</a>, 
+known to the agent.<br />
+
+Own Id: OTP-5590<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.17.2"><!-- Empty --></a>
+<h4>1.17.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Incorrect SHA-key length check when 
+updating usm-user info (should have been 20 but 
+was 16).<br />
+
+Own Id: OTP-5579<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Incorrect error report when the name of the 
+field and object is the same. <br />
+
+         Kostis Sagonas<br />
+
+Own Id: OTP-5591 (dialyzer)<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Arguments Port (third argument) and CtxName 
+(fourth argument) where swapped in
+function <a href="snmpm.html#g">snmpm:g/5</a>
+when forwarding call. <br />
+
+         Kostis Sagonas<br />
+
+Own Id: OTP-5592 (dialyzer)<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.17.3"><!-- Empty --></a>
+<h4>1.17.3 Incompatibilities</h4>
+
+<ul>
+
+<li>
+
+[manager] The <span class="code">snmpm_network_interface</span> behaviour has changed. 
+One more argument (ExtraInfo) was added to the 
+function send_pdu (see 
+<a href="snmpm_network_interface.html#send_pdu">send_pdu</a>).<br />
+
+Own Id: OTP-5574<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.18"><!-- Empty --></a>
+<h3>1.18 SNMP Development Toolkit 4.1.5</h3>
+
+<p>Version 4.1.5 supports code replacement in run-time from/to
+version 4.1.4, 4.1.3, 4.1.2, 4.1.1 and 4.1.
+</p><a name="1.18.1"><!-- Empty --></a>
+<h4>1.18.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[agent] Add mapping of notification oid to alias-name. <br />
+
+         Martin Bj&#246;rklund<br />
+
+Own Id: OTP-5562<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Late (async) reply incorrectly delivered to
+user via handle_pdu instead of handle_error.<br />
+
+Own Id: OTP-5506<br />
+
+Aux Id: Seq 9804<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.18.2"><!-- Empty --></a>
+<h4>1.18.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Security level handled incorrectly.<br />
+
+Own Id: OTP-5564<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[manager] (v3) Encryption/decryption failure.<br />
+
+Own Id: OTP-5560<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Cannot handle version-1 traps.<br />
+
+Own Id: OTP-5557<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Set-request without specifying the variable 
+type failed. The type of the oid had to be found in the 
+loaded MIB. This look-up was erroneous.<br />
+
+Own Id: OTP-5556<br />
+
+Aux Id: Seq 9850<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Error's reported by the SecModule (v3) when 
+generating outgoing message was not handled correctly 
+in message processing dispatcher module.<br />
+
+Own Id: OTP-5550<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Error's reported by the SecModule (v3) when 
+generating outgoing message was not handled correctly 
+in message processing dispatcher module. And also when 
+encryption failed, the real error was masked into another 
+error.<br />
+
+Own Id: OTP-5548<br />
+
+Aux Id: Seq 9804<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Failure to stop the snmp application when
+started with the old config type.<br />
+
+Own Id: OTP-5547<br />
+
+Aux Id: Seq 9842<br />
+
+
+</li>
+
+
+<li>
+
+[manager] User unregistration after reboot causes process crash
+(snmpm_server).<br />
+
+Own Id: OTP-5539<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Security engine id look-up errors.<br />
+
+Own Id: OTP-5508<br />
+
+Aux Id: Seq 9804<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Registering of USM users erroneous.<br />
+
+Own Id: OTP-5505<br />
+
+Aux Id: Seq 9804<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.18.3"><!-- Empty --></a>
+<h4>1.18.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.19"><!-- Empty --></a>
+<h3>1.19 SNMP Development Toolkit 4.1.4</h3>
+
+<p>Version 4.1.4 supports code replacement in run-time from/to
+version 4.1.3, 4.1.2, 4.1.1 and 4.1.
+</p><a name="1.19.1"><!-- Empty --></a>
+<h4>1.19.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.19.2"><!-- Empty --></a>
+<h4>1.19.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Fixed a perl related problem in the mibs Makefile. <br />
+
+         Geoff White<br />
+
+Own Id: OTP-5491<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Failed to register usm users. Both using the
+usm config file 
+(<a href="snmp_manager_config_files.html#usm_user">usm.conf</a>) 
+and the API functions
+<a href="snmpm.html#register_usm_user">register_usm_user</a><br />
+
+Own Id: OTP-5499<br />
+
+         Aux Id: Seq 9804<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.19.3"><!-- Empty --></a>
+<h4>1.19.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.20"><!-- Empty --></a>
+<h3>1.20 SNMP Development Toolkit 4.1.3</h3>
+
+<p>Version 4.1.3 supports code replacement in run-time from/to
+version 4.1.2, 4.1.1 and 4.1.
+</p><a name="1.20.1"><!-- Empty --></a>
+<h4>1.20.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Added utility functions to update agent and manager
+config files.<br />
+
+Own Id: OTP-5468<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.20.2"><!-- Empty --></a>
+<h4>1.20.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[agent] Error replies was composed with invalid OIDs for the
+following error counters:
+<strong>usmStatsWrongDigests</strong> (RFC 2574, chap 3.2, point 6),
+<strong>usmStatsUnsupportedSecLevels</strong> (point 5) and
+<strong>usmStatsDecryptionErrors</strong> (point 8a).<br />
+
+Own Id: OTP-5464<br />
+
+         Aux Id: Seq 9791<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Malformed Oid returned from a get_next operation as
+part of a get-bulk-request causes the agent to crash.<br />
+
+Own Id: OTP-5465<br />
+
+         Aux Id: Seq 9783, Seq 9793<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Missing catch on decode function call.<br />
+
+         Kostis Sagonas (Dialyzer)<br />
+
+Own Id: OTP-5479<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Invalid check for illegal options.<br />
+
+         Kostis Sagonas (Dialyzer<br />
+
+Own Id: OTP-5480<br />
+
+
+</li>
+
+
+<li>
+
+Faulty utility function for generation of agent 
+config file target_addr.conf.<br />
+
+Own Id: OTP-5482<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.20.3"><!-- Empty --></a>
+<h4>1.20.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.21"><!-- Empty --></a>
+<h3>1.21 SNMP Development Toolkit 4.1.2</h3>
+
+<p>Version 4.1.2 supports code replacement in run-time from/to 
+version 4.1.1 and 4.1.
+</p><a name="1.21.1"><!-- Empty --></a>
+<h4>1.21.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+Export utility functions to create agent and manager
+config files.<br />
+
+Own Id: OTP-5390<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Documented instrumentation utility functions
+(e.g. <a href="snmpa.html#current_request_id">current_request_id</a>).<br />
+
+Own Id: OTP-5423<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.21.2"><!-- Empty --></a>
+<h4>1.21.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] If the client crashes after having issued 
+an async request, the server will crash when trying to 
+perform cleanup. Supervision of the calling process issuing an
+async request has been removed. <br />
+
+Own Id: OTP-5370<br />
+
+
+</li>
+
+
+<li>
+
+Failure to convert an audit-trail-log to text-file when
+using the default log name. This applies to both the manager 
+and the agent. <br />
+
+Own Id: OTP-5394<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Corrected the discovery handling of the manager.<br />
+
+Own Id: OTP-5414<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Statistic counter creation correction.<br />
+
+Own Id: OTP-5415<br />
+
+
+</li>
+
+
+<li>
+
+[agent] When using the old style agent configuration (pre 4.0),
+it was not possible to specify a different error report
+module (the agent always choose snmpa_error_logger).
+A similar problem existed for the config option 
+force_config_load, which always reverted to false.<br />
+
+Own Id: OTP-5424<br />
+
+
+</li>
+
+
+<li>
+
+[manager] The manager net_if process failed to properly handle
+the case bind_to option value true.<br />
+
+Own Id: OTP-5431<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Various minor mnesia-related fixes.<br />
+
+         Martin Bj&#246;rklund<br />
+
+Own Id: OTP-5433<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Missing interface functions for loading and 
+unloading mibs into/from the manager: 
+<a href="snmpm.html#load_mib">load_mib</a>,
+<a href="snmpm.html#unload_mib">unload_mib</a>,
+<a href="snmpm.html#which_mibs">which_mibs</a>,
+<a href="snmpm.html#name_to_oid">name_to_oid</a> and 
+<a href="snmpm.html#oid_to_name">oid_to_name</a>.<br />
+
+Own Id: OTP-5441<br />
+
+
+</li>
+
+
+<li>
+
+Added utility functions to retrieve some system and application 
+info, see <a href="snmp.html#versions1">versions1</a> and 
+<a href="snmp.html#versions2">versions2</a>.<br />
+
+Own Id: OTP-5445<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.21.3"><!-- Empty --></a>
+<h4>1.21.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.22"><!-- Empty --></a>
+<h3>1.22 SNMP Development Toolkit v4.1.1</h3>
+
+<p>Version 4.1.1 supports code replacement in run-time from/to 
+version 4.1. 
+</p>
+<p>When performing a downgrade, make sure the verbosity of the
+manager server process is silence, or else the process will crash
+(due to a bug in version 4.0.4) and be restarted by it's 
+supervisor.
+</p><a name="1.22.1"><!-- Empty --></a>
+<h4>1.22.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.22.2"><!-- Empty --></a>
+<h4>1.22.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Manager synchronous get-function with timeout erroneous.
+Results in a function clause.<br />
+
+Own Id: OTP-5364<br />
+
+
+</li>
+
+
+<li>
+
+Replace in decoder fun's of the &#34;old style&#34; fun format, 
+{atom(), atom()}, with a proper fun, e.g. &#34;fun the_function/1&#34;.<br />
+
+Own Id: OTP-5365<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Register agent using the config file 
+agents.conf failed due to incorrect function guard.<br />
+
+Own Id: OTP-5367<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.22.3"><!-- Empty --></a>
+<h4>1.22.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.23"><!-- Empty --></a>
+<h3>1.23 SNMP Development Toolkit v4.1.0</h3>
+
+<p>Version 4.1.0 supports code replacement in run-time from/to 
+version 4.0.4. 
+</p>
+<p>When performing a downgrade, make sure the verbosity of the
+manager server process is silence, or else the process will crash
+(due to a bug in version 4.0.4) and be restarted by it's 
+supervisor.
+</p><a name="1.23.1"><!-- Empty --></a>
+<h4>1.23.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Added possibility to monitor a registered user.
+See <a href="snmpm.html#register_user_monitor">snmpm:register_user_monitor</a>.<br />
+
+Own Id: OTP-5286<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Improved symbolic store. Alias and Oids where stored 
+with similar key's (separated by types: atom() and
+lists() respectively). Also added new function:
+<a href="snmpa.html#which_aliasnames">snmpa:which_aliasnames</a>.<br />
+
+Own Id: OTP-5298<br />
+
+
+</li>
+
+
+<li>
+
+[agent] The agent local_db volatile storage method uses
+an ets-table which is private. This table has been made 
+protected in order to make it easier to bedug and test the 
+snmp agent.<br />
+
+Own Id: OTP-5308<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.23.2"><!-- Empty --></a>
+<h4>1.23.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+Misspelled deprecated function. Non-existent function
+snmp:is_constistent/1 was marked as deprecated. Should
+have been snmp:is_consistent/1).<br />
+
+Own Id: OTP-5273<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Unclear documentation for function 
+<a href="snmpa.html#send_notification">snmpa:send_notification</a>. The Recv argument
+(specifically the {M,F,A} variant).<br />
+
+Own Id: OTP-5281<br />
+
+
+</li>
+
+
+<li>
+
+[manager] It was never documented how the default 
+<a href="snmpm_user.html">user behaviour</a>
+could be overridden (default user is the module
+<span class="code">snmpm_user_default</span>). 
+See <a href="snmp_app.html">application configuration</a> or
+<a href="snmp_config.html#configuration_params">configuration params</a>.<br />
+
+Own Id: OTP-5299<br />
+
+
+</li>
+
+
+<li>
+
+[manager] The server process contained a bug that caused it 
+to crash, if it received an exit message from it's gct (GC timer) 
+process and it's verbosity was <strong>log</strong> or higher. <br />
+
+         This also effects the application downgrade. <br />
+
+Own Id: OTP-5306<br />
+
+
+</li>
+
+
+<li>
+
+[agent] The agent config file, target_addr.conf, was 
+incorrectly described in the 
+<a href="snmp_agent_config_files.html#target_addr">Target Address Definitions</a> chapter of the 
+User's Guide. The EngineId option was left out.<br />
+
+Own Id: OTP-5307<br />
+
+         Aux Id: Seq 9689<br />
+
+
+</li>
+
+
+<li>
+
+[manager] When a InformRequest is received, the manager sends
+a response message. This did not include the varbinds
+of the original message. See RFC 3416, chapter 4.2.7.<br />
+
+Own Id: OTP-5314<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Erroneous function guards made it possible to update
+some agent info (that should be &#34;static&#34;).<br />
+
+Own Id: OTP-5315<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.23.3"><!-- Empty --></a>
+<h4>1.23.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.24"><!-- Empty --></a>
+<h3>1.24 SNMP Development Toolkit v4.0.4</h3>
+
+<p>Version 4.0.4 supports code replacement in run-time from/to 
+version 4.0.3, 4.0.2, 4.0.1 and 4.0.
+
+</p><a name="1.24.1"><!-- Empty --></a>
+<h4>1.24.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.24.2"><!-- Empty --></a>
+<h4>1.24.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] The timeout calculation for the request
+gc timer incorrect.<br />
+
+Own Id: OTP-5267<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.24.3"><!-- Empty --></a>
+<h4>1.24.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.25"><!-- Empty --></a>
+<h3>1.25 SNMP Development Toolkit v4.0.3</h3>
+
+<p>Version 4.0.3 supports code replacement in run-time from/to 
+version 4.0.2, 4.0.1 and 4.0. 
+</p><a name="1.25.1"><!-- Empty --></a>
+<h4>1.25.1 Improvements and new features</h4>
+
+<p>-
+</p><a name="1.25.2"><!-- Empty --></a>
+<h4>1.25.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] Some basic SNMP types where not handled when
+performing set-requests 
+(<a href="snmpm.html#s">snmpm:s</a> and
+<a href="snmpm.html#as">snmpm:as</a>): 
+'BITS' (b), 'IpAddress' (ip), 'Opaque' (op), 
+'Counter32' (c32), 'Counter64' (c64) and 'TimeTicks' (tt).<br />
+
+Own Id: OTP-5256<br />
+
+
+</li>
+
+
+<li>
+
+[manager] Unnecessary error message when receiving trap from 
+unregistered agent or agent using other port then the 
+request port for trap-sending.<br />
+
+Own Id: OTP-5258<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.25.3"><!-- Empty --></a>
+<h4>1.25.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.26"><!-- Empty --></a>
+<h3>1.26 SNMP Development Toolkit v4.0.2</h3>
+
+<p>Version 4.0.2 supports code replacement in run-time from/to 
+version 4.0.1 and 4.0.
+
+</p><a name="1.26.1"><!-- Empty --></a>
+<h4>1.26.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] When the net_if process failed to send a message, for
+whatever reason, this is just dropped. And the user is
+&#34;left hanging&#34;. Now, if the request is synchronous,
+it will return with a proper reason 
+(see <a href="snmpm.html#g">snmpm:g</a>, 
+<a href="snmpm.html#gn">snmpm:gn</a> and
+<a href="snmpm.html#s">snmpm:s</a>), and if the request
+was asynchroneous, the new callback function, 
+handle_error 
+(see <a href="snmpm_user.html">snmpm_user</a>) is 
+called. <br />
+
+Own Id: OTP-5242<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.26.2"><!-- Empty --></a>
+<h4>1.26.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] The arguments CtxName and Port was swapped in the
+function snmpm:g/6.<br />
+
+Own Id: OTP-5225<br />
+
+
+</li>
+
+
+<li>
+
+[manager] TRAP receive fails for unknown agent due to
+failing message size calculation.<br />
+
+Own Id: OTP-5241<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.26.3"><!-- Empty --></a>
+<h4>1.26.3 Incompatibilities</h4>
+
+<ul>
+
+<li>
+
+[manager] Introduced a new callback function in the behaviour
+<a href="snmpm_user.html">snmpm_user</a>.<br />
+
+Own Id: OTP-5242<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.27"><!-- Empty --></a>
+<h3>1.27 SNMP Development Toolkit v4.0.1</h3>
+
+<p>Version 4.0.1 supports code replacement in run-time from/to version 4.0.
+
+</p><a name="1.27.1"><!-- Empty --></a>
+<h4>1.27.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[agent] Added functions to get a list of all mibs loaded into
+an agent 
+(see <a href="snmpa.html#which_mibs">snmpa:which_mibs</a>)
+and to get the (full path) file name of a loaded mib (see 
+<a href="snmpa.html#whereis_mib">snmpa:whereis_mib</a>).<br />
+
+Own Id: OTP-5187<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.27.2"><!-- Empty --></a>
+<h4>1.27.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[manager] The wrong default value (1024) was used for the 
+net-if option recbuf. If no value is specified, then the OS
+default shall be used.<br />
+
+Own Id: OTP-5196<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.27.3"><!-- Empty --></a>
+<h4>1.27.3 Incompatibilities</h4>
+
+<p>-
+</p><a name="1.28"><!-- Empty --></a>
+<h3>1.28 SNMP Development Toolkit v4.0</h3>
+<a name="1.28.1"><!-- Empty --></a>
+<h4>1.28.1 Improvements and new features</h4>
+
+<ul>
+
+<li>
+
+[manager] Added a proper snmp manager.<br />
+
+Major restructure of the application in order to 
+incorporate the new manager.<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Add a <span class="code">snmpa:get/3</span> with an extra <span class="code">Context</span>
+argument. Also added similar <span class="code">snmpa:get_next/2,3</span> functions. 
+See <a href="snmpa.html#get">snmpa:get</a> and
+<a href="snmpa.html#get_next">snmpa:get_next</a>. <br />
+
+         Martin Bj&#246;rklund<br />
+
+Own Id: OTP-5054<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Add <strong>notification filters</strong>. See 
+<a href="snmpa_notification_filter.html">snmpa_notification_filter</a>, 
+<a href="snmpa.html#register_notification_filter">register_notification_filter</a>,
+<a href="snmpa.html#unregister_notification_filter">unregister_notification_filter</a> and 
+<a href="snmpa.html#which_notification_filter">which_notification_filter</a>.<br />
+
+Own Id: OTP-5055<br />
+
+
+</li>
+
+
+<li>
+
+[agent] Added two mib look-up functions, 
+<a href="snmpa.html#me_of">me_of</a> and
+<a href="snmpa.html#mib_of">mib_of</a>.<br />
+
+Own Id: OTP-5082<br />
+
+         Aux Id: Seq 8848<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] The MIB compiler is now (source code) independent 
+of the rest of the application (and vice versa).<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] DISPLAY-HINT and UNITS included in the 
+compiled mib.<br />
+
+Own Id: OTP-5053<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Added compiler options <span class="code">imports</span> and
+<span class="code">module_identity</span> to include the imports list and 
+module identity (only SMIv2) info in the compiled mib, 
+see <a href="snmpc.html">snmpc</a>.<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Added the MIB compiler option 
+<span class="code">+no_defs</span>, see <a href="snmpc.html">snmpc</a>.<br />
+
+         Martin Bj&#246;rklund<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Added the MIB compiler option 
+<span class="code">+'{module, atom()}'</span>, 
+see <a href="snmpc.html">snmpc</a>. <br />
+
+         Martin Bj&#246;rklund<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.28.2"><!-- Empty --></a>
+<h4>1.28.2 Reported Fixed Bugs and Malfunctions</h4>
+
+<ul>
+
+<li>
+
+[agent] Failing MIB configure/reconfigure was difficult
+to diagnose. Added better error handling and verbosity.<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Added &#34;default value&#34; for INTEGER with enumeration
+without a DEFVAL clause.
+The lowest valid integer value is chosen for the
+variable_info defval.<br />
+
+Own Id: OTP-5124<br />
+
+         Aux Id: Seq 8738<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Unnecessarily reserved words in the mib compiler
+can cause some enumeration definitions to fail.<br />
+
+         Martin Bj&#246;rklund<br />
+
+Own Id: OTP-5066<br />
+
+
+</li>
+
+
+</ul>
+<a name="1.28.3"><!-- Empty --></a>
+<h4>1.28.3 Incompatibilities</h4>
+
+<ul>
+
+<li>
+
+New sys configuration format. 
+Although the old configuration format still
+works (if only the agent is used), it is no
+longer documented and will eventually be 
+eliminated.
+See <a href="snmp_app.html">application configuration</a> or
+<a href="snmp_config.html#configuration_params">configuration params</a> for more info.<br />
+
+
+</li>
+
+
+<li>
+
+Three new interface modules have been introduced. One
+for each of the individual parts of the application:<br />
+
+
+<ul>
+
+<li>
+
+[agent] <span class="code">snmpa</span><br />
+
+
+</li>
+
+
+<li>
+
+[manager] <span class="code">snmpm</span><br />
+
+
+</li>
+
+
+<li>
+
+[compiler] <span class="code">snmpc</span><br />
+
+
+</li>
+
+
+</ul>
+
+The primary interface module, <span class="code">snmp</span>, still exist.
+It contains the application generic functions. The 
+agent specific stuff still exist (for backward
+compatibility reasons), but has been deprecated and will
+eventually be removed.<br />
+
+Some previously already deprecated functions has been 
+removed (since they in turn was dependent on deprecated 
+functions, see calendar).<br />
+
+
+</li>
+
+
+<li>
+
+[agent] The agent network interface API has changed.
+See <a href="snmp_agent_netif.html">snmp agent net if</a>,<br />
+
+
+</li>
+
+
+<li>
+
+[agent] The default agent audit trail log name has changed.<br />
+
+
+</li>
+
+
+<li>
+
+[compiler] Mib format has changed (see OTP-5053 above).<br />
+
+
+</li>
+
+
+</ul>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa_network_interface</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa_network_interface</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa_network_interface
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Behaviour module for the SNMP agent network interface.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>This module defines the behaviour of the agent network
+interface. A <span class="code">snmpa_network_interface</span> compliant module 
+must export the following functions: 
+</p>
+<ul>
+
+<li>
+
+<a href="#start_link">start_link/4</a><br />
+
+
+</li>
+
+
+<li>
+
+<a href="#info">info/1</a><br />
+
+
+</li>
+
+
+<li>
+
+<a href="#get_log_type">get_log_type/1</a><br />
+
+
+</li>
+
+
+<li>
+
+<a href="#set_log_type">set_log_type/2</a><br />
+
+
+</li>
+
+
+<li>
+
+<a href="#verbosity">verbosity/2</a><br />
+
+
+</li>
+
+
+</ul>
+
+<p>The semantics of them and their exact signatures are explained
+below. 
+</p>
+<p>But this is not enough. There is also a set of <strong>mandatory</strong>
+messages which the network interface entity must be able to 
+receive and be able to send. This is described in chapter
+<a href="snmp_agent_netif.html">snmp_agent_netif</a>.
+
+</p><a name="start_link"><!-- Empty --></a>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="start_link-4"><span class="bold_code">start_link(Prio, NoteStore, MasterAgent, Opts) -&#62; {ok, Pid} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Prio = priority()</span><br/>
+<span class="bold_code">NoteStore = pid()</span><br/>
+<span class="bold_code">MasterAgent = pid()</span><br/>
+<span class="bold_code">Opts = [opt()]</span><br/>
+<span class="bold_code">opt() = {verbosity, verbosity()} | {versions, versions()} | term()</span><br/>
+<span class="bold_code">versions() = [version()]</span><br/>
+<span class="bold_code">version() = v1 | v2 | v3</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Start-link the network interface process.
+</p>
+<p><span class="code">NoteStore</span> is the pid of the note-store process and 
+<span class="code">MasterAgent</span> is the pid of the master-agent process.
+</p>
+<p><span class="code">Opts</span> is an (basically) implementation dependent list of 
+options to the network interface process. There are however
+a number of options which <strong>must</strong> be handled: 
+<span class="code">versions</span> and <span class="code">verbosity</span>.
+</p><a name="info"><!-- Empty --></a>
+</div>
+
+<p><a name="info-1"><span class="bold_code">info(Pid) -&#62; [{Key, Value}]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pid = pid()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The info returned is basically up to the implementer to decide. 
+This implementation provided by the application provides info about 
+memory allocation and various socket information.
+</p>
+<p>The info returned by this function is returned together with other 
+info collected by the agent when the 
+<a href="snmpa.html#info">info</a> function is called 
+(tagged with with the key <span class="code">net_if</span>).
+</p><a name="verbosity"><!-- Empty --></a>
+</div>
+
+<p><a name="verbosity-2"><span class="bold_code">verbosity(Pid, Verbosity) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pid = pid()</span><br/>
+<span class="bold_code">Verbosity = verbosity()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Change the verbosity of a running network interface process.
+</p><a name="get_log_type"><!-- Empty --></a>
+</div>
+
+<p><a name="get_log_type-1"><span class="bold_code">get_log_type(Pid) -&#62; {ok, LogType} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pid = pid()</span><br/>
+<span class="bold_code">LogType = atl_type()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The Audit Trail Log is managed by the network interface process. 
+So, it is this process that has to retrieve the actual log-type. 
+</p><a name="set_log_type"><!-- Empty --></a>
+</div>
+
+<p><a name="set_log_type-2"><span class="bold_code">set_log_type(Pid, NewType) -&#62; {ok, OldType} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pid = pid()</span><br/>
+<span class="bold_code">NewType = OldType = atl_type()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>The Audit Trail Log is managed by the network interface process. 
+So, it is this process that has to do the actual changing of the 
+type. 
+</p>
+<p>See 
+<a href="snmpa.html#set_log_type">set_log_type</a>
+for more info. 
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

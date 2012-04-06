@@ -1,0 +1,10 @@
+[Messages]
+Version=6.0
+-57800=Copyright © 1994-2002 Mercury Interactive
+-57799=About %1
+-57798=About %1 Agent
+-57797=About
+-57796=View Log
+-57795=Close
+Msg_handler_lowest_msg=-57800
+Msg_handler_highest_msg=-57795

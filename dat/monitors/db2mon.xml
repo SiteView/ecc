@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+	<Db2Monitor>
+		<object class="DatabaseManager" name="" id="">
+			<counter name="rem_cons_in" desc="The current number of connections initiated from remote clients to the instance of the database manager that is being monitored"	id="rem_cons_in" val=""/>
+			<counter name="rem_cons_in_exec" desc="The number of remote applications that are currently connected to a database and are currently processing a unit of work within the database manager instance being monitored."	id="rem_cons_in_exec"	val=""/>
+			<counter name="local_cons" desc="The number of local applications that are currently connected to a database within the database manager instance being monitored."	id="local_cons"	val=""/>
+			<counter name="local_cons_in_exec" desc="The number of local applications that are currently connected to a database within the database manager instance being monitored and are currently processing a unit of work."	id="local_cons_in_exec"	val=""/>
+			<counter name="con_local_dbases" desc="The number of local databases that have applications connected."	id="con_local_dbases"	val=""/>
+			<counter name="agents_registered" desc="The number of agents registered in the database manager instance that is being monitored (coordinator agents and subagents)."	id="agents_registered"	val=""/>
+			<counter name="agents_waiting_on_token" desc="The number of agents waiting for a token so they can execute a transaction in the database manager."	id="agents_waiting_on_token"	val=""/>
+			<counter name="idle_agents" desc="The number of agents in the agent pool that are currently unassigned to an application and are, therefore, 'idle'."	id="idle_agents"	val=""/>
+			<counter name="agents_from_pool" desc="The number of agents assigned from the agent pool"	id="agents_from_pool"	val=""/>
+			<counter name="agents_created_empty_pool" desc="The number of agents created because the agent pool was empty."	id="agents_created_empty_pool"	val=""/>
+			<counter name="agents_stolen" desc="The number of times that agents are stolen from an application. Agents are stolen when an idle agent associated with an application is reassigned to work on a different application."	id="agents_stolen"	val=""/>
+			<counter name="comm_private_mem" desc="The amount of private memory that the instance of the database manager has currently committed at the time of the snapshot."	id="comm_private_mem"	val=""/>
+			<counter name="inactive_gw_agents" desc="The number of DRDA agents in the DRDA connections pool that are primed with a connection to a DRDA database, but are inactive."	id="inactive_gw_agents"	val=""/>
+			<counter name="num_gw_conn_switches" desc="The number of times that an agent from the agents pool was primed with a connection and was stolen for use with a different DRDA database."	id="num_gw_conn_switches"	val=""/>
+			<counter name="sort_heap_allocated" desc="The total number of allocated pages of sort heap space for all sorts at the level chosen and at the time the snapshot was taken."	id="sort_heap_allocated"	val=""/>
+			<counter name="post_threshold_sorts" desc="The number of sorts that have requested heaps after the sort heap threshold has been reached."	id="post_threshold_sorts"	val=""/>
+			<counter name="piped_sorts_requested" desc="The number of piped sorts that have been requested."	id="piped_sorts_requested"	val=""/>
+			<counter name="piped_sorts_accepted" desc="The number of piped sorts that have been accepted."	id="piped_sorts_accepted"	val=""/>
+			<object class="Database" name="" id="">
+				<counter name="appls_cur_cons" desc="Indicates the number of applications that are currently connected to the database."	id="appls_cur_cons"	val=""/>
+				<counter name="appls_in_db2" desc="Indicates the number of applications that are currently connected to the database, and for which the database manager is currently processing a request."	id="appls_in_db2"	val=""/>
+				<counter name="total_sec_cons" desc="The number of connections made by a subagent to the database at the node."	id="total_sec_cons"	val=""/>
+				<counter name="num_assoc_agents" desc="At the application level, this is the number of subagents associated with an application. At the database level, it is the number of subagents for all applications."	id="num_assoc_agents"	val=""/>
+				<counter name="sort_heap_allocated" desc="The total number of allocated pages of sort heap space for all sorts at the level chosen and at the time the snapshot was taken."	id="sort_heap_allocated"	val=""/>
+				<counter name="total_sorts" desc="The total number of sorts that have been executed."	id="total_sorts"	val=""/>
+				<counter name="total_sort_time" desc="The total elapsed time (in milliseconds) for all sorts that have been executed."	id="total_sort_time"	val=""/>
+				<counter name="sort_overflows" desc="The total number of sorts that ran out of sort heap and may have required disk space for temporary storage."	id="sort_overflows"	val=""/>
+				<counter name="active_sorts" desc="The number of sorts in the database that currently have a sort heap allocated."	id="active_sorts"	val=""/>
+				<counter name="total_hash_joins" desc="The total number of hash joins executed."	id="total_hash_joins"	val=""/>
+				<counter name="total_hash_loops" desc="The total number of times that a single partition of a hash join was larger than the available sort heap space."	id="total_hash_loops"	val=""/>
+				<counter name="hash_join_overflows" desc="The number of times that hash join data exceeded the available sort heap space"	id="hash_join_overflows"	val=""/>
+				<counter name="hash_join_small_overflows" desc="The number of times that hash join data exceeded the available sort heap space by less than 10%."	id="hash_join_small_overflows"	val=""/>
+				<counter name="pool_data_l_reads" desc="Indicates the number of logical read requests for data pages that have gone through the buffer pool."	id="pool_data_l_reads"	val=""/>
+				<counter name="pool_data_p_reads" desc="The number of read requests that required I/O to get data pages into the buffer pool."	id="pool_data_p_reads"	val=""/>
+				<counter name="pool_data_writes" desc="Indicates the number of times a buffer pool data page was physically written to disk."	id="pool_data_writes"	val=""/>
+				<counter name="pool_index_l_reads" desc="Indicates the number of logical read requests for index pages that have gone through the buffer pool."	id="pool_index_l_reads"	val=""/>
+				<counter name="pool_index_p_reads" desc="Indicates the number of physical read requests to get index pages into the buffer pool."	id="pool_index_p_reads"	val=""/>
+				<counter name="pool_index_writes" desc="Indicates the number of times a buffer pool index page was physically written to disk."	id="pool_index_writes"	val=""/>
+				<counter name="pool_read_time" desc="Provides the total amount of elapsed time spent processing read requests that caused data or index pages to be physically read from disk to buffer pool."	id="pool_read_time"	val=""/>
+				<counter name="pool_write_time" desc="Provides the total amount of time spent physically writing data or index pages from the buffer pool to disk."	id="pool_write_time"	val=""/>
+				<counter name="files_closed" desc="The total number of database files closed."	id="files_closed"	val=""/>
+				<counter name="pool_async_data_reads" desc="The number of pages read asynchronously into the buffer pool."	id="pool_async_data_reads"	val=""/>
+				<counter name="pool_async_data_writes" desc="The number of times a buffer pool data page was physically written to disk by either an asynchronous page cleaner, or a prefetcher. A prefetcher may have written dirty pages to disk to make space for the pages being prefetched."	id="pool_async_data_writes"	val=""/>
+				<counter name="pool_async_index_writes" desc="The number of times a buffer pool index page was physically written to disk by either an asynchronous page cleaner, or a prefetcher. A prefetcher may have written dirty pages to disk to make space for the pages being prefetched."	id="pool_async_index_writes"	val=""/>
+				<counter name="pool_async_index_reads" desc="The number of index pages read asynchronously into the buffer pool by a prefetcher."	id="pool_async_index_reads"	val=""/>
+				<counter name="pool_async_read_time" desc="The total elapsed time spent reading by database manager prefetchers."	id="pool_async_read_time"	val=""/>
+				<counter name="pool_async_write_time" desc="The total elapsed time spent writing data or index pages from the buffer pool to disk by database manager page cleaners."	id="pool_async_write_time"	val=""/>
+				<counter name="pool_async_data_read_reqs" desc="The number of asynchronous read requests."	id="pool_async_data_read_reqs"	val=""/>
+				<counter name="pool_lsn_gap_clns" desc="The number of times a page cleaner was invoked because the logging space used had reached a predefined criterion for the database."	id="pool_lsn_gap_clns"	val=""/>
+				<counter name="pool_drty_pg_steal_clns" desc="The number of times a page cleaner was invoked because a synchronous write was needed during the victim buffer replacement for the database."	id="pool_drty_pg_steal_clns"	val=""/>
+				<counter name="pool_drty_pg_thrsh_clns" desc="The number of times a page cleaner was invoked because a buffer pool had reached the dirty page threshold criterion for the database."	id="pool_drty_pg_thrsh_clns"	val=""/>
+				<counter name="prefetch_wait_time" desc="The time an application spent waiting for an I/O server (prefetcher) to finish loading pages into the buffer pool."	id="prefetch_wait_time"	val=""/>
+				<counter name="pool_data_to_estore" desc="Number of buffer pool data pages copied to extended storage."	id="pool_data_to_estore"	val=""/>
+				<counter name="pool_index_to_estore" desc="Number of buffer pool index pages copied to extended storage."	id="pool_index_to_estore"	val=""/>
+				<counter name="pool_data_from_estore" desc="Number of buffer pool data pages copied from extended storage."	id="pool_data_from_estore"	val=""/>
+				<counter name="pool_index_from_estore" desc="Number of buffer pool index pages copied from extended storage."	id="pool_index_from_estore"	val=""/>
+				<counter name="direct_reads" desc="The number of read operations that do not use the buffer pool."	id="direct_reads"	val=""/>
+				<counter name="direct_writes" desc="The number of write operations that do not use the buffer pool."	id="direct_writes"	val=""/>
+				<counter name="direct_read_reqs" desc="The number of requests to perform a direct read of one or more sectors of data."	id="direct_read_reqs"	val=""/>
+				<counter name="direct_write_reqs" desc="The number of requests to perform a direct write of one or more sectors of data."	id="direct_write_reqs"	val=""/>
+				<counter name="direct_read_time" desc="The elapsed time (in milliseconds) required to perform the direct reads."	id="direct_read_time"	val=""/>
+				<counter name="direct_write_time" desc="The elapsed time (in milliseconds) required to perform the direct writes."	id="direct_write_time"	val=""/>
+				<counter name="cat_cache_lookups" desc="The number of times that the catalog cache was referenced to obtain table descriptor information."	id="cat_cache_lookups"	val=""/>
+				<counter name="cat_cache_inserts" desc="The number of times that the system tried to insert table descriptor information into the catalog cache."	id="cat_cache_inserts"	val=""/>
+				<counter name="cat_cache_overflows" desc="The number of times that an insert into the catalog cache failed due the catalog cache being full."	id="cat_cache_overflows"	val=""/>
+				<counter name="cat_cache_heap_full" desc="The number of times that an insert into the catalog cache failed due to a heap-full condition in the database heap."	id="cat_cache_heap_full"	val=""/>
+				<counter name="pkg_cache_lookups" desc="The number of times that an application looked for a section or package in the package cache. At a database level, it indicates the overall number of references since the database was started, or monitor data was reset."	id="pkg_cache_lookups"	val=""/>
+				<counter name="pkg_cache_inserts" desc="The total number of times that a requested section was not available for use and had to be loaded into the package cache. This count includes any implicit prepares performed by the system."	id="pkg_cache_inserts"	val=""/>
+				<counter name="pkg_cache_num_overflows" desc="The number of times that the package cache overflowed the bounds of its allocated memory."	id="pkg_cache_num_overflows"	val=""/>
+				<counter name="appl_section_lookups" desc="Lookups of SQL sections by an application from its SQL work area."	id="appl_section_lookups"	val=""/>
+				<counter name="appl_section_inserts" desc="- Inserts of SQL sections by an application from its SQL work area."	id="appl_section_inserts"	val=""/>
+				<counter name="sec_logs_allocated" desc="The total number of secondary log files that are currently being used for the database."	id="sec_logs_allocated"	val=""/>
+				<counter name="log_reads" desc="The number of log pages read from disk by the logger."	id="log_reads"	val=""/>
+				<counter name="log_writes" desc="The number of log pages written to disk by the logger."	id="log_writes"	val=""/>
+				<counter name="total_log_used" desc="The total amount of active log space currently used (in bytes) in the database."	id="total_log_used"	val=""/>
+				<counter name="locks_held" desc="The number of locks currently held."	id="locks_held"	val=""/>
+				<counter name="lock_list_in_use" desc="The total amount of lock list memory (in bytes) that is in use."	id="lock_list_in_use"	val=""/>
+				<counter name="deadlocks" desc="The total number of deadlocks that have occurred."	id="deadlocks"	val=""/>
+				<counter name="lock_escals" desc="The number of times that locks have been escalated from several row locks to a table lock."	id="lock_escals"	val=""/>
+				<counter name="x_lock_escals" desc="The number of times that locks have been escalated from several row locks to one exclusive table lock, or the number of times an exclusive lock on a row caused the table lock to become an exclusive lock."	id="x_lock_escals"	val=""/>
+				<counter name="lock_timeouts" desc="The number of times that a request to lock an object timed-out instead of being granted."	id="lock_timeouts"	val=""/>
+				<counter name="lock_waits" desc="The total number of times that applications or connections waited for locks."	id="lock_waits"	val=""/>
+				<counter name="lock_wait_time" desc="The total elapsed time waited for a lock."	id="lock_wait_time"	val=""/>
+				<counter name="locks_waiting" desc="Indicates the number of agents waiting on a lock."	id="locks_waiting"	val=""/>
+				<counter name="rows_deleted" desc="This is the number of row deletions attempted."	id="rows_deleted"	val=""/>
+				<counter name="rows_inserted" desc="This is the number of row insertions attempted."	id="rows_inserted"	val=""/>
+				<counter name="rows_updated" desc="This is the number of row updates attempted."	id="rows_updated"	val=""/>
+				<counter name="rows_selected" desc="This is the number of rows that have been selected and returned to the application."	id="rows_selected"	val=""/>
+				<counter name="int_rows_deleted" desc="This is the number of rows deleted from the database as a result of internal activity."	id="int_rows_deleted"	val=""/>
+				<counter name="int_rows_updated" desc="This is the number of rows updated from the database as a result of internal activity."	id="int_rows_updated"	val=""/>
+				<counter name="int_rows_inserted" desc="The number of rows inserted into the database as a result of internal activity caused by triggers. "	id="int_rows_inserted"	val=""/>
+				<counter name="static_sql_stmts" desc="The number of static SQL statements that were attempted."	id="static_sql_stmts"	val=""/>
+				<counter name="dynamic_sql_stmts" desc="The number of dynamic SQL statements that were attempted."	id="dynamic_sql_stmts"	val=""/>
+				<counter name="failed_sql_stmts" desc="The number of SQL statements that were attempted, but failed."	id="failed_sql_stmts"	val=""/>
+				<counter name="commit_sql_stmts" desc="The total number of SQL COMMIT statements that have been attempted."	id="commit_sql_stmts"	val=""/>
+				<counter name="rollback_sql_stmts" desc="The total number of SQL ROLLBACK statements that have been attempted."	id="rollback_sql_stmts"	val=""/>
+				<counter name="select_sql_stmts" desc="The number of SQL SELECT statements that were executed."	id="select_sql_stmts"	val=""/>
+				<counter name="uid_sql_stmts" desc="The number of SQL UPDATE, INSERT, and DELETE statements that were executed."	id="uid_sql_stmts"	val=""/>
+				<counter name="ddl_sql_stmts" desc="This element indicates the number of SQL Data Definition Language (DDL) statements that were executed."	id="ddl_sql_stmts"	val=""/>
+				<counter name="int_auto_rebinds" desc="The number of automatic rebinds (or recompiles) that have been attempted."	id="int_auto_rebinds"	val=""/>
+				<counter name="int_commits" desc="- The total number of commits initiated internally by the database manager."	id="int_commits"	val=""/>
+				<counter name="int_rollbacks" desc="The total number of rollbacks initiated internally by the database manager. "	id="int_rollbacks"	val=""/>
+				<counter name="int_deadlock_rollbacks" desc="The total number of forced rollbacks initiated by the database manager due to a deadlock. A rollback is performed on the current unit of work in an application selected by the database manager to resolve the deadlock."	id="int_deadlock_rollbacks"	val=""/>
+				<counter name="binds_precompiles" desc="The number of binds and pre-compiles attempted."	id="binds_precompiles"	val=""/>
+				<object class="Application" name="" id="">
+					<counter name="agents_stolen" desc="The number of times that agents are stolen from an application. Agents are stolen when an idle agent associated with an application is reassigned to work on a different application."	id="agents_stolen"	val=""/>
+					<counter name="num_assoc_agents" desc="At the application level, this is the number of subagents associated with an application. At the database level, it is the number of subagents for all applications."	id="num_assoc_agents"	val=""/>
+					<counter name="total_sorts" desc="The total number of sorts that have been executed."	id="total_sorts"	val=""/>
+					<counter name="total_sort_time" desc="The total elapsed time (in milliseconds) for all sorts that have been executed."	id="total_sort_time"	val=""/>
+					<counter name="sort_overflows" desc="The total number of sorts that ran out of sort heap and may have required disk space for temporary storage"	id="sort_overflows"	val=""/>
+					<counter name="total_hash_joins" desc="The total number of hash joins executed."	id="total_hash_joins"	val=""/>
+					<counter name="total_hash_loops" desc="The total number of times that a single partition of a hash join was larger than the available sort heap space."	id="total_hash_loops"	val=""/>
+					<counter name="hash_join_overflows" desc="The number of times that hash join data exceeded the available sort heap space. "	id="hash_join_overflows"	val=""/>
+					<counter name="hash_join_small_overflows" desc="The number of times that hash join data exceeded the available sort heap space by less than 10%."	id="hash_join_small_overflows"	val=""/>
+					<counter name="pool_data_l_reads" desc="Indicates the number of logical read requests for data pages that have gone through the buffer pool."	id="pool_data_l_reads"	val=""/>
+					<counter name="pool_data_p_reads" desc="The number of read requests that required I/O to get data pages into the buffer pool."	id="pool_data_p_reads"	val=""/>
+					<counter name="pool_data_writes" desc="Indicates the number of times a buffer pool data page was physically written to disk."	id="pool_data_writes"	val=""/>
+					<counter name="pool_index_l_reads" desc="Indicates the number of logical read requests for index pages that have gone through the buffer pool."	id="pool_index_l_reads"	val=""/>
+					<counter name="pool_index_p_reads" desc="Indicates the number of physical read requests to get index pages into the buffer pool."	id="pool_index_p_reads"	val=""/>
+					<counter name="pool_index_writes" desc="Indicates the number of times a buffer pool index page was physically written to disk."	id="pool_index_writes"	val=""/>
+					<counter name="pool_read_time" desc="Provides the total amount of elapsed time spent processing read requests that caused data or index pages to be physically read from disk to buffer"	id="pool_read_time"	val=""/>
+					<counter name="pool_write_time" desc="The time an application spent waiting for an I/O server (prefetcher) to finish loading pages into the buffer pool."	id="pool_write_time"	val=""/>
+					<counter name="prefetch_wait_time" desc="The time an application spent waiting for an I/O server (prefetcher) to finish loading pages into the buffer pool."	id="prefetch_wait_time"	val=""/>
+					<counter name="pool_data_to_estore" desc="Number of buffer pool data pages copied to extended "	id="pool_data_to_estore"	val=""/>
+					<counter name="pool_index_to_estore" desc="Number of buffer pool index pages copied to extended storage."	id="pool_index_to_estore"	val=""/>
+					<counter name="pool_data_from_estore" desc="Number of buffer pool data pages copied from extended storage."	id="pool_data_from_estore"	val=""/>
+					<counter name="pool_index_from_estore" desc="Number of buffer pool index pages copied from extended storage."	id="pool_index_from_estore"	val=""/>
+					<counter name="direct_reads" desc="The number of read operations that do not use the buffer pool."	id="direct_reads"	val=""/>
+					<counter name="direct_writes" desc="The number of write operations that do not use the buffer pool."	id="direct_writes"	val=""/>
+					<counter name="direct_read_reqs" desc="The number of requests to perform a direct read of one or more sectors of data."	id="direct_read_reqs"	val=""/>
+					<counter name="direct_write_reqs" desc="The number of requests to perform a direct write of one or more sectors of data."	id="direct_write_reqs"	val=""/>
+					<counter name="direct_read_time" desc="The elapsed time (in milliseconds) required to perform the direct reads."	id="direct_read_time"	val=""/>
+					<counter name="direct_write_time" desc="The elapsed time (in milliseconds) required to perform the direct writes."	id="direct_write_time"	val=""/>
+					<counter name="cat_cache_lookups" desc="The number of times that the catalog cache was referenced to obtain table descriptor information."	id="cat_cache_lookups"	val=""/>
+					<counter name="cat_cache_inserts" desc="The number of times that the system tried to insert table descriptor information into the catalog cache."	id="cat_cache_inserts"	val=""/>
+					<counter name="cat_cache_overflows" desc="The number of times that an insert into the catalog cache failed due the catalog cache being full."	id="cat_cache_overflows"	val=""/>
+					<counter name="cat_cache_heap_full" desc="The number of times that an insert into the catalog cache failed due to a heap-full condition in the database heap."	id="cat_cache_heap_full"	val=""/>
+					<counter name="pkg_cache_lookups" desc="The number of times that an application looked for a section or package in the package cache. At a database level, it indicates the overall number of references since the database was started, or monitor data was reset."	id="pkg_cache_lookups"	val=""/>
+					<counter name="pkg_cache_inserts" desc="The total number of times that a requested section was not available for use and had to be loaded into the package cache. This count includes any implicit prepares performed by the system."	id="pkg_cache_inserts"	val=""/>
+					<counter name="appl_section_lookups" desc="Lookups of SQL sections by an application from its SQL work area."	id="appl_section_lookups"	val=""/>
+					<counter name="appl_section_inserts" desc="Inserts of SQL sections by an application from its SQL"	id="appl_section_inserts"	val=""/>
+					<counter name="uow_log_space_used" desc="The amount of log space (in bytes) used in the current unit of work of the monitored application."	id="uow_log_space_used"	val=""/>
+					<counter name="locks_held" desc="The number of locks currently held."	id="locks_held"	val=""/>
+					<counter name="deadlocks" desc="The total number of deadlocks that have occurred."	id="deadlocks"	val=""/>
+					<counter name="lock_escals" desc="The number of times that locks have been escalated from several row locks to a table lock."	id="lock_escals"	val=""/>
+					<counter name="x_lock_escals" desc="The number of times that locks have been escalated from several row locks to one exclusive table lock, or the number of times an exclusive lock on a row caused the table lock to become an exclusive lock."	id="x_lock_escals"	val=""/>
+					<counter name="lock_timeouts" desc="The number of times that a request to lock an object timed-out instead of being granted."	id="lock_timeouts"	val=""/>
+					<counter name="lock_waits" desc="The total number of times that applications or connections waited for locks."	id="lock_waits"	val=""/>
+					<counter name="lock_wait_time" desc="The total elapsed time waited for a lock."	id="lock_wait_time"	val=""/>
+					<counter name="locks_waiting" desc="Indicates the number of agents waiting on a lock."	id="locks_waiting"	val=""/>
+					<counter name="uow_lock_wait_time" desc="The total amount of elapsed time this unit of work has pent waiting for locks."	id="uow_lock_wait_time"	val=""/>
+					<counter name="rows_deleted" desc="This is the number of row deletions attempted."	id="rows_deleted"	val=""/>
+					<counter name="rows_inserted" desc="This is the number of row insertions attempted."	id="rows_inserted"	val=""/>
+					<counter name="rows_updated" desc="This is the number of row updates attempted."	id="rows_updated"	val=""/>
+					<counter name="rows_selected" desc="This is the number of rows that have been selected and returned to the application."	id="rows_selected"	val=""/>
+					<counter name="rows_written" desc="This is the number of rows changed (inserted, deleted or updated) in the table."	id="rows_written"	val=""/>
+					<counter name="rows_read" desc="This is the number of rows read from the table."	id="rows_read"	val=""/>
+					<counter name="int_rows_deleted" desc="This is the number of rows deleted from the database as a result of internal activity."	id="int_rows_deleted"	val=""/>
+					<counter name="int_rows_updated" desc="This is the number of rows updated from the database as a result of internal activity."	id="int_rows_updated"	val=""/>
+					<counter name="int_rows_inserted" desc="The number of rows inserted into the database as a result of internal activity caused by triggers. "	id="int_rows_inserted"	val=""/>
+					<counter name="open_rem_curs" desc="The number of remote cursors currently open for this application, including those cursors counted by 'open_rem_curs_blk'."	id="open_rem_curs"	val=""/>
+					<counter name="open_rem_curs_blk" desc="The number of remote blocking cursors currently open for this application."	id="open_rem_curs_blk"	val=""/>
+					<counter name="rej_curs_blk" desc="The number of times that a request for an I/O block at server was rejected and the request was converted to non-blocked I/O."	id="rej_curs_blk"	val=""/>
+					<counter name="acc_curs_blk" desc="The number of times that a request for an I/O block was accepted."	id="acc_curs_blk"	val=""/>
+					<counter name="open_loc_curs" desc="The number of local cursors currently open for this application, including those cursors counted by 'open_loc_curs_blk'."	id="open_loc_curs"	val=""/>
+					<counter name="open_loc_curs_blk" desc="The number of local blocking cursors currently open for this application."	id="open_loc_curs_blk"	val=""/>
+					<counter name="static_sql_stmts" desc="The number of static SQL statements that were attempted."	id="static_sql_stmts"	val=""/>
+					<counter name="dynamic_sql_stmts" desc="The number of dynamic SQL statements that were attempted."	id="dynamic_sql_stmts"	val=""/>
+					<counter name="failed_sql_stmts" desc="The number of SQL statements that were attempted, but failed."	id="failed_sql_stmts"	val=""/>
+					<counter name="commit_sql_stmts" desc="The total number of SQL COMMIT statements that have been attempted."	id="commit_sql_stmts"	val=""/>
+					<counter name="rollback_sql_stmts" desc="The total number of SQL ROLLBACK statements that have been attempted."	id="rollback_sql_stmts"	val=""/>
+					<counter name="select_sql_stmts" desc="The number of SQL SELECT statements that were executed."	id="select_sql_stmts"	val=""/>
+					<counter name="uid_sql_stmts" desc="The number of SQL UPDATE, INSERT, and DELETE statements that were executed."	id="uid_sql_stmts"	val=""/>
+					<counter name="ddl_sql_stmts" desc="This element indicates the number of SQL Data Definition Language (DDL) statements that were executed."	id="ddl_sql_stmts"	val=""/>
+					<counter name="int_auto_rebinds" desc="The number of automatic rebinds (or recompiles) that have been attempted."	id="int_auto_rebinds"	val=""/>
+					<counter name="int_commits" desc="The total number of commits initiated internally by the database manager."	id="int_commits"	val=""/>
+					<counter name="int_rollbacks" desc="The total number of rollbacks initiated internally by the database manager. "	id="int_rollbacks"	val=""/>
+					<counter name="int_deadlock_rollbacks" desc="The total number of forced rollbacks initiated by the database manager due to a deadlock. A rollback is performed on the current unit of work in an application selected by the database manager to resolve the deadlock."	id="int_deadlock_rollbacks"	val=""/>
+					<counter name="binds_precompiles" desc="The number of binds and pre-compiles attempted."	id="binds_precompiles"	val=""/>
+				</object>
+			</object>
+		</object>
+	</Db2Monitor>

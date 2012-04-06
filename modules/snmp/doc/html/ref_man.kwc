@@ -1,0 +1,775 @@
+%% Automatically generated. Do not edit.
+{srcfile, "ref_man"}.
+{appname, "snmp"}.
+{appvsn, "4.12"}.
+{module, "snmp"}.
+{modulesummary, "Interface functions to the SNMP toolkit"}.
+{name, "config/0"}.
+{fsummary, "Configure with a simple interactive tool"}.
+{name, "start/0"}.
+{name, "start/1"}.
+{fsummary, "Start the SNMP application"}.
+{name, "start_agent/0"}.
+{name, "start_agent/1"}.
+{fsummary, "Start the agent part of the SNMP application"}.
+{name, "start_manager/0"}.
+{name, "start_manager/1"}.
+{fsummary, "Start the manager part of the SNMP application"}.
+{name, "date_and_time/0"}.
+{fsummary, "Return the current date and time as an OCTET STRING"}.
+{name, "date_and_time_to_universal_time_dst/1"}.
+{fsummary, "Convert a DateAndTime value to a list of possible utc()"}.
+{name, "date_and_time_to_string/1"}.
+{name, "date_and_time_to_string/2"}.
+{fsummary, "Convert a DateAndTime value to a string"}.
+{name, "date_and_time_to_string2/1"}.
+{fsummary, "Convert a DateAndTime value to a string"}.
+{name, "local_time_to_date_and_time_dst/1"}.
+{fsummary, "Convert a Local time value to a list of possible DateAndTime(s)"}.
+{name, "universal_time_to_date_and_time/1"}.
+{fsummary, "Convert a UTC value to DateAndTime"}.
+{name, "validate_date_and_time/1"}.
+{name, "validate_date_and_time/2"}.
+{fsummary, "Check if a DateAndTime value is correct"}.
+{name, "passwd2localized_key/3"}.
+{fsummary, "Generates an localized key"}.
+{name, "read_mib/1"}.
+{fsummary, ""}.
+{name, "log_to_txt/5"}.
+{name, "log_to_txt/6"}.
+{name, "log_to_txt/7"}.
+{fsummary, "Convert an Audit Trail Log to text format"}.
+{name, "change_log_size/2"}.
+{fsummary, "Change the size of the Audit Trail Log"}.
+{name, "print_version_info/0"}.
+{name, "print_version_info/1"}.
+{fsummary, "Formatted print of result of the versions functions"}.
+{name, "versions1/0"}.
+{name, "versions2/0"}.
+{fsummary, "Retrieve various system and application info"}.
+{name, "print_versions/1"}.
+{name, "print_versions/2"}.
+{fsummary, "Formatted print of result of the versions functions"}.
+{name, "enable_trace/0"}.
+{fsummary, "Starts a tracer"}.
+{name, "disable_trace/0"}.
+{fsummary, "Stop the tracer"}.
+{name, "set_trace/1"}.
+{fsummary, "Set trace target"}.
+{name, "reset_trace/1"}.
+{fsummary, "Reset trace target"}.
+{name, "set_trace/2"}.
+{fsummary, "Set trace target"}.
+{app, "snmp_app"}.
+{appsummary, "The SNMP Application"}.
+{module, "snmpa"}.
+{modulesummary, "Interface Functions to the SNMP toolkit agent"}.
+{name, "add_agent_caps/2"}.
+{fsummary, "Add an AGENT-CAPABILITY definition to the agent"}.
+{name, "del_agent_caps/1"}.
+{fsummary, "Delete an AGENT-CAPABILITY definition from the agent"}.
+{name, "get_agent_caps/0"}.
+{fsummary, "Return all AGENT-CAPABILITY definitions in the agent"}.
+{name, "get/2"}.
+{name, "get/3"}.
+{fsummary, "Perform a get operation on the agent"}.
+{name, "get_next/2"}.
+{name, "get_next/3"}.
+{fsummary, "Perform a get-next operation on the agent"}.
+{name, "backup/1"}.
+{name, "backup/2"}.
+{fsummary, "Backup agent data"}.
+{name, "info/0"}.
+{name, "info/1"}.
+{fsummary, "Return information about the agent"}.
+{name, "old_info_format/1"}.
+{fsummary, "Return information about the agent"}.
+{name, "load_mibs/1"}.
+{name, "load_mibs/2"}.
+{fsummary, "Load MIBs into the agent"}.
+{name, "unload_mibs/1"}.
+{name, "unload_mibs/2"}.
+{fsummary, "Unload MIBs from the agent"}.
+{name, "which_mibs/0"}.
+{name, "which_mibs/1"}.
+{fsummary, "Get a list of all the loaded mibs"}.
+{name, "whereis_mib/1"}.
+{name, "whereis_mib/2"}.
+{fsummary, "Get the path to the mib file"}.
+{name, "current_request_id/0"}.
+{name, "current_context/0"}.
+{name, "current_community/0"}.
+{name, "current_address/0"}.
+{fsummary, "Get the request-id, context, community and address of the current request"}.
+{name, "enum_to_int/2"}.
+{name, "enum_to_int/3"}.
+{fsummary, "Convert an enum value to an integer"}.
+{name, "int_to_enum/2"}.
+{name, "int_to_enum/3"}.
+{fsummary, "Convert an integer to an enum value"}.
+{name, "name_to_oid/1"}.
+{name, "name_to_oid/2"}.
+{fsummary, "Convert a symbolic name to an OID"}.
+{name, "oid_to_name/1"}.
+{name, "oid_to_name/2"}.
+{fsummary, "Convert an OID to a symbolic name"}.
+{name, "which_aliasnames/0"}.
+{fsummary, "Get all alias-names known to the agent"}.
+{name, "which_tables/0"}.
+{fsummary, "Get all tables known to the agent"}.
+{name, "which_variables/0"}.
+{fsummary, "Get all variables known to the agent"}.
+{name, "log_to_txt/2"}.
+{name, "log_to_txt/3"}.
+{name, "log_to_txt/4"}.
+{name, "log_to_txt/5"}.
+{name, "log_to_txt/6"}.
+{name, "log_to_txt/7"}.
+{fsummary, "Convert an Audit Trail Log to text format"}.
+{name, "change_log_size/1"}.
+{fsummary, "Change the size of the Audit Trail Log"}.
+{name, "set_log_type/1"}.
+{name, "set_log_type/2"}.
+{fsummary, "Change the type of the Audit Trail Log"}.
+{name, "mib_of/1"}.
+{name, "mib_of/2"}.
+{fsummary, "Which mib an Oid belongs to"}.
+{name, "me_of/1"}.
+{name, "me_of/2"}.
+{fsummary, "Retrieve the mib-entry of an Oid"}.
+{name, "register_notification_filter/3"}.
+{name, "register_notification_filter/4"}.
+{name, "register_notification_filter/4"}.
+{name, "register_notification_filter/5"}.
+{fsummary, "Register a notification filter"}.
+{name, "unregister_notification_filter/1"}.
+{name, "unregister_notification_filter/2"}.
+{fsummary, "Unregister a notification filter"}.
+{name, "which_notification_filter/0"}.
+{name, "which_notification_filter/1"}.
+{fsummary, "Which notification filter"}.
+{name, "set_request_limit/1"}.
+{name, "set_request_limit/2"}.
+{fsummary, "Change the request limit"}.
+{name, "register_subagent/3"}.
+{fsummary, "Register a sub-agent under a sub-tree"}.
+{name, "unregister_subagent/2"}.
+{fsummary, "Unregister a sub-agent"}.
+{name, "send_notification/3"}.
+{name, "send_notification/4"}.
+{name, "send_notification/5"}.
+{name, "send_notification/6"}.
+{fsummary, "Send a notification"}.
+{name, "send_trap/3"}.
+{name, "send_trap/4"}.
+{fsummary, "Send a trap"}.
+{name, "convert_config/1"}.
+{fsummary, "Convert old snmp config to new agent config"}.
+{name, "restart_worker/0"}.
+{name, "restart_worker/1"}.
+{fsummary, "Restart the worker process of a multi-threaded agent"}.
+{name, "restart_set_worker/0"}.
+{name, "restart_set_worker/1"}.
+{fsummary, "Restart the set worker process of a multi-threaded agent"}.
+{name, "verbosity/2"}.
+{fsummary, "Assign a new verbosity for the process"}.
+{module, "snmpa_conf"}.
+{modulesummary, "Utility functions for handling the agent config files."}.
+{name, "agent_entry/2"}.
+{fsummary, "Create an agent entry"}.
+{name, "write_agent_config/2"}.
+{name, "write_agent_config/3"}.
+{fsummary, "Write the agent config to the config file"}.
+{name, "append_agent_config/2"}.
+{fsummary, "Append the agent config to the config file"}.
+{name, "read_agent_config/1"}.
+{fsummary, "Read the agent config from the config file"}.
+{name, "standard_entry/2"}.
+{fsummary, "Create an standard entry"}.
+{name, "write_standard_config/2"}.
+{name, "write_standard_config/3"}.
+{fsummary, "Write the agent standard config to the config file"}.
+{name, "append_standard_config/2"}.
+{fsummary, "Append the agent standard config to the config file"}.
+{name, "read_standard_config/1"}.
+{fsummary, "Read the agent standard config from the config file"}.
+{name, "context_entry/1"}.
+{fsummary, "Create an context entry"}.
+{name, "write_context_config/2"}.
+{name, "write_context_config/3"}.
+{fsummary, "Write the agent context(s) to the config file"}.
+{name, "append_context_config/2"}.
+{fsummary, "Append the agent context(s) to the config file"}.
+{name, "read_context_config/1"}.
+{fsummary, "Read the agent context config from the config file"}.
+{name, "community_entry/1"}.
+{name, "community_entry/5"}.
+{fsummary, "Create an community entry"}.
+{name, "write_community_config/2"}.
+{name, "write_community_config/3"}.
+{fsummary, "Write the agent community config to the config file"}.
+{name, "append_community_config/2"}.
+{fsummary, "Append the agent community config to the config file"}.
+{name, "read_community_config/1"}.
+{fsummary, "Read the agent community config from the config file"}.
+{name, "target_addr_entry/5"}.
+{name, "target_addr_entry/6"}.
+{name, "target_addr_entry/8"}.
+{name, "target_addr_entry/10"}.
+{fsummary, "Create an target_addr entry"}.
+{name, "write_target_addr_config/2"}.
+{name, "write_target_addr_config/3"}.
+{fsummary, "Write the agent target_addr config to the config file"}.
+{name, "append_target_addr_config/2"}.
+{fsummary, "Append the agent target_addr config to the config file"}.
+{name, "read_target_addr_config/1"}.
+{fsummary, "Read the agent target_addr config from the config file"}.
+{name, "target_params_entry/2"}.
+{name, "target_params_entry/4"}.
+{name, "target_params_entry/5"}.
+{fsummary, "Create an target_params entry"}.
+{name, "write_target_params_config/2"}.
+{name, "write_target_params_config/3"}.
+{fsummary, "Write the agent target_params config to the config file"}.
+{name, "append_target_params_config/2"}.
+{fsummary, "Append the agent target_params config to the config file"}.
+{name, "read_target_params_config/1"}.
+{fsummary, "Read the agent target_params config from the config file"}.
+{name, "vacm_s2g_entry/3"}.
+{name, "vacm_acc_entry/8"}.
+{name, "vacm_vtf_entry/2"}.
+{name, "vacm_vtf_entry/4"}.
+{fsummary, "Create an vacm entry"}.
+{name, "write_vacm_config/2"}.
+{name, "write_vacm_config/3"}.
+{fsummary, "Write the agent vacm config to the config file"}.
+{name, "append_vacm_config/2"}.
+{fsummary, "Append the agent vacm config to the config file"}.
+{name, "read_vacm_config/1"}.
+{fsummary, "Read the agent vacm config from the config file"}.
+{name, "usm_entry/1"}.
+{name, "usm_entry/13"}.
+{fsummary, "Create an usm entry"}.
+{name, "write_usm_config/2"}.
+{name, "write_usm_config/3"}.
+{fsummary, "Write the agent usm config to the config file"}.
+{name, "append_usm_config/2"}.
+{fsummary, "Append the agent usm config to the config file"}.
+{name, "read_usm_config/1"}.
+{fsummary, "Read the agent usm config from the config file"}.
+{name, "notify_entry/3"}.
+{fsummary, "Create an notify entry"}.
+{name, "write_notify_config/2"}.
+{name, "write_notify_config/3"}.
+{fsummary, "Write the agent notify config to the config file"}.
+{name, "append_notify_config/2"}.
+{fsummary, "Append the agent notify config to the config file"}.
+{name, "read_notify_config/1"}.
+{fsummary, "Read the agent notify config from the config file"}.
+{module, "snmpa_error_report"}.
+{modulesummary, "Behaviour module for reporting SNMP agent errors"}.
+{name, "config_err/2"}.
+{fsummary, "Called if a configuration error occurs"}.
+{name, "user_err/2"}.
+{fsummary, "Called if a user related error occurs"}.
+{module, "snmpa_error"}.
+{modulesummary, "Functions for Reporting SNMP Errors"}.
+{name, "config_err/2"}.
+{fsummary, "Called if a configuration error occurs"}.
+{name, "user_err/2"}.
+{fsummary, "Called if a user related error occurs"}.
+{module, "snmpa_error_io"}.
+{modulesummary, "Functions for Reporting SNMP Errors on stdio"}.
+{name, "config_err/2"}.
+{fsummary, "Called if a configuration error occurs"}.
+{name, "user_err/2"}.
+{fsummary, "Called if a user related error occurs"}.
+{module, "snmpa_error_logger"}.
+{modulesummary, "Functions for Reporting SNMP Errors through the error_logger"}.
+{name, "config_err/2"}.
+{fsummary, "Called if a configuration error occurs"}.
+{name, "user_err/2"}.
+{fsummary, "Called if a user related error occurs"}.
+{module, "snmpa_local_db"}.
+{modulesummary, "The SNMP built-in database"}.
+{name, "dump/0"}.
+{fsummary, "Dump the database to disk"}.
+{name, "match/2"}.
+{fsummary, "Perform a match on the table"}.
+{name, "print/0"}.
+{name, "print/1"}.
+{name, "print/2"}.
+{fsummary, "Print the database to screen"}.
+{name, "table_create/1"}.
+{fsummary, "Create a table"}.
+{name, "table_create_row/3"}.
+{fsummary, "Create a row in a table"}.
+{name, "table_delete/1"}.
+{fsummary, "Delete a table"}.
+{name, "table_delete_row/2"}.
+{fsummary, "Delete the row in the table"}.
+{name, "table_exists/1"}.
+{fsummary, "Check if a table exists"}.
+{name, "table_get_row/2"}.
+{fsummary, "Get a row from the table"}.
+{module, "snmpa_mpd"}.
+{modulesummary, "Message Processing and Dispatch module for the SNMP agent"}.
+{name, "init/1"}.
+{fsummary, "Initialize the MPD module"}.
+{name, "process_packet/4"}.
+{fsummary, "Process a packet received from the network"}.
+{name, "generate_response_msg/4"}.
+{fsummary, "Generate a response packet to be sent to the network"}.
+{name, "generate_msg/4"}.
+{fsummary, "Generate a request message to be sent to the network"}.
+{name, "discarded_pdu/1"}.
+{fsummary, "Increment the variable associated with a discarded pdu"}.
+{module, "snmpa_network_interface"}.
+{modulesummary, "Behaviour module for the SNMP agent network interface."}.
+{name, "start_link/4"}.
+{fsummary, "Start-link the network interface process"}.
+{name, "info/1"}.
+{fsummary, "Return information about the running network interface process"}.
+{name, "verbosity/2"}.
+{fsummary, "Change the verbosity of a running network interface process"}.
+{name, "get_log_type/1"}.
+{fsummary, "Get the Audit Trail Log type"}.
+{name, "set_log_type/2"}.
+{fsummary, "Change the Audit Trail Log type"}.
+{module, "snmpa_network_interface_filter"}.
+{modulesummary, "Behaviour module for the SNMP agent network-interface filter."}.
+{name, "accept_recv/2"}.
+{fsummary, "Shall the received message be accepted"}.
+{name, "accept_send/2"}.
+{fsummary, "Shall the message be sent"}.
+{name, "accept_recv_pdu/3"}.
+{fsummary, "Shall the received pdu be accepted"}.
+{name, "accept_send_pdu/2"}.
+{fsummary, "Shall the pdu be sent"}.
+{module, "snmpa_notification_delivery_info_receiver"}.
+{modulesummary, " Behaviour module for the SNMP agent notification delivery  information receiver. "}.
+{name, "delivery_targets/3"}.
+{fsummary, "Inform about target addresses"}.
+{name, "delivery_info/4"}.
+{fsummary, "Inform about delivery result"}.
+{module, "snmpa_notification_filter"}.
+{modulesummary, "Behaviour module for the SNMP agent notification filters."}.
+{name, "handle_notification/2"}.
+{fsummary, "Handle a notification"}.
+{module, "snmpa_supervisor"}.
+{modulesummary, "A supervisor for the SNMP agent Processes"}.
+{name, "start_sub_sup/1"}.
+{fsummary, "Start the SNMP supervisor for sub-agents only"}.
+{name, "start_master_sup/1"}.
+{fsummary, "Start the SNMP supervisor for all agents"}.
+{name, "start_sub_agent/3"}.
+{fsummary, "Start a sub-agent"}.
+{name, "stop_sub_agent/1"}.
+{fsummary, "Stop a sub-agent"}.
+{module, "snmp_community_mib"}.
+{modulesummary, "Instrumentation Functions for SNMP-COMMUNITY-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the SNMP-COMMUNITY-MIB"}.
+{name, "reconfigure/1"}.
+{fsummary, "Configure the SNMP-COMMUNITY-MIB"}.
+{name, "add_community/5"}.
+{fsummary, "Added one community"}.
+{name, "delete_community/1"}.
+{fsummary, "Delete one community"}.
+{module, "snmp_framework_mib"}.
+{modulesummary, "Instrumentation Functions for SNMP-FRAMEWORK-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the SNMP-FRAMEWORK-MIB"}.
+{name, "init/0"}.
+{fsummary, "Initialize the SNMP-FRAMEWORK-MIB"}.
+{name, "add_context/1"}.
+{fsummary, "Added one context"}.
+{name, "delete_context/1"}.
+{fsummary, "Delete one context"}.
+{module, "snmp_generic"}.
+{modulesummary, "Generic Functions for Implementing SNMP Objects in a Database"}.
+{name, "get_status_col/2"}.
+{name, "get_status_col/2"}.
+{fsummary, "Get the value of the status column from Cols"}.
+{name, "get_index_types/1"}.
+{fsummary, "Get the index types of Name"}.
+{name, "table_func/2"}.
+{name, "table_func/4"}.
+{fsummary, "Default instrumentation function for tables"}.
+{name, "table_get_elements/3"}.
+{fsummary, "Get elements in a table row"}.
+{name, "table_next/2"}.
+{fsummary, "Find the next row in the table"}.
+{name, "table_row_exists/2"}.
+{fsummary, "Check if a row in a table exists"}.
+{name, "table_set_elements/3"}.
+{fsummary, "Set elements in a table row"}.
+{name, "variable_func/2"}.
+{name, "variable_func/3"}.
+{fsummary, "Default instrumentation function for tables"}.
+{name, "variable_get/1"}.
+{fsummary, "Get the value of a variable"}.
+{name, "variable_set/2"}.
+{fsummary, "Set a value for a variable"}.
+{module, "snmp_index"}.
+{modulesummary, "Abstract Data Type for SNMP Indexing"}.
+{name, "delete/1"}.
+{fsummary, "Delete an index table"}.
+{name, "delete/2"}.
+{fsummary, "Delete an item from the index"}.
+{name, "get/2"}.
+{fsummary, "Get the item with KeyOid"}.
+{name, "get_last/1"}.
+{fsummary, "Get the last item in the index structure"}.
+{name, "get_next/2"}.
+{fsummary, "Get the next item"}.
+{name, "insert/3"}.
+{fsummary, "Insert an item into the index"}.
+{name, "key_to_oid/2"}.
+{fsummary, "Convert a key to an OBJECT IDENTIFIER"}.
+{name, "new/1"}.
+{fsummary, "Create a new snmp index structure"}.
+{module, "snmp_notification_mib"}.
+{modulesummary, "Instrumentation Functions for SNMP-NOTIFICATION-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the SNMP-NOTIFICATION-MIB"}.
+{name, "reconfigure/1"}.
+{fsummary, "Configure the SNMP-NOTIFICATION-MIB"}.
+{name, "add_notify/3"}.
+{fsummary, "Added one notify definition"}.
+{name, "delete_notify/1"}.
+{fsummary, "Delete one notify definition"}.
+{module, "snmp_pdus"}.
+{modulesummary, "Encode and Decode Functions for SNMP PDUs"}.
+{name, "dec_message/1"}.
+{fsummary, "Decode an SNMP Message"}.
+{name, "dec_message_only/1"}.
+{fsummary, "Decode an SNMP Message, but not the data part"}.
+{name, "dec_pdu/1"}.
+{fsummary, "Decode an SNMP Pdu"}.
+{name, "dec_scoped_pdu/1"}.
+{fsummary, "Decode an SNMP ScopedPdu"}.
+{name, "dec_scoped_pdu_data/1"}.
+{fsummary, "Decode an SNMP ScopedPduData"}.
+{name, "dec_usm_security_parameters/1"}.
+{fsummary, "Decode SNMP UsmSecurityParameters"}.
+{name, "enc_encrypted_scoped_pdu/1"}.
+{fsummary, "Encode an encrypted SNMP scopedPDU"}.
+{name, "enc_message/1"}.
+{fsummary, "Encode an SNMP Message"}.
+{name, "enc_message_only/1"}.
+{fsummary, "Encode an SNMP Message, but not the data part"}.
+{name, "enc_pdu/1"}.
+{fsummary, "Encode an SNMP Pdu"}.
+{name, "enc_scoped_pdu/1"}.
+{fsummary, "Encode an SNMP scopedPDU"}.
+{name, "enc_usm_security_parameters/1"}.
+{fsummary, "Encode SNMP UsmSecurityParameters"}.
+{module, "snmp_standard_mib"}.
+{modulesummary, "Instrumentation Functions for STANDARD-MIB and SNMPv2-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the STANDARD-MIB and SNMPv2-MIB"}.
+{name, "inc/1"}.
+{name, "inc/2"}.
+{fsummary, "Increment a variable in the MIB"}.
+{name, "reconfigure/1"}.
+{fsummary, "Configure the STANDARD-MIB and SNMPv2-MIB"}.
+{name, "reset/0"}.
+{fsummary, "Reset all snmpcounters to 0"}.
+{name, "sys_up_time/0"}.
+{fsummary, "Get the system up time"}.
+{module, "snmp_target_mib"}.
+{modulesummary, "Instrumentation Functions for SNMP-TARGET-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the SNMP-TARGET-MIB"}.
+{name, "reconfigure/1"}.
+{fsummary, "Configure the SNMP-TARGET-MIB"}.
+{name, "set_target_engine_id/2"}.
+{fsummary, "Set the engine id for a targetAddr row."}.
+{name, "add_addr/10"}.
+{fsummary, "Add one target address definition"}.
+{name, "delete_addr/1"}.
+{fsummary, "Delete one target address definition"}.
+{name, "add_params/5"}.
+{fsummary, "Add one target parameter definition"}.
+{name, "delete_params/1"}.
+{fsummary, "Delete one target parameter definition"}.
+{module, "snmp_user_based_sm_mib"}.
+{modulesummary, "Instrumentation Functions for SNMP-USER-BASED-SM-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the SNMP-USER-BASED-SM-MIB"}.
+{name, "reconfigure/1"}.
+{fsummary, "Configure the SNMP-USER-BASED-SM-MIB"}.
+{name, "add_user/13"}.
+{fsummary, "Add one user"}.
+{name, "delete_user/1"}.
+{fsummary, "Delete one user"}.
+{module, "snmp_view_based_acm_mib"}.
+{modulesummary, "Instrumentation Functions for SNMP-VIEW-BASED-ACM-MIB"}.
+{name, "configure/1"}.
+{fsummary, "Configure the SNMP-VIEW-BASED-ACM-MIB"}.
+{name, "reconfigure/1"}.
+{fsummary, "Configure the SNMP-VIEW-BASED-ACM-MIB"}.
+{name, "add_sec2group/3"}.
+{fsummary, "Add one security to group definition"}.
+{name, "delete_sec2group/1"}.
+{fsummary, "Delete one security to group definition"}.
+{name, "add_access/8"}.
+{fsummary, "Add one access definition"}.
+{name, "delete_access/1"}.
+{fsummary, "Delete one access definition"}.
+{name, "add_view_tree_fam/4"}.
+{fsummary, "Add one view tree family definition"}.
+{name, "delete_view_tree_fam/1"}.
+{fsummary, "Delete one view tree family definition"}.
+{module, "snmpc"}.
+{modulesummary, "Interface Functions to the SNMP toolkit MIB compiler"}.
+{name, "compile/1"}.
+{name, "compile/2"}.
+{fsummary, "Compile the specified MIB"}.
+{name, "is_consistent/1"}.
+{fsummary, "Check for OID conflicts between MIBs"}.
+{name, "mib_to_hrl/1"}.
+{fsummary, "Generate constants for the objects in the MIB"}.
+{module, "snmpm"}.
+{modulesummary, "Interface functions to the SNMP toolkit manager"}.
+{name, "monitor/0"}.
+{fsummary, "Monitor the snmp manager"}.
+{name, "demonitor/1"}.
+{fsummary, "Turn off monitoring of the snmp manager"}.
+{name, "notify_started/1"}.
+{fsummary, "Request to be notified when manager started"}.
+{name, "cancel_notify_started/1"}.
+{fsummary, "Cancel request to be notified when manager started"}.
+{name, "register_user/3"}.
+{fsummary, "Register a user of the manager"}.
+{name, "register_user_monitor/3"}.
+{fsummary, "Register a monitored user of the manager"}.
+{name, "unregister_user/1"}.
+{fsummary, "Unregister the user"}.
+{name, "which_users/0"}.
+{fsummary, "Get a list of all users"}.
+{name, "register_agent/2"}.
+{name, "register_agent/3"}.
+{name, "register_agent/3"}.
+{name, "register_agent/4"}.
+{fsummary, "Register this agent"}.
+{name, "unregister_agent/2"}.
+{name, "unregister_agent/3"}.
+{fsummary, "Unregister the user"}.
+{name, "agent_info/3"}.
+{fsummary, "Retrieve agent config"}.
+{name, "update_agent_info/5"}.
+{fsummary, "Update agent config"}.
+{name, "which_agents/0"}.
+{name, "which_agents/1"}.
+{fsummary, "List the registered agents"}.
+{name, "register_usm_user/3"}.
+{fsummary, "Register this USM user"}.
+{name, "unregister_usm_user/2"}.
+{fsummary, "Unregister this USM user"}.
+{name, "usm_user_info/3"}.
+{fsummary, "Retrieve usm user config"}.
+{name, "update_usm_user_info/4"}.
+{fsummary, "Update agent config"}.
+{name, "which_usm_users/0"}.
+{fsummary, "List all the registered usm users"}.
+{name, "which_usm_users/1"}.
+{fsummary, "List the registered usm users"}.
+{name, "g/3"}.
+{name, "g/4"}.
+{name, "g/4"}.
+{name, "g/4"}.
+{name, "g/5"}.
+{name, "g/5"}.
+{name, "g/5"}.
+{name, "g/6"}.
+{name, "g/7"}.
+{fsummary, "Synchronous get-request"}.
+{name, "ag/3"}.
+{name, "ag/4"}.
+{name, "ag/4"}.
+{name, "ag/4"}.
+{name, "ag/5"}.
+{name, "ag/5"}.
+{name, "ag/5"}.
+{name, "ag/6"}.
+{name, "ag/7"}.
+{fsummary, "Asynchronous get-request"}.
+{name, "gn/3"}.
+{name, "gn/4"}.
+{name, "gn/4"}.
+{name, "gn/4"}.
+{name, "gn/5"}.
+{name, "gn/5"}.
+{name, "gn/5"}.
+{name, "gn/6"}.
+{name, "gn/7"}.
+{fsummary, "Synchronous get-next-request"}.
+{name, "agn/3"}.
+{name, "agn/4"}.
+{name, "agn/4"}.
+{name, "agn/4"}.
+{name, "agn/5"}.
+{name, "agn/5"}.
+{name, "agn/5"}.
+{name, "agn/6"}.
+{name, "agn/7"}.
+{fsummary, "Asynchronous get-next-request"}.
+{name, "s/3"}.
+{name, "s/4"}.
+{name, "s/4"}.
+{name, "s/4"}.
+{name, "s/5"}.
+{name, "s/5"}.
+{name, "s/5"}.
+{name, "s/6"}.
+{name, "s/7"}.
+{fsummary, "Synchronous set-request"}.
+{name, "as/3"}.
+{name, "as/4"}.
+{name, "as/4"}.
+{name, "as/4"}.
+{name, "as/5"}.
+{name, "as/5"}.
+{name, "as/5"}.
+{name, "as/6"}.
+{name, "as/7"}.
+{fsummary, "Asynchronous set-request"}.
+{name, "gb/5"}.
+{name, "gb/6"}.
+{name, "gb/6"}.
+{name, "gb/6"}.
+{name, "gb/7"}.
+{name, "gb/7"}.
+{name, "gb/7"}.
+{name, "gb/8"}.
+{name, "gb/9"}.
+{fsummary, "Synchronous get-bulk-request"}.
+{name, "agb/5"}.
+{name, "agb/6"}.
+{name, "agb/6"}.
+{name, "agb/6"}.
+{name, "agb/7"}.
+{name, "agb/7"}.
+{name, "agb/7"}.
+{name, "agb/8"}.
+{name, "agb/9"}.
+{fsummary, "Asynchronous get-bulk-request"}.
+{name, "cancel_async_request/2"}.
+{fsummary, "Cancel a asynchronous request"}.
+{name, "log_to_txt/2"}.
+{name, "log_to_txt/3"}.
+{name, "log_to_txt/4"}.
+{name, "log_to_txt/5"}.
+{name, "log_to_txt/6"}.
+{name, "log_to_txt/7"}.
+{fsummary, "Convert an Audit Trail Log to text format"}.
+{name, "change_log_size/1"}.
+{fsummary, "Change the size of the Audit Trail Log"}.
+{name, "set_log_type/1"}.
+{fsummary, "Change the Audit Trail Log type"}.
+{name, "load_mib/1"}.
+{fsummary, "Load a MIB into the manager"}.
+{name, "unload_mib/1"}.
+{fsummary, "Unload a MIB from the manager"}.
+{name, "which_mibs/0"}.
+{fsummary, "Which mibs are loaded into the manager"}.
+{name, "name_to_oid/1"}.
+{fsummary, "Get all the possible oid's for an alias-name"}.
+{name, "oid_to_name/1"}.
+{fsummary, "Get the oid for an alias-name"}.
+{name, "backup/1"}.
+{fsummary, "Backup manager data"}.
+{name, "info/0"}.
+{fsummary, "Return information about the manager"}.
+{name, "verbosity/2"}.
+{fsummary, "Assign a new verbosity for the process"}.
+{name, "format_reason/1"}.
+{name, "format_reason/2"}.
+{fsummary, "Assign a new verbosity for the process"}.
+{module, "snmpm_conf"}.
+{modulesummary, "Utility functions for handling the manager config files."}.
+{name, "manager_entry/2"}.
+{fsummary, "Create an manager entry"}.
+{name, "write_manager_config/2"}.
+{name, "write_manager_config/3"}.
+{fsummary, "Write the manager config to the config file"}.
+{name, "append_manager_config/2"}.
+{fsummary, "Append the manager config to the config file"}.
+{name, "read_manager_config/1"}.
+{fsummary, "Read the manager config from the config file"}.
+{name, "users_entry/1"}.
+{name, "users_entry/2"}.
+{name, "users_entry/3"}.
+{fsummary, "Create an users entry"}.
+{name, "write_users_config/2"}.
+{name, "write_users_config/3"}.
+{fsummary, "Write the manager users config to the config file"}.
+{name, "append_users_config/2"}.
+{fsummary, "Append the manager users config to the config file"}.
+{name, "read_users_config/1"}.
+{fsummary, "Read the manager users config from the config file"}.
+{name, "agents_entry/12"}.
+{fsummary, "Create an agents entry"}.
+{name, "write_agents_config/2"}.
+{name, "write_agents_config/3"}.
+{fsummary, "Write the manager agents to the config file"}.
+{name, "append_agents_config/2"}.
+{fsummary, "Append the manager agents to the config file"}.
+{name, "read_agents_config/1"}.
+{fsummary, "Read the manager agents config from the config file"}.
+{name, "usm_entry/6"}.
+{name, "usm_entry/7"}.
+{fsummary, "Create an usm entry"}.
+{name, "write_usm_config/2"}.
+{name, "write_usm_config/3"}.
+{fsummary, "Write the manager usm config to the config file"}.
+{name, "append_usm_config/2"}.
+{fsummary, "Append the manager usm config to the config file"}.
+{name, "read_usm_config/1"}.
+{fsummary, "Read the manager usm config from the config file"}.
+{module, "snmpm_mpd"}.
+{modulesummary, "Message Processing and Dispatch module for the SNMP manager"}.
+{name, "init_mpd/1"}.
+{fsummary, "Initialize the MPD module"}.
+{name, "process_msg/7"}.
+{fsummary, "Process a message received from the network"}.
+{name, "generate_msg/5"}.
+{fsummary, "Generate a request message to be sent to the network"}.
+{name, "generate_response_msg/4"}.
+{fsummary, "Generate a response packet to be sent to the network"}.
+{module, "snmpm_network_interface"}.
+{modulesummary, "Behaviour module for the SNMP manager network interface."}.
+{name, "start_link/2"}.
+{fsummary, "Start-link the network interface process"}.
+{name, "stop/1"}.
+{fsummary, "Stop the network interface process"}.
+{name, "send_pdu/7"}.
+{fsummary, "Request the network interface process to send this pdu"}.
+{name, "inform_response/4"}.
+{fsummary, "Send the inform-request ack"}.
+{name, "note_store/2"}.
+{fsummary, "Change the verbosity of the network interface process"}.
+{name, "info/1"}.
+{fsummary, "Return information about the running network interface process"}.
+{name, "verbosity/2"}.
+{fsummary, "Change the verbosity of the network interface process"}.
+{name, "get_log_type/1"}.
+{fsummary, "Get the Audit Trail Log type"}.
+{name, "set_log_type/2"}.
+{fsummary, "Change the Audit Trail Log type"}.
+{module, "snmpm_user"}.
+{modulesummary, "Behaviour module for the SNMP manager user."}.
+{name, "handle_error/3"}.
+{fsummary, "Handle error"}.
+{name, "handle_agent/4"}.
+{fsummary, "Handle agent"}.
+{name, "handle_pdu/5"}.
+{fsummary, "Handle the reply to an asynchroneous request"}.
+{name, "handle_trap/4"}.
+{fsummary, "Handle a trap/notification message"}.
+{name, "handle_inform/4"}.
+{fsummary, "Handle a inform message"}.
+{name, "handle_report/4"}.
+{fsummary, "Handle a report message"}.

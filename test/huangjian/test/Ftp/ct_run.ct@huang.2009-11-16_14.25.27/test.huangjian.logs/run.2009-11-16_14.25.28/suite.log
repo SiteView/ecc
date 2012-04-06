@@ -1,0 +1,120 @@
+=== Suite started at 2009-11-16 14:25:28
+=== Starting test, 13 test cases
+=cases        13
+=user         Administrator
+=host         huang
+=hosts        huang 
+=emulator_vsn 5.6.5
+=emulator     beam
+=otp_release  R12B
+=started      2009-11-16 14:25:28
+=case    ftp_SUITE:init_per_suite
+=logfile ftp_suite.init_per_suite.html
+=started 2009-11-16 14:25:28
+=ended   2009-11-16 14:25:28
+=result    ok
+=elapsed   1.0e-6
+=case    ftp_SUITE:correct_active_no_proxy_content
+=logfile ftp_suite.correct_active_no_proxy_content.html
+=started 2009-11-16 14:25:28
+=ended   2009-11-16 14:25:28
+=result    ok:0.062 sec<br>average 1 Kbytes/sec<br>46bytes
+=elapsed   0.078001
+=case    ftp_SUITE:correct_active_no_proxy
+=logfile ftp_suite.correct_active_no_proxy.html
+=started 2009-11-16 14:25:28
+=ended   2009-11-16 14:25:28
+=result    ok:0.031 sec<br>average 1 Kbytes/sec<br>46bytes
+=elapsed   0.031001
+=case    ftp_SUITE:correct_passive_no_proxy_content
+=logfile ftp_suite.correct_passive_no_proxy_content.html
+=started 2009-11-16 14:25:28
+=ended   2009-11-16 14:25:28
+=result    ok:0.047 sec<br>average 1 Kbytes/sec<br>46bytes
+=elapsed   0.047001
+=case    ftp_SUITE:correct_passive_no_proxy
+=logfile ftp_suite.correct_passive_no_proxy.html
+=started 2009-11-16 14:25:28
+=ended   2009-11-16 14:25:28
+=result    ok:0.062 sec<br>average 1 Kbytes/sec<br>46bytes
+=elapsed   0.062001
+=case    ftp_SUITE:correct_proxy_no_content
+=logfile ftp_suite.correct_proxy_no_content.html
+=started 2009-11-16 14:25:28
+=ended   2009-11-16 14:25:32
+=result    failed:{undef,
+                      [{propertied_object,set_attribute,
+                           [0,good,
+                            "3.281 sec<br>average 0 Kbytes/sec<br>46bytes",
+                            {propertied_object,<0.152.0>}]},
+                       {ftp_monitor,verify_stat,4},
+                       {ftp_SUITE,correct_proxy_no_content,1},
+                       {test_server,my_apply,3},
+                       {test_server,ts_tc,3},
+                       {test_server,run_test_case_eval1,4},
+                       {test_server,run_test_case_eval,6}]}, [{ftp_SUITE,
+                                                               correct_proxy_no_content,
+                                                               160}]
+=== *** FAILED *** test case 5 of 13
+=case    ftp_SUITE:error_host
+=logfile ftp_suite.error_host.html
+=started 2009-11-16 14:25:32
+=ended   2009-11-16 14:25:42
+=result    ok:unable to connect to server
+=elapsed   10.015
+=case    ftp_SUITE:error_user
+=logfile ftp_suite.error_user.html
+=started 2009-11-16 14:25:42
+=ended   2009-11-16 14:25:44
+=result    ok:530 Login incorrect.
+
+=elapsed   2.375
+=case    ftp_SUITE:error_passwd
+=logfile ftp_suite.error_passwd.html
+=started 2009-11-16 14:25:44
+=ended   2009-11-16 14:25:47
+=result    ok:530 Login incorrect.
+
+=elapsed   2.469
+=case    ftp_SUITE:error_content
+=logfile ftp_suite.error_content.html
+=started 2009-11-16 14:25:47
+=ended   2009-11-16 14:25:47
+=result    ok:content match error
+=elapsed   0.094001
+=case    ftp_SUITE:error_proxy
+=logfile ftp_suite.error_proxy.html
+=started 2009-11-16 14:25:47
+=ended   2009-11-16 14:25:50
+=result    ok:econnrefused
+=elapsed   3.437
+=case    ftp_SUITE:error_proxyuser
+=logfile ftp_suite.error_proxyuser.html
+=started 2009-11-16 14:25:50
+=ended   2009-11-16 14:25:50
+=result    ok:Proxy Authentication Required
+=elapsed   2.0e-6
+=case    ftp_SUITE:error_proxypass
+=logfile ftp_suite.error_proxypass.html
+=started 2009-11-16 14:25:50
+=ended   2009-11-16 14:25:51
+=result    ok:Proxy Authentication Required
+=elapsed   0.016
+=case    ftp_SUITE:error_file
+=logfile ftp_suite.error_file.html
+=started 2009-11-16 14:25:51
+=ended   2009-11-16 14:25:51
+=result    ok:file not found
+=elapsed   0.031
+=case    ftp_SUITE:end_per_suite
+=logfile ftp_suite.end_per_suite.html
+=started 2009-11-16 14:25:51
+=ended   2009-11-16 14:25:51
+=result    ok
+=elapsed   1.0e-6
+=== TEST COMPLETE, 12 ok, 1 failed of 13 test cases
+
+=finished   2009-11-16 14:25:51
+=failed     1
+=successful 12
+=skipped    0

@@ -1,0 +1,36 @@
+<HTML><HEAD><TITLE>sdl_keyboard</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_keyboard.hrl">sdl_keyboard.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="getKeyState">
+<strong> getKeyState()  </strong><UL>Args: none<br>
+Returns: A tuple continaing the state of each key(i.e. state of each Key)<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetkeystate.html">C-API:</a> Uint8 * SDL_GetKeyState(int *numkeys);<br>
+</UL>
+<p><A NAME="SDL_EnableUNICODE">
+<strong> enableUNICODE(Bool)  </strong><UL>Args: true | false<br>
+Returns: Previous Setting (true | False)<br>
+<a href="http://www.libsdl.org/docs/html/sdlenableunicode.html">C-API:</a> int SDL_EnableUNICODE(int enable);<br>
+</UL>
+<p><A NAME="SDL_EnableKeyRepeat">
+<strong> enableKeyRepeat(Delay, Interval)  </strong><UL>Args: Delay Interval<br>
+Returns: true | false (if failure)<br>
+<a href="http://www.libsdl.org/docs/html/sdlenablekeyrepeat.html">C-API:</a> int SDL_EnableKeyRepeat(int delay, int interval);<br>
+</UL>
+<p><A NAME="SDL_GetKeyName">
+<strong> getKeyName(Key)  </strong><UL>Args: SDLKey<br>
+Returns: A string<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetkeyname.html">C-API:</a> char * SDL_GetKeyName(SDLKey key);<br>
+</UL>
+<p><A NAME="getModState">
+<strong> getModState()  </strong><UL>Args: none<br>
+Returns: KModState (see KMOD_* in sdl_keyboard.hrl)<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetmodstate.html">C-API:</a> SDLMod SDL_GetModState(void);<br>
+</UL>
+<p><A NAME="setModState">
+<strong> setModState(ModState)  </strong><UL>Args: KModState (see KMOD_* in sdl_keyboard.hrl)<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetmodstate.html">C-API:</a> void SDL_SetModState(SDLMod modstate);<br>
+</UL>
+</html>

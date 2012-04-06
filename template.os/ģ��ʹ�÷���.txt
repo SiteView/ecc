@@ -1,0 +1,29 @@
+AIX 内存模板使用，其他与此类似。
+
+数据以矩阵形式返回。
+
+关键字
+total		内存总数
+used		已使用内存
+free		剩余内存
+swapUnit	换算单位
+matchLine	匹配对应行
+startLine	从第N 行开始循环数据
+……………………
+
+memory　返回数据
+
+# svmon -G
+               size      inuse       free        pin    virtual
+memory       262144     117449     144695      58306      88762
+pg space     131072        738
+
+               work       pers       clnt
+pin           58306          0          0
+in use        88762          0      28687
+
+template.os目录中 模板中的对应命令如下
+{memory,[{command,"svmon -G"},{total,2},{used,3},{free,4},{swapUnit,4096},{matchLine,"memory"}]}.
+其中 2、3、4 对应该返回数据 中的 列
+
+取出对应该的 262144     117449     144695

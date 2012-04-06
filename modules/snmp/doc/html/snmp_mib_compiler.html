@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>The MIB Compiler</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="4"><!-- Empty --></a>
+<h2>4 The MIB Compiler</h2>
+
+<p>The chapter <strong>The MIB Compiler</strong> describes the MIB compiler
+and contains the following topics:
+
+</p>
+<ul>
+
+<li>
+Operation
+</li>
+
+
+<li>
+Import
+</li>
+
+
+<li>
+Consistency checking between MIBs
+</li>
+
+
+<li>
+.hrl file generation
+</li>
+
+
+<li>
+Emacs integration
+</li>
+
+
+<li>
+Deviations from the standard
+
+</li>
+
+
+</ul>
+
+<div class="note">
+<div class="label">Note</div>
+<div class="content">
+<p>When importing MIBs, ensure that the imported MIBs as well as the 
+importing MIB are compiled using the same version of the 
+SNMP-compiler.
+</p>
+</div>
+</div>
+<a name="4.1"><!-- Empty --></a>
+<h3>4.1 Operation</h3>
+
+<p>The MIB must be written as a text file in SMIv1 or SMIv2 using 
+an ASN.1 notation before
+it will be compiled. This text file must have the same name as the MIB,
+but with the suffix <span class="code">.mib</span>. This is necessary for handling
+the <span class="code">IMPORT</span> statement.
+
+</p>
+<p>The association file, which contains the names of
+instrumentation functions for the MIB, should have the suffix
+<span class="code">.funcs</span>. If the compiler does not find the association file,
+it gives a warning message and uses default instrumentation
+functions. (See <a href="snmp_instr_functions.html#snmp_3">Default Instrumentation</a> for more details).
+
+</p>
+<p>The MIB compiler is started with a call to
+<span class="code">snmpc:compile(&#60;mibname&#62;).</span> For example:
+
+</p>
+<div class="example"><pre>
+snmpc:compile(&#34;RFC1213-MIB&#34;).
+    
+</pre></div>
+
+<p>The output is a new file which is called <span class="code">&#60;mibname&#62;.bin</span>.
+
+</p>
+<p>The MIB compiler understands both SMIv1 and SMIv2 MIBs. It
+uses the MODULE-IDENTITY statement to determinate if the MIB is
+written in SMI version 1 or 2.
+
+</p><a name="4.2"><!-- Empty --></a>
+<h3>4.2 Importing MIBs</h3>
+
+<p>The compiler handles the <span class="code">IMPORT</span> statement. It is important to
+import the compiled file and not the ASN.1 (source) file. A MIB must
+be recompiled to make changes visible to other MIBs importing it.
+
+</p>
+<p>The compiled files of the imported MIBs must be present in the
+current directory, or a directory in the current path. The path is
+supplied with the <span class="code">{i, Path}</span> option, for example:
+
+</p>
+<div class="example"><pre>
+snmpc:compile(&#34;MY-MIB&#34;, 
+       [{i, [&#34;friend_mibs/&#34;, &#34;../standard_mibs/&#34;]}]).
+    
+</pre></div>
+
+<p>It is also possible to import MIBs from OTP applications in an
+<span class="code">&#34;include_lib&#34;</span> like fashion with the <span class="code">il</span>
+option. Example:
+
+</p>
+<div class="example"><pre>
+snmpc:compile(&#34;MY-MIB&#34;, 
+       [{il, [&#34;snmp/priv/mibs/&#34;, &#34;myapp/priv/mibs/&#34;]}]).
+    
+</pre></div>
+
+<p>finds the latest version of the <span class="code">snmp</span> and <span class="code">myapp</span>
+applications in the OTP system and uses the expanded paths as
+include paths.
+
+</p>
+<p>Note that an SMIv2 MIB can import an SMIv1 MIB and vice versa.
+
+</p>
+<p>The following MIBs are built-ins of the Erlang SNMP compiler:
+SNMPv2-SMI, RFC-1215, RFC-1212, SNMPv2-TC, SNMPv2-CONF, and
+RFC1155-SMI. They cannot therefore be compiled separately.
+
+</p><a name="4.3"><!-- Empty --></a>
+<h3>4.3 MIB Consistency Checking</h3>
+
+<p>When an MIB is compiled, the compiler detects if several
+managed objects use the same <span class="code">OBJECT IDENTIFIER</span>. If that is
+the case, it issues an error message. However, the compiler cannot
+detect Oid conflicts between different MIBs. These kinds of
+conflicts generate an error at load time. To avoid this, the
+following function can be used to do consistency checking between
+MIBs:
+
+</p>
+<div class="example"><pre>
+
+erl&#62;<strong>snmpc:is_consistent(ListOfMibNames).</strong>
+    
+</pre></div>
+
+<p><span class="code">ListOfMibNames</span> is a list of compiled MIBs, for example
+<span class="code">[&#34;RFC1213-MIB&#34;, &#34;MY-MIB&#34;]</span>. The function also performs
+consistency checking of trap definitions.
+</p><a name="4.4"><!-- Empty --></a>
+<h3>4.4 .hrl File Generation</h3>
+
+<p>It is possible to generate an <span class="code">.hrl</span> file which contains
+definitions of Erlang constants from a compiled MIB file. This
+file can then be included in Erlang source code. The file will
+contain constants for:
+
+</p>
+<ul>
+
+<li>
+object Identifiers for tables, table entries and variables
+</li>
+
+
+<li>
+column numbers
+</li>
+
+
+<li>
+enumerated values
+</li>
+
+
+<li>
+default values for variables and table columns.
+
+</li>
+
+
+</ul>
+
+<p>Use the following command to generate a .hrl file from an MIB:
+
+</p>
+<div class="example"><pre>
+erl&#62;<strong>snmpc:mib_to_hrl(MibName).</strong>
+    
+</pre></div>
+<a name="4.5"><!-- Empty --></a>
+<h3>4.5 Emacs Integration</h3>
+
+<p>With the Emacs editor, the <span class="code">next-error</span> (<span class="code">C-X `</span>)
+function can be used indicate where a compilation error occurred,
+provided the error message is described by a line number.
+
+</p>
+<p>Use <span class="code">M-x compile</span> to compile an MIB from inside Emacs, and
+enter:
+
+</p>
+<div class="example"><pre>
+ <strong>erl -s snmpc compile &#60;MibName&#62; -noshell</strong>
+    
+</pre></div>
+
+<p>An example of <span class="code">&#60;MibName&#62;</span> is <span class="code">RFC1213-MIB</span>.
+
+</p><a name="4.6"><!-- Empty --></a>
+<h3>4.6 Compiling from a Shell or a Makefile</h3>
+
+<p>The <span class="code">erlc</span> commands can be used to compile SNMP MIBs. Example:
+
+</p>
+<div class="example"><pre>
+ <strong>erlc MY-MIB.mib</strong>
+    
+</pre></div>
+
+<p>All the standard <span class="code">erlc</span> flags are supported, e.g.
+
+</p>
+<div class="example"><pre>
+ <strong>erlc -I mymibs -o mymibs -W MY-MIB.mib</strong>
+    
+</pre></div>
+
+<p>The flags specific to the MIB compiler can be specified by
+using the <span class="code">+</span> syntax:
+
+</p>
+<div class="example"><pre>
+ <strong>erlc +'{group_check,false}' MY-MIB.mib</strong>
+    
+</pre></div>
+<a name="4.7"><!-- Empty --></a>
+<h3>4.7 Deviations from the Standard</h3>
+
+<p>In some aspects the Erlang MIB compiler does not follow or
+implement the SMI fully. Here are the differences:
+
+</p>
+<ul>
+
+<li>
+
+Tables must be written in the following order:
+<span class="code">tableObject</span>, <span class="code">entryObject</span>, <span class="code">column1</span>, ...,
+<span class="code">columnN</span> (in order).<br />
+
+
+</li>
+
+
+<li>
+
+Integer values, for example in the <span class="code">SIZE</span> expression
+must be entered in decimal syntax, not in hex or bit syntax.<br />
+
+
+</li>
+
+
+<li>
+
+Symbolic names must be unique within a MIB and within a
+system.<br />
+
+
+</li>
+
+
+<li>
+
+Hyphens are allowed in SMIv2 (a pragmatic approach). The
+reason for this is that according to SMIv2, hyphens are allowed
+for objects converted from SMIv1, but not for others. This is
+impossible to check for the compiler.<br />
+
+
+</li>
+
+
+<li>
+
+If a word is a keyword in any of SMIv1 or SMIv2, it is a
+keyword in the compiler (deviates from SMIv1 only).<br />
+
+
+</li>
+
+
+<li>
+
+Indexes in a table must be objects, not types (deviates
+from SMIv1 only).<br />
+
+
+</li>
+
+
+<li>
+
+A subset of all semantic checks on types are
+implemented. For example, strictly the <span class="code">TimeTicks</span> may not
+be sub-classed but the compiler allows this (standard MIBs must
+pass through the compiler) (deviates from SMIv2 only).<br />
+
+
+</li>
+
+
+<li>
+
+The <span class="code">MIB.Object</span> syntax is not implemented (since all
+objects must be unique anyway).<br />
+
+
+</li>
+
+
+<li>
+
+Two different names cannot define the same OBJECT IDENTIFIER.<br />
+
+
+</li>
+
+
+<li>
+
+The type checking in the SEQUENCE construct is non-strict 
+(i.e. subtypes may be specified). The reason for this is 
+that some standard MIBs use this.<br />
+
+
+</li>
+
+
+<li>
+A definition has normally a status field. When the status field
+has the value deprecated, then the MIB-compiler will ignore this 
+definition. With the MIB-compiler option <span class="code">{deprecated,true}</span>
+the MIB-compiler does not ignore the deprecated definitions.
+</li>
+
+
+<li>
+An object has a DESCRIPTIONS field. The descriptions-field will 
+not be included in the compiled mib by default. In order to get 
+the description, the mib must be compiled with the option 
+<span class="code">description</span>.
+</li>
+
+
+</ul>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

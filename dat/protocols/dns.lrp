@@ -1,0 +1,57 @@
+[Protocol]
+Name=Dns
+CommonName=Domain Name Resolution (DNS)
+Category=Client/Server
+Description=A system which translates domain names into internet addresses.
+Icon=bitmaps\default.bmp
+Hidden=0
+Single=1
+Multi=0
+
+[Template]
+globals.h=globals.h
+@@TestName@@.usr=Multi.usr
+Action.c=Action.c
+
+[Vugen]
+EnableRegenerate=0
+DLL=insp_gen.dll
+CFG_TAB_DLL=comrts_tab.dll
+TemplateDir=Dns
+32BitRecord=0
+ExtraColor=colors\multiprotocolors.dat
+SectionCombo=1
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WINNT=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+ExtraSectionsExt=.h,.vbs,.js,.vba,.bas,.cls,.dat,.txt,.bin
+;;
+EnableAutoTranPerFunc=1
+EnableThreads=1
+
+SELECTION_TRANS_DLL = wsconv32.dll
+SELECTION_TRANS_FUNC = lrs_proccess_selection
+SELECTION_TRANS_FREE_FUNC = lrs_free_selection_buffer
+
+IP_Spoofing=1
+
+[API.js]
+extra_section=jscript_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vbs]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vba]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.c]
+extra_section=lr_general,c_general,socket.c
+ms_dns_query=lr_cmd_color;char *ms_dns_query( char *transaction, char *dnsServerUrl[, argument]... )
+ms_dns_nextresult=lr_cmd_color;char *ms_dns_nextresult(char *queryresult)

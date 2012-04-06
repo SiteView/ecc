@@ -1,0 +1,1 @@
+-ifndef(_SVECC_MONITOR_NODE_).-define(_SVECC_MONITOR_NODE_,1).-record(monitor_node,{name,alive,platform}).-endif.

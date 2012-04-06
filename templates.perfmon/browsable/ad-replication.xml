@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="NTDS" type="perf" >
+<counterInfo name="DRA Inbound Bytes Compressed (Between Sites, After Compression) Since Boot" />
+<counterInfo name="DRA Outbound Bytes Compressed (Between Sites, After Compression) Since Boot" />
+<counterInfo name="DRA Outbound Bytes Not Compressed (Within Site) Since Boot" />
+<counterInfo name="DRA Outbound Bytes Total/sec" />
+<counterInfo name="DRA Inbound Bytes Compressed (Between Sites, After Compression) Since Boot" />
+</object>
+
+
+</browse_data>

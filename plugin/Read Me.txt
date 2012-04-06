@@ -1,0 +1,87 @@
+
+插件框架说明文档
+
+概述
+     为了达到 "发行后插入" 的目的————不修改已发行（release）的产品，即可将代码 "插入已发行的产品" 中，引入此插件框架。
+     通过函数名字的特殊后缀，在运行时反射得到 “扩展点” 及 “插件” 的信息，并进行相关调用。
+
+
+
+技术细节
+1、定义扩展点
+     在需要扩展的模块中，增加类似下面的一个函数，并在需要扩展的地方，调用该函数即可。
+
+%% 该 “扩展点函数” 须导出(export), 其函数名须为：扩展模块名_扩展点名_ErlangExtension
+%% 扩展点名称须为 atom , 且只能包含字母和数字, 在该模块内唯一。
+%%   mymodule 是该函数所在模块的名称
+mymodule_point1_ErlangExtension(Args)-> 
+   extension:call_plugins( mymodule, point1, Args).  
+
+
+
+2、定义插件
+     在插件模块中，增加类似下面的一个函数，框架就会在需要的时候进行调用，并将结果返回给扩展模块。
+     插件模块中可以定义新的扩展点。插件模块的 beam 文件可以放在任何地方，只要启动 erlang 运行环境时 -pa 进来了即可。
+
+%% 该 “插件函数” 须导出(export), 其函数名须为：扩展模块名_扩展点名_ErlangPlugin
+mymodule_point1_ErlangPlugin(Args)->  
+   ...
+   Ret.
+
+
+
+3、“扩展点函数” 传递给 “插件函数” 的参数
+     该参数，由扩展点作者定义，并提供相关文档给插件作者，框架不做任何限制。
+
+4、“插件函数” 返回给 “扩展点函数” 的运行结果
+     该结果如下为一个 list，其个数等于插件的个数。
+     该结果中如下 Data 项的数据结构，由扩展点作者定义，并提供相关文档给插件作者，框架不做任何限制。
+
+Results = mymodule_point1_ErlangExtension(Args),
+[{State,Info,Data}|T] = Results,   %% Results 有可能为 []
+
+State	为该插件的此次运行状态，只可能为 ok 或 'EXIT'
+Info	为该插件的 {节点名,模块名,函数名}， 例如：{local,plugtest, mymodule_point1_ErlangPlugin} 
+Data	当 State == 'EXIT' 时，为异常的原因， 例如：{{badmatch,{1,123}}, ... }
+	当 State == ok 时，为插件运行的结果。
+
+
+5、框架的统计信息
+	框架所有的信息都在三个 ets 表中：extensions_plugins_table、extensions_points_table、extensions_status_table。
+	tv:start(). 或 extension:report(). 可以查看框架的统计信息。
+
+运行 extension:report() 可以得到如下信息：
+[
+ {extensions_status_table,	%% 框架的系统信息表
+     [
+      {start_count,3},		%% 框架启动了 3 次
+      {start_time,{{2009,12,10},{11,46,45.749}}},	   %% 框架最后一次启动的时间
+
+      {{plugin_demo_point1_ErlangPlugin,anat,'EXIT-Reason',1}, {{badmatch, ... },		%% 某个插件第 1 次异常崩溃的原因，每个插件只记录10次
+      {{plugin_demo_point1_ErlangPlugin,anat,'EXIT-Reason',2}, {{badmatch,{1,123}}, ... },	%% 某个插件第 2 次异常崩溃的原因，
+
+      {{extension,terminate_reason,1},{{badmatch, ... },   %% 框架第 1 次异常崩溃的原因，只记录100次
+      {{extension,terminate_reason,2},shutdown}		   %% 框架第 2 次异常崩溃的原因
+     ]
+ },
+ {extensions_plugins_table,	%% 所有插件的信息表
+     [
+		%% {{插件函数名,插件模块名,节点名},           {插件启动/禁止状态, 运行正常次数, 运行异常崩溃次数}}
+      {{plugin_demo_point1_ErlangPlugin,anat,local},         {enable,2,0}},	 
+      {{plugin_demo_point1_ErlangPlugin,plugin_demo,local},  {enable,2,0}}
+     ]
+ },
+ {extensions_points_table,	%% 所有扩展点的信息表
+     [
+		 %% {{扩展点函数名,所在模块名,节点名},         {扩展点启动/禁止状态, 所有下属插件运行正常次数累计, 所有下属插件运行异常崩溃次数累计}}
+      {{plugin_demo_point1_ErlangExtension,plugin_demo,local},{enable,4,0}}	
+     ]
+ }
+]
+
+
+
+6、运行 demo
+	启动系统后，运行 plugin_demo:test(). 
+	示例代码请看 plugin_demo.erl 、plugin2.erl
+

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+ targetNamespace="urn:siteview:cwmp"
+ xmlns:tns="urn:siteview:cwmp"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+ >
+
+ <wsdl:types>
+    <xsd:schema
+     elementFormDefault="qualified" 
+     targetNamespace="urn:siteview:cwmp">
+      <xsd:include schemaLocation="test.xsd"/>
+    </xsd:schema>   
+  </wsdl:types>
+
+  <wsdl:message name="GetRPCMethodsRequest">
+    <wsdl:part element="tns:GetRPCMethods" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetRPCMethodsResponse">
+    <wsdl:part element="tns:GetRPCMethodsResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="SetParameterValuesRequest">
+    <wsdl:part element="tns:SetParameterValues" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetParameterValuesResponse">
+    <wsdl:part element="tns:SetParameterValuesResponse" name="parameters"/>
+  </wsdl:message>
+ 
+  <wsdl:message name="GetParameterValuesRequest">
+    <wsdl:part element="tns:GetParameterValues" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetParameterValuesResponse">
+    <wsdl:part element="tns:GetParameterValuesResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="GetParameterNamesRequest">
+    <wsdl:part element="tns:GetParameterNames" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetParameterNamesResponse">
+    <wsdl:part element="tns:GetParameterNamesResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="SetParameterAttributesRequest">
+    <wsdl:part element="tns:SetParameterAttributes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetParameterAttributesResponse">
+    <wsdl:part element="tns:SetParameterAttributesResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="GetParameterAttributesRequest">
+    <wsdl:part element="tns:GetParameterAttributes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetParameterAttributesResponse">
+    <wsdl:part element="tns:GetParameterAttributesResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="AddObjectRequest">
+    <wsdl:part element="tns:AddObject" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AddObjectResponse">
+    <wsdl:part element="tns:AddObjectResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="DeleteObjectRequest">
+    <wsdl:part element="tns:DeleteObject" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteObjectResponse">
+    <wsdl:part element="tns:DeleteObjectResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="RebootRequest">
+    <wsdl:part element="tns:Reboot" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="RebootResponse">
+    <wsdl:part element="tns:RebootResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="DownloadRequest">
+    <wsdl:part element="tns:Download" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DownloadResponse">
+    <wsdl:part element="tns:DownloadResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="UploadRequest">
+    <wsdl:part element="tns:Upload" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UploadResponse">
+    <wsdl:part element="tns:UploadResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="FactoryResetRequest">
+    <wsdl:part element="tns:FactoryReset" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="FactoryResetResponse">
+    <wsdl:part element="tns:FactoryResetResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="GetQueuedTransfersRequest">
+    <wsdl:part element="tns:GetQueuedTransfers" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetQueuedTransfersResponse">
+    <wsdl:part element="tns:GetQueuedTransfersResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="GetAllQueuedTransfersRequest">
+    <wsdl:part element="tns:GetAllQueuedTransfers" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetAllQueuedTransfersResponse">
+    <wsdl:part element="tns:GetAllQueuedTransfersResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="ScheduleInformRequest">
+    <wsdl:part element="tns:ScheduleInform" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ScheduleInformResponse">
+    <wsdl:part element="tns:ScheduleInformResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="SetVouchersRequest">
+    <wsdl:part element="tns:SetVouchers" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SetVouchersResponse">
+    <wsdl:part element="tns:SetVouchersResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="GetOptionsRequest">
+    <wsdl:part element="tns:GetOptions" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetOptionsResponse">
+    <wsdl:part element="tns:GetOptionsResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="InformRequest">
+    <wsdl:part element="tns:Inform" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="InformResponse">
+    <wsdl:part element="tns:InformResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="TransferCompleteRequest">
+    <wsdl:part element="tns:TransferComplete" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="TransferCompleteResponse">
+    <wsdl:part element="tns:TransferCompleteResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="AutonomousTransferCompleteRequest">
+    <wsdl:part element="tns:AutonomousTransferComplete" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AutonomousTransferCompleteResponse">
+    <wsdl:part element="tns:AutonomousTransferCompleteResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="RequestDownloadRequest">
+    <wsdl:part element="tns:RequestDownload" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="RequestDownloadResponse">
+    <wsdl:part element="tns:RequestDownloadResponse" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:message name="KickedRequest">
+    <wsdl:part element="tns:Kicked" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="KickedResponse">
+    <wsdl:part element="tns:KickedResponse" name="parameters"/>
+  </wsdl:message>
+
+
+  <wsdl:portType name="siteveiwcwmp">
+    <wsdl:operation name="GetRPCMethods">
+      <wsdl:input message="tns:GetRPCMethodsRequest" name="GetRPCMethodsRequest"/>
+      <wsdl:output message="tns:GetRPCMethodsResponse" name="GetRPCMethodsResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="SetParameterValues">
+      <wsdl:input message="tns:SetParameterValuesRequest" name="SetParameterValuesRequest"/>
+      <wsdl:output message="tns:SetParameterValuesResponse" name="SetParameterValuesResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetParameterValues">
+      <wsdl:input message="tns:GetParameterValuesRequest" name="GetParameterValuesRequest"/>
+      <wsdl:output message="tns:GetParameterValuesResponse" name="GetParameterValuesResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetParameterNames">
+      <wsdl:input message="tns:GetParameterNamesRequest" name="GetParameterNamesRequest"/>
+      <wsdl:output message="tns:GetParameterNamesResponse" name="GetParameterNamesResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="SetParameterAttributes">
+      <wsdl:input message="tns:SetParameterAttributesRequest" name="SetParameterAttributesRequest"/>
+      <wsdl:output message="tns:SetParameterAttributesResponse" name="SetParameterAttributesResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetParameterAttributes">
+      <wsdl:input message="tns:GetParameterAttributesRequest" name="GetParameterAttributesRequest"/>
+      <wsdl:output message="tns:GetParameterAttributesResponse" name="GetParameterAttributesResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="AddObject">
+      <wsdl:input message="tns:AddObjectRequest" name="AddObjectRequest"/>
+      <wsdl:output message="tns:AddObjectResponse" name="AddObjectResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="DeleteObject">
+      <wsdl:input message="tns:DeleteObjectRequest" name="DeleteObjectRequest"/>
+      <wsdl:output message="tns:DeleteObjectResponse" name="DeleteObjectResponse"/>
+    </wsdl:operation>
+   
+   <wsdl:operation name="Reboot">
+      <wsdl:input message="tns:RebootRequest" name="RebootRequest"/>
+      <wsdl:output message="tns:RebootResponse" name="RebootResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="Download">
+      <wsdl:input message="tns:DownloadRequest" name="DownloadRequest"/>
+      <wsdl:output message="tns:DownloadResponse" name="DownloadResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="Upload">
+      <wsdl:input message="tns:UploadRequest" name="UploadRequest"/>
+      <wsdl:output message="tns:UploadResponse" name="UploadResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="FactoryReset">
+      <wsdl:input message="tns:FactoryResetRequest" name="FactoryResetRequest"/>
+      <wsdl:output message="tns:FactoryResetResponse" name="FactoryResetResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetQueuedTransfers">
+      <wsdl:input message="tns:GetQueuedTransfersRequest" name="GetQueuedTransfersRequest"/>
+      <wsdl:output message="tns:GetQueuedTransfersResponse" name="GetQueuedTransfersResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetAllQueuedTransfers">
+      <wsdl:input message="tns:GetAllQueuedTransfersRequest" name="GetAllQueuedTransfersRequest"/>
+      <wsdl:output message="tns:GetAllQueuedTransfersResponse" name="GetAllQueuedTransfersResponse"/>
+    </wsdl:operation>
+
+     <wsdl:operation name="ScheduleInform">
+      <wsdl:input message="tns:ScheduleInformRequest" name="ScheduleInformRequest"/>
+      <wsdl:output message="tns:ScheduleInformResponse" name="ScheduleInformResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="SetVouchers">
+      <wsdl:input message="tns:SetVouchersRequest" name="SetVouchersRequest"/>
+      <wsdl:output message="tns:SetVouchersResponse" name="SetVouchersResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetOptions">
+      <wsdl:input message="tns:GetOptionsRequest" name="GetOptionsRequest"/>
+      <wsdl:output message="tns:GetOptionsResponse" name="GetOptionsResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="Inform">
+      <wsdl:input message="tns:InformRequest" name="InformRequest"/>
+      <wsdl:output message="tns:InformResponse" name="InformResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="TransferComplete">
+      <wsdl:input message="tns:TransferCompleteRequest" name="TransferCompleteRequest"/>
+      <wsdl:output message="tns:TransferCompleteResponse" name="TransferCompleteResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="AutonomousTransferComplete">
+      <wsdl:input message="tns:AutonomousTransferCompleteRequest" name="AutonomousTransferCompleteRequest"/>
+      <wsdl:output message="tns:AutonomousTransferCompleteResponse" name="AutonomousTransferCompleteResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="RequestDownload">
+      <wsdl:input message="tns:RequestDownloadRequest" name="RequestDownloadRequest"/>
+      <wsdl:output message="tns:RequestDownloadResponse" name="RequestDownloadResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="Kicked">
+      <wsdl:input message="tns:KickedRequest" name="KickedRequest"/>
+      <wsdl:output message="tns:KickedResponse" name="KickedResponse"/>
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+
+  <wsdl:binding name="SiteVeiwcwmpSoapBinding" type="tns:siteveiwcwmp">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+   
+
+    <wsdl:operation name="GetRPCMethods">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetRPCMethodsRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetRPCMethodsResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+     <wsdl:operation name="SetParameterValues">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="SetParameterValuesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetParameterValuesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+     <wsdl:operation name="GetParameterValues">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetParameterValuesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetParameterValuesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetParameterNames">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetParameterNamesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetParameterNamesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="SetParameterAttributes">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="SetParameterAttributesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetParameterAttributesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetParameterAttributes">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetParameterAttributesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetParameterAttributesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="AddObject">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="AddObjectRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddObjectResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="DeleteObject">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="DeleteObjectRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeleteObjectResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="Reboot">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="RebootRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RebootResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="Download">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="DownloadRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DownloadResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="Upload">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="UploadRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UploadResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="FactoryReset">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="FactoryResetRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FactoryResetResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetQueuedTransfers">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetQueuedTransfersRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetQueuedTransfersResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetAllQueuedTransfers">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetAllQueuedTransfersRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetAllQueuedTransfersResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="ScheduleInform">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="ScheduleInformRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ScheduleInformResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="SetVouchers">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="SetVouchersRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SetVouchersResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="GetOptions">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="GetOptionsRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetOptionsResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+  <wsdl:operation name="Inform">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="InformRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="InformResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="TransferComplete">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="TransferCompleteRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="TransferCompleteResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="AutonomousTransferComplete">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="AutonomousTransferCompleteRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AutonomousTransferCompleteResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="RequestDownload">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="RequestDownloadRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RequestDownloadResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="Kicked">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="KickedRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="KickedResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+</wsdl:binding>
+
+  <wsdl:service name="siteveiwcwmp">
+    <wsdl:port binding="tns:SiteVeiwcwmpSoapBinding" name="siteveiwcwmp">
+      <wsdlsoap:address location="http://localhost:8080/cwmp"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

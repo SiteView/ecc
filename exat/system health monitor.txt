@@ -1,0 +1,25 @@
+%% @doc  the analysing engine to process the logs
+%%  it can be used to analyze the measurement logs and can also be used to analyze the 
+%% 	internal state transition and monitoring health condition.  The log are asserted into the engine as facts
+%% rules can be set to take action for the facts.
+%%  fields: name, state, timestampe, sessions
+%%  rules: if session complete, delete,
+%%  actions: delete log, alert, corrective action
+%% 
+%%  monitor state machine:
+%%  get the exago recognize exat's facts
+%% logic to verify the counter: in running state, finished
+%% 
+%% TODO: 
+%% 	1. checking for long running monitors: in running state for long time, well above average time
+	get all monitors logs from logger, obtain the start time and average update time and waiting time, flag when exceeding the threshold
+%% 	2. failed monitor restarting
+%%  3. check for the value update time with frequency: the interval of logged data should be close to the frequency
+%% the name of new measurement will be save here until picked up and removed by the data base logger.
+
+monitoring not only metrics, but also execution sequence:
+monitor object store: number of objects, number of each type, number of each state, length in each states, running time, waiting time, update time 
+erlang vm: learn from observer
+resource pool:
+eresye: list of kbs, length of each kb, items inside kb
+log: exago sequence check

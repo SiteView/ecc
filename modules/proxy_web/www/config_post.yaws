@@ -1,0 +1,13 @@
+﻿<erl>
+	out(A)->
+		L = yaws_api:parse_post(A),
+		io:format("params:~p~n",[L]),
+		case proplists:get_value("master_node",L) of
+			undefined->
+				{redirect_local, {any_path, "config.yaws"}};
+			V->
+				server_conf:setServerConf(master_node,list_to_atom(V)),
+				server_conf:save(),
+				{redirect_local, {any_path, "config.yaws"}}
+		end.
+</erl>

@@ -1,0 +1,2 @@
+erl -make
+start.bat

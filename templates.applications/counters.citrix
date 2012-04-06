@@ -1,0 +1,126 @@
+{"Citrix IMA Networking","_Total",[
+        "Bytes Sent Per sec",
+        "Bytes Received Per sec",
+        "Network Connections"
+	]}.
+{"Citrix Licensing","",[
+	"Average License Check-In Response Time (ms)",
+	"Average License Check-Out Response Time (ms)",
+	"Last Recorded License Check-In Response Time (ms)",
+	"Last Recorded License Check-Out Response Time (ms)",
+	"License Server Connection Failure",
+	"Maximum License Check-In Response Time",
+	"Maximum License Check-Out Response Time"
+	]}.
+%%{"ICA Session","",[
+%%	"Input COM 1 Bandwidth",
+%%	"Input COM 2 Bandwidth",
+%%	"Input COM Bandwidth",
+%%	"Input Control Channel Bandwidth",
+%%	"Input Drive Bandwidth",
+%%	"Input LPT 1 Bandwidth",
+%%	"Input LPT 2 Bandwidth",
+%%	"Input Management Bandwidth",
+%%	"Input PN Bandwidth",
+%%	"Input Session Bandwidth",
+%%	"Input Session Line Speed",
+%%	"Input ThinWire Bandwidth",
+%%	"Latency - Last Recorded",
+%%	"Latency - Session Average",
+%%	"Latency - Session Deviation",
+%%	"Output COM 1 Bandwidth",
+%%	"Output COM 2 Bandwidth",
+%%	"Output COM Bandwidth",
+%%	"Output Control Channel Bandwidth",
+%%	"Output Drive Bandwidth",
+%%	"Output LPT 1 Bandwidth",
+%%	"Output LPT 2 Bandwidth",
+%%	"Output Management Bandwidth",
+%%	"Output PN Bandwidth",
+%%	"Output Seamless Bandwidth",
+%%	"Output Session Bandwidth",
+%%	"Output Session Compression",
+%%	"Output Session Line Speed",
+%%	"Output Text Echo Bandwidth",
+%%	"Output ThinWire Bandwidth"
+%%	]}.
+{"Citrix MetaFrame Presentation Server","SINGLE",[
+	"Application Enumeration Per sec",
+	"Application Resolution Time (ms)",
+	"Application Resolutions Failed Per sec",
+	"Application Resolutions Per sec",
+	"DataStore Connection Failure",
+	"DataStore bytes read",
+	"DataStore bytes read Per sec",
+	"DataStore bytes written Per sec",
+	"DataStore reads",
+	"DataStore reads Per sec",
+	"DataStore writes Per sec",
+	"DynamicStore bytes read Per sec",
+	"DynamicStore bytes written Per sec",
+	"DynamicStore Gateway Update Count",
+	"DynamicStore Gateway Update Bytes Sent",
+	"DynamicStore Query Count",
+	"DynamicStore Query Request, Bytes Received",
+	"DynamicStore Query Response, Bytes Sent",
+	"DynamicStore reads Per sec",
+	"DynamicStore Update Bytes Received",
+	"DynamicStore Update Packets Received",
+	"DynamicStore Update Response Bytes Sent",
+	"DynamicStore writes Per sec",
+	"Filtered Application Enumerations Per sec",
+	"LocalHostCache bytes read Per sec",
+	"LocalHostCache bytes written Per sec",
+	"LocalHostCache reads Per sec",
+	"LocalHostCache writes Per sec",
+	"Maximum number of XML threads",
+	"Number of XML threads",
+	"Number of busy XML threads",
+	"Resolution WorkItem Queue Executing Count",
+	"Resolution WorkItem Queue Ready Count",
+	"WorkItem Queue Executing Count",
+	"WorkItem Queue Pending Count",
+	"WorkItem Queue Ready Count"
+	]}.
+{"Secure Ticket Authority","",[
+	"STA Bad Data Request Count",
+	"STA Bad Refresh Request Count",
+	"STA Bad Ticket Request Count",
+	"STA Count of Active Tickets",
+	"STA Good Data Request Count",
+	"STA Good Refresh Request Count",
+	"STA Good Ticket Request Count",
+	"STA Peak All Request Rate",
+	"STA Peak Data Request Rate",
+	"STA Peak Ticket Refresh Rate",
+	"STA Peak Ticket Request Rate",
+	"STA Ticket Timeout Count"
+	]}.
+%%{"Citrix CPU Utilization Mgmt User","_Total",[
+%%	"CPU Entitlement",
+%%	"CPU Reservation",
+%%	"CPU Shares",
+%%	"CPU Usage",
+%%	"Long-term CPU Usage"
+%%	]}.
+{"Terminal Services","",[
+	"Total Sessions",
+	"Active Sessions",
+	"Inactive Sessions"
+	]}.
+{"Terminal Services Session","Console",[
+	"% Privileged Time",
+	"% Processor Time",
+	"% User Time",
+	"Handle Count",
+	"Page Faults Per sec",
+	"Page File Bytes",
+	"Page File Bytes",
+	"Pool Paged Bytes",
+	"Private Bytes",
+	"Thread Count",
+	"Virtual Bytes",
+	"Virtual Bytes Peak",
+	"Working Set",
+	"Working Set Peak"
+	]}.

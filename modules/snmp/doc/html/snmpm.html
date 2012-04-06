@@ -1,0 +1,1397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpm</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpm</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpm
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Interface functions to the SNMP toolkit manager
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmpm</span> contains interface functions to the 
+SNMP manager. 
+</p>
+</div>
+
+<h3>Common Data Types</h3>
+<div class="REFBODY">
+
+<p>The following data types are used in the functions below:
+
+</p>
+<ul>
+
+<li>
+
+<span class="code">oid() = [byte()]</span><br />
+
+The <span class="code">oid()</span> type is used to represent an 
+ASN.1 OBJECT IDENTIFIER. <br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">snmp_reply() = {error_status(), error_index(), varbinds()}</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">error_status() = noError | atom()</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">error_index() = integer()</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">varbinds() = [varbind()]</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">atl_type() = read | write | read_write</span><br />
+
+
+</li>
+
+
+</ul>
+<a name="monitor"><!-- Empty --></a>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="monitor-0"><span class="bold_code">monitor() -&#62; Ref</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Ref = reference()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Monitor the SNMP manager. In case of a crash, the calling 
+(monitoring) process will get a 'DOWN' message (see the erlang 
+module for more info). 
+</p><a name="demonitor"><!-- Empty --></a>
+</div>
+
+<p><a name="demonitor-1"><span class="bold_code">demonitor(Ref) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Ref = reference()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Turn off monitoring of the SNMP manager. 
+</p><a name="notify_started"><!-- Empty --></a>
+</div>
+
+<p><a name="notify_started-1"><span class="bold_code">notify_started(Timeout) -&#62; Pid</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Timeout = integer()</span><br/>
+<span class="bold_code">Pid = pid()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Request a notification (message) when the SNMP manager has 
+started. 
+</p>
+<p>The <span class="code">Timeout</span> is the time the request is valid. The 
+value has to be greater then zero. 
+</p>
+<p>The <span class="code">Pid</span> is the process handling the supervision of the 
+SNMP manager start. When the manager has started a completion
+message will be sent to the client from this process: 
+<span class="code">{snmpm_started, Pid}</span>. If the SNMP manager was not started 
+in time, a timeout message will be sent to the client: 
+<span class="code">{snmpm_start_timeout, Pid}</span>. 
+</p>
+<p>A client application that is dependent on the SNMP manager 
+will use this function in order to be notified of when the
+manager has started. There are two situations when this 
+is useful:
+</p>
+<ul>
+
+<li>
+
+During the start of a system, when a client application 
+<strong>could</strong> start prior to the SNMP manager but is dependent
+upon it, and therefor has to wait for it to start.<br />
+
+
+</li>
+
+
+<li>
+
+When the SNMP manager has crashed, the dependent client 
+application has to wait for the SNMP manager to be restarted
+before it can <strong>reconnect</strong>.<br />
+
+
+</li>
+
+
+</ul>
+
+<p>The function returns the pid() of a handler process, that does
+the supervision on behalf of the client application. Note that the 
+client application is linked to this handler. 
+</p>
+<p>This function is used in conjunction with the monitor function.
+</p><a name="cancel_notify_started"><!-- Empty --></a>
+</div>
+
+<p><a name="cancel_notify_started-1"><span class="bold_code">cancel_notify_started(Pid) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Pid = pid()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Cancel a previous request to be notified of SNMP manager start.
+</p><a name="register_user"><!-- Empty --></a>
+</div>
+
+<p><a name="register_user-3"><span class="bold_code">register_user(Id, Module, Data) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Id = term()</span><br/>
+<span class="bold_code">Module = snmpm_user()</span><br/>
+<span class="bold_code">Data = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+<span class="bold_code">snmpm_user() = Module implementing the snmpm_user behaviour</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Register the manager entity (=user) responsible for specific 
+agent(s). 
+</p>
+<p><span class="code">Module</span> is the callback module (snmpm_user behaviour) which 
+will be called whenever something happens (detected 
+agent, incoming reply or incoming trap/notification).
+Note that this could have already been done as a 
+consequence of the node config. (see users.conf).
+</p><a name="register_user_monitor"><!-- Empty --></a>
+</div>
+
+<p><a name="register_user_monitor-3"><span class="bold_code">register_user_monitor(Id, Module, Data) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Id = term()</span><br/>
+<span class="bold_code">Module = snmpm_user()</span><br/>
+<span class="bold_code">Data = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+<span class="bold_code">snmpm_user() = Module implementing the snmpm_user behaviour</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Register the monitored manager entity (=user) responsible 
+for specific agent(s). 
+</p>
+<p>The process performing the registration will be monitored. 
+Which means that if that process should die, all agents 
+registered by that user process will be unregistered. All 
+outstanding requests will be canceled. 
+</p>
+<p><span class="code">Module</span> is the callback module (snmpm_user behaviour) which 
+will be called whenever something happens (detected 
+agent, incoming reply or incoming trap/notification).
+Note that this could have already been done as a 
+consequence of the node config. (see users.conf).
+</p><a name="unregister_user"><!-- Empty --></a>
+</div>
+
+<p><a name="unregister_user-1"><span class="bold_code">unregister_user(Id) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Id = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unregister the user.
+</p><a name="which_users"><!-- Empty --></a>
+</div>
+
+<p><a name="which_users-0"><span class="bold_code">which_users() -&#62; Users</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Users = [UserId]</span><br/>
+<span class="bold_code">UserId = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get a list of the identities of all registered users.
+</p><a name="register_agent"><!-- Empty --></a>
+</div>
+
+<p><a name="register_agent-2"><span class="bold_code">register_agent(UserId, Addr) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="register_agent-3"><span class="bold_code">register_agent(UserId, Addr, Port) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="register_agent-3"><span class="bold_code">register_agent(UserId, Addr, Config) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="register_agent-4"><span class="bold_code">register_agent(UserId, Addr, Port, Config) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">Config = [agent_config()]</span><br/>
+<span class="bold_code">agent_config() = {Item, Val}</span><br/>
+<span class="bold_code">Item = target_name | community | engine_id | timeout | max_message_size | version | sec_model | sec_name | sec_level</span><br/>
+<span class="bold_code">Val = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Explicitly instruct the manager to handle this agent, with
+<span class="code">UserId</span> as the responsible user.
+Called to instruct the manager that this agent 
+shall be handled. These functions is used when
+the user knows in advance which agents the
+manager shall handle.
+Note that there is an alternate way to do the same thing:
+Add the agent to the manager config files (see agents.conf).
+</p>
+<p>The type of <span class="code">Val</span> depends on <span class="code">Item</span>: 
+</p>
+<p><span class="code">target_name = string() </span> <br />
+
+<span class="code">community = string() </span> <br />
+
+<span class="code">engine_id = string() </span> <br />
+
+<span class="code">timeout = integer() | snmp_timer()</span> <br />
+
+<span class="code">max_message_size = integer()</span> <br />
+
+<span class="code">version = v1 | v2 | v3 </span> <br />
+
+<span class="code">sec_model = any | v1 | v2c | usm </span> <br />
+
+<span class="code">sec_name = string() </span> <br />
+
+<span class="code">sec_level = noAuthNoPriv | authNoPriv | authPriv</span>
+</p>
+<p>Note that if no <span class="code">Port</span> is given, the agent default is
+used.
+</p><a name="unregister_agent"><!-- Empty --></a>
+</div>
+
+<p><a name="unregister_agent-2"><span class="bold_code">unregister_agent(UserId, Addr) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="unregister_agent-3"><span class="bold_code">unregister_agent(UserId, Addr, Port) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unregister the agent.
+</p><a name="agent_info"><!-- Empty --></a>
+</div>
+
+<p><a name="agent_info-3"><span class="bold_code">agent_info(Addr, Port, Item) -&#62; {ok, Val} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">Item = atom()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Retrieve agent config.
+</p><a name="update_agent_info"><!-- Empty --></a>
+</div>
+
+<p><a name="update_agent_info-5"><span class="bold_code">update_agent_info(UserId, Addr, Port, Item, Val) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">Item = atom()</span><br/>
+<span class="bold_code">Val = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Update agent config.
+</p><a name="which_agents"><!-- Empty --></a>
+</div>
+
+<p><a name="which_agents-0"><span class="bold_code">which_agents() -&#62; Agents</span></a><br/>
+<a name="which_agents-1"><span class="bold_code">which_agents(UserId) -&#62; Agents</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Agents = [{Addr,Port}]</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get a list of all registered agents or all agents registered
+by a specific user.
+</p><a name="register_usm_user"><!-- Empty --></a>
+</div>
+
+<p><a name="register_usm_user-3"><span class="bold_code">register_usm_user(EngineID, UserName, Conf) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">EngineID = string()</span><br/>
+<span class="bold_code">UserName = string()</span><br/>
+<span class="bold_code">Conf = [usm_config()]</span><br/>
+<span class="bold_code">usm_config() = {Item, Val}</span><br/>
+<span class="bold_code">Item = sec_name | auth | auth_key | priv | priv_key</span><br/>
+<span class="bold_code">Val = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Explicitly instruct the manager to handle this USM user.
+Note that there is an alternate way to do the same thing:
+Add the usm user to the manager config files (see 
+<a href="snmp_manager_config_files.html#usm_user">usm.conf</a>).
+</p>
+<p>The type of <span class="code">Val</span> depends on <span class="code">Item</span>: 
+</p>
+<p><span class="code">sec_name = string(),</span> <br />
+
+<span class="code">auth = usmNoAuthProtocol | usmHMACMD5AuthProtocol | usmHMACSHAAuthProtocoltimeout</span> <br />
+
+<span class="code">auth_key = [integer()]</span> (length 16 if auth = usmHMACMD5AuthProtocol, length 20 if auth = usmHMACSHAAuthProtocol),
+<br />
+
+<span class="code">priv = usmNoPrivProtocol | usmDESPrivProtocol | usmAesCfb128Protocol</span>,
+<br />
+
+<span class="code">priv_key = [integer()]</span> (length is 16 if priv = usmDESPrivProtocol | usmAesCfb128Protocol).
+</p><a name="unregister_usm_user"><!-- Empty --></a>
+</div>
+
+<p><a name="unregister_usm_user-2"><span class="bold_code">unregister_usm_user(EngineID, UserName) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">EngineID = string()</span><br/>
+<span class="bold_code">UserName = string()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unregister this USM user.
+</p><a name="which_usm_users1"><!-- Empty --></a>
+</div>
+
+<p><a name="usm_user_info-3"><span class="bold_code">usm_user_info(EngineID, UserName, Item) -&#62; {ok, Val} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">EngineID = string()</span><br/>
+<span class="bold_code">UsmName = string()</span><br/>
+<span class="bold_code">Item = sec_name | auth | auth_key | priv | priv_key</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Retrieve usm user config.
+</p><a name="update_usm_user_info"><!-- Empty --></a>
+</div>
+
+<p><a name="update_usm_user_info-4"><span class="bold_code">update_usm_user_info(EngineID, UserName, Item, Val) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">EngineID = string()</span><br/>
+<span class="bold_code">UsmName = string()</span><br/>
+<span class="bold_code">Item = sec_name | auth | auth_key | priv | priv_key</span><br/>
+<span class="bold_code">Val = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Update usm user config.
+</p><a name="which_usm_users"><!-- Empty --></a>
+</div>
+
+<p><a name="which_usm_users-0"><span class="bold_code">which_usm_users() -&#62; UsmUsers</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UsmUsers = [{EngineID,UserName}]</span><br/>
+<span class="bold_code">EngineID = string()</span><br/>
+<span class="bold_code">UsmName = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get a list of all registered usm users.
+</p><a name="which_usm_users2"><!-- Empty --></a>
+</div>
+
+<p><a name="which_usm_users-1"><span class="bold_code">which_usm_users(EngineID) -&#62; UsmUsers</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UsmUsers = [UserName]</span><br/>
+<span class="bold_code">UserName = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get a list of all registered usm users with engine-id 
+<span class="code">EngineID</span>.
+</p><a name="g"><!-- Empty --></a>
+</div>
+
+<p><a name="g-3"><span class="bold_code">g(UserId, Addr, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-4"><span class="bold_code">g(UserId, Addr, Port, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-4"><span class="bold_code">g(UserId, Addr, ContextName, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-4"><span class="bold_code">g(UserId, Addr, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-5"><span class="bold_code">g(UserId, Addr, Port, ContextName, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-5"><span class="bold_code">g(UserId, Addr, Port, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-5"><span class="bold_code">g(UserId, Addr, ContextName, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-6"><span class="bold_code">g(UserId, Addr, Port, ContextName, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="g-7"><span class="bold_code">g(UserId, Addr, Port, ContextName, Oids, Timeout, ExtraInfo) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+<span class="bold_code">Timeout = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">SnmpReply = snmp_reply()</span><br/>
+<span class="bold_code">Remaining = integer()</span><br/>
+<span class="bold_code">Reason = {send_failed, ReqId, R} | {invalid_sec_info, SecInfo, SnmpInfo} | term()</span><br/>
+<span class="bold_code">R = term()</span><br/>
+<span class="bold_code">SecInfo = [sec_info()]</span><br/>
+<span class="bold_code">sec_info() = {sec_tag(), ExpectedValue, ReceivedValue}</span><br/>
+<span class="bold_code">sec_tag() = atom()</span><br/>
+<span class="bold_code">ExpectedValue = ReceivedValue = term()</span><br/>
+<span class="bold_code">SnmpInfo = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Synchronous <span class="code">get-request</span>. 
+</p>
+<p><span class="code">Remaining</span> is the remaining time of the given or 
+default timeout time.
+</p>
+<p>When <strong>Reason</strong> is <strong>{send_failed, ...}</strong> it means that
+the net_if process failed to send the message. This could happen
+because of any number of reasons, i.e. encoding error. <strong>R</strong>
+is the actual reason in this case. 
+</p>
+<p><span class="code">ExtraInfo</span> is an opaque data structure passed on to
+the net-if process. The net-if process included in this
+application makes no use of this info, so the only use for it
+in such a configuration (when using the built in net-if) would
+be tracing.
+</p>
+<p>For <span class="code">SnmpInfo</span>, see the user callback function 
+<a href="snmpm_user.html#handle_report">handle_report</a>.
+</p><a name="ag"><!-- Empty --></a>
+</div>
+
+<p><a name="ag-3"><span class="bold_code">ag(UserId, Addr, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-4"><span class="bold_code">ag(UserId, Addr, Port, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-4"><span class="bold_code">ag(UserId, Addr, ContextName, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-4"><span class="bold_code">ag(UserId, Addr, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-5"><span class="bold_code">ag(UserId, Addr, Port, ContextName, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-5"><span class="bold_code">ag(UserId, Addr, Port, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-5"><span class="bold_code">ag(UserId, Addr, ContextName, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-6"><span class="bold_code">ag(UserId, Addr, Port, ContextName, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="ag-7"><span class="bold_code">ag(UserId, Addr, Port, ContextName, Oids, Expire, ExtraInfo) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+<span class="bold_code">Expire = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">ReqId = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Asynchronous <span class="code">get-request</span>.
+</p>
+<p>The reply, if it arrives, will be delivered to the user 
+through a call to the snmpm_user callback function 
+<span class="code">handle_pdu</span>.
+</p>
+<p>The <span class="code">Expire</span> time indicates for how long the request is 
+valid (after which the manager is free to delete it).
+</p>
+<p><span class="code">ExtraInfo</span> is an opaque data structure passed on to
+the net-if process. The net-if process included in this
+application makes no use of this info, so the only use for it
+in such a configuration (when using the built in net-if) would
+be tracing.
+</p><a name="gn"><!-- Empty --></a>
+</div>
+
+<p><a name="gn-3"><span class="bold_code">gn(UserId, Addr, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-4"><span class="bold_code">gn(UserId, Addr, Port, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-4"><span class="bold_code">gn(UserId, Addr, ContextName, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-4"><span class="bold_code">gn(UserId, Addr, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-5"><span class="bold_code">gn(UserId, Addr, Port, ContextName, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-5"><span class="bold_code">gn(UserId, Addr, Port, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-5"><span class="bold_code">gn(UserId, Addr, ContextName, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-6"><span class="bold_code">gn(UserId, Addr, Port, ContextName, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gn-7"><span class="bold_code">gn(UserId, Addr, Port, ContextName, Oids, Timeout, ExtraInfo) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+<span class="bold_code">Timeout = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">SnmpReply = snmp_reply()</span><br/>
+<span class="bold_code">Remaining = integer()</span><br/>
+<span class="bold_code">Reason = {send_failed, ReqId, R} | {invalid_sec_info, SecInfo, SnmpInfo} | term()</span><br/>
+<span class="bold_code">R = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Synchronous <span class="code">get-next-request</span>. 
+</p>
+<p><span class="code">Remaining</span> time of the given or default timeout time.
+</p>
+<p>When <strong>Reason</strong> is <strong>{send_failed, ...}</strong> it means that
+the net_if process failed to send the message. This could happen
+because of any number of reasons, i.e. encoding error. <strong>R</strong>
+is the actual reason in this case. 
+</p>
+<p><span class="code">ExtraInfo</span> is an opaque data structure passed on to
+the net-if process. The net-if process included in this
+application makes no use of this info, so the only use for it
+in such a configuration (when using the built in net-if) would
+be tracing.
+</p><a name="agn"><!-- Empty --></a>
+</div>
+
+<p><a name="agn-3"><span class="bold_code">agn(UserId, Addr, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-4"><span class="bold_code">agn(UserId, Addr, Port, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-4"><span class="bold_code">agn(UserId, Addr, ContextName, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-4"><span class="bold_code">agn(UserId, Addr, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-5"><span class="bold_code">agn(UserId, Addr, Port, ContextName, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-5"><span class="bold_code">agn(UserId, Addr, Port, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-5"><span class="bold_code">agn(UserId, Addr, ContextName, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-6"><span class="bold_code">agn(UserId, Addr, Port, ContextName, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agn-7"><span class="bold_code">agn(UserId, Addr, Port, ContextName, Oids, Expire, ExtraInfo) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+<span class="bold_code">Expire = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">ReqId = integer()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Asynchronous <span class="code">get-next-request</span>. 
+</p>
+<p>The reply will be delivered to the user through a call
+to the snmpm_user callback function <span class="code">handle_pdu</span>.
+</p>
+<p>The <span class="code">Expire</span> time indicates for how long the request is 
+valid (after which the manager is free to delete it).
+</p><a name="s"><!-- Empty --></a>
+</div>
+
+<p><a name="s-3"><span class="bold_code">s(UserId, Addr, VarsAndVals) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-4"><span class="bold_code">s(UserId, Addr, Port, VarsAndVals) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-4"><span class="bold_code">s(UserId, Addr, ContextName, VarsAndVals) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-4"><span class="bold_code">s(UserId, Addr, VarsAndVals, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-5"><span class="bold_code">s(UserId, Addr, Port, ContextName, VarsAndVals) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-5"><span class="bold_code">s(UserId, Addr, Port, VarsAndVals, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-5"><span class="bold_code">s(UserId, Addr, ContextName, VarsAndVals, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-6"><span class="bold_code">s(UserId, Addr, Port, ContextName, VarsAndVals, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="s-7"><span class="bold_code">s(UserId, Addr, Port, ContextName, VarsAndVals, Timeout, ExtraInfo) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">VarsAndVals = [var_and_val()]</span><br/>
+<span class="bold_code">var_and_val() = {oid(), value_type(), value()} | {oid(), value()}</span><br/>
+<span class="bold_code">value_type() = o ('OBJECT IDENTIFIER') | i ('INTEGER') | u ('Unsigned32') | g ('Unsigned32') | s ('OCTET SRING') | b ('BITS') | ip ('IpAddress') | op ('Opaque') | c32 ('Counter32') | c64 ('Counter64') | tt ('TimeTicks') </span><br/>
+<span class="bold_code">value() = term() </span><br/>
+<span class="bold_code">Timeout = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">SnmpReply = snmp_reply()</span><br/>
+<span class="bold_code">Remaining = integer()</span><br/>
+<span class="bold_code">Reason = {send_failed, ReqId, R} | {invalid_sec_info, SecInfo, SnmpInfo} | term()</span><br/>
+<span class="bold_code">R = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Synchronous <span class="code">set-request</span>. 
+</p>
+<p><span class="code">Remaining</span> time of the given or default timeout time.
+</p>
+<p>When <strong>Reason</strong> is <strong>{send_failed, ...}</strong> it means that
+the net_if process failed to send the message. This could happen
+because of any number of reasons, i.e. encoding error. <strong>R</strong>
+is the actual reason in this case. 
+</p>
+<p>When <strong>var_and_val()</strong> is <strong>{oid(), value()}</strong>, the
+manager makes an educated guess based on the loaded mibs. 
+</p>
+<p><span class="code">ExtraInfo</span> is an opaque data structure passed on to
+the net-if process. The net-if process included in this
+application makes no use of this info, so the only use for it
+in such a configuration (when using the built in net-if) would
+be tracing.
+</p><a name="as"><!-- Empty --></a>
+</div>
+
+<p><a name="as-3"><span class="bold_code">as(UserId, Addr, VarsAndVals) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-4"><span class="bold_code">as(UserId, Addr, Port, VarsAndVals) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-4"><span class="bold_code">as(UserId, Addr, ContextName, VarsAndVals) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-4"><span class="bold_code">as(UserId, Addr, VarsAndVals, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-5"><span class="bold_code">as(UserId, Addr, Port, ContextName, VarsAndVals) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-5"><span class="bold_code">as(UserId, Addr, Port, VarsAndVals, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-5"><span class="bold_code">as(UserId, Addr, ContextName, VarsAndVals, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-6"><span class="bold_code">as(UserId, Addr, Port, ContextName, VarsAndVals, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="as-7"><span class="bold_code">as(UserId, Addr, Port, ContextName, VarsAndVals, Expire, ExtraInfo) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">VarsAndVals = [var_and_val()]</span><br/>
+<span class="bold_code">var_and_val() = {oid(), value_type(), value() | {oid(), value()}</span><br/>
+<span class="bold_code">value_type() = o ('OBJECT IDENTIFIER') | i ('INTEGER') | u ('Unsigned32') | g ('Unsigned32') | s ('OCTET SRING') | b ('BITS') | ip ('IpAddress') | op ('Opaque') | c32 ('Counter32') | c64 ('Counter64') | tt ('TimeTicks') </span><br/>
+<span class="bold_code">value() = term() </span><br/>
+<span class="bold_code">Expire = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">ReqId = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Asynchronous <span class="code">set-request</span>. 
+</p>
+<p>The reply will be delivered to the user through a call
+to the snmpm_user callback function <span class="code">handle_pdu</span>.
+</p>
+<p>The <span class="code">Expire</span> time indicates for how long the request is 
+valid (after which the manager is free to delete it).
+</p>
+<p>When <strong>var_and_val()</strong> is <strong>{oid(), value()}</strong>, the
+manager makes an educated guess based on the loaded mibs. 
+</p>
+<p><span class="code">ExtraInfo</span> is an opaque data structure passed on to
+the net-if process. The net-if process included in this
+application makes no use of this info, so the only use for it
+in such a configuration (when using the built in net-if) would
+be tracing.
+</p><a name="gb"><!-- Empty --></a>
+</div>
+
+<p><a name="gb-5"><span class="bold_code">gb(UserId, Addr, NonRep, MaxRep, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-6"><span class="bold_code">gb(UserId, Addr, Port, NonRep, MaxRep, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-6"><span class="bold_code">gb(UserId, Addr, NonRep, MaxRep, ContextName, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-6"><span class="bold_code">gb(UserId, Addr, NonRep, MaxRep, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-7"><span class="bold_code">gb(UserId, Addr, Port, NonRep, MaxRep, ContextName, Oids) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-7"><span class="bold_code">gb(UserId, Addr, Port, NonRep, MaxRep, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-7"><span class="bold_code">gb(UserId, Addr, NonRep, MaxRep, ContextName, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-8"><span class="bold_code">gb(UserId, Addr, Port, NonRep, MaxRep, ContextName, Oids, Timeout) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+<a name="gb-9"><span class="bold_code">gb(UserId, Addr, Port, NonRep, MaxRep, ContextName, Oids, Timeout, ExtraInfo) -&#62; {ok, SnmpReply, Remaining} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">NonRep = integer()</span><br/>
+<span class="bold_code">MaxRep = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+<span class="bold_code">Timeout = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">SnmpReply = snmp_reply()</span><br/>
+<span class="bold_code">Remaining = integer()</span><br/>
+<span class="bold_code">Reason = {send_failed, ReqId, R} | {invalid_sec_info, SecInfo, SnmpInfo} | term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Synchronous <span class="code">get-bulk-request</span> (See RFC1905).
+</p>
+<p><span class="code">Remaining</span> time of the given or default timeout time.
+</p>
+<p>When <strong>Reason</strong> is <strong>{send_failed, ...}</strong> it means that
+the net_if process failed to send the message. This could happen
+because of any number of reasons, i.e. encoding error. <strong>R</strong>
+is the actual reason in this case. 
+</p>
+<p><span class="code">ExtraInfo</span> is an opaque data structure passed on to
+the net-if process. The net-if process included in this
+application makes no use of this info, so the only use for it
+in such a configuration (when using the built in net-if) would
+be tracing.
+</p><a name="agb"><!-- Empty --></a>
+</div>
+
+<p><a name="agb-5"><span class="bold_code">agb(UserId, Addr, NonRep, MaxRep, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-6"><span class="bold_code">agb(UserId, Addr, Port, NonRep, MaxRep, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-6"><span class="bold_code">agb(UserId, Addr, NonRep, MaxRep, ContextName, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-6"><span class="bold_code">agb(UserId, Addr, NonRep, MaxRep, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-7"><span class="bold_code">agb(UserId, Addr, Port, NonRep, MaxRep, ContextName, Oids) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-7"><span class="bold_code">agb(UserId, Addr, Port, NonRep, MaxRep, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-7"><span class="bold_code">agb(UserId, Addr, NonRep, MaxRep, ContextName, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-8"><span class="bold_code">agb(UserId, Addr, Port, NonRep, MaxRep, ContextName, Oids, Expire) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+<a name="agb-9"><span class="bold_code">agb(UserId, Addr, Port, NonRep, MaxRep, ContextName, Oids, Expire, ExtraInfo) -&#62; {ok, ReqId} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">Addr = ip_address()</span><br/>
+<span class="bold_code">Port = integer()</span><br/>
+<span class="bold_code">NonRep = integer()</span><br/>
+<span class="bold_code">MaxRep = integer()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+<span class="bold_code">Expire = integer()</span><br/>
+<span class="bold_code">ExtraInfo = term()</span><br/>
+<span class="bold_code">ReqId = integer()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Asynchronous <span class="code">get-bulk-request</span> (See RFC1905).
+</p>
+<p>The reply will be delivered to the user through a call
+to the snmpm_user callback function <span class="code">handle_pdu</span>.
+</p>
+<p>The <span class="code">Expire</span> time indicates for how long the request is 
+valid (after which the manager is free to delete it).
+</p><a name="cancel_async_request"><!-- Empty --></a>
+</div>
+
+<p><a name="cancel_async_request-2"><span class="bold_code">cancel_async_request(UserId, ReqId) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">UserId = term()</span><br/>
+<span class="bold_code">ReqId = term()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Cancel a previous asynchronous request.
+</p><a name="log_to_txt"><!-- Empty --></a>
+</div>
+
+<p><a name="log_to_txt-2"><span class="bold_code">log_to_txt(LogDir, Mibs)</span></a><br/>
+<a name="log_to_txt-3"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-4"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-5"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-6"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-7"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start, Stop) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">LogDir = string()</span><br/>
+<span class="bold_code">Mibs = [MibName]</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+<span class="bold_code">OutFile = string()</span><br/>
+<span class="bold_code">LogName = string()</span><br/>
+<span class="bold_code">LogFile = string()</span><br/>
+<span class="bold_code">Start = Stop = null | datetime() | {local_time,datetime()} | {universal_time,datetime()} </span><br/>
+<span class="bold_code">Reason = disk_log_open_error() | file_open_error() | term()</span><br/>
+<span class="bold_code">disk_log_open_error() = {LogName, term()}</span><br/>
+<span class="bold_code">file_open_error() = {OutFile, term()}</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts an Audit Trail Log to a readable text file. 
+<span class="code">OutFile</span> defaults to &#34;./snmpm_log.txt&#34;. 
+<span class="code">LogName</span> defaults to &#34;snmpm_log&#34;. 
+<span class="code">LogFile</span> defaults to &#34;snmpm.log&#34;. 
+See <a href="snmp.html#log_to_txt">snmp:log_to_txt</a>
+for more info.
+</p><a name="change_log_size"><!-- Empty --></a>
+</div>
+
+<p><a name="change_log_size-1"><span class="bold_code">change_log_size(NewSize) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">NewSize = {MaxBytes, MaxFiles}</span><br/>
+<span class="bold_code">MaxBytes = integer()</span><br/>
+<span class="bold_code">MaxFiles = integer()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Changes the log size of the Audit Trail Log. The application must 
+be configured to use the audit trail log function. Please refer to 
+disk_log(3) in Kernel Reference Manual for a description of how to 
+change the log size.
+
+</p>
+<p>The change is permanent, as long as the log is not deleted. 
+That means, the log size is remembered across reboots.
+</p><a name="set_log_type"><!-- Empty --></a>
+</div>
+
+<p><a name="set_log_type-1"><span class="bold_code">set_log_type(NewType) -&#62; {ok, OldType} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">NewType = OldType = atl_type()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Changes the run-time Audit Trail log type. 
+</p>
+<p>Note that this has no effect on the application configuration as
+defined by configuration files, so a node restart will revert the 
+config to whatever is in those files. 
+</p>
+<p>This function is primarily useful in testing/debugging 
+scenarios. 
+</p><a name="load_mib"><!-- Empty --></a>
+</div>
+
+<p><a name="load_mib-1"><span class="bold_code">load_mib(Mib) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Mib = MibName</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Load a <span class="code">Mib</span> into the manager. The <span class="code">MibName</span> is the 
+name of the Mib, including the path to where the compiled mib is 
+found. For example,
+</p>
+<div class="example"><pre>
+          Dir = code:priv_dir(my_app) ++ &#34;/mibs/&#34;,
+          snmpm:load_mib(Dir ++ &#34;MY-MIB&#34;).
+        
+</pre></div>
+<a name="unload_mib"><!-- Empty --></a>
+</div>
+
+<p><a name="unload_mib-1"><span class="bold_code">unload_mib(Mib) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Mib = MibName</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unload a <span class="code">Mib</span> from the manager. The <span class="code">MibName</span> is the 
+name of the Mib, including the path to where the compiled mib is 
+found. For example,
+</p>
+<div class="example"><pre>
+          Dir = code:priv_dir(my_app) ++ &#34;/mibs/&#34;,
+          snmpm:unload_mib(Dir ++ &#34;MY-MIB&#34;).
+        
+</pre></div>
+<a name="which_mibs"><!-- Empty --></a>
+</div>
+
+<p><a name="which_mibs-0"><span class="bold_code">which_mibs() -&#62; Mibs</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Mibs = [{MibName, MibFile}]</span><br/>
+<span class="bold_code">MibName = atom()</span><br/>
+<span class="bold_code">MibFile = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get a list of all the mib's loaded into the manager.
+</p><a name="name_to_oid"><!-- Empty --></a>
+</div>
+
+<p><a name="name_to_oid-1"><span class="bold_code">name_to_oid(Name) -&#62; {ok, Oids} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Name = atom()</span><br/>
+<span class="bold_code">Oids = [oid()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Transform a alias-name to it's oid.
+</p>
+<p>Note that an alias-name is only unique within the mib, so
+when loading several mib's into a manager, there might be
+several instances of the same aliasname.
+</p><a name="oid_to_name"><!-- Empty --></a>
+</div>
+
+<p><a name="oid_to_name-1"><span class="bold_code">oid_to_name(Oid) -&#62; {ok, Name} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Oid = oid()</span><br/>
+<span class="bold_code">Name = atom()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Transform a oid to it's aliasname.
+</p><a name="backup"><!-- Empty --></a>
+</div>
+
+<p><a name="backup-1"><span class="bold_code">backup(BackupDir) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">BackupDir = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Backup persistent data handled by the manager. 
+</p>
+<p>BackupDir cannot be identical to DbDir. 
+</p><a name="info"><!-- Empty --></a>
+</div>
+
+<p><a name="info-0"><span class="bold_code">info() -&#62; [{Key, Value}]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Key = atom()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Returns a list (a dictionary) containing information about
+the manager. Information includes statistics counters, 
+miscellaneous info about each process (e.g. memory allocation), 
+and so on.
+</p><a name="verbosity"><!-- Empty --></a>
+</div>
+
+<p><a name="verbosity-2"><span class="bold_code">verbosity(Ref, Verbosity) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Ref = server | config | net_if | note_store | all</span><br/>
+<span class="bold_code">Verbosity = verbosity()</span><br/>
+<span class="bold_code">verbosity() = silence | info | log | debug | trace </span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Sets verbosity for the designated process. For the lowest 
+verbosity <span class="code">silence</span>, nothing is printed. The higher the
+verbosity, the more is printed.
+</p><a name="format_reason"><!-- Empty --></a>
+</div>
+
+<p><a name="format_reason-1"><span class="bold_code">format_reason(Reason) -&#62; string()</span></a><br/>
+<a name="format_reason-2"><span class="bold_code">format_reason(Prefix, Reason) -&#62; string()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Reason = term()</span><br/>
+<span class="bold_code">Prefix = integer() | string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This utility function is used to create a formatted 
+(pretty printable) string of the error reason received
+from either:
+
+</p>
+<ul>
+
+<li>
+
+The <span class="code">Reason</span> returned value if any of the 
+sync/async get/get-next/set/get-bulk
+functions returns <span class="code">{error, Reason}</span><br />
+
+
+</li>
+
+
+<li>
+
+The <span class="code">Reason</span> parameter in the 
+<a href="snmpm_user.html#handle_error">handle_error</a> user callback function.<br />
+
+
+</li>
+
+
+</ul>
+
+<p><span class="code">Prefix</span> should either be an indention string
+(e.g. a list of spaces) or a positive integer (which will be used
+to create the indention string of that length).
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

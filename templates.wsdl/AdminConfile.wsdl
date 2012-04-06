@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DeleteAllConfigFiles">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAllConfigFilesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntityInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestEntityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityParaValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityParaValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityParaValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshMonitor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMonitorList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSessionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefreshMonitorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefreshMonitorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doSome">
+        <s:complexType />
+      </s:element>
+      <s:element name="doSomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doSomeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCopyMonitor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCopyMonitorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCopyMonitorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableMonitorAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableMonitorAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableMonitorAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimeDisableMonitor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimeDisableMonitorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TimeDisableMonitorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refersh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nodeid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefershResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefershResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isServerConnected">
+        <s:complexType />
+      </s:element>
+      <s:element name="isServerConnectedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isServerConnectedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteDataBaseString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteDataBaseStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteDataBaseStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_MonitorLibrary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Save_MonitorLibraryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Save_MonitorLibraryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopMonitor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewSEState" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopMonitorResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Sync_MonitorConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SEID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sync_MonitorConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sync_MonitorConfigResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_Append">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ParentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ShowText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ToolTip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_referenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependScondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_AppendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Group_AppendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_Modify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ShowText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ToolTip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependScondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_ModifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Group_ModifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Group_DeleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_GetChildNodeCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_GetChildNodeCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Group_GetChildNodeCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_GetDocument">
+        <s:complexType />
+      </s:element>
+      <s:element name="Group_GetDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Group_GetDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_GetItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sGroupId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Group_GetItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Group_GetItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetEntityLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetEntityLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_GetEntityLoginInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetEntityInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetEntityInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_GetEntityInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetChildNodeCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetChildNodeCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_GetChildNodeCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_GetDocument">
+        <s:complexType />
+      </s:element>
+      <s:element name="Entity_GetDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_GetDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_Append">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ParentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Lable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_SystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Params" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_seType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependScondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_AppendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_AppendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_Modify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ParentId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Lable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_SystemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_Params" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_seType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependSon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_DependScondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_ModifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_ModifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Entity_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Entity_DeleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetChildNodesXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetChildNodesXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetChildNodesXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetChildNodeXml">
+        <s:complexType />
+      </s:element>
+      <s:element name="Monitor_GetChildNodeXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetChildNodeXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetChildNodesCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetChildNodesCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetChildNodesCountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetMonitorInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetMonitorInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetMonitorInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_Disabled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dMonitor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EnaledTrue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_DisabledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_DisabledResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Server_Group">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nodeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enabled" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Server_GroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Server_GroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Server_Entity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nodeid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Enabled" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Server_EntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Server_EntityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_Modify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_ModifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_ModifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_Append">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_AppendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_AppendResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_Remove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_RemoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_RemoveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWinRemotingServerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginpass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWinRemotingServerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWinRemotingServerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnixRemotingServerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAssemblyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sExtensibleFunc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAttachParam" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnixRemotingServerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnixRemotingServerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPingRemotingServerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sIp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPingRemotingServerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPingRemotingServerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DeleteAllConfigFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllConfigFiles" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllConfigFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllConfigFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:TestEntity" />
+  </wsdl:message>
+  <wsdl:message name="TestEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:TestEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityParaValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityParaValue" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityParaValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityParaValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefreshMonitorSoapIn">
+    <wsdl:part name="parameters" element="tns:RefreshMonitor" />
+  </wsdl:message>
+  <wsdl:message name="RefreshMonitorSoapOut">
+    <wsdl:part name="parameters" element="tns:RefreshMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="doSomeSoapIn">
+    <wsdl:part name="parameters" element="tns:doSome" />
+  </wsdl:message>
+  <wsdl:message name="doSomeSoapOut">
+    <wsdl:part name="parameters" element="tns:doSomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCopyMonitorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCopyMonitor" />
+  </wsdl:message>
+  <wsdl:message name="GetCopyMonitorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCopyMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableMonitorAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableMonitorAlert" />
+  </wsdl:message>
+  <wsdl:message name="DisableMonitorAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableMonitorAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimeDisableMonitorSoapIn">
+    <wsdl:part name="parameters" element="tns:TimeDisableMonitor" />
+  </wsdl:message>
+  <wsdl:message name="TimeDisableMonitorSoapOut">
+    <wsdl:part name="parameters" element="tns:TimeDisableMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefershSoapIn">
+    <wsdl:part name="parameters" element="tns:Refersh" />
+  </wsdl:message>
+  <wsdl:message name="RefershSoapOut">
+    <wsdl:part name="parameters" element="tns:RefershResponse" />
+  </wsdl:message>
+  <wsdl:message name="isServerConnectedSoapIn">
+    <wsdl:part name="parameters" element="tns:isServerConnected" />
+  </wsdl:message>
+  <wsdl:message name="isServerConnectedSoapOut">
+    <wsdl:part name="parameters" element="tns:isServerConnectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteDataBaseStringSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteDataBaseString" />
+  </wsdl:message>
+  <wsdl:message name="WriteDataBaseStringSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteDataBaseStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="Save_MonitorLibrarySoapIn">
+    <wsdl:part name="parameters" element="tns:Save_MonitorLibrary" />
+  </wsdl:message>
+  <wsdl:message name="Save_MonitorLibrarySoapOut">
+    <wsdl:part name="parameters" element="tns:Save_MonitorLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopMonitorSoapIn">
+    <wsdl:part name="parameters" element="tns:StopMonitor" />
+  </wsdl:message>
+  <wsdl:message name="StopMonitorSoapOut">
+    <wsdl:part name="parameters" element="tns:StopMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="Sync_MonitorConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:Sync_MonitorConfig" />
+  </wsdl:message>
+  <wsdl:message name="Sync_MonitorConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:Sync_MonitorConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="Group_AppendSoapIn">
+    <wsdl:part name="parameters" element="tns:Group_Append" />
+  </wsdl:message>
+  <wsdl:message name="Group_AppendSoapOut">
+    <wsdl:part name="parameters" element="tns:Group_AppendResponse" />
+  </wsdl:message>
+  <wsdl:message name="Group_ModifySoapIn">
+    <wsdl:part name="parameters" element="tns:Group_Modify" />
+  </wsdl:message>
+  <wsdl:message name="Group_ModifySoapOut">
+    <wsdl:part name="parameters" element="tns:Group_ModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Group_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Group_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Group_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Group_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Group_GetChildNodeCountSoapIn">
+    <wsdl:part name="parameters" element="tns:Group_GetChildNodeCount" />
+  </wsdl:message>
+  <wsdl:message name="Group_GetChildNodeCountSoapOut">
+    <wsdl:part name="parameters" element="tns:Group_GetChildNodeCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="Group_GetDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:Group_GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="Group_GetDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:Group_GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Group_GetItemSoapIn">
+    <wsdl:part name="parameters" element="tns:Group_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="Group_GetItemSoapOut">
+    <wsdl:part name="parameters" element="tns:Group_GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetEntityLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_GetEntityLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetEntityLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_GetEntityLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetEntityInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_GetEntityInfo" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetEntityInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_GetEntityInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetChildNodeCountSoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_GetChildNodeCount" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetChildNodeCountSoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_GetChildNodeCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="Entity_GetDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_AppendSoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_Append" />
+  </wsdl:message>
+  <wsdl:message name="Entity_AppendSoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_AppendResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_ModifySoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_Modify" />
+  </wsdl:message>
+  <wsdl:message name="Entity_ModifySoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_ModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Entity_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Entity_Delete" />
+  </wsdl:message>
+  <wsdl:message name="Entity_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Entity_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetChildNodesXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetChildNodesXml" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetChildNodesXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetChildNodesXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetChildNodeXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetChildNodeXml" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetChildNodeXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetChildNodeXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetChildNodesCountSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetChildNodesCount" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetChildNodesCountSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetChildNodesCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetMonitorInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetMonitorInfo" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetMonitorInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetMonitorInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_DisabledSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_Disabled" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_DisabledSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_DisabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="Server_GroupSoapIn">
+    <wsdl:part name="parameters" element="tns:Server_Group" />
+  </wsdl:message>
+  <wsdl:message name="Server_GroupSoapOut">
+    <wsdl:part name="parameters" element="tns:Server_GroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="Server_EntitySoapIn">
+    <wsdl:part name="parameters" element="tns:Server_Entity" />
+  </wsdl:message>
+  <wsdl:message name="Server_EntitySoapOut">
+    <wsdl:part name="parameters" element="tns:Server_EntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_ModifySoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_Modify" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_ModifySoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_ModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_AppendSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_Append" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_AppendSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_AppendResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_RemoveSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_Remove" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_RemoveSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_RemoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWinRemotingServerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWinRemotingServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWinRemotingServerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWinRemotingServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnixRemotingServerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnixRemotingServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUnixRemotingServerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnixRemotingServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPingRemotingServerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPingRemotingServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPingRemotingServerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPingRemotingServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AdminConfileSoap">
+    <wsdl:operation name="DeleteAllConfigFiles">
+      <wsdl:input message="tns:DeleteAllConfigFilesSoapIn" />
+      <wsdl:output message="tns:DeleteAllConfigFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestEntity">
+      <wsdl:input message="tns:TestEntitySoapIn" />
+      <wsdl:output message="tns:TestEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityParaValue">
+      <wsdl:input message="tns:GetEntityParaValueSoapIn" />
+      <wsdl:output message="tns:GetEntityParaValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshMonitor">
+      <wsdl:input message="tns:RefreshMonitorSoapIn" />
+      <wsdl:output message="tns:RefreshMonitorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doSome">
+      <wsdl:input message="tns:doSomeSoapIn" />
+      <wsdl:output message="tns:doSomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCopyMonitor">
+      <wsdl:input message="tns:GetCopyMonitorSoapIn" />
+      <wsdl:output message="tns:GetCopyMonitorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableMonitorAlert">
+      <wsdl:input message="tns:DisableMonitorAlertSoapIn" />
+      <wsdl:output message="tns:DisableMonitorAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TimeDisableMonitor">
+      <wsdl:input message="tns:TimeDisableMonitorSoapIn" />
+      <wsdl:output message="tns:TimeDisableMonitorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refersh">
+      <wsdl:input message="tns:RefershSoapIn" />
+      <wsdl:output message="tns:RefershSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isServerConnected">
+      <wsdl:input message="tns:isServerConnectedSoapIn" />
+      <wsdl:output message="tns:isServerConnectedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataBaseString">
+      <wsdl:input message="tns:WriteDataBaseStringSoapIn" />
+      <wsdl:output message="tns:WriteDataBaseStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_MonitorLibrary">
+      <wsdl:input message="tns:Save_MonitorLibrarySoapIn" />
+      <wsdl:output message="tns:Save_MonitorLibrarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopMonitor">
+      <wsdl:input message="tns:StopMonitorSoapIn" />
+      <wsdl:output message="tns:StopMonitorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sync_MonitorConfig">
+      <wsdl:input message="tns:Sync_MonitorConfigSoapIn" />
+      <wsdl:output message="tns:Sync_MonitorConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Group_Append">
+      <wsdl:input message="tns:Group_AppendSoapIn" />
+      <wsdl:output message="tns:Group_AppendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Group_Modify">
+      <wsdl:input message="tns:Group_ModifySoapIn" />
+      <wsdl:output message="tns:Group_ModifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Group_Delete">
+      <wsdl:input message="tns:Group_DeleteSoapIn" />
+      <wsdl:output message="tns:Group_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Group_GetChildNodeCount">
+      <wsdl:input message="tns:Group_GetChildNodeCountSoapIn" />
+      <wsdl:output message="tns:Group_GetChildNodeCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Group_GetDocument">
+      <wsdl:input message="tns:Group_GetDocumentSoapIn" />
+      <wsdl:output message="tns:Group_GetDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Group_GetItem">
+      <wsdl:input message="tns:Group_GetItemSoapIn" />
+      <wsdl:output message="tns:Group_GetItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetEntityLoginInfo">
+      <wsdl:input message="tns:Entity_GetEntityLoginInfoSoapIn" />
+      <wsdl:output message="tns:Entity_GetEntityLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetEntityInfo">
+      <wsdl:input message="tns:Entity_GetEntityInfoSoapIn" />
+      <wsdl:output message="tns:Entity_GetEntityInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetChildNodeCount">
+      <wsdl:input message="tns:Entity_GetChildNodeCountSoapIn" />
+      <wsdl:output message="tns:Entity_GetChildNodeCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetDocument">
+      <wsdl:input message="tns:Entity_GetDocumentSoapIn" />
+      <wsdl:output message="tns:Entity_GetDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_Append">
+      <wsdl:input message="tns:Entity_AppendSoapIn" />
+      <wsdl:output message="tns:Entity_AppendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_Modify">
+      <wsdl:input message="tns:Entity_ModifySoapIn" />
+      <wsdl:output message="tns:Entity_ModifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Entity_Delete">
+      <wsdl:input message="tns:Entity_DeleteSoapIn" />
+      <wsdl:output message="tns:Entity_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetChildNodesXml">
+      <wsdl:input message="tns:Monitor_GetChildNodesXmlSoapIn" />
+      <wsdl:output message="tns:Monitor_GetChildNodesXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetChildNodeXml">
+      <wsdl:input message="tns:Monitor_GetChildNodeXmlSoapIn" />
+      <wsdl:output message="tns:Monitor_GetChildNodeXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetChildNodesCount">
+      <wsdl:input message="tns:Monitor_GetChildNodesCountSoapIn" />
+      <wsdl:output message="tns:Monitor_GetChildNodesCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetMonitorInfo">
+      <wsdl:input message="tns:Monitor_GetMonitorInfoSoapIn" />
+      <wsdl:output message="tns:Monitor_GetMonitorInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Disabled">
+      <wsdl:input message="tns:Monitor_DisabledSoapIn" />
+      <wsdl:output message="tns:Monitor_DisabledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_Group">
+      <wsdl:input message="tns:Server_GroupSoapIn" />
+      <wsdl:output message="tns:Server_GroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Server_Entity">
+      <wsdl:input message="tns:Server_EntitySoapIn" />
+      <wsdl:output message="tns:Server_EntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Modify">
+      <wsdl:input message="tns:Monitor_ModifySoapIn" />
+      <wsdl:output message="tns:Monitor_ModifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Append">
+      <wsdl:input message="tns:Monitor_AppendSoapIn" />
+      <wsdl:output message="tns:Monitor_AppendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Remove">
+      <wsdl:input message="tns:Monitor_RemoveSoapIn" />
+      <wsdl:output message="tns:Monitor_RemoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWinRemotingServerInfo">
+      <wsdl:input message="tns:GetWinRemotingServerInfoSoapIn" />
+      <wsdl:output message="tns:GetWinRemotingServerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnixRemotingServerInfo">
+      <wsdl:input message="tns:GetUnixRemotingServerInfoSoapIn" />
+      <wsdl:output message="tns:GetUnixRemotingServerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPingRemotingServerInfo">
+      <wsdl:input message="tns:GetPingRemotingServerInfoSoapIn" />
+      <wsdl:output message="tns:GetPingRemotingServerInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdminConfileSoap" type="tns:AdminConfileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="DeleteAllConfigFiles">
+      <soap:operation soapAction="http://tempuri.org/DeleteAllConfigFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestEntity">
+      <soap:operation soapAction="http://tempuri.org/TestEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityParaValue">
+      <soap:operation soapAction="http://tempuri.org/GetEntityParaValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshMonitor">
+      <soap:operation soapAction="http://tempuri.org/RefreshMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSome">
+      <soap:operation soapAction="http://tempuri.org/doSome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCopyMonitor">
+      <soap:operation soapAction="http://tempuri.org/GetCopyMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableMonitorAlert">
+      <soap:operation soapAction="http://tempuri.org/DisableMonitorAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TimeDisableMonitor">
+      <soap:operation soapAction="http://tempuri.org/TimeDisableMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refersh">
+      <soap:operation soapAction="http://tempuri.org/Refersh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isServerConnected">
+      <soap:operation soapAction="http://tempuri.org/isServerConnected" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataBaseString">
+      <soap:operation soapAction="http://tempuri.org/WriteDataBaseString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_MonitorLibrary">
+      <soap:operation soapAction="http://tempuri.org/Save_MonitorLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopMonitor">
+      <soap:operation soapAction="http://tempuri.org/StopMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sync_MonitorConfig">
+      <soap:operation soapAction="http://tempuri.org/Sync_MonitorConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Group_Append">
+      <soap:operation soapAction="http://tempuri.org/Group_Append" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Group_Modify">
+      <soap:operation soapAction="http://tempuri.org/Group_Modify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Group_Delete">
+      <soap:operation soapAction="http://tempuri.org/Group_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Group_GetChildNodeCount">
+      <soap:operation soapAction="http://tempuri.org/Group_GetChildNodeCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Group_GetDocument">
+      <soap:operation soapAction="http://tempuri.org/Group_GetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Group_GetItem">
+      <soap:operation soapAction="http://tempuri.org/Group_GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetEntityLoginInfo">
+      <soap:operation soapAction="http://tempuri.org/Entity_GetEntityLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetEntityInfo">
+      <soap:operation soapAction="http://tempuri.org/Entity_GetEntityInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetChildNodeCount">
+      <soap:operation soapAction="http://tempuri.org/Entity_GetChildNodeCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_GetDocument">
+      <soap:operation soapAction="http://tempuri.org/Entity_GetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_Append">
+      <soap:operation soapAction="http://tempuri.org/Entity_Append" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_Modify">
+      <soap:operation soapAction="http://tempuri.org/Entity_Modify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Entity_Delete">
+      <soap:operation soapAction="http://tempuri.org/Entity_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetChildNodesXml">
+      <soap:operation soapAction="http://tempuri.org/Monitor_GetChildNodesXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetChildNodeXml">
+      <soap:operation soapAction="http://tempuri.org/Monitor_GetChildNodeXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetChildNodesCount">
+      <soap:operation soapAction="http://tempuri.org/Monitor_GetChildNodesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetMonitorInfo">
+      <soap:operation soapAction="http://tempuri.org/Monitor_GetMonitorInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Disabled">
+      <soap:operation soapAction="http://tempuri.org/Monitor_Disabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Server_Group">
+      <soap:operation soapAction="http://tempuri.org/Server_Group" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Server_Entity">
+      <soap:operation soapAction="http://tempuri.org/Server_Entity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Modify">
+      <soap:operation soapAction="http://tempuri.org/Monitor_Modify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Append">
+      <soap:operation soapAction="http://tempuri.org/Monitor_Append" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_Remove">
+      <soap:operation soapAction="http://tempuri.org/Monitor_Remove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWinRemotingServerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWinRemotingServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnixRemotingServerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUnixRemotingServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPingRemotingServerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPingRemotingServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminConfile">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="AdminConfileSoap" binding="tns:AdminConfileSoap">
+      <soap:address location="http://192.168.5.9/SiteView.DataCollection.WebService/AdminConfile.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

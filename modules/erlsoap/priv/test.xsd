@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+  xmlns:tns="urn:siteview:cwmp"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+  elementFormDefault="qualified"
+  targetNamespace="urn:siteview:cwmp">
+
+<xsd:element name="ID">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="HoldRequests">
+<xsd:complexType>
+ <xsd:simpleContent>
+<xsd:extension base="xsd:boolean">
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="GetRPCMethods">
+<xsd:annotation>
+<xsd:documentation>GeRPCMethods message - Annex A.3.1.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+
+<xsd:element name="GetRPCMethodsResponse">
+<xsd:annotation>
+<xsd:documentation>GeRPCMethodsResponse message - Annex A.3.1.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="MethodList" type="tns:MethodList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+ 
+<xsd:complexType name="MethodList">
+<xsd:sequence>
+<xsd:element name="Name" maxOccurs="unbounded">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string" >
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:simpleType name="FaultCodeType">
+<xsd:union>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>CPE fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:enumeration value="9000">
+<xsd:annotation>
+<xsd:documentation>Method not supported</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9001">
+<xsd:annotation>
+<xsd:documentation>Request denied (no reason specified)</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9002">
+<xsd:annotation>
+<xsd:documentation>Internal error</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9003">
+<xsd:annotation>
+<xsd:documentation>Invalid arguments</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9004">
+<xsd:annotation>
+<xsd:documentation>Resources exceeded</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9005">
+<xsd:annotation>
+<xsd:documentation>Invalid parameter name</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9006">
+<xsd:annotation>
+<xsd:documentation>Invalid parameter type</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9007">
+<xsd:annotation>
+<xsd:documentation>Invalid parameter value</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9008">
+<xsd:annotation>
+<xsd:documentation>Attempt to set a non-writable parameter</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9009">
+<xsd:annotation>
+<xsd:documentation>Notification request rejected</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9010">
+<xsd:annotation>
+ <xsd:documentation>Download failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9011">
+<xsd:annotation>
+<xsd:documentation>Upload failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9012">
+<xsd:annotation>
+<xsd:documentation>File transfer server authentication failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9013">
+<xsd:annotation>
+<xsd:documentation>Unsupported protocol for file transfer</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9014">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to join multicast
+group</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9015">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to contact file
+server</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9016">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to access file</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9017">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to complete download</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9018">
+<xsd:annotation>
+<xsd:documentation>Download failure: file corrupted</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9019">
+<xsd:annotation>
+<xsd:documentation>Download failure: file authentication failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>Future expansion fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:minInclusive value="9020"/>
+<xsd:maxInclusive value="9799"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>CPE Vendor fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:minInclusive value="9800"/>
+<xsd:maxInclusive value="9899"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+ <xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>ACS fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:enumeration value="8000">
+<xsd:annotation>
+<xsd:documentation>Method not supported</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="8001">
+<xsd:annotation>
+<xsd:documentation>Request denied (no reason specified)</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="8002">
+<xsd:annotation>
+<xsd:documentation>Internal error</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="8003">
+<xsd:annotation>
+<xsd:documentation>Invalid arguments</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="8004">
+<xsd:annotation>
+<xsd:documentation>Resources exceeded</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="8005">
+<xsd:annotation>
+<xsd:documentation>Retry request</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>Future expansion fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:minInclusive value="8006"/>
+<xsd:maxInclusive value="8799"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>ACS Vendor fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:minInclusive value="8800"/>
+<xsd:maxInclusive value="8899"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:union>
+</xsd:simpleType>
+
+<xsd:element name="Fault">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FaultCode" type="tns:FaultCodeType"/>
+<xsd:element name="FaultString" type="xsd:string" minOccurs="0"/>
+<xsd:element name="SetParameterValuesFault" minOccurs="0" maxOccurs="unbounded">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterName" type="xsd:string"/>
+<xsd:element name="FaultCode" type="tns:FaultCodeType"/>
+<xsd:element name="FaultString" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+ </xsd:complexType>
+</xsd:element>
+
+<xsd:complexType name="FaultStruct">
+<xsd:sequence>
+<xsd:element name="FaultCode">
+<xsd:simpleType>
+<xsd:union>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>No fault</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9001">
+<xsd:annotation>
+<xsd:documentation>Request denied (no reason specified)</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9002">
+<xsd:annotation>
+<xsd:documentation>Internal error</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9010">
+<xsd:annotation>
+<xsd:documentation>Download failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9011">
+<xsd:annotation>
+<xsd:documentation>Upload failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9012">
+<xsd:annotation>
+<xsd:documentation>File transfer server authentication
+failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9014">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to join multicast
+group</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9015">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to contact file
+server</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9016">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to access file</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9017">
+<xsd:annotation>
+<xsd:documentation>Download failure: unable to complete
+download</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9018">
+<xsd:annotation>
+<xsd:documentation>Download failure: file corrupted</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="9019">
+<xsd:annotation>
+<xsd:documentation>Download failure: file authentication
+failure</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>Future expansion fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:minInclusive value="9020"/>
+<xsd:maxInclusive value="9799"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:annotation>
+<xsd:documentation>CPE Vendor fault codes</xsd:documentation>
+</xsd:annotation>
+<xsd:minInclusive value="9800"/>
+<xsd:maxInclusive value="9899"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:union>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FaultString">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="DeviceIdStruct">
+<xsd:sequence>
+<xsd:element name="Manufacturer">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="OUI">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:length value="6"/>
+<xsd:pattern value="[0-9A-F]{6}"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="ProductClass">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="SerialNumber">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="EventStruct">
+<xsd:sequence>
+<xsd:element name="EventCode">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:pattern value="BOOTSTRAP"/>
+<xsd:pattern value="BOOT"/>
+<xsd:pattern value="PERIODIC"/>
+<xsd:pattern value="SCHEDULED"/>
+<xsd:pattern value="VALUE CHANGE"/>
+<xsd:pattern value="KICKED"/>
+<xsd:pattern value="CONNECTION REQUEST"/>
+<xsd:pattern value="TRANSFER COMPLETE"/>
+<xsd:pattern value="DIAGNOSTICS COMPLETE"/>
+<xsd:pattern value="REQUEST DOWNLOAD"/>
+<xsd:pattern value="AUTONOMOUS TRANSFER COMPLETE"/>
+<xsd:pattern value="\d+( \S+)+"/>
+<xsd:pattern value="M Reboot"/>
+<xsd:pattern value="M ScheduleInform"/>
+<xsd:pattern value="M Download"/>
+<xsd:pattern value="M Upload"/>
+<xsd:pattern value="M \S+"/>
+<xsd:pattern value="M X_\S+"/> <!-- no spaces in method names -->
+<xsd:pattern value="X [0-9A-F]{6} .*"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:simpleType name="CommandKeyType">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="32"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ObjectNameType">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+<xsd:pattern value=".*\."/>
+</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="EventList">
+<xsd:sequence>
+<xsd:element name="EventStruct" type="tns:EventStruct" minOccurs="0" maxOccurs="64"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterValueStruct">
+<xsd:sequence>
+<xsd:element name="Name">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Value" type="xsd:anySimpleType"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterValueList">
+<xsd:sequence>
+ <xsd:element name="ParameterValueStruct" type="tns:ParameterValueStruct" minOccurs="0"
+maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterInfoStruct">
+<xsd:sequence>
+<xsd:element name="Name">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Writable" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterInfoList">
+<xsd:sequence>
+<xsd:element name="ParameterInfoStruct" type="tns:ParameterInfoStruct" minOccurs="0"
+maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterNames">
+<xsd:sequence>
+<xsd:element name="string" minOccurs="1" maxOccurs="unbounded">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:simpleType name="ParameterKeyType">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="32"/>
+</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:complexType name="AccessList">
+<xsd:sequence>
+<xsd:element name="string" minOccurs="0" maxOccurs="unbounded">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:enumeration value="Subscriber"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="SetParameterAttributesStruct">
+<xsd:sequence>
+<xsd:element name="Name" nillable="true">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="NotificationChange" type="xsd:boolean"/>
+<xsd:element name="Notification">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>Notification off. The CPE need not inform the ACS of a change
+to the specified parameter(s)</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>Passive notification. Whenever the specified parameter value
+changes, the CPE MUST include the new value in the ParameterList in the
+Inform message that is sent the next time a session is established to the
+ACS</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="2">
+<xsd:annotation>
+<xsd:documentation>Active notification. Whenever the specified parameter value
+changes, the CPE MUST initiate a session to the ACS, and include the new
+value in the ParameterList in the associated Inform
+message</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="AccessListChange" type="xsd:boolean"/>
+<xsd:element name="AccessList" type="tns:AccessList"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="SetParameterAttributesList">
+<xsd:sequence>
+<xsd:element name="SetParameterAttributesStruct" type="tns:SetParameterAttributesStruct"
+minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterAttributeStruct">
+<xsd:sequence>
+<xsd:element name="Name">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Notification">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+<xsd:enumeration value="2"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="AccessList" type="tns:AccessList"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ParameterAttributeList">
+<xsd:sequence>
+<xsd:element name="ParameterAttributeStruct" type="tns:ParameterAttributeStruct"
+minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="QueuedTransferStruct">
+<xsd:sequence>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+<xsd:element name="State">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="1">
+</xsd:enumeration>
+<xsd:enumeration value="2">
+</xsd:enumeration>
+<xsd:enumeration value="3">
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="TransferList">
+<xsd:sequence>
+<xsd:element name="QueuedTransferStruct" type="tns:QueuedTransferStruct" minOccurs="0"
+maxOccurs="16"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="AllQueuedTransferStruct">
+<xsd:sequence>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+<xsd:element name="State">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>- Not yet started</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="2">
+<xsd:annotation>
+<xsd:documentation>- In progress</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="3">
+<xsd:annotation>
+<xsd:documentation>- Completed</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="IsDownload" type="xsd:boolean"/>
+<xsd:element name="FileType">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:pattern value="Firmware Upgrade Image"/>
+<xsd:pattern value="Web Content"/>
+<xsd:pattern value="Vendor Configuration File"/>
+<xsd:pattern value="Vendor Log File"/>
+<xsd:pattern value="X [0-9A-F]{6} .*"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FileSize" type="xsd:unsignedInt"/>
+<xsd:element name="TargetFileName">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="AllTransferList">
+<xsd:sequence>
+<xsd:element name="AllQueuedTransferStruct" type="tns:AllQueuedTransferStruct"
+minOccurs="0" maxOccurs="16"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="VoucherList">
+<xsd:sequence>
+<xsd:element name="base64" type="xsd:base64" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+
+
+
+
+
+
+
+
+
+
+
+<xsd:complexType name="OptionStruct">
+ <xsd:sequence>
+<xsd:element name="OptionName">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="VoucherSN" type="xsd:unsignedInt"/>
+<xsd:element name="State">
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>Option is disabled and not setup</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>Option is enabled and not setup</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="2">
+<xsd:annotation>
+<xsd:documentation>Option is disabled and setup</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="3">
+<xsd:annotation>
+<xsd:documentation>Option is enabled and setup</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Mode">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>- Disabled</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>- Enabled with expiration</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="2">
+<xsd:annotation>
+<xsd:documentation>- Enabled without expiration</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="StartDate" type="xsd:dateTime"/>
+<xsd:element name="ExpirationDate" type="xsd:dateTime" minOccurs="0"/>
+<xsd:element name="IsTransferable">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>Non-transferable</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>Transferable</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+ </xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="OptionList">
+<xsd:sequence>
+<xsd:element name="OptionStruct" type="tns:OptionStruct" minOccurs="0"
+maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="ArgStruct">
+<xsd:sequence>
+<xsd:element name="Name">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Value">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="FileTypeArg">
+<xsd:sequence>
+<xsd:element name="ArgStruct" type="tns:ArgStruct" minOccurs="0" maxOccurs="16"/>
+</xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:element name="SetParameterValues">
+<xsd:annotation>
+<xsd:documentation>SetParameterValues message - Annex A.3.2.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterList" type="tns:ParameterValueList"/>
+<xsd:element name="ParameterKey" type="tns:ParameterKeyType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- SetParameterValuesResponse -->
+<xsd:element name="SetParameterValuesResponse">
+<xsd:annotation>
+<xsd:documentation>SetParameterValuesResponse message - Annex A.3.2.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>All Parameter changes have been validated and
+applied</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>All Parameter changes have been validated and committed, but
+some or all are not yet applied (for example, if a reboot is required
+before the new values are applied)</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- GetParameterValues -->
+<xsd:element name="GetParameterValues">
+<xsd:annotation>
+<xsd:documentation>GetParameterValues message - Annex A.3.2.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterNames" type="tns:ParameterNames"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+ <!-- GetParameterValuesResponse -->
+<xsd:element name="GetParameterValuesResponse">
+<xsd:annotation>
+<xsd:documentation>GetParameterValuesResponse message - Annex A.3.2.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterList" type="tns:ParameterValueList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- GetParameterNames -->
+<xsd:element name="GetParameterNames">
+<xsd:annotation>
+<xsd:documentation>GetParameterNames message - Annex A.3.2.3</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterPath" nillable="true">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="NextLevel" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- GetParameterNamesResponse -->
+<xsd:element name="GetParameterNamesResponse">
+<xsd:annotation>
+<xsd:documentation>GetParameterNamesResponse message - Annex A.3.2.3</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterList" type="tns:ParameterInfoList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- SetParameterAttributes -->
+<xsd:element name="SetParameterAttributes">
+<xsd:annotation>
+<xsd:documentation>SetParameterAttributes message - Annex A.3.2.4</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterList" type="tns:SetParameterAttributesList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- SetParameterAttributesResponse -->
+<xsd:element name="SetParameterAttributesResponse">
+<xsd:annotation>
+<xsd:documentation>SetParameterAttributesResponse message - Annex A.3.2.4</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- GetParameterAttributes -->
+<xsd:element name="GetParameterAttributes">
+<xsd:annotation>
+<xsd:documentation>GetParameterAttributes message - Annex A.3.2.5</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterNames" type="tns:ParameterNames"/>
+ </xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- GetParameterAttributesResponse -->
+<xsd:element name="GetParameterAttributesResponse">
+<xsd:annotation>
+<xsd:documentation>GetParameterAttributesResponse message - Annex A.3.2.5</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ParameterList" type="tns:ParameterAttributeList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- AddObject -->
+<xsd:element name="AddObject">
+<xsd:annotation>
+<xsd:documentation>AddObject message - Annex A.3.2.6</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ObjectName" type="tns:ObjectNameType"/>
+<xsd:element name="ParameterKey" type="tns:ParameterKeyType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- AddObjectResponse -->
+<xsd:element name="AddObjectResponse">
+<xsd:annotation>
+<xsd:documentation>AddObjectResponse message - Annex A.3.2.6</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="InstanceNumber">
+<xsd:simpleType>
+<xsd:restriction base="xsd:unsignedInt">
+<xsd:minInclusive value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Status">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>The object has been created</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>The object creation has been validated and committed, but not
+yet applied</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- DeleteObject -->
+<xsd:element name="DeleteObject">
+<xsd:annotation>
+<xsd:documentation>DeleteObject message - Annex A.3.2.7</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+ <xsd:element name="ObjectName" type="tns:ObjectNameType"/>
+<xsd:element name="ParameterKey" type="tns:ParameterKeyType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- DeleteObjectResponse -->
+<xsd:element name="DeleteObjectResponse">
+<xsd:annotation>
+<xsd:documentation>DeleteObjectResponse message - Annex A.3.2.7</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>The object has been deleted</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>The object deletion has been validated and committed, but not
+yet applied</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- Download -->
+<xsd:element name="Download">
+<xsd:annotation>
+<xsd:documentation>Download message - Annex A.3.2.8</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+<xsd:element name="FileType">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:pattern value="Firmware Upgrade Image"/>
+<xsd:pattern value="Web Content"/>
+<xsd:pattern value="Vendor Configuration File"/>
+<xsd:pattern value="X [0-9A-F]{6} .*"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="URL">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Username">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Password">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+ </xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FileSize" type="xsd:unsignedInt"/>
+<xsd:element name="TargetFileName">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="DelaySeconds" type="xsd:unsignedInt"/>
+<xsd:element name="SuccessURL">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FailureURL">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- DownloadResponse -->
+<xsd:element name="DownloadResponse">
+<xsd:annotation>
+<xsd:documentation>DownloadResponse message - Annex A.3.2.8</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>Download has completed and been applied</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>Download has not yet been completed and
+applied</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="StartTime" type="xsd:dateTime"/>
+<xsd:element name="CompleteTime" type="xsd:dateTime"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- Reboot -->
+<xsd:element name="Reboot">
+<xsd:annotation>
+<xsd:documentation>Reboot message - Annex A.3.2.9</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+ <!-- RebootResponse -->
+<xsd:element name="RebootResponse">
+<xsd:annotation>
+<xsd:documentation>RebootResponse message - Annex A.3.2.9</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!--
+Optional CPE messages - Annex A.4.-->
+<!-- GetQueuedTransfers -->
+<xsd:element name="GetQueuedTransfers">
+<xsd:annotation>
+<xsd:documentation>GetQueuedTransfers message - Annex A.4.1.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- GetQueuedTransfersResponse -->
+<xsd:element name="GetQueuedTransfersResponse">
+<xsd:annotation>
+<xsd:documentation>GetQueuedTransfersResponse message - Annex A.4.1.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TransferList" type="tns:TransferList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- ScheduleInform -->
+<xsd:element name="ScheduleInform">
+<xsd:annotation>
+<xsd:documentation>ScheduleInform message - Annex A.4.1.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="DelaySeconds" type="xsd:unsignedInt"/>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- ScheduleInformResponse -->
+<xsd:element name="ScheduleInformResponse">
+<xsd:annotation>
+<xsd:documentation>ScheduleInformResponse message - Annex A.4.1.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- SetVouchers -->
+<xsd:element name="SetVouchers">
+<xsd:annotation>
+<xsd:documentation>SetVouchers message - Annex A.4.1.3</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="VoucherList" type="tns:VoucherList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- SetVouchersResponse -->
+<xsd:element name="SetVouchersResponse">
+<xsd:annotation>
+<xsd:documentation>SetVouchersResponse message - Annex A.4.1.3</xsd:documentation>
+</xsd:annotation>
+ <xsd:complexType/>
+</xsd:element>
+<!-- GetOptions -->
+<xsd:element name="GetOptions">
+<xsd:annotation>
+<xsd:documentation>GetOptions message - Annex A.4.1.4</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="OptionName">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- GetOptionsResponse -->
+<xsd:element name="GetOptionsResponse">
+<xsd:annotation>
+<xsd:documentation>GetOptionsResponse message - Annex A.4.1.4</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="OptionList" type="tns:OptionList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- Upload -->
+<xsd:element name="Upload">
+<xsd:annotation>
+<xsd:documentation>Upload message - Annex A.4.1.5</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+<xsd:element name="FileType">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:pattern value="Vendor Configuration File"/>
+<xsd:pattern value="Vendor Log File"/>
+<xsd:pattern value="X [0-9A-F]{6} .*"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="URL">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Username">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Password">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+ </xsd:element>
+<xsd:element name="DelaySeconds" type="xsd:unsignedInt"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- UploadResponse -->
+<xsd:element name="UploadResponse">
+<xsd:annotation>
+<xsd:documentation>UploadResponse message - Annex A.4.1.5</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Status">
+<xsd:simpleType>
+<xsd:restriction base="xsd:int">
+<xsd:enumeration value="0">
+<xsd:annotation>
+<xsd:documentation>Upload has been completed</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+<xsd:enumeration value="1">
+<xsd:annotation>
+<xsd:documentation>Upload has not yet completed</xsd:documentation>
+</xsd:annotation>
+</xsd:enumeration>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="StartTime" type="xsd:dateTime"/>
+<xsd:element name="CompleteTime" type="xsd:dateTime"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- FactoryReset -->
+<xsd:element name="FactoryReset">
+<xsd:annotation>
+<xsd:documentation>FactoryReset message - Annex A.4.1.6</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- FactoryResetResponse -->
+<xsd:element name="FactoryResetResponse">
+<xsd:annotation>
+<xsd:documentation>FactoryResetResponse message - Annex A.4.1.6</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- GetAllQueuedTransfers -->
+<xsd:element name="GetAllQueuedTransfers">
+<xsd:annotation>
+<xsd:documentation>GetAllQueuedTransfers message - Annex A.4.1.7</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- GetAllQueuedTransfersResponse -->
+<xsd:element name="GetAllQueuedTransfersResponse">
+<xsd:annotation>
+<xsd:documentation>GetAllQueuedTransfersResponse message - Annex A.4.1.7</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="TransferList" type="tns:AllTransferList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+ <!--
+ACS messages - Annex A.3.-->
+<!-- Inform -->
+<xsd:element name="Inform">
+<xsd:annotation>
+<xsd:documentation>Inform message - Annex A.3.3.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="DeviceId" type="tns:DeviceIdStruct"/>
+<xsd:element name="Event" type="tns:EventList"/>
+<xsd:element name="MaxEnvelopes" type="xsd:unsignedInt"/>
+<xsd:element name="CurrentTime" type="xsd:dateTime"/>
+<xsd:element name="RetryCount" type="xsd:unsignedInt"/>
+<xsd:element name="ParameterList" type="tns:ParameterValueList"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- InformResponse -->
+<xsd:element name="InformResponse">
+<xsd:annotation>
+<xsd:documentation>InformResponse message - Annex A.3.3.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="MaxEnvelopes" type="xsd:unsignedInt"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- TransferComplete -->
+<xsd:element name="TransferComplete">
+<xsd:annotation>
+<xsd:documentation>TransferComplete message - Annex A.3.3.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CommandKey" type="tns:CommandKeyType"/>
+<xsd:element name="FaultStruct" type="tns:FaultStruct"/>
+<xsd:element name="StartTime" type="xsd:dateTime"/>
+<xsd:element name="CompleteTime" type="xsd:dateTime"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- TransferCompleteResponse -->
+<xsd:element name="TransferCompleteResponse">
+<xsd:annotation>
+<xsd:documentation>TransferCompleteResponse message - Annex A.3.3.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!-- AutonomousTransferComplete -->
+<xsd:element name="AutonomousTransferComplete">
+<xsd:annotation>
+<xsd:documentation>AutonomousTransferComplete message - Annex A.3.3.3</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="AnnounceURL">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="1024"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="TransferURL">
+ <xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="1024"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="IsDownload" type="xsd:boolean"/>
+<xsd:element name="FileType">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:pattern value="Firmware Upgrade Image"/>
+<xsd:pattern value="Web Content"/>
+<xsd:pattern value="Vendor Configuration File"/>
+<xsd:pattern value="Vendor Log File"/>
+<xsd:pattern value="X [0-9A-F]{6} .*"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FileSize" type="xsd:unsignedInt"/>
+<xsd:element name="TargetFileName">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FaultStruct" type="tns:FaultStruct"/>
+<xsd:element name="StartTime" type="xsd:dateTime"/>
+<xsd:element name="CompleteTime" type="xsd:dateTime"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- AutonomousTransferCompleteResponse -->
+<xsd:element name="AutonomousTransferCompleteResponse">
+<xsd:annotation>
+<xsd:documentation>AutonomousTransferCompleteResponse message - Annex
+A.3.3.3</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+<!--
+Optional ACS messages - Annex A.4.-->
+<!-- Kicked -->
+<xsd:element name="Kicked">
+<xsd:annotation>
+<xsd:documentation>Kicked message - Annex A.4.2.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="Command">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="32"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Referer">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Arg">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="256"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Next">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="1024"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- KickedResponse -->
+<xsd:element name="KickedResponse">
+<xsd:annotation>
+<xsd:documentation>KickedResponse message - Annex A.4.2.1</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="NextURL">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="1024"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- RequestDownload -->
+<xsd:element name="RequestDownload">
+<xsd:annotation>
+<xsd:documentation>RequestDownload message - Annex A.4.2.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="FileType">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="64"/>
+<xsd:pattern value="Firmware Upgrade Image"/>
+<xsd:pattern value="Web Content"/>
+<xsd:pattern value="Vendor Configuration File"/>
+<xsd:pattern value="X [0-9A-F]{6} .*"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FileTypeArg" type="tns:FileTypeArg"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!-- RequestDownloadResponse -->
+<xsd:element name="RequestDownloadResponse">
+<xsd:annotation>
+<xsd:documentation>RequestDownloadResponse message - Annex A.4.2.2</xsd:documentation>
+</xsd:annotation>
+<xsd:complexType/>
+</xsd:element>
+
+</xsd:schema>

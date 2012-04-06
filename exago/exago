@@ -1,0 +1,97 @@
+#!/bin/bash
+
+# Command
+ERL_COMMAND='exec erl -pa ./ebin ./deps/*/ebin -noshell '
+
+# Join 
+join_command() {
+    COMMAND_START='-eval '
+    COMMAND_END=' -s erlang halt'
+    $ERL_COMMAND$COMMAND_START$1$COMMAND_END
+}
+
+# Commands
+TUTORIAL_EXAMPLE='exago_examples:tutorial_example()'
+SMS_EXAMPLE='exago_examples:sms_example()'
+CIRCULAR_EXAMPLE='exago_examples:circular_example()'
+ELEVATOR_EXAMPLE='exago_examples:elevator_example()'
+COMMA=','
+QUOTE='"'
+OPEN_PAREN='('
+CLOSE_PAREN=')'
+TEST_CSV_FILE_FUN='''exago_user:test_csv_log'
+TEST_STATE_MACHINE_FUN='''exago_user:test_state_machine_file'
+TEST_ROW_FORMAT_FUN='''exago_user:test_row_format_file'
+
+case $1 in 
+    run-tutorial-example) join_command $TUTORIAL_EXAMPLE;;
+    run-sms-example) join_command $SMS_EXAMPLE;;
+    run-circular-example) join_command $CIRCULAR_EXAMPLE;;
+    run-elevator-example) join_command $ELEVATOR_EXAMPLE;;
+    test-csv-file) 
+	if test -z $1
+	then
+	    echo "error: insufficient arguments provided."
+	else
+	    if test -z $2
+	    then
+		echo "error: insufficient arguments provided."
+	    else
+		if test -z $3
+		then
+		    echo "error: insufficient arguments provided."
+		else
+		    CSV_ARGS=$OPEN_PAREN$QUOTE$2$QUOTE$COMMA$QUOTE$3$QUOTE$CLOSE_PAREN
+		    join_command $TEST_CSV_FILE_FUN$CSV_ARGS
+		fi
+	    fi
+	fi;;
+    test-state-machine) 
+	if test -z $1
+	then
+	    echo "error: insufficient arguments provided."
+	else
+	    if test -z $2
+	    then
+		echo "error: insufficient arguments provided."
+    else
+		if test -z $3
+		then
+		    echo "error: insufficient arguments provided."
+		else
+		    SM_ARGS=$OPEN_PAREN$QUOTE$2$QUOTE$COMMA$QUOTE$3$QUOTE$CLOSE_PAREN
+		    join_command $TEST_STATE_MACHINE_FUN$SM_ARGS
+		fi
+	    fi
+	fi;;
+    test-row-format) 
+	if test -z $1
+	then
+	    echo "error: insufficient arguments provided."
+	else
+	    if test -z $2
+	    then
+		echo "error: insufficient arguments provided."
+	    else
+		if test -z $3
+		then
+		    echo "error: insufficient arguments provided."
+		else
+		    if test -z $4
+		    then
+			echo "error: insufficient arguments provided."
+		    else
+			RF_ARGS=$OPEN_PAREN$QUOTE$2$QUOTE$COMMA$QUOTE$3$QUOTE$CLOSE_PAREN
+			join_command $TEST_CSV_FILE_FUN$RF_ARGS
+		    fi
+		fi
+	    fi
+	fi;;
+    analyze)
+	...;;
+    
+    *) 
+	echo "Command not found. "
+	exit
+	;;
+esac

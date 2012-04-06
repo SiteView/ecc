@@ -1,0 +1,68 @@
+[Protocol]
+Name=MAPI
+CommonName=MS Exchange (MAPI)
+Category=Mailing Services
+Description=Messaging Application Programming Interface designed to allow applications to send and receive email messages.
+Icon=bitmaps\imap.bmp
+Hidden=0
+Single=1
+Multi=0
+
+[Template]
+globals.h=globals.h
+@@TestName@@.usr=Multi.usr
+
+[Vugen]
+EnableRegenerate=0
+DLL=insp_gen.dll
+CFG_TAB_DLL=comrts_tab.dll
+ExtraSectionsExt=.h,.vbs,.js,.vba,.bas,.cls,.dat,.txt,.bin
+TemplateDir=MAPI
+32BitRecord=0
+SectionCombo=1
+WINNT=mdrv.exe
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+;;
+EnableThreads=1
+EnableAutoTranPerFunc=1
+
+SELECTION_TRANS_DLL = wsconv32.dll
+SELECTION_TRANS_FUNC = lrs_proccess_selection
+SELECTION_TRANS_FREE_FUNC = lrs_free_selection_buffer
+
+[API.js]
+extra_section=jscript_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vbs]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vba]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.c]
+extra_section=lr_general,c_general
+mapi_delete_mail=lr_cmd_color;int mapi_delete_mail(char *transaction, char *option[, argument]... )
+mapi_delete_mail_ex=lr_cmd_color;int mapi_delete_mail_ex(MAPI *ppmapi,char *transaction, char *option[, argument]... )
+mapi_get_property_sz=lr_cmd_color;char *mapi_get_property_sz(char *option)
+mapi_get_property_sz_ex=lr_cmd_color;char *mapi_get_property_sz_ex(MAPI *ppmapi,char *option)
+mapi_logon=lr_cmd_color;int mapi_logon(char *transaction, char *profile[, argument]... )
+mapi_logon_ex=lr_cmd_color;int mapi_logon_ex(MAPI *ppmapi,char *transaction, char *profile[, argument]... )
+mapi_logout=lr_cmd_color;int mapi_logout()
+mapi_logout_ex=lr_cmd_color;int mapi_logout_ex(MAPI *ppmapi)
+mapi_read_next_mail=lr_cmd_color;int mapi_read_next_mail(char *transaction, char *option[, argument]... )
+mapi_read_next_mail_ex=lr_cmd_color;int mapi_read_next_mail_ex(MAPI *ppmapi,char *transaction, char *option[, argument]... )
+mapi_send_mail=lr_cmd_color;int mapi_send_mail(char *transaction, char *option[, argument]... )
+mapi_send_mail_ex=lr_cmd_color;int mapi_send_mail_ex(MAPI *ppmapi,char *transaction, char *option[, argument]... )
+mapi_set_property_sz=lr_cmd_color;void mapi_set_property_sz(char *option, char *value)
+mapi_set_property_sz_ex=lr_cmd_color;void mapi_set_property_sz_ex(MAPI *ppmapi,char *option, char *value)
+
+LAST=c_cmd_color
+ENDITEM=c_cmd_color

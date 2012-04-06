@@ -1,0 +1,94 @@
+[Protocol]
+Name=MMS
+CommonName=Media Player (MMS)
+Category=Streaming
+Description=Streaming data from a media server using Microsoft's MMS protocol
+Icon=bitmaps\mms.bmp
+Hidden=0
+Single=1
+Multi=0
+
+[Template]
+globals.h=globals.h
+@@TestName@@.usr=Multi.usr
+
+[Vugen]
+DLL=insp_gen.dll
+CFG_TAB_DLL=comrts_tab.dll,modemspeedtab.dll
+CFG_TAB_XML=speed_simulation.xml
+TemplateDir=MMS
+32BitRecord=0
+ExtraColor=colors\multiprotocolors.dat
+SectionCombo=1
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WINNT=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+ExtraSectionsExt=.h,.vbs,.js,.vba,.bas,.cls,.dat,.txt,.bin
+;;
+EnableAutoTranPerFunc=1
+EnableThreads=1
+
+SELECTION_TRANS_DLL = wsconv32.dll
+SELECTION_TRANS_FUNC = lrs_proccess_selection
+SELECTION_TRANS_FREE_FUNC = lrs_free_selection_buffer
+
+[API.c]
+extra_section=lr_general,c_general
+mms_close=lr_cmd_color;int mms_close()
+mms_close_ex=lr_cmd_color;int mms_close_ex(MMS *ppmms)
+mms_get_property=lr_cmd_color;double mms_get_property(int propertyType)
+mms_get_property_ex=lr_cmd_color;double mms_get_property_ex(MMS *ppmms, int propertyType)
+mms_isactive=lr_cmd_color;int mms_isactive()
+mms_isactive_ex=lr_cmd_color;int mms_isactive_ex(MMS *ppmms)
+mms_pause=lr_cmd_color;int mms_pause()
+mms_pause_ex=lr_cmd_color;int mms_pause_ex(MMS *ppmms)
+mms_play=lr_cmd_color;int mms_play(char *transname, char *urladdress[, argument]... )
+mms_play_ex=lr_cmd_color;int mms_play_ex(MMS *ppmms, char *transname, char *urladdress[, argument]... )
+mms_resume=lr_cmd_color;int mms_resume(DWORD resumetime, DWORD duration)
+mms_resume_ex=lr_cmd_color;int mms_resume_ex(MMS *ppmms, DWORD resumetime,DWORD duration)
+mms_sampling=lr_cmd_color;int mms_sampling(DWORD duration)
+mms_sampling_ex=lr_cmd_color;int mms_sampling_ex(MMS *ppmms, DWORD duration)
+mms_set_property=lr_cmd_color;int mms_set_property(int propertyType, char *propertyValue)
+mms_set_property_ex=lr_cmd_color;int mms_set_property_ex(MMS *ppmms, int propertyType, char *propertyValue)
+mms_set_timeout=lr_cmd_color;int mms_set_timeout(int totype, int tovalue)
+mms_set_timeout_ex=lr_cmd_color;int mms_set_timeout_ex(MMS *ppmms, int totype, int tovalue)
+mms_stop=lr_cmd_color;int mms_stop()
+mms_stop_ex=lr_cmd_color;int mms_stop_ex(MMS *ppmms)
+LRMMS_STREAM_1_TYPE=lr_cmd_color;
+LRMMS_STREAM_2_TYPE=lr_cmd_color;
+LRMMS_STREAM_3_TYPE=lr_cmd_color;
+LRMMS_STREAM_4_TYPE=lr_cmd_color;
+LRMMS_STREAM_5_TYPE=lr_cmd_color;
+LRMMS_STREAM_6_TYPE=lr_cmd_color;
+LRMMS_STREAM_7_TYPE=lr_cmd_color;
+LRMMS_STREAM_8_TYPE=lr_cmd_color;
+LRMMS_STREAM_MAX=lr_cmd_color;
+LRMMS_PACKET_QUALITY=lr_cmd_color;
+LRMMS_TIME_QUALITY=lr_cmd_color;
+LRMMS_STREAM_COUNT=lr_cmd_color;
+LRMMS_STREAM_RATE=lr_cmd_color;
+LRMMS_PACKETS_RECOVERED=lr_cmd_color;
+LRMMS_PACKETS_LOST=lr_cmd_color;
+LRMMS_BUFFERING_COUNT=lr_cmd_color;
+LRMMS_BUFFERING_TIME=lr_cmd_color;
+LRMMS_INTERRUPTS=lr_cmd_color;
+LRMMS_RECM_BANDWIDTH=lr_cmd_color;
+LRMMS_RATIO_BANDWIDTH=lr_cmd_color;
+LRMMS_RECM_DURATION=lr_cmd_color;
+LRMMS_SAMPLING_RATE=lr_cmd_color;
+STREAM_IS_UNKNOWN=lr_cmd_color;
+STREAM_IS_VIDEO=lr_cmd_color;
+STREAM_IS_AUDIO=lr_cmd_color;
+STREAM_IS_SCRIPT=lr_cmd_color;
+STREAM_IS_IMAGE=lr_cmd_color;
+REPLAY_TIL_END=lr_cmd_color;
+CURRENT_POSITION=lr_cmd_color;
+LRSTRM_OPEN_TIMEOUT=lr_cmd_color;
+LRSTRM_CLOSE_TIMEOUT=lr_cmd_color;

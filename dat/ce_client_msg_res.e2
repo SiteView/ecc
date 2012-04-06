@@ -1,0 +1,16 @@
+[Messages]
+Version=1.000
+-70499=CE: Failed to construct %1; reason %2.
+-70498=CE: Per-thread manager not valid in %1.
+-70497=CE: Invalid handle in %1 call.
+-70496=CE: Perform operation on not ready group.
+-70495=CE: Failed to create %1 for service %2.
+-70494=CE: Failure in xdr encoding : %1.
+-70493=CE: Failure in xdr decoding : %1.
+-70492=CE: Failed to post message %1 to %2.
+-70491=CE: Failure in creation group. Reason is %1.
+-70490=CE: Unknown value %_1_ld for type %2.
+-70489=CE: Not found handle %1 during %2.
+-70488=CE: Failed to allocate memory for %1 required size = %_2_ld bytes.
+Msg_handler_lowest_msg=-70499
+Msg_handler_highest_msg=-70488

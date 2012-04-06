@@ -1,0 +1,1428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Interface Functions to the SNMP toolkit agent
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmpa</span> contains interface functions to the 
+SNMP agent.
+</p><a name="data_types"><!-- Empty --></a>
+</div>
+
+<h3>DATA TYPES</h3>
+<div class="REFBODY">
+
+<div class="example"><pre>
+oid() = [byte()] 
+atl_type() = read | write | read_write
+notification_delivery_info() = #snmpa_notification_delivery_info{}
+    
+</pre></div>
+
+<p>The <span class="code">oid()</span> type is used to represent an ASN.1 OBJECT IDENTIFIER. 
+</p>
+<p>The record <span class="code">snmpa_notification_delivery_info</span> contains the following fields: 
+</p>
+<dl>
+
+<dt>
+<span class="code">tag = term()</span>
+</dt>
+
+<dd>
+
+A user defined identity representing this notification send 
+operation.<br />
+
+
+</dd>
+
+<dt>
+<span class="code">mod = module()</span>
+</dt>
+
+<dd>
+
+A module implementing the 
+<a href="snmpa_notification_delivery_info_receiver.html">snmpa_notification_delivery_info_receiver</a>
+behaviour. The info functions of this module will be called at 
+various stages of delivery. <br />
+
+
+</dd>
+
+<dt>
+<span class="code">extra = term()</span>
+</dt>
+
+<dd>
+
+This is any extra info the user wants to have supplied 
+when the functions in the callback module is called. <br />
+
+
+</dd>
+
+</dl>
+<a name="add_agent_caps"><!-- Empty --></a>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="add_agent_caps-2"><span class="bold_code">add_agent_caps(SysORID, SysORDescr) -&#62; SysORIndex</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">SysORID = oid()</span><br/>
+<span class="bold_code">SysORDescr = string()</span><br/>
+<span class="bold_code">SysORIndex = integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function can be used to add an AGENT-CAPABILITY
+statement to the sysORTable in the agent. The table is
+defined in the SNMPv2-MIB.
+</p><a name="del_agent_caps"><!-- Empty --></a>
+</div>
+
+<p><a name="del_agent_caps-1"><span class="bold_code">del_agent_caps(SysORIndex) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">SysORIndex = integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This function can be used to delete an AGENT-CAPABILITY
+statement to the sysORTable in the agent. This table is
+defined in the SNMPv2-MIB. 
+</p><a name="get_agent_caps"><!-- Empty --></a>
+</div>
+
+<p><a name="get_agent_caps-0"><span class="bold_code">get_agent_caps() -&#62; [[SysORIndex, SysORID, SysORDescr, SysORUpTime]]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">SysORIndex = integer()</span><br/>
+<span class="bold_code">SysORId = oid()</span><br/>
+<span class="bold_code">SysORDescr = string()</span><br/>
+<span class="bold_code">SysORUpTime = integer()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Returns all AGENT-CAPABILITY statements in the sysORTable
+in the agent. This table is defined in the SNMPv2-MIB. 
+</p><a name="get"><!-- Empty --></a>
+</div>
+
+<p><a name="get-2"><span class="bold_code">get(Agent, Vars) -&#62; Values | {error, Reason}</span></a><br/>
+<a name="get-3"><span class="bold_code">get(Agent, Vars, Context) -&#62; Values | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Vars = [oid()]</span><br/>
+<span class="bold_code">Context = string()</span><br/>
+<span class="bold_code">Values = [term()]</span><br/>
+<span class="bold_code">Reason = {atom(), oid()}</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Performs a GET operation on the agent. All loaded MIB
+objects are visible in this operation. The agent calls the
+corresponding instrumentation functions just as if it was a
+GET request coming from a manager. 
+</p>
+<p>Note that the request specific parameters (such as 
+<a href="#current_request_id">current_request_id</a>) 
+are not accessible for the instrumentation functions if this 
+function is used. 
+</p><a name="get_next"><!-- Empty --></a>
+</div>
+
+<p><a name="get_next-2"><span class="bold_code">get_next(Agent, Vars) -&#62; Values | {error, Reason}</span></a><br/>
+<a name="get_next-3"><span class="bold_code">get_next(Agent, Vars, Context) -&#62; Values | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Vars = [oid()]</span><br/>
+<span class="bold_code">Context = string()</span><br/>
+<span class="bold_code">Values = [{oid(), term()}]</span><br/>
+<span class="bold_code">Reason = {atom(), oid()}</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Performs a GET-NEXT operation on the agent. All loaded MIB
+objects are visible in this operation. The agent calls the
+corresponding instrumentation functions just as if it was a
+GET request coming from a manager. 
+</p>
+<p>Note that the request specific parameters (such as 
+<span class="code">snmpa:current_request_id/0</span> are not accessible for the 
+instrumentation functions if this function is used. 
+</p><a name="backup"><!-- Empty --></a>
+</div>
+
+<p><a name="backup-1"><span class="bold_code">backup(BackupDir) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="backup-2"><span class="bold_code">backup(Agent, BackupDir) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">BackupDir = string()</span><br/>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Backup persistent/permanent data handled by the agent
+(such as local-db, mib-data and vacm). 
+</p>
+<p>Data stored by mnesia is not handled. 
+</p>
+<p>BackupDir cannot be identical to DbDir. 
+</p><a name="info"><!-- Empty --></a>
+</div>
+
+<p><a name="info-0"><span class="bold_code">info() -&#62; [{Key, Value}]</span></a><br/>
+<a name="info-1"><span class="bold_code">info(Agent) -&#62; [{Key, Value}]</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Returns a list (a dictionary) containing information about
+the agent. Information includes loaded MIBs, registered
+sub-agents, some information about the memory allocation. 
+</p>
+<p>As of version 4.4 the format of the info has been changed. 
+To convert the info to the old format, call the 
+<a href="#old_info_format">old_info_format</a>
+function. 
+</p><a name="old_info_format"><!-- Empty --></a>
+</div>
+
+<p><a name="old_info_format-1"><span class="bold_code">old_info_format(NewInfo) -&#62; OldInfo</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">OldInfo = NewInfo = [{Key, Value}]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>As of version 4.4 the format of the info has been changed. 
+This function is used to convert to the old (pre-4.4) info 
+format. 
+</p><a name="load_mibs"><!-- Empty --></a>
+</div>
+
+<p><a name="load_mibs-1"><span class="bold_code">load_mibs(Mibs) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="load_mibs-2"><span class="bold_code">load_mibs(Agent,Mibs) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Mibs = [MibName]</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Loads <span class="code">Mibs</span> into an agent. If the agent cannot load
+all MIBs, it will indicate where loading was aborted. The
+<span class="code">MibName</span> is the name of the Mib, including the path to
+where the compiled mib is found. For example,
+</p>
+<div class="example"><pre>
+          Dir = code:priv_dir(my_app) ++ &#34;/mibs/&#34;,
+          snmpa:load_mibs(snmp_master_agent, [Dir ++ &#34;MY-MIB&#34;]).
+        
+</pre></div>
+<a name="unload_mibs"><!-- Empty --></a>
+</div>
+
+<p><a name="unload_mibs-1"><span class="bold_code">unload_mibs(Mibs) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="unload_mibs-2"><span class="bold_code">unload_mibs(Agent,Mibs) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Mibs = [MibName]</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unloads MIBs into an agent. If it cannot unload all MIBs,
+it will indicate where unloading was aborted. 
+</p><a name="which_mibs"><!-- Empty --></a>
+</div>
+
+<p><a name="which_mibs-0"><span class="bold_code">which_mibs() -&#62; Mibs</span></a><br/>
+<a name="which_mibs-1"><span class="bold_code">which_mibs(Agent) -&#62; Mibs</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Mibs = [{MibName, MibFile}]</span><br/>
+<span class="bold_code">MibName = atom()</span><br/>
+<span class="bold_code">MibFile = string()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Retrieve the list of all the mibs loaded into this agent. Default 
+is the master agent. 
+</p><a name="whereis_mib"><!-- Empty --></a>
+</div>
+
+<p><a name="whereis_mib-1"><span class="bold_code">whereis_mib(MibName) -&#62; {ok, MibFile} | {error, Reason}</span></a><br/>
+<a name="whereis_mib-2"><span class="bold_code">whereis_mib(Agent, MibName) -&#62; {ok, MibFile} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">MibName = atom()</span><br/>
+<span class="bold_code">MibFile = string()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get the full path to the (compiled) mib-file. 
+</p><a name="current_request_id"><!-- Empty --></a><a name="current_context"><!-- Empty --></a><a name="current_community"><!-- Empty --></a><a name="current_address"><!-- Empty --></a>
+</div>
+
+<p><a name="current_request_id-0"><span class="bold_code">current_request_id() -&#62; {value, RequestId} | false</span></a><br/>
+<a name="current_context-0"><span class="bold_code">current_context() -&#62; {value, Context} | false</span></a><br/>
+<a name="current_community-0"><span class="bold_code">current_community() -&#62; {value, Community} | false</span></a><br/>
+<a name="current_address-0"><span class="bold_code">current_address() -&#62; {value, Address} | false</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">RequestId = integer()</span><br/>
+<span class="bold_code">Context = string()</span><br/>
+<span class="bold_code">Community = string()</span><br/>
+<span class="bold_code">Address = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Get the request-id, context, community and address of the 
+request currently being processed by the agent. 
+</p>
+<p>Note that these functions is intended to be called by the 
+instrumentation functions and <strong>only</strong> if they are 
+executed in the context of the agent process (e.g. it does 
+not work if called from a spawned process).
+</p><a name="enum_to_int"><!-- Empty --></a>
+</div>
+
+<p><a name="enum_to_int-2"><span class="bold_code">enum_to_int(Name, Enum) -&#62; {value, Int} | false</span></a><br/>
+<a name="enum_to_int-3"><span class="bold_code">enum_to_int(Db, Name, Enum) -&#62; {value, Int} | false</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Db = term()</span><br/>
+<span class="bold_code">Name = atom()</span><br/>
+<span class="bold_code">Enum = atom()</span><br/>
+<span class="bold_code">Int = int()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts the symbolic value <span class="code">Enum</span> to the
+corresponding integer of the enumerated object or type
+<span class="code">Name</span> in a MIB. The MIB must be loaded. 
+
+</p>
+<p><span class="code">false</span> is returned if the object or type is not
+defined in any loaded MIB, or if it does not define the
+symbolic value as enumerated.
+
+</p>
+<p><span class="code">Db</span> is a reference to the symbolic store database 
+(retrieved by a call to <span class="code">get_symbolic_store_db/0</span>). 
+</p><a name="int_to_enum"><!-- Empty --></a>
+</div>
+
+<p><a name="int_to_enum-2"><span class="bold_code">int_to_enum(Name, Int) -&#62; {value, Enum} | false</span></a><br/>
+<a name="int_to_enum-3"><span class="bold_code">int_to_enum(Db, Name, Int) -&#62; {value, Enum} | false</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Db = term()</span><br/>
+<span class="bold_code">Name = atom()</span><br/>
+<span class="bold_code">Int = int()</span><br/>
+<span class="bold_code">Enum = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts the integer <span class="code">Int</span> to the corresponding
+symbolic value of the enumerated object or type <span class="code">Name</span> in
+a MIB. The MIB must be loaded. 
+
+</p>
+<p><span class="code">false</span> is returned if the object or type is not
+defined in any loaded MIB, or if it does not define the
+symbolic value as enumerated.
+
+</p>
+<p><span class="code">Db</span> is a reference to the symbolic store database 
+(retrieved by a call to <span class="code">get_symbolic_store_db/0</span>). 
+</p><a name="name_to_oid"><!-- Empty --></a>
+</div>
+
+<p><a name="name_to_oid-1"><span class="bold_code">name_to_oid(Name) -&#62; {value, oid()} | false</span></a><br/>
+<a name="name_to_oid-2"><span class="bold_code">name_to_oid(Db, Name) -&#62; {value, oid()} | false</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Db = term()</span><br/>
+<span class="bold_code">Name = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Looks up the OBJECT IDENTIFIER of a MIB object, given the
+symbolic name. Note, the OBJECT IDENTIFIER is given for the
+object, not for an instance. 
+</p>
+<p><span class="code">false</span> is returned if the object is not defined in any
+loaded MIB. 
+</p>
+<p><span class="code">Db</span> is a reference to the symbolic store database 
+(retrieved by a call to <span class="code">get_symbolic_store_db/0</span>). 
+</p><a name="oid_to_name"><!-- Empty --></a>
+</div>
+
+<p><a name="oid_to_name-1"><span class="bold_code">oid_to_name(OID) -&#62; {value, Name} | false</span></a><br/>
+<a name="oid_to_name-2"><span class="bold_code">oid_to_name(Db, OID) -&#62; {value, Name} | false</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Db = term()</span><br/>
+<span class="bold_code">OID = oid()</span><br/>
+<span class="bold_code">Name = atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Looks up the symbolic name of a MIB object, given OBJECT
+IDENTIFIER. 
+</p>
+<p><span class="code">false</span> is returned if the object is not defined in any
+loaded MIB. 
+</p>
+<p><span class="code">Db</span> is a reference to the symbolic store database 
+(retrieved by a call to <span class="code">get_symbolic_store_db/0</span>). 
+</p><a name="which_aliasnames"><!-- Empty --></a>
+</div>
+
+<p><a name="which_aliasnames-0"><span class="bold_code">which_aliasnames() -&#62; Result</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Result = [atom()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Retrieve all alias-names known to the agent.
+</p><a name="which_tables"><!-- Empty --></a>
+</div>
+
+<p><a name="which_tables-0"><span class="bold_code">which_tables() -&#62; Result</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Result = [atom()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Retrieve all tables known to the agent.
+</p><a name="which_variables"><!-- Empty --></a>
+</div>
+
+<p><a name="which_variables-0"><span class="bold_code">which_variables() -&#62; Result</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Result = [atom()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Retrieve all variables known to the agent.
+</p><a name="log_to_txt"><!-- Empty --></a>
+</div>
+
+<p><a name="log_to_txt-2"><span class="bold_code">log_to_txt(LogDir, Mibs)</span></a><br/>
+<a name="log_to_txt-3"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-4"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-5"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-6"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="log_to_txt-7"><span class="bold_code">log_to_txt(LogDir, Mibs, OutFile, LogName, LogFile, Start, Stop) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">LogDir = string()</span><br/>
+<span class="bold_code">Mibs = [MibName]</span><br/>
+<span class="bold_code">MibName = string()</span><br/>
+<span class="bold_code">OutFile = string()</span><br/>
+<span class="bold_code">LogName = string()</span><br/>
+<span class="bold_code">LogFile = string()</span><br/>
+<span class="bold_code">Start = Stop = null | datetime() | {local_time,datetime()} | {universal_time,datetime()} </span><br/>
+<span class="bold_code">Reason = disk_log_open_error() | file_open_error() | term()</span><br/>
+<span class="bold_code">disk_log_open_error() = {LogName, term()}</span><br/>
+<span class="bold_code">file_open_error() = {OutFile, term()}</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts an Audit Trail Log to a readable text file. 
+<span class="code">OutFile</span> defaults to &#34;./snmpa_log.txt&#34;. 
+<span class="code">LogName</span> defaults to &#34;snmpa_log&#34;. 
+<span class="code">LogFile</span> defaults to &#34;snmpa.log&#34;. 
+See <a href="snmp.html#log_to_txt">snmp:log_to_txt</a>
+for more info.
+</p><a name="change_log_size"><!-- Empty --></a>
+</div>
+
+<p><a name="change_log_size-1"><span class="bold_code">change_log_size(NewSize) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">NewSize = {MaxBytes, MaxFiles}</span><br/>
+<span class="bold_code">MaxBytes = integer()</span><br/>
+<span class="bold_code">MaxFiles = integer()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Changes the log size of the Audit Trail Log. The application must 
+be configured to use the audit trail log function. Please refer to 
+disk_log(3) in Kernel Reference Manual for a description of how to 
+change the log size. 
+</p>
+<p>The change is permanent, as long as the log is not deleted. 
+That means, the log size is remembered across reboots. 
+</p><a name="set_log_type"><!-- Empty --></a>
+</div>
+
+<p><a name="set_log_type-1"><span class="bold_code">set_log_type(NewType) -&#62; {ok, OldType} | {error, Reason}</span></a><br/>
+<a name="set_log_type-2"><span class="bold_code">set_log_type(Agent, NewType) -&#62; {ok, OldType} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">NewType = OldType = atl_type()</span><br/>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Changes the run-time Audit Trail log type. 
+</p>
+<p>Note that this has no effect on the application configuration as
+defined by configuration files, so a node restart will revert the 
+config to whatever is in those files. 
+</p>
+<p>This function is primarily useful in testing/debugging 
+scenarios. 
+</p><a name="mib_of"><!-- Empty --></a>
+</div>
+
+<p><a name="mib_of-1"><span class="bold_code">mib_of(Oid) -&#62; {ok, MibName} | {error, Reason}</span></a><br/>
+<a name="mib_of-2"><span class="bold_code">mib_of(Agent, Oid) -&#62; {ok, MibName} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Oid = oid()</span><br/>
+<span class="bold_code">MibName = atom()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Finds the mib corresponding to the <span class="code">Oid</span>. If it is a
+variable, the Oid must be 
+&#60;Oid for var&#62;.0 and if it is a table, Oid must be 
+&#60;table&#62;.&#60;entry&#62;.&#60;col&#62;.&#60;any&#62;
+</p><a name="me_of"><!-- Empty --></a>
+</div>
+
+<p><a name="me_of-1"><span class="bold_code">me_of(Oid) -&#62; {ok, Me} | {error, Reason}</span></a><br/>
+<a name="me_of-2"><span class="bold_code">me_of(Agent, Oid) -&#62; {ok, Me} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Oid = oid()</span><br/>
+<span class="bold_code">Me = #me{}</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Finds the mib entry corresponding to the <span class="code">Oid</span>. If it is a
+variable, the Oid must be 
+&#60;Oid for var&#62;.0 and if it is a table, Oid must be 
+&#60;table&#62;.&#60;entry&#62;.&#60;col&#62;.&#60;any&#62;
+</p><a name="register_notification_filter"><!-- Empty --></a>
+</div>
+
+<p><a name="register_notification_filter-3"><span class="bold_code">register_notification_filter(Id, Mod, Data) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="register_notification_filter-4"><span class="bold_code">register_notification_filter(Agent, Id, Mod, Data) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="register_notification_filter-4"><span class="bold_code">register_notification_filter(Id, Mod, Data, Where) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="register_notification_filter-5"><span class="bold_code">register_notification_filter(Agent, Id, Mod, Data, Where) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Id = filter_id()</span><br/>
+<span class="bold_code">filter_id() = term()</span><br/>
+<span class="bold_code">Mod = atom()</span><br/>
+<span class="bold_code">Data = term()</span><br/>
+<span class="bold_code">Where = filter_position()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+<span class="bold_code">filter_position() = first | last | {insert_before, filter_id()} | {insert_after, filter_id()} </span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Registers a notification filter.
+
+</p>
+<p><span class="code">Mod</span> is a module implementing the 
+<span class="code">snmpa_notification_filter</span> behaviour.
+</p>
+<p><span class="code">Data</span> will be passed on to the filter when calling the
+functions of the behaviour.
+</p><a name="unregister_notification_filter"><!-- Empty --></a>
+</div>
+
+<p><a name="unregister_notification_filter-1"><span class="bold_code">unregister_notification_filter(Id) -&#62; ok | {error, Reason}</span></a><br/>
+<a name="unregister_notification_filter-2"><span class="bold_code">unregister_notification_filter(Agent, Id) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Id = filter_id()</span><br/>
+<span class="bold_code">filter_id() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unregister a notification filter. 
+</p><a name="which_notification_filter"><!-- Empty --></a>
+</div>
+
+<p><a name="which_notification_filter-0"><span class="bold_code">which_notification_filter() -&#62; Filters</span></a><br/>
+<a name="which_notification_filter-1"><span class="bold_code">which_notification_filter(Agent) -&#62; Filters</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Filters = [filter_id()]</span><br/>
+<span class="bold_code">filter_id() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>List all notification filters in an agent.
+</p><a name="set_request_limit"><!-- Empty --></a>
+</div>
+
+<p><a name="set_request_limit-1"><span class="bold_code">set_request_limit(NewLimit) -&#62; {ok, OldLimit} | {error, Reason}</span></a><br/>
+<a name="set_request_limit-2"><span class="bold_code">set_request_limit(Agent, NewLimit) -&#62; {ok, OldLimit} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">NewLimit = OldLimit = infinity | integer() &#62;= 0</span><br/>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Reason = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Changes the request limit. 
+</p>
+<p>Note that this has no effect on the application configuration as
+defined by configuration files, so a node restart will revert the 
+config to whatever is in those files. 
+</p>
+<p>This function is primarily useful in load regulation 
+scenarios. 
+</p><a name="register_subagent"><!-- Empty --></a>
+</div>
+
+<p><a name="register_subagent-3"><span class="bold_code">register_subagent(Agent, SubTreeOid, Subagent) -&#62; ok | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">SubTreeOid = oid()</span><br/>
+<span class="bold_code">SubAgent = pid()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Registers a sub-agent under a sub-tree of another agent. 
+</p>
+<p>It is easy to make mistakes when registering sub-agents and
+this activity should be done carefully. For example, a
+strange behaviour would result from the following
+configuration:
+</p>
+<div class="example"><pre>
+snmp_agent:register_subagent(MAPid,[1,2,3,4],SA1),
+snmp_agent:register_subagent(SA1,[1,2,3], SA2).
+        
+</pre></div>
+
+<p><span class="code">SA2</span> will not get requests starting with object
+identifier <span class="code">[1,2,3]</span> since <span class="code">SA1</span> does not. 
+</p><a name="unregister_subagent"><!-- Empty --></a>
+</div>
+
+<p><a name="unregister_subagent-2"><span class="bold_code">unregister_subagent(Agent, SubagentOidOrPid) -&#62; ok | {ok, SubAgentPid} | {error, Reason}</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">SubTreeOidorPid = oid() | pid()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Unregister a sub-agent. If the second argument is a pid,
+then that sub-agent will be unregistered from all trees in
+<span class="code">Agent</span>. 
+</p><a name="send_notification"><!-- Empty --></a>
+</div>
+
+<p><a name="send_notification-3"><span class="bold_code">send_notification(Agent, Notification, Receiver)</span></a><br/>
+<a name="send_notification-4"><span class="bold_code">send_notification(Agent, Notification, Receiver, Varbinds)</span></a><br/>
+<a name="send_notification-5"><span class="bold_code">send_notification(Agent, Notification, Receiver, NotifyName, Varbinds)</span></a><br/>
+<a name="send_notification-6"><span class="bold_code">send_notification(Agent, Notification, Receiver, NotifyName, ContextName, Varbinds) -&#62; void() </span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Notification = atom()</span><br/>
+<span class="bold_code">Receiver = no_receiver | {Tag, Recv} | notification_delivery_info()</span><br/>
+<span class="bold_code">Tag = term()</span><br/>
+<span class="bold_code">Recv = receiver()</span><br/>
+<span class="bold_code">receiver() = pid() | atom() | {Mod, Func, Args}</span><br/>
+<span class="bold_code">Mod = atom()</span><br/>
+<span class="bold_code">Func = atom()</span><br/>
+<span class="bold_code">Args = list()</span><br/>
+<span class="bold_code">NotifyName = string()</span><br/>
+<span class="bold_code">ContextName = string()</span><br/>
+<span class="bold_code">Varbinds = varbinds()</span><br/>
+<span class="bold_code">varbinds() = [varbind()]</span><br/>
+<span class="bold_code">varbind() = {Variable, Value} | {Column, RowIndex, Value} | {OID, Value}</span><br/>
+<span class="bold_code">Variable = atom()</span><br/>
+<span class="bold_code">Column = atom()</span><br/>
+<span class="bold_code">OID = oid()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+<span class="bold_code">RowIndex = [int()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Sends the notification <span class="code">Notification</span> to the
+management targets defined for <span class="code">NotifyName</span> in the
+<span class="code">snmpNotifyTable</span> in SNMP-NOTIFICATION-MIB from the
+specified context. If no <span class="code">NotifyName</span> is specified (or
+if it is <span class="code">&#34;&#34;</span>), the notification is sent to all
+management targets (<span class="code">Addresses</span> below). If no <span class="code">ContextName</span>
+is specified, the default <span class="code">&#34;&#34;</span> context is used.
+
+</p>
+<p>The parameter <span class="code">Receiver</span> specifies where information
+about delivery of Inform-Requests should be sent. The agent
+sends Inform-Requests and waits for acknowledgments from the
+managers. <span class="code">Receiver</span> can have three values: 
+</p>
+<ul>
+
+<li>
+
+<span class="code">no_receiver</span> - No information is delivered. <br />
+
+         
+</li>
+
+
+<li>
+
+<span class="code">{Tag, Recv}</span> - The information is delivered either via messages 
+or via a function call according to the value of <span class="code">Recv</span>. <br />
+
+         
+</li>
+
+
+<li>
+
+<span class="code">notification_delivery_info()</span> - The information is 
+delivered via a function call according to this data. See the 
+<a href="#data_types">DATA TYPES</a> section 
+above for details. <br />
+
+         
+</li>
+
+
+</ul>
+
+<p>If <span class="code">Receiver</span> has the value <span class="code">{Tag, Recv}</span>, the delivery is
+done according to <span class="code">Recv</span>: 
+</p>
+<ul>
+
+<li>
+
+<span class="code">pid() | atom()</span> - The info will be delivered in 
+the following messages: <br />
+
+
+<ul>
+
+<li>
+
+<span class="code">{snmp_targets, Tag, Addresses}</span><br />
+
+This inform the user which target addresses the 
+notification was sent to. <br />
+
+                 
+</li>
+
+
+<li>
+
+<span class="code">{snmp_notification, Tag, {got_response, Address}}</span><br />
+
+This informs the user that this target address 
+acknowledged the notification. <br />
+
+                 
+</li>
+
+
+<li>
+
+<span class="code">{snmp_notification, Tag, {no_response, Address}}</span><br />
+
+This informs the user that this target address 
+did not acknowledge notification. <br />
+
+                 
+</li>
+
+
+</ul>
+
+The notification is sent as an Inform-Request to each 
+target address in <span class="code">Addresses</span> and if there are no 
+targets for which an Inform-Request is sent, <span class="code">Addresses</span>
+is the empty list <span class="code">[]</span>. <br />
+
+The <span class="code">receiver</span> will first be sent the <span class="code">snmp_targets</span>
+message, and then for each address in <span class="code">Addresses</span> list, 
+one of the two <span class="code">snmp_notification</span> messages. <br />
+
+         
+</li>
+
+
+<li>
+
+<span class="code">{Mod, Func, Args}</span> - The info will be delivered via
+the function call: <br />
+
+<span class="code">Mod:Func([Msg | Args])</span><br />
+
+where <span class="code">Msg</span> has the same content and purpose as the 
+messages descrived above.<br />
+
+         
+</li>
+
+
+</ul>
+
+<p><span class="code">Address</span> is a management target address and <span class="code">Addresses</span> is a 
+list of management target addresses. They are defined as followes: 
+</p>
+<div class="example"><pre>
+        Addresses  = [address()]
+        Address    = address()
+        address()  = v1_address() | v3_address()
+        v1_address() = {TDomain, TAddress}
+        v3_address() = {{TDomain, TAddress}, V3MsgData}
+        TDomain    = tdoamin()
+        TAddress   = taddress()
+        tdomain()  = The oid of snmpUDPDomain 
+                     This is the only supported transport domain.
+        taddress() = [A1, A2, A3, A4, P1, P3]
+                     The 4 first bytes makes up the IP-address and the last 2,
+                     the UDP-port number.
+        V3MsgData  = v3_msg_data()
+        v3_msg_data() = term()
+
+</pre></div>
+
+<p>If <span class="code">Receiver</span> is a <span class="code">notification_delivery_info()</span> record,
+then the information about the notification delivery will be delivered 
+to the <span class="code">receiver</span> via the callback functions defined by the 
+<a href="snmpa_notification_delivery_info_receiver.html">snmpa_notification_delivery_info_receiver</a>
+behaviour according to the content of the <span class="code">notification_delivery_info()</span>
+record. 
+</p>
+<p>The optional argument <span class="code">Varbinds</span> defines
+values for the objects in the notification. If no value is
+given for an object, the <span class="code">Agent</span> performs a get-operation
+to retrieve the value.
+
+</p>
+<p><span class="code">Varbinds</span> is a list of <span class="code">Varbind</span>, where each
+<span class="code">Varbind</span> is one of:
+
+</p>
+<ul>
+
+<li>
+<span class="code">{Variable, Value}</span>, where <span class="code">Variable</span> is the
+symbolic name of a scalar variable referred to in the notification
+specification.
+
+</li>
+
+
+<li>
+<span class="code">{Column, RowIndex, Value}</span>, where <span class="code">Column</span>
+is the symbolic name of a column variable.
+<span class="code">RowIndex</span> is a list of indices for the specified
+element. If this is the case, the OBJECT IDENTIFIER sent
+in the notification is the <span class="code">RowIndex</span> appended to the OBJECT
+IDENTIFIER for the table column. This is the OBJECT
+IDENTIFIER which specifies the element.
+
+</li>
+
+
+<li>
+<span class="code">{OID, Value}</span>, where <span class="code">OID</span> is the OBJECT
+IDENTIFIER for an instance of an object, scalar variable,
+or column variable.
+
+</li>
+
+
+</ul>
+
+<p>For example, to specify that <span class="code">sysLocation</span> should have the
+value <span class="code">&#34;upstairs&#34;</span> in the notification, we could use one of:
+
+</p>
+<ul>
+
+<li>
+<span class="code">{sysLocation, &#34;upstairs&#34;}</span> or
+</li>
+
+
+<li>
+<span class="code">{[1,3,6,1,2,1,1,6,0], &#34;upstairs&#34;}</span> or
+</li>
+
+
+<li>
+<span class="code">{?sysLocation_instance, &#34;upstairs&#34;}</span> (provided
+that the generated <span class="code">.hrl</span> file is included)
+</li>
+
+
+</ul>
+
+<p>If a variable in the notification is a table element, the
+<span class="code">RowIndex</span> for the element must be given in the
+<span class="code">Varbinds</span> list. In this case, the OBJECT IDENTIFIER sent
+in the notification is the OBJECT IDENTIFIER that identifies this
+element. This OBJECT IDENTIFIER could be used in a get
+operation later.
+
+</p>
+<p>This function is asynchronous, and does not return any
+information. If an error occurs, <span class="code">user_err/2</span> of the error
+report module is called and the notification is discarded.
+
+</p><a name="send_trap"><!-- Empty --></a>
+</div>
+
+<p><a name="send_trap-3"><span class="bold_code">send_trap(Agent,Trap,Community)</span></a><br/>
+<a name="send_trap-4"><span class="bold_code">send_trap(Agent,Trap,Community,Varbinds) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+<span class="bold_code">Trap = atom()</span><br/>
+<span class="bold_code">Community = string()</span><br/>
+<span class="bold_code">Varbinds = [Varbind]</span><br/>
+<span class="bold_code">Varbind = {Variable, Value} | {Column, RowIndex, Value} | {OID, Value}</span><br/>
+<span class="bold_code">Variable = atom()</span><br/>
+<span class="bold_code">Column = atom()</span><br/>
+<span class="bold_code">OID = oid()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+<span class="bold_code">RowIndex = [int()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Note! This function is only kept for backwards
+compatibility reasons. Use <span class="code">send_notification</span> instead.
+
+</p>
+<p>Sends the trap <span class="code">Trap</span> to the managers defined for
+<span class="code">Community</span> in the <span class="code">intTrapDestTable</span> in
+OTP-SNMPEA-MIB. The optional argument <span class="code">Varbinds</span> defines
+values for the objects in the trap. If no value is given for
+an object, the <span class="code">Agent</span> performs a get-operation to
+retrieve the value.
+
+</p>
+<p><span class="code">Varbinds</span> is a list of <span class="code">Varbind</span>, where each
+<span class="code">Varbind</span> is one of:
+
+</p>
+<ul>
+
+<li>
+<span class="code">{Variable, Value}</span>, where <span class="code">Variable</span> is the
+symbolic name of a scalar variable referred to in the trap
+specification.
+
+</li>
+
+
+<li>
+<span class="code">{Column, RowIndex, Value}</span>, where <span class="code">Column</span>
+is the symbolic name of a column variable.
+<span class="code">RowIndex</span> is a list of indices for the specified
+element. If this is the case, the OBJECT IDENTIFIER sent
+in the trap is the <span class="code">RowIndex</span> appended to the OBJECT
+IDENTIFIER for the table column. This is the OBJECT
+IDENTIFIER which specifies the element.
+
+</li>
+
+
+<li>
+<span class="code">{OID, Value}</span>, where <span class="code">OID</span> is the OBJECT
+IDENTIFIER for an instance of an object, scalar variable,
+or column variable.
+
+</li>
+
+
+</ul>
+
+<p>For example, to specify that <span class="code">sysLocation</span> should have the
+value <span class="code">&#34;upstairs&#34;</span> in the trap, we could use one of:
+
+</p>
+<ul>
+
+<li>
+<span class="code">{sysLocation, &#34;upstairs&#34;}</span> or
+</li>
+
+
+<li>
+<span class="code">{[1,3,6,1,2,1,1,6,0], &#34;upstairs&#34;}</span> or
+</li>
+
+
+<li>
+<span class="code">{?sysLocation_instance, &#34;upstairs&#34;}</span> (provided
+that the generated <span class="code">.hrl</span> file is included)
+</li>
+
+
+</ul>
+
+<p>If a variable in the trap is a table element, the
+<span class="code">RowIndex</span> for the element must be given in the
+<span class="code">Varbinds</span> list. In this case, the OBJECT IDENTIFIER sent
+in the trap is the OBJECT IDENTIFIER that identifies this
+element. This OBJECT IDENTIFIER could be used in a get
+operation later.
+
+</p>
+<p>This function is asynchronous, and does not return any
+information. If an error occurs, <span class="code">snmp_error:user_err/2</span>
+is called and the trap is discarded. 
+</p><a name="convert_config"><!-- Empty --></a>
+</div>
+
+<p><a name="convert_config-1"><span class="bold_code">convert_config(OldConfig) -&#62; AgentConfig</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">OldConfig = list()</span><br/>
+<span class="bold_code">AgentConfig = list()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>This off-line utility function can be used to convert
+the old snmp application config (pre snmp-4.0) to the 
+new snmp agent config (as of snmp-4.0).
+</p>
+<p>For information about the old config (<span class="code">OldConfig</span>) 
+see the OTP R9C documentation.
+</p>
+<p>For information about the current agent config 
+(<span class="code">AgentConfig</span>), see either
+the <a href="snmp_app.html">SNMP application</a>
+part of the reference manual or the 
+<a href="snmp_config.html">Configuring the application</a>
+chapter of the SNMP user's guide.
+</p><a name="restart_worker"><!-- Empty --></a>
+</div>
+
+<p><a name="restart_worker-0"><span class="bold_code">restart_worker() -&#62; void()</span></a><br/>
+<a name="restart_worker-1"><span class="bold_code">restart_worker(Agent) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Restart the worker process of a multi-threaded agent.
+</p>
+<p>This is a utility function, that can be usefull when 
+e.g. debugging instrumentation functions.
+</p><a name="restart_set_worker"><!-- Empty --></a>
+</div>
+
+<p><a name="restart_set_worker-0"><span class="bold_code">restart_set_worker() -&#62; void()</span></a><br/>
+<a name="restart_set_worker-1"><span class="bold_code">restart_set_worker(Agent) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Agent = pid() | atom()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Restart the set worker process of a multi-threaded agent.
+</p>
+<p>This is a utility function, that can be usefull when 
+e.g. debugging instrumentation functions.
+</p><a name="verbosity"><!-- Empty --></a>
+</div>
+
+<p><a name="verbosity-2"><span class="bold_code">verbosity(Ref,Verbosity) -&#62; void()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Ref = pid() | sub_agents | master_agent | net_if | mib_server | symbolic_store | note_store | local_db</span><br/>
+<span class="bold_code">Verbosity = verbosity() | {subagents, verbosity()}</span><br/>
+<span class="bold_code">verbosity() = silence | info | log | debug | trace </span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Sets verbosity for the designated process. For the lowest 
+verbosity <span class="code">silence</span>, nothing is printed. The higher the
+verbosity, the more is printed. 
+</p>
+</div>
+
+<h3>See Also</h3>
+<div class="REFBODY">
+
+<p>calendar(3), erlc(1) 
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

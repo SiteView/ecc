@@ -1,0 +1,19 @@
+﻿<erl>
+-record(session,{user,passwd,udata=[]}).
+	out(A)->
+		 H = A#arg.headers,
+		 % io:format("cookie1:~p~n",[H#headers.cookie]),
+		case yaws_api:find_cookie_val("sessionid", H#headers.cookie) of
+			[]->
+				{redirect,"login.yaws"};
+			CVal->
+				 % io:format("cookie2:~p~n",[CVal]),
+				 case yaws_api:cookieval_to_opaque(CVal) of
+					{ok, OP} ->
+						{html, ""};
+					_->
+						{redirect,"login.yaws"}
+				end
+		end.
+		
+</erl>

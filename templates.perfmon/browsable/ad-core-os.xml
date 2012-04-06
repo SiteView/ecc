@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="Memory" type="perf" description="foo">
+<counterInfo name="Available MBytes" />
+<counterInfo name="Page Faults/sec" />
+</object>
+
+<object name="System" type="perf" >
+<counterInfo name="Context Switches/sec" />
+<counterInfo name="Processor Queue Length" />
+<counterInfo name="System Up Time" />
+</object>
+<object name="Processor" type="perf" instances="_Total" >
+<counterInfo name="% DPC Time" />
+<counterInfo name="% Processor Time" />
+</object>
+<object name="PhysicalDisk" type="perf" instances="*" >
+<counterInfo name="Current Disk Queue Length" />
+</object>
+
+<object name="LogicalDisk" type="perf" instances="*" >
+<counterInfo name="% Free Space" />
+<counterInfo name="Free Megabytes" />
+</object>
+
+<object/>
+
+</browse_data>

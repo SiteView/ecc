@@ -1,0 +1,1 @@
+erl -pa core\ebin -pa iconv -boot start_sasl -sname logger -setcookie 3ren -eval "application:start(svecc_log)."

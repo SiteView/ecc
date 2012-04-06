@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ERLSOM
+Bundle-SymbolicName: core;singleton:=true
+Bundle-Version: 9.1.0.qualifier
+Bundle-Vendor: SiteView
+Require-Bundle: org.erlide.core;bundle-version="0.13.3"

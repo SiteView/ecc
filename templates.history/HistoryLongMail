@@ -1,0 +1,25 @@
+A history report from SiteView for <reportPeriod> has been created for you.
+
+Report Summary:
+
+<summary>
+
+You can access this report at:
+    http://<_webserverAddress>:<_httpPort><reportURL>
+
+You can access previous reports at:
+    http://<_webserverAddress>:<_httpPort><reportIndexURL>
+
+You can access the text version of the report at:
+    http://<_webserverAddress>:<_httpPort><textReportURL>
+
+
+
+You can access the read only version of this report at:
+    http://<_webserverAddress>:<_httpPort><userReportURL>
+
+You can access the read only text report at:
+    http://<_webserverAddress>:<_httpPort><userTextReportURL>
+
+You can access the index of read only reports at:
+    http://<_webserverAddress>:<_httpPort><userReportIndexURL>

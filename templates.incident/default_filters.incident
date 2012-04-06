@@ -1,0 +1,36 @@
+{itsm_sys_app_module, "", "All", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","All","incident",[{"",
+							                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "Assigned to me", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","Assigned to me","incident",															[{"",
+												{fielter_condition,"&","assigned_to","=","@me"}},
+												{"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "Open - Unassigned", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","Open -Unassigned","incident", [{"8F4B82803A77F8BC",
+                	{fielter_condition,"&","status","=","Open"}},
+	               {"B73DA95C1D0F9988",
+         	       {fielter_condition,"&","assigned_to","=",[]}},{"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "Open", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","Open","incident",
+									              [{"",
+									                {fielter_condition,"&","status","=","Open"}},
+										      {"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "In Progress", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","In Progress","incident",
+										              [{"",
+										                {fielter_condition,"&","status","=","InProgress"}},
+												{"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "Reopened", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","Reopened","incident",
+									              [{"",
+									                {fielter_condition,"&","status","=","Reopened"}},
+											{"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "Resolved", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","Resolved","incident",
+									              [{"",
+									                {fielter_condition,"&","status","=","Resolved"}},
+											{"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.
+{itsm_sys_app_module, "", "Closed", "incident", "", "", "", "true", "", "", "", "", {itsm_filters,"","Closed","incident",
+									              [{"",
+									                {fielter_condition,"&","status","=","Closed"}},
+											{"5ADCA46190A04645",
+                {fielter_condition,"&","project","=","@project"}}]}, ""}.

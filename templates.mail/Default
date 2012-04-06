@@ -1,0 +1,15 @@
+Alert From SiteView
+
+monitor:<groupID>:<name>
+group:     <group>
+status:    <state>
+specimen#:   <sample>
+alert name:    <alert_name>
+alert level:   <alert_level>
+time:    <time>
+
+----------------------   detail   ----------------------
+
+<mainParameters>
+
+<mainStateProperties>

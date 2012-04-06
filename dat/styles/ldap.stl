@@ -1,0 +1,28 @@
+; -----------------------------------------------------------------------
+; Mercury Script Styles
+; LDAP Code Generation Style
+; -----------------------------------------------------------------------
+
+[LDAP_OPS:C]
+@Protocol=MLDAP
+@FunctionList=mldap_search,mldap_search_ex,mldap_get_next_entry,mldap_get_next_entry_ex,mldap_get_attrib_name,mldap_get_attrib_name_ex,mldap_get_attrib_value,mldap_get_attrib_value_ex,mldap_add,mldap_add_ex,mldap_modify,mldap_delete,mldap_modify_ex,mldap_delete_ex,mldap_rename,mldap_rename_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+SoftDelimiter=SZ("ENDITEM")= & ENDITEM & NEWLINE
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST"|NULL)= NEWLINE & LAST & NEWLINE
+
+[LDAP:C]
+@Protocol=MLDAP
+@FunctionList=mldap_logon,mldap_logon_ex,mldap_logoff,mldap_logoff_ex
+@WordWrap=ON
+@WrapInArguments=OFF
+@WrapOutArguments=OFF
+Function=&
+NextArguments=& NEWLINE
+HardDelimiter=SZ("LAST",NULL)=NEWLINE & LAST &
+
+

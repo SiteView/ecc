@@ -1,0 +1,26 @@
+[Messages]
+Version=6.00
+-25001=Can't find USR file %1
+-25002=FOUND-Can't find output directory %1
+-25003=ONLY-Output directory %1 is read only
+-25004=Compiler error : %1
+-25005=Can't find CI file %1
+-25006=Can't find Driver file %1
+-25007=Compiler error : Can't create temporary combined file %1
+-25008=Compiler error : Can't close temporary combined file %1
+-25009=Can't find DAT directory %1
+-25010=Can't find DAT file %1
+-25011=Can't read information from DAT file %1
+-25012=Can't find include/inc directory %1
+-25013=Can't find arch/bin directory %1
+-25014=Can't find file %1
+-25015=Compiler error : Can't create temporary options file %1
+-25016=Can't read information from file %1
+-25017=Unknown platform
+-25018=Can't resolve lrun root directory
+-25019=Can't found resource file %1
+-25020=Can't load the resource file %1
+-25021=Can't create create script directory into global directory
+-25022=Unable to create critical section
+-25023=Unable to enter critical section
+-25024=Unable to leave critical section

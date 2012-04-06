@@ -1,0 +1,14 @@
+[ResmonExtensionInfo]                        
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=tuxmon.dll
+Name=Tuxedo
+PresentationName=Tuxedo
+Id=5673
+
+[UI_Section]
+Ui1=Client Name
+Ui2=Data
+

@@ -1,0 +1,14 @@
+[Messages]
+Version=5.1
+-18900=Vuser action %1 is not found. System error: %2.
+-18899=Calling Vuser action %1.
+-18898=Exception was raised when calling Vuser action %1: %2.
+-18800=Cannot load Vuser library %1. System error: %2.
+-18799=Cannot free Vuser library. System error: %2.
+-18798=Exception was raised while trying to load %1: %2.
+-18797=Exception was raised while unloading dynamic library: %1.
+-18796=The attribute %1 is missing.
+-18795=Error: cannot execute action %1. Handle is NULL.
+-18794=Too many parameters to action %1 (%_2_ld > %_3_ld)
+Msg_handler_lowest_msg=-18900
+Msg_handler_highest_msg=-18794

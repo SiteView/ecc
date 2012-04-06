@@ -1,0 +1,47 @@
+<HTML><HEAD><TITLE>sdl_mouse</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_mouse.hrl">sdl_mouse.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="getMouseState">
+<strong> getMouseState()  </strong><UL>Args: none<br>
+Returns: {MouseState, X, Y}<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetmousestate.html">C-API:</a> Uint8 SDL_GetMouseState(int *x, int *y);<br>
+</UL>
+<p><A NAME="getRelativeMouseState">
+<strong> getRelativeMouseState()  </strong><UL>Args: none<br>
+Returns: {MouseState, X, Y}<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetrelativemousestate.html">C-API:</a> Uint8 SDL_GetRelativeMouseState(int *x, int *y);<br>
+</UL>
+<p><A NAME="warpMouse">
+<strong> warpMouse(X, Y)  </strong><UL>Args: X, Y<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlwarpmouse.html">C-API:</a> void SDL_WarpMouse(Uint16 x, Uint16 y);<br>
+</UL>
+<p><A NAME="createCursor">
+<strong> createCursor(Data, Mask, W, H, HotX, HotY)  </strong><UL>Args: Data (Binary), Mask(Binary), W, H, HotX, HotY<br>
+Returns: CursorRef<br>
+<a href="http://www.libsdl.org/docs/html/.html">C-API:</a> SDL_Cursor *SDL_CreateCursor (Uint8 *data, Uint8 *mask, int w, int h, int hot_x, int hot_y);<br>
+Desc:<br> Data & Mask must be less than 32*32 bytes.<br>
+</UL>
+<p><A NAME="setCursor">
+<strong> setCursor({cursorp,Ref})  </strong><UL>Args: CursorRef<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetcursor.html">C-API:</a> void SDL_SetCursor(SDL_Cursor *cursor);<br>
+</UL>
+<p><A NAME="getCursor">
+<strong> getCursor()  </strong><UL>Args: none<br>
+Returns: A cursorRef<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetcursor.html">C-API:</a> void SDL_SetCursor(SDL_Cursor *cursor);<br>
+</UL>
+<p><A NAME="freeCursor">
+<strong> freeCursor({cursorp,Ref})  </strong><UL>Args: CursorRef<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlfreecursor.html">C-API:</a> void SDL_FreeCursor(SDL_Cursor *cursor);<br>
+</UL>
+<p><A NAME="showCursor">
+<strong> showCursor(Bool)  </strong><UL>Args: true | false<br>
+Returns: true | false (if cursor was displayed before the call)<br>
+<a href="http://www.libsdl.org/docs/html/sdlshowcursor.html">C-API:</a> int SDL_ShowCursor(int toggle);<br>
+</UL>
+</html>

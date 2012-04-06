@@ -1,0 +1,65 @@
+<HTML><HEAD><TITLE>sdl_util</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_util.hrl">sdl_util.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="alloc">
+<strong> alloc(Size0, Type)  </strong><UL>Args: Size and type (?GL_UNSIGNED_INT, ...)<br>
+Returns: A reference to the memory area<br>
+Desc:<br> Allocates Size unit memory of Type, where Type is one of the opengl types described in gl.hrl. The memory will be garbage-collected away as any other Erlang term; thus there is no need to worry about freeing the memory.<br>
+</UL>
+<p><A NAME="getBin">
+<strong> getBin(#sdlmem{bin=Bin})  </strong><UL>Args: References to a memory area allocated by alloc/2.<br>
+Returns: The memory allocated as a binary.<br>
+Desc:<br> Returns all of an allocated memory area as a binary. Note that if you do any write operation to the memory, the contents of the returned binary will change. CAVEAT PROGRAMMOR.<br>
+</UL>
+<p><A NAME="malloc">
+<strong> malloc(Size, Type)  </strong><UL>Args: Size and type (?GL_UNSIGNED_INT, ...)<br>
+Returns: A reference to the memory area<br>
+Desc:<br> Obsolete name. Use alloc/2 instead.<br>
+</UL>
+<p><A NAME="free">
+<strong> free(_Ref)  </strong><UL>Args: Ref to memory<br>
+Desc:<br> Obsolete function. Does nothing as memory blocks allocated by alloc/2 are garbage-collected.<br>
+</UL>
+<p><A NAME="read/readBin">
+<strong> read(#sdlmem{type=Type,bin=Bin}, Size)  </strong><UL>Args: MemoryRef, Size<br>
+Returns: A list/Binary of Size elements of type Type<br>
+Desc:<br> Read allocated memory<br>
+</UL>
+<p><A NAME="write">
+<strong> write(#sdlmem{type=Type,size=Size,bin=Dest}, Data)  </strong><UL>Args: MemoryRef, List|Binary<br>
+Returns: ok<br>
+Desc:<br> Write to data memory<br>
+</UL>
+<p><A NAME="write">
+<strong> write(#sdlmem{type=Type,size=Size0,bin=Dest0}, Offset, Data)  </strong><UL>Args: MemoryRef, Offset, List|Binary<br>
+Returns: ok<br>
+Desc:<br> Write to memory, starting Offset unit into it.<br>
+</UL>
+<p><A NAME="term2bin">
+<strong>  term2bin(Bin, _, _)  </strong><UL>Args: ListOfNumbers (or tuple), MaxNo, Type<br>
+Returns: Deep list<br>
+Desc:<br> Converts the first MaxNo numbers of ListOfNumbers to a binary of the type Type. Where Type is GL_TYPE existing in gl.hrl (e.g. ?GL_DOUBLE)<br>
+</UL>
+<p><A NAME="tuplelist2bin[TupleSize]">
+<strong>  tuplelist2bin(2,Type,List)  </strong><UL>Args: [TupleSize,] Type, List<br>
+Returns: Binary<br>
+Desc:<br> Converts a tupleList [{X,Y,..}..] to binary.<br>
+</UL>
+<p><A NAME="bin2list">
+<strong>  bin2list(undefined, Type, Bin)  </strong><UL>Args: No, Type, Binary<br>
+Returns: ListOfNumbers<br>
+Desc:<br> Converts the first 'No' of numbers in the binary Binary to a list of numbers of type Type.<br>
+</UL>
+<p><A NAME="copySdlImage2GLArray">
+<strong> copySdlImage2GLArray(Image, Mem, Bpp)  </strong><UL>Args: SdlImageRef, malloced Mem, BytesPerPixel<br>
+Returns: ok or exits<br>
+Desc:<br> Converts sdl_surface data to a byte RGB(A) buffer. sdl_surfaces are BGR and upside/down.<br>
+</UL>
+<p><A NAME="Debug">
+<strong> debug(L)  </strong><UL>Args: Level (0 is off)<br>
+Returns: ok<br>
+Desc:<br> Set ESDL debug level<br>
+</UL>
+</html>

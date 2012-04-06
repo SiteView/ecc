@@ -1,0 +1,17 @@
+
+分布式插件
+
+
+1. 拷贝该目录到 区别于ecc9主节点的 另一台物理机上
+2. 修改 startNode.bat 中ecc9主节点的名称
+      例如：   你的系统中ecc9主节点为 debug@itsm
+      则设置  erl -env ExtensionMainNode debug@itsm
+3. 运行 startNode.bat 即可将该节点中的 一个分布式插件注册到主节点上
+      该插件如下：plugin_demo_point1_ErlangPlugin(Args)-> {3,Args}.
+4. 在主节点上运行 plugin_demo:test(). 就会自动调用该分布式插件
+
+5. 如果分布式插件的节点启动以后，ecc9主节点又重新启动了，则需再次运行如下语句，以重新注册该分布式插件。
+    extension_node:findPluginsRegistToMainNode().
+   也可以在主节点启动命令最后，加上以下这句，以便在主节点重启后，自动注册分布式插件。    
+    rpc:call( 分布节点名字, extension_node, findPluginsRegistToMainNode, []).
+

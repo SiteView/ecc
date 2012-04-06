@@ -1,0 +1,13 @@
+{counters,'.*skipped #1.*','.*skipped #1.*',true}.
+{counters,'.*skipped #2.*','.*skipped #2.*',true}.
+{counters,'.*skipped #3.*','.*skipped #3.*',true}.
+{counters,'.*skipped #4.*','.*skipped #4.*',true}.
+{counters,'.*skipped #5.*','.*skipped #5.*',true}.
+{counters,'.*SiteView shutting down.*','.*SiteView shutting down.*',true}.
+{counters,'.*Reached the limit of processes in the process pool.*','.*Reached the limit of processes in the process pool.*',false}.
+{counters,'.*Error. data reporter failed to report chunk of data.*','.*Error. data reporter failed to report chunk of data.*',false}.
+{counters,'.*Error. config reporter failed to report chunk of data.*','.*Error. config reporter failed to report chunk of data.*',false}.
+{counters,'.*Error. Topaz failed to process data.*','.*Error. Topaz failed to process data.*',false}.
+{counters,'.*Error. CacheSender. Got to the max number of cached files.*','.*Error. CacheSender. Got to the max number of cached files.*',false}.
+{counters,'.*Error. CacheSender. Got to the max old dir size.*','.*Error. CacheSender. Got to the max old dir size.*',false}.
+{counters,'.*Topaz SEVERE.*','.*Topaz SEVERE.*',false}.

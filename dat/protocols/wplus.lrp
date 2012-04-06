@@ -1,0 +1,67 @@
+[Protocol]
+Name=WPLUS
+CommonName=Winsock Plus
+Description=Winsock Plus Protocol Analyzer.
+InRecordingNotify=stop_record_notify:api_sock_proxy.dll
+Filters=WplusProtoFilterBegin
+Hidden=1
+Single=0
+Multi=0
+
+
+
+[CustomTlbs]
+TLBs=MicWplus.tlb
+
+
+
+[CustomFunctions]
+#DefaultFunctionDestination=api_sock_proxy.dll
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Winsock Hooks (Windows NT/2K & XP)
+;
+#DefaultFunctionSource=msafd.dll
+WSPStartup:msafd.dll=wplusWSPStartupHook:api_sock_proxy.dll
+WSPStartup:mswsock.dll=wplusWSPStartupHook:api_sock_proxy.dll
+;;*WSPStartup:msafd.dll=wplusWSPStartupRuntimeHook:api_sock_proxy.dll
+;;*WSPStartup:mswsock.dll=wplusWSPStartupRuntimeHook:api_sock_proxy.dll
+*gethostbyname:ws2_32.dll=wplusGetHostByNameRuntimeHook:api_sock_proxy.dll
+;; Disable McAfee hooking
+*WSPStartup:CsLsp.dll=wplusWSPStartup_McAfeeHook:api_sock_proxy.dll
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Setup Runtime Hooks
+;;NULL:NULL=wplusRuntimeHookingSetup:api_sock_proxy.dll  (Obsolete)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; WSP Hooks -- Valid only if WSPStartup in [CustomFunctions] 
+;              is enabled.
+[Wplus-WSPHooks]
+WSPConnect=wplusWSPConnectAlternate:api_sock_proxy.dll
+WSPAccept=wplusWSPAcceptAlternate:api_sock_proxy.dll
+WSPListen=wplusWSPListenAlternate:api_sock_proxy.dll
+WSPBind=wplusWSPBindAlternate:api_sock_proxy.dll
+WSPShutdown=wplusWSPShutdownAlternate:api_sock_proxy.dll
+WSPCloseSocket=wplusWSPCloseSocketAlternate:api_sock_proxy.dll
+WSPStringToAddress=wplusWSPStringToAddressAlternate:api_sock_proxy.dll
+WSPCleanup=wplusWSPCleanupAlternate:api_sock_proxy.dll
+
+
+
+[CustomFilters]
+Filters=WplusProtoFilterBegin
+
+
+
+[WplusProtoFilterBegin]
+name=WplusBegin
+dll=api_sock_filter.dll
+init_func=WplusBegin_Init
+cleanup_func=WplusBegin_CleanUp
+protocols=WPLUS
+after=_BEGIN_SECTION_1
+
+
+

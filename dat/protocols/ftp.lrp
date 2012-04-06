@@ -1,0 +1,119 @@
+[Protocol]
+Name=FTP
+CommonName=File Transfer Protocol (FTP)
+Category=E-Business
+Description=File Transfer Protocol - a system which transfers files from one location to another over a network.
+Icon=bitmaps\ftp.bmp
+Filters=FtpProtoFilter
+Dependency=WPLUS
+Hidden=0
+Single=1
+Multi=1
+
+[WPLUS]
+Analyzers=GetFtpProtocolAnalyzer:api_sock_proxy.dll
+Affinities=FTP
+
+[CustomTlbs]
+TLBs=MicFtp.tlb
+CorrelateTypedef=FTP
+
+[Replay]
+HEADERS=mic_ftp.h
+
+[CustomFilters]
+Filters=FtpProtoFilter
+
+[FtpProtoFilter]
+name=Ftp
+dll=api_sock_filter.dll
+init_func=Ftp_Init
+cleanup_func=Ftp_CleanUp
+protocols=WPLUS,FTP
+before=_END_SECTION_4
+
+[Template]
+globals.h=globals.h
+@@TestName@@.usr=Multi.usr
+
+[Vugen]
+DLL=insp_gen.dll
+CFG_TAB_DLL=comrts_tab.dll,modemspeedtab.dll
+CFG_TAB_XML=speed_simulation.xml
+REC_OPTN_TAB_DLL=api_sock_cfg.dll
+InspectorCustomStartRecDlg=1 
+Insp32DLL=api_inspector.dll
+RecordingLogFile=data\RecordingLog.txt
+ExtraSectionsExt=.h,.inf,.vbs,.js,.vba,.bas,.cls,.dat,.bin
+DisableRegenerateToVuserLessThan762=1
+TemplateDir=Ftp
+32BitRecord=1
+EnableRecordingLog=1
+SectionCombo=1
+WINNT=mdrv.exe
+WIN2000=mdrv.exe
+WINXP=mdrv.exe
+WIN95=mdrv.exe
+SUNOS=
+SOLARIS=
+HPUX=
+AIX=
+UNIX_SV=
+OSF1=
+;;
+EnableThreads=1
+EnableAutoTranPerFunc=1
+
+SELECTION_TRANS_DLL = wsconv32.dll
+SELECTION_TRANS_FUNC = lrs_proccess_selection
+SELECTION_TRANS_FREE_FUNC = lrs_free_selection_buffer
+
+RunTimeExtraDir=data\ftp.db
+
+IP_Spoofing=1
+LangSupported=C,VBA,VBS,JS
+
+[API.js]
+extra_section=jscript_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.vba]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.Vbs]
+extra_section=vb_general,lr_api_com_wrap,lr_web_com_wrap,lr_com_wrap_utils
+
+[API.c]
+extra_section=lr_general,c_general
+ftp_logon=lr_cmd_color;int ftp_logon(char *transaction, char *url[, argument]... )
+ftp_logon_ex=lr_cmd_color;int ftp_logon_ex(FTP *ppftp, char *transaction, char *url[, argument]... )
+ftp_logout=lr_cmd_color;int ftp_logout()
+ftp_logout_ex=lr_cmd_color;int ftp_logout_ex(FTP *ppftp)
+ftp_get=lr_cmd_color;int ftp_get(char *transaction[, argument]... )
+ftp_get_ex=lr_cmd_color;int ftp_get_ex(FTP *ppftp, char *transaction[, argument]... )
+ftp_put=lr_cmd_color;int ftp_put(char *transaction[, argument]... )
+ftp_put_ex=lr_cmd_color;int ftp_put_ex(FTP *ppftp, char *transaction[, argument]... )
+ftp_delete=lr_cmd_color;int ftp_delete(char *transaction[, argument]... )
+ftp_delete_ex=lr_cmd_color;int ftp_delete_ex(FTP *ppftp, char *transaction[, argument]... )
+ftp_mkdir=lr_cmd_color;int ftp_mkdir(char *transaction, char * path)
+ftp_mkdir_ex=lr_cmd_color;int ftp_mkdir_ex(FTP *ppftp, char *transaction, char * path)
+ftp_dir=lr_cmd_color;int ftp_dir(char *transaction[, argument]... )
+ftp_dir_ex=lr_cmd_color;int ftp_dir_ex(FTP *ppftp, char *transaction[, argument]... )
+ftp_get_last_error=lr_cmd_color;char * ftp_get_last_error(FTP *ppftp)
+ftp_get_last_error_id=lr_cmd_color;int ftp_get_last_error_id(FTP *ppftp)
+ftp_rendir=lr_cmd_color;
+ftp_rendir_ex=lr_cmd_color;
+ftp_rmdir=lr_cmd_color;
+ftp_rmdir_ex=lr_cmd_color;
+ftp_get_last_transfer_duration=lr_cmd_color;double ftp_get_last_transfer_duration ();
+ftp_get_last_transfer_duration_ex=lr_cmd_color;double ftp_get_last_transfer_duration_ex (FTP *ppftp);
+ftp_get_last_handshake_duration=lr_cmd_color;double ftp_get_last_handshake_duration ();
+ftp_get_last_handshake_duration_ex=lr_cmd_color;double ftp_get_last_handshake_duration (FTP *ppftp);
+ftp_get_last_download_details=lr_cmd_color;int ftp_get_last_download_details (unsigned long *size, unsigned long *duration);
+ftp_get_last_download_details_ex=lr_cmd_color;int ftp_get_last_download_details_ex (FTP *ppftp, unsigned long *size, unsigned long *duration);
+
+
+
+
+
+LAST=c_cmd_color
+ENDITEM=c_cmd_color

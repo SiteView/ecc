@@ -1,0 +1,10 @@
+alert fromSiteView
+
+monitor:  <name>
+group:      <group>
+status:    <state>
+specimen#:  <sample>
+
+time:    <time>
+
+<diagnosticText>

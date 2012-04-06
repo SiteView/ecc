@@ -1,0 +1,12 @@
+<config>
+  <application>localhost</application>
+  <email>zzj1213@yahoo.com</email>
+  <password>siteview</password>
+  <api>
+    <item>/xn/atom/1.0/</item>
+    <item>/xn/rest/1.0/</item>
+  </api>
+  <history>
+    <item api="/xn/atom/1.0/">content(id=2108193:shiwu:977)</item>
+  </history>
+</config>

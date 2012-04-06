@@ -1,0 +1,1173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmpa_conf</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmpa_conf</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmpa_conf
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Utility functions for handling the agent config files.
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmpa_conf</span> contains various utility functions to 
+used for manipulating (write/append/read) the config files of the
+SNMP agent. 
+</p><a name="agent_entry"><!-- Empty --></a>
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="agent_entry-2"><span class="bold_code">agent_entry(Tag, Val) -&#62; agent_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Tag = intAgentIpAddress | intAgentUDPPort | intAgentMaxPacketSize | snmpEngineMaxMessageSize | snmpEngineID</span><br/>
+<span class="bold_code">Val = term()</span><br/>
+<span class="bold_code">agent_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent config file, <span class="code">agent.conf</span>. 
+</p>
+<p>The type of <span class="code">Val</span> depends on the value of <span class="code">Tag</span>, 
+see 
+<a href="snmp_agent_config_files.html#agent_information">Agent Information</a>
+for more info. 
+</p><a name="write_agent_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_agent_config-2"><span class="bold_code">write_agent_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_agent_config-3"><span class="bold_code">write_agent_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [agent_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent config to the agent config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#agent_information">Agent Information</a>
+for more info. 
+</p><a name="append_agent_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_agent_config-2"><span class="bold_code">append_agent_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [agent_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the config to the current agent config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#agent_information">Agent Information</a>
+for more info. 
+</p><a name="read_agent_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_agent_config-1"><span class="bold_code">read_agent_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [agent_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#agent_information">Agent Information</a>
+for more info. 
+</p><a name="standard_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="standard_entry-2"><span class="bold_code">standard_entry(Tag, Val) -&#62; standard_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Tag = sysDescr | sysObjectID | sysContact | sysName | sysLocation | sysServices | snmpEnableAuthenTraps</span><br/>
+<span class="bold_code">Val = term()</span><br/>
+<span class="bold_code">standard_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent standard config file, 
+<span class="code">standard.conf</span>. 
+</p>
+<p>The type of <span class="code">Val</span> depends on the value of <span class="code">Tag</span>, 
+see 
+<a href="snmp_agent_config_files.html#system_information">System Information</a>
+for more info. 
+</p><a name="write_standard_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_standard_config-2"><span class="bold_code">write_standard_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_standard_config-3"><span class="bold_code">write_standard_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [standard_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent standard config to the agent standard 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#system_information">System Information</a>
+for more info. 
+</p><a name="append_standard_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_standard_config-2"><span class="bold_code">append_standard_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [standard_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the standard config to the current agent standard 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#system_information">System Information</a>
+for more info. 
+</p><a name="read_standard_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_standard_config-1"><span class="bold_code">read_standard_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [standard_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent standard config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#system_information">System Information</a>
+for more info. 
+</p><a name="context_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="context_entry-1"><span class="bold_code">context_entry(Context) -&#62; context_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Context = string()</span><br/>
+<span class="bold_code">context_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent context config file, 
+<span class="code">context.conf</span>. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#context">Contexts</a>
+for more info. 
+</p><a name="write_context_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_context_config-2"><span class="bold_code">write_context_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_context_config-3"><span class="bold_code">write_context_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [context_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent context config to the agent context 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#context">Contexts</a>
+for more info. 
+</p><a name="append_context_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_context_config-2"><span class="bold_code">append_context_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [context_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the context config to the current agent context 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#context">Contexts</a>
+for more info. 
+</p><a name="read_context_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_context_config-1"><span class="bold_code">read_context_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [context_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent context config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#context">Contexts</a>
+for more info. 
+</p><a name="community_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="community_entry-1"><span class="bold_code">community_entry(CommunityIndex) -&#62; community_entry()</span></a><br/>
+<a name="community_entry-5"><span class="bold_code">community_entry(CommunityIndex, CommunityName, SecName, ContextName, TransportTag) -&#62; community_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">CommunityIndex = string()</span><br/>
+<span class="bold_code">CommunityName = string()</span><br/>
+<span class="bold_code">SecName = string()</span><br/>
+<span class="bold_code">CtxName = string()</span><br/>
+<span class="bold_code">TransportTag = string()</span><br/>
+<span class="bold_code">community_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent community config file, 
+<span class="code">community.conf</span>. 
+</p>
+<p><span class="code">CommunityIndex</span> must be a <strong>non-empty</strong> string. 
+</p>
+<p><span class="code">community_entry(&#34;public&#34;)</span> translates to the following call:
+<span class="code">community_entry(CommunityIndex, CommunityIndex, &#34;initial&#34;, &#34;&#34;, &#34;&#34;)</span>. 
+</p>
+<p><span class="code">community_entry(&#34;all-rights&#34;)</span> translates to the following 
+call: <span class="code">community_entry(CommunityIndex, CommunityIndex, CommunityIndex, &#34;&#34;, &#34;&#34;)</span>. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#community">Community</a>
+for more info. 
+</p><a name="write_community_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_community_config-2"><span class="bold_code">write_community_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_community_config-3"><span class="bold_code">write_community_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [community_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent community config to the agent community 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#community">Community</a>
+for more info. 
+</p><a name="append_community_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_community_config-2"><span class="bold_code">append_community_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [community_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the community config to the current agent community 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#community">Community</a>
+for more info. 
+</p><a name="read_community_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_community_config-1"><span class="bold_code">read_community_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [community_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent community config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#community">Communities</a>
+for more info. 
+</p><a name="target_addr_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="target_addr_entry-5"><span class="bold_code">target_addr_entry(Name, Ip, TagList, ParamsName, EngineId) -&#62; target_addr_entry()</span></a><br/>
+<a name="target_addr_entry-6"><span class="bold_code">target_addr_entry(Name, Ip, TagList, ParamsName, EngineId, TMask) -&#62; target_addr_entry()</span></a><br/>
+<a name="target_addr_entry-8"><span class="bold_code">target_addr_entry(Name, Ip, Udp, TagList, ParamsName, EngineId, TMask, MaxMessageSize) -&#62; target_addr_entry()</span></a><br/>
+<a name="target_addr_entry-10"><span class="bold_code">target_addr_entry(Name, Ip, Udp, Timeout, RetryCount, TagList, ParamsName, EngineId, TMask, MaxMessageSize) -&#62; target_addr_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Name = string()</span><br/>
+<span class="bold_code">Ip = string()</span><br/>
+<span class="bold_code">Udp = integer()</span><br/>
+<span class="bold_code">Timeout = integer()</span><br/>
+<span class="bold_code">RetryCount = integer()</span><br/>
+<span class="bold_code">TagList = string()</span><br/>
+<span class="bold_code">ParamsName = string()</span><br/>
+<span class="bold_code">EngineId = string()</span><br/>
+<span class="bold_code">TMask = string()</span><br/>
+<span class="bold_code">MaxMessageSize = integer()</span><br/>
+<span class="bold_code">target_addr_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent target_addr config file, 
+<span class="code">target_addr.conf</span>. 
+</p>
+<p><span class="code">Name</span> must be a <strong>non-empty</strong> string. 
+</p>
+<p><span class="code">target_addr_entry/5</span> translates to the following call:
+<span class="code">target_addr_entry(Name, Ip, TagList, ParamsName, EngineId)</span>. 
+</p>
+<p><span class="code">target_addr_entry/6</span> translates to the following call:
+<span class="code">target_addr_entry(Name, Ip, 162, TagList, ParamsName, EngineId, TMask, 2048)</span>. 
+</p>
+<p><span class="code">target_addr_entry/8</span> translates to the following call:
+<span class="code">target_addr_entry(Name, Ip, Udp, 1500, 3, TagList, ParamsName, EngineId, TMask, MaxMessageSize)</span>. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_addr">Target Address Definitions</a>
+for more info. 
+</p><a name="write_target_addr_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_target_addr_config-2"><span class="bold_code">write_target_addr_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_target_addr_config-3"><span class="bold_code">write_target_addr_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [target_addr_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent target_addr config to the agent target_addr 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_addr">Target Address Definitions</a>
+for more info. 
+</p><a name="append_target_addr_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_target_addr_config-2"><span class="bold_code">append_target_addr_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [target_addr_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the target_addr config to the current agent target_addr 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_addr">Target Address Definitions</a>
+for more info. 
+</p><a name="read_target_addr_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_target_addr_config-1"><span class="bold_code">read_target_addr_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [target_addr_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent target_addr config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_addr">Target Address Definitions</a>
+for more info. 
+</p><a name="target_params_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="target_params_entry-2"><span class="bold_code">target_params_entry(Name, Vsn) -&#62; target_params_entry()</span></a><br/>
+<a name="target_params_entry-4"><span class="bold_code">target_params_entry(Name, Vsn, SecName, SecLevel) -&#62; target_params_entry()</span></a><br/>
+<a name="target_params_entry-5"><span class="bold_code">target_params_entry(Name, MPModel, SecModel, SecName, SecLevel) -&#62; target_params_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Name = string()</span><br/>
+<span class="bold_code">Vsn = v1 | v2 | v3</span><br/>
+<span class="bold_code">MPModel = v1 | v2c | v3</span><br/>
+<span class="bold_code">SecModel = v1 | v2c | usm</span><br/>
+<span class="bold_code">SecName = string()</span><br/>
+<span class="bold_code">SecLevel = noAuthNoPriv | authNoPriv | authPriv</span><br/>
+<span class="bold_code">target_params_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent target_params config file, 
+<span class="code">target_params.conf</span>. 
+</p>
+<p><span class="code">Name</span> must be a <strong>non-empty</strong> string. 
+</p>
+<p><span class="code">Vsn</span> translates into <span class="code">MPModel</span> and <span class="code">SecModel</span> as follows:
+</p>
+<div class="example"><pre>
+          Vsn = v1 =&#62; MPModel = v1,  SecModel = v1
+          Vsn = v2 =&#62; MPModel = v2c, SecModel = v2c
+          Vsn = v3 =&#62; MPModel = v3,  SecModel = usm
+        
+</pre></div>
+
+<p><span class="code">target_params_entry/2</span> translates to the following call:
+<span class="code">target_params_entry(Name, Vsn, &#34;initial&#34;, noAuthNoPriv)</span>. 
+</p>
+<p><span class="code">target_params_entry/4</span> translates to the following
+call: <span class="code">target_params_entry(Name, MPModel, SecModel, SecName, SecLevel)</span> where <span class="code">MPModel</span> and
+<span class="code">SecModel</span> is mapped from <span class="code">Vsn</span>, see above. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_params">Target Parameters Definitions</a>
+for more info. 
+</p><a name="write_target_params_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_target_params_config-2"><span class="bold_code">write_target_params_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_target_params_config-3"><span class="bold_code">write_target_params_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [target_params_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent target_params config to the agent target_params 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_params">Target Parameters Definitions</a>
+for more info. 
+</p><a name="append_target_params_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_target_params_config-2"><span class="bold_code">append_target_params_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [target_params_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the target_params config to the current agent target_params 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_params">Target Parameters Definitions</a>
+for more info. 
+</p><a name="read_target_params_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_target_params_config-1"><span class="bold_code">read_target_params_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [target_params_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent target_params config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#target_params">Target Parameters Definitions</a>
+for more info. 
+</p><a name="vacm_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="vacm_s2g_entry-3"><span class="bold_code">vacm_s2g_entry(SecModel, SecName, GroupName) -&#62; vacm_s2g_entry()</span></a><br/>
+<a name="vacm_acc_entry-8"><span class="bold_code">vacm_acc_entry(GroupName, Prefix, SecModel, SecLevel, Match, ReadView, WriteView, NotifyView) -&#62; vacm_acc_entry()</span></a><br/>
+<a name="vacm_vtf_entry-2"><span class="bold_code">vacm_vtf_entry(ViewIndex, ViewSubtree) -&#62; vacm_vtf_entry()</span></a><br/>
+<a name="vacm_vtf_entry-4"><span class="bold_code">vacm_vtf_entry(ViewIndex, ViewSubtree, ViewStatus, ViewMask) -&#62; vacm_vtf_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">SecModel = v1 | v2c | usm</span><br/>
+<span class="bold_code">SecName = string()</span><br/>
+<span class="bold_code">GroupName = string()</span><br/>
+<span class="bold_code">Prefix = string()</span><br/>
+<span class="bold_code">SecLevel = noAuthNoPriv | authNoPriv | authPriv</span><br/>
+<span class="bold_code">Match = prefix | exact</span><br/>
+<span class="bold_code">ReadView = string()</span><br/>
+<span class="bold_code">WriteView = string()</span><br/>
+<span class="bold_code">NotifyView = string()</span><br/>
+<span class="bold_code">ViewIndex = integer()</span><br/>
+<span class="bold_code">ViewSubtree = [integer()]</span><br/>
+<span class="bold_code">ViewStatus = included | excluded</span><br/>
+<span class="bold_code">ViewMask = null | [zero_or_one()]</span><br/>
+<span class="bold_code">zero_or_one() = 0 | 1</span><br/>
+<span class="bold_code">vacm_s2g_entry() = term()</span><br/>
+<span class="bold_code">vacm_acc_entry() = term()</span><br/>
+<span class="bold_code">vacm_vtf_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent vacm config file, 
+<span class="code">vacm.conf</span>. 
+</p>
+<p><span class="code">vacm_vtf_entry/2</span> translates to the following call:
+<span class="code">vacm_vtf_entry(ViewIndex, ViewSubtree, included, null)</span>. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#vacm">MIB Views for VACM</a>
+for more info. 
+</p><a name="write_vacm_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_vacm_config-2"><span class="bold_code">write_vacm_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_vacm_config-3"><span class="bold_code">write_vacm_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [vacm_entry()]</span><br/>
+<span class="bold_code">vacm_entry() = vacm_sg2_entry() | vacm_acc_entry() | vacm_vtf_entry()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent vacm config to the agent vacm 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#vacm">MIB Views for VACM</a>
+for more info. 
+</p><a name="append_vacm_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_vacm_config-2"><span class="bold_code">append_vacm_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [vacm_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the vacm config to the current agent vacm 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#vacm">MIB Views for VACM</a>
+for more info. 
+</p><a name="read_vacm_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_vacm_config-1"><span class="bold_code">read_vacm_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [vacm_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent vacm config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#vacm">MIB Views for VACM</a>
+for more info. 
+</p><a name="usm_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="usm_entry-1"><span class="bold_code">usm_entry(EngineId) -&#62; usm_entry()</span></a><br/>
+<a name="usm_entry-13"><span class="bold_code">usm_entry(EngineID, UserName, SecName, Clone, AuthP, AuthKeyC, OwnAuthKeyC, PrivP, PrivKeyC, OwnPrivKeyC, Public, AuthKey, PrivKey) -&#62; usm_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">EngineId = string()</span><br/>
+<span class="bold_code">UserName = string()</span><br/>
+<span class="bold_code">SecName = string()</span><br/>
+<span class="bold_code">Clone = zeroDotZero | [integer()]</span><br/>
+<span class="bold_code">AuthP = usmNoAuthProtocol | usmHMACMD5AuthProtocol, | usmHMACSHAAuthProtocol</span><br/>
+<span class="bold_code">AuthKeyC = string()</span><br/>
+<span class="bold_code">OwnAuthKeyC = string()</span><br/>
+<span class="bold_code">PrivP = usmNoPrivProtocol | usmDESPrivProtocol | usmAesCfb128Protocol</span><br/>
+<span class="bold_code">PrivKeyC = string()</span><br/>
+<span class="bold_code">OwnPrivKeyC = string()</span><br/>
+<span class="bold_code">Public = string()</span><br/>
+<span class="bold_code">AuthKey = [integer()]</span><br/>
+<span class="bold_code">PrivKey = [integer()]</span><br/>
+<span class="bold_code">usm_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent vacm config file, 
+<span class="code">vacm.conf</span>. 
+</p>
+<p><span class="code">usm_entry/1</span> translates to the following call:
+<span class="code">usm_entry(&#34;initial&#34;, &#34;initial&#34;, zeroDotZero, usmNoAuthProtocol, &#34;&#34;, &#34;&#34;, usmNoPrivProtocol, &#34;&#34;, &#34;&#34;, &#34;&#34;, &#34;&#34;, &#34;&#34;)</span>. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#usm">Security data for USM</a>
+for more info. 
+</p><a name="write_usm_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_usm_config-2"><span class="bold_code">write_usm_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_usm_config-3"><span class="bold_code">write_usm_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [usm_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent usm config to the agent usm 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#usm">Security data for USM</a>
+for more info. 
+</p><a name="append_usm_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_usm_config-2"><span class="bold_code">append_usm_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [usm_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the usm config to the current agent vacm 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#usm">Security data for USM</a>
+for more info. 
+</p><a name="read_usm_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_usm_config-1"><span class="bold_code">read_usm_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [usm_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent usm config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#usm">Security data for USM</a>
+for more info. 
+</p><a name="notify_entry"><!-- Empty --></a>
+</div>
+
+<p><a name="notify_entry-3"><span class="bold_code">notify_entry(Name, Tag, Type) -&#62; notify_entry()</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Name = string()</span><br/>
+<span class="bold_code">Tag = string()</span><br/>
+<span class="bold_code">Type = trap | inform</span><br/>
+<span class="bold_code">community_entry() = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Create an entry for the agent notify config file, 
+<span class="code">notify.conf</span>. 
+</p>
+<p><span class="code">Name</span> must be a <strong>non-empty</strong> string. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#notify">Notify Definitions</a>
+for more info. 
+</p><a name="write_notify_config"><!-- Empty --></a>
+</div>
+
+<p><a name="write_notify_config-2"><span class="bold_code">write_notify_config(Dir, Conf) -&#62; ok</span></a><br/>
+<a name="write_notify_config-3"><span class="bold_code">write_notify_config(Dir, Hdr, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Hdr = string()</span><br/>
+<span class="bold_code">Conf = [notify_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Write the agent notify config to the agent notify 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p><span class="code">Hdr</span> is an optional file header (note that this text is
+written to the file as is). 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#notify">Notify Definitions</a>
+for more info. 
+</p><a name="append_notify_config"><!-- Empty --></a>
+</div>
+
+<p><a name="append_notify_config-2"><span class="bold_code">append_notify_config(Dir, Conf) -&#62; ok</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [notify_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Append the notify config to the current agent notify 
+config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#notify">Notify Definitions</a>
+for more info. 
+</p><a name="read_notify_config"><!-- Empty --></a>
+</div>
+
+<p><a name="read_notify_config-1"><span class="bold_code">read_notify_config(Dir) -&#62; Conf</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Dir = string()</span><br/>
+<span class="bold_code">Conf = [community_entry()]</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Read the current agent notify config file. 
+</p>
+<p><span class="code">Dir</span> is the path to the directory where to store the 
+config file. 
+</p>
+<p>See 
+<a href="snmp_agent_config_files.html#notify">Notify Definitions</a>
+for more info. 
+</p><a name="end"><!-- Empty --></a>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

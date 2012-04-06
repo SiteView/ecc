@@ -1,0 +1,21 @@
+[Messages]
+Version=1.000
+-43999=Failed to open user service for time diff extension.
+-43998=Failed to open server service for time diff extension.
+-43997=Failed to send time diff data to time diff extension.
+-43996=Failed to decode time diff data through xdr.
+-43995=Failed to calculate primary time diff between the Controller and the remote host.
+-43994=Failed to write time diff data to time diff extension.
+-43993=Failed to encode time diff data through xdr.
+-43992=time diff extension did not have time for automatic calculations of time diff.
+-43991=Failed to initialize time diff extension since the command line - time_diff_ext_location is incorrect - accepted values are: "cntrl","host", or "localhost".
+-43990=Failed to get the sender moniker, therefore can't continue with time diff calculation.
+-43989=Failed to get current time by the function os_double_gettimeofday().
+-43988=Failed to calculate time diff since the time diff extension is already in the time diff calculation.
+-43987=Failed to get out dir from the command line. Please pass the -out option in command line.
+-43986=Cannot open output debug file - %1.
+-43985=Failed to init time diff from command line.
+-43984=Cannot read data from time diff callback since there is no time diff calculation.
+-43983=Failed to get Controller time. Aborting the lr_bridge.
+Msg_handler_lowest_msg=-43999
+Msg_handler_highest_msg=-43983

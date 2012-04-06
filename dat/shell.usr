@@ -1,0 +1,5 @@
+[General]
+Type=Launcher
+
+[CustomAction]
+ActionLogicExt=Shell

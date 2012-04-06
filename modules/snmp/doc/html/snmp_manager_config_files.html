@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Definition of Manager Configuration Files</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><a name="7"><!-- Empty --></a>
+<h2>7 Definition of Manager Configuration Files</h2>
+
+<p>Configuration data may be included in configuration files
+that is located in the configuration directory. The name of this
+directory is given in the <span class="code">config_dir</span> configuration
+parameter. These files are read at start-up.
+
+</p>
+<p>The directory where the configuration files are found is given as
+a parameter to the manager.
+
+</p>
+<p>The entry format in all files are Erlang terms, separated by a
+'<strong>.</strong>' and a <strong>newline</strong>. In the following sections, the
+formats of these terms are described. Comments may be specified as
+ordinary Erlang comments.
+
+</p>
+<p>Syntax errors in these files are discovered and reported with the
+function <span class="code">config_err/2</span> of the 
+<a href="snmpa_error_report.html">error report module</a>
+at start-up.
+
+</p><a name="manager"><!-- Empty --></a><a name="manager_information"><!-- Empty --></a><a name="7.1"><!-- Empty --></a>
+<h3>7.1 Manager Information</h3>
+
+<p>The manager information should be stored in a file called
+<span class="code">manager.conf</span>.
+
+</p>
+<p>Each entry is a tuple of size two:
+
+</p>
+<p><span class="code">{Variable, Value}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">Variable</span> is one of the following:<br />
+
+
+<ul>
+
+<li>
+
+<span class="code">address</span> - which defines the IP address of the 
+manager. Default is local host.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">port</span> - which defines which UDP port the manager uses
+for communicating with agents. <strong>Mandatory</strong>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">engine_id</span> - The <span class="code">SnmpEngineID</span> as defined in 
+SNMP-FRAMEWORK-MIB. <strong>Mandatory</strong>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">max_message_size</span> - The <span class="code">snmpEngineMaxMessageSize</span> as
+defined in SNMP-FRAMEWORK-MIB. <strong>Mandatory</strong>.<br />
+
+
+</li>
+
+
+</ul>
+
+
+</li>
+
+
+<li>
+
+<span class="code">Value</span> is the value for the variable.
+<br />
+
+
+</li>
+
+
+</ul>
+
+<p>The following example shows a <span class="code">manager.conf</span> file: 
+
+</p>
+<div class="example"><pre>
+{address,          [141,213,11,24]}.
+{port,             5000}.
+{engine_id,        &#34;mgrEngine&#34;}.
+{max_message_size, 484}.
+    
+</pre></div>
+
+<p>The value of <span class="code">engine_id</span> is a string, which should have a 
+very specific structure. See RFC 2271/2571 for details.
+
+</p><a name="users"><!-- Empty --></a><a name="7.2"><!-- Empty --></a>
+<h3>7.2 Users</h3>
+
+<p>For each <strong>manager user</strong>, the manager needs some information.
+This information is either added in the <span class="code">users.conf</span> config 
+file or by calling the 
+<a href="snmpm.html#register_user">register_user</a>
+function in run-time.
+
+</p>
+<p>Each row defines a <strong>manager user</strong> of the manager. 
+
+</p>
+<p>Each entry is a tuple of size three:
+
+</p>
+<p><span class="code">{UserId, UserMod, UserData}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">UserId</span> is any term (used to uniquely identify the user).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">UserMod</span> is the user callback module (atom).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">UserData</span> is any term (passed on to the user when calling the
+<span class="code">UserMod</span>.
+<br />
+
+
+</li>
+
+
+</ul>
+<a name="agents"><!-- Empty --></a><a name="7.3"><!-- Empty --></a>
+<h3>7.3 Agents</h3>
+
+<p>The information needed to handle agents should be stored in a 
+file called <span class="code">agents.conf</span>. It is also possible to add agents
+in run-time by calling the 
+<a href="snmpm.html#register_agent">register_agent</a>.
+
+</p>
+<p>Each entry is a tuple of size thirteen:
+
+</p>
+<p><span class="code">{UserId, TargetName, Comm, Ip, Port, EngineID, Timeout, MaxMessageSize, Version, SecModel, SecName, SecLevel}.</span>
+</p>
+<ul>
+
+<li>
+
+<span class="code">UserId</span> is the identity of the <strong>manager user</strong>
+responsible for this agent (term).
+<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">TargetName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Comm</span> is the community string (string).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Ip</span> is the ip address of the agent (a list of four integers).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Port</span> is the port number of the agent (integer).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">EngineID</span> is the engine-id of the agent (string).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Timeout</span> is re-transmission timeout 
+(<span class="code">infinity</span> | integer).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">MaxMessageSize</span> is the max message size for outgoing messages 
+to this agent (integer).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">Version</span> is the version (v1 | v2 | v3).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecModel</span> is the security model (any | v1 | v2c | usm).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecName</span> is the security name (string).<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecLevel</span> is security level (noAuthNoPriv | authNoPriv | 
+authPriv).<br />
+
+
+</li>
+
+
+</ul>
+<a name="usm"><!-- Empty --></a><a name="usm_user"><!-- Empty --></a><a name="7.4"><!-- Empty --></a>
+<h3>7.4 Security data for USM</h3>
+
+<p>The information about Security data for USM should be stored in a 
+file called <span class="code">usm.conf</span>, which must be present if the manager
+wishes to use SNMPv3 when communicating with agents. It is also 
+possible to add usm data in run-time by calling the 
+<a href="snmpm.html#register_usm_user">register_usm_user</a>.
+
+</p>
+<p>The corresponding table is <span class="code">usmUserTable</span> in the
+SNMP-USER-BASED-SM-MIB.
+
+</p>
+<p>Each entry is a term:
+
+</p>
+<p><span class="code">{EngineID, UserName, AuthP, AuthKey, PrivP, PrivKey}.</span> <br />
+
+<span class="code">{EngineID, UserName, SecName, AuthP, AuthKey, PrivP, PrivKey}.</span>
+</p>
+<p>The first case is when we have the identity-function 
+(<span class="code">SecName</span> = <span class="code">UserName</span>).
+
+</p>
+<ul>
+
+<li>
+
+<span class="code">EngineID</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">UserName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">SecName</span> is a string.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">AuthP</span> is a <span class="code">usmNoAuthProtocol</span>,
+<span class="code">usmHMACMD5AuthProtocol</span> or <span class="code">usmHMACSHAAuthProtocol</span>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">AuthKey</span> is a list (of integer). This is the User's 
+secret localized authentication key. It is not visible in the MIB. 
+The length of this key needs to be 16 if 
+<span class="code">usmHMACMD5AuthProtocol</span> is used and 20 if 
+<span class="code">usmHMACSHAAuthProtocol</span> is used.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">PrivP</span> is a <span class="code">usmNoPrivProtocol</span>, 
+<span class="code">usmDESPrivProtocol</span> or <span class="code">usmAesCfb128Protocol</span>.<br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">PrivKey</span> is a list (of integer). This is the User's secret
+localized encryption key. It is not visible in the MIB. The length
+of this key needs to be 16 if <span class="code">usmDESPrivProtocol</span>
+or <span class="code">usmAesCfb128Protocol</span> is used.<br />
+
+
+</li>
+
+
+</ul>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

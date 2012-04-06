@@ -1,0 +1,108 @@
+=== Suite started at 2009-11-16 15:34:08
+=== Starting test, 10 test cases
+=cases        10
+=user         Administrator
+=host         huang
+=hosts        huang 
+=emulator_vsn 5.6.5
+=emulator     beam
+=otp_release  R12B
+=started      2009-11-16 15:34:08
+=case    ipmi_SUITE:init_per_suite
+=logfile ipmi_suite.init_per_suite.html
+=started 2009-11-16 15:34:08
+=ended   2009-11-16 15:34:08
+=result    ok
+=elapsed   1.0e-6
+=case    ipmi_SUITE:correct_counter
+=logfile ipmi_suite.correct_counter.html
+=started 2009-11-16 15:34:08
+=ended   2009-11-16 15:34:33
+=result    ok:[{"Senser","Senser"},
+ {"Chassis/Power Overload","ChassisPowerOverload"},
+ {"Chassis/Power On","ChassisPowerOn"},
+ {"Chassis/Power Interlock","ChassisPowerInterlock"},
+ {"Chassis/Power Fault","ChassisPowerFault"},
+ {"Chassis/Power Control Fault","ChassisPowerControlFault"},
+ {"Chassis/Intrusion","ChassisIntrusion"},
+ {"Chassis/Front Panel Lockout","ChassisFrontPanelLockout"},
+ {"Chassis/Drive Fault","ChassisDriveFault"},
+ {"Chassis/Cooling Fan Fault","ChassisCoolingFanFault"},
+ {"Chassis","Chassis"}]
+=elapsed   25.328
+=case    ipmi_SUITE:correct_value
+=logfile ipmi_suite.correct_value.html
+=started 2009-11-16 15:34:33
+=ended   2009-11-16 15:34:33
+=result    ok:"Chassis/Power On"="True"<br>"Chassis/Power Overload"="False"<br>
+=elapsed   0.141
+=case    ipmi_SUITE:error_counter_server
+=logfile ipmi_suite.error_counter_server.html
+=started 2009-11-16 15:34:33
+=ended   2009-11-16 15:34:58
+=result    ok:{error,"Failed to init IPMI lan session: Failed to getUserAuhentications. Commad: Commad code:38 NetFn: 06 Command data: 0e 04 "}
+=elapsed   25.0
+=case    ipmi_SUITE:error_counter_user
+=logfile ipmi_suite.error_counter_user.html
+=started 2009-11-16 15:34:58
+=ended   2009-11-16 15:35:03
+=result    ok:{error,"Failed to init IPMI lan session: Failed to get User Challange:81\nInvalid user name"}
+=elapsed   5.032
+=case    ipmi_SUITE:error_counter_passwd
+=logfile ipmi_suite.error_counter_passwd.html
+=started 2009-11-16 15:35:03
+=ended   2009-11-16 15:35:04
+=result    ok:[{"Senser","Senser"},
+ {"Chassis/Power Overload","ChassisPowerOverload"},
+ {"Chassis/Power On","ChassisPowerOn"},
+ {"Chassis/Power Interlock","ChassisPowerInterlock"},
+ {"Chassis/Power Fault","ChassisPowerFault"},
+ {"Chassis/Power Control Fault","ChassisPowerControlFault"},
+ {"Chassis/Intrusion","ChassisIntrusion"},
+ {"Chassis/Front Panel Lockout","ChassisFrontPanelLockout"},
+ {"Chassis/Drive Fault","ChassisDriveFault"},
+ {"Chassis/Cooling Fan Fault","ChassisCoolingFanFault"},
+ {"Chassis","Chassis"}]
+=elapsed   0.344
+=case    ipmi_SUITE:eorror_counter_port
+=logfile ipmi_suite.eorror_counter_port.html
+=started 2009-11-16 15:35:04
+=ended   2009-11-16 15:35:29
+=result    ok:{error,"Failed to init IPMI lan session: Failed to getUserAuhentications. Commad: Commad code:38 NetFn: 06 Command data: 0e 04 "}
+=elapsed   25.0
+=case    ipmi_SUITE:error_value_server
+=logfile ipmi_suite.error_value_server.html
+=started 2009-11-16 15:35:29
+=ended   2009-11-16 15:35:54
+=result    ok:Failed to read chassis status: Failed to initialize IPMI LAN session
+=elapsed   25.0
+=case    ipmi_SUITE:error_value_user
+=logfile ipmi_suite.error_value_user.html
+=started 2009-11-16 15:35:54
+=ended   2009-11-16 15:35:54
+=result    ok:Failed to read chassis status: Failed to initialize IPMI LAN session
+=elapsed   0.047
+=case    ipmi_SUITE:error_value_passwd
+=logfile ipmi_suite.error_value_passwd.html
+=started 2009-11-16 15:35:54
+=ended   2009-11-16 15:35:54
+=result    ok:"Chassis/Power On"="True"<br>"Chassis/Power Overload"="False"<br>
+=elapsed   0.078
+=case    ipmi_SUITE:error_value_port
+=logfile ipmi_suite.error_value_port.html
+=started 2009-11-16 15:35:54
+=ended   2009-11-16 15:36:19
+=result    ok:Failed to read chassis status: Failed to initialize IPMI LAN session
+=elapsed   25.0
+=case    ipmi_SUITE:end_per_suite
+=logfile ipmi_suite.end_per_suite.html
+=started 2009-11-16 15:36:19
+=ended   2009-11-16 15:36:19
+=result    ok
+=elapsed   1.0e-6
+=== TEST COMPLETE, 10 ok, 0 failed of 10 test cases
+
+=finished   2009-11-16 15:36:19
+=failed     0
+=successful 10
+=skipped    0

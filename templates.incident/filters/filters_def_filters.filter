@@ -1,0 +1,3 @@
+{itsm_filters,"def_assigned_to_me","Assigned to me","incident",
+              [{"A3A35CA3981F750B",
+                {fielter_condition,"&","assigned_to","=","@me"}}]}.

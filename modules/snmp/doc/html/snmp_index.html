@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- This document was generated using DocBuilder-0.9.8.4 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>snmp_index</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <script type="text/javascript" src="../../../../doc/erlresolvelinks.js"></script>
+  <style type="text/css">
+<!--
+    body          { font-family: Verdana, Arial, Helvetica, sans-serif }
+    span.bold_code        { font-family: courier;font-weight: bold}
+    span.code        { font-family: courier;font-weight: normal}
+
+.note, .warning {
+  border: solid black 1px;
+  margin: 1em 3em;
+}
+
+.note .label {
+  background: #30d42a;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.note .content {
+  background: #eafeea;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+.warning .label {
+  background: #C00;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.warning .content {
+  background: #FFF0F0;
+  color: black;
+  line-height: 120%;
+  font-size: 90%;
+  padding: 5px 10px;
+}
+
+    .example     { background-color:#eeeeff } 
+    pre          { font-family: courier; font-weight: normal }
+    .REFBODY     { margin-left: 13mm }
+    .REFTYPES    { margin-left: 8mm }
+-->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#FF00FF" alink="#FF0000">
+<!-- refpage -->
+<center>
+<a href="http://www.ericsson.com/technology/opensource/erlang"><img border="0" alt="[Ericsson AB]" src="min_head.gif"/></a>
+</center><center>
+<h1>snmp_index</h1>
+</center>
+<h3>MODULE</h3>
+<div class="REFBODY">
+snmp_index
+</div>
+
+<h3>MODULE SUMMARY</h3>
+<div class="REFBODY">
+Abstract Data Type for SNMP Indexing
+</div>
+
+<h3>DESCRIPTION</h3>
+<div class="REFBODY">
+
+<p>The module <span class="code">snmp_index</span> implements an Abstract
+Data Type (ADT) for an SNMP
+index structure for SNMP tables. It is implemented as an ets
+table of the ordered_set data-type, which means that all operations are
+O(log n). In the table, the key is an ASN.1 OBJECT
+IDENTIFIER.
+
+</p>
+<p>This index is used to separate the implementation of the SNMP
+ordering from the actual implementation of the table. The SNMP
+ordering, that is implementation of GET NEXT, is implemented in this
+module.
+
+</p>
+<p>For example, suppose there is an SNMP table, which is best
+implemented in Erlang as one process per SNMP table row. Suppose
+further that the INDEX in the SNMP table is an OCTET STRING. The
+index structure would be created as follows:
+
+</p>
+<div class="example"><pre>
+snmp_index:new(string)
+    
+</pre></div>
+
+<p>For each new process we create, we insert an item in an
+<span class="code">snmp_index</span> structure:
+
+</p>
+<div class="example"><pre>
+new_process(Name, SnmpIndex) -&#62;
+  Pid = start_process(),
+  NewSnmpIndex = 
+    snmp_index:insert(SnmpIndex, Name, Pid),
+  &#60;...&#62;
+    
+</pre></div>
+
+<p>With this structure, we can now map an OBJECT IDENTIFIER in
+e.g. a GET NEXT request, to the correct process:
+
+</p>
+<div class="example"><pre>
+get_next_pid(Oid, SnmpIndex) -&#62;
+  {ok, {_, Pid}} = snmp_index:get_next(SnmpIndex, Oid),
+  Pid.
+    
+</pre></div>
+
+</div>
+
+<h3>Common data types</h3>
+<div class="REFBODY">
+
+<p>The following data types are used in the functions below:
+
+</p>
+<ul>
+
+<li>
+
+<span class="code">index()</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">oid() = [byte()]</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">key_types = type_spec() | {type_spec(), type_spec(), ...}</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">type_spec() = fix_string | string | integer</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">key() = key_spec() | {key_spec(), key_spec(), ...}</span><br />
+
+
+</li>
+
+
+<li>
+
+<span class="code">key_spec() = string() | integer()</span><br />
+
+
+</li>
+
+
+</ul>
+
+<p>The <span class="code">index()</span> type denotes an snmp index structure.
+
+</p>
+<p>The <span class="code">oid()</span> type is used to represent an ASN.1 OBJECT
+IDENTIFIER.
+
+</p>
+<p>The <span class="code">key_types()</span> type is used when creating the
+index structure, and the <span class="code">key()</span> type is used when inserting
+and deleting items from the structure.
+
+</p>
+<p>The <span class="code">key_types()</span> type defines the types of the SNMP INDEX
+columns for the table. If the table has one single INDEX column,
+this type should be a single atom, but if the table has multiple
+INDEX columns, it should be a tuple with atoms.
+
+</p>
+<p>If the INDEX column is of type INTEGER, or derived from
+INTEGER, the corresponding type should be <span class="code">integer</span>. If it
+is a variable length type (e.g. OBJECT IDENTIFIER, OCTET STRING),
+the corresponding type should be <span class="code">string</span>. Finally, if the
+type is of variable length, but with a fixed size restriction
+(e.g. IpAddress), the corresponding type should be
+<span class="code">fix_string</span>.
+
+</p>
+<p>For example, if the SNMP table has two INDEX columns, the first
+one an OCTET STRING with size 2, and the second one an OBJECT
+IDENTIFER, the corresponding <span class="code">key_types</span> parameter would be
+<span class="code">{fix_string, string}</span>.
+
+</p>
+<p>The <span class="code">key()</span> type correlates to the <span class="code">key_types()</span>
+type. If the <span class="code">key_types()</span> is a single atom, the
+corresponding <span class="code">key()</span> is a single type as well, but if the
+<span class="code">key_types()</span> is a tuple, <span class="code">key</span> must be a tuple of the
+same size.
+
+</p>
+<p>In the example above, valid <span class="code">keys</span> could be <span class="code">{&#34;hi&#34;, &#34;mom&#34;}</span> and <span class="code">{&#34;no&#34;, &#34;thanks&#34;}</span>, whereas <span class="code">&#34;hi&#34;</span>,
+<span class="code">{&#34;hi&#34;, 42}</span> and <span class="code">{&#34;hello&#34;, &#34;there&#34;}</span> would be invalid.
+</p>
+<div class="warning">
+<div class="label">Warning</div>
+<div class="content">
+<a name="1"><!-- Empty --></a>
+<p>All API functions that update the index return a <span class="code">NewIndex</span>
+term. This is for backward compatibility with a previous
+implementation that used a B+ tree written purely in Erlang for 
+the index. The <span class="code">NewIndex</span> return value can now be ignored. 
+The return value is now the unchanged table identifier for the 
+ets table.
+</p>
+<p>The implementation using ets tables introduces a semantic
+incompatibility with older implementations. In those older 
+implementations, using pure Erlang terms, the index was garbage 
+collected like any other Erlang term and did not have to be 
+deleted when discarded. An ets table is deleted only when the 
+process creating it explicitly deletes it or when the creating 
+process terminates.
+</p>
+<p>A new interface <span class="code">delete/1</span> is now added to
+handle the case when a process wants to discard an index table
+(i.e. to build a completely new). Any application using
+transient snmp indexes has to be modified to handle this.
+</p>
+<p>As an snmp adaption usually keeps the index for the whole of the
+systems lifetime, this is rarely a problem.
+</p>
+</div>
+</div>
+
+</div>
+
+<h3>EXPORTS</h3>
+
+<p><a name="delete-1"><span class="bold_code">delete(Index) -&#62; true</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = NewIndex = index()</span><br/>
+<span class="bold_code">Key = key()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Deletes a complete index structure (i.e. the ets table
+holding the index). The index can no longer be referenced
+after this call. See the <a href="#1">warning note</a>
+above.
+</p>
+</div>
+
+<p><a name="delete-2"><span class="bold_code">delete(Index, Key) -&#62; NewIndex</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = NewIndex = index()</span><br/>
+<span class="bold_code">Key = key()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Deletes a key and its value from the index structure.
+Returns a new structure.
+</p>
+</div>
+
+<p><a name="get-2"><span class="bold_code">get(Index, KeyOid) -&#62; {ok, {KeyOid, Value}} | undefined</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = index()</span><br/>
+<span class="bold_code">KeyOid = oid()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Gets the item with key <span class="code">KeyOid</span>. Could be used from
+within an SNMP instrumentation function.
+</p>
+</div>
+
+<p><a name="get_last-1"><span class="bold_code">get_last(Index) -&#62; {ok, {KeyOid, Value}} | undefined</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = index()</span><br/>
+<span class="bold_code">KeyOid = oid()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Gets the last item in the index structure.
+</p>
+</div>
+
+<p><a name="get_next-2"><span class="bold_code">get_next(Index, KeyOid) -&#62; {ok, {NextKeyOid, Value}} | undefined</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = index()</span><br/>
+<span class="bold_code">KeyOid = NextKeyOid = oid()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Gets the next item in the SNMP lexicographic ordering,
+after <span class="code">KeyOid</span> in the index structure. <span class="code">KeyOid</span>
+does not have to refer to an existing item in the index.
+</p>
+</div>
+
+<p><a name="insert-3"><span class="bold_code">insert(Index, Key, Value) -&#62; NewIndex</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = NewIndex = index()</span><br/>
+<span class="bold_code">Key = key()</span><br/>
+<span class="bold_code">Value = term()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Inserts a new key value tuple into the index structure. If
+an item with the same key already exists, the new <span class="code">Value</span>
+overwrites the old value.
+</p>
+</div>
+
+<p><a name="key_to_oid-2"><span class="bold_code">key_to_oid(Index, Key) -&#62; KeyOid</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">Index = index()</span><br/>
+<span class="bold_code">Key = key()</span><br/>
+<span class="bold_code">KeyOid = NextKeyOid = oid()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Converts <span class="code">Key</span> to an OBJECT IDENTIFIER.
+</p>
+</div>
+
+<p><a name="new-1"><span class="bold_code">new(KeyTypes) -&#62; Index</span></a><br/>
+
+</p>
+
+<div class="REFBODY"><p>Types:</p>
+  <div class="REFTYPES">
+<p>
+<span class="bold_code">KeyTypes = key_types()</span><br/>
+<span class="bold_code">Index = index()</span><br/>
+
+ </p> </div>
+</div>
+
+<div class="REFBODY">
+
+<p>Creates a new snmp index structure. The <span class="code">key_types()</span>
+type is described above.
+</p>
+</div>
+<center>
+<hr/>
+<small>snmp 4.12<br/>
+  Copyright &copy; 1991-2008
+  <a href="http://www.ericsson.com/technology/opensource/erlang">Ericsson AB</a><br/>
+</small>
+</center></body>
+</html>

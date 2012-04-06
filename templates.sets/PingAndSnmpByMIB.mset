@@ -1,0 +1,34 @@
+{monitor_set,
+"PingAndSnmpByMIB SET",
+"Creates a PING  and SnmpByMIB monitor using ip",
+[
+	{"%ip%","host ip to ping and snmp by mib","127.0.0.1"},
+	{"%community%","snmp community","public"}
+],
+[
+	[
+		{class,ping_monitor},
+		{size,32},
+		{hostname,"ping:%ip%"},
+		{timeout,3000},
+		{name,"Ping: %ip%"},
+		{frequency,600}
+	],
+	[
+		{class,browsable_snmp_monitor},
+		{name,"SNMP by MIB: %ip%"},
+		{server,"%ip%"},
+		{snmpversion,"v1"},
+		{community,"%community%"},
+		{browse,[
+			{"1.3.6.1.2.1.1.4","iso/org/dod/internet/mgmt/mib-2/system/sysContact"},
+			{"1.3.6.1.2.1.1.1","iso/org/dod/internet/mgmt/mib-2/system/sysDescr"},
+			{"1.3.6.1.2.1.1.6","iso/org/dod/internet/mgmt/mib-2/system/sysLocation"},
+			{"1.3.6.1.2.1.1.5","iso/org/dod/internet/mgmt/mib-2/system/sysName"},
+			{"1.3.6.1.2.1.1.2","iso/org/dod/internet/mgmt/mib-2/system/sysObjectID"},
+			{"1.3.6.1.2.1.1.7","iso/org/dod/internet/mgmt/mib-2/system/sysServices"},
+			{"1.3.6.1.2.1.1.3","iso/org/dod/internet/mgmt/mib-2/system/sysUpTime"}
+			]}
+	]
+]
+}.

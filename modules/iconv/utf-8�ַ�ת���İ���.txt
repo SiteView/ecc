@@ -1,0 +1,18 @@
+
+	
+1、该代码来自 libiconv , 更多的使用帮助请搜索关键词: iconv erlang , 或 http://www.gnu.org/software/libiconv/
+2、将 iconv_erl.dll、libiconv2.dll 拷贝到 OTP_HOME\bin 下, 即 erlang根目录\bin 下
+				       或 启动 evm 的目录下，即运行 erl.exe 的目录下
+
+3、简单的使用方法：
+
+	iconv:start(). 
+
+	iconv:convert("gbk", "utf-8", "你好").
+	iconv:convert("utf-8", "gbk", iconv:convert("gbk", "utf-8", "你好")).
+	iconv:convert("utf-8", "gbk", [228,189,160,229,165,189]).
+
+
+
+
+

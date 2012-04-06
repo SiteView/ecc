@@ -1,0 +1,46 @@
+{"连接情况",[
+        {"最大连接数","max_connections"},
+        {"同时最大连接数","Max_used_connections"},
+        {"当前连接数","Threads_connected"},
+	{"文件打开数","Open_tables"}
+	]}.
+{"同步状态",[
+	{"slave status","Com_show_slave_status"},
+	{"slave start","Com_slave_start"},
+	{"slave stop","Com_slave_stop"},
+	{"open temp tables","Slave_open_temp_tables"},
+	{"slave running","Slave_running"},
+	{"slave retiried transactions","Slave_retried_transactions"}
+	]}.
+{"线程情况",[
+	{"Threads cached","Threads_cached"},
+	{"Threads connected","Threads_connected"},
+	{"Threads created","Threads_created"},
+	{"Threads running","Threads_running"}
+	]}.
+{"查询缓存",[
+	{"Qcache free blocks","Qcache_free_blocks"},
+	{"Qcache free memory","Qcache_free_memory"},
+	{"Qcache hits","Qcache_hits"},
+	{"Qcache inserts","Qcache_inserts"},
+	{"Qcache lowmem prunes","Qcache_lowmem_prunes"},
+	{"Qcache not cached","Qcache_not_cached"},
+	{"Qcache queries in cache","Qcache_queries_in_cache"},
+	{"Qcache total blocks","Qcache_total_blocks"}
+	]}.
+{"排序情况",[
+	{"Sort merge passes","Sort_merge_passes"},
+	{"Sort range","Sort_range"},
+	{"Sort rows","Sort_rows"},
+	{"Sort scan","Sort_scan"}
+	]}.
+{"表锁情况",[
+	{"Table locks immediat","Table_locks_immediate"},
+	{"Table locks waited","Table_locks_waited"}
+	]}.
+{"操作性能",[
+	{"key Buffer 命中率","key_buffer_hit_rate"},
+	{"InnoDB Buffer命中率","innodb_buffer_hit_rate"},
+	{"Query Cache命中率","query_cache_hit_rate"},
+	{"Thread Cache 命中率","thread_cache_hit_rate"}
+	]}.

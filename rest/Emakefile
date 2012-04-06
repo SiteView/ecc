@@ -1,0 +1,3 @@
+{['src/*'], [{d,debug},{outdir, "ebin"}]}.
+{['deps/*'], [{d,debug},{outdir, "deps"}]}.
+{['deps/*'], [{outdir, "deps"}]}.

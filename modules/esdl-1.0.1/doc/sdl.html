@@ -1,0 +1,22 @@
+<HTML><HEAD><TITLE>sdl</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl.hrl">sdl.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="init">
+<strong> init(Flags)  </strong><UL>Args: BitMask<br>
+Returns: WrapperRef<br>
+<a href="http://www.libsdl.org/docs/html/sdlinit.html">C-API:</a> int SDL_Init(Uint32 flags);<br>
+Desc:<br> Initializes the SDL (including the erlang specific parts)<br>
+</UL>
+<p><A NAME="quit">
+<strong> quit()  </strong><UL>Args: none<br>
+Returns: Quits the wrapper<br>
+<a href="http://www.libsdl.org/docs/html/sdlquit.html">C-API:</a> void SDL_Quit(void);<br>
+</UL>
+<p><A NAME="getError">
+<strong> getError()  </strong><UL>Args: none<br>
+Returns: DescString<br>
+<a href="http://www.libsdl.org/docs/html/sdlgeterror.html">C-API:</a> char * SDL_GetError(void);<br>
+</UL>
+</html>

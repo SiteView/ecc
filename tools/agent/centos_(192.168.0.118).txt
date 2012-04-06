@@ -1,0 +1,880 @@
+-----------------
+12/20/10 14:40:09 tcp 192.168.88.1.33067 -> 192.168.0.118.22 (ssh)
+siteview
+dragonflow123
+
+Last login: Mon Dec 20 14:23:15 2010 from 192.168.9.104
+exec /bin/sh -s +v
+case "`PATH=/usr/bin:/bin uname -sr 2>/dev/null`" in SunOS\ 5.1[1-9] ) [ -x /usr/bin/bash ]  &&  exec /usr/bin/bash -s +v ;; esac
+stty -echo; PS1=;PS2=;PS3=;PS4=;echo SUA `echo Rocks`
+[siteview@centos5 ~]$ exec /bin/sh -s +v
+sh-3.1$ case "`PATH=/usr/bin:/bin uname -sr 2>/dev/null`" in SunOS\ 5.1[1-9] ) [  -x /usr/bin/bash ]  &&  exec /usr/bin/bash -s +v ;; esac
+sh-3.1$ stty -echo; PS1=;PS2=;PS3=;PS4=;echo SUA `echo Rocks`
+SUA Rocks
+[I-0]:LOG:phase=discovery
+[I-0]:LOG:SUA_Discovery_version=1.6.1
+[I-0]:LOG:hostname=centos5
+[I-0]:LOG:uname_a='Linux centos5 2.6.18-8.el5 #1 SMP Thu Mar 15 19:57:35 EDT 2007 i686 i686 i386 GNU/Linux'
+[I-0]:LOG:OS=Linux
+[I-0]:LOG:OSversion=2.6.18-8.el5
+[I-0]:LOG:cpu_model='Intel(R) Pentium(R) Dual CPU E2160 @ 1.80GHz'
+[I-0]:LOG:cpu_count=2
+[I-0]:LOG:etc_issue='CentOS release 5 (Final) Kernel \r on an \m'
+[I-0]:LOG:etc_release='CentOS release 5 (Final)'
+[I-0]:LOG:shell2try=sh
+[I-0]:LOG:foundshell=/bin/sh
+[I-0]:LOG:foundshell-details='-rwxr-xr-x 1 root root 722684 Jan  6  2007 /bin/sh'
+[I-0]:LOG:random_nums='25375 3500 142'
+[I-0]:LOG:foundshell-runs=1
+[I-0]:LOG:foundshell-works=1
+[I-0]:LOG:tmp-dir=/tmp
+[I-0]:LOG:256kb-free-in-tmp-dir=1
+[I-0]:LOG:SUA_PERL_BIN-setting=[value=not-set valid=0 use-sh=0]
+[I-0]:LOG:foundperl=[bin=/usr/bin/perl ver=5008 raw-ver=5.008008]
+[I-0]:LOG:foundperl-details='-rwxr-xr-x 2 root root 14788 Jan 10  2007 /usr/bin/perl'
+[I-0]:LOG:rejected-perl-bins=
+[M-1]:DSC:method=perl
+[M-1]:DSC:bin-to-run=/usr/bin/perl
+[M-1]:DSC:error-msg=
+[I-0]:LOG:SUAversion=1.11
+[I-0]:LOG:method=perl
+[I-0]:LOG:hostname=centos5
+[I-0]:LOG:uname_a=Linux centos5 2.6.18-8.el5 #1 SMP Thu Mar 15 19:57:35 EDT 2007 i686 i686 i386 GNU/Linux
+[I-0]:LOG:OS=Linux
+[I-0]:LOG:OSversion=2.6.18-8.el5
+[M-2]:LOG:READY at 20101220-142415
+3:LOG:E-cmd-status=0
+32:BGN:uname -sr
+32:DATA:Linux 2.6.18-8.el5
+32:END:lcnt=1
+32:END:stat=0
+33:BGN:free -bt |awk '$1 = /Mem:/ {print "Total Used Free"; print $2, $3, $4}'
+33:DATA:Total Used Free
+33:DATA:2114691072 1686675456 428015616
+33:END:lcnt=2
+33:END:stat=0
+34:BGN:sed -e 's/:/ /g' /proc/net/dev
+34:DATA:Inter-|   Receive                                                |  Transmit
+34:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+34:DATA:    lo 3835910281 25405221    0    0    0     0          0         0 3835910281 25405221    0    0    0     0       0          0
+34:DATA:  eth1 3597997616 23283439    0    0    0     0          0         0 1246580312 25324446    0    0    0     0       0          0
+34:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+34:END:lcnt=5
+34:END:stat=0
+35:BGN:iostat -x -d -k 15  | while read Resp ; do set -- $Resp ; (( $# > 6 ))  && echo "$Resp"; done
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               2.25    15.86  3.93  8.50   123.32    97.52    35.53     0.27   21.42   2.14   2.66
+35:DATA:dm-0              0.00     0.00  3.87 22.07   114.04    88.28    15.60     0.60   23.01   0.89   2.32
+35:DATA:dm-1              0.00     0.00  2.31  2.31     9.24     9.24     8.00     0.36   78.21   1.17   0.54
+36:BGN:df -lP
+36:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+36:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971848   9603700      94% /
+36:DATA:/dev/sda1               101086     10965     84902      12% /boot
+36:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+36:END:lcnt=4
+36:END:stat=0
+37:BGN:sed -e 's/:/ /g' /proc/net/dev
+37:DATA:Inter-|   Receive                                                |  Transmit
+37:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+37:DATA:    lo 3835910281 25405221    0    0    0     0          0         0 3835910281 25405221    0    0    0     0       0          0
+37:DATA:  eth1 3597998394 23283449    0    0    0     0          0         0 1246582898 25324458    0    0    0     0       0          0
+37:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+37:END:lcnt=5
+37:END:stat=0
+38:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+38:DATA:458 98 5
+38:END:lcnt=1
+38:END:stat=0
+39:BGN:free -bt |awk '$1 = /Mem:/ {print "Total Used Free"; print $2, $3, $4}'
+39:DATA:Total Used Free
+39:DATA:2114691072 1687056384 427634688
+39:END:lcnt=2
+39:END:stat=0
+40:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+40:DATA:Total Used Free
+40:DATA:2080366592 1231015936 849350656
+40:END:lcnt=2
+40:END:stat=0
+41:BGN:grep -c '^processor' /proc/cpuinfo
+41:DATA:2
+41:END:lcnt=1
+41:END:stat=0
+42:BGN:mpstat -P ALL 60  | while read ; do [[ $REPLY = ??:??:* ]] && echo "${REPLY#???????????}"; done
+43:BGN:date
+43:DATA:Mon Dec 20 14:24:18 CST 2010
+43:END:lcnt=1
+43:END:stat=0
+44:BGN:df -P
+44:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+44:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971848   9603700      94% /
+44:DATA:/dev/sda1               101086     10965     84902      12% /boot
+44:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+44:END:lcnt=4
+44:END:stat=0
+45:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+45:DATA:Total Used Free
+45:DATA:2080366592 1231015936 849350656
+45:END:lcnt=2
+45:END:stat=0
+46:BGN:vmstat 15
+46:DATA:procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu------
+46:DATA: r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+46:DATA: 1  0 1202164 416992  66520 314540    5    5    62    49   11    3  2  0 97  1  0
+47:BGN:awk '/:/ {gsub( ":", " " ); print $1, $2,i++ }' /proc/net/dev
+47:DATA:lo 3835910281 0
+47:DATA:eth1 3598001030 1
+47:DATA:sit0 0 2
+47:END:lcnt=3
+47:END:stat=0
+48:BGN:awk '/:/ {gsub( ":", " " ); print $1, $10,i++ }' /proc/net/dev
+48:DATA:lo 3835910281 0
+48:DATA:eth1 1246588034 1
+48:DATA:sit0 0 2
+48:END:lcnt=3
+48:END:stat=0
+49:BGN:awk '{sub(/[:]/," ",$1) ;print($0,i++)}' /proc/net/dev
+49:DATA:Inter-|   Receive                                                |  Transmit 0
+49:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed 1
+49:DATA:lo 3835910281 25405221 0 0 0 0 0 0 3835910281 25405221 0 0 0 0 0 0 2
+49:DATA:eth1 3598001662 23283486 0 0 0 0 0 0 1246588406 25324487 0 0 0 0 0 0 3
+49:DATA:sit0  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+49:END:lcnt=5
+49:END:stat=0
+50:BGN:awk '/:/ {gsub( ":", " " ); print $1, $2,i++ }' /proc/net/dev
+50:DATA:lo 3835910281 0
+50:DATA:eth1 3598001920 1
+50:DATA:sit0 0 2
+50:END:lcnt=3
+50:END:stat=0
+51:BGN:awk '/:/ {gsub( ":", " " ); print $1, $10,i++ }' /proc/net/dev
+51:DATA:lo 3835910281 0
+51:DATA:eth1 1246589584 1
+51:DATA:sit0 0 2
+51:END:lcnt=3
+51:END:stat=0
+52:BGN:awk '{sub(/[:]/," ",$1) ;print($0,i++)}' /proc/net/dev
+52:DATA:Inter-|   Receive                                                |  Transmit 0
+52:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed 1
+52:DATA:lo 3835910281 25405221 0 0 0 0 0 0 3835910281 25405221 0 0 0 0 0 0 2
+52:DATA:eth1 3598002368 23283494 0 0 0 0 0 0 1246589956 25324494 0 0 0 0 0 0 3
+52:DATA:sit0  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+52:END:lcnt=5
+52:END:stat=0
+53:BGN:awk '{ if ($1 == "pgpgin") {In=$2}; if ($1 == "pgpgout") {Out=$2}; } END { print "page", In, Out; }'  /proc/vmstat
+53:DATA:page 116877677 92428943
+53:END:lcnt=1
+53:END:stat=0
+54:BGN:ps -e | wc -l
+54:DATA:172
+54:END:lcnt=1
+54:END:stat=0
+55:BGN:ps -eo user,pid,ppid,gid,%cpu,%mem,vsz,rss,tty,state,nice,pri,etime,time,comm,args | awk '{ if (NR ==1) sub("COMMAND","CMD_NAME"); print $0}'
+55:DATA:USER       PID  PPID   GID %CPU %MEM    VSZ   RSS TT       S  NI PRI     ELAPSED     TIME CMD_NAME         COMMAND
+55:DATA:root         1     0     0  0.0  0.0   2036   588 ?        S   0  24 10-23:16:23 00:00:00 init            init [3]                                   
+55:DATA:root         2     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:16:23 00:00:00 migration/0     [migration/0]
+55:DATA:root         3     1     0  0.0  0.0      0     0 ?        S  19   5 10-23:16:23 00:00:00 ksoftirqd/0     [ksoftirqd/0]
+55:DATA:root         4     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:16:23 00:00:00 watchdog/0      [watchdog/0]
+55:DATA:root         5     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:16:23 00:00:00 migration/1     [migration/1]
+55:DATA:root         6     1     0  0.0  0.0      0     0 ?        S  19   5 10-23:16:23 00:00:00 ksoftirqd/1     [ksoftirqd/1]
+55:DATA:root         7     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:16:23 00:00:00 watchdog/1      [watchdog/1]
+55:DATA:root         8     1     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:00:00 events/0        [events/0]
+55:DATA:root         9     1     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:00:00 events/1        [events/1]
+55:DATA:root        10     1     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:00:00 khelper         [khelper]
+55:DATA:root        11     1     0  0.0  0.0      0     0 ?        S  -5  21 10-23:16:23 00:00:00 kthread         [kthread]
+55:DATA:root        15    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:00:00 kblockd/0       [kblockd/0]
+55:DATA:root        16    11     0  0.0  0.0      0     0 ?        S  -5  26 10-23:16:23 00:00:00 kblockd/1       [kblockd/1]
+55:DATA:root        17    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:16:23 00:00:00 kacpid          [kacpid]
+55:DATA:root       117    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:16:23 00:00:00 cqueue/0        [cqueue/0]
+55:DATA:root       118    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:16:23 00:00:00 cqueue/1        [cqueue/1]
+55:DATA:root       121    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:00:00 khubd           [khubd]
+55:DATA:root       123    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:00:00 kseriod         [kseriod]
+55:DATA:root       192    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:23 00:02:02 kswapd0         [kswapd0]
+55:DATA:root       193    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:16:23 00:00:00 aio/0           [aio/0]
+55:DATA:root       194    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:16:23 00:00:00 aio/1           [aio/1]
+55:DATA:root       344    11     0  0.0  0.0      0     0 ?        S  -5  27 10-23:16:22 00:00:00 kpsmoused       [kpsmoused]
+55:DATA:root       376    11     0  0.0  0.0      0     0 ?        S  -5  23 10-23:16:21 00:00:00 ata/0           [ata/0]
+55:DATA:root       377    11     0  0.0  0.0      0     0 ?        S  -5  23 10-23:16:21 00:00:00 ata/1           [ata/1]
+55:DATA:root       378    11     0  0.0  0.0      0     0 ?        S  -5  23 10-23:16:21 00:00:00 ata_aux         [ata_aux]
+55:DATA:root       382    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:20 00:00:00 scsi_eh_0       [scsi_eh_0]
+55:DATA:root       383    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:20 00:00:29 scsi_eh_1       [scsi_eh_1]
+55:DATA:root       384    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:20 00:00:00 scsi_eh_2       [scsi_eh_2]
+55:DATA:root       385    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:20 00:00:00 scsi_eh_3       [scsi_eh_3]
+55:DATA:root       386    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:20 00:00:00 scsi_eh_4       [scsi_eh_4]
+55:DATA:root       387    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:20 00:00:00 scsi_eh_5       [scsi_eh_5]
+55:DATA:root       394    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:15:34 00:00:00 kmirrord        [kmirrord]
+55:DATA:root       401    11     0  0.0  0.0      0     0 ?        S  -5  24 10-23:15:34 00:00:00 ksnapd          [ksnapd]
+55:DATA:root       404    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:15:28 00:01:13 kjournald       [kjournald]
+55:DATA:root       431    11     0  0.0  0.0      0     0 ?        S  -5  27 10-23:15:26 00:00:00 kauditd         [kauditd]
+55:DATA:root       465     1     0  0.0  0.0   2208   344 ?        S  -4  22 10-23:15:26 00:00:00 udevd           /sbin/udevd -d
+55:DATA:root      1338    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:15:23 00:00:00 kjournald       [kjournald]
+55:DATA:root      1553    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:15:15 00:00:00 kondemand/0     [kondemand/0]
+55:DATA:root      1554    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:15:15 00:00:00 kondemand/1     [kondemand/1]
+55:DATA:root      1910     1     0  0.0  0.0  12044   560 ?        S  -3  25 10-23:15:13 00:00:01 auditd          auditd
+55:DATA:root      1912  1910     0  0.0  0.1   9564  2468 ?        S  -3  25 10-23:15:13 00:00:01 python          python /sbin/audispd
+55:DATA:root      1930     1     0  0.0  0.0   1688   600 ?        S   0  24 10-23:15:13 00:00:35 syslogd         syslogd -h -m 0
+55:DATA:root      1934     1     0  0.0  0.0   2600   392 ?        S   0  24 10-23:15:13 00:00:00 klogd           klogd -2
+55:DATA:root      1950     1     0  0.0  0.0   1684   320 ?        S   0  21 10-23:15:13 00:00:00 irqbalance      irqbalance
+55:DATA:rpc       1985     1    32  0.0  0.0   1776   460 ?        S   0  21 10-23:15:12 00:00:00 portmap         portmap
+55:DATA:root      2010     1     0  0.0  0.0   1788   556 ?        S   0  14 10-23:15:12 00:00:00 rpc.statd       rpc.statd
+55:DATA:root      2052     1     0  0.0  0.0   5008   272 ?        S   0  24 10-23:15:12 00:00:00 rpc.idmapd      rpc.idmapd
+55:DATA:dbus      2079     1    81  0.0  0.0   2956   916 ?        S   0  23 10-23:15:12 00:00:09 dbus-daemon     dbus-daemon --system
+55:DATA:root      2094     1     0  0.0  0.0   2116   512 ?        S   0  15 10-23:15:12 00:00:00 hcid            /usr/sbin/hcid
+55:DATA:root      2100     1     0  0.0  0.0   1712   372 ?        S   0  15 10-23:15:12 00:00:00 sdpd            /usr/sbin/sdpd
+55:DATA:root      2124     1     0  0.0  0.0      0     0 ?        S -10  24 10-23:15:12 00:00:00 krfcommd        [krfcommd]
+55:DATA:root      2173     1     0  0.0  0.0  12816   588 ?        S   0  14 10-23:15:11 00:00:03 pcscd           pcscd
+55:DATA:root      2197     1     0  0.0  0.0   1880   348 ?        S   0  14 10-23:15:11 00:00:00 hidd            /usr/bin/hidd --server
+55:DATA:ldap      2239     1    55  0.0  0.2 204568  5428 ?        S   0  15 10-23:15:09 00:09:35 slapd           /usr/sbin/slapd -h ldap:/// ldaps:/// -u ldap
+55:DATA:root      2262     1     0  0.0  0.0   9336   744 ?        S   0  14 10-23:15:09 00:00:00 automount       automount
+55:DATA:root      2285     1     0  0.0  0.0   1636   436 ?        S   0  21 10-23:15:09 00:00:00 acpid           /usr/sbin/acpid
+55:DATA:root      2300     1     0  0.0  0.0   9648   840 ?        S   0  21 10-23:15:09 00:00:00 cupsd           cupsd
+55:DATA:root      2334     1     0  0.0  0.0   2672   736 ?        S   0  21 10-23:15:08 00:00:00 xinetd          xinetd -stayalive -pidfile /var/run/xinetd.pid
+55:DATA:root      2385     1     0  0.0  0.0   4484  1028 ?        S   0  14 10-23:15:05 00:00:00 mysqld_safe     /bin/sh /usr/bin/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid
+55:DATA:mysql     2448  2385    27  0.0  3.7 266416 77724 ?        S   0  22 10-23:15:05 00:10:17 mysqld          /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql --user=mysql --pid-file=/var/run/mysqld/mysqld.pid --skip-external-locking --port=3306 --socket=/var/lib/mysql/mysql.sock
+55:DATA:root      2633     1     0  0.0  0.0   7904  1520 ?        S   0  24 10-23:14:51 00:00:40 master          /usr/libexec/postfix/master
+55:DATA:root      2648     1     0  0.0  0.0   1868   248 ?        S   0  21 10-23:14:51 00:00:00 gpm             gpm -m /dev/input/mice -t exps2
+55:DATA:root      2665     1     0  0.0  0.0   5228   640 ?        S   0  21 10-23:14:51 00:00:00 crond           crond
+55:DATA:clamav    2688     1   102  0.0  0.0   2956   816 ?        S   0  23 10-23:14:50 00:00:01 freshclam       /usr/bin/freshclam -d -c 2
+55:DATA:xfs       2721     1    43  0.0  0.0   3352   564 ?        S   0  21 10-23:14:50 00:00:00 xfs             xfs -droppriv -daemon
+55:DATA:root      2750     1     0  0.0  0.0   2204   340 ?        S   0  21 10-23:14:50 00:00:00 atd             /usr/sbin/atd
+55:DATA:avahi     2780     1    70  0.0  0.0   2540  1096 ?        S   0  23 10-23:14:49 00:00:00 avahi-daemon    avahi-daemon: running [centos5.local]
+55:DATA:avahi     2782  2780    70  0.0  0.0   2540   156 ?        S   0  15 10-23:14:49 00:00:00 avahi-daemon    avahi-daemon: chroot helper
+55:DATA:68        2797     1    68  0.0  0.0   5380  1456 ?        S   0  21 10-23:14:49 00:00:00 hald            hald
+55:DATA:root      2798  2797     0  0.0  0.0   3104   704 ?        S   0  18 10-23:14:49 00:00:00 hald-runner     hald-runner
+55:DATA:68        2806  2798    68  0.0  0.0   1968   648 ?        S   0  21 10-23:14:49 00:00:00 hald-addon-acpi hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+55:DATA:root      2807  2798     0  0.0  0.0   3160   684 ?        S   0  21 10-23:14:49 00:00:00 hald-addon-cpuf /usr/libexec/hald-addon-cpufreq
+55:DATA:root      2816  2798     0  0.0  0.0   1920   504 ?        S   0  21 10-23:14:48 00:00:26 hald-addon-stor hald-addon-storage: polling /dev/scd0
+55:DATA:root      2822     1     0  0.0  0.2  26112  4972 ?        S  19   5 10-23:14:47 00:00:47 yum-updatesd    /usr/bin/python -tt /usr/sbin/yum-updatesd
+55:DATA:root      2824     1     0  0.0  0.0   2528   960 ?        S  19   5 10-23:14:47 00:00:00 gam_server      /usr/libexec/gam_server
+55:DATA:root      2843     1     0  0.0  0.0   4020   392 ?        S   0  24 10-23:14:46 00:00:00 rsync           /usr/local/rsync/bin/rsync --daemon
+55:DATA:root      2872     1     0  0.0  0.2  59268  6016 ?        S   0  21 10-23:14:45 00:00:00 httpd           /usr/sbin/httpd
+55:DATA:root      3212     1     0  0.0  0.0   1828   152 ?        S   0  24 10-23:14:32 00:00:00 epmd            /usr/lib/erlang/erts-5.7.4/bin/epmd -daemon
+55:DATA:root      3214     1     0  0.0  0.6 145740 12920 ?        S   0  14 10-23:14:32 00:01:25 beam.smp        /usr/lib/erlang/erts-5.7.4/bin/beam.smp -S 8 -P 102400 -K true -- -root /usr/lib/erlang -progname erl -- -home / -- -smp -heart -noshell -noinput -sname om -setcookie 3ren -mnesia dir "db" -pa /raid5/om/om/ebin /raid5/om/om/include /raid5/om/om/deps/erlmagick/ebin /raid5/om/om/deps/erlydtl/ebin /raid5/om/om/deps/gettext/ebin /raid5/om/om/deps/iconv/ebin /raid5/om/om/deps/license/ebin /raid5/om/om/deps/mochiweb/ebin /raid5/om/om/deps/mprocreg/ebin /raid5/om/om/deps/mysql/ebin /raid5/om/om/deps/nitrogen/ebin /raid5/om/om/deps/regex/ebin /raid5/om/om/deps/simple_bridge/ebin /raid5/om/om/deps/gettext/include /raid5/om/om/deps/mochiweb/include /raid5/om/om/deps/nitrogen/include /raid5/om/om/deps/simple_bridge/include -config /raid5/om/om/etc/app.config -kernel inet_dist_listen_min 8100 -kernel inet_dist_listen_max 8200 -eval nitrogen_init:init(),application:start(gettext)
+55:DATA:root      3254  3214     0  0.0  0.0   1484   376 ?        S   0  24 10-23:14:32 00:00:02 heart           heart -pid 3214
+55:DATA:root      3315     1     0  0.0  0.0   1948   440 ?        S   0  21 10-23:14:28 00:00:00 smartd          /usr/sbin/smartd -q never
+55:DATA:root      3318     1     0  0.0  0.0   1628   372 tty1     S   0  21 10-23:14:28 00:00:00 mingetty        /sbin/mingetty tty1
+55:DATA:root      3319     1     0  0.0  0.0   1628   372 tty2     S   0  21 10-23:14:28 00:00:00 mingetty        /sbin/mingetty tty2
+55:DATA:root      3320     1     0  0.0  0.0   1628   372 tty3     S   0  18 10-23:14:28 00:00:00 mingetty        /sbin/mingetty tty3
+55:DATA:root      3322     1     0  0.0  0.0   1628   372 tty4     S   0  19 10-23:14:28 00:00:00 mingetty        /sbin/mingetty tty4
+55:DATA:root      3329     1     0  0.0  0.0   1624   372 tty5     S   0  16 10-23:14:28 00:00:00 mingetty        /sbin/mingetty tty5
+55:DATA:root      3336     1     0  0.0  0.0   1624   372 tty6     S   0  16 10-23:14:28 00:00:00 mingetty        /sbin/mingetty tty6
+55:DATA:postfix   4243  2633    89  0.0  0.0   8044  1576 ?        S   0  21    18:14:40 00:00:00 anvil           anvil -l -t unix -u
+55:DATA:root      5064  3214     0  0.0  0.0   1824   340 ?        S   0  24 10-23:02:21 00:00:00 inet_gethost    inet_gethost 4
+55:DATA:root      5065  5064     0  0.0  0.0   1868   484 ?        S   0  21 10-23:02:21 00:00:00 inet_gethost    inet_gethost 4
+55:DATA:dovecot  12044 18163   101  0.0  0.0   4600  1644 ?        S   0  19    06:38:51 00:00:00 imap-login      imap-login
+55:DATA:dovecot  12568 18163   101  0.0  0.0   4604  1716 ?        S   0  19    05:49:49 00:00:00 imap-login      imap-login
+55:DATA:vmail    12569 18163   500  0.0  0.0   3284  1608 ?        S   0  24    05:49:48 00:00:00 imap            imap
+55:DATA:vmail    12579 18163   500  0.0  0.0   3316  1544 ?        S   0  24    05:49:17 00:00:00 imap            imap
+55:DATA:root     13362     1     0  0.0  0.1  35780  4096 ?        S   0  24 10-22:20:10 00:00:01 spamd           /usr/bin/spamd -d -c -m5 -H -r /var/run/spamd.pid
+55:DATA:policyd  13375     1   501  0.0  0.0  20552   948 ?        S   0  24 10-22:20:09 00:00:26 policyd         /usr/sbin/policyd -c /etc/policyd.conf
+55:DATA:amavis   13411     1   103  0.0  0.8  67128 17960 ?        S   0  21 10-22:20:08 00:00:02 amavisd         amavisd (master)
+55:DATA:root     13416 13362     0  0.0  0.0  35780  1480 ?        S   0  21 10-22:20:08 00:00:00 spamd           spamd child
+55:DATA:root     13417 13362     0  0.0  0.0  35780  1424 ?        S   0  21 10-22:20:08 00:00:00 spamd           spamd child
+55:DATA:clamav   13474     1   102  0.0  1.1 137308 23080 ?        S   0  22 10-22:20:05 00:11:06 clamd           clamd
+55:DATA:root     13483     1     0  0.0  4.6 778112 95284 ?        S   0  23 10-22:20:00 00:05:40 java            /usr/java/jdk1.5.0/bin/java -Xms128m -Xmx256m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=./apache-tomcat/conf/logging.properties -Djava.endorsed.dirs=./apache-tomcat/common/endorsed -classpath :./apache-tomcat/bin/bootstrap.jar:./apache-tomcat/bin/commons-logging-api.jar -Dcatalina.base=./apache-tomcat -Dcatalina.home=./apache-tomcat -Djava.io.tmpdir=./apache-tomcat/temp org.apache.catalina.startup.Bootstrap start
+55:DATA:root     13484     1     0  0.2  3.3 912224 69240 ?        S   0  22 10-22:20:00 00:35:40 java            /usr/java/jdk1.5.0/bin/java -Dfisheye.library.path= -Dfisheye.inst=/raid5/fisheye -Djava.awt.headless=true -Djava.endorsed.dirs=/raid5/fisheye/lib/endorsed -jar /raid5/fisheye/fisheyeboot.jar run
+55:DATA:root     13516     1     0  0.2  6.8 1015896 140624 ?      S   0  23 10-22:20:00 00:38:11 java            /usr/java/jdk1.5.0/bin/java -Xms256m -Xmx512m -XX:MaxPermSize=256m -Djava.awt.headless=true -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=/raid5/confluence/conf/logging.properties -Djava.endorsed.dirs=/raid5/confluence/endorsed -classpath :/raid5/confluence/bin/bootstrap.jar:/raid5/confluence/bin/commons-logging-api.jar -Dcatalina.base=/raid5/confluence -Dcatalina.home=/raid5/confluence -Djava.io.tmpdir=/raid5/confluence/temp org.apache.catalina.startup.Bootstrap start
+55:DATA:root     13574     1     0  0.1 10.1 641572 209632 ?       S   0  23 10-22:19:59 00:22:51 java            /usr/java/jdk1.5.0/bin/java -XX:MaxPermSize=128m -Xms128m -Xmx256m -Djava.awt.headless=true -Datlassian.standalone=JIRA -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=/raid5/jira/conf/logging.properties -Djava.endorsed.dirs=/raid5/jira/common/endorsed -classpath :/raid5/jira/bin/bootstrap.jar:/raid5/jira/bin/commons-logging-api.jar -Dcatalina.base=/raid5/jira -Dcatalina.home=/raid5/jira -Djava.io.tmpdir=/raid5/jira/temp org.apache.catalina.startup.Bootstrap start
+55:DATA:postfix  13610  2633    89  0.0  0.0   8052  1604 ?        S   0  24 10-22:19:49 00:00:01 tlsmgr          tlsmgr -l -t unix -u
+55:DATA:postfix  13616  2633    89  0.0  0.0   8232  1780 ?        S   0  24 10-22:19:42 00:00:43 qmgr            qmgr -l -t fifo -u
+55:DATA:daemon   16561  2872     2  0.2  5.7 172132 118756 ?       S   0  23    04:02:03 00:00:31 httpd           /usr/sbin/httpd
+55:DATA:daemon   16589  2872     2  0.3  6.2 182848 128348 ?       S   0  23    04:01:35 00:00:46 httpd           /usr/sbin/httpd
+55:DATA:root     16752     1     0  0.0  0.1   8228  2516 ?        S   0  24    03:56:58 00:00:00 sshd            sshd: root@notty 
+55:DATA:root     16755 16752     0  0.0  0.0   4368  1216 ?        S   0  24    03:56:57 00:00:00 sftp-server     /usr/libexec/openssh/sftp-server
+55:DATA:daemon   17228  2872     2  0.3  5.8 173572 121712 ?       S   0  23    03:48:52 00:00:42 httpd           /usr/sbin/httpd
+55:DATA:root     17879     1     0  0.0  0.1   8084  2488 ?        S   0  24    03:35:56 00:00:00 sshd            sshd: root@notty 
+55:DATA:root     17884 17879     0  0.0  0.0   4376  1168 ?        S   0  24    03:35:55 00:00:00 sftp-server     /usr/libexec/openssh/sftp-server
+55:DATA:root     18163     1     0  0.0  0.0   1860   496 ?        S   0  24  1-10:21:28 00:00:05 dovecot         /usr/sbin/dovecot
+55:DATA:vmail    18164 18163   500  0.0  0.0   8032  2056 ?        S   0  24  1-10:21:28 00:00:07 dovecot-auth    dovecot-auth
+55:DATA:68       20127  2798    68  0.0  0.0   1968   640 ?        S   0  18 10-04:20:32 00:00:00 hald-addon-keyb hald-addon-keyboard: listening on /dev/input/event2
+55:DATA:68       20130  2798    68  0.0  0.0   1964   640 ?        S   0  18 10-04:20:32 00:00:00 hald-addon-keyb hald-addon-keyboard: listening on /dev/input/event1
+55:DATA:daemon   21167  2872     2  0.3  3.8 129276 78724 ?        S   0  23    02:22:14 00:00:29 httpd           /usr/sbin/httpd
+55:DATA:root     24048    11     0  0.0  0.0      0     0 ?        S   0  24    01:14:44 00:00:00 pdflush         [pdflush]
+55:DATA:root     24059    11     0  0.0  0.0      0     0 ?        S   0  24    01:14:28 00:00:00 pdflush         [pdflush]
+55:DATA:postfix  24731  2633    89  0.0  0.0   7976  1812 ?        S   0  21    01:01:01 00:00:00 pickup          pickup -l -t fifo -u -o content_filter 
+55:DATA:daemon   25623  2872     2  0.1  1.6  90432 34488 ?        S   0  23       43:14 00:00:04 httpd           /usr/sbin/httpd
+55:DATA:postfix  25850  2633    89  0.0  0.1   8112  2232 ?        S   0  24       37:35 00:00:00 trivial-rewrite trivial-rewrite -n rewrite -t unix -u
+55:DATA:root     26271     1     0  0.0  0.1   8084  2480 ?        S   0  24       30:04 00:00:00 sshd            sshd: root@notty 
+55:DATA:root     26273 26271     0  0.0  0.0   4364  1152 ?        S   0  16       30:03 00:00:00 sftp-server     /usr/libexec/openssh/sftp-server
+55:DATA:root     26332     1     0  0.0  0.0   5232  1096 ?        S   0  21       29:37 00:00:00 sshd            /usr/sbin/sshd
+55:DATA:vmail    26752 18163   500  0.0  0.0   2736   936 ?        S   0  24       19:03 00:00:00 imap            imap
+55:DATA:postfix  26761  2633    89  0.0  0.1   8120  2272 ?        S   0  24       18:59 00:00:00 cleanup         cleanup -z -t unix -u
+55:DATA:postfix  26764  2633    89  0.0  0.0   8024  1920 ?        S   0  24       18:59 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+55:DATA:postfix  27016  2633    89  0.0  0.1   8376  3364 ?        S   0  24       13:37 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27018  2633    89  0.0  0.1   8380  3364 ?        S   0  24       13:37 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27022  2633    89  0.0  0.1   8380  3364 ?        S   0  24       13:37 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27029  2633    89  0.0  0.1   8380  3364 ?        S   0  23       13:37 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27036  2633    89  0.0  0.1   8380  3372 ?        S   0  24       13:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27037  2633    89  0.0  0.1   8380  3368 ?        S   0  24       13:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27038  2633    89  0.0  0.1   8376  3364 ?        S   0  24       13:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+55:DATA:postfix  27078  2633    89  0.0  0.1   8376  2816 ?        S   0  22       12:51 00:00:00 smtpd           smtpd -n 127.0.0.1:10025 -t inet -u -c -o content_filter  -o local_recipient_maps  -o relay_recipient_maps  -o smtpd_restriction_classes  -o smtpd_delay_reject no -o smtpd_client_restrictions permit_mynetworks,reject -o smtpd_helo_restrictions  -o smtpd_sender_restrictions  -o smtpd_recipient_restrictions permit_mynetworks,reject -o mynetworks_style host -o mynetworks 127.0.0.0/8 -o strict_rfc821_envelopes yes -o smtpd_error_sleep_time 0 -o smtpd_soft_error_limit 1001 -o smtpd_hard_error_limit 1000 -o smtpd_client_connection_count_limit 0 -o smtpd_client_connection_rate_limit 0 -o receive_override_options no_header_body_checks,no_unknown_recipient_checks
+55:DATA:vmail    27230 18163   500  0.0  0.1  11364  2072 ?        S   0  24       09:23 00:00:00 imap            imap
+55:DATA:vmail    27236 18163   500  0.0  0.1  11368  2132 ?        S   0  24       09:20 00:00:00 imap            imap
+55:DATA:vmail    27242 18163   500  0.0  0.0  11240  2052 ?        S   0  24       09:17 00:00:00 imap            imap
+55:DATA:postfix  27307  2633    89  0.0  0.0   8020  1912 ?        S   0  22       08:03 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+55:DATA:postfix  27403  2633    89  0.0  0.1   8160  2084 ?        S   0  24       05:50 00:00:00 smtp            smtp -n smtp-amavis -t unix -u -c -o smtp_data_done_timeout 1200 -o smtp_send_xforward_command yes -o disable_dns_lookups yes -o max_use 20
+55:DATA:root     27444  2334     0  0.0  0.0   1860   788 ?        S   0  24       05:04 00:00:00 in.telnetd      in.telnetd
+55:DATA:postfix  27462  2633    89  0.0  0.1   8164  2088 ?        S   0  24       04:34 00:00:00 smtp            smtp -n smtp-amavis -t unix -u -c -o smtp_data_done_timeout 1200 -o smtp_send_xforward_command yes -o disable_dns_lookups yes -o max_use 20
+55:DATA:amavis   27464 13411   103  0.4  1.8  69840 38744 ?        S   0  22       04:32 00:00:01 amavisd         amavisd (ch9-avail)
+55:DATA:postfix  27504  2633    89  0.0  0.1   8376  2816 ?        S   0  22       03:49 00:00:00 smtpd           smtpd -n 127.0.0.1:10025 -t inet -u -c -o content_filter  -o local_recipient_maps  -o relay_recipient_maps  -o smtpd_restriction_classes  -o smtpd_delay_reject no -o smtpd_client_restrictions permit_mynetworks,reject -o smtpd_helo_restrictions  -o smtpd_sender_restrictions  -o smtpd_recipient_restrictions permit_mynetworks,reject -o mynetworks_style host -o mynetworks 127.0.0.0/8 -o strict_rfc821_envelopes yes -o smtpd_error_sleep_time 0 -o smtpd_soft_error_limit 1001 -o smtpd_hard_error_limit 1000 -o smtpd_client_connection_count_limit 0 -o smtpd_client_connection_rate_limit 0 -o receive_override_options no_header_body_checks,no_unknown_recipient_checks
+55:DATA:amavis   27566 13411   103  0.2  1.7  68392 36848 ?        S   0  21       02:44 00:00:00 amavisd         amavisd (ch4-avail)
+55:DATA:dovecot  27621 18163   101  0.0  0.0   4576  1712 ?        S   0  24       01:30 00:00:00 pop3-login      pop3-login
+55:DATA:dovecot  27632 18163   101  0.0  0.0   4456  1464 ?        S   0  21       01:17 00:00:00 imap-login      imap-login
+55:DATA:vmail    27636 18163   500  0.0  0.0   2996  1388 ?        S   0  24       01:06 00:00:00 pop3            pop3
+55:DATA:dovecot  27787 18163   101  0.0  0.0   4444  1456 ?        S   0  24       00:39 00:00:00 pop3-login      pop3-login
+55:DATA:daemon   27789  2872     2  0.3  0.5  73264 10780 ?        S   0  24       00:30 00:00:00 httpd           /usr/sbin/httpd
+55:DATA:postfix  27801  2633    89  0.0  0.0   8020  1912 ?        S   0  22       00:27 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+55:DATA:postfix  27803  2633    89  0.0  0.0   8024  1916 ?        S   0  22       00:27 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+55:DATA:dovecot  27811 18163   101  0.0  0.0   4456  1460 ?        S   0  17       00:17 00:00:00 imap-login      imap-login
+55:DATA:dovecot  27814 18163   101  0.0  0.0   4448  1452 ?        S   0  20       00:16 00:00:00 pop3-login      pop3-login
+55:DATA:dovecot  27816 18163   101  0.0  0.0   4452  1460 ?        S   0  24       00:13 00:00:00 imap-login      imap-login
+55:DATA:root     27817 26332     0  0.2  0.1   8084  2300 ?        S   0  19       00:08 00:00:00 sshd            sshd: siteview [priv]
+55:DATA:siteview 27819 27817   502  0.2  0.0   8084  1340 ?        S   0  24       00:08 00:00:00 sshd            sshd: siteview@pts/1
+55:DATA:siteview 27820 27819   502  6.5  0.0   5924  2028 pts/1    R   0  23       00:08 00:00:00 perl            qsft-sua
+55:DATA:dovecot  27902 18163   101  0.0  0.0   4444  1452 ?        S   0  24       00:03 00:00:00 pop3-login      pop3-login
+55:DATA:siteview 27908 27820   502  0.0  0.0   2364   868 pts/1    S   0  21       00:02 00:00:00 sh              sh -c iostat -x -d -k 15  | while read Resp ; do set -- $Resp ; (( $# > 6 ))  && echo "$Resp"; done
+55:DATA:siteview 27909 27908   502  0.0  0.0   1644   608 pts/1    S   0  20       00:02 00:00:00 iostat          iostat -x -d -k 15
+55:DATA:siteview 27910 27908   502  0.0  0.0   2368   540 pts/1    S   0  19       00:02 00:00:00 sh              sh -c iostat -x -d -k 15  | while read Resp ; do set -- $Resp ; (( $# > 6 ))  && echo "$Resp"; done
+55:DATA:siteview 27923 27820   502  0.0  0.0   2360   864 pts/1    S   0  21       00:01 00:00:00 sh              sh -c mpstat -P ALL 60  | while read ; do [[ $REPLY = ??:??:* ]] && echo "${REPLY#???????????}"; done
+55:DATA:siteview 27924 27923   502  0.0  0.0   1652   564 pts/1    S   0  21       00:01 00:00:00 mpstat          mpstat -P ALL 60
+55:DATA:siteview 27925 27923   502  0.0  0.0   2360   376 pts/1    S   0  21       00:01 00:00:00 sh              sh -c mpstat -P ALL 60  | while read ; do [[ $REPLY = ??:??:* ]] && echo "${REPLY#???????????}"; done
+55:DATA:siteview 27931 27820   502  0.0  0.0   1760   528 pts/1    S   0  21       00:01 00:00:00 vmstat          vmstat 15
+55:DATA:siteview 27942 27820   502  0.0  0.0   2364   948 pts/1    S   0  22       00:00 00:00:00 sh              sh -c ps -eo user,pid,ppid,gid,%cpu,%mem,vsz,rss,tty,state,nice,pri,etime,time,comm,args | awk '{ if (NR ==1) sub("COMMAND","CMD_NAME"); print $0}'
+55:DATA:siteview 27943 27942   502  0.0  0.0   2140   804 pts/1    R   0  20       00:00 00:00:00 ps              ps -eo user,pid,ppid,gid,%cpu,%mem,vsz,rss,tty,state,nice,pri,etime,time,comm,args
+55:DATA:siteview 27944 27942   502  0.0  0.0   2120   764 pts/1    S   0  20       00:00 00:00:00 awk             awk { if (NR ==1) sub("COMMAND","CMD_NAME"); print $0}
+55:END:lcnt=172
+55:END:stat=0
+56:BGN:awk '{ if ($1 == "pgpgin") {In=$2}; if ($1 == "pgpgout") {Out=$2}; } END { print "page", In, Out; }'  /proc/vmstat
+56:DATA:page 116877677 92428943
+56:END:lcnt=1
+56:END:stat=0
+57:BGN:grep -c '^processor' /proc/cpuinfo
+57:DATA:2
+57:END:lcnt=1
+57:END:stat=0
+58:BGN:uptime
+58:DATA: 14:24:19 up 10 days, 23:16,  1 user,  load average: 0.05, 0.06, 0.06
+58:END:lcnt=1
+58:END:stat=0
+59:BGN:who -u
+59:DATA:siteview pts/1        Dec 20 14:24   .         27817 (192.168.9.104)
+59:END:lcnt=1
+59:END:stat=0
+60:BGN:who |  wc -l
+60:DATA:1
+60:END:lcnt=1
+60:END:stat=0
+61:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+61:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+61:END:lcnt=1
+61:END:stat=0
+62:BGN:date
+62:DATA:Mon Dec 20 14:24:31 CST 2010
+62:END:lcnt=1
+62:END:stat=0
+63:BGN:df -lP
+63:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+63:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971728   9603820      94% /
+63:DATA:/dev/sda1               101086     10965     84902      12% /boot
+63:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+63:END:lcnt=4
+63:END:stat=0
+64:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+64:DATA:Total Used Free
+64:DATA:2080366592 1231015936 849350656
+64:END:lcnt=2
+64:END:stat=0
+65:BGN:sed -e 's/:/ /g' /proc/net/dev
+65:DATA:Inter-|   Receive                                                |  Transmit
+65:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+65:DATA:    lo 3835988153 25405752    0    0    0     0          0         0 3835988153 25405752    0    0    0     0       0          0
+65:DATA:  eth1 3598030799 23283796    0    0    0     0          0         0 1246648877 25324775    0    0    0     0       0          0
+65:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+65:END:lcnt=5
+65:END:stat=0
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               0.00    28.67  1.80 18.00     9.07   193.87    20.50     1.34   83.07   3.01   5.97
+35:DATA:dm-0              0.00     0.00  1.73 40.80     8.80   163.20     8.09     1.64   48.06   1.37   5.81
+35:DATA:dm-1              0.00     0.00  0.07  0.00     0.27     0.00     8.00     0.00   24.00  24.00   0.16
+66:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+66:DATA:461 97 5
+66:END:lcnt=1
+66:END:stat=0
+67:BGN:ps -e | wc -l
+67:DATA:173
+67:END:lcnt=1
+67:END:stat=0
+68:BGN:uptime
+68:DATA: 14:24:32 up 10 days, 23:16,  1 user,  load average: 0.04, 0.05, 0.06
+68:END:lcnt=1
+68:END:stat=0
+69:BGN:who |  wc -l
+69:DATA:1
+69:END:lcnt=1
+69:END:stat=0
+70:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+70:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+70:END:lcnt=1
+70:END:stat=0
+46:DATA: 0  0 1202164 415260  66696 314488    0    0     9   163 1068 1327  3  1 94  1  0
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               0.00    16.67  0.00  3.80     0.00    81.87    43.09     0.01    1.46   0.65   0.25
+35:DATA:dm-0              0.00     0.00  0.00 20.47     0.00    81.87     8.00     0.02    0.93   0.12   0.25
+35:DATA:dm-1              0.00     0.00  0.00  0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+71:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+71:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+71:END:lcnt=1
+71:END:stat=0
+72:BGN:who |  wc -l
+72:DATA:1
+72:END:lcnt=1
+72:END:stat=0
+73:BGN:uptime
+73:DATA: 14:24:47 up 10 days, 23:16,  1 user,  load average: 0.03, 0.05, 0.06
+73:END:lcnt=1
+73:END:stat=0
+74:BGN:ps -e | wc -l
+74:DATA:173
+74:END:lcnt=1
+74:END:stat=0
+75:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+75:DATA:457 84 5
+75:END:lcnt=1
+75:END:stat=0
+76:BGN:sed -e 's/:/ /g' /proc/net/dev
+76:DATA:Inter-|   Receive                                                |  Transmit
+76:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+76:DATA:    lo 3836015204 25405936    0    0    0     0          0         0 3836015204 25405936    0    0    0     0       0          0
+76:DATA:  eth1 3598057537 23284161    0    0    0     0          0         0 1246788641 25325027    0    0    0     0       0          0
+76:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+76:END:lcnt=5
+76:END:stat=0
+77:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+77:DATA:Total Used Free
+77:DATA:2080366592 1231015936 849350656
+77:END:lcnt=2
+77:END:stat=0
+78:BGN:df -lP
+78:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+78:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971744   9603804      94% /
+78:DATA:/dev/sda1               101086     10965     84902      12% /boot
+78:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+78:END:lcnt=4
+78:END:stat=0
+79:BGN:date
+79:DATA:Mon Dec 20 14:24:48 CST 2010
+79:END:lcnt=1
+79:END:stat=0
+46:DATA: 0  0 1202164 415468  66748 314536    0    0     0    82 1050 1191  1  1 98  0  0
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               0.00    20.40  0.00 21.67     0.00   168.27    15.53     0.95   43.66   1.35   2.92
+35:DATA:dm-0              0.00     0.00  0.00 42.07     0.00   168.27     8.00     1.23   29.16   0.69   2.92
+35:DATA:dm-1              0.00     0.00  0.00  0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+80:BGN:sed -e 's/:/ /g' /proc/net/dev
+80:DATA:Inter-|   Receive                                                |  Transmit
+80:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+80:DATA:    lo 3836154273 25406653    0    0    0     0          0         0 3836154273 25406653    0    0    0     0       0          0
+80:DATA:  eth1 3598078460 23284392    0    0    0     0          0         0 1246804629 25325109    0    0    0     0       0          0
+80:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+80:END:lcnt=5
+80:END:stat=0
+81:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+81:DATA:462 82 5
+81:END:lcnt=1
+81:END:stat=0
+82:BGN:ps -e | wc -l
+82:DATA:173
+82:END:lcnt=1
+82:END:stat=0
+83:BGN:uptime
+83:DATA: 14:25:02 up 10 days, 23:17,  1 user,  load average: 0.03, 0.05, 0.06
+83:END:lcnt=1
+83:END:stat=0
+84:BGN:who |  wc -l
+84:DATA:1
+84:END:lcnt=1
+84:END:stat=0
+85:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+85:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+85:END:lcnt=1
+85:END:stat=0
+86:BGN:date
+86:DATA:Mon Dec 20 14:25:02 CST 2010
+86:END:lcnt=1
+86:END:stat=0
+87:BGN:df -lP
+87:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+87:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971612   9603936      94% /
+87:DATA:/dev/sda1               101086     10965     84902      12% /boot
+87:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+87:END:lcnt=4
+87:END:stat=0
+88:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+88:DATA:Total Used Free
+88:DATA:2080366592 1231015936 849350656
+88:END:lcnt=2
+88:END:stat=0
+46:DATA: 0  0 1202164 413896  66800 314384    0    0     0   168 1052 1226  2  1 97  0  0
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               0.00    13.20  0.00  3.33     0.00    66.13    39.68     0.00    0.80   0.34   0.11
+35:DATA:dm-0              0.00     0.00  0.00 16.53     0.00    66.13     8.00     0.02    1.03   0.07   0.11
+35:DATA:dm-1              0.00     0.00  0.00  0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+89:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+89:DATA:Total Used Free
+89:DATA:2080366592 1231015936 849350656
+89:END:lcnt=2
+89:END:stat=0
+90:BGN:df -lP
+90:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+90:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971612   9603936      94% /
+90:DATA:/dev/sda1               101086     10965     84902      12% /boot
+90:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+90:END:lcnt=4
+90:END:stat=0
+91:BGN:date
+91:DATA:Mon Dec 20 14:25:17 CST 2010
+91:END:lcnt=1
+91:END:stat=0
+92:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+92:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+92:END:lcnt=1
+92:END:stat=0
+93:BGN:who |  wc -l
+93:DATA:1
+93:END:lcnt=1
+93:END:stat=0
+94:BGN:uptime
+94:DATA: 14:25:17 up 10 days, 23:17,  1 user,  load average: 0.15, 0.08, 0.07
+94:END:lcnt=1
+94:END:stat=0
+95:BGN:ps -e | wc -l
+95:DATA:175
+95:END:lcnt=1
+95:END:stat=0
+42:DATA:  CPU   %user   %nice    %sys %iowait    %irq   %soft  %steal   %idle    intr/s
+42:DATA:  all    2.12    0.00    0.59    0.42    0.02    0.19    0.00   96.67   1058.88
+42:DATA:    0    2.48    0.00    0.57    0.70    0.02    0.07    0.00   96.17    549.39
+42:DATA:    1    1.75    0.00    0.60    0.15    0.00    0.30    0.00   97.20    509.50
+96:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+96:DATA:464 82 5
+96:END:lcnt=1
+96:END:stat=0
+97:BGN:sed -e 's/:/ /g' /proc/net/dev
+97:DATA:Inter-|   Receive                                                |  Transmit
+97:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+97:DATA:    lo 3836238718 25407163    0    0    0     0          0         0 3836238718 25407163    0    0    0     0       0          0
+97:DATA:  eth1 3598111015 23284834    0    0    0     0          0         0 1247571092 25325727    0    0    0     0       0          0
+97:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+97:END:lcnt=5
+97:END:stat=0
+98:BGN:df -P
+98:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+98:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971612   9603936      94% /
+98:DATA:/dev/sda1               101086     10965     84902      12% /boot
+98:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+98:END:lcnt=4
+98:END:stat=0
+99:BGN:awk '/:/ {gsub( ":", " " ); print $1, $2,i++ }' /proc/net/dev
+99:DATA:lo 3836238718 0
+99:DATA:eth1 3598111655 1
+99:DATA:sit0 0 2
+99:END:lcnt=3
+99:END:stat=0
+46:DATA: 1  0 1202164 409676  66840 314400    0    0     0    66 1078 1194  3  1 96  0  0
+100:BGN:awk '/:/ {gsub( ":", " " ); print $1, $10,i++ }' /proc/net/dev
+100:DATA:lo 3836238718 0
+100:DATA:eth1 1247573396 1
+100:DATA:sit0 0 2
+100:END:lcnt=3
+100:END:stat=0
+101:BGN:awk '{sub(/[:]/," ",$1) ;print($0,i++)}' /proc/net/dev
+101:DATA:Inter-|   Receive                                                |  Transmit 0
+101:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed 1
+101:DATA:lo 3836238718 25407163 0 0 0 0 0 0 3836238718 25407163 0 0 0 0 0 0 2
+101:DATA:eth1 3598112287 23284850 0 0 0 0 0 0 1247573776 25325741 0 0 0 0 0 0 3
+101:DATA:sit0  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+101:END:lcnt=5
+101:END:stat=0
+102:BGN:awk '{ if ($1 == "pgpgin") {In=$2}; if ($1 == "pgpgout") {Out=$2}; } END { print "page", In, Out; }'  /proc/vmstat
+102:DATA:page 116877813 92436135
+102:END:lcnt=1
+102:END:stat=0
+103:BGN:ps -eo user,pid,ppid,gid,%cpu,%mem,vsz,rss,tty,state,nice,pri,etime,time,comm,args | awk '{ if (NR ==1) sub("COMMAND","CMD_NAME"); print $0}'
+103:DATA:USER       PID  PPID   GID %CPU %MEM    VSZ   RSS TT       S  NI PRI     ELAPSED     TIME CMD_NAME         COMMAND
+103:DATA:root         1     0     0  0.0  0.0   2036   588 ?        S   0  24 10-23:17:22 00:00:00 init            init [3]                                   
+103:DATA:root         2     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:17:22 00:00:00 migration/0     [migration/0]
+103:DATA:root         3     1     0  0.0  0.0      0     0 ?        S  19   5 10-23:17:22 00:00:00 ksoftirqd/0     [ksoftirqd/0]
+103:DATA:root         4     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:17:22 00:00:00 watchdog/0      [watchdog/0]
+103:DATA:root         5     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:17:22 00:00:00 migration/1     [migration/1]
+103:DATA:root         6     1     0  0.0  0.0      0     0 ?        S  19   5 10-23:17:22 00:00:00 ksoftirqd/1     [ksoftirqd/1]
+103:DATA:root         7     1     0  0.0  0.0      0     0 ?        S   - 139 10-23:17:22 00:00:00 watchdog/1      [watchdog/1]
+103:DATA:root         8     1     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:00:00 events/0        [events/0]
+103:DATA:root         9     1     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:00:00 events/1        [events/1]
+103:DATA:root        10     1     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:00:00 khelper         [khelper]
+103:DATA:root        11     1     0  0.0  0.0      0     0 ?        S  -5  21 10-23:17:22 00:00:00 kthread         [kthread]
+103:DATA:root        15    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:00:00 kblockd/0       [kblockd/0]
+103:DATA:root        16    11     0  0.0  0.0      0     0 ?        S  -5  26 10-23:17:22 00:00:00 kblockd/1       [kblockd/1]
+103:DATA:root        17    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:17:22 00:00:00 kacpid          [kacpid]
+103:DATA:root       117    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:17:22 00:00:00 cqueue/0        [cqueue/0]
+103:DATA:root       118    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:17:22 00:00:00 cqueue/1        [cqueue/1]
+103:DATA:root       121    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:00:00 khubd           [khubd]
+103:DATA:root       123    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:00:00 kseriod         [kseriod]
+103:DATA:root       192    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:22 00:02:02 kswapd0         [kswapd0]
+103:DATA:root       193    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:17:22 00:00:00 aio/0           [aio/0]
+103:DATA:root       194    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:17:22 00:00:00 aio/1           [aio/1]
+103:DATA:root       344    11     0  0.0  0.0      0     0 ?        S  -5  27 10-23:17:21 00:00:00 kpsmoused       [kpsmoused]
+103:DATA:root       376    11     0  0.0  0.0      0     0 ?        S  -5  23 10-23:17:20 00:00:00 ata/0           [ata/0]
+103:DATA:root       377    11     0  0.0  0.0      0     0 ?        S  -5  23 10-23:17:20 00:00:00 ata/1           [ata/1]
+103:DATA:root       378    11     0  0.0  0.0      0     0 ?        S  -5  23 10-23:17:20 00:00:00 ata_aux         [ata_aux]
+103:DATA:root       382    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:19 00:00:00 scsi_eh_0       [scsi_eh_0]
+103:DATA:root       383    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:19 00:00:29 scsi_eh_1       [scsi_eh_1]
+103:DATA:root       384    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:19 00:00:00 scsi_eh_2       [scsi_eh_2]
+103:DATA:root       385    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:19 00:00:00 scsi_eh_3       [scsi_eh_3]
+103:DATA:root       386    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:19 00:00:00 scsi_eh_4       [scsi_eh_4]
+103:DATA:root       387    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:17:19 00:00:00 scsi_eh_5       [scsi_eh_5]
+103:DATA:root       394    11     0  0.0  0.0      0     0 ?        S  -5  25 10-23:16:33 00:00:00 kmirrord        [kmirrord]
+103:DATA:root       401    11     0  0.0  0.0      0     0 ?        S  -5  24 10-23:16:33 00:00:00 ksnapd          [ksnapd]
+103:DATA:root       404    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:27 00:01:13 kjournald       [kjournald]
+103:DATA:root       431    11     0  0.0  0.0      0     0 ?        S  -5  27 10-23:16:25 00:00:00 kauditd         [kauditd]
+103:DATA:root       465     1     0  0.0  0.0   2208   344 ?        S  -4  22 10-23:16:25 00:00:00 udevd           /sbin/udevd -d
+103:DATA:root      1338    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:22 00:00:00 kjournald       [kjournald]
+103:DATA:root      1553    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:14 00:00:00 kondemand/0     [kondemand/0]
+103:DATA:root      1554    11     0  0.0  0.0      0     0 ?        S  -5  29 10-23:16:14 00:00:00 kondemand/1     [kondemand/1]
+103:DATA:root      1910     1     0  0.0  0.0  12044   560 ?        S  -3  23 10-23:16:12 00:00:01 auditd          auditd
+103:DATA:root      1912  1910     0  0.0  0.1   9564  2468 ?        S  -3  25 10-23:16:12 00:00:01 python          python /sbin/audispd
+103:DATA:root      1930     1     0  0.0  0.0   1688   600 ?        S   0  24 10-23:16:12 00:00:35 syslogd         syslogd -h -m 0
+103:DATA:root      1934     1     0  0.0  0.0   2600   392 ?        S   0  24 10-23:16:12 00:00:00 klogd           klogd -2
+103:DATA:root      1950     1     0  0.0  0.0   1684   320 ?        S   0  21 10-23:16:12 00:00:00 irqbalance      irqbalance
+103:DATA:rpc       1985     1    32  0.0  0.0   1776   460 ?        S   0  21 10-23:16:11 00:00:00 portmap         portmap
+103:DATA:root      2010     1     0  0.0  0.0   1788   556 ?        S   0  14 10-23:16:11 00:00:00 rpc.statd       rpc.statd
+103:DATA:root      2052     1     0  0.0  0.0   5008   272 ?        S   0  24 10-23:16:11 00:00:00 rpc.idmapd      rpc.idmapd
+103:DATA:dbus      2079     1    81  0.0  0.0   2956   916 ?        S   0  23 10-23:16:11 00:00:09 dbus-daemon     dbus-daemon --system
+103:DATA:root      2094     1     0  0.0  0.0   2116   512 ?        S   0  15 10-23:16:11 00:00:00 hcid            /usr/sbin/hcid
+103:DATA:root      2100     1     0  0.0  0.0   1712   372 ?        S   0  15 10-23:16:11 00:00:00 sdpd            /usr/sbin/sdpd
+103:DATA:root      2124     1     0  0.0  0.0      0     0 ?        S -10  24 10-23:16:11 00:00:00 krfcommd        [krfcommd]
+103:DATA:root      2173     1     0  0.0  0.0  12816   588 ?        S   0  14 10-23:16:10 00:00:03 pcscd           pcscd
+103:DATA:root      2197     1     0  0.0  0.0   1880   348 ?        S   0  14 10-23:16:10 00:00:00 hidd            /usr/bin/hidd --server
+103:DATA:ldap      2239     1    55  0.0  0.2 204568  5428 ?        S   0  15 10-23:16:08 00:09:35 slapd           /usr/sbin/slapd -h ldap:/// ldaps:/// -u ldap
+103:DATA:root      2262     1     0  0.0  0.0   9336   744 ?        S   0  14 10-23:16:08 00:00:00 automount       automount
+103:DATA:root      2285     1     0  0.0  0.0   1636   436 ?        S   0  21 10-23:16:08 00:00:00 acpid           /usr/sbin/acpid
+103:DATA:root      2300     1     0  0.0  0.0   9648   840 ?        S   0  21 10-23:16:08 00:00:00 cupsd           cupsd
+103:DATA:root      2334     1     0  0.0  0.0   2672   736 ?        S   0  21 10-23:16:07 00:00:00 xinetd          xinetd -stayalive -pidfile /var/run/xinetd.pid
+103:DATA:root      2385     1     0  0.0  0.0   4484  1028 ?        S   0  14 10-23:16:04 00:00:00 mysqld_safe     /bin/sh /usr/bin/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid
+103:DATA:mysql     2448  2385    27  0.0  3.7 266416 77728 ?        S   0  22 10-23:16:04 00:10:17 mysqld          /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql --user=mysql --pid-file=/var/run/mysqld/mysqld.pid --skip-external-locking --port=3306 --socket=/var/lib/mysql/mysql.sock
+103:DATA:root      2633     1     0  0.0  0.0   7904  1520 ?        S   0  24 10-23:15:50 00:00:40 master          /usr/libexec/postfix/master
+103:DATA:root      2648     1     0  0.0  0.0   1868   248 ?        S   0  21 10-23:15:50 00:00:00 gpm             gpm -m /dev/input/mice -t exps2
+103:DATA:root      2665     1     0  0.0  0.0   5228   640 ?        S   0  21 10-23:15:50 00:00:00 crond           crond
+103:DATA:clamav    2688     1   102  0.0  0.0   2956   816 ?        S   0  23 10-23:15:49 00:00:01 freshclam       /usr/bin/freshclam -d -c 2
+103:DATA:xfs       2721     1    43  0.0  0.0   3352   564 ?        S   0  21 10-23:15:49 00:00:00 xfs             xfs -droppriv -daemon
+103:DATA:root      2750     1     0  0.0  0.0   2204   340 ?        S   0  21 10-23:15:49 00:00:00 atd             /usr/sbin/atd
+103:DATA:avahi     2780     1    70  0.0  0.0   2540  1096 ?        S   0  23 10-23:15:48 00:00:00 avahi-daemon    avahi-daemon: running [centos5.local]
+103:DATA:avahi     2782  2780    70  0.0  0.0   2540   156 ?        S   0  15 10-23:15:48 00:00:00 avahi-daemon    avahi-daemon: chroot helper
+103:DATA:68        2797     1    68  0.0  0.0   5380  1456 ?        S   0  21 10-23:15:48 00:00:00 hald            hald
+103:DATA:root      2798  2797     0  0.0  0.0   3104   704 ?        S   0  18 10-23:15:48 00:00:00 hald-runner     hald-runner
+103:DATA:68        2806  2798    68  0.0  0.0   1968   648 ?        S   0  21 10-23:15:48 00:00:00 hald-addon-acpi hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+103:DATA:root      2807  2798     0  0.0  0.0   3160   684 ?        S   0  21 10-23:15:48 00:00:00 hald-addon-cpuf /usr/libexec/hald-addon-cpufreq
+103:DATA:root      2816  2798     0  0.0  0.0   1920   504 ?        S   0  21 10-23:15:47 00:00:26 hald-addon-stor hald-addon-storage: polling /dev/scd0
+103:DATA:root      2822     1     0  0.0  0.2  26112  4972 ?        S  19   5 10-23:15:46 00:00:47 yum-updatesd    /usr/bin/python -tt /usr/sbin/yum-updatesd
+103:DATA:root      2824     1     0  0.0  0.0   2528   960 ?        S  19   5 10-23:15:46 00:00:00 gam_server      /usr/libexec/gam_server
+103:DATA:root      2843     1     0  0.0  0.0   4020   392 ?        S   0  24 10-23:15:45 00:00:00 rsync           /usr/local/rsync/bin/rsync --daemon
+103:DATA:root      2872     1     0  0.0  0.2  59268  6016 ?        S   0  21 10-23:15:44 00:00:00 httpd           /usr/sbin/httpd
+103:DATA:root      3212     1     0  0.0  0.0   1828   152 ?        S   0  24 10-23:15:31 00:00:00 epmd            /usr/lib/erlang/erts-5.7.4/bin/epmd -daemon
+103:DATA:root      3214     1     0  0.0  0.6 145740 12920 ?        S   0  14 10-23:15:31 00:01:25 beam.smp        /usr/lib/erlang/erts-5.7.4/bin/beam.smp -S 8 -P 102400 -K true -- -root /usr/lib/erlang -progname erl -- -home / -- -smp -heart -noshell -noinput -sname om -setcookie 3ren -mnesia dir "db" -pa /raid5/om/om/ebin /raid5/om/om/include /raid5/om/om/deps/erlmagick/ebin /raid5/om/om/deps/erlydtl/ebin /raid5/om/om/deps/gettext/ebin /raid5/om/om/deps/iconv/ebin /raid5/om/om/deps/license/ebin /raid5/om/om/deps/mochiweb/ebin /raid5/om/om/deps/mprocreg/ebin /raid5/om/om/deps/mysql/ebin /raid5/om/om/deps/nitrogen/ebin /raid5/om/om/deps/regex/ebin /raid5/om/om/deps/simple_bridge/ebin /raid5/om/om/deps/gettext/include /raid5/om/om/deps/mochiweb/include /raid5/om/om/deps/nitrogen/include /raid5/om/om/deps/simple_bridge/include -config /raid5/om/om/etc/app.config -kernel inet_dist_listen_min 8100 -kernel inet_dist_listen_max 8200 -eval nitrogen_init:init(),application:start(gettext)
+103:DATA:root      3254  3214     0  0.0  0.0   1484   376 ?        S   0  24 10-23:15:31 00:00:02 heart           heart -pid 3214
+103:DATA:root      3315     1     0  0.0  0.0   1948   440 ?        S   0  21 10-23:15:27 00:00:00 smartd          /usr/sbin/smartd -q never
+103:DATA:root      3318     1     0  0.0  0.0   1628   372 tty1     S   0  21 10-23:15:27 00:00:00 mingetty        /sbin/mingetty tty1
+103:DATA:root      3319     1     0  0.0  0.0   1628   372 tty2     S   0  21 10-23:15:27 00:00:00 mingetty        /sbin/mingetty tty2
+103:DATA:root      3320     1     0  0.0  0.0   1628   372 tty3     S   0  18 10-23:15:27 00:00:00 mingetty        /sbin/mingetty tty3
+103:DATA:root      3322     1     0  0.0  0.0   1628   372 tty4     S   0  19 10-23:15:27 00:00:00 mingetty        /sbin/mingetty tty4
+103:DATA:root      3329     1     0  0.0  0.0   1624   372 tty5     S   0  16 10-23:15:27 00:00:00 mingetty        /sbin/mingetty tty5
+103:DATA:root      3336     1     0  0.0  0.0   1624   372 tty6     S   0  16 10-23:15:27 00:00:00 mingetty        /sbin/mingetty tty6
+103:DATA:postfix   4243  2633    89  0.0  0.0   8044  1576 ?        S   0  24    18:15:39 00:00:00 anvil           anvil -l -t unix -u
+103:DATA:root      5064  3214     0  0.0  0.0   1824   340 ?        S   0  24 10-23:03:20 00:00:00 inet_gethost    inet_gethost 4
+103:DATA:root      5065  5064     0  0.0  0.0   1868   484 ?        S   0  21 10-23:03:20 00:00:00 inet_gethost    inet_gethost 4
+103:DATA:dovecot  12044 18163   101  0.0  0.0   4600  1644 ?        S   0  19    06:39:50 00:00:00 imap-login      imap-login
+103:DATA:dovecot  12568 18163   101  0.0  0.0   4604  1716 ?        S   0  19    05:50:48 00:00:00 imap-login      imap-login
+103:DATA:vmail    12569 18163   500  0.0  0.0   3284  1608 ?        S   0  24    05:50:47 00:00:00 imap            imap
+103:DATA:vmail    12579 18163   500  0.0  0.0   3316  1544 ?        S   0  24    05:50:16 00:00:00 imap            imap
+103:DATA:root     13362     1     0  0.0  0.1  35780  4096 ?        S   0  24 10-22:21:09 00:00:01 spamd           /usr/bin/spamd -d -c -m5 -H -r /var/run/spamd.pid
+103:DATA:policyd  13375     1   501  0.0  0.0  20552   948 ?        S   0  24 10-22:21:08 00:00:26 policyd         /usr/sbin/policyd -c /etc/policyd.conf
+103:DATA:amavis   13411     1   103  0.0  0.8  67128 17960 ?        S   0  21 10-22:21:07 00:00:02 amavisd         amavisd (master)
+103:DATA:root     13416 13362     0  0.0  0.0  35780  1480 ?        S   0  21 10-22:21:07 00:00:00 spamd           spamd child
+103:DATA:root     13417 13362     0  0.0  0.0  35780  1424 ?        S   0  21 10-22:21:07 00:00:00 spamd           spamd child
+103:DATA:clamav   13474     1   102  0.0  1.1 137308 23080 ?        S   0  20 10-22:21:04 00:11:06 clamd           clamd
+103:DATA:root     13483     1     0  0.0  4.6 778112 95284 ?        S   0  23 10-22:20:59 00:05:40 java            /usr/java/jdk1.5.0/bin/java -Xms128m -Xmx256m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=./apache-tomcat/conf/logging.properties -Djava.endorsed.dirs=./apache-tomcat/common/endorsed -classpath :./apache-tomcat/bin/bootstrap.jar:./apache-tomcat/bin/commons-logging-api.jar -Dcatalina.base=./apache-tomcat -Dcatalina.home=./apache-tomcat -Djava.io.tmpdir=./apache-tomcat/temp org.apache.catalina.startup.Bootstrap start
+103:DATA:root     13484     1     0  0.2  3.3 912224 69244 ?        S   0  22 10-22:20:59 00:35:41 java            /usr/java/jdk1.5.0/bin/java -Dfisheye.library.path= -Dfisheye.inst=/raid5/fisheye -Djava.awt.headless=true -Djava.endorsed.dirs=/raid5/fisheye/lib/endorsed -jar /raid5/fisheye/fisheyeboot.jar run
+103:DATA:root     13516     1     0  0.2  6.8 1015896 140624 ?      S   0  23 10-22:20:59 00:38:11 java            /usr/java/jdk1.5.0/bin/java -Xms256m -Xmx512m -XX:MaxPermSize=256m -Djava.awt.headless=true -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=/raid5/confluence/conf/logging.properties -Djava.endorsed.dirs=/raid5/confluence/endorsed -classpath :/raid5/confluence/bin/bootstrap.jar:/raid5/confluence/bin/commons-logging-api.jar -Dcatalina.base=/raid5/confluence -Dcatalina.home=/raid5/confluence -Djava.io.tmpdir=/raid5/confluence/temp org.apache.catalina.startup.Bootstrap start
+103:DATA:root     13574     1     0  0.1 10.1 641572 209632 ?       S   0  23 10-22:20:58 00:22:51 java            /usr/java/jdk1.5.0/bin/java -XX:MaxPermSize=128m -Xms128m -Xmx256m -Djava.awt.headless=true -Datlassian.standalone=JIRA -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=/raid5/jira/conf/logging.properties -Djava.endorsed.dirs=/raid5/jira/common/endorsed -classpath :/raid5/jira/bin/bootstrap.jar:/raid5/jira/bin/commons-logging-api.jar -Dcatalina.base=/raid5/jira -Dcatalina.home=/raid5/jira -Djava.io.tmpdir=/raid5/jira/temp org.apache.catalina.startup.Bootstrap start
+103:DATA:postfix  13610  2633    89  0.0  0.0   8052  1604 ?        S   0  24 10-22:20:48 00:00:01 tlsmgr          tlsmgr -l -t unix -u
+103:DATA:postfix  13616  2633    89  0.0  0.0   8232  1780 ?        S   0  24 10-22:20:41 00:00:43 qmgr            qmgr -l -t fifo -u
+103:DATA:daemon   16561  2872     2  0.2  5.7 172452 119092 ?       S   0  24    04:03:02 00:00:31 httpd           /usr/sbin/httpd
+103:DATA:daemon   16589  2872     2  0.3  6.2 183168 128728 ?       S   0  23    04:02:34 00:00:47 httpd           /usr/sbin/httpd
+103:DATA:root     16752     1     0  0.0  0.1   8228  2516 ?        S   0  24    03:57:57 00:00:00 sshd            sshd: root@notty 
+103:DATA:root     16755 16752     0  0.0  0.0   4368  1216 ?        S   0  24    03:57:56 00:00:00 sftp-server     /usr/libexec/openssh/sftp-server
+103:DATA:daemon   17228  2872     2  0.3  5.9 173888 122072 ?       S   0  16    03:49:51 00:00:42 httpd           /usr/sbin/httpd
+103:DATA:root     17879     1     0  0.0  0.1   8084  2488 ?        S   0  24    03:36:55 00:00:00 sshd            sshd: root@notty 
+103:DATA:root     17884 17879     0  0.0  0.0   4376  1168 ?        S   0  24    03:36:54 00:00:00 sftp-server     /usr/libexec/openssh/sftp-server
+103:DATA:root     18163     1     0  0.0  0.0   1860   496 ?        S   0  24  1-10:22:27 00:00:05 dovecot         /usr/sbin/dovecot
+103:DATA:vmail    18164 18163   500  0.0  0.0   8032  2056 ?        S   0  24  1-10:22:27 00:00:07 dovecot-auth    dovecot-auth
+103:DATA:68       20127  2798    68  0.0  0.0   1968   640 ?        S   0  18 10-04:21:31 00:00:00 hald-addon-keyb hald-addon-keyboard: listening on /dev/input/event2
+103:DATA:68       20130  2798    68  0.0  0.0   1964   640 ?        S   0  18 10-04:21:31 00:00:00 hald-addon-keyb hald-addon-keyboard: listening on /dev/input/event1
+103:DATA:daemon   21167  2872     2  0.3  3.8 129276 78992 ?        S   0  23    02:23:13 00:00:30 httpd           /usr/sbin/httpd
+103:DATA:root     24048    11     0  0.0  0.0      0     0 ?        S   0  24    01:15:43 00:00:00 pdflush         [pdflush]
+103:DATA:root     24059    11     0  0.0  0.0      0     0 ?        S   0  24    01:15:27 00:00:00 pdflush         [pdflush]
+103:DATA:postfix  24731  2633    89  0.0  0.0   7976  1812 ?        S   0  21    01:02:00 00:00:00 pickup          pickup -l -t fifo -u -o content_filter 
+103:DATA:daemon   25623  2872     2  0.1  1.6  91212 35076 ?        S   0  23       44:13 00:00:05 httpd           /usr/sbin/httpd
+103:DATA:postfix  25850  2633    89  0.0  0.1   8112  2232 ?        S   0  24       38:34 00:00:00 trivial-rewrite trivial-rewrite -n rewrite -t unix -u
+103:DATA:root     26271     1     0  0.0  0.1   8084  2480 ?        S   0  24       31:03 00:00:00 sshd            sshd: root@notty 
+103:DATA:root     26273 26271     0  0.0  0.0   4364  1152 ?        S   0  16       31:02 00:00:00 sftp-server     /usr/libexec/openssh/sftp-server
+103:DATA:root     26332     1     0  0.0  0.0   5232  1096 ?        S   0  21       30:36 00:00:00 sshd            /usr/sbin/sshd
+103:DATA:vmail    26752 18163   500  0.0  0.0   2736   936 ?        S   0  24       20:02 00:00:00 imap            imap
+103:DATA:postfix  26761  2633    89  0.0  0.1   8120  2272 ?        S   0  23       19:58 00:00:00 cleanup         cleanup -z -t unix -u
+103:DATA:postfix  26764  2633    89  0.0  0.0   8024  1920 ?        S   0  18       19:58 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+103:DATA:postfix  27016  2633    89  0.0  0.1   8376  3368 ?        S   0  21       14:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27018  2633    89  0.0  0.1   8380  3364 ?        S   0  22       14:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27022  2633    89  0.0  0.1   8380  3364 ?        S   0  24       14:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27029  2633    89  0.0  0.1   8380  3364 ?        S   0  24       14:36 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27036  2633    89  0.0  0.1   8380  3372 ?        S   0  24       14:35 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27037  2633    89  0.0  0.1   8380  3368 ?        S   0  24       14:35 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27038  2633    89  0.0  0.1   8376  3364 ?        S   0  24       14:35 00:00:00 smtpd           smtpd -n smtp -t inet -u -c -o stress  -s 2
+103:DATA:postfix  27078  2633    89  0.0  0.1   8376  2816 ?        S   0  24       13:50 00:00:00 smtpd           smtpd -n 127.0.0.1:10025 -t inet -u -c -o content_filter  -o local_recipient_maps  -o relay_recipient_maps  -o smtpd_restriction_classes  -o smtpd_delay_reject no -o smtpd_client_restrictions permit_mynetworks,reject -o smtpd_helo_restrictions  -o smtpd_sender_restrictions  -o smtpd_recipient_restrictions permit_mynetworks,reject -o mynetworks_style host -o mynetworks 127.0.0.0/8 -o strict_rfc821_envelopes yes -o smtpd_error_sleep_time 0 -o smtpd_soft_error_limit 1001 -o smtpd_hard_error_limit 1000 -o smtpd_client_connection_count_limit 0 -o smtpd_client_connection_rate_limit 0 -o receive_override_options no_header_body_checks,no_unknown_recipient_checks
+103:DATA:vmail    27230 18163   500  0.0  0.1  11364  2072 ?        S   0  24       10:22 00:00:00 imap            imap
+103:DATA:vmail    27236 18163   500  0.0  0.1  11368  2132 ?        S   0  24       10:19 00:00:00 imap            imap
+103:DATA:vmail    27242 18163   500  0.0  0.0  11240  2052 ?        S   0  24       10:16 00:00:00 imap            imap
+103:DATA:postfix  27307  2633    89  0.0  0.0   8020  1912 ?        S   0  18       09:02 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+103:DATA:root     27444  2334     0  0.0  0.0   1860   788 ?        S   0  24       06:03 00:00:00 in.telnetd      in.telnetd
+103:DATA:postfix  27462  2633    89  0.0  0.1   8164  2088 ?        S   0  19       05:33 00:00:00 smtp            smtp -n smtp-amavis -t unix -u -c -o smtp_data_done_timeout 1200 -o smtp_send_xforward_command yes -o disable_dns_lookups yes -o max_use 20
+103:DATA:amavis   27464 13411   103  0.4  1.9  69840 40420 ?        S   0  18       05:31 00:00:01 amavisd         amavisd (ch11-avail)
+103:DATA:postfix  27504  2633    89  0.0  0.1   8376  2820 ?        S   0  19       04:48 00:00:00 smtpd           smtpd -n 127.0.0.1:10025 -t inet -u -c -o content_filter  -o local_recipient_maps  -o relay_recipient_maps  -o smtpd_restriction_classes  -o smtpd_delay_reject no -o smtpd_client_restrictions permit_mynetworks,reject -o smtpd_helo_restrictions  -o smtpd_sender_restrictions  -o smtpd_recipient_restrictions permit_mynetworks,reject -o mynetworks_style host -o mynetworks 127.0.0.0/8 -o strict_rfc821_envelopes yes -o smtpd_error_sleep_time 0 -o smtpd_soft_error_limit 1001 -o smtpd_hard_error_limit 1000 -o smtpd_client_connection_count_limit 0 -o smtpd_client_connection_rate_limit 0 -o receive_override_options no_header_body_checks,no_unknown_recipient_checks
+103:DATA:amavis   27566 13411   103  0.3  1.7  68392 36904 ?        S   0  21       03:43 00:00:00 amavisd         amavisd (ch6-avail)
+103:DATA:dovecot  27621 18163   101  0.0  0.0   4576  1712 ?        S   0  24       02:29 00:00:00 pop3-login      pop3-login
+103:DATA:vmail    27636 18163   500  0.0  0.0   2996  1388 ?        S   0  24       02:05 00:00:00 pop3            pop3
+103:DATA:daemon   27789  2872     2  0.3  0.5  73228 10976 ?        S   0  23       01:29 00:00:00 httpd           /usr/sbin/httpd
+103:DATA:postfix  27801  2633    89  0.0  0.0   8020  1912 ?        S   0  18       01:26 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+103:DATA:postfix  27803  2633    89  0.0  0.0   8024  1916 ?        S   0  19       01:26 00:00:00 pipe            pipe -n dovecot -t unix flags=DRhu user=vmail vmail argv=/usr/libexec/dovecot/deliver -d ${recipient} -f ${sender}
+103:DATA:dovecot  27816 18163   101  0.0  0.0   4452  1460 ?        S   0  21       01:12 00:00:00 imap-login      imap-login
+103:DATA:root     27817 26332     0  0.0  0.1   8084  2300 ?        S   0  19       01:07 00:00:00 sshd            sshd: siteview [priv]
+103:DATA:siteview 27819 27817   502  0.0  0.0   8084  1340 ?        S   0  23       01:07 00:00:00 sshd            sshd: siteview@pts/1
+103:DATA:siteview 27820 27819   502  0.8  0.0   5924  2036 pts/1    S   0  23       01:07 00:00:00 perl            qsft-sua
+103:DATA:dovecot  27902 18163   101  0.0  0.0   4444  1452 ?        S   0  21       01:02 00:00:00 pop3-login      pop3-login
+103:DATA:siteview 27908 27820   502  0.0  0.0   2364   868 pts/1    S   0  21       01:01 00:00:00 sh              sh -c iostat -x -d -k 15  | while read Resp ; do set -- $Resp ; (( $# > 6 ))  && echo "$Resp"; done
+103:DATA:siteview 27909 27908   502  0.0  0.0   1644   608 pts/1    S   0  21       01:01 00:00:00 iostat          iostat -x -d -k 15
+103:DATA:siteview 27910 27908   502  0.0  0.0   2368   540 pts/1    S   0  21       01:01 00:00:00 sh              sh -c iostat -x -d -k 15  | while read Resp ; do set -- $Resp ; (( $# > 6 ))  && echo "$Resp"; done
+103:DATA:siteview 27923 27820   502  0.0  0.0   2360   864 pts/1    S   0  21       01:00 00:00:00 sh              sh -c mpstat -P ALL 60  | while read ; do [[ $REPLY = ??:??:* ]] && echo "${REPLY#???????????}"; done
+103:DATA:siteview 27924 27923   502  0.0  0.0   1652   592 pts/1    S   0  21       01:00 00:00:00 mpstat          mpstat -P ALL 60
+103:DATA:siteview 27925 27923   502  0.0  0.0   2364   552 pts/1    S   0  21       01:00 00:00:00 sh              sh -c mpstat -P ALL 60  | while read ; do [[ $REPLY = ??:??:* ]] && echo "${REPLY#???????????}"; done
+103:DATA:siteview 27931 27820   502  0.0  0.0   1760   528 pts/1    S   0  24       01:00 00:00:00 vmstat          vmstat 15
+103:DATA:postfix  27957  2633    89  0.0  0.1   8116  2116 ?        S   0  24       00:52 00:00:00 cleanup         cleanup -z -t unix -u
+103:DATA:dovecot  27992 18163   101  0.0  0.0   4444  1452 ?        S   0  21       00:32 00:00:00 pop3-login      pop3-login
+103:DATA:postfix  28015  2633    89  0.0  0.0   8164  2056 ?        S   0  24       00:29 00:00:00 smtp            smtp -t unix -u
+103:DATA:dovecot  28019 18163   101  0.0  0.0   4456  1684 ?        S   0  16       00:16 00:00:00 imap-login      imap-login
+103:DATA:dovecot  28040 18163   101  0.0  0.0   4452  1460 ?        S   0  24       00:12 00:00:00 imap-login      imap-login
+103:DATA:dovecot  28048 18163   101  1.2  0.0   4576  1716 ?        S   0  24       00:05 00:00:00 pop3-login      pop3-login
+103:DATA:vmail    28049 18163   500 16.0  0.2   8036  5964 ?        S   0  24       00:02 00:00:00 pop3            pop3
+103:DATA:dovecot  28071 18163   101  0.0  0.0   4448  1456 ?        S   0  22       00:00 00:00:00 pop3-login      pop3-login
+103:DATA:siteview 28077 27820   502  0.0  0.0   2360   860 pts/1    S   0  21       00:00 00:00:00 sh              sh -c ps -eo user,pid,ppid,gid,%cpu,%mem,vsz,rss,tty,state,nice,pri,etime,time,comm,args | awk '{ if (NR ==1) sub("COMMAND","CMD_NAME"); print $0}'
+103:DATA:siteview 28078 28077   502  0.0  0.0   2144   816 pts/1    R   0  19       00:00 00:00:00 ps              ps -eo user,pid,ppid,gid,%cpu,%mem,vsz,rss,tty,state,nice,pri,etime,time,comm,args
+103:DATA:siteview 28079 28077   502  0.0  0.0   2120   764 pts/1    S   0  19       00:00 00:00:00 awk             awk { if (NR ==1) sub("COMMAND","CMD_NAME"); print $0}
+103:END:lcnt=175
+103:END:stat=0
+104:BGN:who -u
+104:DATA:siteview pts/1        Dec 20 14:24   .         27817 (192.168.9.104)
+104:END:lcnt=1
+104:END:stat=0
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               0.00    34.18  0.53 12.19     4.00   185.48    29.78     0.02    1.83   1.06   1.35
+35:DATA:dm-0              0.00     0.00  0.53 46.37     4.00   185.48     8.08     0.06    1.20   0.29   1.34
+35:DATA:dm-1              0.00     0.00  0.00  0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+105:BGN:sed -e 's/:/ /g' /proc/net/dev
+105:DATA:Inter-|   Receive                                                |  Transmit
+105:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+105:DATA:    lo 3836299315 25407572    0    0    0     0          0         0 3836299315 25407572    0    0    0     0       0          0
+105:DATA:  eth1 3598151142 23285241    0    0    0     0          0         0 1247642896 25326058    0    0    0     0       0          0
+105:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+105:END:lcnt=5
+105:END:stat=0
+106:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+106:DATA:459 96 5
+106:END:lcnt=1
+106:END:stat=0
+107:BGN:ps -e | wc -l
+107:DATA:173
+107:END:lcnt=1
+107:END:stat=0
+108:BGN:uptime
+108:DATA: 14:25:32 up 10 days, 23:17,  1 user,  load average: 0.12, 0.07, 0.07
+108:END:lcnt=1
+108:END:stat=0
+109:BGN:who |  wc -l
+109:DATA:1
+109:END:lcnt=1
+109:END:stat=0
+110:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+110:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+110:END:lcnt=1
+110:END:stat=0
+111:BGN:date
+111:DATA:Mon Dec 20 14:25:32 CST 2010
+111:END:lcnt=1
+111:END:stat=0
+112:BGN:df -lP
+112:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+112:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971660   9603888      94% /
+112:DATA:/dev/sda1               101086     10965     84902      12% /boot
+112:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+112:END:lcnt=4
+112:END:stat=0
+113:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+113:DATA:Total Used Free
+113:DATA:2080366592 1231015936 849350656
+113:END:lcnt=2
+113:END:stat=0
+46:DATA: 0  0 1202164 411648  67008 314496    0    0     4   186 1074 1272  2  1 97  1  0
+35:DATA:Device:         rrqm/s   wrqm/s   r/s   w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await  svctm  %util
+35:DATA:sda               0.07    15.07  0.73 17.40     3.47   129.87    14.71     0.20   10.98   0.84   1.53
+35:DATA:dm-0              0.00     0.00  0.80 32.47     3.47   129.87     8.02     0.25    7.50   0.46   1.53
+35:DATA:dm-1              0.00     0.00  0.00  0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+114:BGN:free -bt |awk '$1 = /Swap:/ {print "Total Used Free"; print $2, $3, $4}'
+114:DATA:Total Used Free
+114:DATA:2080366592 1231015936 849350656
+114:END:lcnt=2
+114:END:stat=0
+115:BGN:df -lP
+115:DATA:Filesystem         1024-blocks      Used Available Capacity Mounted on
+115:DATA:/dev/mapper/VolGroup00-LogVol00 149280940 131971688   9603860      94% /
+115:DATA:/dev/sda1               101086     10965     84902      12% /boot
+115:DATA:tmpfs                  1032564         0   1032564       0% /dev/shm
+115:END:lcnt=4
+115:END:stat=0
+116:BGN:date
+116:DATA:Mon Dec 20 14:25:47 CST 2010
+116:END:lcnt=1
+116:END:stat=0
+117:BGN:ps -elf | awk '$4=="PID" || $2 == "Z" { print }'
+117:DATA:F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+117:END:lcnt=1
+117:END:stat=0
+118:BGN:who |  wc -l
+118:DATA:1
+118:END:lcnt=1
+118:END:stat=0
+119:BGN:uptime
+119:DATA: 14:25:47 up 10 days, 23:17,  1 user,  load average: 0.09, 0.07, 0.07
+119:END:lcnt=1
+119:END:stat=0
+120:BGN:ps -e | wc -l
+120:DATA:173
+120:END:lcnt=1
+120:END:stat=0
+121:BGN:netstat -an | awk "BEGIN {est = 0; tim=0; clos=0} /ESTABLISHED/ {est +=1} /TIME_WAIT/ {tim += 1} /CLOSE_WAIT/ {clos += 1} END {print est,tim,clos}"
+121:DATA:453 123 5
+121:END:lcnt=1
+121:END:stat=0
+122:BGN:sed -e 's/:/ /g' /proc/net/dev
+122:DATA:Inter-|   Receive                                                |  Transmit
+122:DATA: face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+122:DATA:    lo 3836317700 25407707    0    0    0     0          0         0 3836317700 25407707    0    0    0     0       0          0
+122:DATA:  eth1 3598202560 23285637    0    0    0     0          0         0 1247687410 25326306    0    0    0     0       0          0
+122:DATA:  sit0        0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0
+122:END:lcnt=5
+122:END:stat=0
+46:DATA: 1  0 1202164 410600  67080 314688    0    0     8   130 1065 1150  2  1 97  1  0

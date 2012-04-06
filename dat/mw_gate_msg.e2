@@ -1,0 +1,27 @@
+[Messages]
+Version=1.000
+-73999=MercWebtrace Gate error: Failed to initialize. (Internal error code: %_1_ld).
+-73998=MercWebtrace Gate error: Failed to receive request from TraceRoute Server. (Internal error code: %_1_ld).
+-73997=MercWebtrace Gate error: traceroute_server with ID %_1_ld is not responding.
+-73996=MercWebtrace Gate error: Failed to send Webtrace reply to TraceRoute Server. (Internal error code: %_1_ld).
+-73995=MercWebtrace Gate error: Failed to send Webtrace progress to TraceRoute Server. (Internal error code: %_1_ld).
+-73899=MercWebtrace Gate error: Unexpected 2-Way Comm notification received: %_1_ld.
+-73898=MercWebtrace Gate error: Failed to load resource file.
+-73897=MercWebtrace Gate error: Failed to create an acceptor.
+-73896=MercWebtrace Gate error: Failed to create a hash table.
+-73895=MercWebtrace Gate debug: initialized successfully.
+-73894=MercWebtrace Gate debug: Exiting.
+-73893=MercWebtrace Gate debug: Sent request to Webtrace for TraceRoute Server with ID %_1_ld.
+-73892=MercWebtrace Gate error: Failed to send request to Webtrace for TraceRoute Server with ID %_1_ld. Function 'webtrace_mdrv_trace' failed with error %_2_ld.
+-73891=MercWebtrace Gate debug: Sent Webtrace message to TraceRoute Server with ID %_1_ld.
+-73890=MercWebtrace Gate debug: Accepted new TraceRoute Server with ID %_1_ld.
+-73889=MercWebtrace Gate debug: TraceRoute Server with ID %_1_ld disconnected.
+-73888=obsolete
+-73887=MercWebtrace Gate error: Failed to initialize Webtrace.
+-73886=MercWebtrace Gate error: XDR encoding failure.
+-73885=MercWebtrace Gate error: Failed to decode Webtrace request. Function 'xdr_decode' failed with error %_1_ld.
+-73884=MercWebtrace Gate error: Failed to find MercWebtrace Gate object in TLS.
+-73883=MercWebtrace Gate error: Failed to find post handle for TraceRoute Server with id %_1_ld.
+-73882=MercWebtrace Gate error: Failed to post a 2-Way Comm message.
+Msg_handler_lowest_msg=-73999
+Msg_handler_highest_msg=-73882

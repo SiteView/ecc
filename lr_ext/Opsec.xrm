@@ -1,0 +1,12 @@
+[ResmonExtensionInfo]                        
+DllName = usermon.dll
+ExtensionFormatVersion = 1
+
+[CustomMonitorSection]
+MonitorDll=OpsecMon.dll
+Name=opsecmon
+PresentationName=Check Point OPSEC
+Id=2367
+
+[UI_Section]
+Ui1=

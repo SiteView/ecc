@@ -1,0 +1,14 @@
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsReceived","ISDN1 Received Packets"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.2.Stats.PacketsReceived","ISDN2 Received Packets"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.3.Stats.PacketsReceived","ISDN3 Received Packets"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.4.Stats.PacketsReceived","ISDN4 Received Packets"}.
+
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.PacketsSent","ISDN1 Sent Packets"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.2.Stats.PacketsSent","ISDN2 Sent Packets"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.3.Stats.PacketsSent","ISDN3 Sent Packets"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.4.Stats.PacketsSent","ISDN4 Sent Packets"}.
+
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.1.Stats.BytesSent","ISDN1 Sent Bytes"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.2.Stats.BytesSent","ISDN2 Sent Bytes"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.3.Stats.BytesSent","ISDN3 Sent Bytes"}.
+{"Device.Services.VoiceService.1.VoiceProfile.1.Isdn.4.Stats.BytesSent","ISDN4 Sent Bytes"}.

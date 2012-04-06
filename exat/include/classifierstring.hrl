@@ -1,0 +1,1 @@
+-ifndef(_CLASSIFIER_STRING_).-define(_CLASSIFIER_STRING_,1).-define(NODATA_STRINGS,["^no data$"	]).-define(ERROR_STRINGS,["^error$","^not found$","^access denied$","^timeout$","^None$","^error:"	]).	-define(WARNING_STRINGS,[	]).	-endif.

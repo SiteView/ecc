@@ -1,0 +1,1984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://wsdl.intf.dcm.intel.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Dcm" targetNamespace="http://wsdl.intf.dcm.intel.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+  <xs:schema xmlns:tns="http://wsdl.intf.dcm.intel.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://wsdl.intf.dcm.intel.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="addEntity" type="tns:addEntity" />
+  <xs:element name="addEntityResponse" type="tns:addEntityResponse" />
+  <xs:element name="associateEntity" type="tns:associateEntity" />
+  <xs:element name="associateEntityResponse" type="tns:associateEntityResponse" />
+  <xs:element name="defineCustomEvent" type="tns:defineCustomEvent" />
+  <xs:element name="defineCustomEventResponse" type="tns:defineCustomEventResponse" />
+  <xs:element name="deleteSecretKey" type="tns:deleteSecretKey" />
+  <xs:element name="deleteSecretKeyResponse" type="tns:deleteSecretKeyResponse" />
+  <xs:element name="disassociateEntity" type="tns:disassociateEntity" />
+  <xs:element name="disassociateEntityResponse" type="tns:disassociateEntityResponse" />
+  <xs:element name="enumerateCustomEvents" type="tns:enumerateCustomEvents" />
+  <xs:element name="enumerateCustomEventsResponse" type="tns:enumerateCustomEventsResponse" />
+  <xs:element name="enumerateEntities" type="tns:enumerateEntities" />
+  <xs:element name="enumerateEntitiesResponse" type="tns:enumerateEntitiesResponse" />
+  <xs:element name="enumerateEventHandlers" type="tns:enumerateEventHandlers" />
+  <xs:element name="enumerateEventHandlersResponse" type="tns:enumerateEventHandlersResponse" />
+  <xs:element name="enumeratePolicies" type="tns:enumeratePolicies" />
+  <xs:element name="enumeratePoliciesResponse" type="tns:enumeratePoliciesResponse" />
+  <xs:element name="exportHierarchy" type="tns:exportHierarchy" />
+  <xs:element name="exportHierarchyResponse" type="tns:exportHierarchyResponse" />
+  <xs:element name="findEntities" type="tns:findEntities" />
+  <xs:element name="findEntitiesResponse" type="tns:findEntitiesResponse" />
+  <xs:element name="getActionLogRecords" type="tns:getActionLogRecords" />
+  <xs:element name="getActionLogRecordsResponse" type="tns:getActionLogRecordsResponse" />
+  <xs:element name="getCollectionState" type="tns:getCollectionState" />
+  <xs:element name="getCollectionStateResponse" type="tns:getCollectionStateResponse" />
+  <xs:element name="getCustomEventData" type="tns:getCustomEventData" />
+  <xs:element name="getCustomEventDataResponse" type="tns:getCustomEventDataResponse" />
+  <xs:element name="getEntityProperties" type="tns:getEntityProperties" />
+  <xs:element name="getEntityPropertiesResponse" type="tns:getEntityPropertiesResponse" />
+  <xs:element name="getEventHandler" type="tns:getEventHandler" />
+  <xs:element name="getEventHandlerResponse" type="tns:getEventHandlerResponse" />
+  <xs:element name="getEventState" type="tns:getEventState" />
+  <xs:element name="getEventStateResponse" type="tns:getEventStateResponse" />
+  <xs:element name="getGlobalProperty" type="tns:getGlobalProperty" />
+  <xs:element name="getGlobalPropertyResponse" type="tns:getGlobalPropertyResponse" />
+  <xs:element name="getMetricAggregationPeriodList" type="tns:getMetricAggregationPeriodList" />
+  <xs:element name="getMetricAggregationPeriodListResponse" type="tns:getMetricAggregationPeriodListResponse" />
+  <xs:element name="getMetricData" type="tns:getMetricData" />
+  <xs:element name="getMetricDataResponse" type="tns:getMetricDataResponse" />
+  <xs:element name="getNextData" type="tns:getNextData" />
+  <xs:element name="getNextDataResponse" type="tns:getNextDataResponse" />
+  <xs:element name="getPolicyData" type="tns:getPolicyData" />
+  <xs:element name="getPolicyDataResponse" type="tns:getPolicyDataResponse" />
+  <xs:element name="getPolicyHistory" type="tns:getPolicyHistory" />
+  <xs:element name="getPolicyHistoryResponse" type="tns:getPolicyHistoryResponse" />
+  <xs:element name="getPolicyState" type="tns:getPolicyState" />
+  <xs:element name="getPolicyStateResponse" type="tns:getPolicyStateResponse" />
+  <xs:element name="getPredefinedEventTypes" type="tns:getPredefinedEventTypes" />
+  <xs:element name="getPredefinedEventTypesResponse" type="tns:getPredefinedEventTypesResponse" />
+  <xs:element name="getQueryAggregationPeriodList" type="tns:getQueryAggregationPeriodList" />
+  <xs:element name="getQueryAggregationPeriodListResponse" type="tns:getQueryAggregationPeriodListResponse" />
+  <xs:element name="getQueryData" type="tns:getQueryData" />
+  <xs:element name="getQueryDataResponse" type="tns:getQueryDataResponse" />
+  <xs:element name="getVersion" type="tns:getVersion" />
+  <xs:element name="getVersionResponse" type="tns:getVersionResponse" />
+  <xs:element name="importHierarchy" type="tns:importHierarchy" />
+  <xs:element name="importHierarchyResponse" type="tns:importHierarchyResponse" />
+  <xs:element name="isPolicyActive" type="tns:isPolicyActive" />
+  <xs:element name="isPolicyActiveResponse" type="tns:isPolicyActiveResponse" />
+  <xs:element name="rediscoverNodeCapabilities" type="tns:rediscoverNodeCapabilities" />
+  <xs:element name="rediscoverNodeCapabilitiesResponse" type="tns:rediscoverNodeCapabilitiesResponse" />
+  <xs:element name="removeCustomEvent" type="tns:removeCustomEvent" />
+  <xs:element name="removeCustomEventResponse" type="tns:removeCustomEventResponse" />
+  <xs:element name="removeEntity" type="tns:removeEntity" />
+  <xs:element name="removeEntityResponse" type="tns:removeEntityResponse" />
+  <xs:element name="removePolicy" type="tns:removePolicy" />
+  <xs:element name="removePolicyResponse" type="tns:removePolicyResponse" />
+  <xs:element name="schedulePolicy" type="tns:schedulePolicy" />
+  <xs:element name="schedulePolicyResponse" type="tns:schedulePolicyResponse" />
+  <xs:element name="setCollectionState" type="tns:setCollectionState" />
+  <xs:element name="setCollectionStateResponse" type="tns:setCollectionStateResponse" />
+  <xs:element name="setEntityProperties" type="tns:setEntityProperties" />
+  <xs:element name="setEntityPropertiesResponse" type="tns:setEntityPropertiesResponse" />
+  <xs:element name="setEventState" type="tns:setEventState" />
+  <xs:element name="setEventStateResponse" type="tns:setEventStateResponse" />
+  <xs:element name="setGlobalProperty" type="tns:setGlobalProperty" />
+  <xs:element name="setGlobalPropertyResponse" type="tns:setGlobalPropertyResponse" />
+  <xs:element name="setPolicy" type="tns:setPolicy" />
+  <xs:element name="setPolicyResponse" type="tns:setPolicyResponse" />
+  <xs:element name="setPolicyState" type="tns:setPolicyState" />
+  <xs:element name="setPolicyStateResponse" type="tns:setPolicyStateResponse" />
+  <xs:element name="submitSecretKey" type="tns:submitSecretKey" />
+  <xs:element name="submitSecretKeyResponse" type="tns:submitSecretKeyResponse" />
+  <xs:element name="subscribeEventHandler" type="tns:subscribeEventHandler" />
+  <xs:element name="subscribeEventHandlerResponse" type="tns:subscribeEventHandlerResponse" />
+  <xs:element name="subscribePredefinedEvent" type="tns:subscribePredefinedEvent" />
+  <xs:element name="subscribePredefinedEventResponse" type="tns:subscribePredefinedEventResponse" />
+  <xs:element name="unsubscribeEventHandler" type="tns:unsubscribeEventHandler" />
+  <xs:element name="unsubscribeEventHandlerResponse" type="tns:unsubscribeEventHandlerResponse" />
+  <xs:element name="unsubscribePredefinedEvent" type="tns:unsubscribePredefinedEvent" />
+  <xs:element name="unsubscribePredefinedEventResponse" type="tns:unsubscribePredefinedEventResponse" />
+  <xs:element name="updateCustomEvent" type="tns:updateCustomEvent" />
+  <xs:element name="updateCustomEventResponse" type="tns:updateCustomEventResponse" />
+  <xs:element name="updatePolicy" type="tns:updatePolicy" />
+  <xs:element name="updatePolicyResponse" type="tns:updatePolicyResponse" />
+  <xs:complexType name="removePolicy">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removePolicyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getQueryData">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="queryType" type="tns:queryType" />
+      <xs:element minOccurs="0" name="aggregationLevel" type="tns:aggregationLevel" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      <xs:element name="aggPeriod" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getQueryDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enumerationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumerationData">
+    <xs:sequence>
+      <xs:element name="enumerationHandle" type="xs:int" />
+      <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="queryData" nillable="true" type="tns:ptData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ptData">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      <xs:element name="value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setPolicy">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="policyType" type="tns:policyType" />
+      <xs:element name="threshold" type="xs:int" />
+      <xs:element minOccurs="0" name="policyDescription" type="xs:string" />
+      <xs:element name="enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lowPriorityList" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="highPriorityList" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setPolicyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="schedulePolicy">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      <xs:element name="startHour" type="xs:int" />
+      <xs:element name="endHour" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="days" nillable="true" type="tns:day" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="schedulePolicyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNextData">
+    <xs:sequence>
+      <xs:element name="enumerationHandle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNextDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enumerationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importHierarchy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filePath" type="xs:string" />
+      <xs:element name="forceAddition" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="importHierarchyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isPolicyActive">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isPolicyActiveResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getQueryAggregationPeriodList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="queryType" type="tns:queryType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getQueryAggregationPeriodListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:aggregationPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aggregationPeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="end" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="start" type="xs:dateTime" />
+      <xs:element name="value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumerateEventHandlers">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="enumerateEventHandlersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportHierarchy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="filePath" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="exportHierarchyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findEntities">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="property" type="tns:entityProperty" />
+      <xs:element minOccurs="0" name="searchString" type="xs:string" />
+      <xs:element name="fullMatch" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findEntitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVersion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getVersionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscribePredefinedEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="eventTypes" nillable="true" type="tns:predefinedEventType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscribePredefinedEventResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setGlobalProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="property" type="tns:globalProperty" />
+      <xs:element minOccurs="0" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setGlobalPropertyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCollectionState">
+    <xs:sequence>
+      <xs:element name="suspend" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setCollectionStateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeEntity">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element name="delCollectedData" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeEntityResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rediscoverNodeCapabilities">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rediscoverNodeCapabilitiesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updatePolicy">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+      <xs:element name="threshold" type="xs:int" />
+      <xs:element minOccurs="0" name="policyDescription" type="xs:string" />
+      <xs:element name="updatePriorityLists" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lowPriorityList" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="highPriorityList" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updatePolicyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGlobalProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="property" type="tns:globalProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGlobalPropertyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscribeEventHandler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="url" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subscribeEventHandlerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEventState">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:int" />
+      <xs:element name="enable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEventStateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEntityProperties">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="tns:property" />
+      <xs:element name="forceSetting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="property">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="tns:entityProperty" />
+      <xs:element minOccurs="0" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEntityPropertiesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitSecretKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="base64key" type="xs:string" />
+      <xs:element minOccurs="0" name="algorithm" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitSecretKeyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCustomEvent">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCustomEventResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="disassociateEntity">
+    <xs:sequence>
+      <xs:element name="groupId" type="xs:int" />
+      <xs:element name="entityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="disassociateEntityResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMetricData">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="metricType" type="tns:metricType" />
+      <xs:element minOccurs="0" name="aggregationLevel" type="tns:aggregationLevel" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      <xs:element name="aggPeriod" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMetricDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enumerationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityType" type="tns:entityType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="properties" nillable="true" type="tns:property" />
+      <xs:element name="forceAddition" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addEntityResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEventHandler">
+    <xs:sequence>
+      <xs:element name="handlerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEventHandlerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomEventData">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomEventDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customEventData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customEventData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="conditionOperator" type="tns:conditionOperator" />
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element name="evalPeriod" type="xs:int" />
+      <xs:element minOccurs="0" name="eventDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="eventType" type="tns:customEventType" />
+      <xs:element name="threshold" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPredefinedEventTypes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getPredefinedEventTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:predefinedEventType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumerateCustomEvents">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumerateCustomEventsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumeratePolicies">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumeratePoliciesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPolicyState">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPolicyStateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCustomEvent">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:int" />
+      <xs:element name="threshold" type="xs:int" />
+      <xs:element name="evalPeriod" type="xs:int" />
+      <xs:element minOccurs="0" name="eventDescription" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCustomEventResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unsubscribePredefinedEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="eventTypes" nillable="true" type="tns:predefinedEventType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unsubscribePredefinedEventResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteSecretKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyHandle" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteSecretKeyResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCollectionState">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCollectionStateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumerateEntities">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="entityType" type="tns:entityType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enumerateEntitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="defineCustomEvent">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="eventType" type="tns:customEventType" />
+      <xs:element minOccurs="0" name="conditionOperator" type="tns:conditionOperator" />
+      <xs:element name="threshold" type="xs:int" />
+      <xs:element name="evalPeriod" type="xs:int" />
+      <xs:element minOccurs="0" name="eventDescription" type="xs:string" />
+      <xs:element name="enabled" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="defineCustomEventResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMetricAggregationPeriodList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="metricType" type="tns:metricType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMetricAggregationPeriodListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:aggregationPeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPolicyData">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPolicyDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:policyData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="policyData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="days" nillable="true" type="tns:day" />
+      <xs:element name="endHour" type="xs:int" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="highPriorityList" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lowPriorityList" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="policyDescription" type="xs:string" />
+      <xs:element minOccurs="0" name="policyType" type="tns:policyType" />
+      <xs:element name="startHour" type="xs:int" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element name="threshold" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setPolicyState">
+    <xs:sequence>
+      <xs:element name="policyId" type="xs:int" />
+      <xs:element name="enable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setPolicyStateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getActionLogRecords">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="logType" type="tns:actionLogType" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getActionLogRecordsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPolicyHistory">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+      <xs:element minOccurs="0" name="historyType" type="tns:historyType" />
+      <xs:element minOccurs="0" name="aggregationLevel" type="tns:aggregationLevel" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPolicyHistoryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:enumerationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="associateEntity">
+    <xs:sequence>
+      <xs:element name="groupId" type="xs:int" />
+      <xs:element name="entityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="associateEntityResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEventState">
+    <xs:sequence>
+      <xs:element name="eventId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEventStateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEntityProperties">
+    <xs:sequence>
+      <xs:element name="entityId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEntityPropertiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="tns:property" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unsubscribeEventHandler">
+    <xs:sequence>
+      <xs:element name="handlerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unsubscribeEventHandlerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:byte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="queryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAX_PWR" />
+      <xs:enumeration value="AVG_PWR" />
+      <xs:enumeration value="MIN_PWR" />
+      <xs:enumeration value="TOTAL_MAX_PWR" />
+      <xs:enumeration value="TOTAL_AVG_PWR" />
+      <xs:enumeration value="TOTAL_MIN_PWR" />
+      <xs:enumeration value="MAX_INLET_TEMP" />
+      <xs:enumeration value="AVG_INLET_TEMP" />
+      <xs:enumeration value="MIN_INLET_TEMP" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="aggregationLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SELF" />
+      <xs:enumeration value="NODE" />
+      <xs:enumeration value="RACK" />
+      <xs:enumeration value="ROW" />
+      <xs:enumeration value="ROOM" />
+      <xs:enumeration value="IMMEDIATE_CHILDREN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="policyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CUSTOM_PWR_LIMIT" />
+      <xs:enumeration value="MIN_PWR" />
+      <xs:enumeration value="MIN_PWR_ON_INLET_TEMP_TRIGGER" />
+      <xs:enumeration value="STATIC_POWER_POLICY" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="day">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUNDAY" />
+      <xs:enumeration value="MONDAY" />
+      <xs:enumeration value="TUESDAY" />
+      <xs:enumeration value="WEDNESDAY" />
+      <xs:enumeration value="THURSDAY" />
+      <xs:enumeration value="FRIDAY" />
+      <xs:enumeration value="SATURDAY" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="entityProperty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BMC_ADDRESS" />
+      <xs:enumeration value="NAME" />
+      <xs:enumeration value="DESCRIPTION" />
+      <xs:enumeration value="BMC_USER" />
+      <xs:enumeration value="BMC_PASSWORD" />
+      <xs:enumeration value="BMC_KEY" />
+      <xs:enumeration value="CAPABILITIES" />
+      <xs:enumeration value="LOCATION" />
+      <xs:enumeration value="DIMENSION" />
+      <xs:enumeration value="ENTITY_TYPE" />
+      <xs:enumeration value="NAMEPLATE_PWR" />
+      <xs:enumeration value="DERATED_PWR" />
+      <xs:enumeration value="NAMEPLATE_PWR_UNMNGD_EQPMNT" />
+      <xs:enumeration value="PDU_PWR_LIMIT" />
+      <xs:enumeration value="NODE_STATUS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="predefinedEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IPMI_PWR_UNIT" />
+      <xs:enumeration value="IPMI_PWR_SUPPLY" />
+      <xs:enumeration value="IPMI_PROCESSOR_THERMAL_TRIP" />
+      <xs:enumeration value="IPMI_FAN" />
+      <xs:enumeration value="BMC_SEL_REACHING_FULL_CAPACITY" />
+      <xs:enumeration value="BMC_SEL_AT_FULL_CAPACITY" />
+      <xs:enumeration value="ENTITY_PROPERTY_CHANGED" />
+      <xs:enumeration value="COMMUNICATION_WITH_NODE_FAILED" />
+      <xs:enumeration value="COMMUNICATION_WITH_NODE_RESTORED" />
+      <xs:enumeration value="INSUFFICIENT_NODE_PERMISSION" />
+      <xs:enumeration value="CONTROL_POLICY_CANNOT_BE_MAINTAINED" />
+      <xs:enumeration value="CANT_SET_NODE_EVENT" />
+      <xs:enumeration value="CONTROL_POLICY_APPLIED" />
+      <xs:enumeration value="CONTROL_POLICY_ENDED" />
+      <xs:enumeration value="INTERNAL_ERROR" />
+      <xs:enumeration value="CONFIGURATION_CHANGED" />
+      <xs:enumeration value="HIERARCHY_CHANGED" />
+      <xs:enumeration value="CONTROL_POLICY_CHANGED" />
+      <xs:enumeration value="CUSTOM_EVENT_CHANGED" />
+      <xs:enumeration value="CUSTOM_EVENT_EVALUATION_FAILURE" />
+      <xs:enumeration value="COLLECTION_STATE_CHANGED" />
+      <xs:enumeration value="IMPORTHIERARCHY_COMPLETED" />
+      <xs:enumeration value="DB_MAINTENANCE_STARTING" />
+      <xs:enumeration value="DB_MAINTENANCE_ENDED" />
+      <xs:enumeration value="DB_CONNECTION_FAILED" />
+      <xs:enumeration value="DB_CONNECTION_RESTORED" />
+      <xs:enumeration value="CONTROL_POLICY_PRIORITY_CONFLICT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="globalProperty">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NODE_POWER_SAMPLING_FREQUENCY" />
+      <xs:enumeration value="NODE_THERMAL_SAMPLING_FREQUENCY" />
+      <xs:enumeration value="ACTION_LOG_BACK_TRACKING_PERIOD" />
+      <xs:enumeration value="APP_LOG_MAX_SIZE" />
+      <xs:enumeration value="APP_LOG_LEVEL" />
+      <xs:enumeration value="COOLING_MULT" />
+      <xs:enumeration value="COST_PER_KW_HR" />
+      <xs:enumeration value="TIME_UNTIL_DB_COMPRESSION" />
+      <xs:enumeration value="MAX_NUM_RECORDS_INVOLVED" />
+      <xs:enumeration value="TIME_UNTIL_DB_DELETION" />
+      <xs:enumeration value="DB_MAINTENANCE_HOUR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="metricType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MNGED_NODES_ENERGY" />
+      <xs:enumeration value="MNGED_NODES_ENERGY_BILL" />
+      <xs:enumeration value="IT_EQPMNT_ENERGY" />
+      <xs:enumeration value="IT_EQPMNT_ENERGY_BILL" />
+      <xs:enumeration value="CALC_COOLING_ENERGY" />
+      <xs:enumeration value="CALC_COOLING_ENERGY_BILL" />
+      <xs:enumeration value="MNGED_NODES_PWR" />
+      <xs:enumeration value="IT_EQPMNT_PWR" />
+      <xs:enumeration value="CALC_COOLING_PWR" />
+      <xs:enumeration value="AVG_PWR_PER_DIMENSION" />
+      <xs:enumeration value="DERATED_PWR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="entityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NODE" />
+      <xs:enumeration value="RACK" />
+      <xs:enumeration value="ROW" />
+      <xs:enumeration value="ROOM" />
+      <xs:enumeration value="DATACENTER" />
+      <xs:enumeration value="LOGICAL_GROUP" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="conditionOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GREATER_THAN" />
+      <xs:enumeration value="LESS_THAN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="customEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAX_PWR" />
+      <xs:enumeration value="AVG_PWR" />
+      <xs:enumeration value="MIN_PWR" />
+      <xs:enumeration value="TOTAL_MAX_PWR" />
+      <xs:enumeration value="TOTAL_AVG_PWR" />
+      <xs:enumeration value="TOTAL_MIN_PWR" />
+      <xs:enumeration value="MAX_INLET_TEMP" />
+      <xs:enumeration value="AVG_INLET_TEMP" />
+      <xs:enumeration value="MIN_INLET_TEMP" />
+      <xs:enumeration value="AVG_WATTS_PER_DIMENSION" />
+      <xs:enumeration value="AVG_COOLING_PWR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="actionLogType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL" />
+      <xs:enumeration value="EVENT_CHANGE" />
+      <xs:enumeration value="CONFIGURATION_CHANGE" />
+      <xs:enumeration value="HIERARCHY_CHANGE" />
+      <xs:enumeration value="CONTROL_POLICY_CHANGE" />
+      <xs:enumeration value="EXTERNAL_ACTION_SUCCEEDED" />
+      <xs:enumeration value="EXTERNAL_ACTION_FAILED" />
+      <xs:enumeration value="SYSTEM_CHANGE" />
+      <xs:enumeration value="POLICY_WARNING" />
+      <xs:enumeration value="EVENT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="historyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="POWER_CAP_REQUESTED" />
+      <xs:enumeration value="POWER_CAP_ACTUAL" />
+      <xs:enumeration value="THERMAL_TRIGGER" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+  </types>
+  <message name="getNextDataResponse">
+    <part name="parameters" element="tns:getNextDataResponse" />
+  </message>
+  <message name="removePolicy">
+    <part name="parameters" element="tns:removePolicy" />
+  </message>
+  <message name="schedulePolicy">
+    <part name="parameters" element="tns:schedulePolicy" />
+  </message>
+  <message name="enumerateEventHandlers">
+    <part name="parameters" element="tns:enumerateEventHandlers" />
+  </message>
+  <message name="getQueryAggregationPeriodList">
+    <part name="parameters" element="tns:getQueryAggregationPeriodList" />
+  </message>
+  <message name="exportHierarchy">
+    <part name="parameters" element="tns:exportHierarchy" />
+  </message>
+  <message name="setGlobalProperty">
+    <part name="parameters" element="tns:setGlobalProperty" />
+  </message>
+  <message name="removeEntityResponse">
+    <part name="parameters" element="tns:removeEntityResponse" />
+  </message>
+  <message name="unsubscribePredefinedEventResponse">
+    <part name="parameters" element="tns:unsubscribePredefinedEventResponse" />
+  </message>
+  <message name="updatePolicy">
+    <part name="parameters" element="tns:updatePolicy" />
+  </message>
+  <message name="getEntityPropertiesResponse">
+    <part name="parameters" element="tns:getEntityPropertiesResponse" />
+  </message>
+  <message name="getEventStateResponse">
+    <part name="parameters" element="tns:getEventStateResponse" />
+  </message>
+  <message name="subscribeEventHandler">
+    <part name="parameters" element="tns:subscribeEventHandler" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="enumerateEventHandlersResponse">
+    <part name="parameters" element="tns:enumerateEventHandlersResponse" />
+  </message>
+  <message name="enumerateCustomEvents">
+    <part name="parameters" element="tns:enumerateCustomEvents" />
+  </message>
+  <message name="deleteSecretKey">
+    <part name="parameters" element="tns:deleteSecretKey" />
+  </message>
+  <message name="unsubscribeEventHandlerResponse">
+    <part name="parameters" element="tns:unsubscribeEventHandlerResponse" />
+  </message>
+  <message name="unsubscribePredefinedEvent">
+    <part name="parameters" element="tns:unsubscribePredefinedEvent" />
+  </message>
+  <message name="getQueryAggregationPeriodListResponse">
+    <part name="parameters" element="tns:getQueryAggregationPeriodListResponse" />
+  </message>
+  <message name="setPolicyStateResponse">
+    <part name="parameters" element="tns:setPolicyStateResponse" />
+  </message>
+  <message name="getActionLogRecords">
+    <part name="parameters" element="tns:getActionLogRecords" />
+  </message>
+  <message name="setEventStateResponse">
+    <part name="parameters" element="tns:setEventStateResponse" />
+  </message>
+  <message name="getEventHandlerResponse">
+    <part name="parameters" element="tns:getEventHandlerResponse" />
+  </message>
+  <message name="setCollectionStateResponse">
+    <part name="parameters" element="tns:setCollectionStateResponse" />
+  </message>
+  <message name="getPolicyDataResponse">
+    <part name="parameters" element="tns:getPolicyDataResponse" />
+  </message>
+  <message name="exportHierarchyResponse">
+    <part name="parameters" element="tns:exportHierarchyResponse" />
+  </message>
+  <message name="getQueryData">
+    <part name="parameters" element="tns:getQueryData" />
+  </message>
+  <message name="enumerateEntitiesResponse">
+    <part name="parameters" element="tns:enumerateEntitiesResponse" />
+  </message>
+  <message name="getVersionResponse">
+    <part name="parameters" element="tns:getVersionResponse" />
+  </message>
+  <message name="removePolicyResponse">
+    <part name="parameters" element="tns:removePolicyResponse" />
+  </message>
+  <message name="setCollectionState">
+    <part name="parameters" element="tns:setCollectionState" />
+  </message>
+  <message name="getGlobalProperty">
+    <part name="parameters" element="tns:getGlobalProperty" />
+  </message>
+  <message name="schedulePolicyResponse">
+    <part name="parameters" element="tns:schedulePolicyResponse" />
+  </message>
+  <message name="setEventState">
+    <part name="parameters" element="tns:setEventState" />
+  </message>
+  <message name="setEntityProperties">
+    <part name="parameters" element="tns:setEntityProperties" />
+  </message>
+  <message name="addEntity">
+    <part name="parameters" element="tns:addEntity" />
+  </message>
+  <message name="updateCustomEventResponse">
+    <part name="parameters" element="tns:updateCustomEventResponse" />
+  </message>
+  <message name="updatePolicyResponse">
+    <part name="parameters" element="tns:updatePolicyResponse" />
+  </message>
+  <message name="enumerateEntities">
+    <part name="parameters" element="tns:enumerateEntities" />
+  </message>
+  <message name="defineCustomEventResponse">
+    <part name="parameters" element="tns:defineCustomEventResponse" />
+  </message>
+  <message name="enumeratePoliciesResponse">
+    <part name="parameters" element="tns:enumeratePoliciesResponse" />
+  </message>
+  <message name="defineCustomEvent">
+    <part name="parameters" element="tns:defineCustomEvent" />
+  </message>
+  <message name="setPolicyState">
+    <part name="parameters" element="tns:setPolicyState" />
+  </message>
+  <message name="findEntitiesResponse">
+    <part name="parameters" element="tns:findEntitiesResponse" />
+  </message>
+  <message name="associateEntity">
+    <part name="parameters" element="tns:associateEntity" />
+  </message>
+  <message name="getGlobalPropertyResponse">
+    <part name="parameters" element="tns:getGlobalPropertyResponse" />
+  </message>
+  <message name="subscribePredefinedEventResponse">
+    <part name="parameters" element="tns:subscribePredefinedEventResponse" />
+  </message>
+  <message name="unsubscribeEventHandler">
+    <part name="parameters" element="tns:unsubscribeEventHandler" />
+  </message>
+  <message name="subscribeEventHandlerResponse">
+    <part name="parameters" element="tns:subscribeEventHandlerResponse" />
+  </message>
+  <message name="setPolicy">
+    <part name="parameters" element="tns:setPolicy" />
+  </message>
+  <message name="findEntities">
+    <part name="parameters" element="tns:findEntities" />
+  </message>
+  <message name="getVersion">
+    <part name="parameters" element="tns:getVersion" />
+  </message>
+  <message name="subscribePredefinedEvent">
+    <part name="parameters" element="tns:subscribePredefinedEvent" />
+  </message>
+  <message name="deleteSecretKeyResponse">
+    <part name="parameters" element="tns:deleteSecretKeyResponse" />
+  </message>
+  <message name="disassociateEntityResponse">
+    <part name="parameters" element="tns:disassociateEntityResponse" />
+  </message>
+  <message name="rediscoverNodeCapabilities">
+    <part name="parameters" element="tns:rediscoverNodeCapabilities" />
+  </message>
+  <message name="removeEntity">
+    <part name="parameters" element="tns:removeEntity" />
+  </message>
+  <message name="submitSecretKey">
+    <part name="parameters" element="tns:submitSecretKey" />
+  </message>
+  <message name="getMetricData">
+    <part name="parameters" element="tns:getMetricData" />
+  </message>
+  <message name="getMetricDataResponse">
+    <part name="parameters" element="tns:getMetricDataResponse" />
+  </message>
+  <message name="enumerateCustomEventsResponse">
+    <part name="parameters" element="tns:enumerateCustomEventsResponse" />
+  </message>
+  <message name="getPolicyHistoryResponse">
+    <part name="parameters" element="tns:getPolicyHistoryResponse" />
+  </message>
+  <message name="getPredefinedEventTypes">
+    <part name="parameters" element="tns:getPredefinedEventTypes" />
+  </message>
+  <message name="updateCustomEvent">
+    <part name="parameters" element="tns:updateCustomEvent" />
+  </message>
+  <message name="setEntityPropertiesResponse">
+    <part name="parameters" element="tns:setEntityPropertiesResponse" />
+  </message>
+  <message name="getCollectionState">
+    <part name="parameters" element="tns:getCollectionState" />
+  </message>
+  <message name="getPolicyData">
+    <part name="parameters" element="tns:getPolicyData" />
+  </message>
+  <message name="getCustomEventDataResponse">
+    <part name="parameters" element="tns:getCustomEventDataResponse" />
+  </message>
+  <message name="rediscoverNodeCapabilitiesResponse">
+    <part name="parameters" element="tns:rediscoverNodeCapabilitiesResponse" />
+  </message>
+  <message name="submitSecretKeyResponse">
+    <part name="parameters" element="tns:submitSecretKeyResponse" />
+  </message>
+  <message name="setGlobalPropertyResponse">
+    <part name="parameters" element="tns:setGlobalPropertyResponse" />
+  </message>
+  <message name="getCollectionStateResponse">
+    <part name="parameters" element="tns:getCollectionStateResponse" />
+  </message>
+  <message name="getNextData">
+    <part name="parameters" element="tns:getNextData" />
+  </message>
+  <message name="importHierarchy">
+    <part name="parameters" element="tns:importHierarchy" />
+  </message>
+  <message name="isPolicyActive">
+    <part name="parameters" element="tns:isPolicyActive" />
+  </message>
+  <message name="isPolicyActiveResponse">
+    <part name="parameters" element="tns:isPolicyActiveResponse" />
+  </message>
+  <message name="addEntityResponse">
+    <part name="parameters" element="tns:addEntityResponse" />
+  </message>
+  <message name="getPolicyStateResponse">
+    <part name="parameters" element="tns:getPolicyStateResponse" />
+  </message>
+  <message name="getMetricAggregationPeriodListResponse">
+    <part name="parameters" element="tns:getMetricAggregationPeriodListResponse" />
+  </message>
+  <message name="getActionLogRecordsResponse">
+    <part name="parameters" element="tns:getActionLogRecordsResponse" />
+  </message>
+  <message name="disassociateEntity">
+    <part name="parameters" element="tns:disassociateEntity" />
+  </message>
+  <message name="removeCustomEvent">
+    <part name="parameters" element="tns:removeCustomEvent" />
+  </message>
+  <message name="importHierarchyResponse">
+    <part name="parameters" element="tns:importHierarchyResponse" />
+  </message>
+  <message name="getEventHandler">
+    <part name="parameters" element="tns:getEventHandler" />
+  </message>
+  <message name="getCustomEventData">
+    <part name="parameters" element="tns:getCustomEventData" />
+  </message>
+  <message name="setPolicyResponse">
+    <part name="parameters" element="tns:setPolicyResponse" />
+  </message>
+  <message name="enumeratePolicies">
+    <part name="parameters" element="tns:enumeratePolicies" />
+  </message>
+  <message name="getPolicyState">
+    <part name="parameters" element="tns:getPolicyState" />
+  </message>
+  <message name="removeCustomEventResponse">
+    <part name="parameters" element="tns:removeCustomEventResponse" />
+  </message>
+  <message name="associateEntityResponse">
+    <part name="parameters" element="tns:associateEntityResponse" />
+  </message>
+  <message name="getQueryDataResponse">
+    <part name="parameters" element="tns:getQueryDataResponse" />
+  </message>
+  <message name="getMetricAggregationPeriodList">
+    <part name="parameters" element="tns:getMetricAggregationPeriodList" />
+  </message>
+  <message name="getPolicyHistory">
+    <part name="parameters" element="tns:getPolicyHistory" />
+  </message>
+  <message name="getEventState">
+    <part name="parameters" element="tns:getEventState" />
+  </message>
+  <message name="getEntityProperties">
+    <part name="parameters" element="tns:getEntityProperties" />
+  </message>
+  <message name="getPredefinedEventTypesResponse">
+    <part name="parameters" element="tns:getPredefinedEventTypesResponse" />
+  </message>
+  <portType name="Dcm">
+    <operation name="getVersion">
+      <input message="tns:getVersion" />
+      <output message="tns:getVersionResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setPolicy">
+      <input message="tns:setPolicy" />
+      <output message="tns:setPolicyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="updatePolicy">
+      <input message="tns:updatePolicy" />
+      <output message="tns:updatePolicyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="addEntity">
+      <input message="tns:addEntity" />
+      <output message="tns:addEntityResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="associateEntity">
+      <input message="tns:associateEntity" />
+      <output message="tns:associateEntityResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="defineCustomEvent">
+      <input message="tns:defineCustomEvent" />
+      <output message="tns:defineCustomEventResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="deleteSecretKey">
+      <input message="tns:deleteSecretKey" />
+      <output message="tns:deleteSecretKeyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="disassociateEntity">
+      <input message="tns:disassociateEntity" />
+      <output message="tns:disassociateEntityResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="enumerateCustomEvents">
+      <input message="tns:enumerateCustomEvents" />
+      <output message="tns:enumerateCustomEventsResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="enumerateEntities">
+      <input message="tns:enumerateEntities" />
+      <output message="tns:enumerateEntitiesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="enumerateEventHandlers">
+      <input message="tns:enumerateEventHandlers" />
+      <output message="tns:enumerateEventHandlersResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="enumeratePolicies">
+      <input message="tns:enumeratePolicies" />
+      <output message="tns:enumeratePoliciesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="exportHierarchy">
+      <input message="tns:exportHierarchy" />
+      <output message="tns:exportHierarchyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="findEntities">
+      <input message="tns:findEntities" />
+      <output message="tns:findEntitiesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getActionLogRecords">
+      <input message="tns:getActionLogRecords" />
+      <output message="tns:getActionLogRecordsResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getCollectionState">
+      <input message="tns:getCollectionState" />
+      <output message="tns:getCollectionStateResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getCustomEventData">
+      <input message="tns:getCustomEventData" />
+      <output message="tns:getCustomEventDataResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getEntityProperties">
+      <input message="tns:getEntityProperties" />
+      <output message="tns:getEntityPropertiesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getEventHandler">
+      <input message="tns:getEventHandler" />
+      <output message="tns:getEventHandlerResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getEventState">
+      <input message="tns:getEventState" />
+      <output message="tns:getEventStateResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getGlobalProperty">
+      <input message="tns:getGlobalProperty" />
+      <output message="tns:getGlobalPropertyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getMetricAggregationPeriodList">
+      <input message="tns:getMetricAggregationPeriodList" />
+      <output message="tns:getMetricAggregationPeriodListResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getMetricData">
+      <input message="tns:getMetricData" />
+      <output message="tns:getMetricDataResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getNextData">
+      <input message="tns:getNextData" />
+      <output message="tns:getNextDataResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getPolicyData">
+      <input message="tns:getPolicyData" />
+      <output message="tns:getPolicyDataResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getPolicyHistory">
+      <input message="tns:getPolicyHistory" />
+      <output message="tns:getPolicyHistoryResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getPolicyState">
+      <input message="tns:getPolicyState" />
+      <output message="tns:getPolicyStateResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getPredefinedEventTypes">
+      <input message="tns:getPredefinedEventTypes" />
+      <output message="tns:getPredefinedEventTypesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getQueryAggregationPeriodList">
+      <input message="tns:getQueryAggregationPeriodList" />
+      <output message="tns:getQueryAggregationPeriodListResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="getQueryData">
+      <input message="tns:getQueryData" />
+      <output message="tns:getQueryDataResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="importHierarchy">
+      <input message="tns:importHierarchy" />
+      <output message="tns:importHierarchyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="isPolicyActive">
+      <input message="tns:isPolicyActive" />
+      <output message="tns:isPolicyActiveResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="rediscoverNodeCapabilities">
+      <input message="tns:rediscoverNodeCapabilities" />
+      <output message="tns:rediscoverNodeCapabilitiesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="removeCustomEvent">
+      <input message="tns:removeCustomEvent" />
+      <output message="tns:removeCustomEventResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="removeEntity">
+      <input message="tns:removeEntity" />
+      <output message="tns:removeEntityResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="removePolicy">
+      <input message="tns:removePolicy" />
+      <output message="tns:removePolicyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="schedulePolicy">
+      <input message="tns:schedulePolicy" />
+      <output message="tns:schedulePolicyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setCollectionState">
+      <input message="tns:setCollectionState" />
+      <output message="tns:setCollectionStateResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setEntityProperties">
+      <input message="tns:setEntityProperties" />
+      <output message="tns:setEntityPropertiesResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setEventState">
+      <input message="tns:setEventState" />
+      <output message="tns:setEventStateResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setGlobalProperty">
+      <input message="tns:setGlobalProperty" />
+      <output message="tns:setGlobalPropertyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="setPolicyState">
+      <input message="tns:setPolicyState" />
+      <output message="tns:setPolicyStateResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="submitSecretKey">
+      <input message="tns:submitSecretKey" />
+      <output message="tns:submitSecretKeyResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="subscribeEventHandler">
+      <input message="tns:subscribeEventHandler" />
+      <output message="tns:subscribeEventHandlerResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="subscribePredefinedEvent">
+      <input message="tns:subscribePredefinedEvent" />
+      <output message="tns:subscribePredefinedEventResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="unsubscribeEventHandler">
+      <input message="tns:unsubscribeEventHandler" />
+      <output message="tns:unsubscribeEventHandlerResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="unsubscribePredefinedEvent">
+      <input message="tns:unsubscribePredefinedEvent" />
+      <output message="tns:unsubscribePredefinedEventResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="updateCustomEvent">
+      <input message="tns:updateCustomEvent" />
+      <output message="tns:updateCustomEventResponse" />
+      <fault name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="DcmPortBinding" type="tns:Dcm">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getVersion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setPolicy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="updatePolicy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="addEntity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="associateEntity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="defineCustomEvent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="deleteSecretKey">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="disassociateEntity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="enumerateCustomEvents">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="enumerateEntities">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="enumerateEventHandlers">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="enumeratePolicies">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="exportHierarchy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="findEntities">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getActionLogRecords">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getCollectionState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getCustomEventData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getEntityProperties">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getEventHandler">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getEventState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getGlobalProperty">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getMetricAggregationPeriodList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getMetricData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getNextData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getPolicyData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getPolicyHistory">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getPolicyState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getPredefinedEventTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getQueryAggregationPeriodList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getQueryData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="importHierarchy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="isPolicyActive">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="rediscoverNodeCapabilities">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="removeCustomEvent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="removeEntity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="removePolicy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="schedulePolicy">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setCollectionState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setEntityProperties">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setEventState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setGlobalProperty">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="setPolicyState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="submitSecretKey">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="subscribeEventHandler">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="subscribePredefinedEvent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="unsubscribeEventHandler">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="unsubscribePredefinedEvent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="updateCustomEvent">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="Dcm">
+    <port name="DcmPort" binding="tns:DcmPortBinding">
+      <soap:address location="http://192.168.2.132:8688/DCMService/services/Dcm.DcmPort/" />
+    </port>
+  </service>
+</definitions>

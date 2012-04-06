@@ -1,0 +1,11 @@
+%%win32
+{"h3cEntityExtMemUsage","1.3.6.1.4.1.2011.10.2.6.1.1.1.1.8"}.
+{"h3cEntityExtMemSize","1.3.6.1.4.1.2011.10.2.6.1.1.1.1.10"}.
+{"hwMemoryDevSize","1.3.6.1.4.1.2011.6.3.5.1.1.2"}.
+{"hwMemoryDevFree","1.3.6.1.4.1.2011.6.3.5.1.1.3"}.
+{"hwMemoryDevRawSliceUsed","1.3.6.1.4.1.2011.6.3.5.1.1.4"}.
+{"hwMemoryDevLargestFree","1.3.6.1.4.1.2011.6.3.5.1.1.5"}.
+{"fhnMemoryPoolUtilization","1.3.6.1.4.1.3804.9.48.1"}.
+{"fhnMemoryPoolTotalMemorySize","1.3.6.1.4.1.3804.9.48.2"}.
+{"fhnMemoryPoolTotalFlashSize","1.3.6.1.4.1.3804.9.48.9"}.
+

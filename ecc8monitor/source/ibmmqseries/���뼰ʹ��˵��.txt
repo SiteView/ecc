@@ -1,0 +1,29 @@
+为IBM MQSeries监视器提供的DLL程序：ibmmqseries.dll
+
+编译环境：VS2003
+编译条件：
+1、安装IBM MQSeries；
+2、在“ibmmqseries属性页”-〉“C/C++”-〉“常规”
+-〉“附加包含目录”中加入“C:\Program Files\IBM\WebSphere MQ\Tools\c\include”
+（IBM MQSeries安装在C盘）；
+3、在“ibmmqseries属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入“C:\Program Files\IBM\WebSphere MQ\Tools\Lib”
+（IBM MQSeries安装在C盘）；
+4、在“ibmmqseries属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“mqic32.Lib”。
+
+
+监视器名称：MQSeries
+调用的函数：GetMQInfo
+监视指标：szCurrentDepth  	指标类型：int		指标名称：队列当前深度
+监视指标：szMaximumDepth  	指标类型：int		指标名称：队列最大深度
+监视指标：szQueueType 		指标类型：String	指标名称：队列类型
+监视指标：szMaxMsgLength 	指标类型：int		指标名称：最大消息长度（字节）
+监视指标：szCreateDate 		指标类型：String	指标名称：队列创建时间
+监视指标：szAlterDate 		指标类型：String	指标名称：队列变更时间
+监视指标：szInputOpens 		指标类型：int		指标名称：输入打开数
+监视指标：szOutputOpens 	指标类型：int		指标名称：输出打开数
+
+监视器名称：MQSeries
+调用的函数：GetMQChannelInfo
+监视指标：szChannelStatus	指标类型：String	指标名称：通道状态

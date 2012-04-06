@@ -1,0 +1,1 @@
+erl -sname test -pa ebin -s proxy_web

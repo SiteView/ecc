@@ -1,0 +1,17 @@
+[Messages]
+Version=1.000
+-80799=Invaild argument supplied to API : %1
+-80798=Failed to delete serial file %1
+-80797=Failed to open serial file %1
+-80796=Operation failed on serial file %1
+-80795=Failed to read from serial file %1
+-80794=Failed to write to serial file %1
+-80793=Failed to close serial file %1
+-80792=Out of memory while processing serial file %1
+-80791=A record in serial file %1 does not have an ID
+-80790=An internal error has occured while processing serial file %1
+-80789=Serial file %1 is in being used by another thread/process, operation failed.
+-80788=The same record ID was received more than while updating file %1, only the first time is considered
+-80787=File %1 is already open, you must close it before the current operation
+Msg_handler_lowest_msg=-80799
+Msg_handler_highest_msg=-80787

@@ -1,0 +1,23 @@
+[Messages]
+Version=1.000
+-47600=Internal error.\r\nDetails: %1 (entry point: %2).
+-47599=HTTP error code %_1_ld: %2.\r\nHint:\r\nCheck the following URL in the Internet Browser: http://%3%4:%_5_ld%6 (entry point: %7).
+-47598=The required file for monitor initialization does not exist (<Installation Root>\dat\monitors\XMLMonitorShared.ini).\r\nPlease consult installation instructions regarding this file (entry point: %1).
+-47597=Failed to initialize monitor.\r\nDetails: %1 (entry point: %2).
+-47596=General error. Exception was raised.\r\nDetails: %1.
+-47595=Failed to connect to server %1, port %_2_ld.\r\nDetails: %3\r\nHint:\r\nCheck that Web Server is up and running (entry point: %4).
+-47594=Cannot initialize "TransportProviderUUID" COM object for monitor %1.\r\nCheck its registration.\r\nHint:\r\nUse UUID specified in "<Installation Root>\dat\monitors\XMLMonitorShared.ini" (entry point: %2).
+-47593=The internal object for machine %1 is invalid ( initialization error ).\r\nHint:\r\nDelete this machine and add it again (use the Add Machine dialog box for this operation)  (entry point: %2). 
+-47592=Cannot load %1.\r\nHint:\r\nCheck that such a file exists (entry point: %2).
+-47591=Cannot initialize Internet connection component.\r\nDetails: %1 (entry point: %2).
+-47590=Required file %1 does not exist (entry point: %2).
+-47589=Loading of file %1 failed.\r\nDetails: %2 (entry point: %3).
+-47588=MSXML parser is not available on %1.
+-47587=Parsing error.\r\nDetails: host %1, port %_2_ld, line: %_3_ld.\r\nReason: %4.\r\nContents: %5
+-47586=Parsing error.\r\nDetails: host %1, line: %_2_ld.\r\nReason: %3.
+-47585=Failed trying to access a URL on server %1\r\n. URL %2 doesn't exist. Check that the application server is running and that the probe is well configured.
+-47584=Failed to connect to application server %1\r\n. Please check the that server is running.
+-47583=Error: Mediator timeout (machine: %1). A connection between the mediator and the application server was not established.
+-47582=%1 (entry point: %2).
+Msg_handler_lowest_msg=-47600
+Msg_handler_highest_msg=-47582

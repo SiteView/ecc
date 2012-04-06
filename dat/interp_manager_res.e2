@@ -1,0 +1,13 @@
+[Messages]
+Version=5.1
+-64900=Can't load interperter loader client named %1.
+-64899=Obsolete
+-64898=Obsolete
+-64897=Argument %2 was passed to function %1 as NULL.
+-64896=Error in %1: Memory allocation failed.
+-64895=Obsolete
+-64894=Function %1 of interpreter client %2 is NULL.
+-64893= Failed to %1 by interpreter %2.
+-64892=Calling function %1 of interpreter client %2 is not allowed due to incorrrect working mode.
+Msg_handler_lowest_msg=-64900
+Msg_handler_highest_msg=-64892

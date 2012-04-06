@@ -1,0 +1,9 @@
+[General]
+Type=Launcher
+ThreadPriorityInit=1
+ThreadPriorityRun=1
+ThreadPriorityExit=1
+received_msgs_num=1000
+
+[CustomAction]
+ActionLogicExt=Server

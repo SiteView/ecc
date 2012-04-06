@@ -1,0 +1,12 @@
+Group=<group>
+Monitor=<name>
+Status=<state>
+Sample=<sample>
+Time=<time>
+
+category=<category>
+tresholds_error=<errorOnly>
+tresholds_warning=<warningOnly>
+tresholds_good=<goodOnly>
+
+

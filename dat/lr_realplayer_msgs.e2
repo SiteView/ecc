@@ -1,0 +1,208 @@
+[Messages]
+Version=1.000
+-62999=Error:The function is not implemented.
+-62998=Error:The function failed to allocate the necessary memory. You may need to close some other applications to play this content. 
+-62997=Error:An invalid parameter was used, therefore the request could not be processed.
+-62996=Error:The creation function did not recognize the requested interface.
+-62995=Error:Information not yet available.
+-62994=Error:Information not yet available.
+-62993=Error:Information not yet available.
+-62992=Error:An unspecified, general error occurred.
+-62991=Error:Information not yet available.
+-62990=Error:The operation completed successfully.
+-62989=Error:Information not yet available.
+-62988=Error:An invalid file version number was given.
+-62987=Error:Information not yet available.
+-62986=Error:The component has not been initialized.
+-62985=Error:The requested file %1 could not found. \r\nThe link you followed may be outdated or inaccurate.
+-62984=Error:Information not yet available.
+-62983=Error:The file format component is missing.
+-62982=Error:Cannot find renderer for this file type.
+-62981=Error:Information not yet available.
+-62980=Error:Information not yet available.
+-62979=Error:Information not yet available.
+-62978=Error:Information not yet available.
+-62977=Error:An invalid socket error occurred.
+-62976=Error:A connection to server could not be established. \r\nYou may be experiencing network problems.
+-62975=Error:An error occurred binding to the network socket.
+-62974=Error:An error occurred while creating a network socket.
+-62973=Error:A connection with the server %1 could not be established.
+-62972=Error:An error occurred while reading data from the network.
+-62971=Error:An error occurred while writing data to the network.
+-62970=Error:UDP data packets cannot be received. \r\nYou may want to try the TCP data option in the Network Preferences. \r\nYou may also want to configure RealPlayer to use a firewall proxy. \r\nContact your system administrator for more information.
+-62969=Error:Information not yet available.
+-62968=Error:Connection to the server %1 has timed out. \r\nYou may be experiencing network problems.
+-62967=Error:Connection to server %1 has been lost. \r\nYou may be experiencing network problems.
+-62966=Error:Information not yet available.
+-62965=Error:The specified winsock services cannot be found. \r\nRemove old Internet software from your system and try again.
+-62964=Error:Information not yet available.
+-62963=Error:Audio data cannot be received from this multicast session. \r\nYou may want to try the TCP data option in the Network Preferences. \r\nContact your system administrator for more information. 
+-62962=Error:Information not yet available.
+-62961=Error:Information not yet available.
+-62960=Error:The file type specified by %1 cannot be played by RealPlayer.
+-62959=Error:The requested URL %1 is not valid.
+-62958=Error:Information not yet available.
+-62957=Error:Information not yet available.
+-62956=Error:Information not yet available.
+-62955=Error:Information not yet available.
+-62954=Error:Information not yet available.
+-62953=Error:Information not yet available.
+-62952=Error:Information not yet available.
+-62951=Error:Information not yet available.
+-62950=Error:Information not yet available.
+-62949=Error:This server is not using a recognized protocol.
+-62948=Error:You need to upgrade to a newer version of RealPlayer to access this server.
+-62947=Error:The connection was closed because the host's version of the RealNetworks server is too old for this client.
+-62946=Error:Information not yet available.
+-62945=Error:A proxy invalid response error occurred.
+-62944=Error:You need to upgrade to a newer client to access this proxy.
+-62943=Error:The connection was closed because the proxy is too old for this client.
+-62942=Error:An invalid protocol was specified in the URL:%1. URLs should typically start with "rtsp://", "pnm://", or "http://". 
+-62941=Error:An invalid option was specified in the URL:%1.
+-62940=Error:An invalid host string was specified in the requested URL:%1.
+-62939=Error:An invalid resource path string was specified in the requested URL:%1.
+-62938=Error:Information not yet available.
+-62937=Error:Access was denied because the request was not authorized.
+-62936=Error:Information not yet available.
+-62935=Error:The transport was not recognized.
+-62934=Error:Information not yet available.
+-62933=Error:The audio device cannot be opened, possibly because another application is using it.
+-62932=Error:Information not yet available.
+-62931=Error:Information not yet available.
+-62930=Error:Information not yet available.
+-62929=Error:An unknown data format was specified.
+-62928=Error:Information not yet available.
+-62927=Error:Information not yet available.
+-62926=Error:The server %1 could not be located. \r\nThis server does not have a DNS entry. \r\nCheck the server name in the URL and try again. 
+-62925=Error:The network drivers cannot be opened.
+-62924=Error:Information not yet available.
+-62923=Error:Information not yet available.
+-62922=Error:Information not yet available.
+-62921=Error:Information not yet available.
+-62920=Error:Information not yet available.
+-62919=Error:Information not yet available.
+-62918=Error:Information not yet available.
+-62917=Error:Information not yet available.
+-62916=Error:File compression is not supported because the requested RealPlayer decoder cannot be located. 
+-62915=Error:The requested RealPlayer decoder is not valid.
+-62914=Error:The requested decoder cannot be loaded because of a decoder type mismatch.
+-62913=Error:The requested RealPlayer decoder cannot be found or cannot be used on this machine.
+-62912=Error:The RealPlayer decoder was not initialized before you attempted to use it.
+-62911=Error:RealPlayer was unable to decompress this content.
+-62910=Error:Information not yet available.
+-62909=Error:Information not yet available.
+-62908=Error:Information not yet available.
+-62907=Error:Information not yet available.
+-62906=Error:Information not yet available.
+-62905=Error:Information not yet available.
+-62904=Error:Information not yet available.
+-62903=Error:Information not yet available.
+-62902=Error:Information not yet available.
+-62901=Error:Information not yet available.
+-62900=Error:Information not yet available.
+-62899=Error:Information not yet available.
+-62898=Error:Information not yet available.
+-62897=Error:Information not yet available.
+-62896=Error:Information not yet available.
+-62895=Error:Information not yet available.
+-62894=Error:Information not yet available.
+-62893=Error:Information not yet available.
+-62892=Error:Information not yet available.
+-62891=Error:Information not yet available.
+-62890=Error:Information not yet available.
+-62889=Error:Information not yet available.
+-62888=Error:Information not yet available.
+-62887=Error:Information not yet available.
+-62886=Error:Information not yet available.
+-62885=Error:Information not yet available.
+-62884=Error:The requested server does not support PerfectPlay.
+-62883=Error:PerfectPlay is not supported for live streams.
+-62882=Error:PerfectPlay was not allowed on this clip.
+-62881=Error:No codecs have been installed on your system.
+-62880=Error:Your CPU is unable to decode this content in real time. \r\nTry closing other applications, or setting your bandwidth preference lower to receive less complex content. 
+-62879=Error:Information not yet available.
+-62878=Error:An invalid hostname for the HTTP proxy was given.
+-62877=Error:An invalid Metafile was given.
+-62876=Error:Unknown error , error string:%1.
+-62875=Error:A server alert occurred.
+-62874=Error:A proxy status error occurred.
+-62873=Error:An error occurred attempting to join a multicast session.
+-62872=Error:An error occurred accessing a multicast session.
+-62871=create_player id=%_1_ld started
+-62870=create_player id=%_1_ld ended with return code=%2
+-62869=open_url %1 in player id=%_2_ld started
+-62868=open_url %1 in player id=%_2_ld ended with return code=%3
+-62867=play id=%_1_ld started
+-62866=play id=%_1_ld,playing until the clip's end
+-62865=play id=%_1_ld ended , returned %2 ,\r\nplayed %_3_ld in %_4_ld millisec.
+-62864=stop id=%_1_ld started
+-62863=stop id=%_1_ld ended with return code=%2
+-62862=pause_play id=%_1_ld started
+-62861=pause id=%_1_ld ended with return code=%2
+-62860=seek id=%_1_ld started
+-62859=seek id=%_1_ld ended with return code=%2
+-62858=close id=%_1_ld started
+-62857=close id=%_1_ld ended with return code=%2
+-62856=the clip size is %_1_ld milliseconds
+-62855=the clip current time is %_1_ld milliseconds
+-62854=Error:Cannot add new player to the hash table.
+-62853=Error:Invalid player data pointer.
+-62852=Error:Failed to load the %1 library.
+-62851=Error:Cannot load rmacore.
+-62850=Error:Cannot create message processing thread , exiting ...
+-62849=Error:Cannot allocate RTS entry key handle array.
+-62848=Error:Cannot allocate new thread storage - no available memory , exiting ...
+-62847=Error:Cannot initialize hash table , exiting ...
+-62846=Error:The AddHook func is failed .
+-62845=Error:Invalid thread data pointer .
+-62844=Error:The player instance with ID=%_1_ld,already exists .
+-62843=Error:Low memory:Couldn't create new Player data .
+-62842=Error:Couldn't create new wait event .
+-62841=Error:Bad player pointer was returned , cannot proceed .
+-62840=Error:new ExampleClientContext() returned NULL .
+-62839=Error:Cannot get ErrorSinkControl from Player instance , exiting ...
+-62838=Error:Cannot create new audio device , no available memory , exiting ...
+-62837=Error:create_player cannot get AudioDeviceManager .
+-62836=Error:Cannot recognize the URL,exiting .
+-62835=Error:open_url - Cannot allocate new place for URL , exiting...
+-62834=Error:The player instance with ID=%_1_ld,doesn't exist .
+-62833=Error:Invalid trans msg .
+-62832=Error:Cannot set transaction report .
+-62831=Error:We got debug replay msg with null debug msg .
+-62830=Error:We got error msg with null error msg .
+-62829=Error:In fvSetFirstFrameTime ,the player instance is NULL .
+-62828=Error:Cannot set multy connect flag .
+-62827=Error:Cannot load interceptor library .
+-62826=Error:Cannot find AddHook function .
+-62825=Error:Cannot load lr_render dll .
+-62824=Error:Cannot find RMACreateInstance .
+-62823=Error:Cannot get plugin path .
+-62822=Error:Cannot get GUID string .
+-62821=Error:Cannot get PluginName array .
+-62820=Error:Cannot get windows directory path .
+-62819=Error:Cannot open RTS Entry key .
+-62818=Error:Unknown error .
+-62817=Error:Cannot get preferences .
+-62816=Error:Cannot create temporary Buffer .
+-62815=Error:Cannot set temporary buffer in RTSPNoReuseConnection .
+-62814=Error:Cannot write RTSP_MULTY_CONNECT .
+-62813=Error:Wrong argument passed .
+-62812=Error:Wrong GUID string format .
+-62811=Error:Plugin quota exceeded , please call customer support .
+-62810=Error:Cannot find realplayer registry, please check your installation .
+-62809=Error:Cannot get Data from GUID_INFO buffer .
+-62808=Error:Cannot allocate new memory .
+-62807=Error:Cannot get StreamSource .
+-62806=Error:Cannot get Stream .
+-62805=Error:Invalid property argument .
+-62804=Error:Create Player failed .
+-62803=Error:Cannot get Common Class Factory .
+-62802=Error:Cannot create plugin enumerator .
+-62801=Error:Cannot initialize plugin enumerator .
+-62800=Error:Cannot get number of the plugins .
+-62799=play id=%_1_ld cannot be performed , since the clip reached its end .
+-62798=pause id=%_1_ld cannot be performed , since the clip reached its end .
+-62797=seek forward id=%_1_ld cannot be performed , since the clip reached its end .
+-62796=Error:Connection to the server has timed out. \r\nYou may be experiencing network problems.
+Msg_handler_lowest_msg=-62999
+Msg_handler_highest_msg=-62796

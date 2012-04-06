@@ -1,0 +1,7 @@
+INSTANCENAMEQUERY=SELECT instance_name FROM V$INSTANCE
+COUNTERNAMEQUERY=SELECT name FROM V$SYSSTAT
+STATCOUNTERQUERY=SELECT STATISTIC#,NAME FROM V$STATNAME
+SIDVALUEQUERY=SELECT sid,username,terminal,program FROM V$SESSION WHERE (osuser <> 'SYSTEM') AND (username IS NOT NULL) AND (type <> 'BACKGROUND') and (paddr in (select addr from v$process))
+SYSRESULTS=SELECT NAME,VALUE FROM V$SYSSTAT
+SESRESULTS=SELECT SID,STATISTIC#,VALUE FROM V$SESSTAT
+FREETABLESPACEQUERY=select total.tablespace_name tsname, round((1-nvl(sum(free.bytes),0)/total.bytes)*100)  pctusd from (select tablespace_name,    sum(bytes) bytes from    dba_data_files  group by tablespace_name)  total,  dba_free_space  free where  total.tablespace_name = free.tablespace_name(+) and total.tablespace_name = 'USERS'group by total.tablespace_name,  total.bytes order by   (1-nvl(sum(free.bytes),0)/total.bytes)*100  asc 

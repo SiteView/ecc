@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<browse_data>
+
+<object name="Process" type="perf" instances="LSASS" >
+<counterInfo name="% Processor Time" />
+<counterInfo name="Private Bytes" />
+<counterInfo name="Handle Count" />
+</object>
+
+<object name="NTDS" type="perf" >
+<counterInfo name="LDAP Client Sessions" />
+<counterInfo name="LDAP Searches/sec" />
+<counterInfo name="DS Search sub-operations/sec" />
+</object>
+
+<object/>
+
+</browse_data>

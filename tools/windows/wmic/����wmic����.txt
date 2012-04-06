@@ -1,0 +1,18 @@
+# Download WMIC 
+wget http://dev.zenoss.org/svn/trunk/inst/externallibs/wmi-1.3.13.tar.bz2 
+tar xvf wmi-1.3.13.tar.bz2 
+cd wmi-1.3.13/ 
+# Edit the GNUmakefile 
+## add a line containing 'ZENHOME= ../..' to the top of the file 
+# Build WMI 
+make 
+#Get a cup of coffee. 
+#Copy Files 
+cp bin/* /usr/local/bin/ 
+cp lib/python/* /usr/local/lib/python 
+#Execute wmic 
+wmic --user DOMIAN/\username%password //hostname "Select Name from 
+Win32_Service" 
+
+1、在编译的最后出错没有关系，不影响我们编译出wmic执行文件，它位于.../Samba/source/bin目录下
+2、wmic一定要记得添加上执行权限

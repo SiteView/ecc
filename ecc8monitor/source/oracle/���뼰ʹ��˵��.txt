@@ -1,0 +1,52 @@
+为Oracle监视器提供的DLL程序：oracle.dll
+
+编译环境：VS2003
+编译条件：
+1、安装Oracle数据库；
+2、在oracle属性页”-〉“链接器”-〉“常规”
+-〉“附加库目录”中加入svapi.lib文件的所在路径。；
+3、在oracle属性页”-〉“链接器”-〉“输入”
+-〉“附加依赖项”中加入“svapi.lib”。
+
+
+监视器名称：数据库连接数
+调用的函数：GetSessions
+监视指标：SV_sessions  	指标类型：Int		指标名称：当前连接数(个)
+监视指标：LogonsCum 	指标类型：Int 		指标名称：累计连接数
+监视指标：LogonsCum1m	指标类型：Int		指标名称：每分钟累计连接数
+
+监视器名称：数据库表空间
+调用的函数：OracleDB
+监视指标：UsedPercent	指标类型：Float		指标名称：使用率(%)
+监视指标：Used		指标类型：Float		指标名称：已用空间(MB)
+监视指标：FreePercent	指标类型：Float		指标名称：剩余率(%)
+监视指标：FreeSpace	指标类型：Float		指标名称：剩余空间(MB)
+监视指标：Total		指标类型：Float		指标名称：总容量(MB)
+
+监视器名称：数据库信息(原名：数据库性能)
+调用的函数：GetOracleInfo
+监视指标：SV_Cursor		指标类型：Int	指标名称：游标数(个)
+监视指标：SV_Session		指标类型：Int	指标名称：Session数(个)
+监视指标：SV_Transaction	指标类型：Int	指标名称：每秒事务数(个)
+监视指标：SV_Lock		指标类型：Int	指标名称：数据库锁数量(个)
+监视指标：SV_DeadLock		指标类型：Int	指标名称：死锁数量(个)
+监视指标：SV_BufHitRate		指标类型：Int	指标名称：缓冲池命中率(%)
+监视指标：SV_LibHitRate		指标类型：Int	指标名称：库cache命中率(%)
+监视指标：SV_time		指标类型：Int	指标名称：监测使用的时间(s)
+
+监视器名称：数据库性能(原名：内存使用率)
+调用的函数：GetProcMemUsePercent
+监视指标：ProcMemPer		指标类型：Float	指标名称：游标数(个)
+监视指标：TotalPhysicalIO	指标类型：Int	指标名称：物理IO总次数
+监视指标：PhysicalIO1m		指标类型：Int	指标名称：每分钟物理IO次数
+监视指标：TotalLogicalIO	指标类型：Int	指标名称：逻辑IO总次数
+监视指标：LogicalIO1m		指标类型：Int	指标名称：每分钟逻辑IO次数
+监视指标：SortsDisk		指标类型：Int	指标名称：磁盘排序总次数
+监视指标：SortsDisk1m		指标类型：Int	指标名称：每分钟磁盘排序次数
+监视指标：SortsMem		指标类型：Int	指标名称：内存排序总次数
+监视指标：SortsMem1m		指标类型：Int	指标名称：每分钟内存排序次数
+监视指标：UserCommits		指标类型：Int	指标名称：提交总次数
+监视指标：UserCommits1m		指标类型：Int	指标名称：每分钟提交次数
+监视指标：UserRollbacks		指标类型：Int	指标名称：回滚总次数
+监视指标：UserRollbacks1m	指标类型：Int	指标名称：每分钟回滚次数
+

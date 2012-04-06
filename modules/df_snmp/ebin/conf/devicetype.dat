@@ -1,0 +1,1552 @@
+{[1,3,6,1,4,1,1588,2,1,1,1],1,"SWITCH","Fibre Channel Switch","0-UNKNOW"}.
+{[1,3,6,1,4,1,43,1,4,11],2,"ROUTE","3Com A","3Com"}.
+{[1,3,6,1,4,1,43,1,4,20],2,"ROUTE","3Com B","3Com"}.
+{[1,3,6,1,4,1,114,1,3,3,2,3],1,"SWITCH","3Com C","3Com"}.
+{[1,3,6,1,4,1,43,1,8,13],1,"SWITCH","3Com D","3Com"}.
+{[1,3,6,1,4,1,43,10,27,4,1,2,1],1,"SWITCH","3ComSuperStackII","3Com"}.
+{[1,3,6,1,4,1,43,1,9,15,2],1,"SWITCH","ATM Expansion Module","3Com"}.
+{[1,3,6,1,4,1,135,28],1,"SWITCH","AccessBuilder 6218-JX","3Com"}.
+{[1,3,6,1,4,1,114,2,1,1,1,1,9],1,"SWITCH","CoreBuilder 3500 A","3Com"}.
+{[1,3,6,1,4,1,43,1,16,1,1,1,1],1,"SWITCH","CoreBuilder 3500 B","3Com"}.
+{[1,3,6,1,4,1,49,2,3,24],1,"SWITCH","CoreBuilder 5000","3Com"}.
+{[1,3,6,1,4,1,114,1,3,2,1,1,8],1,"SWITCH","CoreBuilder 6012","3Com"}.
+{[1,3,6,1,4,1,43,1,16,2,2,1,2],1,"SWITCH","CoreBuilder-3900","3Com"}.
+{[1,3,6,1,4,1,43,1,12,4],1,"SWITCH","CoreBuilder-7000 ATM B","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,3,1],1,"SWITCH","CoreBuilder-9000 (EME)","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,1,2],1,"SWITCH","CoreBuilder-9000 (L2 Blade) A","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,1,4],1,"SWITCH","CoreBuilder-9000 (L2 Blade) B","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,1,6],1,"SWITCH","CoreBuilder-9000 (L2 Blade) C","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,1,7],1,"SWITCH","CoreBuilder-9000 (L2 Blade) D","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,3,2],1,"SWITCH","CoreBuilder-9000 (L2 Fabric)","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,2,1],1,"SWITCH","CoreBuilder-9000 (L3 Blade) A","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,2,4],1,"SWITCH","CoreBuilder-9000 (L3 Blade) B","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,1,2,5],1,"SWITCH","CoreBuilder-9000 (L3 Blade) C","3Com"}.
+{[1,3,6,1,4,1,43,1,9,13,2,2,1],1,"SWITCH","CoreBuilder-9000 ATM","3Com"}.
+{[1,3,6,1,4,1,43,1,16,1,2,1,1],1,"SWITCH","CoreBuilder-9400","3Com"}.
+{[1,3,6,1,4,1,43,1,12,1],1,"SWITCH","Corebuilder-7000 ATM A","3Com"}.
+{[1,3,6,1,4,1,388,1,4],6,"Hub","DSSS Access Point","3Com"}.
+{[1,3,6,1,4,1,429,2,19],2,"ROUTE","HiPer Access Router","3Com"}.
+{[1,3,6,1,4,1,114,1,3,3,1,7],1,"SWITCH","Lanplex 2500 A","3Com"}.
+{[1,3,6,1,4,1,114,1,4,8,2,1,7],1,"SWITCH","Lanplex 2500 B","3Com"}.
+{[1,3,6,1,4,1,43,1,8,6],6,"Hub","LinkBuilder FDDI","3Com"}.
+{[1,3,6,1,4,1,43,1,4,32],1,"SWITCH","Office Connect","3Com"}.
+{[1,3,6,1,4,1,43,1,16,2,2,1,1],1,"SWITCH","SuperStack 3900-24","3Com"}.
+{[1,3,6,1,4,1,43,1,8,5],6,"Hub","SuperStack II Hub 10","3Com"}.
+{[1,3,6,1,4,1,43,10,27,4,1],6,"Hub","SuperStack II PS Hub 40","3Com"}.
+{[1,3,6,1,4,1,43,1,8,24],1,"SWITCH","SuperStack II Switch","3Com"}.
+{[1,3,6,1,4,1,141,1,1,6010],5,"Host","SuperStack TR Advanced RMON Agent Version F3.10.0","3Com"}.
+{[1,3,6,1,4,1,43,1,8,22],1,"SWITCH","SuperStackII 3000","3Com"}.
+{[1,3,6,1,4,1,43,10,27,4,1,2,2],1,"SWITCH","SuperStackII 3300","3Com"}.
+{[1,3,6,1,4,1,43,1,13,1],1,"SWITCH","SuperStackII Advanced RPS","3Com"}.
+{[1,3,6,1,4,1,43,1,8,29],1,"SWITCH","SuperStackII Desktop Switch SW Version:2.10","3Com"}.
+{[1,3,6,1,4,1,43,1,16,2,2,2,1],1,"SWITCH","SuperStackII Switch 9300","3Com"}.
+{[1,3,6,1,4,1,318,1,3,2,9],5,"Host","AP605","APC"}.
+{[1,3,6,1,4,1,318,1],5,"Host","AP9605","APC"}.
+{[1,3,6,1,4,1,318,1,3,2,12],5,"Host","AP9606","APC"}.
+{[1,3,6,1,4,1,318,1,3,2,10],5,"Host","HOST A","APC"}.
+{[1,3,6,1,4,1,318,1,3,2,11],5,"Host","HOST B","APC"}.
+{[1,3,6,1,4,1,318,1,3,2,8],5,"Host","HOST C","APC"}.
+{[1,3,6,1,4,1,318,1,3,4,1],5,"Host","HOST D","APC"}.
+{[1,3,6,1,4,1,318,1,3,2],5,"Host","smartUPS","APC"}.
+{[1,3,6,1,4,1,529,1,2,5],2,"ROUTE","A","ASCEND"}.
+{[1,3,6,1,4,1,529,1,2,6],2,"ROUTE","B","ASCEND"}.
+{[1,3,6,1,4,1,529,1,3,5],2,"ROUTE","C","ASCEND"}.
+{[1,3,6,1,4,1,529,1,3,7],2,"ROUTE","D","ASCEND"}.
+{[1,3,6,1,4,1,529,1,2,9],1,"SWITCH","Max 3000","ASCEND"}.
+{[1,3,6,1,4,1,529,1,2,2],1,"SWITCH","Max-1800","ASCEND"}.
+{[1,3,6,1,4,1,529,1,2,3],1,"SWITCH","Max-2000","ASCEND"}.
+{[1,3,6,1,4,1,662,1,1,7,28,4,0,0],5,"Host","Octel-200 Voice Mail System","Acgate"}.
+{[1,3,6,1,4,1,664,1,493],2,"ROUTE","616 IAD","Adtran"}.
+{[1,3,6,1,4,1,664,1,430],2,"ROUTE","Atlas 830","Adtran"}.
+{[1,3,6,1,4,1,664,1,198],2,"ROUTE","MX2800","Adtran"}.
+{[1,3,6,1,4,1,664,1,245],2,"ROUTE","TA3000","Adtran"}.
+{[1,3,6,1,4,1,539,2,198],1,"SWITCH","Ai-198 (CLC) card","Ai"}.
+{[1,3,6,1,4,1,551,2,1,77],6,"Bridge","BR500E","Aironet"}.
+{[1,3,6,1,4,1,800,3,1,1,15],1,"SWITCH","6148","Alcatel"}.
+{[1,3,6,1,4,1,6486,800,1,1,2,1,3,1,1],1,"SWITCH","6600","Alcatel"}.
+{[1,3,6,1,4,1,6486,800,1,1,2,1,1,1,1],0,"ROUTE_SWITCH","7700","Alcatel"}.
+{[1,3,6,1,4,1,6486,800,1,1,2,1,1,1,2],1,"SWITCH","7800","Alcatel"}.
+{[1,3,6,1,4,1,6486,800,1,1,2,1,2,1,1],1,"SWITCH","8800","Alcatel"}.
+{[1,3,6,1,4,1,6486,800,1,1,2,1,8,1,1],0,"ROUTE_SWITCH","9700","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,1],1,"SWITCH","OMNI Switch A","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,2],1,"SWITCH","OMNI Switch B","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,11],1,"SWITCH","OmniAccess-408","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,8],1,"SWITCH","OmniStack 1024","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,9],1,"SWITCH","OmniStack 6024","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,3],1,"SWITCH","OmniStack/PizzaSwitch","Alcatel"}.
+{[1,3,6,1,4,1,3003,2,2,2,2],1,"SWITCH","PR-2200 Gigabit Switch Router","Alcatel"}.
+{[1,3,6,1,4,1,3003,2,2,2,1],1,"SWITCH","PR-5200 Gigabit Switch Router","Alcatel"}.
+{[1,3,6,1,4,1,800,3,1,1,7],6,"OTHER","PizzaPort","Alcatel"}.
+{[1,3,6,1,4,1,95,1,5],5,"Host","1756-ENET","Allen Bradley PLC"}.
+{[1,3,6,1,4,1,207,1,2,1],6,"Hub","AT-3624TR","Allied Telesyn"}.
+{[1,3,6,1,4,1,36,2,15,13,6,2],5,"Host","AlphaServer 4100","Alpha"}.
+{[1,3,6,1,4,1,1872,1,5],1,"SWITCH","180e","Alteon"}.
+{[1,3,6,1,4,1,1872,1,4],1,"SWITCH","ACEdirector 2","Alteon"}.
+{[1,3,6,1,4,1,1872,1,6],1,"SWITCH","ACEdirector 3","Alteon"}.
+{[1,3,6,1,4,1,12394,4,3,1],6,"Bridge","Alvarion BreezeAccess","Alvarion"}.
+{[1,3,6,1,4,1,1663,1,1,1,1,7],1,"SWITCH","Fibre Channel Switch","Ancor"}.
+{[1,3,6,1,4,1,539,2,194,7,4],6,"Hub","AI-194","Applied Innovations"}.
+{[1,3,6,1,4,1,539,2,193,7,10],2,"ROUTE","AI193TX","Applied Innovations"}.
+{[1,3,6,1,4,1,539,2,196,7,2,1,0],1,"SWITCH","AI196","Applied Innovations"}.
+{[1,3,6,1,4,1,629,1,1,7],1,"SWITCH","AI294","Applied Innovations"}.
+{[1,3,6,1,4,1,539,2,7],1,"SWITCH","AI296","Applied Innovations"}.
+{[1,3,6,1,4,1,539,2,18],1,"SWITCH","AIscout2","Applied Innovations"}.
+{[1,3,6,1,4,1,2467,4,2],2,"ROUTE","CSS 11000","Arrowpoint"}.
+{[1,3,6,1,4,1,2467,4,3],2,"ROUTE","CSS 11050","Arrowpoint"}.
+{[1,3,6,1,4,1,1751,1,49],5,"Host","IP600","Avaya"}.
+{[1,3,6,1,4,1,81,17,1,18],1,"SWITCH","P130","Avaya"}.
+{[1,3,6,1,4,1,81,17,2,13],2,"ROUTE","P333R","Avaya"}.
+{[1,3,6,1,4,1,2474,2,1],2,"ROUTE","TSR IPriori","Avici"}.
+{[1,3,6,1,4,1,738,1,5,100,1,1,1],1,"SWITCH","T4 Ethernet Switch","BATM"}.
+{[1,3,6,1,4,1,738,1,5,100,1,1,7],1,"SWITCH","T5C 24T Routing Switch","BATM"}.
+{[1,3,6,1,4,1,18,3],2,"ROUTE","","Bay"}.
+{[1,3,6,1,4,1,45,3,9,1],6,"Hub","2715-trNMM","Bay"}.
+{[1,3,6,1,4,1,45,3,19,1],6,"Hub","2715SA TokenRing","Bay"}.
+{[1,3,6,1,4,1,45,3,15,1],1,"SWITCH","28115","Bay"}.
+{[1,3,6,1,4,1,45,3,12,1],6,"Hub","281X-enetNMM","Bay"}.
+{[1,3,6,1,4,1,45,3,14,1],6,"Hub","281XSA-enetNMM","Bay"}.
+{[1,3,6,1,4,1,45,3,28,1],1,"SWITCH","28200","Bay"}.
+{[1,3,6,1,4,1,45,3,10,1],6,"Hub","291X-FDDI-NMM","Bay"}.
+{[1,3,6,1,4,1,45,3,2,3],6,"Hub","3000-FDDI-NMM","Bay"}.
+{[1,3,6,1,4,1,45,3,3,2],6,"Hub","3030-trNMM","Bay"}.
+{[1,3,6,1,4,1,45,3,32,2],1,"SWITCH","310-24T Ethernet Switch","Bay"}.
+{[1,3,6,1,4,1,45,3,30,2],1,"SWITCH","350-24T Ethernet Switch","Bay"}.
+{[1,3,6,1,4,1,45,3,35,1],1,"SWITCH","450T","Bay"}.
+{[1,3,6,1,4,1,45,3,13,1],6,"Hub","5000 A","Bay"}.
+{[1,3,6,1,4,1,45,3,21,1],6,"Hub","5000 B","Bay"}.
+{[1,3,6,1,4,1,45,3,13,2],6,"Hub","5000-tokNMM","Bay"}.
+{[1,3,6,1,4,1,45,3,17,1],6,"Hub","5310A/SA","Bay"}.
+{[1,3,6,1,4,1,45,3,17,2],6,"Hub","5510 TokenRing","Bay"}.
+{[1,3,6,1,4,1,45,3,13,6],6,"Hub","5616A/SA","Bay"}.
+{[1,3,6,1,4,1,45,3,13,5],1,"SWITCH","58000 A","Bay"}.
+{[1,3,6,1,4,1,45,3,17,3],6,"Hub","58000 B","Bay"}.
+{[1,3,6,1,4,1,45,3,13,3],6,"Hub","5910S","Bay"}.
+{[1,3,6,1,4,1,2272,8],1,"SWITCH","Accelar","Bay"}.
+{[1,3,6,1,4,1,45,3,26,1],6,"Hub","BayStack 100","Bay"}.
+{[1,3,6,1,4,1,45,3,31,1],6,"Hub","BayStack 200","Bay"}.
+{[1,3,6,1,4,1,45,3,32,1],1,"SWITCH","BayStack 303","Bay"}.
+{[1,3,6,1,4,1,45,3,30,1],1,"SWITCH","BayStack 350T","Bay"}.
+{[1,3,6,1,4,1,45,3,22,1],6,"Hub","BayStack Ethernet","Bay"}.
+{[1,3,6,1,4,1,930,1,3],6,"Bridge","BayStackVersion 1.0.0","Bay"}.
+{[1,3,6,1,4,1,930,1,1],1,"SWITCH","Centillion 100","Bay"}.
+{[1,3,6,1,4,1,930,1,4],1,"SWITCH","Centillion 5000BH","Bay"}.
+{[1,3,6,1,4,1,45,3,1],6,"Hub","Ethernet NMM 281XSA","Bay"}.
+{[1,3,6,1,4,1,45,3,2,1],6,"Hub","Ethernet NMM 331XS","Bay"}.
+{[1,3,6,1,4,1,45,3,27,1],6,"Hub","NMM 331XA A","Bay"}.
+{[1,3,6,1,4,1,45,3,3,1],6,"Hub","NMM 331XA B","Bay"}.
+{[1,3,6,1,4,1,45,1,3,8],6,"Bridge","Token Ring Bridge s3000Trb","Bay"}.
+{[1,3,6,1,4,1,45,3,2,2],6,"Hub","Token Ring NNM 351X","Bay"}.
+{[1,3,6,1,4,1,1588,2,1,1,2],1,"SWITCH","2800 Silkworm FC Switch","Brocade"}.
+{[1,3,6,1,4,1,333,2],2,"ROUTE","UltraNet Storage Director","CNT"}.
+{[1,3,6,1,4,1,52,3,9,3,4,82],1,"SWITCH","2E253-49R","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,58],1,"SWITCH","2E42-27R","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,68],1,"SWITCH","2E48-27R","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,2],1,"SWITCH","6E122-26","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,7],1,"SWITCH","6E123-26","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,12],1,"SWITCH","6E128-26","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,3],1,"SWITCH","6E132-25","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,8],1,"SWITCH","6E133-25","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,13],1,"SWITCH","6E138-25","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,23],1,"SWITCH","6E233-49","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,4],1,"SWITCH","6H122-08","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,18],1,"SWITCH","6H122-16","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,16],1,"SWITCH","6H128_08","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,19],1,"SWITCH","6H133_37","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,20],1,"SWITCH","6H202-24","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,21],1,"SWITCH","6H252-17","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,2,28],1,"SWITCH","6H262-18","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,5,11],1,"SWITCH","9E106-6","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,5,10],1,"SWITCH","9E128-01","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,5,8],1,"SWITCH","9E132-15","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,5,12],1,"SWITCH","9E138-12","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,16],1,"SWITCH","9E423-36","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,11],1,"SWITCH","9E428-36","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,6,2],1,"SWITCH","9F120-08","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,6,4],1,"SWITCH","9F241-12","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,7],1,"SWITCH","9F426-02","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,14],1,"SWITCH","9F426-03","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,13,7],1,"SWITCH","9G536-04","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,15],1,"SWITCH","9H421p12","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,9],1,"SWITCH","9H422-12","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,23],1,"SWITCH","9H423-26","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,13,1],1,"SWITCH","9H532-18","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,13,8],1,"SWITCH","9H532-24","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,42],6,"Hub","A","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,5,9,136],6,"Hub","B","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,5,9,68],6,"Hub","C","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,9,8],1,"SWITCH","D","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,1,10,5],6,"Hub","ELH100","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,5,1],1,"SWITCH","ELM A","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,32,5,3],1,"SWITCH","ELM B","Cabletron"}.
+{[1,3,6,1,4,1,97,5,7],1,"SWITCH","ELS10-26","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,1,10,7],1,"SWITCH","ELS100","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,5,1],1,"SWITCH","EMM-E6","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,185],1,"SWITCH","EMME","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,48],1,"SWITCH","ESX-1320","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,186],1,"SWITCH","ESXMIM A","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,191],1,"SWITCH","ESXMIM B","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,34],1,"SWITCH","FDDI-Enet","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,5,10,68],6,"Hub","MMAC-44T","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,65569],6,"Hub","MRXi","Cabletron"}.
+{[1,3,6,1,4,1,52],6,"Hub","MRXi-MINIMMAC","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,1],6,"Hub","MicroMMAC A","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,3],6,"Hub","MicroMMAC B","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,10],6,"Hub","SEHI A","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,11],6,"Hub","SEHI B","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,34],6,"Hub","SEHI C","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,35],6,"Hub","SEHI D","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,1,4],1,"SWITCH","SSR","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,1,3],1,"SWITCH","SSR 8000","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,33,1,1],1,"SWITCH","SSR-2000","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,20,1,1],1,"SWITCH","Smart Chassis 6000","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,187],6,"Hub","TRMM","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,180],6,"Hub","TRMM-2","Cabletron"}.
+{[1,3,6,1,4,1,52,3,2,183],6,"Hub","TRMM-4","Cabletron"}.
+{[1,3,6,1,4,1,52,3,9,3,4,80],1,"SWITCH","mt2H252p25R","Cabletron"}.
+{[1,3,6,1,4,1,3417,1,1,8],2,"ROUTE","500","CacheFlow"}.
+{[1,3,6,1,4,1,3417,1,1,13],2,"ROUTE","600","CacheFlow"}.
+{[1,3,6,1,4,1,3417,1,1,16],2,"ROUTE","700","CacheFlow"}.
+{[1,3,6,1,4,1,3417,1,1,11],2,"ROUTE","CA-6000","CacheFlow"}.
+{[1,3,6,1,4,1,3417,1,1,7],5,"Host","Cashe OS Version:2.2.16","CasheFlow"}.
+{[1,3,6,1,4,1,8072,3,2,6],5,"Host","NET SNMP HPUX10","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,11],5,"Host","NET-SNMP BSD","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,8],5,"Host","NET-SNMP FREEBSD","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,14],5,"Host","NET-SNMP HPUX11","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,1],3,"FIREWALL","NET-SNMP HPUX9","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,9],5,"Host","NET-SNMP IRIX","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,7],5,"Host","NET-SNMP NETBSD","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,2],5,"Host","NET-SNMP SUNOS4","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,5],5,"Host","NET-SNMP ULTRIX","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,255],5,"Host","NET-SNMP UNKNOWN","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,13],5,"Host","NET-SNMP WIN32","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,4],5,"Host","NET-SNMP-OSF","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,12],5,"Host","NET-SNMPOPENBSD","CheckPoint"}.
+{[1,3,6,1,4,1,8072,3,2,3],5,"Host","NET-SNMPSOLARIS","CheckPoint"}.
+{[1,3,6,1,4,1,9,5,11],1,"SWITCH","","Cisco"}.
+{[1,3,6,1,4,1,9,5,3],6,"OTHER","1000","Cisco"}.
+{[1,3,6,1,4,1,9,5,5],1,"SWITCH","1200","Cisco"}.
+{[1,3,6,1,4,1,9,5,27],1,"SWITCH","1220","Cisco"}.
+{[1,3,6,1,4,1,9,5,9],1,"SWITCH","1600","Cisco"}.
+{[1,3,6,1,4,1,9,1,901],2,"ROUTE","1880","Cisco"}.
+{[1,3,6,1,4,1,9,5,28],1,"SWITCH","1900c","Cisco"}.
+{[1,3,6,1,4,1,9,5,31],1,"SWITCH","1900i","Cisco"}.
+{[1,3,6,1,4,1,9,5,35],1,"SWITCH","2926","Cisco"}.
+{[1,3,6,1,4,1,9,5,42],1,"SWITCH","2948G","Cisco"}.
+{[1,3,6,1,4,1,9,5,62],1,"SWITCH","2948G-GE-TX","Cisco"}.
+{[1,3,6,1,4,1,9,5,51],1,"SWITCH","2980G","Cisco"}.
+{[1,3,6,1,4,1,9,1,581],2,"ROUTE","3201","Cisco"}.
+{[1,3,6,1,4,1,9,5,40],1,"SWITCH","4003","Cisco"}.
+{[1,3,6,1,4,1,9,5,58],1,"SWITCH","4503-Sup","Cisco"}.
+{[1,3,6,1,4,1,9,5,59],1,"SWITCH","4506-Sup","Cisco"}.
+{[1,3,6,1,4,1,9,5,41],1,"SWITCH","4912G","Cisco"}.
+{[1,3,6,1,4,1,9,5,17],1,"SWITCH","5500","Cisco"}.
+{[1,3,6,1,4,1,9,5,38],1,"SWITCH","6006","Cisco"}.
+{[1,3,6,1,4,1,9,5,39],1,"SWITCH","6009","Cisco"}.
+{[1,3,6,1,4,1,9,5,56],1,"SWITCH","6503-CATOS","Cisco"}.
+{[1,3,6,1,4,1,9,5,45],1,"SWITCH","6506","Cisco"}.
+{[1,3,6,1,4,1,9,5,44],1,"SWITCH","6509","Cisco"}.
+{[1,3,6,1,4,1,9,5,47],1,"SWITCH","6509 NEB","Cisco"}.
+{[1,3,6,1,4,1,9,1,358],2,"ROUTE","7160","Cisco"}.
+{[1,3,6,1,4,1,351,100],1,"SWITCH","BPX-Switch","Cisco"}.
+{[1,3,6,1,4,1,9,1,900],2,"ROUTE","C1840","Cisco"}.
+{[1,3,6,1,4,1,9,5,1],2,"ROUTE","CDDI/FDDI Concentrator","Cisco"}.
+{[1,3,6,1,4,1,2467,4,1],1,"SWITCH","CS 100","Cisco"}.
+{[1,3,6,1,4,1,2467,4,4],1,"SWITCH","CSS 11050","Cisco"}.
+{[1,3,6,1,4,1,2467,4,7],1,"SWITCH","CSS 11501","Cisco"}.
+{[1,3,6,1,4,1,2467,4,5],1,"SWITCH","CSS 11503","Cisco"}.
+{[1,3,6,1,4,1,2467,4,6],1,"SWITCH","CSS 11506","Cisco"}.
+{[1,3,6,1,4,1,437,1,1,3,3,2],1,"SWITCH","Catalyst 2100","Cisco"}.
+{[1,3,6,1,4,1,437,1,1,3,3,3],1,"SWITCH","Catalyst 2800","Cisco"}.
+{[1,3,6,1,4,1,9,5,10],1,"SWITCH","Catalyst 3000","Cisco"}.
+{[1,3,6,1,4,1,9,5,34],1,"SWITCH","Catalyst 5505","Cisco"}.
+{[1,3,6,1,4,1,9,1,283],0,"ROUTE_SWITCH","Catalyst 6509","Cisco"}.
+{[1,3,6,1,4,1,9,5,50],1,"SWITCH","Catalyst 6513","Cisco"}.
+{[1,3,6,1,4,1,9,5,18],1,"SWITCH","Catalyst WS-C1900","Cisco"}.
+{[1,3,6,1,4,1,9,5,20],1,"SWITCH","Catalyst WS-C2820","Cisco"}.
+{[1,3,6,1,4,1,9,5,12],1,"SWITCH","Catalyst WS-C2900","Cisco"}.
+{[1,3,6,1,4,1,9,5,49],1,"SWITCH","Catalyst WS-C2980","Cisco"}.
+{[1,3,6,1,4,1,9,5,26],1,"SWITCH","Catalyst WS-C3001","Cisco"}.
+{[1,3,6,1,4,1,9,5,23],1,"SWITCH","Catalyst WS-C3100","Cisco"}.
+{[1,3,6,1,4,1,9,5,7],1,"SWITCH","Catalyst WS-C5000","Cisco"}.
+{[1,3,6,1,4,1,9,5,29],1,"SWITCH","Catalyst WS-C5002","Cisco"}.
+{[1,3,6,1,4,1,9,5,36],1,"SWITCH","Catalyst WS-C5509","Cisco"}.
+{[1,3,6,1,4,1,3076,1,2,1,1,3,1],2,"ROUTE","Cisco VPN 3002 concentrator","Cisco"}.
+{[1,3,6,1,4,1,9,1,40],2,"ROUTE","Cisco1000","Cisco"}.
+{[1,3,6,1,4,1,9,1,437],2,"ROUTE","Cisco10005","Cisco"}.
+{[1,3,6,1,4,1,9,1,438],2,"ROUTE","Cisco10008","Cisco"}.
+{[1,3,6,1,4,1,9,1,41],2,"ROUTE","Cisco1003","Cisco"}.
+{[1,3,6,1,4,1,9,1,44],2,"ROUTE","Cisco1004","Cisco"}.
+{[1,3,6,1,4,1,9,1,49],2,"ROUTE","Cisco1005","Cisco"}.
+{[1,3,6,1,4,1,9,1,43],2,"ROUTE","Cisco1020","Cisco"}.
+{[1,3,6,1,4,1,9,1,272],2,"ROUTE","Cisco10400","Cisco"}.
+{[1,3,6,1,4,1,9,1,397],2,"ROUTE","Cisco10720","Cisco"}.
+{[1,3,6,1,4,1,9,1,181],2,"ROUTE","Cisco12004","Cisco"}.
+{[1,3,6,1,4,1,9,1,590],2,"ROUTE","Cisco12006","Cisco"}.
+{[1,3,6,1,4,1,9,1,182],2,"ROUTE","Cisco12008","Cisco"}.
+{[1,3,6,1,4,1,9,1,348],2,"ROUTE","Cisco12010","Cisco"}.
+{[1,3,6,1,4,1,9,1,173],2,"ROUTE","Cisco12012","Cisco"}.
+{[1,3,6,1,4,1,9,1,273],2,"ROUTE","Cisco12016","Cisco"}.
+{[1,3,6,1,4,1,9,1,423],2,"ROUTE","Cisco12404","Cisco"}.
+{[1,3,6,1,4,1,9,1,388],2,"ROUTE","Cisco12406","Cisco"}.
+{[1,3,6,1,4,1,9,1,394],2,"ROUTE","Cisco12410","Cisco"}.
+{[1,3,6,1,4,1,9,1,385],2,"ROUTE","Cisco12416","Cisco"}.
+{[1,3,6,1,4,1,9,1,206],2,"ROUTE","Cisco1401","Cisco"}.
+{[1,3,6,1,4,1,9,1,249],2,"ROUTE","Cisco1407","Cisco"}.
+{[1,3,6,1,4,1,9,1,250],2,"ROUTE","Cisco1417","Cisco"}.
+{[1,3,6,1,4,1,9,1,458],6,"OTHER","Cisco14MGX8830Pxm1E","Cisco"}.
+{[1,3,6,1,4,1,9,1,161],6,"OTHER","Cisco1502","Cisco"}.
+{[1,3,6,1,4,1,9,1,160],6,"OTHER","Cisco1503","Cisco"}.
+{[1,3,6,1,4,1,9,1,224],6,"OTHER","Cisco1538M","Cisco"}.
+{[1,3,6,1,4,1,9,1,225],6,"OTHER","Cisco1548M","Cisco"}.
+{[1,3,6,1,4,1,9,1,113],2,"ROUTE","Cisco1601","Cisco"}.
+{[1,3,6,1,4,1,9,1,114],2,"ROUTE","Cisco1602","Cisco"}.
+{[1,3,6,1,4,1,9,1,115],2,"ROUTE","Cisco1603","Cisco"}.
+{[1,3,6,1,4,1,9,1,116],2,"ROUTE","Cisco1604","Cisco"}.
+{[1,3,6,1,4,1,9,1,172],2,"ROUTE","Cisco1605","Cisco"}.
+{[1,3,6,1,4,1,9,1,550],2,"ROUTE","Cisco1701ADSLBRI","Cisco"}.
+{[1,3,6,1,4,1,9,1,200],2,"ROUTE","Cisco1710","Cisco"}.
+{[1,3,6,1,4,1,9,1,538],2,"ROUTE","Cisco1711","Cisco"}.
+{[1,3,6,1,4,1,9,1,539],2,"ROUTE","Cisco1712","Cisco"}.
+{[1,3,6,1,4,1,9,1,201],2,"ROUTE","Cisco1720","Cisco"}.
+{[1,3,6,1,4,1,9,1,444],2,"ROUTE","Cisco1721","Cisco"}.
+{[1,3,6,1,4,1,9,1,216],2,"ROUTE","Cisco1750","Cisco"}.
+{[1,3,6,1,4,1,9,1,326],2,"ROUTE","Cisco1751","Cisco"}.
+{[1,3,6,1,4,1,9,1,416],2,"ROUTE","Cisco1760","Cisco"}.
+{[1,3,6,1,4,1,9,1,638],2,"ROUTE","Cisco1801","Cisco"}.
+{[1,3,6,1,4,1,9,1,641],2,"ROUTE","Cisco1811","Cisco"}.
+{[1,3,6,1,4,1,9,1,642],2,"ROUTE","Cisco1812","Cisco"}.
+{[1,3,6,1,4,1,9,1,620],2,"ROUTE","Cisco1841","Cisco"}.
+{[1,3,6,1,4,1,9,1,10],2,"ROUTE","Cisco2000","Cisco"}.
+{[1,3,6,1,4,1,9,1,15],2,"ROUTE","Cisco2102","Cisco"}.
+{[1,3,6,1,4,1,9,1,16],2,"ROUTE","Cisco2202","Cisco"}.
+{[1,3,6,1,4,1,9,1,545],2,"ROUTE","Cisco2430Iad24Fxs","Cisco"}.
+{[1,3,6,1,4,1,9,1,547],2,"ROUTE","Cisco2431Iad16Fxs","Cisco"}.
+{[1,3,6,1,4,1,9,1,548],2,"ROUTE","Cisco2431Iad1T1E1","Cisco"}.
+{[1,3,6,1,4,1,9,1,546],2,"ROUTE","Cisco2431Iad8Fxs","Cisco"}.
+{[1,3,6,1,4,1,9,1,549],2,"ROUTE","Cisco2432Iad24Fxs","Cisco"}.
+{[1,3,6,1,4,1,9,1,13],2,"ROUTE","Cisco2500","Cisco"}.
+{[1,3,6,1,4,1,9,1,17],2,"ROUTE","Cisco2501","Cisco"}.
+{[1,3,6,1,4,1,9,1,165],2,"ROUTE","Cisco2501FRAD-FX","Cisco"}.
+{[1,3,6,1,4,1,9,1,166],2,"ROUTE","Cisco2501LANFRAD-FX","Cisco"}.
+{[1,3,6,1,4,1,9,1,18],2,"ROUTE","Cisco2502","Cisco"}.
+{[1,3,6,1,4,1,9,1,167],2,"ROUTE","Cisco2502LANFRAD-FX","Cisco"}.
+{[1,3,6,1,4,1,9,1,19],2,"ROUTE","Cisco2503","Cisco"}.
+{[1,3,6,1,4,1,9,1,20],2,"ROUTE","Cisco2504","Cisco"}.
+{[1,3,6,1,4,1,9,1,21],2,"ROUTE","Cisco2505","Cisco"}.
+{[1,3,6,1,4,1,9,1,22],2,"ROUTE","Cisco2506","Cisco"}.
+{[1,3,6,1,4,1,9,1,23],2,"ROUTE","Cisco2507","Cisco"}.
+{[1,3,6,1,4,1,9,1,24],2,"ROUTE","Cisco2508","Cisco"}.
+{[1,3,6,1,4,1,9,1,25],2,"ROUTE","Cisco2509","Cisco"}.
+{[1,3,6,1,4,1,9,1,26],2,"ROUTE","Cisco2510","Cisco"}.
+{[1,3,6,1,4,1,9,1,27],2,"ROUTE","Cisco2511","Cisco"}.
+{[1,3,6,1,4,1,9,1,28],2,"ROUTE","Cisco2512","Cisco"}.
+{[1,3,6,1,4,1,9,1,29],2,"ROUTE","Cisco2513","Cisco"}.
+{[1,3,6,1,4,1,9,1,30],2,"ROUTE","Cisco2514","Cisco"}.
+{[1,3,6,1,4,1,9,1,31],2,"ROUTE","Cisco2515","Cisco"}.
+{[1,3,6,1,4,1,9,1,42],2,"ROUTE","Cisco2516","Cisco"}.
+{[1,3,6,1,4,1,9,1,67],2,"ROUTE","Cisco2517","Cisco"}.
+{[1,3,6,1,4,1,9,1,68],2,"ROUTE","Cisco2518","Cisco"}.
+{[1,3,6,1,4,1,9,1,69],2,"ROUTE","Cisco2519","Cisco"}.
+{[1,3,6,1,4,1,9,1,70],2,"ROUTE","Cisco2520","Cisco"}.
+{[1,3,6,1,4,1,9,1,71],2,"ROUTE","Cisco2521","Cisco"}.
+{[1,3,6,1,4,1,9,1,72],2,"ROUTE","Cisco2522","Cisco"}.
+{[1,3,6,1,4,1,9,1,73],2,"ROUTE","Cisco2523","Cisco"}.
+{[1,3,6,1,4,1,9,1,74],2,"ROUTE","Cisco2524","Cisco"}.
+{[1,3,6,1,4,1,9,1,75],2,"ROUTE","Cisco2525","Cisco"}.
+{[1,3,6,1,4,1,9,1,185],2,"ROUTE","Cisco2610","Cisco"}.
+{[1,3,6,1,4,1,9,1,418],2,"ROUTE","Cisco2610M","Cisco"}.
+{[1,3,6,1,4,1,9,1,466],2,"ROUTE","Cisco2610XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,186],2,"ROUTE","Cisco2611","Cisco"}.
+{[1,3,6,1,4,1,9,1,419],2,"ROUTE","Cisco2611M","Cisco"}.
+{[1,3,6,1,4,1,9,1,467],2,"ROUTE","Cisco2611XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,187],2,"ROUTE","Cisco2612","Cisco"}.
+{[1,3,6,1,4,1,9,1,195],2,"ROUTE","Cisco2613","Cisco"}.
+{[1,3,6,1,4,1,9,1,208],2,"ROUTE","Cisco2620","Cisco"}.
+{[1,3,6,1,4,1,9,1,468],2,"ROUTE","Cisco2620XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,209],2,"ROUTE","Cisco2621","Cisco"}.
+{[1,3,6,1,4,1,9,1,469],2,"ROUTE","Cisco2621XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,319],2,"ROUTE","Cisco2650","Cisco"}.
+{[1,3,6,1,4,1,9,1,470],2,"ROUTE","Cisco2650XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,320],2,"ROUTE","Cisco2651","Cisco"}.
+{[1,3,6,1,4,1,9,1,471],2,"ROUTE","Cisco2651XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,413],2,"ROUTE","Cisco2691","Cisco"}.
+{[1,3,6,1,4,1,9,1,619],2,"ROUTE","Cisco2801","Cisco"}.
+{[1,3,6,1,4,1,9,1,576],2,"ROUTE","Cisco2811","Cisco"}.
+{[1,3,6,1,4,1,9,1,577],2,"ROUTE","Cisco2821","Cisco"}.
+{[1,3,6,1,4,1,9,1,578],2,"ROUTE","Cisco2851","Cisco"}.
+{[1,3,6,1,4,1,9,1,6],2,"ROUTE","Cisco3000","Cisco"}.
+{[1,3,6,1,4,1,9,1,32],2,"ROUTE","Cisco3101","Cisco"}.
+{[1,3,6,1,4,1,9,1,33],0,"ROUTE_SWITCH","Cisco3102","Cisco"}.
+{[1,3,6,1,4,1,9,1,34],2,"ROUTE","Cisco3103","Cisco"}.
+{[1,3,6,1,4,1,9,1,35],2,"ROUTE","Cisco3104","Cisco"}.
+{[1,3,6,1,4,1,9,1,804],6,"OTHER","Cisco3200WirelessMic","Cisco"}.
+{[1,3,6,1,4,1,9,1,36],2,"ROUTE","Cisco3202","Cisco"}.
+{[1,3,6,1,4,1,9,1,37],0,"ROUTE_SWITCH","Cisco3204","Cisco"}.
+{[1,3,6,1,4,1,9,1,553],2,"ROUTE","Cisco3220","Cisco"}.
+{[1,3,6,1,4,1,9,1,479],2,"ROUTE","Cisco3250","Cisco"}.
+{[1,3,6,1,4,1,9,1,122],2,"ROUTE","Cisco3620","Cisco"}.
+{[1,3,6,1,4,1,9,1,425],2,"ROUTE","Cisco3631Co","Cisco"}.
+{[1,3,6,1,4,1,9,1,110],2,"ROUTE","Cisco3640","Cisco"}.
+{[1,3,6,1,4,1,9,1,205],2,"ROUTE","Cisco3660","Cisco"}.
+{[1,3,6,1,4,1,9,1,338],6,"OTHER","Cisco3661Ac","Cisco"}.
+{[1,3,6,1,4,1,9,1,339],6,"OTHER","Cisco3661Dc","Cisco"}.
+{[1,3,6,1,4,1,9,1,340],2,"ROUTE","Cisco3662Ac","Cisco"}.
+{[1,3,6,1,4,1,9,1,342],2,"ROUTE","Cisco3662AcCo","Cisco"}.
+{[1,3,6,1,4,1,9,1,341],2,"ROUTE","Cisco3662Dc","Cisco"}.
+{[1,3,6,1,4,1,9,1,343],2,"ROUTE","Cisco3662DcCo","Cisco"}.
+{[1,3,6,1,4,1,9,1,625],6,"OTHER","Cisco371098HP001","Cisco"}.
+{[1,3,6,1,4,1,9,1,414],2,"ROUTE","Cisco3725","Cisco"}.
+{[1,3,6,1,4,1,9,1,436],2,"ROUTE","Cisco3745","Cisco"}.
+{[1,3,6,1,4,1,9,1,543],2,"ROUTE","Cisco3825","Cisco"}.
+{[1,3,6,1,4,1,9,1,544],2,"ROUTE","Cisco3845","Cisco"}.
+{[1,3,6,1,4,1,9,1,7],2,"ROUTE","Cisco4000","Cisco"}.
+{[1,3,6,1,4,1,9,1,399],0,"ROUTE_SWITCH","Cisco4224","Cisco"}.
+{[1,3,6,1,4,1,9,1,14],2,"ROUTE","Cisco4500","Cisco"}.
+{[1,3,6,1,4,1,9,1,50],2,"ROUTE","Cisco4700","Cisco"}.
+{[1,3,6,1,4,1,9,1,731],2,"ROUTE","Cisco5750","Cisco"}.
+{[1,3,6,1,4,1,9,1,299],0,"ROUTE_SWITCH","Cisco6015","Cisco"}.
+{[1,3,6,1,4,1,9,1,251],2,"ROUTE","Cisco6100","Cisco"}.
+{[1,3,6,1,4,1,9,1,252],2,"ROUTE","Cisco6130","Cisco"}.
+{[1,3,6,1,4,1,9,1,297],0,"ROUTE_SWITCH","Cisco6160","Cisco"}.
+{[1,3,6,1,4,1,9,1,192],0,"ROUTE_SWITCH","Cisco6200","Cisco"}.
+{[1,3,6,1,4,1,9,1,329],2,"ROUTE","Cisco626","Cisco"}.
+{[1,3,6,1,4,1,9,1,253],0,"ROUTE_SWITCH","Cisco6260","Cisco"}.
+{[1,3,6,1,4,1,9,1,330],2,"ROUTE","Cisco627","Cisco"}.
+{[1,3,6,1,4,1,9,1,331],2,"ROUTE","Cisco633","Cisco"}.
+{[1,3,6,1,4,1,9,1,180],0,"ROUTE_SWITCH","Cisco6400","Cisco"}.
+{[1,3,6,1,4,1,9,1,211],2,"ROUTE","Cisco6400Nrp","Cisco"}.
+{[1,3,6,1,4,1,9,1,464],6,"OTHER","Cisco6400UAC","Cisco"}.
+{[1,3,6,1,4,1,9,1,332],2,"ROUTE","Cisco673","Cisco"}.
+{[1,3,6,1,4,1,9,1,364],2,"ROUTE","Cisco674","Cisco"}.
+{[1,3,6,1,4,1,9,1,333],2,"ROUTE","Cisco675","Cisco"}.
+{[1,3,6,1,4,1,9,1,334],2,"ROUTE","Cisco675e","Cisco"}.
+{[1,3,6,1,4,1,9,1,335],2,"ROUTE","Cisco676","Cisco"}.
+{[1,3,6,1,4,1,9,1,336],2,"ROUTE","Cisco677","Cisco"}.
+{[1,3,6,1,4,1,9,1,363],2,"ROUTE","Cisco677i","Cisco"}.
+{[1,3,6,1,4,1,9,1,337],2,"ROUTE","Cisco678","Cisco"}.
+{[1,3,6,1,4,1,9,1,8],2,"ROUTE","Cisco7000","Cisco"}.
+{[1,3,6,1,4,1,9,1,12],2,"ROUTE","Cisco7010","Cisco"}.
+{[1,3,6,1,4,1,9,1,263],2,"ROUTE","Cisco7120Ae3","Cisco"}.
+{[1,3,6,1,4,1,9,1,262],2,"ROUTE","Cisco7120At3","Cisco"}.
+{[1,3,6,1,4,1,9,1,261],2,"ROUTE","Cisco7120E3","Cisco"}.
+{[1,3,6,1,4,1,9,1,259],2,"ROUTE","Cisco7120Quadt1","Cisco"}.
+{[1,3,6,1,4,1,9,1,264],2,"ROUTE","Cisco7120Smi3","Cisco"}.
+{[1,3,6,1,4,1,9,1,260],2,"ROUTE","Cisco7120T3","Cisco"}.
+{[1,3,6,1,4,1,9,1,268],2,"ROUTE","Cisco7140Dualae3","Cisco"}.
+{[1,3,6,1,4,1,9,1,267],2,"ROUTE","Cisco7140Dualat3","Cisco"}.
+{[1,3,6,1,4,1,9,1,266],2,"ROUTE","Cisco7140Duale3","Cisco"}.
+{[1,3,6,1,4,1,9,1,277],2,"ROUTE","Cisco7140Dualfe","Cisco"}.
+{[1,3,6,1,4,1,9,1,269],2,"ROUTE","Cisco7140Dualmm3","Cisco"}.
+{[1,3,6,1,4,1,9,1,265],2,"ROUTE","Cisco7140Dualt3","Cisco"}.
+{[1,3,6,1,4,1,9,1,276],2,"ROUTE","Cisco7140Octt1","Cisco"}.
+{[1,3,6,1,4,1,9,1,355],6,"OTHER","Cisco7150Dualfe","Cisco"}.
+{[1,3,6,1,4,1,9,1,357],6,"OTHER","Cisco7150Dualt3","Cisco"}.
+{[1,3,6,1,4,1,9,1,356],6,"OTHER","Cisco7150Octt1","Cisco"}.
+{[1,3,6,1,4,1,9,1,821],2,"ROUTE","Cisco7201","Cisco"}.
+{[1,3,6,1,4,1,9,1,194],2,"ROUTE","Cisco7202","Cisco"}.
+{[1,3,6,1,4,1,9,1,125],2,"ROUTE","Cisco7204","Cisco"}.
+{[1,3,6,1,4,1,9,1,223],2,"ROUTE","Cisco7204VXR","Cisco"}.
+{[1,3,6,1,4,1,9,1,108],2,"ROUTE","Cisco7206","Cisco"}.
+{[1,3,6,1,4,1,9,1,222],2,"ROUTE","Cisco7206VXR","Cisco"}.
+{[1,3,6,1,4,1,9,1,476],2,"ROUTE","Cisco7301","Cisco"}.
+{[1,3,6,1,4,1,9,1,439],2,"ROUTE","Cisco7304","Cisco"}.
+{[1,3,6,1,4,1,9,1,403],2,"ROUTE","Cisco7401ASR","Cisco"}.
+{[1,3,6,1,4,1,9,1,376],6,"OTHER","Cisco7401VXR","Cisco"}.
+{[1,3,6,1,4,1,9,1,94],2,"ROUTE","Cisco741","Cisco"}.
+{[1,3,6,1,4,1,9,1,95],2,"ROUTE","Cisco742","Cisco"}.
+{[1,3,6,1,4,1,9,1,96],2,"ROUTE","Cisco743","Cisco"}.
+{[1,3,6,1,4,1,9,1,97],2,"ROUTE","Cisco744","Cisco"}.
+{[1,3,6,1,4,1,9,1,48],2,"ROUTE","Cisco7505","Cisco"}.
+{[1,3,6,1,4,1,9,1,47],2,"ROUTE","Cisco7506","Cisco"}.
+{[1,3,6,1,4,1,9,1,45],2,"ROUTE","Cisco7507","Cisco"}.
+{[1,3,6,1,4,1,9,1,290],2,"ROUTE","Cisco7507mx","Cisco"}.
+{[1,3,6,1,4,1,9,1,288],2,"ROUTE","Cisco7507z","Cisco"}.
+{[1,3,6,1,4,1,9,1,81],2,"ROUTE","Cisco751","Cisco"}.
+{[1,3,6,1,4,1,9,1,46],2,"ROUTE","Cisco7513","Cisco"}.
+{[1,3,6,1,4,1,9,1,291],2,"ROUTE","Cisco7513mx","Cisco"}.
+{[1,3,6,1,4,1,9,1,289],2,"ROUTE","Cisco7513z","Cisco"}.
+{[1,3,6,1,4,1,9,1,82],2,"ROUTE","Cisco752","Cisco"}.
+{[1,3,6,1,4,1,9,1,83],2,"ROUTE","Cisco753","Cisco"}.
+{[1,3,6,1,4,1,9,1,204],2,"ROUTE","Cisco7576","Cisco"}.
+{[1,3,6,1,4,1,9,1,401],2,"ROUTE","Cisco7603","Cisco"}.
+{[1,3,6,1,4,1,9,1,658],2,"ROUTE","Cisco7604","Cisco"}.
+{[1,3,6,1,4,1,9,1,402],2,"ROUTE","Cisco7606","Cisco"}.
+{[1,3,6,1,4,1,9,1,509],2,"ROUTE","Cisco7609","Cisco"}.
+{[1,3,6,1,4,1,9,1,98],2,"ROUTE","Cisco761","Cisco"}.
+{[1,3,6,1,4,1,9,1,528],2,"ROUTE","Cisco7613","Cisco"}.
+{[1,3,6,1,4,1,9,1,99],2,"ROUTE","Cisco762","Cisco"}.
+{[1,3,6,1,4,1,9,1,102],2,"ROUTE","Cisco765","Cisco"}.
+{[1,3,6,1,4,1,9,1,103],2,"ROUTE","Cisco766","Cisco"}.
+{[1,3,6,1,4,1,9,1,126],2,"ROUTE","Cisco771","Cisco"}.
+{[1,3,6,1,4,1,9,1,127],2,"ROUTE","Cisco772","Cisco"}.
+{[1,3,6,1,4,1,9,1,128],2,"ROUTE","Cisco775","Cisco"}.
+{[1,3,6,1,4,1,9,1,314],2,"ROUTE","Cisco7750","Cisco"}.
+{[1,3,6,1,4,1,9,1,302],6,"OTHER","Cisco7750Mrp200","Cisco"}.
+{[1,3,6,1,4,1,9,1,456],6,"OTHER","Cisco7750Mrp300","Cisco"}.
+{[1,3,6,1,4,1,9,1,303],6,"OTHER","Cisco7750Ssp80","Cisco"}.
+{[1,3,6,1,4,1,9,1,129],2,"ROUTE","Cisco776","Cisco"}.
+{[1,3,6,1,4,1,9,1,212],2,"ROUTE","Cisco801","Cisco"}.
+{[1,3,6,1,4,1,9,1,213],2,"ROUTE","Cisco802","Cisco"}.
+{[1,3,6,1,4,1,9,1,295],6,"OTHER","Cisco802J","Cisco"}.
+{[1,3,6,1,4,1,9,1,214],2,"ROUTE","Cisco803","Cisco"}.
+{[1,3,6,1,4,1,9,1,215],2,"ROUTE","Cisco804","Cisco"}.
+{[1,3,6,1,4,1,9,1,296],6,"OTHER","Cisco804J","Cisco"}.
+{[1,3,6,1,4,1,9,1,245],2,"ROUTE","Cisco805","Cisco"}.
+{[1,3,6,1,4,1,9,1,384],2,"ROUTE","Cisco806","Cisco"}.
+{[1,3,6,1,4,1,9,1,395],2,"ROUTE","Cisco811","Cisco"}.
+{[1,3,6,1,4,1,9,1,349],2,"ROUTE","Cisco8110","Cisco"}.
+{[1,3,6,1,4,1,9,1,396],2,"ROUTE","Cisco813","Cisco"}.
+{[1,3,6,1,4,1,9,1,322],2,"ROUTE","Cisco826","Cisco"}.
+{[1,3,6,1,4,1,9,1,321],6,"OTHER","Cisco826QuadV","Cisco"}.
+{[1,3,6,1,4,1,9,1,284],2,"ROUTE","Cisco827","Cisco"}.
+{[1,3,6,1,4,1,9,1,446],6,"OTHER","Cisco827H","Cisco"}.
+{[1,3,6,1,4,1,9,1,270],2,"ROUTE","Cisco827QuadV","Cisco"}.
+{[1,3,6,1,4,1,9,1,382],2,"ROUTE","Cisco828","Cisco"}.
+{[1,3,6,1,4,1,9,1,497],2,"ROUTE","Cisco831","Cisco"}.
+{[1,3,6,1,4,1,9,1,499],2,"ROUTE","Cisco836","Cisco"}.
+{[1,3,6,1,4,1,9,1,495],2,"ROUTE","Cisco837","Cisco"}.
+{[1,3,6,1,4,1,9,1,190],0,"ROUTE_SWITCH","Cisco8510","Cisco"}.
+{[1,3,6,1,4,1,9,1,196],0,"ROUTE_SWITCH","Cisco8515","Cisco"}.
+{[1,3,6,1,4,1,9,1,571],2,"ROUTE","Cisco871","Cisco"}.
+{[1,3,6,1,4,1,9,1,569],2,"ROUTE","Cisco877","Cisco"}.
+{[1,3,6,1,4,1,9,1,570],2,"ROUTE","Cisco878","Cisco"}.
+{[1,3,6,1,4,1,9,1,424],0,"ROUTE_SWITCH","Cisco9004","Cisco"}.
+{[1,3,6,1,4,1,9,1,730],6,"OTHER","CiscoACE10K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,11],2,"ROUTE","CiscoAGSplus","Cisco"}.
+{[1,3,6,1,4,1,9,1,623],6,"OTHER","CiscoAIMCUE","Cisco"}.
+{[1,3,6,1,4,1,9,1,507],2,"ROUTE","CiscoAIRAP1100","Cisco"}.
+{[1,3,6,1,4,1,9,1,618],6,"OTHER","CiscoAIRAP1130","Cisco"}.
+{[1,3,6,1,4,1,9,1,474],2,"ROUTE","CiscoAIRAP1200","Cisco"}.
+{[1,3,6,1,4,1,9,1,525],2,"ROUTE","CiscoAIRAP1210","Cisco"}.
+{[1,3,6,1,4,1,9,1,685],6,"OTHER","CiscoAIRAP1240","Cisco"}.
+{[1,3,6,1,4,1,9,1,565],6,"OTHER","CiscoAIRBR1300","Cisco"}.
+{[1,3,6,1,4,1,9,1,533],6,"OTHER","CiscoAIRBR1410","Cisco"}.
+{[1,3,6,1,4,1,9,1,153],2,"ROUTE","CiscoAS2509RJ","Cisco"}.
+{[1,3,6,1,4,1,9,1,154],2,"ROUTE","CiscoAS2511RJ","Cisco"}.
+{[1,3,6,1,4,1,9,1,109],2,"ROUTE","CiscoAS5200","Cisco"}.
+{[1,3,6,1,4,1,9,1,162],2,"ROUTE","CiscoAS5300","Cisco"}.
+{[1,3,6,1,4,1,9,1,313],2,"ROUTE","CiscoAS5350","Cisco"}.
+{[1,3,6,1,4,1,9,1,188],2,"ROUTE","CiscoAS5800","Cisco"}.
+{[1,3,6,1,4,1,9,1,669],2,"ROUTE","CiscoASA5510","Cisco"}.
+{[1,3,6,1,4,1,9,1,670],2,"ROUTE","CiscoASA5520","Cisco"}.
+{[1,3,6,1,4,1,9,1,671],2,"ROUTE","CiscoASA5520sc","Cisco"}.
+{[1,3,6,1,4,1,9,1,764],6,"OTHER","CiscoASA5520sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,672],2,"ROUTE","CiscoASA5540","Cisco"}.
+{[1,3,6,1,4,1,9,1,673],2,"ROUTE","CiscoASA5540sc","Cisco"}.
+{[1,3,6,1,4,1,9,1,765],6,"OTHER","CiscoASA5540sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,766],6,"OTHER","CiscoASA5550sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,39],2,"ROUTE","CiscoAccessProEC","Cisco"}.
+{[1,3,6,1,4,1,9,1,38],2,"ROUTE","CiscoAccessProRC","Cisco"}.
+{[1,3,6,1,4,1,9,1,552],2,"ROUTE","CiscoAirAp350IOS","Cisco"}.
+{[1,3,6,1,4,1,9,1,679],2,"ROUTE","CiscoAs5350XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,274],2,"ROUTE","CiscoAs5400","Cisco"}.
+{[1,3,6,1,4,1,9,1,668],2,"ROUTE","CiscoAs5400XM","Cisco"}.
+{[1,3,6,1,4,1,9,1,308],2,"ROUTE","CiscoAs5850","Cisco"}.
+{[1,3,6,1,4,1,9,1,607],6,"OTHER","CiscoBMGX8830Pxm1E","Cisco"}.
+{[1,3,6,1,4,1,9,1,606],6,"OTHER","CiscoBMGX8830Pxm45","Cisco"}.
+{[1,3,6,1,4,1,9,1,609],6,"OTHER","CiscoBMGX8850Pxm1E","Cisco"}.
+{[1,3,6,1,4,1,9,1,608],6,"OTHER","CiscoBMGX8850Pxm45","Cisco"}.
+{[1,3,6,1,4,1,9,1,237],0,"ROUTE_SWITCH","CiscoBPX8620","Cisco"}.
+{[1,3,6,1,4,1,9,1,238],0,"ROUTE_SWITCH","CiscoBPX8650","Cisco"}.
+{[1,3,6,1,4,1,9,1,239],0,"ROUTE_SWITCH","CiscoBPX8680","Cisco"}.
+{[1,3,6,1,4,1,9,1,242],0,"ROUTE_SWITCH","CiscoBPXSes","Cisco"}.
+{[1,3,6,1,4,1,9,1,379],2,"ROUTE","CiscoCAP340","Cisco"}.
+{[1,3,6,1,4,1,9,1,380],2,"ROUTE","CiscoCAP350","Cisco"}.
+{[1,3,6,1,4,1,9,1,593],6,"OTHER","CiscoCCM","Cisco"}.
+{[1,3,6,1,4,1,9,1,486],4,"HOST","CiscoCDM4630","Cisco"}.
+{[1,3,6,1,4,1,9,1,487],4,"HOST","CiscoCDM4650","Cisco"}.
+{[1,3,6,1,4,1,9,1,454],4,"HOST","CiscoCE2636","Cisco"}.
+{[1,3,6,1,4,1,9,1,432],4,"HOST","CiscoCE507AV","Cisco"}.
+{[1,3,6,1,4,1,9,1,490],6,"OTHER","CiscoCE508","Cisco"}.
+{[1,3,6,1,4,1,9,1,505],4,"HOST","CiscoCE510","Cisco"}.
+{[1,3,6,1,4,1,9,1,433],4,"HOST","CiscoCE560AV","Cisco"}.
+{[1,3,6,1,4,1,9,1,491],4,"HOST","CiscoCE565","Cisco"}.
+{[1,3,6,1,4,1,9,1,504],4,"HOST","CiscoCE7305","Cisco"}.
+{[1,3,6,1,4,1,9,1,492],6,"OTHER","CiscoCE7325","Cisco"}.
+{[1,3,6,1,4,1,9,1,531],2,"ROUTE","CiscoCR4430","Cisco"}.
+{[1,3,6,1,4,1,9,1,532],6,"OTHER","CiscoCR4450","Cisco"}.
+{[1,3,6,1,4,1,9,1,179],2,"ROUTE","CiscoCR7246","Cisco"}.
+{[1,3,6,1,4,1,9,1,613],6,"OTHER","CiscoCRS16S","Cisco"}.
+{[1,3,6,1,4,1,9,1,643],6,"OTHER","CiscoCRS8S","Cisco"}.
+{[1,3,6,1,4,1,9,1,9],2,"ROUTE","CiscoCS500","Cisco"}.
+{[1,3,6,1,4,1,9,1,524],6,"OTHER","CiscoCSM","Cisco"}.
+{[1,3,6,1,4,1,9,1,306],6,"OTHER","CiscoCVA122","Cisco"}.
+{[1,3,6,1,4,1,9,1,371],6,"OTHER","CiscoCVA122E","Cisco"}.
+{[1,3,6,1,4,1,9,1,307],6,"OTHER","CiscoCVA124","Cisco"}.
+{[1,3,6,1,4,1,9,1,372],6,"OTHER","CiscoCVA124E","Cisco"}.
+{[1,3,6,1,4,1,9,1,240],2,"ROUTE","CiscoCacheEngine","Cisco"}.
+{[1,3,6,1,4,1,9,1,241],0,"ROUTE_SWITCH","CiscoCat6000","Cisco"}.
+{[1,3,6,1,4,1,9,1,111],0,"ROUTE_SWITCH","CiscoCatalyst3500","Cisco"}.
+{[1,3,6,1,4,1,9,1,612],6,"OTHER","CiscoCe501K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,409],6,"OTHER","CiscoCe507","Cisco"}.
+{[1,3,6,1,4,1,9,1,595],6,"OTHER","CiscoCe511K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,759],6,"OTHER","CiscoCe512K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,410],4,"HOST","CiscoCe560","Cisco"}.
+{[1,3,6,1,4,1,9,1,596],6,"OTHER","CiscoCe566K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,411],4,"HOST","CiscoCe590","Cisco"}.
+{[1,3,6,1,4,1,9,1,708],6,"OTHER","CiscoCe611K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,761],6,"OTHER","CiscoCe612K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,600],6,"OTHER","CiscoCe7306K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,412],4,"HOST","CiscoCe7320","Cisco"}.
+{[1,3,6,1,4,1,9,1,601],6,"OTHER","CiscoCe7326K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,361],6,"OTHER","CiscoContentEngine","Cisco"}.
+{[1,3,6,1,4,1,9,1,738],6,"OTHER","CiscoCrs18Linecard","Cisco"}.
+{[1,3,6,1,4,1,9,1,739],6,"OTHER","CiscoCrs1Fabric","Cisco"}.
+{[1,3,6,1,4,1,9,1,381],4,"HOST","CiscoDPA7610","Cisco"}.
+{[1,3,6,1,4,1,9,1,365],6,"OTHER","CiscoDPA7630","Cisco"}.
+{[1,3,6,1,4,1,9,1,686],6,"OTHER","CiscoDSC9120CLK9","Cisco"}.
+{[1,3,6,1,4,1,9,1,521],6,"OTHER","CiscoDSC9216K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,455],6,"OTHER","CiscoDwCE","Cisco"}.
+{[1,3,6,1,4,1,9,1,556],6,"OTHER","CiscoESSE","Cisco"}.
+{[1,3,6,1,4,1,9,1,740],6,"OTHER","CiscoFE2636","Cisco"}.
+{[1,3,6,1,4,1,9,1,661],6,"OTHER","CiscoFE6326K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,169],6,"OTHER","CiscoFastHub216T","Cisco"}.
+{[1,3,6,1,4,1,9,1,178],6,"OTHER","CiscoFastHubBMMFX","Cisco"}.
+{[1,3,6,1,4,1,9,1,177],6,"OTHER","CiscoFastHubBMMTX","Cisco"}.
+{[1,3,6,1,4,1,9,1,226],6,"OTHER","CiscoFasthub100","Cisco"}.
+{[1,3,6,1,4,1,9,1,681],2,"ROUTE","CiscoFe511K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,760],6,"OTHER","CiscoFe512K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,687],6,"OTHER","CiscoFe611K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,762],6,"OTHER","CiscoFe612K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,680],2,"ROUTE","CiscoFe7326K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,477],0,"ROUTE_SWITCH","CiscoGSR","Cisco"}.
+{[1,3,6,1,4,1,9,1,517],4,"HOST","CiscoGSS","Cisco"}.
+{[1,3,6,1,4,1,9,1,1],2,"ROUTE","CiscoGatewayServer","Cisco"}.
+{[1,3,6,1,4,1,9,1,405],2,"ROUTE","CiscoHSE","Cisco"}.
+{[1,3,6,1,4,1,9,1,632],6,"OTHER","CiscoHSE1140","Cisco"}.
+{[1,3,6,1,4,1,9,1,362],2,"ROUTE","CiscoIAD2420","Cisco"}.
+{[1,3,6,1,4,1,9,1,693],6,"OTHER","CiscoICM","Cisco"}.
+{[1,3,6,1,4,1,9,1,645],6,"OTHER","CiscoIDS4210","Cisco"}.
+{[1,3,6,1,4,1,9,1,646],6,"OTHER","CiscoIDS4215","Cisco"}.
+{[1,3,6,1,4,1,9,1,807],6,"OTHER","CiscoIDS4215Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,741],6,"OTHER","CiscoIDS4220","Cisco"}.
+{[1,3,6,1,4,1,9,1,742],6,"OTHER","CiscoIDS4230","Cisco"}.
+{[1,3,6,1,4,1,9,1,647],6,"OTHER","CiscoIDS4235","Cisco"}.
+{[1,3,6,1,4,1,9,1,808],6,"OTHER","CiscoIDS4235Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,812],6,"OTHER","CiscoIDS4240Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,649],6,"OTHER","CiscoIDS4250","Cisco"}.
+{[1,3,6,1,4,1,9,1,650],6,"OTHER","CiscoIDS4250SX","Cisco"}.
+{[1,3,6,1,4,1,9,1,810],6,"OTHER","CiscoIDS4250SXVirtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,809],6,"OTHER","CiscoIDS4250Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,651],6,"OTHER","CiscoIDS4250XL","Cisco"}.
+{[1,3,6,1,4,1,9,1,811],6,"OTHER","CiscoIDS4250XLVirtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,813],6,"OTHER","CiscoIDS4255Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,814],6,"OTHER","CiscoIDS4260Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,653],6,"OTHER","CiscoIDSIDSM2","Cisco"}.
+{[1,3,6,1,4,1,9,1,815],6,"OTHER","CiscoIDSIDSM2Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,654],6,"OTHER","CiscoIDSNMCIDS","Cisco"}.
+{[1,3,6,1,4,1,9,1,434],6,"OTHER","CiscoIE2105","Cisco"}.
+{[1,3,6,1,4,1,9,1,592],4,"HOST","CiscoIGESM","Cisco"}.
+{[1,3,6,1,4,1,9,1,5],2,"ROUTE","CiscoIGS","Cisco"}.
+{[1,3,6,1,4,1,9,1,232],0,"ROUTE_SWITCH","CiscoIGX8410","Cisco"}.
+{[1,3,6,1,4,1,9,1,233],0,"ROUTE_SWITCH","CiscoIGX8420","Cisco"}.
+{[1,3,6,1,4,1,9,1,234],0,"ROUTE_SWITCH","CiscoIGX8430","Cisco"}.
+{[1,3,6,1,4,1,9,1,235],0,"ROUTE_SWITCH","CiscoIGX8450","Cisco"}.
+{[1,3,6,1,4,1,9,1,243],0,"ROUTE_SWITCH","CiscoIGXSes","Cisco"}.
+{[1,3,6,1,4,1,9,1,648],6,"OTHER","CiscoIPS4240","Cisco"}.
+{[1,3,6,1,4,1,9,1,652],6,"OTHER","CiscoIPS4255","Cisco"}.
+{[1,3,6,1,4,1,9,1,662],6,"OTHER","CiscoIPSSSM10","Cisco"}.
+{[1,3,6,1,4,1,9,1,817],6,"OTHER","CiscoIPSSSM10Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,655],6,"OTHER","CiscoIPSSSM20","Cisco"}.
+{[1,3,6,1,4,1,9,1,816],6,"OTHER","CiscoIPSSSM20Virtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,806],6,"OTHER","CiscoIPSVirtual","Cisco"}.
+{[1,3,6,1,4,1,9,1,805],6,"OTHER","CiscoISRWireless","Cisco"}.
+{[1,3,6,1,4,1,9,1,107],0,"ROUTE_SWITCH","CiscoLS1010","Cisco"}.
+{[1,3,6,1,4,1,9,1,164],1,"SWITCH","CiscoLS1015","Cisco"}.
+{[1,3,6,1,4,1,9,1,244],6,"OTHER","CiscoLocalDirector","Cisco"}.
+{[1,3,6,1,4,1,9,1,157],2,"ROUTE","CiscoMC3810","Cisco"}.
+{[1,3,6,1,4,1,9,1,582],6,"OTHER","CiscoMCS7815I","Cisco"}.
+{[1,3,6,1,4,1,9,1,583],6,"OTHER","CiscoMCS7825H","Cisco"}.
+{[1,3,6,1,4,1,9,1,746],6,"OTHER","CiscoMCS7825I","Cisco"}.
+{[1,3,6,1,4,1,9,1,584],6,"OTHER","CiscoMCS7835H","Cisco"}.
+{[1,3,6,1,4,1,9,1,585],6,"OTHER","CiscoMCS7835I","Cisco"}.
+{[1,3,6,1,4,1,9,1,586],6,"OTHER","CiscoMCS7845H","Cisco"}.
+{[1,3,6,1,4,1,9,1,587],6,"OTHER","CiscoMCS7845I","Cisco"}.
+{[1,3,6,1,4,1,9,1,588],6,"OTHER","CiscoMCS7855I","Cisco"}.
+{[1,3,6,1,4,1,9,1,589],6,"OTHER","CiscoMCS7865I","Cisco"}.
+{[1,3,6,1,4,1,9,1,713],6,"OTHER","CiscoME6340ACA","Cisco"}.
+{[1,3,6,1,4,1,9,1,714],6,"OTHER","CiscoME6340DCA","Cisco"}.
+{[1,3,6,1,4,1,9,1,715],6,"OTHER","CiscoME6340DCB","Cisco"}.
+{[1,3,6,1,4,1,9,1,304],6,"OTHER","CiscoMGX8230","Cisco"}.
+{[1,3,6,1,4,1,9,1,311],6,"OTHER","CiscoMGX8240","Cisco"}.
+{[1,3,6,1,4,1,9,1,305],6,"OTHER","CiscoMGX8250","Cisco"}.
+{[1,3,6,1,4,1,9,1,229],0,"ROUTE_SWITCH","CiscoMGX8830","Cisco"}.
+{[1,3,6,1,4,1,9,1,228],0,"ROUTE_SWITCH","CiscoMGX8850","Cisco"}.
+{[1,3,6,1,4,1,9,1,435],6,"OTHER","CiscoMGX8850Pxm1E","Cisco"}.
+{[1,3,6,1,4,1,9,1,598],6,"OTHER","CiscoMGX8880","Cisco"}.
+{[1,3,6,1,4,1,9,1,315],2,"ROUTE","CiscoMGX8950","Cisco"}.
+{[1,3,6,1,4,1,9,1,710],6,"OTHER","CiscoMPX","Cisco"}.
+{[1,3,6,1,4,1,9,1,398],2,"ROUTE","CiscoMWR1900","Cisco"}.
+{[1,3,6,1,4,1,9,1,520],2,"ROUTE","CiscoMWR1941DC","Cisco"}.
+{[1,3,6,1,4,1,9,1,285],6,"OTHER","CiscoManagementEngine1100","Cisco"}.
+{[1,3,6,1,4,1,9,1,286],2,"ROUTE","CiscoMc3810V3","Cisco"}.
+{[1,3,6,1,4,1,9,1,176],2,"ROUTE","CiscoMicroWebServer2","Cisco"}.
+{[1,3,6,1,4,1,9,1,756],6,"OTHER","CiscoNMAONAPS","Cisco"}.
+{[1,3,6,1,4,1,9,1,754],6,"OTHER","CiscoNMAONK9","Cisco"}.
+{[1,3,6,1,4,1,9,1,755],6,"OTHER","CiscoNMAONWS","Cisco"}.
+{[1,3,6,1,4,1,9,1,622],6,"OTHER","CiscoNMCUE","Cisco"}.
+{[1,3,6,1,4,1,9,1,711],6,"OTHER","CiscoNMCUEEC","Cisco"}.
+{[1,3,6,1,4,1,9,1,611],6,"OTHER","CiscoNetworkRegistrar","Cisco"}.
+{[1,3,6,1,4,1,9,1,562],6,"OTHER","CiscoNmNam","Cisco"}.
+{[1,3,6,1,4,1,9,1,823],6,"OTHER","CiscoNmWae","Cisco"}.
+{[1,3,6,1,4,1,9,1,663],6,"OTHER","CiscoNme16Es1Ge","Cisco"}.
+{[1,3,6,1,4,1,9,1,664],6,"OTHER","CiscoNmeX24Es1Ge","Cisco"}.
+{[1,3,6,1,4,1,9,1,665],6,"OTHER","CiscoNmeXd24Es2St","Cisco"}.
+{[1,3,6,1,4,1,9,1,666],6,"OTHER","CiscoNmeXd48Es2Ge","Cisco"}.
+{[1,3,6,1,4,1,9,1,494],6,"OTHER","CiscoONS15327","Cisco"}.
+{[1,3,6,1,4,1,9,1,493],6,"OTHER","CiscoONS15454","Cisco"}.
+{[1,3,6,1,4,1,9,1,460],1,"SWITCH","CiscoONS15530","Cisco"}.
+{[1,3,6,1,4,1,9,1,462],1,"SWITCH","CiscoONS15530ETSI","Cisco"}.
+{[1,3,6,1,4,1,9,1,461],1,"SWITCH","CiscoONS15530NEBS","Cisco"}.
+{[1,3,6,1,4,1,9,1,406],0,"ROUTE_SWITCH","CiscoONS15540ESP","Cisco"}.
+{[1,3,6,1,4,1,9,1,481],1,"SWITCH","CiscoONS15540ESPx","Cisco"}.
+{[1,3,6,1,4,1,9,1,785],6,"OTHER","CiscoOe511K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,776],6,"OTHER","CiscoOe512K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,786],6,"OTHER","CiscoOe611K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,777],6,"OTHER","CiscoOe612K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,787],6,"OTHER","CiscoOe7326K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,254],2,"ROUTE","CiscoOpticalRegenerator","Cisco"}.
+{[1,3,6,1,4,1,9,1,227],6,"OTHER","CiscoPIXFirewall","Cisco"}.
+{[1,3,6,1,4,1,9,1,417],6,"OTHER","CiscoPIXFirewall501","Cisco"}.
+{[1,3,6,1,4,1,9,1,389],6,"OTHER","CiscoPIXFirewall506","Cisco"}.
+{[1,3,6,1,4,1,9,1,450],6,"OTHER","CiscoPIXFirewall506E","Cisco"}.
+{[1,3,6,1,4,1,9,1,390],6,"OTHER","CiscoPIXFirewall515","Cisco"}.
+{[1,3,6,1,4,1,9,1,451],6,"OTHER","CiscoPIXFirewall515E","Cisco"}.
+{[1,3,6,1,4,1,9,1,677],6,"OTHER","CiscoPIXFirewall515Esc","Cisco"}.
+{[1,3,6,1,4,1,9,1,769],6,"OTHER","CiscoPIXFirewall515Esy","Cisco"}.
+{[1,3,6,1,4,1,9,1,678],6,"OTHER","CiscoPIXFirewall515sc","Cisco"}.
+{[1,3,6,1,4,1,9,1,768],6,"OTHER","CiscoPIXFirewall515sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,391],6,"OTHER","CiscoPIXFirewall520","Cisco"}.
+{[1,3,6,1,4,1,9,1,392],6,"OTHER","CiscoPIXFirewall525","Cisco"}.
+{[1,3,6,1,4,1,9,1,676],6,"OTHER","CiscoPIXFirewall525sc","Cisco"}.
+{[1,3,6,1,4,1,9,1,770],6,"OTHER","CiscoPIXFirewall525sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,393],6,"OTHER","CiscoPIXFirewall535","Cisco"}.
+{[1,3,6,1,4,1,9,1,675],6,"OTHER","CiscoPIXFirewall535sc","Cisco"}.
+{[1,3,6,1,4,1,9,1,771],6,"OTHER","CiscoPIXFirewall535sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,518],6,"OTHER","CiscoPrimaryGSSM","Cisco"}.
+{[1,3,6,1,4,1,9,1,51],2,"ROUTE","CiscoPro1003","Cisco"}.
+{[1,3,6,1,4,1,9,1,52],2,"ROUTE","CiscoPro1004","Cisco"}.
+{[1,3,6,1,4,1,9,1,53],2,"ROUTE","CiscoPro1005","Cisco"}.
+{[1,3,6,1,4,1,9,1,54],2,"ROUTE","CiscoPro1020","Cisco"}.
+{[1,3,6,1,4,1,9,1,117],2,"ROUTE","CiscoPro1601","Cisco"}.
+{[1,3,6,1,4,1,9,1,118],2,"ROUTE","CiscoPro1602","Cisco"}.
+{[1,3,6,1,4,1,9,1,119],2,"ROUTE","CiscoPro1603","Cisco"}.
+{[1,3,6,1,4,1,9,1,120],2,"ROUTE","CiscoPro1604","Cisco"}.
+{[1,3,6,1,4,1,9,1,55],2,"ROUTE","CiscoPro2500PCE","Cisco"}.
+{[1,3,6,1,4,1,9,1,56],2,"ROUTE","CiscoPro2501","Cisco"}.
+{[1,3,6,1,4,1,9,1,130],2,"ROUTE","CiscoPro2502","Cisco"}.
+{[1,3,6,1,4,1,9,1,57],2,"ROUTE","CiscoPro2503","Cisco"}.
+{[1,3,6,1,4,1,9,1,131],2,"ROUTE","CiscoPro2504","Cisco"}.
+{[1,3,6,1,4,1,9,1,58],2,"ROUTE","CiscoPro2505","Cisco"}.
+{[1,3,6,1,4,1,9,1,132],2,"ROUTE","CiscoPro2506","Cisco"}.
+{[1,3,6,1,4,1,9,1,59],2,"ROUTE","CiscoPro2507","Cisco"}.
+{[1,3,6,1,4,1,9,1,133],2,"ROUTE","CiscoPro2508","Cisco"}.
+{[1,3,6,1,4,1,9,1,60],2,"ROUTE","CiscoPro2509","Cisco"}.
+{[1,3,6,1,4,1,9,1,134],2,"ROUTE","CiscoPro2510","Cisco"}.
+{[1,3,6,1,4,1,9,1,61],2,"ROUTE","CiscoPro2511","Cisco"}.
+{[1,3,6,1,4,1,9,1,135],2,"ROUTE","CiscoPro2512","Cisco"}.
+{[1,3,6,1,4,1,9,1,136],2,"ROUTE","CiscoPro2513","Cisco"}.
+{[1,3,6,1,4,1,9,1,62],2,"ROUTE","CiscoPro2514","Cisco"}.
+{[1,3,6,1,4,1,9,1,137],2,"ROUTE","CiscoPro2515","Cisco"}.
+{[1,3,6,1,4,1,9,1,63],2,"ROUTE","CiscoPro2516","Cisco"}.
+{[1,3,6,1,4,1,9,1,138],2,"ROUTE","CiscoPro2517","Cisco"}.
+{[1,3,6,1,4,1,9,1,139],2,"ROUTE","CiscoPro2518","Cisco"}.
+{[1,3,6,1,4,1,9,1,64],2,"ROUTE","CiscoPro2519","Cisco"}.
+{[1,3,6,1,4,1,9,1,104],2,"ROUTE","CiscoPro2520","Cisco"}.
+{[1,3,6,1,4,1,9,1,65],2,"ROUTE","CiscoPro2521","Cisco"}.
+{[1,3,6,1,4,1,9,1,105],2,"ROUTE","CiscoPro2522","Cisco"}.
+{[1,3,6,1,4,1,9,1,140],2,"ROUTE","CiscoPro2523","Cisco"}.
+{[1,3,6,1,4,1,9,1,106],2,"ROUTE","CiscoPro2524","Cisco"}.
+{[1,3,6,1,4,1,9,1,141],2,"ROUTE","CiscoPro2525","Cisco"}.
+{[1,3,6,1,4,1,9,1,149],6,"OTHER","CiscoPro3116","Cisco"}.
+{[1,3,6,1,4,1,9,1,148],6,"OTHER","CiscoPro316C","Cisco"}.
+{[1,3,6,1,4,1,9,1,147],6,"OTHER","CiscoPro316T","Cisco"}.
+{[1,3,6,1,4,1,9,1,123],2,"ROUTE","CiscoPro3620","Cisco"}.
+{[1,3,6,1,4,1,9,1,124],2,"ROUTE","CiscoPro3640","Cisco"}.
+{[1,3,6,1,4,1,9,1,66],2,"ROUTE","CiscoPro4500","Cisco"}.
+{[1,3,6,1,4,1,9,1,142],2,"ROUTE","CiscoPro4700","Cisco"}.
+{[1,3,6,1,4,1,9,1,84],2,"ROUTE","CiscoPro741","Cisco"}.
+{[1,3,6,1,4,1,9,1,85],2,"ROUTE","CiscoPro742","Cisco"}.
+{[1,3,6,1,4,1,9,1,86],2,"ROUTE","CiscoPro743","Cisco"}.
+{[1,3,6,1,4,1,9,1,87],2,"ROUTE","CiscoPro744","Cisco"}.
+{[1,3,6,1,4,1,9,1,76],2,"ROUTE","CiscoPro751","Cisco"}.
+{[1,3,6,1,4,1,9,1,77],2,"ROUTE","CiscoPro752","Cisco"}.
+{[1,3,6,1,4,1,9,1,78],2,"ROUTE","CiscoPro753","Cisco"}.
+{[1,3,6,1,4,1,9,1,88],2,"ROUTE","CiscoPro761","Cisco"}.
+{[1,3,6,1,4,1,9,1,89],2,"ROUTE","CiscoPro762","Cisco"}.
+{[1,3,6,1,4,1,9,1,92],2,"ROUTE","CiscoPro765","Cisco"}.
+{[1,3,6,1,4,1,9,1,93],2,"ROUTE","CiscoPro766","Cisco"}.
+{[1,3,6,1,4,1,9,1,143],2,"ROUTE","CiscoPro771","Cisco"}.
+{[1,3,6,1,4,1,9,1,144],2,"ROUTE","CiscoPro772","Cisco"}.
+{[1,3,6,1,4,1,9,1,145],2,"ROUTE","CiscoPro775","Cisco"}.
+{[1,3,6,1,4,1,9,1,146],2,"ROUTE","CiscoPro776","Cisco"}.
+{[1,3,6,1,4,1,9,1,4],2,"ROUTE","CiscoProtocolTranslator","Cisco"}.
+{[1,3,6,1,4,1,9,1,199],2,"ROUTE","CiscoRPM","Cisco"}.
+{[1,3,6,1,4,1,9,1,457],2,"ROUTE","CiscoRPMPR","Cisco"}.
+{[1,3,6,1,4,1,9,1,440],6,"OTHER","CiscoRpmXf","Cisco"}.
+{[1,3,6,1,4,1,9,1,189],2,"ROUTE","CiscoSC3640","Cisco"}.
+{[1,3,6,1,4,1,9,1,683],6,"OTHER","CiscoSCE1000","Cisco"}.
+{[1,3,6,1,4,1,9,1,684],6,"OTHER","CiscoSCE2000","Cisco"}.
+{[1,3,6,1,4,1,9,1,682],6,"OTHER","CiscoSCEDispatcher","Cisco"}.
+{[1,3,6,1,4,1,9,1,555],6,"OTHER","CiscoSIMSE","Cisco"}.
+{[1,3,6,1,4,1,9,1,407],0,"ROUTE_SWITCH","CiscoSN5420","Cisco"}.
+{[1,3,6,1,4,1,9,1,475],1,"SWITCH","CiscoSN5428","Cisco"}.
+{[1,3,6,1,4,1,9,1,354],2,"ROUTE","CiscoSOHO76","Cisco"}.
+{[1,3,6,1,4,1,9,1,353],2,"ROUTE","CiscoSOHO77","Cisco"}.
+{[1,3,6,1,4,1,9,1,498],2,"ROUTE","CiscoSOHO91","Cisco"}.
+{[1,3,6,1,4,1,9,1,500],2,"ROUTE","CiscoSOHO96","Cisco"}.
+{[1,3,6,1,4,1,9,1,496],2,"ROUTE","CiscoSOHO97","Cisco"}.
+{[1,3,6,1,4,1,9,1,750],6,"OTHER","CiscoSpaOc48posSfp","Cisco"}.
+{[1,3,6,1,4,1,9,1,519],6,"OTHER","CiscoStandbyGSSM","Cisco"}.
+{[1,3,6,1,4,1,9,1,2],6,"OTHER","CiscoTerminalServer","Cisco"}.
+{[1,3,6,1,4,1,9,1,3],2,"ROUTE","CiscoTrouter","Cisco"}.
+{[1,3,6,1,4,1,9,1,317],2,"ROUTE","CiscoUBR10012","Cisco"}.
+{[1,3,6,1,4,1,9,1,344],2,"ROUTE","CiscoUBR7111","Cisco"}.
+{[1,3,6,1,4,1,9,1,345],2,"ROUTE","CiscoUBR7111E","Cisco"}.
+{[1,3,6,1,4,1,9,1,346],2,"ROUTE","CiscoUBR7114","Cisco"}.
+{[1,3,6,1,4,1,9,1,347],2,"ROUTE","CiscoUBR7114E","Cisco"}.
+{[1,3,6,1,4,1,9,1,210],2,"ROUTE","CiscoUBR7223","Cisco"}.
+{[1,3,6,1,4,1,9,1,271],2,"ROUTE","CiscoUBR7246VXR","Cisco"}.
+{[1,3,6,1,4,1,9,1,191],2,"ROUTE","CiscoUBR904","Cisco"}.
+{[1,3,6,1,4,1,9,1,351],2,"ROUTE","CiscoUBR905","Cisco"}.
+{[1,3,6,1,4,1,9,1,292],6,"OTHER","CiscoUBR912C","Cisco"}.
+{[1,3,6,1,4,1,9,1,293],6,"OTHER","CiscoUBR912S","Cisco"}.
+{[1,3,6,1,4,1,9,1,294],6,"OTHER","CiscoUBR914","Cisco"}.
+{[1,3,6,1,4,1,9,1,255],2,"ROUTE","CiscoUBR924","Cisco"}.
+{[1,3,6,1,4,1,9,1,316],6,"OTHER","CiscoUBR925","Cisco"}.
+{[1,3,6,1,4,1,9,1,373],6,"OTHER","CiscoURM","Cisco"}.
+{[1,3,6,1,4,1,9,1,374],2,"ROUTE","CiscoURM2FE","Cisco"}.
+{[1,3,6,1,4,1,9,1,375],2,"ROUTE","CiscoURM2FE2V","Cisco"}.
+{[1,3,6,1,4,1,9,1,803],6,"OTHER","CiscoUWIpPhone7920","Cisco"}.
+{[1,3,6,1,4,1,9,1,279],2,"ROUTE","CiscoVG200","Cisco"}.
+{[1,3,6,1,4,1,9,1,404],2,"ROUTE","CiscoVG248","Cisco"}.
+{[1,3,6,1,4,1,9,1,360],6,"OTHER","CiscoVPS1110","Cisco"}.
+{[1,3,6,1,4,1,9,1,631],6,"OTHER","CiscoWLSE1030","Cisco"}.
+{[1,3,6,1,4,1,9,1,630],6,"OTHER","CiscoWLSE1130","Cisco"}.
+{[1,3,6,1,4,1,9,1,712],6,"OTHER","CiscoWLSE1132","Cisco"}.
+{[1,3,6,1,4,1,9,1,752],6,"OTHER","CiscoWLSE1133","Cisco"}.
+{[1,3,6,1,4,1,9,1,709],6,"OTHER","CiscoWLSEs20","Cisco"}.
+{[1,3,6,1,4,1,9,1,449],0,"ROUTE_SWITCH","CiscoWSC6503","Cisco"}.
+{[1,3,6,1,4,1,9,1,657],6,"OTHER","CiscoWSC6504E","Cisco"}.
+{[1,3,6,1,4,1,9,1,534],6,"OTHER","CiscoWSC6509neba","Cisco"}.
+{[1,3,6,1,4,1,9,1,400],0,"ROUTE_SWITCH","CiscoWSC6513","Cisco"}.
+{[1,3,6,1,4,1,9,1,112],2,"ROUTE","CiscoWSX3011","Cisco"}.
+{[1,3,6,1,4,1,9,1,168],2,"ROUTE","CiscoWSX5302","Cisco"}.
+{[1,3,6,1,4,1,9,1,256],2,"ROUTE","CiscoWSX6302Msm","Cisco"}.
+{[1,3,6,1,4,1,9,1,757],6,"OTHER","CiscoWae612K9","Cisco"}.
+{[1,3,6,1,4,1,9,1,459],6,"OTHER","CiscoWlse","Cisco"}.
+{[1,3,6,1,4,1,9,1,748],6,"OTHER","CiscoWs3020Hpq","Cisco"}.
+{[1,3,6,1,4,1,9,1,749],6,"OTHER","CiscoWs3030Del","Cisco"}.
+{[1,3,6,1,4,1,9,1,747],6,"OTHER","CiscoWsC3750g24ps","Cisco"}.
+{[1,3,6,1,4,1,9,1,674],6,"OTHER","CiscoWsSvcFwm1sc","Cisco"}.
+{[1,3,6,1,4,1,9,1,767],6,"OTHER","CiscoWsSvcFwm1sy","Cisco"}.
+{[1,3,6,1,4,1,9,1,621],6,"OTHER","CiscoWsSvcMWAM1","Cisco"}.
+{[1,3,6,1,4,1,9,1,599],6,"OTHER","CiscoWsSvcWLAN1K9","Cisco"}.
+{[1,3,6,1,4,1,9,5,19],1,"SWITCH","EtherSwitch 1220","Cisco"}.
+{[1,3,6,1,4,1,9,12,3,1,3,414],1,"SWITCH","MDS-9120","Cisco"}.
+{[1,3,6,1,4,1,9,12,3,1,3,411],1,"SWITCH","MDS-9140","Cisco"}.
+{[1,3,6,1,4,1,9,12,3,1,3,380],1,"SWITCH","MDS-9216","Cisco"}.
+{[1,3,6,1,4,1,9,12,3,1,3,375],1,"SWITCH","MDS-9506","Cisco"}.
+{[1,3,6,1,4,1,9,12,3,1,3,376],1,"SWITCH","MDS-9509","Cisco"}.
+{[1,3,6,1,4,1,351,130],1,"SWITCH","MGX","Cisco"}.
+{[1,3,6,1,4,1,9,12,3,1,9,17,39],2,"ROUTE","MWAM","Cisco"}.
+{[1,3,6,1,4,1,50,7],2,"ROUTE","ODS FDDI Network Controller","Cisco"}.
+{[1,3,6,1,4,1,1869,11,11,5,3],1,"SWITCH","ONS15501-AC","Cisco"}.
+{[1,3,6,1,4,1,1869,11,11,5,1],1,"SWITCH","ONS15501-DC","Cisco"}.
+{[1,3,6,1,4,1,9,5,30],1,"SWITCH","PIX Firewall","Cisco"}.
+{[1,3,6,1,4,1,9,1,558],2,"ROUTE","VG224","Cisco"}.
+{[1,3,6,1,4,1,3076,1,2,1,1,2,1],6,"OTHER","VPN 3000 Concentrator","Cisco"}.
+{[1,3,6,1,4,1,255,1,1],2,"ROUTE","VPN 5002/8 Concentrator","Cisco"}.
+{[1,3,6,1,4,1,3076,1,2,1,1,1,2],6,"OTHER","VPN3000","Cisco"}.
+{[1,3,6,1,4,1,551,2,1,123],6,"OTHER","WGB350","Cisco"}.
+{[1,3,6,1,4,1,9,5,46],1,"SWITCH","WS-S4006","Cisco"}.
+{[1,3,6,1,4,1,9,5,4],1,"SWITCH","WSC 1100","Cisco"}.
+{[1,3,6,1,4,1,9,5,6],1,"SWITCH","WSC 1400","Cisco"}.
+{[1,3,6,1,4,1,9,5,8],1,"SWITCH","WSC 1600","Cisco"}.
+{[1,3,6,1,4,1,9,5,2],1,"SWITCH","adapterCard","Cisco"}.
+{[1,3,6,1,4,1,9,1,695],1,"SWITCH","c2960","Cisco"}.
+{[1,3,6,1,4,1,9,1,275],0,"ROUTE_SWITCH","cat2948gL3","Cisco"}.
+{[1,3,6,1,4,1,9,1,386],6,"OTHER","cat2948gL3Dc","Cisco"}.
+{[1,3,6,1,4,1,9,1,287],0,"ROUTE_SWITCH","cat3524tXLEn","Cisco"}.
+{[1,3,6,1,4,1,9,1,278],1,"SWITCH","cat3548XL","Cisco"}.
+{[1,3,6,1,4,1,9,1,452],1,"SWITCH","cat355024Dc","Cisco"}.
+{[1,3,6,1,4,1,9,1,453],1,"SWITCH","cat355024Mmf","Cisco"}.
+{[1,3,6,1,4,1,9,1,448],0,"ROUTE_SWITCH","cat4006","Cisco"}.
+{[1,3,6,1,4,1,9,1,300],0,"ROUTE_SWITCH","cat4232L3","Cisco"}.
+{[1,3,6,1,4,1,9,1,503],0,"ROUTE_SWITCH","cat4503","Cisco"}.
+{[1,3,6,1,4,1,9,1,502],0,"ROUTE_SWITCH","cat4506","Cisco"}.
+{[1,3,6,1,4,1,9,1,501],0,"ROUTE_SWITCH","cat4507","Cisco"}.
+{[1,3,6,1,4,1,9,1,312],0,"ROUTE_SWITCH","cat4840gL3","Cisco"}.
+{[1,3,6,1,4,1,9,1,298],0,"ROUTE_SWITCH","cat4908gL3","Cisco"}.
+{[1,3,6,1,4,1,9,1,387],6,"OTHER","cat4908gL3Dc","Cisco"}.
+{[1,3,6,1,4,1,9,1,280],0,"ROUTE_SWITCH","cat6006","Cisco"}.
+{[1,3,6,1,4,1,9,1,281],0,"ROUTE_SWITCH","cat6009","Cisco"}.
+{[1,3,6,1,4,1,9,1,522],2,"ROUTE","cat6500FirewallSm","Cisco"}.
+{[1,3,6,1,4,1,9,1,554],2,"ROUTE","cat6500SslSm","Cisco"}.
+{[1,3,6,1,4,1,9,1,282],0,"ROUTE_SWITCH","cat6506","Cisco"}.
+{[1,3,6,1,4,1,9,1,283],0,"ROUTE_SWITCH","cat6509","Cisco"}.
+{[1,3,6,1,4,1,9,1,310],0,"ROUTE_SWITCH","cat6509Sp","Cisco"}.
+{[1,3,6,1,4,1,9,1,152],6,"OTHER","catalyst1116","Cisco"}.
+{[1,3,6,1,4,1,9,1,151],6,"OTHER","catalyst116C","Cisco"}.
+{[1,3,6,1,4,1,9,1,150],6,"OTHER","catalyst116T","Cisco"}.
+{[1,3,6,1,4,1,9,1,175],1,"SWITCH","catalyst1912C","Cisco"}.
+{[1,3,6,1,4,1,9,1,170],1,"SWITCH","catalyst2908xl","Cisco"}.
+{[1,3,6,1,4,1,9,1,370],1,"SWITCH","catalyst2912LREXL","Cisco"}.
+{[1,3,6,1,4,1,9,1,221],1,"SWITCH","catalyst2912MfXL","Cisco"}.
+{[1,3,6,1,4,1,9,1,219],1,"SWITCH","catalyst2912XL","Cisco"}.
+{[1,3,6,1,4,1,9,1,171],1,"SWITCH","catalyst2916m-xl","Cisco"}.
+{[1,3,6,1,4,1,9,1,184],1,"SWITCH","catalyst2924CXL","Cisco"}.
+{[1,3,6,1,4,1,9,1,218],1,"SWITCH","catalyst2924CXLv","Cisco"}.
+{[1,3,6,1,4,1,9,1,369],1,"SWITCH","catalyst2924LREXL","Cisco"}.
+{[1,3,6,1,4,1,9,1,220],1,"SWITCH","catalyst2924MXL","Cisco"}.
+{[1,3,6,1,4,1,9,1,183],1,"SWITCH","catalyst2924XL","Cisco"}.
+{[1,3,6,1,4,1,9,1,217],1,"SWITCH","catalyst2924XLv","Cisco"}.
+{[1,3,6,1,4,1,9,1,542],1,"SWITCH","catalyst29408TF","Cisco"}.
+{[1,3,6,1,4,1,9,1,540],1,"SWITCH","catalyst29408TT","Cisco"}.
+{[1,3,6,1,4,1,9,1,323],1,"SWITCH","catalyst295012","Cisco"}.
+{[1,3,6,1,4,1,9,1,427],1,"SWITCH","catalyst295012G","Cisco"}.
+{[1,3,6,1,4,1,9,1,324],1,"SWITCH","catalyst295024","Cisco"}.
+{[1,3,6,1,4,1,9,1,325],1,"SWITCH","catalyst295024C","Cisco"}.
+{[1,3,6,1,4,1,9,1,428],1,"SWITCH","catalyst295024G","Cisco"}.
+{[1,3,6,1,4,1,9,1,472],1,"SWITCH","catalyst295024GDC","Cisco"}.
+{[1,3,6,1,4,1,9,1,484],6,"OTHER","catalyst295024LREG","Cisco"}.
+{[1,3,6,1,4,1,9,1,482],1,"SWITCH","catalyst295024LRESt","Cisco"}.
+{[1,3,6,1,4,1,9,1,430],1,"SWITCH","catalyst295024S","Cisco"}.
+{[1,3,6,1,4,1,9,1,480],1,"SWITCH","catalyst295024SX","Cisco"}.
+{[1,3,6,1,4,1,9,1,429],1,"SWITCH","catalyst295048G","Cisco"}.
+{[1,3,6,1,4,1,9,1,560],1,"SWITCH","catalyst295048SX","Cisco"}.
+{[1,3,6,1,4,1,9,1,559],1,"SWITCH","catalyst295048T","Cisco"}.
+{[1,3,6,1,4,1,9,1,483],6,"OTHER","catalyst29508LRESt","Cisco"}.
+{[1,3,6,1,4,1,9,1,551],6,"OTHER","catalyst2950St24LRE997","Cisco"}.
+{[1,3,6,1,4,1,9,1,359],1,"SWITCH","catalyst2950t24","Cisco"}.
+{[1,3,6,1,4,1,9,1,489],1,"SWITCH","catalyst2955C12","Cisco"}.
+{[1,3,6,1,4,1,9,1,508],1,"SWITCH","catalyst2955S12","Cisco"}.
+{[1,3,6,1,4,1,9,1,488],1,"SWITCH","catalyst2955T12","Cisco"}.
+{[1,3,6,1,4,1,9,1,716],1,"SWITCH","catalyst296024TT","Cisco"}.
+{[1,3,6,1,4,1,9,1,717],1,"SWITCH","catalyst296048TT","Cisco"}.
+{[1,3,6,1,4,1,9,1,527],1,"SWITCH","catalyst297024","Cisco"}.
+{[1,3,6,1,4,1,9,1,561],1,"SWITCH","catalyst297024TS","Cisco"}.
+{[1,3,6,1,4,1,9,1,246],0,"ROUTE_SWITCH","catalyst3508GXL","Cisco"}.
+{[1,3,6,1,4,1,9,1,247],0,"ROUTE_SWITCH","catalyst3512XL","Cisco"}.
+{[1,3,6,1,4,1,9,1,248],1,"SWITCH","catalyst3524XL","Cisco"}.
+{[1,3,6,1,4,1,9,1,431],0,"ROUTE_SWITCH","catalyst355012G","Cisco"}.
+{[1,3,6,1,4,1,9,1,368],0,"ROUTE_SWITCH","catalyst355012T","Cisco"}.
+{[1,3,6,1,4,1,9,1,366],0,"ROUTE_SWITCH","catalyst355024","Cisco"}.
+{[1,3,6,1,4,1,9,1,485],1,"SWITCH","catalyst355024PWR","Cisco"}.
+{[1,3,6,1,4,1,9,1,367],0,"ROUTE_SWITCH","catalyst355048","Cisco"}.
+{[1,3,6,1,4,1,9,1,563],1,"SWITCH","catalyst356024PS","Cisco"}.
+{[1,3,6,1,4,1,9,1,633],6,"OTHER","catalyst356024TS","Cisco"}.
+{[1,3,6,1,4,1,9,1,564],1,"SWITCH","catalyst356048PS","Cisco"}.
+{[1,3,6,1,4,1,9,1,614],6,"OTHER","catalyst3560G24PS","Cisco"}.
+{[1,3,6,1,4,1,9,1,615],6,"OTHER","catalyst3560G24TS","Cisco"}.
+{[1,3,6,1,4,1,9,1,616],6,"OTHER","catalyst3560G48PS","Cisco"}.
+{[1,3,6,1,4,1,9,1,617],6,"OTHER","catalyst3560G48TS","Cisco"}.
+{[1,3,6,1,4,1,9,1,511],0,"ROUTE_SWITCH","catalyst375024","Cisco"}.
+{[1,3,6,1,4,1,9,1,574],1,"SWITCH","catalyst375024ME","Cisco"}.
+{[1,3,6,1,4,1,9,1,514],0,"ROUTE_SWITCH","catalyst375024T","Cisco"}.
+{[1,3,6,1,4,1,9,1,513],0,"ROUTE_SWITCH","catalyst375024TS","Cisco"}.
+{[1,3,6,1,4,1,9,1,512],0,"ROUTE_SWITCH","catalyst375048","Cisco"}.
+{[1,3,6,1,4,1,9,1,591],6,"OTHER","catalyst3750G16TD","Cisco"}.
+{[1,3,6,1,4,1,9,1,530],6,"OTHER","catalyst3750Ge12Sfp","Cisco"}.
+{[1,3,6,1,4,1,9,1,516],0,"ROUTE_SWITCH","catalyst37xxStack","Cisco"}.
+{[1,3,6,1,4,1,9,1,575],6,"OTHER","catalyst4000NAM","Cisco"}.
+{[1,3,6,1,4,1,9,1,537],0,"ROUTE_SWITCH","catalyst4510","Cisco"}.
+{[1,3,6,1,4,1,9,1,626],6,"OTHER","catalyst4948","Cisco"}.
+{[1,3,6,1,4,1,9,1,659],6,"OTHER","catalyst494810GE","Cisco"}.
+{[1,3,6,1,4,1,9,1,318],2,"ROUTE","catalyst4kGateway","Cisco"}.
+{[1,3,6,1,4,1,9,1,257],0,"ROUTE_SWITCH","catalyst5kRsfc","Cisco"}.
+{[1,3,6,1,4,1,9,1,573],6,"OTHER","catalyst6kGateway","Cisco"}.
+{[1,3,6,1,4,1,9,1,258],0,"ROUTE_SWITCH","catalyst6kMsfc","Cisco"}.
+{[1,3,6,1,4,1,9,1,301],2,"ROUTE","catalyst6kMsfc2","Cisco"}.
+{[1,3,6,1,4,1,9,1,706],6,"OTHER","catalyst6kMsfc2a","Cisco"}.
+{[1,3,6,1,4,1,9,1,557],6,"OTHER","catalyst6kSup720","Cisco"}.
+{[1,3,6,1,4,1,9,1,230],0,"ROUTE_SWITCH","catalyst8510msr","Cisco"}.
+{[1,3,6,1,4,1,9,1,231],0,"ROUTE_SWITCH","catalyst8515msr","Cisco"}.
+{[1,3,6,1,4,1,9,1,203],0,"ROUTE_SWITCH","catalyst8540csr","Cisco"}.
+{[1,3,6,1,4,1,9,1,202],0,"ROUTE_SWITCH","catalyst8540msr","Cisco"}.
+{[1,3,6,1,4,1,9,1,197],0,"ROUTE_SWITCH","catalyst9006","Cisco"}.
+{[1,3,6,1,4,1,9,1,198],0,"ROUTE_SWITCH","catalyst9009","Cisco"}.
+{[1,3,6,1,4,1,9,1,727],6,"OTHER","catalystsExpress50012TC","Cisco"}.
+{[1,3,6,1,4,1,9,1,725],6,"OTHER","catalystsExpress50024LC","Cisco"}.
+{[1,3,6,1,4,1,9,1,726],6,"OTHER","catalystsExpress50024PC","Cisco"}.
+{[1,3,6,1,4,1,9,1,724],6,"OTHER","catalystsExpress50024TT","Cisco"}.
+{[1,3,6,1,4,1,9,5,21],1,"SWITCH","cpw1420","Cisco"}.
+{[1,3,6,1,4,1,9,5,25],1,"SWITCH","cpw1601","Cisco"}.
+{[1,3,6,1,4,1,9,5,24],1,"SWITCH","cpw1800","Cisco"}.
+{[1,3,6,1,4,1,9,5,16],1,"SWITCH","cpw1900","Cisco"}.
+{[1,3,6,1,4,1,9,5,13],1,"SWITCH","cpw2200","Cisco"}.
+{[1,3,6,1,4,1,9,5,22],1,"SWITCH","dcd","Cisco"}.
+{[1,3,6,1,4,1,9,5,14],1,"SWITCH","esStack","Cisco"}.
+{[1,3,6,1,4,1,9,5,32],1,"SWITCH","tsStack","Cisco"}.
+{[1,3,6,1,4,1,9,5,175],1,"SWITCH","wsc1900 Lite Fx","Cisco"}.
+{[1,3,6,1,4,1,727,7,1,82000],2,"ROUTE","SDM-8200","Clarent"}.
+{[1,3,6,1,4,1,449,2,1,6520],2,"ROUTE","Motorola 6520","Codex"}.
+{[1,3,6,1,4,1,449,2,1,6560],2,"ROUTE","Motorola 6560","Codex"}.
+{[1,3,6,1,4,1,449,2,1,200],2,"ROUTE","Motorola VANGUARD 200","Codex"}.
+{[1,3,6,1,4,1,449,2,1,300],2,"ROUTE","Motorola VANGUARD 300","Codex"}.
+{[1,3,6,1,4,1,449,2,1,320],2,"ROUTE","Motorola VANGUARD 320","Codex"}.
+{[1,3,6,1,4,1,449,2,1,0],2,"ROUTE","Motorola VANGUARD 340","Codex"}.
+{[1,3,6,1,4,1,3085,1,1,2],1,"SWITCH","IPSX9500","Cosine"}.
+{[1,3,6,1,4,1,2512,1,1],1,"SWITCH","4450 Bridge","CrossRoads"}.
+{[1,3,6,1,4,1,687],5,"Host","Frame Encriptor","Cylink"}.
+{[1,3,6,1,4,1,687,2,10],5,"Host","SNMP Agent","Cylink"}.
+{[1,3,6,1,4,1,193,20,1],5,"Host","HOST","D.N.A.SNMP"}.
+{[1,3,6,1,4,1,36,2,15,2,3],5,"Host","AlphaServer 4100 5/30","DEC"}.
+{[1,3,6,1,4,1,36,2,15,3,6,10],6,"Bridge","DECbridge","DEC"}.
+{[1,3,6,1,4,1,36,2,15,5,1],6,"Hub","DECconcentrator 500","DEC"}.
+{[1,3,6,1,4,1,36,2,15,10,3,1],6,"Hub","DEChub 900","DEC"}.
+{[1,3,6,1,4,1,36,2,15,9,8,1],6,"Hub","DECrepeater 90TS","DEC"}.
+{[1,3,6,1,4,1,36,2,15,3,11,1],1,"SWITCH","DECswitch 900EF A","DEC"}.
+{[1,3,6,1,4,1,36,2,15,3,7,1],1,"SWITCH","DECswitch 900EF B","DEC"}.
+{[1,3,6,1,4,1,36,2,15,3,3],1,"SWITCH","GIGAswitch","DEC"}.
+{[1,3,6,1,4,1,36,2,15,3,9,1],6,"Bridge","RoamAbout Access Point","DEC"}.
+{[1,3,6,1,4,1,36,2,15,11,13,1],1,"SWITCH","VNswitch900EF-MM","DEC"}.
+{[1,3,6,1,4,1,674,10895,4],1,"SWITCH","PowerConnect 5224","Dell"}.
+{[1,3,6,1,4,1,674,10895,1],1,"SWITCH","Powerconnect 3024","Dell"}.
+{[ccitt,0,0,0,0,0,0],0,"三层","DCRS-7608","Digital China Networks"}.
+{[1,3,6,1,4,1,106,1,4,1],5,"Host","Clarion IP4700 File Server","EMC"}.
+{[1,3,6,1,4,1,2136,2,2],5,"Host","EFI Fiery Color Printer Server","Electronics-For Imaging-Inc."}.
+{[1,3,6,1,4,1,2136,2,11,2],5,"Host","EFI Fiery Server X12","Electronics-For Imaging-Inc."}.
+{[1,3,6,1,4,1,2136,2,6,1],5,"Host","EFI Fiery Server ZX","Electronics-For Imaging-Inc."}.
+{[1,3,6,1,4,1,5624,2,1,18],1,"SWITCH","5H102-48","EnterasysNetworks"}.
+{[1,3,6,1,4,1,5624,2,1,3],1,"SWITCH","6H302-48","EnterasysNetworks"}.
+{[1,3,6,1,4,1,3405,3],2,"ROUTE","Accelerator 4800","Expand Networks"}.
+{[1,3,6,1,4,1,1916,2,17],1,"SWITCH","Alpine3808","Extreme"}.
+{[1,3,6,1,4,1,1916,2,11],1,"SWITCH","BlackDiamond6808","Extreme"}.
+{[1,3,6,1,4,1,1916,2,24],1,"SWITCH","BlackDiamond6816","Extreme"}.
+{[1,3,6,1,4,1,232,111,1,5],1,"SWITCH","SW5450","Extreme"}.
+{[1,3,6,1,4,1,1916,2,16],1,"SWITCH","Summit 48i","Extreme"}.
+{[1,3,6,1,4,1,1916,2,7],1,"SWITCH","Summit24","Extreme"}.
+{[1,3,6,1,4,1,1916,2,25],1,"SWITCH","Summit24e3","Extreme"}.
+{[1,3,6,1,4,1,1916,2,4],1,"SWITCH","Summit4","Extreme"}.
+{[1,3,6,1,4,1,1916,2,6],1,"SWITCH","Summit48","Extreme"}.
+{[1,3,6,1,4,1,1916,2,28],1,"SWITCH","Summit48i1u","Extreme"}.
+{[1,3,6,1,4,1,1916,2,5],1,"SWITCH","Summit4fx","Extreme"}.
+{[1,3,6,1,4,1,1916,2,15],1,"SWITCH","Summit5i","Extreme"}.
+{[1,3,6,1,4,1,1916,2,12],1,"SWITCH","Summit7iSX","Extreme"}.
+{[1,3,6,1,4,1,1916,2,13],1,"SWITCH","Summit7iTx","Extreme"}.
+{[1,3,6,1,4,1,3375,1,1],2,"ROUTE","BIG-IP","F5 Networks"}.
+{[1,3,6,1,4,1,2021,250,255],2,"ROUTE","F5 Load Balancer","F5 Networks"}.
+{[1,3,6,1,4,1,321,1,1,0],5,"Host","FW Rev 1.97","FW"}.
+{[1,3,6,1,4,1,1296,1,1],2,"ROUTE","Multimedia Switch","First Virtual"}.
+{[1,3,6,1,4,1,1548,5871,0],2,"ROUTE","Efficient 5871 IDSL Route","Flowpoint"}.
+{[1,3,6,1,4,1,326,2,6,1,1],6,"Hub","6k7k8k","Fore"}.
+{[1,3,6,1,4,1,326,2,6,1,3],1,"SWITCH","ASN9000","Fore"}.
+{[1,3,6,1,4,1,326,2,2],1,"SWITCH","ASX1000","Fore"}.
+{[1,3,6,1,4,1,326,2,10,1],1,"SWITCH","ES2810","Fore"}.
+{[1,3,6,1,4,1,326,2,3],1,"SWITCH","ES3810","Fore"}.
+{[1,3,6,1,4,1,326,2,2,5],1,"SWITCH","ForeRunner ASX-200BX","Fore"}.
+{[1,3,6,1,4,1,1991,1,3,14,2],1,"SWITCH","BigIron 15000","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,11,1],1,"SWITCH","BigIron A","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,24,2],1,"SWITCH","BigIron B","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,7,1],1,"SWITCH","BigIron C","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,23,1],1,"SWITCH","Fast Iron BackBone","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,1,1],1,"SWITCH","FastIron","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,24,1],1,"SWITCH","FastIron 1500","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,22,1],1,"SWITCH","FastIron 400","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,25,1],1,"SWITCH","FastIron Edge 2402","Foundry"}.
+{[1,3,6,1,4,1,1991,1,5,1,1,4,2,1],1,"SWITCH","FastIron Edge 2402CF","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,26,1],1,"SWITCH","FastIron Edge 4802","Foundry"}.
+{[1,3,6,1,4,1,738,1,5,100,1,1,222,1],1,"SWITCH","FastIron Edge 4802F","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,27,1],1,"SWITCH","FastIron Edge 9604","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,28,1],1,"SWITCH","FastIron FES12gcf","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,10,1],2,"ROUTE","IronRouter A","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,7,2],1,"SWITCH","IronRouter B","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,2,1],1,"SWITCH","NetIron","Foundry"}.
+{[1,3,6,1,4,1,1991,1,1],1,"SWITCH","ServerIron A","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,3,2],1,"SWITCH","ServerIron B","Foundry"}.
+{[1,3,6,1,4,1,1991,1,3,5,4],1,"SWITCH","TurboIron","Foundry"}.
+{[1,3,6,1,4,1,5876],1,"SWITCH","FS3026","Galaxywind"}.
+{[1,3,6,1,4,1,13157,1,2,2,4,1],0,"ROUTE_SWITCH","L3 Gigabit SNMP Agent","Galaxywind"}.
+{[1,3,6,1,4,1,64],6,"Bridge","Ethernet Bridge","Gandalf"}.
+{[1,3,6,1,4,1,2297,3,1],5,"Host","HOST","Ganymede"}.
+{[1,3,6,1,4,1,498,23,1],2,"ROUTE","AI 294 Card","General_DataComm"}.
+{[1,3,6,1,4,1,498,3,6],1,"SWITCH","SpectraComm_Manager","General_DataComm"}.
+{[1,3,6,1,4,1,3,1,1],5,"Host","HOST","HDS"}.
+{[1,3,6,1,4,1,8212,2,1,25],1,"SWITCH","","Harbour"}.
+{[1,3,6,1,4,1,8212,2,1,26],1,"SWITCH","BigHammer3550E-48","Harbour"}.
+{[1,3,6,1,4,1,8212,2,3,101],0,"ROUTE_SWITCH","BigHammer6802","Harbour"}.
+{[1,3,6,1,4,1,8212,2,3,102],0,"ROUTE_SWITCH","BigHammer6808","Harbour"}.
+{[1,3,6,1,4,1,11,2,3,10,1,1],5,"Host","HOST A","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,10,1,1],5,"Host","HOST B","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,10,1,2],5,"Host","HOST C","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,2,3],5,"Host","HOST D","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,2,5],5,"Host","HOST E","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,6,3,2],5,"Host","HOST F","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,6,5],5,"Host","HOST G","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,6,5,2],5,"Host","HOST H","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,6,7,2,1],5,"Host","HOST I","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,9,1],5,"Host","HOST J","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,9,8,1,2],5,"Host","HOST K","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,5,5,1,1],5,"Host","HOST L","Hewlett-Packard"}.
+{[1,3,6,1,4,1,368,1,2],5,"Host","HOST M","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,9,2],5,"Host","HP ETHERNET MULTI-ENVIRONMENT,ROM A.05","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,5,19],6,"Hub","HPJ3188A","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,11,11],1,"SWITCH","J4093A ProCurve","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,11,9],1,"SWITCH","J4121A ProCurve Switch 4000M","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,11,18],1,"SWITCH","J4812A ProCurve Switch","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,11,19],1,"SWITCH","J4813A ProCurve Switch 2524","Hewlett-Packard"}.
+{[1,3,6,1,4,1,11,2,3,7,11,27],1,"SWITCH","J4887A ProCurve Switch 4104GL","Hewlett-Packard"}.
+{[1,3,6,1,4,1,116,3,11,4,1,1],5,"Host","9900 Raid Array","Hitachi"}.
+{[1,3,6,1,4,1,25506,1,240],0,"ROUTE_SWITCH","5024设备","Huawei"}.
+{[1,3,6,1,4,1,25506,1,28],0,"ROUTE_SWITCH","5100设备","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,64],2,"ROUTE","ar18-10","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,11812],2,"ROUTE","ar18-12","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,11813],2,"ROUTE","ar18-13","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,50],2,"ROUTE","ar18-13V","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,11815],2,"ROUTE","ar18-15","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,11816],2,"ROUTE","ar18-16","Huawei"}.
+{[1,3,6,1,4,1,2011,2,55],2,"ROUTE","ar18-18","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,51],2,"ROUTE","ar18-18V","Huawei"}.
+{[1,3,6,1,4,1,2011,2,56],2,"ROUTE","ar18-20","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,53],2,"ROUTE","ar18-20S","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,65],2,"ROUTE","ar18-21","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,66],2,"ROUTE","ar18-21A","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,67],2,"ROUTE","ar18-21B","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,68],2,"ROUTE","ar18-21C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,69],2,"ROUTE","ar18-22","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,71],2,"ROUTE","ar18-22-24","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,70],2,"ROUTE","ar18-22-8","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,91],2,"ROUTE","ar18-22s-8","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,72],2,"ROUTE","ar18-23-1","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,92],2,"ROUTE","ar18-23s-1","Huawei"}.
+{[1,3,6,1,4,1,2011,2,57],2,"ROUTE","ar18-30","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,73],2,"ROUTE","ar18-30E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,58],2,"ROUTE","ar18-31","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,74],2,"ROUTE","ar18-31E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,59],2,"ROUTE","ar18-32","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,75],2,"ROUTE","ar18-32E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,60],2,"ROUTE","ar18-33","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,20],2,"ROUTE","ar18-33E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,61],2,"ROUTE","ar18-34","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,21],2,"ROUTE","ar18-34E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,6],2,"ROUTE","ar18-35","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,76],2,"ROUTE","ar18-35E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,77],2,"ROUTE","ar18-36E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,78],2,"ROUTE","ar18-37E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,19],2,"ROUTE","ar18-50","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,79],2,"ROUTE","ar18-52","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12809],2,"ROUTE","ar28-09","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12810],2,"ROUTE","ar28-10","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12811],2,"ROUTE","ar28-11","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,61],2,"ROUTE","ar28-12","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,112],2,"ROUTE","ar28-12B","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,62],2,"ROUTE","ar28-13","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,63],2,"ROUTE","ar28-14","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12830],2,"ROUTE","ar28-30","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12831],2,"ROUTE","ar28-31","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12840],2,"ROUTE","ar28-40","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,12880],2,"ROUTE","ar28-80","Huawei"}.
+{[1,3,6,1,4,1,2011,2,44],2,"ROUTE","ar46-20","Huawei"}.
+{[1,3,6,1,4,1,2011,2,45],2,"ROUTE","ar46-40","Huawei"}.
+{[1,3,6,1,4,1,2011,2,46],2,"ROUTE","ar46-80","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,88],2,"ROUTE","ar4620E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,89],2,"ROUTE","ar4640E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,90],2,"ROUTE","ar4680E","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,58],1,"SWITCH","e008-FE","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,59],1,"SWITCH","e017-FE","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,69],1,"SWITCH","e026","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,60],1,"SWITCH","e026-FE","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,70],1,"SWITCH","e026-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,57],1,"SWITCH","e026T","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,71],1,"SWITCH","e050","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,100],6,"OTHER","eudemon","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1],2,"ROUTE","hwRouter","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,52],6,"OTHER","isPath1000","Huawei"}.
+{[1,3,6,1,4,1,2011,2,62],2,"ROUTE","ne5000","Huawei"}.
+{[1,3,6,1,4,1,2011,2,50],2,"ROUTE","quidway eudemon 200","Huawei"}.
+{[1,3,6,1,4,1,2011,2,26,3],2,"ROUTE","quidway netEngine 05","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1600],2,"ROUTE","quidway1600","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1602],2,"ROUTE","quidway1602","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1612],2,"ROUTE","quidway1612","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1613],2,"ROUTE","quidway1613","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1614],2,"ROUTE","quidway1614","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1615],2,"ROUTE","quidway1615","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1760],2,"ROUTE","quidway1760","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,1761],2,"ROUTE","quidway1760B","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2501],2,"ROUTE","quidway2501","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2601],2,"ROUTE","quidway2501E","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2509],2,"ROUTE","quidway2509","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2608],2,"ROUTE","quidway2509E","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2511],2,"ROUTE","quidway2511","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2609],2,"ROUTE","quidway2511E","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2610],2,"ROUTE","quidway2610","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2611],2,"ROUTE","quidway2611","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2620],2,"ROUTE","quidway2620","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2621],2,"ROUTE","quidway2621","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2630],2,"ROUTE","quidway2630","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2631],2,"ROUTE","quidway2631","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,3640],2,"ROUTE","quidway3640","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,3680],2,"ROUTE","quidway3680","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,4001],2,"ROUTE","quidway4001","Huawei"}.
+{[1,3,6,1,4,1,2011,1,1,1,2606],2,"ROUTE","quidway4001E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,15],1,"SWITCH","s2008","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,1],1,"SWITCH","s2008-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,47],1,"SWITCH","s2008C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,131],1,"SWITCH","s2008CP","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,130],1,"SWITCH","s2008CT","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,16],1,"SWITCH","s2016","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,2],1,"SWITCH","s2016-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,48],1,"SWITCH","s2016C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,49],1,"SWITCH","s2024C","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,22],1,"SWITCH","s2026","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,53],1,"SWITCH","s2026C","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,52],1,"SWITCH","s2026Z","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,97],1,"SWITCH","s2108-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,94],1,"SWITCH","s2108-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,98],1,"SWITCH","s2116-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,95],1,"SWITCH","s2116-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,99],1,"SWITCH","s2126-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,96],1,"SWITCH","s2126-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,23],1,"SWITCH","s2403H","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,3],1,"SWITCH","s2403H-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,13],1,"SWITCH","s3026","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,55],1,"SWITCH","s3026C-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,24],1,"SWITCH","s3026E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,25],1,"SWITCH","s3026E-FM","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,26],1,"SWITCH","s3026E-FS","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,20],1,"SWITCH","s3026F","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,54],1,"SWITCH","s3026G-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,4],1,"SWITCH","s3026PWR","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,56],1,"SWITCH","s3026S-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,14],1,"SWITCH","s3026V","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,34],1,"SWITCH","s3026c","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,43],1,"SWITCH","s3026c-24-12fm","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,42],1,"SWITCH","s3026c-24-12fs","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,35],1,"SWITCH","s3026g","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,36],1,"SWITCH","s3026t","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,29],1,"SWITCH","s3050C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,109],1,"SWITCH","s3108C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,106],1,"SWITCH","s3108T","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,110],1,"SWITCH","s3116C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,107],1,"SWITCH","s3116T","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,111],1,"SWITCH","s3126C","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,108],1,"SWITCH","s3126T","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,101],1,"SWITCH","s3224P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,103],1,"SWITCH","s3226P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,102],1,"SWITCH","s3226T","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,105],1,"SWITCH","s3250P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,104],1,"SWITCH","s3250T","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,12],1,"SWITCH","s3526","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,21],0,"ROUTE_SWITCH","s3526E","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,27],1,"SWITCH","s3526E-FM","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,28],1,"SWITCH","s3526E-FS","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,17],1,"SWITCH","s3526F","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,41],1,"SWITCH","s3526c","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,45],1,"SWITCH","s3526c-24-12fm","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,44],1,"SWITCH","s3526c-24-12fs","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,39],1,"SWITCH","s3528G","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,40],1,"SWITCH","s3528P","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,68],0,"ROUTE_SWITCH","s3552F-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,7],1,"SWITCH","s3552F-HI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,67],0,"ROUTE_SWITCH","s3552F-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,37],1,"SWITCH","s3552G","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,38],1,"SWITCH","s3552P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,9],1,"SWITCH","s3924-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,17],1,"SWITCH","s3928F-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,119],1,"SWITCH","s3928F-V6","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,13],1,"SWITCH","s3928P-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,15],6,"OTHER","s3928P-PWR-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,10],1,"SWITCH","s3928P-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,117],1,"SWITCH","s3928P-V6","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,12],1,"SWITCH","s3928TP-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,116],1,"SWITCH","s3928TP-V6","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,14],1,"SWITCH","s3952P-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,16],6,"OTHER","s3952P-PWR-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,11],1,"SWITCH","s3952P-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,118],1,"SWITCH","s3952P-V6","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,46],0,"ROUTE_SWITCH","s5012G","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,47],0,"ROUTE_SWITCH","s5012G-DC","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,48],6,"OTHER","s5012T-12-10GBC","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,49],6,"OTHER","s5012T-12-10GBC-DC","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,50],6,"OTHER","s5024G-24-20TP","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,51],6,"OTHER","s5024G-24-20TP-DC","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,85],1,"SWITCH","s5116P-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,81],1,"SWITCH","s5124P-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,86],1,"SWITCH","s5124P-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,82],1,"SWITCH","s5126C-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,83],1,"SWITCH","s5148P-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,87],1,"SWITCH","s5148P-SI","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,84],1,"SWITCH","s5150C-EI","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,18],1,"SWITCH","s5516","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,121],0,"ROUTE_SWITCH","s5524F","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,120],0,"ROUTE_SWITCH","s5524P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,18],0,"ROUTE_SWITCH","s5600M","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,100],0,"ROUTE_SWITCH","s5624F","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,43],0,"ROUTE_SWITCH","s5624P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,44],6,"OTHER","s5624P-PWR","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,45],0,"ROUTE_SWITCH","s5648P","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,46],6,"OTHER","s5648P-PWR","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,80],0,"ROUTE_SWITCH","s6502","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,30],0,"ROUTE_SWITCH","s6503","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,19],1,"SWITCH","s6506","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,33],0,"ROUTE_SWITCH","s6506R","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,11,2],0,"ROUTE_SWITCH","s8016A","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,11,3],0,"ROUTE_SWITCH","s8016B","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,11,1],0,"ROUTE_SWITCH","s8016Common","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,32],0,"ROUTE_SWITCH","s8505","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,57],0,"ROUTE_SWITCH","s8505e","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,22],0,"ROUTE_SWITCH","s8508","Huawei"}.
+{[1,3,6,1,4,1,2011,2,23,31],0,"ROUTE_SWITCH","s8512","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,132],6,"OTHER","secBladeFW","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,113],6,"OTHER","secBladeIDS","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,114],6,"OTHER","secBladeIPS","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,133],6,"OTHER","secBladeVPN","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,115],6,"OTHER","secEngineD500","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,93],6,"OTHER","secEngineP500","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,8],6,"OTHER","secpath10","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,5],6,"OTHER","secpath1000","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,26],6,"OTHER","secpath1000F","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,25],6,"OTHER","secpath100F","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,23],6,"OTHER","secpath100N","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,24],6,"OTHER","secpath100V","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,28],6,"OTHER","secpath10F","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,27],6,"OTHER","secpath500F","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,40],2,"ROUTE","sr8805","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,41],2,"ROUTE","sr8808","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,42],2,"ROUTE","sr8812","Huawei"}.
+{[1,3,6,1,4,1,2011,2,52],6,"OTHER","vdg10-40","Huawei"}.
+{[1,3,6,1,4,1,2011,2,53],6,"OTHER","vdg10-41","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,123],6,"OTHER","vg10-40","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,124],6,"OTHER","vg10-41","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,127],6,"OTHER","vg20-08L","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,125],6,"OTHER","vg20-16","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,126],6,"OTHER","vg20-32","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,128],6,"OTHER","vg80-20","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,129],6,"OTHER","vg80-20T","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,54],6,"OTHER","wellhope","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,122],6,"OTHER","xE7000","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,55],6,"OTHER","xe200","Huawei"}.
+{[1,3,6,1,4,1,2011,10,1,56],6,"OTHER","xe2000","Huawei"}.
+{[1,3,6,1,4,1,2218,1,5],5,"Host","DSLAM","Hubbell-Pulsecom"}.
+{[1,3,6,1,4,1,303,3,3,12,1,1,18],5,"Host","DNCC","Hughes"}.
+{[1,3,6,1,4,1,303,3,3,12,1,1,7],5,"Host","webACS","Hughes"}.
+{[1,3,6,1,4,1,2,6,131],2,"ROUTE","A","IBM"}.
+{[1,3,6,1,4,1,2,6,72],2,"ROUTE","B","IBM"}.
+{[1,3,6,1,4,1,2,6,118,2],5,"Host","HOST A","IBM"}.
+{[1,3,6,1,4,1,2,3,25],5,"Host","IBM InfoPrint 20","IBM"}.
+{[1,3,6,1,4,1,2,3,48],5,"Host","IBM InfoPrint 40","IBM"}.
+{[1,3,6,1,4,1,2,6,11],5,"Host","IBM OS/400 V4R4M0","IBM"}.
+{[1,3,6,1,4,1,2,3,1,2,1,1,3],5,"Host","IBM PowerPC Personal Computer","IBM"}.
+{[1,3,6,1,4,1,2,3,1],5,"Host","InRange","IBM"}.
+{[1,3,6,1,4,1,2,3,34],5,"Host","Infoprint 32","IBM"}.
+{[1,3,6,1,4,1,2,3,6],5,"Host","Network Printer 24","IBM"}.
+{[1,3,6,1,4,1,2,6,46],5,"Host","Oce digital copier","IBM"}.
+{[1,3,6,1,4,1,2,3,1,2,1,1,2],5,"Host","RISC/6000","IBM"}.
+{[1,3,6,1,4,1,2,6,15],6,"HUB","mdl 13 s/n 23t7677","IBM"}.
+{[1,3,6,1,4,1,2,3,13],5,"Host","zSeries","IBM"}.
+{[1,3,6,1,4,1,9527,1,12],1,"SWITCH","1518TX/GTX","Inkra"}.
+{[1,3,6,1,4,1,469,1000,1,6],6,"Bridge","UAP","Intermec Technologies"}.
+{[1,3,6,1,4,1,3720,6],5,"Host","IQeye1","IqinVision"}.
+{[1,3,6,1,4,1,4874,1,1,1,1,3],2,"ROUTE","ERX1440","Juniper"}.
+{[1,3,6,1,4,1,4874,1,1,1,1,4],2,"ROUTE","ERX705","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,4],2,"ROUTE","M-10","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,3],2,"ROUTE","M-160","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,2],2,"ROUTE","M-20","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,1],2,"ROUTE","M-40","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,5],2,"ROUTE","M-5","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,8],2,"ROUTE","M40e Backbone Router","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,7],2,"ROUTE","T320 Backbone Router","Juniper"}.
+{[1,3,6,1,4,1,2636,1,1,1,2,6],2,"ROUTE","T640 Backbone Router","Juniper"}.
+{[1,3,6,1,4,1,181,1,25],2,"ROUTE","DataSMART 558","Kentrox"}.
+{[1,3,6,1,4,1,181,1,26],2,"ROUTE","Datasmart 698","Kentrox"}.
+{[1,3,6,1,4,1,181,1,13],2,"ROUTE","Kentrox-AAC2","Kentrox"}.
+{[1,3,6,1,4,1,964,3,1],2,"ROUTE","M13 (T3 Multiplexer)","Kentrox"}.
+{[1,3,6,1,4,1,555,2,3,7],2,"ROUTE","Mega - E","Larscom"}.
+{[1,3,6,1,4,1,555,2,3,6],2,"ROUTE","Mega - T","Larscom"}.
+{[1,3,6,1,4,1,641,1],5,"Host","Lexmark Optra","Lexmark-International"}.
+{[1,3,6,1,4,1,476,1,2,1,1],5,"Host","","Liebert"}.
+{[1,3,6,1,4,1,476,1,1,1,5],5,"Host","UPS","Liebert"}.
+{[1,3,6,1,4,1,1575,1,5],5,"Host","HOST","Linux"}.
+{[1,3,6,1,4,1,8072,3,2,10],4,"SERVER","Net-SNMP Agent 5.1","Linux"}.
+{[1,3,6,1,4,1,838,5,1,1,0],2,"ROUTE","AP3","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,1000,1,6],2,"ROUTE","Lucent Access Point 1000 A","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,1000,4,0],2,"ROUTE","Lucent Access Point 1000 B","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,1000,4,1],2,"ROUTE","Lucent Access Point 1000 C","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,1,1],2,"ROUTE","Lucent Access Point 300_ST A","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,2,0],2,"ROUTE","Lucent Access Point 300_ST B","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,2,1],2,"ROUTE","Lucent Access Point 300_ST C","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,3,0],2,"ROUTE","Lucent Access Point 300_ST D","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,3,0],2,"ROUTE","Lucent Access Point 300_ST E","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,0,1],2,"ROUTE","Lucent Access Point 300_U A","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,1,0],2,"ROUTE","Lucent Access Point 300_U B","Lucent-Xedia"}.
+{[1,3,6,1,4,1,838,5,1,300,0,0],2,"ROUTE","AP300","Lucent"}.
+{[1,3,6,1,4,1,529,1,9],2,"ROUTE","APX-1000","Lucent"}.
+{[1,3,6,1,4,1,81,17,2,11],1,"SWITCH","Cajun P120","Lucent"}.
+{[1,3,6,1,4,1,1751,1,45,1],1,"SWITCH","Cajun P550","Lucent"}.
+{[1,3,6,1,4,1,1751,1,45,8],1,"SWITCH","Cajun Switch PA80","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,7],6,"Hub","M410","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,10],6,"Hub","M420","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,4],6,"Hub","M440","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,11],1,"SWITCH","M440-01","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,15],1,"SWITCH","M770","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,16],1,"SWITCH","M770ATM","Lucent"}.
+{[1,3,6,1,4,1,529,1,4],2,"ROUTE","MAX TNT","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,17],1,"SWITCH","P330","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,9],6,"Hub","STACK","Lucent"}.
+{[1,3,6,1,4,1,81,17,1,12],1,"SWITCH","Visage A","Lucent"}.
+{[1,3,6,1,4,1,81,17,2,8],1,"SWITCH","Visage B","Lucent"}.
+{[1,3,6,1,4,1,4253,1,1],2,"ROUTE","WavSystem","LuxN"}.
+{[1,3,6,1,4,1,63,1],5,"Host","MacOS 9.0","Macintosh"}.
+{[1,3,6,1,4,1,326,2,2,17],1,"SWITCH","ASX-1200","Marconi"}.
+{[1,3,6,1,4,1,326,2,2,18],1,"SWITCH","ASX-4000","Marconi"}.
+{[1,3,6,1,4,1,326,2,20,1,2,1,2],1,"SWITCH","ES-1200","Marconi"}.
+{[1,3,6,1,4,1,1012,2,5,2,1],1,"SWITCH","ESR Switch Agent V5.3.2","Marconi"}.
+{[1,3,6,1,4,1,2154,1,1,1,2],1,"SWITCH","ESX minor","Marconi"}.
+{[1,3,6,1,4,1,326,2,2,20],1,"SWITCH","ESX-3000","Marconi"}.
+{[1,3,6,1,4,1,326,2,2,16],1,"SWITCH","TNX-1100","Marconi"}.
+{[1,3,6,1,4,1,289,2,1,1,2],1,"SWITCH","ED-6064","McDATA"}.
+{[1,3,6,1,4,1,1476],5,"Host","SNMP agent for Sentinel 2000","MicroFrame"}.
+{[1,3,6,1,4,1,311,1,1,3,1],5,"Host","HOST A","Microsoft"}.
+{[1,3,6,1,4,1,311,1,1,3,1,10,14,3,1],5,"Host","HOST B","Microsoft"}.
+{[1,3,6,1,4,1,311,1,1,3,1,1],5,"Host","HOST C","Microsoft"}.
+{[1,3,6,1,4,1,311,1,1,3,1,2],5,"Host","HOST D","Microsoft"}.
+{[1,3,6,1,4,1,311,1,1,3,1,3],5,"Host","HOST E","Microsoft"}.
+{[1,3,6,1,4,1,3246,254,1],5,"Host","M300","MiraPoint"}.
+{[1,3,6,1,4,1,449,2,1,9565],2,"ROUTE","VANGUARD 340","Motorola"}.
+{[1,3,6,1,4,1,449,2,1,6435],2,"ROUTE","Vanguard 6435","Motorola"}.
+{[1,3,6,1,4,1,449,2,1,6455],2,"ROUTE","Vanguard 6455","Motorola"}.
+{[1,3,6,1,4,1,629,14,1,1],6,"Hub","NH1026","NBASE"}.
+{[1,3,6,1,4,1,629,11,5,1],1,"SWITCH","NH2016","NBASE"}.
+{[1,3,6,1,4,1,607,1,5,1,0],5,"Host","MP-RAS","NCR"}.
+{[1,3,6,1,4,1,119,1,3,13,4],1,"SWITCH","Bluefire 5003","NEC"}.
+{[1,3,6,1,4,1,119,1,3,13,1],1,"SWITCH","Bluefire 5010 ATM Switch / Router","NEC"}.
+{[1,3,6,1,4,1,119,1,14,12],1,"SWITCH","Bluefire 8000 series 10G ATM Switch","NEC"}.
+{[1,3,6,1,4,1,119,1,14,8],1,"SWITCH","Bluefire 8000 series 2.5G ATM Switch","NEC"}.
+{[1,3,6,1,4,1,119,1,76,3],1,"SWITCH","NEAX2000IPS IP PBX","NEC"}.
+{[1,3,6,1,4,1,119,1,14,9],1,"SWITCH","NETNEX8775","NEC"}.
+{[1,3,6,1,4,1,10,2,1,3],2,"ROUTE","","NSC"}.
+{[1,3,6,1,4,1,304,2,2,19,4652],2,"ROUTE","4652","Netopia"}.
+{[1,3,6,1,4,1,304,2,2,18],2,"ROUTE","Netopia R7200-T","Netopia"}.
+{[1,3,6,1,4,1,343,2,4,11],5,"Host","HOST","NetportExpress"}.
+{[1,3,6,1,4,1,3224,1,4],3,"FIREWALL","NetScreen-100","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,9],3,"FIREWALL","NetScreen-204","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,2],3,"FIREWALL","NetScreen-5","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,13],3,"FIREWALL","NetScreen-5200","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,1],3,"FIREWALL","NetScreen-5XT","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,6],3,"FIREWALL","Netscreen-500","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,14],3,"FIREWALL","Netscreen-5GT","Netscreen"}.
+{[1,3,6,1,4,1,3224,1,10],3,"FIREWALL","V5","Netscreen"}.
+{[1,3,6,1,4,1,789,1,1,1],5,"Host","NetApp Release 5.3.4R392","NetworkAppliance"}.
+{[1,3,6,1,4,1,789,2,2],5,"Host","NetCache C1105","NetworkAppliance"}.
+{[1,3,6,1,4,1,3401,2],5,"Host","Sniffer Pro 3.0","NetworkAppliance"}.
+{[1,3,6,1,4,1,94,1,21,2,1,10],3,"FIREWALL","IP110","Nokia"}.
+{[1,3,6,1,4,1,94,1,21,2,1,5],3,"FIREWALL","IP440","Nokia"}.
+{[1,3,6,1,4,1,94,1,21,2,1,11],3,"FIREWALL","IP530","Nokia"}.
+{[1,3,6,1,4,1,94,1,21,2,1,12],3,"FIREWALL","IP740","Nokia"}.
+{[1,3,6,1,4,1,94,1,21,2,1,8],3,"FIREWALL","Nokia IP650","Nokia"}.
+{[1,3,6,1,4,1,94,1,21,2,1,1],3,"FIREWALL","Nokia IPS0","Nokia"}.
+{[1,3,6,1,4,1,94,1,33],5,"Host","Nokia WAP Server","Nokia"}.
+{[1,3,6,1,4,1,94,1,21,2,1,9],3,"FIREWALL","Nokia2-Firewall-1 3.2-fcs4 releng 783","Nokia"}.
+{[1,3,6,1,4,1,1872,1,10],1,"SWITCH","ACEdirector 4","Nortel"}.
+{[1,3,6,1,4,1,1872,1,9],1,"SWITCH","ACEswitch 184","Nortel"}.
+{[1,3,6,1,4,1,2272,7],1,"SWITCH","Accelar 1150","Nortel"}.
+{[1,3,6,1,4,1,45,3,43,1],1,"SWITCH","BayStack 420","Nortel"}.
+{[1,3,6,1,4,1,45,3,46,1],1,"SWITCH","BayStack 470-48T","Nortel"}.
+{[1,3,6,1,4,1,45,3,40,1],1,"SWITCH","Business Policy Switch 2000","Nortel"}.
+{[1,3,6,1,4,1,541,2,0],2,"ROUTE","CLAM","Nortel"}.
+{[1,3,6,1,4,1,2637,1,2,1,1],1,"SWITCH","CVX-1800","Nortel"}.
+{[1,3,6,1,4,1,562,36,1,3],2,"ROUTE","Carrier Passport","Nortel"}.
+{[1,3,6,1,4,1,2505,10],2,"ROUTE","Contivity A","Nortel"}.
+{[1,3,6,1,4,1,2505,4],2,"ROUTE","Contivity B","Nortel"}.
+{[1,3,6,1,4,1,2505,5],2,"ROUTE","Contivity C","Nortel"}.
+{[1,3,6,1,4,1,2505,6],2,"ROUTE","Contivity D","Nortel"}.
+{[1,3,6,1,4,1,2505,8],2,"ROUTE","Contivity E","Nortel"}.
+{[1,3,6,1,4,1,2505,13],2,"ROUTE","Contivity Extranet Switch V04_06.120","Nortel"}.
+{[1,3,6,1,4,1,2505,12],2,"ROUTE","Contivity Extranet Switch V04_07.021","Nortel"}.
+{[1,3,6,1,4,1,2505,2700],2,"ROUTE","Contivity Extranet Switch V04_75.100","Nortel"}.
+{[1,3,6,1,4,1,2505,9],2,"ROUTE","Contivity VPN 4600","Nortel"}.
+{[1,3,6,1,4,1,562,4,2,2],5,"Host","DMS Supernode","Nortel"}.
+{[1,3,6,1,4,1,541,2],2,"ROUTE","MARLIN","Nortel"}.
+{[1,3,6,1,4,1,2865,1],1,"SWITCH","OPTera Metro 5000","Nortel"}.
+{[1,3,6,1,4,1,2272,34],1,"SWITCH","PassPort 8603","Nortel"}.
+{[1,3,6,1,4,1,2272,33],1,"SWITCH","Passport 8106","Nortel"}.
+{[1,3,6,1,4,1,2272,32],1,"SWITCH","Passport 8110","Nortel"}.
+{[1,3,6,1,4,1,2272,31],1,"SWITCH","Passport 8606","Nortel"}.
+{[1,3,6,1,4,1,2272,30],0,"ROUTE_SWITCH","Passport 8610","Nortel"}.
+{[1,3,6,1,4,1,3199,10,1],2,"ROUTE","Shasta 5000","Nortel"}.
+{[1,3,6,1,4,1,1727,1,2,1],5,"Host","HOST B","Novell"}.
+{[1,3,6,1,4,1,23,1,13,2],5,"Host","HOST C","Novell"}.
+{[1,3,6,1,4,1,23,1,6,4,11],5,"Host","Novell NewWare 4.11","Novell"}.
+{[1,3,6,1,4,1,23,1,6,5],5,"Host","Novell NewWare 5.00g","Novell"}.
+{[1,3,6,1,4,1,1795],5,"Host","T1 CSU/DSU","Paradyne"}.
+{[1,3,6,1,4,1,534,2,5,1],5,"Host","ConnectUPS Adapter","Powerware"}.
+{[1,3,6,1,4,1,6664,10,2,2],5,"Host","Ether3201-202","Precidia"}.
+{[1,3,6,1,4,1,841,1],6,"Bridge","","Proxim Inc."}.
+{[1,3,6,1,4,1,11898,2,4,11],6,"Bridge","AP-2500","Proxim Inc."}.
+{[1,3,6,1,4,1,480],5,"Host","QMS 3225 Print System","QMS-Inc."}.
+{[1,3,6,1,4,1,300,102],5,"Host","DL3800","Quickeagle"}.
+{[1,3,6,1,4,1,164,6,1,3,82],2,"ROUTE","IP-mux1","RAD"}.
+{[1,3,6,1,4,1,164,6,1,3,83],2,"ROUTE","IP-mux16","RAD"}.
+{[1,3,6,1,4,1,124,300,1,1],5,"Host","CSU/DSU for ISX5311","Racal Datacomm"}.
+{[1,3,6,1,4,1,89,1,1,62,6],1,"SWITCH","Fireproof","Radware"}.
+{[1,3,6,1,4,1,6339],0,"三层","DCRS-5512GC","Red-Giant"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,13],0,"三层","Red-Giant Layer 3","Red-Giant"}.
+{[1,3,6,1,4,1,4881,1,1,9],1,"二层","S1926G+","Red-Giant"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,1],0,"二层","S2126G","Red-Giant"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,12],0,"三层","S3550-24","Red-Giant"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,28],0,"三层","S3750","Red-Giant"}.
+{[1,3,6,1,4,1,2352,1,4],2,"ROUTE","SMS 10000","Redback"}.
+{[1,3,6,1,4,1,2352,1,3],2,"ROUTE","SMS 1800","Redback"}.
+{[1,3,6,1,4,1,5567,1,1,2],1,"SWITCH","RS 8600","Riverstone Networks"}.
+{[1,3,6,1,4,1,285,9,26],1,"SWITCH","RS8600","Riverstone Networks"}.
+{[1,3,6,1,4,1,32,1,2,0,0],5,"Host","HOST","SCO"}.
+{[1,3,6,1,4,1,99,1,1,3,11],5,"Host","HOST","SNMPResearch"}.
+{[1,3,6,1,4,1,166,2,8],1,"SWITCH","LanRover Access","Shiva"}.
+{[1,3,6,1,4,1,166,2,3],1,"SWITCH","LanRover/E Plus","Shiva"}.
+{[1,3,6,1,4,1,231,7,1,5,2,1],2,"ROUTE","Attane i210","Siemens"}.
+{[1,3,6,1,4,1,1548,5930,0],2,"ROUTE","Efficient 5930 DMT Router v6.1.001","Siemens"}.
+{[1,3,6,1,4,1,763,3],2,"ROUTE","SpeedStream 5200","Siemens"}.
+{[1,3,6,1,4,1,2302],5,"Host","QoS Works","Sitara"}.
+{[1,3,6,1,4,1,397,1,18],2,"ROUTE","Megapac","Stalecom"}.
+{[1,3,6,1,4,1,260,1,1],3,"FIREWALL","Check Point FireWall A","Sun"}.
+{[1,3,6,1,4,1,2620,1,1],3,"FIREWALL","Check Point FireWall B","Sun"}.
+{[1,3,6,1,4,1,42,2,1,1],5,"Host","HOST A","Sun"}.
+{[1,3,6,1,4,1,2021,250,3],5,"Host","Linux nbrnm 1101 A","Sun"}.
+{[1,3,6,1,4,1,2021,250,10],5,"Host","Linux nbrnm 1101 B","Sun"}.
+{[1,3,6,1,4,1,42,2,70],5,"Host","SunFire","Sun"}.
+{[1,3,6,1,4,1,42,1,2,1,1],5,"Host","T300","Sun"}.
+{[1,3,6,1,4,1,551,2,1,76],2,"ROUTE","AP1000E V5.21","Symbol"}.
+{[1,3,6,1,4,1,485,1,1,1,69],5,"Host","3620","Sync-Research-Inc."}.
+{[1,3,6,1,4,1,485,1,1,1,66],5,"Host","4203-8T","Sync-Research-Inc."}.
+{[1,3,6,1,4,1,485,1,1,1,62],5,"Host","E2003","Sync-Research-Inc."}.
+{[1,3,6,1,4,1,485,1,1,1,63],5,"Host","HOST A","Sync-Research-Inc."}.
+{[1,3,6,1,4,1,485,1,1,1,68],5,"Host","Red Kap","Sync-Research-Inc."}.
+{[1,3,6,1,4,1,485,1,1,1,64],5,"Host","Sync","Sync-Research-Inc."}.
+{[1,3,6,1,4,1,58,1,1,1,2,1],5,"Host","HOST","TGV"}.
+{[1,3,6,1,4,1,169,3,155,1],5,"Host","NonStop Kernel System Version: G6","Tandem"}.
+{[1,3,6,1,4,1,3174,1,8],2,"ROUTE","1200","Tasman"}.
+{[1,3,6,1,4,1,128,2,1,4,1,3,1],5,"Host","Phaser 740","Tektronix"}.
+{[1,3,6,1,4,1,128,2,1,4,1,5,2],5,"Host","Phaser 750 N","Tektronix"}.
+{[1,3,6,1,4,1,128,2,1,4,2,7,2],5,"Host","Phaser 840DP","Tektronix"}.
+{[1,3,6,1,4,1,117,2,1],2,"ROUTE","","Telebit"}.
+{[1,3,6,1,4,1,3174,1,1],2,"ROUTE","1400","Tiara"}.
+{[1,3,6,1,4,1,1022,9],2,"ROUTE","PERMIT/Gate 7520","Timestep"}.
+{[1,3,6,1,4,1,1748,2,1],1,"SWITCH","Expresso GS","TutSystems"}.
+{[1,3,6,1,4,1,1748,2,5],2,"ROUTE","MXL-2300","TutSystems"}.
+{[1,3,6,1,4,1,75,5,3],5,"Host","NIU","UB"}.
+{[1,3,6,1,4,1,4874,1,1,1,1,1],2,"ROUTE","ERX-1440","Unisphere"}.
+{[1,3,6,1,4,1,4874,1,1,1,1,2],2,"ROUTE","ERX705","Unisphere"}.
+{[1,3,6,1,4,1,223,16],5,"Host","ClearPath HMP NX","Unisys"}.
+{[1,3,6,1,4,1,607,1,4,1],5,"Host","Unix System V Release 4.2","UnixSystem"}.
+{[1,3,6,1,4,1,1246,1,1,7],5,"Host","HOST","Visual Networks"}.
+{[1,3,6,1,4,1,762,2],5,"Host","SN-00UT01200771 V3.20","WavePOINT-II"}.
+{[1,3,6,1,4,1,253,8,62,1,1,3,1,3],5,"Host","HOST","Xerox"}.
+{[1,3,6,1,4,1,15,1,1],5,"Host","HOST A","Xylogics"}.
+{[1,3,6,1,4,1,15,1,3,1],5,"Host","HOST B","Xylogics"}.
+{[1,3,6,1,4,1,15,1,3,3],5,"Host","HOST C","Xylogics"}.
+{[1,3,6,1,4,1,15,1,3,4],5,"Host","HOST D","Xylogics"}.
+{[1,3,6,1,4,1,33,8,5,3,10],2,"ROUTE","SBK Remote Router","Xyplex"}.
+{[1,3,6,1,4,1,33,8,1,7,2],2,"ROUTE","Xyplex software X.25 Gateway V1 3.2","Xyplex"}.
+{[1,3,6,1,4,1,1764,1],5,"Host","NetWatch","eComServer"}.
+{[1,3,6,1,4,1,3902,15,2,1,6],1,"SWITCH","ZXR10 2826S","zte"}.
+{[1,3,6,1,4,1,3902,3,100,7],0,"ROUTE_SWITCH","ZXR10 t160g","zte"}.
+{[1,3,6,1,4,1,3902,3,100,10],0,"ROUTE_SWITCH","zrx t64g","zte"}.
+{[1,3,6,1,4,1,3902,15,2,1,2],1,"SWITCH","zrx10 2626","zte"}.
+{[1,3,6,1,4,1,3902,15,2,1,1 ],1,"SWITCH","zrx10 2826e","zte"}.
+{[1,3,6,1,4,1,3902,3,100,14],0,"ROUTE_SWITCH","zrx_3928","zte"}.
+{[1,3,6,1,4,1,3902,3,100,5],0,"ROUTE_SWITCH","zxr10_ger","zte"}.
+{[1,3,6,1,4,1,4881,1,1,12],1,"SWITCH","star-S1926F","锐捷"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,27],1,"SWITCH","star-S2026G","锐捷"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,1],1,"SWITCH","star-S2126G","锐捷"}.
+{[1,3,6,1,4,1,4881,1,1,10,1,6],0,"ROUTE_SWITCH","star-S3550","锐捷"}.

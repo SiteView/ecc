@@ -1,0 +1,227 @@
+<HTML><HEAD><TITLE>sdl_video</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/sdl_video.hrl">sdl_video.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="getSurface">
+<strong> getSurface(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: sdl_surface record<br>
+Desc:<br> Copies data pointed to by Surface to sdl_surface record.<br>
+</UL>
+<p><A NAME="getPixelFormat">
+<strong> getPixelFormat(Surface)  </strong><UL>Args: PixelFormatRef<br>
+Returns: a sdl_pixelformat record<br>
+Desc:<br> Copies data pointed to by Surface to sdl_pixelformat record.<br>
+</UL>
+<p><A NAME="getPalette">
+<strong> getPalette(Surface)  </strong><UL>Args: SurfaceRef ref<br>
+Returns: a sdl_palette record<br>
+Desc:<br> Copies data pointed to by Surface to sdl_palette record.<br>
+</UL>
+<p><A NAME="getPixels">
+<strong> getPixels(Surface, Size)  </strong><UL>Args: Surface Ref, Size (a sdl_rectangle record)<br>
+Returns: A binary containing all pixles, size varies with pixel format<br>
+Desc:<br> Copies pixels (specified by Size) of Surface to a binary<br>
+</UL>
+<p><A NAME="setVideoMode">
+<strong> setVideoMode(W, H, Bpp, Type)  </strong><UL>Returns: a surface ref or the atom 'error'<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetvideomode.html">C-API:</a> SDL_Surface *SDL_SetVideoMode(int width, int height, int bpp, Uint32 flags);<br>
+</UL>
+<p><A NAME="videoDriverName">
+<strong> videoDriverName()  </strong><UL>Returns: [Name] | []<br>
+<a href="http://www.libsdl.org/docs/html/sdlvideodrivername.html">C-API:</a> char *SDL_VideoDriverName(char *namebuf, int maxlen);<br>
+</UL>
+<p><A NAME="getVideoSurface">
+<strong> getVideoSurface()  </strong><UL>Returns: surface ref to the current display<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetvideosurface.html">C-API:</a> SDL_Surface * SDL_GetVideoSurface(void);<br>
+</UL>
+<p><A NAME="videoModeOK">
+<strong> videoModeOK(W, H, Bpp, Type)  </strong><UL>Args: See sdl documentation<br>
+Returns: true | false  (see sdl doc)<br>
+<a href="http://www.libsdl.org/docs/html/sdlvideomodeok.html">C-API:</a> int SDL_VideoModeOK(int width, int height, int bpp, Uint32 flags);<br>
+</UL>
+<p><A NAME="listModes">
+<strong> listModes({formatp, Ref}, Flags)  </strong><UL>Args: PixelFormat (either as sdl_pixelformat record or a PixelFormat Ref or null) VideoFlags<br>
+Returns: [AvailableDimensions (in sdl_rect)] | all<br>
+<a href="http://www.libsdl.org/docs/html/sdllistmodes.html">C-API:</a> SDL_Rect ** SDL_ListModes(SDL_PixelFormat *format, Uint32 flags);<br>
+</UL>
+<p><A NAME="displayFormat">
+<strong> displayFormat(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: Surface Ref<br>
+<a href="http://www.libsdl.org/docs/html/sdldisplayformat.html">C-API:</a> SDL_Surface * SDL_DisplayFormat(SDL_Surface *surface);<br>
+</UL>
+<p><A NAME="blitSurface">
+<strong> blitSurface(SSurf, SRect, DSurf, DRect)  </strong><UL>Args: SrcSurfaceRef, SrcRect | null, DestSurfaceRef, DestRect | null<br>
+Returns: {ClippedSrcRect | null, ClippedDestRect | null} or {error, ErrorLevel}  Where ErrorLevel = -1 | -2<br>
+<a href="http://www.libsdl.org/docs/html/sdlblitsurface.html">C-API:</a> int SDL_BlitSurface(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect);<br>
+</UL>
+<p><A NAME="fillRect">
+<strong> fillRect(S, R, C)  </strong><UL>Args: SurfaceRef, sdl_rectangle|null, color<br>
+Returns: true | false (on failure)<br>
+<a href="http://www.libsdl.org/docs/html/sdlfillrect.html">C-API:</a> int SDL_FillRect(SDL_Surface *dst, SDL_Rect *dstrect, Uint32 color);<br>
+</UL>
+<p><A NAME="updateRect">
+<strong> updateRect(S, X, Y, W, H)  </strong><UL>Args: SurfaceRef, X, Y, W, H<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlupdaterect.html">C-API:</a> void SDL_UpdateRect(SDL_Surface *screen, Sint32 x, Sint32 y, Uint32 w, Uint32 h);<br>
+</UL>
+<p><A NAME="updateRects">
+<strong> updateRects(S, R)  </strong><UL>Args: SurfaceRef, [sdl_rect]<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlupdaterects.html">C-API:</a> void SDL_UpdateRects(SDL_Surface *screen, int numrects, SDL_Rect *rects);<br>
+</UL>
+<p><A NAME="flip">
+<strong> flip({surfacep, Ref})  </strong><UL>Args: Surface Ref<br>
+Returns: true | false (if error)<br>
+<a href="http://www.libsdl.org/docs/html/sdlflip.html">C-API:</a> int SDL_Flip(SDL_Surface *screen);<br>
+</UL>
+<p><A NAME="setColors">
+<strong> setColors(S, Colors, FirstColor, Ncolors)  </strong><UL>Args: SurfaceRef, [ColorList], FirstColor, NoOfColors<br>
+Returns: true (when all colors where set) false (otherwise)<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetcolors.html">C-API:</a> int SDL_SetColors(SDL_Surface *surface, SDL_Color *colors, int firstcolor, int ncolors);<br>
+</UL>
+<p><A NAME="setColorKey">
+<strong> setColorKey(Surface, Flag, Key)  </strong><UL>Args: Surface Ref, Flag(int), Key(int)<br>
+Returns: true (on success) | false on failure<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetcolorkey.html">C-API:</a> int SDL_SetColorKey(SDL_Surface *surface, Uint32 flag, Uint32 key);<br>
+</UL>
+<p><A NAME="mapRGB">
+<strong> mapRGB(Surface, R, G, B)  </strong><UL>Args: Surface Ref, Int32, Int32, Int32<br>
+Returns: Int32<br>
+<a href="http://www.libsdl.org/docs/html/sdlmaprgb.html">C-API:</a> Uint32 SDL_MapRGB(SDL_PixelFormat *format, Uint8 r, Uint8 g, Uint8 b);<br>
+</UL>
+<p><A NAME="createRGBsurface">
+<strong> createRGBsurface(Flags, W, H, D, RM, GM, BM, AM)  </strong><UL>Args: SurfaceFlags Width Height Depth Rmask:32 Gmask:32 Bmask:32 Amask:32<br>
+Returns: A surface ref<br>
+<a href="http://www.libsdl.org/docs/html/sdlcreatergbsurface.html">C-API:</a> SDL_Surface *SDL_CreateRGBSurface(Uint32 flags, int width, int height, int depth, Uint32 Rmask, Uint32 Gmask, Uint32 Bmask, Uint32 Amask);<br>
+</UL>
+<p><A NAME="createRGBsurfaceFrom">
+<strong> createRGBsurfaceFrom(Pixels, W, H, D, P, RM, GM, BM, AM)  </strong><UL>Args: Pixels(Binary) Width Height Depth Pitch Rmask:32 Gmask:32 Bmask:32 Amask:32<br>
+Returns: A surface ref<br>
+<a href="http://www.libsdl.org/docs/html/sdlcreatergbsurfacefrom.html">C-API:</a> SDL_Surface *SDL_CreateRGBSurfaceFrom(void *pixels, int width, int height, int depth, int pitch,	Uint32 Rmask, Uint32 Gmask, Uint32 Bmask, Uint32 Amask);<br>
+</UL>
+<p><A NAME="freeSurface">
+<strong> freeSurface(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlfreesurface.html">C-API:</a> void SDL_FreeSurface(SDL_Surface *surface);<br>
+</UL>
+<p><A NAME="mustLock">
+<strong> mustLock(Surface)  </strong><UL>Args: surfaceRef<br>
+Returns: Bool<br>
+<a href="http://www.libsdl.org/docs/html/.html">C-API:</a> Macro<br>
+</UL>
+<p><A NAME="lockSurface (I don't have any hardware to test this function on the manual says don't do any lib func calls when surface is locked we can't avoid that :)">
+<strong> lockSurface(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: true (if locked) false otherwise<br>
+<a href="http://www.libsdl.org/docs/html/sdllocksurface.html">C-API:</a> int SDL_LockSurface(SDL_Surface *surface);<br>
+</UL>
+<p><A NAME="unLockSurface (I don't have any hardware to test this function on)">
+<strong> unlockSurface(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlunlocksurface.html">C-API:</a> void SDL_UnlockSurface(SDL_Surface *surface);<br>
+</UL>
+<p><A NAME="loadBMP">
+<strong> loadBMP(File)  </strong><UL>Args: Name of the BMP file (string)<br>
+Returns: a surface ref or null<br>
+<a href="http://www.libsdl.org/docs/html/sdlloadbmp.html">C-API:</a> SDL_Surface * SDL_LoadBMP(char * file);<br>
+</UL>
+<p><A NAME="saveBMP">
+<strong> saveBMP(Surface, File)  </strong><UL>Args: Name of the BMP file (string)<br>
+Returns: true or false (if it failed)<br>
+<a href="http://www.libsdl.org/docs/html/sdlsavebmp.html">C-API:</a> int SDL_SaveBMP(SDL_Surface *surface, char *file)<br>
+</UL>
+<p><A NAME="setAlpha">
+<strong> setAlpha(Surface, Flag, Alpha)  </strong><UL>Args: SurfaceRef, Flag:32, Alpha:32<br>
+Returns: integer (undocumented in (my version of) SDL)<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetalpha.html">C-API:</a> int SDL_SetAlpha(SDL_Surface *surface, Uint32 flag, Uint8 alpha);<br>
+</UL>
+<p><A NAME="setClipping">
+<strong> setClipping(Surface, Top, Left, Botton, Right)  </strong><UL>Args: SurfaceRef, Top, Left, Botton, Right<br>
+Returns: ok<br>
+Desc:<br> Obsolete??<br>
+</UL>
+<p><A NAME="setGamma">
+<strong> setGamma(Red,Green,Blue)  </strong><UL>Args: red, green, blue<br>
+Returns: Bool<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetgamma.html">C-API:</a> int SDL_SetGamma(float red, float green, float blue)<br>
+</UL>
+<p><A NAME="setGammaRamp">
+<strong> setGammaRamp(Red,Green,Blue)  </strong><UL>Args: redList, greenList, blueList (where each list contains 256 16 bits value)<br>
+Returns: Bool<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetgammaramp.html">C-API:</a> int SDL_SetGammaRamp(Uint16 red[256], Uint16 green[256], Uint16 blue[256])<br>
+</UL>
+<p><A NAME="getGammaRamp">
+<strong> getGammaRamp()  </strong><UL>Args: none<br>
+Returns: {res, redList, greenList, blueList} (where each list contains 256 16 bits value)<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetgammaramp.html">C-API:</a> int SDL_GetGammaRamp(Uint16 *red, Uint16 *green, Uint16 *blue])<br>
+Desc:<br> If res is == true, the lists contain valid information<br>
+</UL>
+<p><A NAME="wm_setCaption">
+<strong> wm_setCaption(Title, IconTitle)  </strong><UL>Args: Title List, IconTitleList<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlwmsetcaption.html">C-API:</a> void SDL_WM_SetCaption(const char *title, const char *icon);<br>
+</UL>
+<p><A NAME="wm_getCaption">
+<strong> wm_getCaption()  </strong><UL>Returns: {TitleStr, IconTitleStr}<br>
+<a href="http://www.libsdl.org/docs/html/sdlwmgetcaption.html">C-API:</a> void SDL_WM_GetCaption(char **title, char **icon);<br>
+</UL>
+<p><A NAME="wm_setIcon">
+<strong> wm_setIcon(Icon, Mask)  </strong><UL>Args: Icon (sdl_surface), Mask (list of bytes) | null<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlwmseticon.html">C-API:</a> void SDL_WM_SetIcon(SDL_Surface *icon, Uint8 *mask);<br>
+</UL>
+<p><A NAME="WM_IconifyWindow">
+<strong> wm_iconifyWindow()  </strong><UL>Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlwmiconifywindow.html">C-API:</a> int SDL_WM_IconifyWindow(void);<br>
+</UL>
+<p><A NAME="SDL_WM_ToggleFullScreen">
+<strong> wm_toggleFullScreen(Surface)  </strong><UL>Args: SurfaceRef<br>
+Returns: true or false (on failure)<br>
+<a href="http://www.libsdl.org/docs/html/sdlwmtogglefullscreen.html">C-API:</a> int SDL_WM_ToggleFullScreen(SDL_Surface *surface);<br>
+</UL>
+<p><A NAME="wm_grabInput">
+<strong> wm_grabInput(GrabMode)  </strong><UL>Args: GrabMode (?SDL_GRAB_QUERY | ?SDL_GRAB_OFF | ?SDL_GRAB_ON)<br>
+Returns: GrabMode (?SDL_GRAB_OFF | ?SDL_GRAB_ON)<br>
+<a href="http://www.libsdl.org/docs/html/sdlwmgrabinput.html">C-API:</a> SDL_GrabMode SDL_WM_GrabInput(SDL_GrabMode mode);<br>
+</UL>
+<p><A NAME="wm_getInfo">
+<strong> wm_getInfo()  </strong><UL>Returns: {SDLVersion = {Major, Minor, Patch}, OSSpecBinary}<br>
+Desc:<br> Only windows returns anything useful (window handle)<br>
+</UL>
+<p><A NAME="wm_isMaximized">
+<strong> wm_isMaximized()  </strong><UL>Returns: Boolean<br>
+Desc:<br> Only windows returns anything useful (window handle)<br>
+</UL>
+<p><A NAME="gl_setAttribute">
+<strong> gl_setAttribute(Attr, Val)  </strong><UL>Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlglsetattribute.html">C-API:</a> int SDL_GL_SetAttribute(SDL_GLattr attr, int value);<br>
+</UL>
+<p><A NAME="gl_getAttribute">
+<strong> gl_getAttribute(Attr)  </strong><UL>Returns: Attribute Value<br>
+<a href="http://www.libsdl.org/docs/html/sdlglgetattribute.html">C-API:</a> int SDL_GL_GetAttribute(SDL_GLattr attr, int* value);<br>
+</UL>
+<p><A NAME="gl_swapBuffers">
+<strong> gl_swapBuffers()  </strong><UL>Returns: A timestamp generated with SDL_GetTicks<br>
+<a href="http://www.libsdl.org/docs/html/sdlglswapbuffers.html">C-API:</a> void SDL_GL_SwapBuffers(void);<br>
+</UL>
+<p><A NAME="mapRGBA">
+<strong> mapRGBA(Surface, R, G, B, A)  </strong><UL>Args: Surface Ref, Int32, Int32, Int32, Int32<br>
+Returns: Int32<br>
+<a href="http://www.libsdl.org/docs/html/sdlmaprgb.html">C-API:</a> Uint32 SDL_MapRGB(SDL_PixelFormat *format, Uint8 r, Uint8 g, Uint8 b, Uint8 a);<br>
+</UL>
+<p><A NAME="getClipRect">
+<strong> getClipRect(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: Rect<br>
+<a href="http://www.libsdl.org/docs/html/sdlgetcliprect.html">C-API:</a> void SDL_GetClipRect(SDL_Surface *surface, SDL_Rect *rect);<br>
+</UL>
+<p><A NAME="setClipRect">
+<strong> setClipRect(Surface, Rect)   </strong><UL>Args: Surface Ref, Rect<br>
+Returns: ok<br>
+<a href="http://www.libsdl.org/docs/html/sdlsetcliprect.html">C-API:</a> void SDL_SetClipRect(SDL_Surface *surface, SDL_Rect *rect);<br>
+</UL>
+<p><A NAME="displayFormatAlpha">
+<strong> displayFormatAlpha(Surface)  </strong><UL>Args: Surface Ref<br>
+Returns: Surface Ref<br>
+<a href="http://www.libsdl.org/docs/html/sdldisplayformatalpha.html">C-API:</a> SDL_Surface * SDL_DisplayFormatAlpha(SDL_Surface *surface);<br>
+</UL>
+</html>

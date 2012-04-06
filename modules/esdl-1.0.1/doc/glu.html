@@ -1,0 +1,239 @@
+<HTML><HEAD><TITLE>glu</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H3>Header File</H3>
+The header file may include additional information <a href="../include/glu.hrl">glu.hrl</a>
+<H3>Exports</H3>
+<p><A NAME="tessBeginPolygon">
+<strong> tessBeginPolygon(#tessPtr{ptr=Tobj})  </strong><UL>Args: TessObject<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessBeginPolygon.html">C-API:</a> void gluTessBeginPolygon(GLUtesselator *tobj)<br>
+</UL>
+<p><A NAME="tessCallback">
+<strong>  tessCallback(#tessPtr{ptr=Tobj}, Which, ESDL_TESSCB)  </strong><UL>Args: Which, ESDL_TESSCB one of the callback functions defined in glu.hrl<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessCallback.html">C-API:</a> void gluTessCallback(GLUtesselator *tobj, GLenum which, void (GLCALLBACK *fn)())<br>
+Desc:<br> ESDL have some predefined functions which must be supplied as callbacks funcs, see glu.hrl. New callbacks may be defined in the future, input and or implementations are welcomed.<br>
+</UL>
+<p><A NAME="tessVertex">
+<strong>  tessVertex(#tessPtr{ptr=Tobj}, {X,Y,Z})  </strong><UL>Args: Tobj, Coords[, VtxData]<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessVertex.html">C-API:</a> void gluTessVertex(GLUtesselator *tobj, GLdouble coords[3], void *vertex_data)<br>
+Desc:<br> VtxData is a tuple-list of extra data supported types are [{normal, {X,Y,Z}}, {color, {R,G,B[,A]}}, {texcoord2, {U,V}}] Use ?ESDL_TESSCB_VERTEX_DATA callback to call apropriate gl functions on the extra data.<br>
+</UL>
+<p><A NAME="beginCurve">
+<strong> beginCurve(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluBeginCurve.html">C-API:</a> void gluBeginCurve(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="beginSurface">
+<strong> beginSurface(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluBeginSurface.html">C-API:</a> void gluBeginSurface(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="beginTrim">
+<strong> beginTrim(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluBeginTrim.html">C-API:</a> void gluBeginTrim(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="build1DMipmaps">
+<strong> build1DMipmaps(Target, InternalFormat, Width, Format, Type, Data)  </strong><UL>Args: Target, InternalFormat, Width, Format, Type, <<[Data]>><br>
+Returns: ?GL_INT<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluBuild1DMipmaps.html">C-API:</a> GLint gluBuild1DMipmaps(GLenum target, GLint internalFormat, GLsizei width, GLenum format, GLenum type,  const void * data)<br>
+</UL>
+<p><A NAME="build2DMipmaps">
+<strong> build2DMipmaps(Target, InternalFormat, Width, Height, Format, Type, Data)  </strong><UL>Args: Target, InternalFormat, Width, Height, Format, Type, <<[Data]>><br>
+Returns: ?GL_INT<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluBuild2DMipmaps.html">C-API:</a> GLint gluBuild2DMipmaps(GLenum target, GLint internalFormat, GLsizei width, GLsizei height, GLenum format, GLenum type,  const void * data)<br>
+</UL>
+<p><A NAME="cylinder">
+<strong> cylinder(Quad=#quadricPtr{}, Base, Top, Height, Slices, Stacks)  </strong><UL>Args: Quad, Base, Top, Height, Slices, Stacks<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluCylinder.html">C-API:</a> void gluCylinder(GLUquadric * quad, GLdouble base, GLdouble top, GLdouble height, GLint slices, GLint stacks)<br>
+</UL>
+<p><A NAME="deleteNurbsRenderer">
+<strong> deleteNurbsRenderer(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluDeleteNurbsRenderer.html">C-API:</a> void gluDeleteNurbsRenderer(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="deleteQuadric">
+<strong> deleteQuadric(Quad=#quadricPtr{})  </strong><UL>Args: Quad<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluDeleteQuadric.html">C-API:</a> void gluDeleteQuadric(GLUquadric * quad)<br>
+</UL>
+<p><A NAME="deleteTess">
+<strong> deleteTess(Tess=#tessPtr{})  </strong><UL>Args: Tess<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluDeleteTess.html">C-API:</a> void gluDeleteTess(GLUtesselator * tess)<br>
+</UL>
+<p><A NAME="disk">
+<strong> disk(Quad=#quadricPtr{}, Inner, Outer, Slices, Loops)  </strong><UL>Args: Quad, Inner, Outer, Slices, Loops<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluDisk.html">C-API:</a> void gluDisk(GLUquadric * quad, GLdouble inner, GLdouble outer, GLint slices, GLint loops)<br>
+</UL>
+<p><A NAME="endCurve">
+<strong> endCurve(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluEndCurve.html">C-API:</a> void gluEndCurve(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="endSurface">
+<strong> endSurface(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluEndSurface.html">C-API:</a> void gluEndSurface(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="endTrim">
+<strong> endTrim(Nurb=#nurbsPtr{})  </strong><UL>Args: Nurb<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluEndTrim.html">C-API:</a> void gluEndTrim(GLUnurbs * nurb)<br>
+</UL>
+<p><A NAME="errorString">
+<strong> errorString(Error)  </strong><UL>Args: Error<br>
+Returns: [?GL_UNSIGNED_BYTE]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluErrorString.html">C-API:</a> GLubyte* gluErrorString(GLenum error)<br>
+</UL>
+<p><A NAME="getNurbsProperty">
+<strong> getNurbsProperty(Nurb=#nurbsPtr{}, Property)  </strong><UL>Args: Nurb, Property<br>
+Returns: [Data]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluGetNurbsProperty.html">C-API:</a> void gluGetNurbsProperty(GLUnurbs * nurb, GLenum property, GLfloat * data)<br>
+</UL>
+<p><A NAME="getString">
+<strong> getString(Name)  </strong><UL>Args: Name<br>
+Returns: [?GL_UNSIGNED_BYTE]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluGetString.html">C-API:</a> GLubyte* gluGetString(GLenum name)<br>
+</UL>
+<p><A NAME="getTessProperty">
+<strong> getTessProperty(Tess=#tessPtr{}, Which)  </strong><UL>Args: Tess, Which<br>
+Returns: [Data]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluGetTessProperty.html">C-API:</a> void gluGetTessProperty(GLUtesselator * tess, GLenum which, GLdouble * data)<br>
+</UL>
+<p><A NAME="loadSamplingMatrices">
+<strong> loadSamplingMatrices(Nurb=#nurbsPtr{}, Model, Perspective, View)  </strong><UL>Args: Nurb, <<[Model]>>, <<[Perspective]>>, <<[View]>><br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluLoadSamplingMatrices.html">C-API:</a> void gluLoadSamplingMatrices(GLUnurbs * nurb,  const GLfloat * model,  const GLfloat * perspective,  const GLint * view)<br>
+</UL>
+<p><A NAME="lookAt">
+<strong> lookAt(EyeX, EyeY, EyeZ, CenterX, CenterY, CenterZ, UpX, UpY, UpZ)  </strong><UL>Args: EyeX, EyeY, EyeZ, CenterX, CenterY, CenterZ, UpX, UpY, UpZ<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluLookAt.html">C-API:</a> void gluLookAt(GLdouble eyeX, GLdouble eyeY, GLdouble eyeZ, GLdouble centerX, GLdouble centerY, GLdouble centerZ, GLdouble upX, GLdouble upY, GLdouble upZ)<br>
+</UL>
+<p><A NAME="newNurbsRenderer">
+<strong> newNurbsRenderer()  </strong><UL>Returns: [NurbsPtr]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluNewNurbsRenderer.html">C-API:</a> GLUnurbs* gluNewNurbsRenderer()<br>
+</UL>
+<p><A NAME="newQuadric">
+<strong> newQuadric()  </strong><UL>Returns: [QuadricPtr]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluNewQuadric.html">C-API:</a> GLUquadric* gluNewQuadric()<br>
+</UL>
+<p><A NAME="newTess">
+<strong> newTess()  </strong><UL>Returns: [TessPtr]<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluNewTess.html">C-API:</a> GLUtesselator* gluNewTess()<br>
+</UL>
+<p><A NAME="nurbsCurve">
+<strong> nurbsCurve(Nurb=#nurbsPtr{}, KnotCount, Knots, Stride, Control, Order, Type)  </strong><UL>Args: Nurb, KnotCount, <<[Knots]>>, Stride, <<[Control]>>, Order, Type<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluNurbsCurve.html">C-API:</a> void gluNurbsCurve(GLUnurbs * nurb, GLint knotCount,  const GLfloat * knots, GLint stride,  const GLfloat * control, GLint order, GLenum type)<br>
+</UL>
+<p><A NAME="nurbsProperty">
+<strong> nurbsProperty(Nurb=#nurbsPtr{}, Property, Value)  </strong><UL>Args: Nurb, Property, Value<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluNurbsProperty.html">C-API:</a> void gluNurbsProperty(GLUnurbs * nurb, GLenum property, GLfloat value)<br>
+</UL>
+<p><A NAME="nurbsSurface">
+<strong> nurbsSurface(Nurb=#nurbsPtr{}, SKnotCount, SKnots, TKnotCount, TKnots, SStride, TStride, Control, SOrder, TOrder, Type)  </strong><UL>Args: Nurb, SKnotCount, <<[SKnots]>>, TKnotCount, <<[TKnots]>>, SStride, TStride, <<[Control]>>, SOrder, TOrder, Type<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluNurbsSurface.html">C-API:</a> void gluNurbsSurface(GLUnurbs * nurb, GLint sKnotCount,  const GLfloat * sKnots, GLint tKnotCount,  const GLfloat * tKnots, GLint sStride, GLint tStride,  const GLfloat * control, GLint sOrder, GLint tOrder, GLenum type)<br>
+</UL>
+<p><A NAME="ortho2D">
+<strong> ortho2D(Left, Right, Bottom, Top)  </strong><UL>Args: Left, Right, Bottom, Top<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluOrtho2D.html">C-API:</a> void gluOrtho2D(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top)<br>
+</UL>
+<p><A NAME="partialDisk">
+<strong> partialDisk(Quad=#quadricPtr{}, Inner, Outer, Slices, Loops, Start, Sweep)  </strong><UL>Args: Quad, Inner, Outer, Slices, Loops, Start, Sweep<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluPartialDisk.html">C-API:</a> void gluPartialDisk(GLUquadric * quad, GLdouble inner, GLdouble outer, GLint slices, GLint loops, GLdouble start, GLdouble sweep)<br>
+</UL>
+<p><A NAME="perspective">
+<strong> perspective(Fovy, Aspect, ZNear, ZFar)  </strong><UL>Args: Fovy, Aspect, ZNear, ZFar<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluPerspective.html">C-API:</a> void gluPerspective(GLdouble fovy, GLdouble aspect, GLdouble zNear, GLdouble zFar)<br>
+</UL>
+<p><A NAME="pickMatrix">
+<strong> pickMatrix(X, Y, DelX, DelY, Viewport)  </strong><UL>Args: X, Y, DelX, DelY, <<[Viewport]>><br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluPickMatrix.html">C-API:</a> void gluPickMatrix(GLdouble x, GLdouble y, GLdouble delX, GLdouble delY,  const GLint * viewport)<br>
+</UL>
+<p><A NAME="project">
+<strong> project(ObjX, ObjY, ObjZ, Model, Proj, View)  </strong><UL>Args: ObjX, ObjY, ObjZ, <<[Model]>>, <<[Proj]>>, <<[View]>><br>
+Returns: {WinX, WinY, WinZ} | error<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluProject.html">C-API:</a> GLint gluProject(GLdouble objX, GLdouble objY, GLdouble objZ,  const GLdouble * model,  const GLdouble * proj,  const GLint * view, GLdouble * winX, GLdouble * winY, GLdouble * winZ)<br>
+</UL>
+<p><A NAME="pwlCurve">
+<strong> pwlCurve(Nurb=#nurbsPtr{}, Count, Data, Stride, Type)  </strong><UL>Args: Nurb, Count, <<[Data]>>, Stride, Type<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluPwlCurve.html">C-API:</a> void gluPwlCurve(GLUnurbs * nurb, GLint count,  const GLfloat * data, GLint stride, GLenum type)<br>
+</UL>
+<p><A NAME="quadricDrawStyle">
+<strong> quadricDrawStyle(Quad=#quadricPtr{}, Draw)  </strong><UL>Args: Quad, Draw<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluQuadricDrawStyle.html">C-API:</a> void gluQuadricDrawStyle(GLUquadric * quad, GLenum draw)<br>
+</UL>
+<p><A NAME="quadricNormals">
+<strong> quadricNormals(Quad=#quadricPtr{}, Normal)  </strong><UL>Args: Quad, Normal<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluQuadricNormals.html">C-API:</a> void gluQuadricNormals(GLUquadric * quad, GLenum normal)<br>
+</UL>
+<p><A NAME="quadricOrientation">
+<strong> quadricOrientation(Quad=#quadricPtr{}, Orientation)  </strong><UL>Args: Quad, Orientation<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluQuadricOrientation.html">C-API:</a> void gluQuadricOrientation(GLUquadric * quad, GLenum orientation)<br>
+</UL>
+<p><A NAME="quadricTexture">
+<strong> quadricTexture(Quad=#quadricPtr{}, Texture)  </strong><UL>Args: Quad, Texture<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluQuadricTexture.html">C-API:</a> void gluQuadricTexture(GLUquadric * quad, GLboolean texture)<br>
+</UL>
+<p><A NAME="scaleImage">
+<strong> scaleImage(Format, WIn, HIn, TypeIn, DataIn, WOut, HOut, TypeOut, #sdlmem{bin=DataOut})  </strong><UL>Args: Format, WIn, HIn, TypeIn, <<[DataIn]>>, WOut, HOut, TypeOut, #sdlmem{} = DataOut<br>
+Returns: ?GL_INT<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluScaleImage.html">C-API:</a> GLint gluScaleImage(GLenum format, GLsizei wIn, GLsizei hIn, GLenum typeIn,  const void * dataIn, GLsizei wOut, GLsizei hOut, GLenum typeOut, GLvoid * dataOut)<br>
+</UL>
+<p><A NAME="sphere">
+<strong> sphere(Quad=#quadricPtr{}, Radius, Slices, Stacks)  </strong><UL>Args: Quad, Radius, Slices, Stacks<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluSphere.html">C-API:</a> void gluSphere(GLUquadric * quad, GLdouble radius, GLint slices, GLint stacks)<br>
+</UL>
+<p><A NAME="tessBeginContour">
+<strong> tessBeginContour(#tessPtr{ptr=Ptr})  </strong><UL>Args: Tess<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessBeginContour.html">C-API:</a> void gluTessBeginContour(GLUtesselator * tess)<br>
+</UL>
+<p><A NAME="tessEndContour">
+<strong> tessEndContour(#tessPtr{ptr=Ptr})  </strong><UL>Args: Tess<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessEndContour.html">C-API:</a> void gluTessEndContour(GLUtesselator * tess)<br>
+</UL>
+<p><A NAME="tessEndPolygon">
+<strong> tessEndPolygon(#tessPtr{ptr=Ptr})  </strong><UL>Args: Tess<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessEndPolygon.html">C-API:</a> void gluTessEndPolygon(GLUtesselator * tess)<br>
+</UL>
+<p><A NAME="tessNormal">
+<strong> tessNormal(#tessPtr{ptr=Ptr}, ValueX, ValueY, ValueZ)  </strong><UL>Args: Tess, ValueX, ValueY, ValueZ<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessNormal.html">C-API:</a> void gluTessNormal(GLUtesselator * tess, GLdouble valueX, GLdouble valueY, GLdouble valueZ)<br>
+</UL>
+<p><A NAME="tessProperty">
+<strong> tessProperty(Tess=#tessPtr{}, Which, Data)  </strong><UL>Args: Tess, Which, Data<br>
+Returns: ok<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluTessProperty.html">C-API:</a> void gluTessProperty(GLUtesselator * tess, GLenum which, GLdouble data)<br>
+</UL>
+<p><A NAME="unProject">
+<strong> unProject(WinX, WinY, WinZ, Model, Proj, View)  </strong><UL>Args: WinX, WinY, WinZ, <<[Model]>>, <<[Proj]>>, <<[View]>><br>
+Returns: {ObjX, ObjY, ObjZ} | error<br>
+<a href="http://www.sun.com/software/graphics/OpenGL/manpages/gluUnProject.html">C-API:</a> GLint gluUnProject(GLdouble winX, GLdouble winY, GLdouble winZ,  const GLdouble * model,  const GLdouble * proj,  const GLint * view, GLdouble * objX, GLdouble * objY, GLdouble * objZ)<br>
+</UL>
+<p><A NAME="triangulate">
+<strong> triangulate(N, Ps)  </strong><UL>Args: Normal [Vertices]<br>
+Returns: {[{TriIndex}], [VertexPos]}<br>
+</UL>
+</html>
