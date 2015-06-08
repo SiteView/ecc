@@ -91,12 +91,12 @@ bool CWmi::Open(ei_x_buff *x,char *server,char *username,char *password)
 		BSTR strDesEI;
 		ei->GetDescription(&strDesEI);*/
 		/*char* pstr = _com_util::ConvertBSTRToString(strDesEI);
-		sprintf(szMess,"error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);
-		printf("error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);*/
+		sprintf(szMess,"error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);
+		printf("error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);*/
 
 		
-		sprintf(szMess,"error=Error ocured"); 
-		//printf("error=Error ocured:%", (unsigned)err.Error());
+		sprintf(szMess,"error=Error occurred"); 
+		//printf("error=Error occurred:%", (unsigned)err.Error());
 
 
 		ei_x_encode_atom(x, "error");		
@@ -108,8 +108,8 @@ bool CWmi::Open(ei_x_buff *x,char *server,char *username,char *password)
 	} 
 	catch(...) 
 	{ 
-		//printf("error=Error ocured: %d",::GetLastError());
-		sprintf(szMess,"error=Error ocured");
+		//printf("error=Error occurred: %d",::GetLastError());
+		sprintf(szMess,"error=Error occurred");
 		ei_x_encode_atom(x, "error");		
 		ei_x_encode_string(x, szMess);
 		return false;
@@ -307,10 +307,10 @@ bool CWmi::Execute(ei_x_buff *x,char* wql)
 		//	BSTR strDesEI;
 		//	ei->GetDescription(&strDesEI);
 		//	/*char* pstr = _com_util::ConvertBSTRToString(strDesEI);*/
-		//	/*printf("error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);
-		//	sprintf(szMess,"error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);*/
-		//	sprintf(szMess,"error=Error ocured:%x", (unsigned)err.Error());
-		//	printf("error=Error ocured:%", (unsigned)err.Error());
+		//	/*printf("error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);
+		//	sprintf(szMess,"error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);*/
+		//	sprintf(szMess,"error=Error occurred:%x", (unsigned)err.Error());
+		//	printf("error=Error occurred:%", (unsigned)err.Error());
 		//	ei_x_encode_tuple_header(x, 2);	
 		//	ei_x_encode_atom(x, "error");		
 		//	ei_x_encode_string(x, szMess);
@@ -320,8 +320,8 @@ bool CWmi::Execute(ei_x_buff *x,char* wql)
 		//}
 		//else
 		//{
-			//printf("error=Error ocured:%x: %s", (unsigned)err.Error(), err.ErrorMessage());
-			sprintf(szMess,"error=Error ocured");
+			//printf("error=Error occurred:%x: %s", (unsigned)err.Error(), err.ErrorMessage());
+			sprintf(szMess,"error=Error occurred");
 			ei_x_encode_tuple_header(x, 2);	
 			ei_x_encode_atom(x, "error");		
 			ei_x_encode_string(x, szMess);
@@ -331,8 +331,8 @@ bool CWmi::Execute(ei_x_buff *x,char* wql)
 	} 
 	catch(...) 
 	{ 
-		//printf("error=Error ocured: %d",::GetLastError());
-		sprintf(szMess,"error=Error ocured");
+		//printf("error=Error occurred: %d",::GetLastError());
+		sprintf(szMess,"error=Error occurred");
 		ei_x_encode_tuple_header(x, 2);	
 		ei_x_encode_atom(x, "error");		
 		ei_x_encode_string(x, szMess);
