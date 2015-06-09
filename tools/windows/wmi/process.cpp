@@ -76,7 +76,7 @@ int EnumProcessInfo(PWMI_LOGIN_INFO login, char* buffer)
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
 			char* pstr = _com_util::ConvertBSTRToString(strDesEI);
-			sprintf(buffer, "error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);
+			sprintf(buffer, "error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);
 
 			ei->Release();
 			free(pstr);
@@ -84,7 +84,7 @@ int EnumProcessInfo(PWMI_LOGIN_INFO login, char* buffer)
 		}
 		else
 		{
-			sprintf(buffer, "error=Error ocured:%x: %s", (unsigned)err.Error(), err.ErrorMessage());
+			sprintf(buffer, "error=Error occurred:%x: %s", (unsigned)err.Error(), err.ErrorMessage());
 		}
 
 		if(services != NULL)
@@ -97,7 +97,7 @@ int EnumProcessInfo(PWMI_LOGIN_INFO login, char* buffer)
 	} 
 	catch(...) 
 	{ 
-		sprintf(buffer, "error=Error ocured: %d",::GetLastError());
+		sprintf(buffer, "error=Error occurred: %d",::GetLastError());
 
 		if(services != NULL)
 		{
@@ -310,7 +310,7 @@ int GetProcessInfo(PWMI_LOGIN_INFO login, const char * strProcessName, char* buf
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
 			char* pstr = _com_util::ConvertBSTRToString(strDesEI);
-			sprintf(buffer, "error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);
+			sprintf(buffer, "error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);
 
 			ei->Release();
 			free(pstr);
@@ -318,7 +318,7 @@ int GetProcessInfo(PWMI_LOGIN_INFO login, const char * strProcessName, char* buf
 		}
 		else
 		{
-			sprintf(buffer, "error=Error ocured:%x: %s", (unsigned)err.Error(), err.ErrorMessage());
+			sprintf(buffer, "error=Error occurred:%x: %s", (unsigned)err.Error(), err.ErrorMessage());
 		}
 
 		if(services != NULL)
@@ -331,7 +331,7 @@ int GetProcessInfo(PWMI_LOGIN_INFO login, const char * strProcessName, char* buf
 	} 
 	catch(...) 
 	{ 
-		sprintf(buffer, "error=Error ocured: %d",::GetLastError());
+		sprintf(buffer, "error=Error occurred: %d",::GetLastError());
 
 		if(services != NULL)
 		{

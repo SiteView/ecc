@@ -191,12 +191,12 @@ BOOL ConnectServer(const char * strParas, char * szReturn, int& nSize,WbemScript
 		IErrorInfo * ei = err.ErrorInfo();
 		BSTR strDesEI;
 		ei->GetDescription(&strDesEI);
-		sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+		sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 		return FALSE;
 	} 
 	catch(...) 
 	{ 
-		sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+		sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 		return FALSE;
 	} 
 
@@ -232,12 +232,12 @@ BOOL ConnectADServer(const char * strParas, char * szReturn, int& nSize,WbemScri
 		IErrorInfo * ei = err.ErrorInfo();
 		BSTR strDesEI;
 		ei->GetDescription(&strDesEI);
-		sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+		sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 		return FALSE;
 	} 
 	catch(...) 
 	{ 
-		sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+		sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 		return FALSE;
 	} 
 
@@ -432,12 +432,12 @@ BOOL GetCPURate(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -494,12 +494,12 @@ BOOL GetAllCPURate(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -550,12 +550,12 @@ BOOL EnumDisksInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -611,12 +611,12 @@ BOOL GetDiskInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -707,12 +707,12 @@ BOOL GetMemoryInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -759,12 +759,12 @@ BOOL GetNTServices(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -838,12 +838,12 @@ BOOL GetServiceInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -969,12 +969,12 @@ BOOL FilterEventLogInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1028,12 +1028,12 @@ BOOL EnumProcessInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1148,12 +1148,12 @@ BOOL GetProcessInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1256,12 +1256,12 @@ BOOL GetIISInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1358,12 +1358,12 @@ BOOL GetASPInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1471,12 +1471,12 @@ BOOL GetAspNetApplicationInfo(const char * strParas, char * szReturn, int& nSize
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1533,12 +1533,12 @@ BOOL GetAspNetInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1587,12 +1587,12 @@ BOOL EnumNetWorks(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1677,12 +1677,12 @@ BOOL GetNetWorkInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
@@ -1736,12 +1736,12 @@ BOOL GetADInfo(const char * strParas, char * szReturn, int& nSize)
 			IErrorInfo * ei = err.ErrorInfo();
 			BSTR strDesEI;
 			ei->GetDescription(&strDesEI);
-			sprintf(szReturn, "error=Error ocured:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
+			sprintf(szReturn, "error=Error occurred:%x: %s", (unsigned)err.Error(),_com_util::ConvertBSTRToString(strDesEI));
 			return FALSE;
 		} 
 		catch(...) 
 		{ 
-			sprintf(szReturn, "error=Error ocured: %d",::GetLastError());
+			sprintf(szReturn, "error=Error occurred: %d",::GetLastError());
 			OutputDebugString(szReturn);
 			return FALSE;
 		} 
