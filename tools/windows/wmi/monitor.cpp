@@ -68,7 +68,7 @@ BOOL ConnectServer(PWMI_LOGIN_INFO login, char* buffer, WbemScripting::ISWbemSer
 		BSTR strDesEI;
 		ei->GetDescription(&strDesEI);
 		char* pstr = _com_util::ConvertBSTRToString(strDesEI);
-		sprintf(buffer, "error=Error ocured:%x: %s", (unsigned)err.Error(), pstr);
+		sprintf(buffer, "error=Error occurred:%x: %s", (unsigned)err.Error(), pstr);
 
 		ei->Release();
 		free(pstr);
@@ -78,7 +78,7 @@ BOOL ConnectServer(PWMI_LOGIN_INFO login, char* buffer, WbemScripting::ISWbemSer
 	} 
 	catch(...) 
 	{ 
-		sprintf(buffer, "error=Error ocured: %d",::GetLastError());
+		sprintf(buffer, "error=Error occurred: %d",::GetLastError());
 		return FALSE;
 	} 
 	return TRUE;
